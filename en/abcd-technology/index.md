@@ -101,53 +101,6 @@ The ISIS Formatting Language (FL) is one of the most important parts of the soft
 -   what ISIS will use as exported values (defined in the reformatting FST)
 -   what ISIS will use as values to validate input in fields (given in the validation tables).
 
-### The FL for presenting values
-
-This is by far the most important function of the Formatting Language : specifying which data exactly need to be taken and how they will be 'displayed' or 'printed' (to the screen, to a printer, to a file, to a webpage...).
-
-Separate documents exist to deal with this extensive language, e.g. the dedicated chapter in the ISIS Reference Manual, published by UNESCO (June 2004, chapter 8, p. 94-122).
-
-Basically there are three types of statements in the ISIS FL :
-1.  values from fields, given as : Vx, where 'V' denotes the value (or 'contents') of a field with tag 'x', Vx^a is the value of the subfield a (^a) of field x and (Vx/) is the series of all occurrences of field X separated by a 'new-line' (/) since the parenthese embrace a 'repeatable group' of statements to be applied to all occurrences (repeatable fields are a strong special feature of ISIS).
-
-2.  literals or quotes strings, which can be 'unconditional' (single quotes), |conditional| (pipes indicate the string will only be produced if the related field is present) and "repeatable" (double quotes will only produce the string at the first occurrence of a repeatable field).
-ISIS-applications on the web, such as ABCD, create web-pages with HTML-tags using this method of adding literals to field-values, e.g.
-
-```
-'<table><tr><td>' Vx '</td><td>' Vy '</td></tr></Table>'
-```
-
-will display resp. the fields x and y in two columns of a table in HTML. Note that all HTML- codes are quoted (as unconditionals) and the values taken from the fields in the database are inserted by referring to them with the V-statement.
-
-5. commands, which can be of different types, e.g. :
-
--   mode commands : mhl/u (mode heading lowercase/uppercase), mdl (mode data upper/lowercase) or mpl/u (mode proofreading upper/lowercase)
-
--   (in Windows-environments) : commands defining screen attributes (colors, fonts, boxes) or links (requesting the operating system to open other data, e.g. multimedia data referred to in a record), e.g.
-
-LINK('click here for tull-text', OPENFILE Vx) will request - when the user clicks on the hyperlinked text 'click here for full-text', Windows to open the file of which the name is in Vx, with the Windows-application associated to the extension of that file.
--   the REF-command, which can retrieve data from other records (in the same or another database when ex- pressly referenced to), allowing semi-relations setups in ISIS-applications (but with the advantage that the relation is followed only at run-time when requested). e.g.
-
-```REF(['users']) L(['users']V2),V1)``` 
-
-will retrieve the value from field 1 in the database 'users' if the L(ookup) function has found the value of field 2 (in the actual database) in the index of the users-database, so that the MFN of the record can be identified.
-
--   conditional routing statements : e.g. 
-
-```'IF...THEN... (ELSE....)FI'```
-or even the 
-
-```SELECT [case1 case2...] ELSE- CASE... ENDSEL```
-
-construct can be used to apply formatting statements only to database values which comply with given conditions.
-
--   in the CISIS-environment extra FL statements are available, the most important one being a command which will actually **PROC**ess a record to alter the contents of the fields. The general syntax is :
-```
-    proc(x|y...) 
-```
-where x or y can be any of the following : ```'Dxxx' ```(to delete field with tag xxx)
-- ```|Axx#|value|#| ``` (to Add value into field xx)
--   functions, mostly for string-operations (e.g. substr, size, val) or numerical (e.g. rmin, rmax, rsum...)
 
 Full documentation on the CISIS Formatting Language is available on [this page](/en/abcd-technology/cisis-formatting/)
 
@@ -184,18 +137,25 @@ More sophisticated statements can be used for more advanced quality/consistency 
 
 ISIS Script is a scripting language developed by BIREME in order to make stronger functions available to the ISIS webserver 'WWWISIS' for creation of pages with elements from ISIS-databases. ISIS Script in fact was one of the main elements in the stepping-up from WWWISIS to 'WXIS' which is the underlying web-server for ABCD.
 
-ISIS Script scripts are stored as files with an extention .XIS. ABCD uses more than 100 such scripts, most of them in the php/dataentry/wxis folder but also iAH (the OPAC) makes extensive use of such scripts.
-
-Obviously we cannot discuss the whole power of the ISIS Script language here. As a longuage it uses XML-like statements, e.g. in between the tags ```<pft>``` and ```</pft>``` a print format can be given and this format can be displayed by putting it in between ```<display>``` and ```</display>``` tags. All WXIS parameters can be defined within the ```<parm>``` and ```</parm>``` tags and fields can be defined with values, e.g.
+IsisScript uses a language similar to XML, such as between the ```<pft>``` and ```</pft>``` a print format can be given and this format can be displayed by putting it in between ```<display>``` and ```</display>``` tags. All WXIS parameters can be defined within the ```<parm>``` and ```</parm>``` tags and fields can be defined with values, e.g.
  
 ```
 <field action="replace" tag="6000">ValueOfField6000</field>
 ```
-will put the string 'ValueOfField6000' into the field with tag 6000 (such high-value tags, in fact all tags above 999, are mostly used within ISIS-applications for temporary internal values which are not really stored in ISIS- records but rather 'virtual records'.
+The expression above will put the string 'ValueOfField6000' into the field with tag 6000 (such high-value tags, in fact all tags above 999, are mostly used within ISIS-applications for temporary internal values which are not really stored in ISIS- records but rather 'virtual records'.
 
-ISIS Script allows more flexible manipulation of data-elements, taken from ISIS-databases, in web-pages. In com- bination with PHP (see the dedicated section on PHP), which is a language for creation of web-pages powerful results are possible and this certainly adds to the general advanced functionality of ABCD.
+ISIS Script allows more flexible manipulation of data-elements, taken from ISIS-databases, in web-pages. In com- bination with PHP ([see dedicated PHP section](/en/abcd-technology/#php)), which is a language for creation of web-pages powerful results are possible and this certainly adds to the general advanced functionality of ABCD.
 
-Of course more details on the ISIS Script language can be found in the dedicated documentation.
+To know the IsisScript language in detail, [go to the specific page](/en/abcd-technology/isis-script).
+
+
+It is very common to make confusion between CISIS Utilities, CISIS Format Language and IsisScript, so see the difference in the table below.
+
+
+|CISIS - Utility Programs (terminal)|ISIS Formatting Language (browser)|IsisScript (server)|
+|-|-|-|
+|Small apps used via Linux or Windows terminals|Visual formatting language, used to display results on the web|Database manipulation scripts that use the client-server framework|
+
 
 ## J-ISIS
 

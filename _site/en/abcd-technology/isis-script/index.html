@@ -215,7 +215,7 @@
                         
                           
                             <a class="td-sidebar-link td-sidebar-link__page " id="m-home-abcd-technology-cisis-utilities" href="/en/abcd-technology/cisis-utils/">CISIS Utilities</a>
-                            <a class="td-sidebar-link td-sidebar-link__page " id="m-home-abcd-technology-cisis-formatting-language" href="/en/abcd-technology/cisis-formatting/">CISIS Formatting Language</a>
+                            <a class="td-sidebar-link td-sidebar-link__page " id="m-home-abcd-technology-cisis-formatting" href="/en/abcd-technology/cisis-formatting/">CISIS Formatting</a>
                             <a class="td-sidebar-link td-sidebar-link__page " id="m-home-abcd-technology-isis-script" href="/en/abcd-technology/isis-script/">ISIS Script</a>
                         
                       </li>
@@ -396,10 +396,30 @@
 
 	      <h1 id="isisscript-language">IsisScript language</h1>
 
+<p>IsisScripts are stored as files with the extension .xis. 
+ABCD uses many scripts, most of them in the <strong>central/dataentry/wxis folder</strong>.
+iAH (/iah/scripts) makes extensive use of such scripts.
+The language uses XML like instructions, such as, for example, between the <code class="language-plaintext highlighter-rouge">&lt;pft&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;/pft&gt;</code> tags a print format can be placed and that format can be displayed by placing it between the <code class="language-plaintext highlighter-rouge">&lt;display&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;/display&gt;</code> tags.</p>
+
+<p>All WXIS parameters can be set within the <code class="language-plaintext highlighter-rouge">&lt;parm&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;/parm&gt;</code> tags and fields can be set with values, for example <code class="language-plaintext highlighter-rouge">&lt;field action="replace" tag="6000″&gt;field_value_6000 &lt;/field&gt;</code> will put the string “<code class="language-plaintext highlighter-rouge">Field_value_6000</code>” into the 6000 tag field (such high tag values, actually all tags above 999, are used in general in ISIS applications for internal temporary values that are not actually stored in ISIS records but as “virtual records”.</p>
+
+<p>IsisScript allows a more flexible manipulation of data elements, coming from ISIS databases, in web pages. In combination with PHP, which is a language for creating web pages, sophisticated results are possible and this certainly contributes to the overall advanced functionality of ABCD.</p>
+
+<h1 id="how-to-use-this-language">How to use this language</h1>
+
+<p>All the liguage is on this page containing all the commands, parameters and options available in the IsisScript language.</p>
+
+<p>The commands are organized at hierarchy level 2 and their elements follow the hierarchy up to level 4.</p>
+
+<p>Each command, parameter or option will contain a brief description of its purpose. Additional information such as attributes, syntax, elements contained and where it applies are also provided, completing an example of code to illustrate the command, option or parameter.</p>
+
+<p>The only prerequisites to the user are knowledge of format language and the model and structure of a standard CDS/ISIS base.</p>
+
 <h2 class="no_toc no_toc text-delta" id="content">Content</h2>
 
 <ol id="markdown-toc">
   <li><a href="#isisscript-language" id="markdown-toc-isisscript-language">IsisScript language</a></li>
+  <li><a href="#how-to-use-this-language" id="markdown-toc-how-to-use-this-language">How to use this language</a></li>
   <li><a href="#isisscript-reference" id="markdown-toc-isisscript-reference">IsisScript reference</a>    <ol>
       <li><a href="#-isisscript-" id="markdown-toc--isisscript-">&lt; IsisScript &gt;</a>        <ol>
           <li><a href="#isisscriptname" id="markdown-toc-isisscriptname">IsisScript.name</a></li>
@@ -439,10 +459,9 @@
               <li><a href="#fieldactionocc" id="markdown-toc-fieldactionocc">field.action=occ</a></li>
               <li><a href="#fieldactionreplace" id="markdown-toc-fieldactionreplace">field.action=replace</a></li>
               <li><a href="#fieldactionstatusdb" id="markdown-toc-fieldactionstatusdb">field.action=statusdb</a></li>
-              <li><a href="#fieldactionstatusfile" id="markdown-toc-fieldactionstatusfile">field.action=statusfile</a></li>
             </ol>
           </li>
-          <li><a href="#fieldactionstatusfile-1" id="markdown-toc-fieldactionstatusfile-1">field.action=statusfile</a></li>
+          <li><a href="#fieldactionstatusfile" id="markdown-toc-fieldactionstatusfile">field.action=statusfile</a></li>
           <li><a href="#fieldfrom" id="markdown-toc-fieldfrom">field.from</a></li>
           <li><a href="#fieldprevious" id="markdown-toc-fieldprevious">field.previous</a>            <ol>
               <li><a href="#fieldpreviousadd" id="markdown-toc-fieldpreviousadd">field.previous=add</a></li>
@@ -589,25 +608,6 @@
       <li><a href="#-write-" id="markdown-toc--write-">&lt; write &gt;</a></li>
     </ol>
   </li>
-</ol>
-
-<hr />
-
-<p>IsisScript is a scripting language, developed by BIREME, in order to make stronger the functions available to the WEB ISIS server “WWWISIS” for the creation of pages with elements of ISIS databases. ISIS Script in fact was one of the main elements in the evolution from WWWISIS to “WXIS” which is the underlying web server for ABCD.</p>
-
-<p>IsisScripts are stored as files with the extension .xis. 
-ABCD uses many scripts, most of them in the central/dataentry/wxis folder.
-iAH makes extensive use of such scripts.
-The language uses XML-like instructions, such as, for example, between the <code class="language-plaintext highlighter-rouge">&lt;pft&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;/pft&gt;</code> tags a print format can be placed and that format can be displayed by placing it between the <code class="language-plaintext highlighter-rouge">&lt;display&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;/display&gt;</code> tags.</p>
-
-<p>All WXIS parameters can be set within the <code class="language-plaintext highlighter-rouge">&lt;parm&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;/parm&gt;</code> tags and fields can be set with values, for example <code class="language-plaintext highlighter-rouge">&lt;field action="replace" tag="6000″&gt;field_value_6000 &lt;/field&gt;</code> will put the string “<code class="language-plaintext highlighter-rouge">Field_value_6000</code>” into the 6000 tag field (such high tag values, actually all tags above 999, are used in general in ISIS applications for internal temporary values that are not actually stored in ISIS records but as “virtual records”.</p>
-
-<p>IsisScript allows a more flexible manipulation of data elements, coming from ISIS databases, in web pages. In combination with PHP, which is a language for creating web pages, sophisticated results are possible and this certainly contributes to the overall advanced functionality of ABCD.</p>
-
-<h2 class="no_toc no_toc text-delta" id="content-1">Content</h2>
-
-<ol>
-  <li>TOC</li>
 </ol>
 
 <hr />
@@ -1507,25 +1507,7 @@ The current output can be redirected with the <code class="language-plaintext hi
 
 <hr />
 
-<h4 id="fieldactionstatusfile">field.action=statusfile</h4>
-
-<p>It replaces the content of the field specified by the tag attribute with the status of the file indicated by the argument of the <code class="language-plaintext highlighter-rouge">&lt;field&gt;</code> element.</p>
-
-<p>If the file exists, the field contains the s subfield (^s) with the character “e”, otherwise the field is absent.</p>
-
-<p><strong>Example</strong></p>
-
-<pre><code class="language-language">...
-  &lt;field action=statusfile tag=1091&gt;C:\AUTOEXEC.BAT&lt;/field&gt;
-  &lt;flow action=jump&gt;
-     &lt;pft&gt;if v1091^s : 'e' then 'LABEL_OK' fi&lt;/pft&gt;
-  &lt;/flow&gt;
-...
-</code></pre>
-
-<hr />
-
-<h3 id="fieldactionstatusfile-1">field.action=statusfile</h3>
+<h3 id="fieldactionstatusfile">field.action=statusfile</h3>
 
 <p>It replaces the content of the field specified by the tag attribute with the status of the file indicated by the argument of the <field> element.</field></p>
 

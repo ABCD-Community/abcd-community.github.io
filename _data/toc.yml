@@ -10,7 +10,7 @@ en:
       children:
       - title: "CISIS Utilities"
         url: "/abcd-technology/cisis-utils/"
-      - title: "CISIS Formatting Language"
+      - title: "CISIS Formatting"
         url: "/abcd-technology/cisis-formatting/"
       - title: "ISIS Script"
         url: "/abcd-technology/isis-script/"  
@@ -61,9 +61,9 @@ pt:
     - title: "Tecnologia ABCD"
       url: "/abcd-technology"
       children:
-      - title: "CISIS Utilitários"
+      - title: "Utilitários CISIS"
         url: "/abcd-technology/cisis-utils"
-      - title: "CISIS Linguagem de formato"
+      - title: "Formato CISIS" 
         url: "/abcd-technology/cisis-formatting"
       - title: "ISIS Script"
         url: "/abcd-technology/isis-script"         

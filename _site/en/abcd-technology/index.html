@@ -215,7 +215,7 @@
                         
                           
                             <a class="td-sidebar-link td-sidebar-link__page " id="m-home-abcd-technology-cisis-utilities" href="/en/abcd-technology/cisis-utils/">CISIS Utilities</a>
-                            <a class="td-sidebar-link td-sidebar-link__page " id="m-home-abcd-technology-cisis-formatting-language" href="/en/abcd-technology/cisis-formatting/">CISIS Formatting Language</a>
+                            <a class="td-sidebar-link td-sidebar-link__page " id="m-home-abcd-technology-cisis-formatting" href="/en/abcd-technology/cisis-formatting/">CISIS Formatting</a>
                             <a class="td-sidebar-link td-sidebar-link__page " id="m-home-abcd-technology-isis-script" href="/en/abcd-technology/isis-script/">ISIS Script</a>
                         
                       </li>
@@ -404,7 +404,6 @@
         </ol>
       </li>
       <li><a href="#isis-formatting-language" id="markdown-toc-isis-formatting-language">ISIS Formatting Language</a>        <ol>
-          <li><a href="#the-fl-for-presenting-values" id="markdown-toc-the-fl-for-presenting-values">The FL for presenting values</a></li>
           <li><a href="#the-fl-for-definition-of-indexing-keys" id="markdown-toc-the-fl-for-definition-of-indexing-keys">The FL for definition of indexing keys</a></li>
           <li><a href="#the-fl-for-definition-of-sorting-keys" id="markdown-toc-the-fl-for-definition-of-sorting-keys">The FL for definition of sorting keys</a></li>
           <li><a href="#the-fl-for-conversion-during-importexport" id="markdown-toc-the-fl-for-conversion-during-importexport">The FL for conversion during import/export</a></li>
@@ -513,71 +512,6 @@ often the case - the database is r</p>
   <li>what ISIS will use as values to validate input in fields (given in the validation tables).</li>
 </ul>
 
-<h3 id="the-fl-for-presenting-values">The FL for presenting values</h3>
-
-<p>This is by far the most important function of the Formatting Language : specifying which data exactly need to be taken and how they will be ‘displayed’ or ‘printed’ (to the screen, to a printer, to a file, to a webpage…).</p>
-
-<p>Separate documents exist to deal with this extensive language, e.g. the dedicated chapter in the ISIS Reference Manual, published by UNESCO (June 2004, chapter 8, p. 94-122).</p>
-
-<p>Basically there are three types of statements in the ISIS FL :</p>
-<ol>
-  <li>
-    <p>values from fields, given as : Vx, where ‘V’ denotes the value (or ‘contents’) of a field with tag ‘x’, Vx^a is the value of the subfield a (^a) of field x and (Vx/) is the series of all occurrences of field X separated by a ‘new-line’ (/) since the parenthese embrace a ‘repeatable group’ of statements to be applied to all occurrences (repeatable fields are a strong special feature of ISIS).</p>
-  </li>
-  <li>
-    <p>literals or quotes strings, which can be ‘unconditional’ (single quotes), |conditional| (pipes indicate the string will only be produced if the related field is present) and “repeatable” (double quotes will only produce the string at the first occurrence of a repeatable field).
-ISIS-applications on the web, such as ABCD, create web-pages with HTML-tags using this method of adding literals to field-values, e.g.</p>
-  </li>
-</ol>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'&lt;table&gt;&lt;tr&gt;&lt;td&gt;' Vx '&lt;/td&gt;&lt;td&gt;' Vy '&lt;/td&gt;&lt;/tr&gt;&lt;/Table&gt;'
-</code></pre></div></div>
-
-<p>will display resp. the fields x and y in two columns of a table in HTML. Note that all HTML- codes are quoted (as unconditionals) and the values taken from the fields in the database are inserted by referring to them with the V-statement.</p>
-
-<ol>
-  <li>commands, which can be of different types, e.g. :</li>
-</ol>
-
-<ul>
-  <li>
-    <p>mode commands : mhl/u (mode heading lowercase/uppercase), mdl (mode data upper/lowercase) or mpl/u (mode proofreading upper/lowercase)</p>
-  </li>
-  <li>
-    <p>(in Windows-environments) : commands defining screen attributes (colors, fonts, boxes) or links (requesting the operating system to open other data, e.g. multimedia data referred to in a record), e.g.</p>
-  </li>
-</ul>
-
-<p>LINK(‘click here for tull-text’, OPENFILE Vx) will request - when the user clicks on the hyperlinked text ‘click here for full-text’, Windows to open the file of which the name is in Vx, with the Windows-application associated to the extension of that file.</p>
-<ul>
-  <li>the REF-command, which can retrieve data from other records (in the same or another database when ex- pressly referenced to), allowing semi-relations setups in ISIS-applications (but with the advantage that the relation is followed only at run-time when requested). e.g.</li>
-</ul>
-
-<p><code class="language-plaintext highlighter-rouge">REF(['users']) L(['users']V2),V1)</code></p>
-
-<p>will retrieve the value from field 1 in the database ‘users’ if the L(ookup) function has found the value of field 2 (in the actual database) in the index of the users-database, so that the MFN of the record can be identified.</p>
-
-<ul>
-  <li>conditional routing statements : e.g.</li>
-</ul>
-
-<p><code class="language-plaintext highlighter-rouge">'IF...THEN... (ELSE....)FI'</code>
-or even the</p>
-
-<p><code class="language-plaintext highlighter-rouge">SELECT [case1 case2...] ELSE- CASE... ENDSEL</code></p>
-
-<p>construct can be used to apply formatting statements only to database values which comply with given conditions.</p>
-
-<ul>
-  <li>in the CISIS-environment extra FL statements are available, the most important one being a command which will actually <strong>PROC</strong>ess a record to alter the contents of the fields. The general syntax is :
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>proc(x|y...) 
-</code></pre></div>    </div>
-    <p>where x or y can be any of the following : <code class="language-plaintext highlighter-rouge">'Dxxx'</code>(to delete field with tag xxx)</p>
-  </li>
-  <li><code class="language-plaintext highlighter-rouge">|Axx#|value|#|</code> (to Add value into field xx)</li>
-  <li>functions, mostly for string-operations (e.g. substr, size, val) or numerical (e.g. rmin, rmax, rsum…)</li>
-</ul>
-
 <p>Full documentation on the CISIS Formatting Language is available on <a href="/en/abcd-technology/cisis-formatting/">this page</a></p>
 
 <h3 id="the-fl-for-definition-of-indexing-keys">The FL for definition of indexing keys</h3>
@@ -609,17 +543,34 @@ e.g. be used to substitute codes for their full explanation or v.v.</p>
 
 <p>ISIS Script is a scripting language developed by BIREME in order to make stronger functions available to the ISIS webserver ‘WWWISIS’ for creation of pages with elements from ISIS-databases. ISIS Script in fact was one of the main elements in the stepping-up from WWWISIS to ‘WXIS’ which is the underlying web-server for ABCD.</p>
 
-<p>ISIS Script scripts are stored as files with an extention .XIS. ABCD uses more than 100 such scripts, most of them in the php/dataentry/wxis folder but also iAH (the OPAC) makes extensive use of such scripts.</p>
-
-<p>Obviously we cannot discuss the whole power of the ISIS Script language here. As a longuage it uses XML-like statements, e.g. in between the tags <code class="language-plaintext highlighter-rouge">&lt;pft&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;/pft&gt;</code> a print format can be given and this format can be displayed by putting it in between <code class="language-plaintext highlighter-rouge">&lt;display&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;/display&gt;</code> tags. All WXIS parameters can be defined within the <code class="language-plaintext highlighter-rouge">&lt;parm&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;/parm&gt;</code> tags and fields can be defined with values, e.g.</p>
+<p>IsisScript uses a language similar to XML, such as between the <code class="language-plaintext highlighter-rouge">&lt;pft&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;/pft&gt;</code> a print format can be given and this format can be displayed by putting it in between <code class="language-plaintext highlighter-rouge">&lt;display&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;/display&gt;</code> tags. All WXIS parameters can be defined within the <code class="language-plaintext highlighter-rouge">&lt;parm&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;/parm&gt;</code> tags and fields can be defined with values, e.g.</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;field action="replace" tag="6000"&gt;ValueOfField6000&lt;/field&gt;
 </code></pre></div></div>
-<p>will put the string ‘ValueOfField6000’ into the field with tag 6000 (such high-value tags, in fact all tags above 999, are mostly used within ISIS-applications for temporary internal values which are not really stored in ISIS- records but rather ‘virtual records’.</p>
+<p>The expression above will put the string ‘ValueOfField6000’ into the field with tag 6000 (such high-value tags, in fact all tags above 999, are mostly used within ISIS-applications for temporary internal values which are not really stored in ISIS- records but rather ‘virtual records’.</p>
 
-<p>ISIS Script allows more flexible manipulation of data-elements, taken from ISIS-databases, in web-pages. In com- bination with PHP (see the dedicated section on PHP), which is a language for creation of web-pages powerful results are possible and this certainly adds to the general advanced functionality of ABCD.</p>
+<p>ISIS Script allows more flexible manipulation of data-elements, taken from ISIS-databases, in web-pages. In com- bination with PHP (<a href="/en/abcd-technology/#php">see dedicated PHP section</a>), which is a language for creation of web-pages powerful results are possible and this certainly adds to the general advanced functionality of ABCD.</p>
 
-<p>Of course more details on the ISIS Script language can be found in the dedicated documentation.</p>
+<p>To know the IsisScript language in detail, <a href="/en/abcd-technology/isis-script">go to the specific page</a>.</p>
+
+<p>It is very common to make confusion between CISIS Utilities, CISIS Format Language and IsisScript, so see the difference in the table below.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>CISIS - Utility Programs (terminal)</th>
+      <th>ISIS Formatting Language (browser)</th>
+      <th>IsisScript (server)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Small apps used via Linux or Windows terminals</td>
+      <td>Visual formatting language, used to display results on the web</td>
+      <td>Database manipulation scripts that use the client-server framework</td>
+    </tr>
+  </tbody>
+</table>
 
 <h2 id="j-isis">J-ISIS</h2>
 

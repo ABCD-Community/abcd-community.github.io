@@ -7,25 +7,27 @@ lang-ref: isis-script
 
 # Linguagem IsisScript
 
-{: .no_toc }
-
-## Conteúdo
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
-
----
-
 
 IsisScripts são armazenados como arquivos com a extensão .xis. 
-ABCD usa muitos scripts, a maioria deles na pasta central/dataentry/wxis.
+
+ABCD usa muitos scripts, a maioria deles na pasta **central/dataentry/wxis**.
 O iAH faz amplo uso de tais scripts.
 A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags `<pft>` e `</pft>` pode ser colocado um formato de impressão e esse formato pode ser apresentado, colocando-o entre as tags `<display>` e `</display>`. 
 
 Todos os parâmetros WXIS podem ser definidos dentro das tags `<parm>` e `</parm>` e campos podem ser definidos com valores, por exemplo `<field action=”replace” tag=”6000″> valor_do_campo_6000 </field>` vai colocar a string “Valor_do_campo_6000” no campo de tag 6000 (tais valores elevados de tag, na verdade todas as tags  acima de 999, são utilizadas em geral em aplicativos ISIS para valores temporários internos que na realidade não são armazenados em registros ISIS, mas como “registros virtuais”.
 
 IsisScript permite uma manipulação mais flexível de elementos de dados, provenientes de bases de dados ISIS, em páginas web. Em combinação com o PHP, que é uma linguagem para criação de páginas web, resultados sofisticados são possíveis e isto certamente contribui para a funcionalidade geral avançada do ABCD.
+
+
+# Como usar esta linguagem
+
+Toda a liguagem está nesta página contendo todos os comandos, parâmetros e opções disponíveis na linguagem IsisScript.
+
+Os comandos estão organizados no nível hierárquico 2 e seus elementos seguem a hierarquia até o nível 4.
+
+Cada comando, parâmetro ou opção conterá uma breve descrição de seu propósito. Informação adicional como atributos, sintaxe, elementos contidos e onde se aplica também são fornecidos, completando um exemplo de código para ilustrar o comando, opção ou parâmetro.
+
+Os únicos pré-requisitos ao usuário são o conhecimento de linguagem de formato e o modelo e estrutura de uma base CDS/ISIS padrão.
 
 
 
@@ -320,7 +322,7 @@ O elemento `<loop>` informa o bloco de instruções a serem executadas para cada
 
 ### do.task
 
-**Options** `fullinvertion import invertedload keyrange list mastersort mfnrange search update`
+**Opções** `fullinvertion import invertedload keyrange list mastersort mfnrange search update`
 
 **Pode Ser Usado Em** `<do>`
 
@@ -843,7 +845,7 @@ O atributo from informa o número do campo a ser acessado.
 ### field.action
 
 
-**Options** add cgi define delete export hl import occ replace statusdb statusfile
+**Opções** add cgi define delete export hl import occ replace statusdb statusfile
 
 **Pode Ser Usado Em** `<field> <file> <flow> <function> <htmlpft> <list> <return>`
 
@@ -1109,32 +1111,6 @@ Se o master existir, o campo conterá também o subcampo n (^n) com o total de r
 
 ```
 
-----------
-
-
-#### field.action=statusfile
-
-
-
-It replaces the content of the field specified by the tag attribute with the status of the file indicated by the argument of the `<field>` element.
-
-If the file exists, the field contains the s subfield (^s) with the character "e", otherwise the field is absent.
-
-
-
-**Exemplo**
-
-
-```language
-...
-  <field action=statusfile tag=1091>C:\AUTOEXEC.BAT</field>
-  <flow action=jump>
-     <pft>if v1091^s : 'e' then 'LABEL_OK' fi</pft>
-  </flow>
-...
-```
-
-----------
 
 
 ### field.action=statusfile
@@ -1195,7 +1171,7 @@ Especifica o número do campo que será acessado pelo atributo action=occ.
 
 ### field.previous
 
-**Options** `add` `delete`
+**Opções** `add` `delete`
 
 **Pode Ser Usado Em** `<field>`
 
@@ -1259,7 +1235,7 @@ Informa que é para eliminar as ocorrências anteriores.
 
 ### field.split
 
-**Options** `flddir` `occ`
+**Opções** `flddir` `occ`
 
 **Pode Ser Usado Em** `<field>`
 
@@ -1328,7 +1304,7 @@ Indica que cada linha do argumento do elemento `<field>` será armazenada em uma
 
 ### field.tag
 
-**Options** `list`
+**Opções** `list`
 
 **Pode Ser Usado Em** `<field> <parm>`
 
@@ -1376,7 +1352,7 @@ Use a vírgula "," para separar a lista de campos. Use a barra "/" para indicar 
 
 ### field.type
 
-**Options** `flag`
+**Opções** `flag`
 
 **Pode Ser Usado Em** `<field> <file> <htmlpft> <list> <pft>`
 
@@ -1456,7 +1432,7 @@ O atributo type informa o tipo de arquivo que sofrerá a ação.
 ### file.action
 
 
-**Options** `append close create delete unlock`
+**Opções** `append close create delete unlock`
 
 **Pode Ser Usado Em** `<field> <file> <flow> <function> <htmlpft> <list> <return>`
 
@@ -1575,7 +1551,7 @@ Os valores do bloqueio de entrada de dados (Data Entry Lock) e o bloqueio exclus
 ### file.type
 
 
-**Options** `database file inverted master output tempfile`
+**Opções** `database file inverted master output tempfile`
 
 **Pode Ser Usado Em** `<field> <file> <htmlpft> <list> <pft>`
 
@@ -1751,7 +1727,7 @@ O atributo action informa a ação.
 ### flow.action
 
 
-**Options** `exit jump skip`
+**Opções** `exit jump skip`
 
 **Pode Ser Usado Em** `<field> <field> <flow> <function> <htmlpft> <list> <return>`
 
@@ -2107,7 +2083,7 @@ Interpreta e formata um arquivo HTML que contenha instruções da linguagem de f
 
 ### htmlpft.action
 
-**Options** `convert`
+**Opções** `convert`
 
 **Pode Ser Usado Em** `<field> <file> <flow> <function> <htmlpft> <list> <return>`
 
@@ -2220,7 +2196,7 @@ O atributo type indica o tipo de lista.
 
 ### list.action
 
-**Options** `delete load`
+**Opções** `delete load`
 
 **Pode Ser Usado Em** `<field> <file> <flow> <function> <htmlpft> <list> <return>`
 
@@ -2244,7 +2220,7 @@ Informa a ação a ser executada na lista do IsisScript.
 
 ### list.type
 
-**Options** `freq list sort`
+**Opções** `freq list sort`
 
 **Pode Ser Usado Em** `<field> <file> <htmlpft> <list> <pft>`
 
@@ -2391,7 +2367,7 @@ O elemento `<parm>` informa um parâmetro para o bloco de instruções ao qual p
 
 ### parm.name
 
-**Options** `actab buffersize cipar count db decod delimiter expire expression file freqsum from fst gizmo indexlist key keyfield keylength keys keysdb lockid maxlk mfn posting posttag prefix reset reverse sort stw suffix task to type uctab`
+**Opções** `actab buffersize cipar count db decod delimiter expire expression file freqsum from fst gizmo indexlist key keyfield keylength keys keysdb lockid maxlk mfn posting posttag prefix reset reverse sort stw suffix task to type uctab`
 
 
 **Pode Ser Usado Em** `<call> <function> <IsisScript> <parm> <section>`
@@ -2564,7 +2540,7 @@ Limita a quantidade de vezes que o grupo de instruções do elemento <loop> ser�
 
 #### parm.name=db
 
-It specifies the database to be used by any of the following tasks:
+Informa a base de dados a ser acessada nas seguintes tarefas:
 
 - task=mfnrange
 - task=keyrange
@@ -2599,7 +2575,8 @@ It specifies the database to be used by any of the following tasks:
 #### parm.name=decod
 
 
-It specifies the expansion database for decoded fields.
+Informa a base de dados de parâmetros de expansão de campos decodificados.
+
 
 
 **Exemplo**
@@ -2622,7 +2599,7 @@ It specifies the expansion database for decoded fields.
 
 #### parm.name=delimiter
 
-It indicates the field separator when importing records with the option RLine. The default parameter is the character | (pipe).
+Informa o separador de campos para importação de registros na opção RLine. Na ausência deste parâmetro é assumido o caracter | (pipe).
 
 **Exemplo**
 
@@ -2645,9 +2622,9 @@ It indicates the field separator when importing records with the option RLine. T
 #### parm.name=expire
 
 
-It specifies the maximum time limit for the record to remain locked.
+Informa o tempo máximo que o registro permanecerá bloqueado.
 
-Another user (with a different identification) can lock the same record after that time limit has expired.
+Após ese período o registro pode ser bloqueado por outro usuário (outra identificação).
 
 **Exemplo**
 
@@ -2684,7 +2661,8 @@ Another user (with a different identification) can lock the same record after th
 
 #### parm.name=expression
 
-It specifies the search expression.
+Informa a expressão de pesquisa.
+
 
 **Exemplo**
 
@@ -2708,7 +2686,7 @@ It specifies the search expression.
 
 #### parm.name=file
 
-It specifies the name of the file that will be imported or exported.
+Informa o nome do arquivo que será importado ou exportado.
 
 
 **Exemplo**
@@ -2731,7 +2709,7 @@ It specifies the name of the file that will be imported or exported.
 
 #### parm.name=freqsum
 
-It specifies the value to be added to the sum when items are included in the frequency list.
+Informa o valor a ser somado na adição de novos itens na lista de freqüência.
 
 **Exemplo**
 
@@ -2754,7 +2732,8 @@ It specifies the value to be added to the sum when items are included in the fre
 
 #### parm.name=from
 
-It indicates is the first item to be accessed by the set of intructions within the <loop> element.
+Informa qual é o primeiro item a ser acessado pelo grupo do elemento `<loop>`.
+
 
 **Exemplo**
 
@@ -2778,7 +2757,8 @@ It indicates is the first item to be accessed by the set of intructions within t
 #### parm.name=fst
 
 
-It specifies the FST (Field Select Table) that is used for inverted file updating or for record keys extraction.
+Informa a FST (Field Select Table) que será usada para atualização do arquivo invertido ou para extração de chaves.
+
 
 
 **Exemplo**
@@ -2811,7 +2791,8 @@ It specifies the FST (Field Select Table) that is used for inverted file updatin
 
 #### parm.name=gizmo
 
-It specifies the conversion database.
+Informa a base de dados de parâmetros de conversão de conteúdo.
+
 
 **Exemplo**
 
@@ -2845,7 +2826,7 @@ It specifies the conversion database.
 
 #### parm.name=indexlist
 
-It specifies the list of indices for searching on the database.
+Informa a lista de índices para a pesquisa na base de dados.
 
 **Exemplo**
 
@@ -2876,7 +2857,7 @@ It specifies the list of indices for searching on the database.
 
 #### parm.name=key
 
-It specifies the record sorting key of the database.
+Chave para ordenação da base de dados.
 
 Exemplo
 
@@ -2909,7 +2890,7 @@ Exemplo
 
 #### parm.name=keyfield
 
-It specifies the field number used as database sorting key.
+Especifica o campo que é a chave de ordenação da base de dados.
 
 **Exemplo**
 
@@ -2939,7 +2920,7 @@ It specifies the field number used as database sorting key.
 
 #### parm.name=keylength
 
-It specifie the length of the record sorting key.
+Tamanho da chave de ordenação da base de dados.
 
 **Exemplo**
 
@@ -2971,7 +2952,7 @@ It specifie the length of the record sorting key.
 
 #### parm.name=keys
 
-It specifies the list of record keys for the text highlighting preferences.
+Informa a lista de chaves para o esquema de destaque de texto.
 
 **Exemplo**
 
@@ -3018,9 +2999,9 @@ It specifies the list of record keys for the text highlighting preferences.
 
 #### parm.name=keysdb
 
-It specifies the database that contains the record keys extracted, if used as parameter of the `<extract>` element.
+Base de dados que conterá as chaves que serão extraídas, se usado como parâmetro para o elemento `<extract>`.
 
-It specifies the database with the record keys sorted for inverted file loading, if used as parameter of the `<do task=invertedload>` element.
+Base de dados com as chaves ordenadas para carga do arquivo invertido se usado como parâmetro do elemento `<do task=invertedload>`.
 
 
 **Exemplo**
@@ -3056,7 +3037,7 @@ It specifies the database with the record keys sorted for inverted file loading,
 
 #### parm.name=lockid
 
-It specifies the record lock identifier.
+Identificador de bloqueio de registro.
 
 **Exemplo**
 
@@ -3094,9 +3075,10 @@ It specifies the record lock identifier.
 
 #### parm.name=maxlk
 
-It specifies the maximum number of record keys (per record) during record keys extraction via FST (Field Select Table).
+Número máximo de chaves (por registro) na extração via FST (Field Select Table).
 
-The default value is 1024.
+Na ausência deste parâmetro o IsisScript assume 1024.
+
 
 **Exemplo**
 
@@ -3126,10 +3108,7 @@ The default value is 1024.
 #### parm.name=mfn
 
 
-It specifies:
-- the record number of the record to be updated;
-- new record to be added to the database, if the value is New;
-- new record to be added to the database importing fields from the previous scope record, if the value is ***GetNew***;
+Número do registro a ser atualizado, ou New para indicar que será um novo registro da base de dados, ou GetNew para indicar que será um novo registro da base de dados contento os campos importados do registro do escopo anterior do IsisScript.
 
 **Exemplo**
 
@@ -3169,9 +3148,9 @@ It specifies:
 
 #### parm.name=posting
 
-If specifies the number of postings for each record key.
+Quantidade de postings para cada chave.
 
-Use All to specify "all postings".
+Use ***All*** para indicar "todos os postings"
 
 **Exemplo**
 
@@ -3207,7 +3186,8 @@ Use All to specify "all postings".
 
 #### parm.name=posttag
 
-It specifies the field number of the posting that shall be accessed within the record key range.
+Informa o número do campo do posting a ser acessaso no intervalo de chaves.
+
 
 **Exemplo**
 
@@ -3243,7 +3223,8 @@ It specifies the field number of the posting that shall be accessed within the r
 
 #### parm.name=prefix
 
-It specifies the prefix to be inserted within the text highlighting specifications, or the prefix to be used by the `<htmlpft>` element.
+Prefixo a ser inserido no esquema de destaque de texto, ou prefixo a ser usado pelo elemento `<htmlpft>`.
+
 
 **Exemplo**
 
@@ -3259,7 +3240,7 @@ It specifies the prefix to be inserted within the text highlighting specificatio
 
 #### parm.name=reset
 
-It specifies that the inverted file updating needs to keep set the "inverted file update is pending flag" into the master file record. It applies to databases with multi-inverted files.
+Permite que a atualização do arquivo invertido não altere a informação de registro do arquivo mestre com inversão pendente. Aplicável para bases de dados com múltiplos arquivo invertidos.
 
 **Exemplo**
 
@@ -3283,7 +3264,7 @@ It specifies that the inverted file updating needs to keep set the "inverted fil
 
 #### parm.name=reverse
 
-It indicates that the records produced by the task specified in the `<do>` element shall be accessed in reverse order.
+Informa que os registros resultado da tarefa especificada no elemento `<do>` serão acessados em ordem reversa.
 
 **Exemplo**
 
@@ -3309,7 +3290,8 @@ It indicates that the records produced by the task specified in the `<do>` eleme
 
 #### parm.name=sort
 
-It specifies the sort format for the `<do task="list">` task.
+Informa o formato de ordenação da lista interna do IsisScript.
+
 
 **Exemplo**
 
@@ -3339,7 +3321,8 @@ It specifies the sort format for the `<do task="list">` task.
 
 #### parm.name=stw
 
-It specifies the stop word table file used in the inverted file updating or in the record keys extraction.
+Informa o arquivo com a tabela de palavras que não devem ser incluídas no arquivo invertido (Stop Word Table) que será usada para atualização do arquivo invertido ou na extração de chaves.
+
 
 **Exemplo**
 
@@ -3369,7 +3352,8 @@ It specifies the stop word table file used in the inverted file updating or in t
 
 #### parm.name=suffix
 
-It specifies the suffix to be inserted within the text highlighting specifications, or the suffix to be used by the `<htmlpft>` element.
+Sufixo a ser inserido no esquema de destaque de texto, ou sufixo a ser usado pelo elemento `<htmlpft>`.
+
 
 **Exemplo**
 
@@ -3386,7 +3370,8 @@ It specifies the suffix to be inserted within the text highlighting specificatio
 
 #### parm.name=task
 
-It indicates the task type for the `<loop>` element. It has no effect if the attribute task of the element `<do>` is specified.
+Indica o tipo de tarefa que será utilizada pelo elemento `<loop>`. Tem efeito se não for especificado o atributo task do elemento `<do>`.
+
 
 **Exemplo**
 
@@ -3408,7 +3393,8 @@ It indicates the task type for the `<loop>` element. It has no effect if the att
 
 #### parm.name=to
 
-It indicates the last item to be accessed by the set of instructions within the `<loop>` element.
+Informa qual é o último item a ser acessado pelo grupo do elemento `<loop>`.
+
 
 **Exemplo**
 
@@ -3433,17 +3419,17 @@ It indicates the last item to be accessed by the set of instructions within the 
 
 #### parm.name=type
 
-It specifies the type of file for export or import.
+Informa o tipo de arquivo para exportação ou importação.
 
-Possible values are: ISO2709, HLine, RLine and VLine.
+Os tipos possíveis são: ISO2709, HLine, RLine e VLine.
 
-ISO2709 is an ISO (International Standards Organization) standard but it limits the field identification number to 3 digits.
+**ISO2709** é uma norma ISO (International Standards Organization) mas limita o número de identificação dos campos em 3 dígitos.
 
-HLine is more efficient, uses the H command of the `<proc>` element.
+**HLine** é o mais eficiente, utiliza o comando H do elemento `<proc>`.
 
-RLine is used only for importing purposes, where each line of a sequential file is stored as a record.
+**RLine** é usado somente para importação, onde cada linha de um arquivo sequencial corresponde a um registro.
 
-VLine is recommended where data modifications has to be done via a text editor.
+**VLine** é o recomendado para permitir modificação via editor de texto.
 
 
 **Exemplo**
@@ -3470,11 +3456,11 @@ VLine is recommended where data modifications has to be done via a text editor.
 
 #### parm.name=uctab
 
-It changes the uppercase conversion table of IsisScript for the `<section>`.
+Muda a tabela de conversão de caracteres para maiúscula do IsisScript durante a seção corrente.
 
-This uppercase conversion table specifies, for inverted file updating, for record keys extraction, and for the "mode" option of the formatting language, the correspondence from lowercase, uppercase and diacritical characters to uppercase non diacritical characters.
+Esta tabela informa, para a atualização do arquivo invertido, para a extração de chaves e para a opção mode da linguagem de formato, todos os caracteres correspondentes de minúsculo ou maiúsculo com acentuação para o correspondente maiúsculo sem acento.
 
-If the `<parm name=uctab>` option is not specified, IsisScript assumes its default ANSI table.
+Em uma seção sem o elemento `<parm name=uctab>` o IsisScript assume a tabela ANSI.
 
 **Exemplo**
 
@@ -3513,7 +3499,8 @@ If the `<parm name=uctab>` option is not specified, IsisScript assumes its defau
 ### parm.tag
 
 
-**Pode Ser Usado Em** `<field> <parm>`
+O atributo **tag** é usado para especificar o número do campo.
+
 
 **Sintaxe** `tag=...`
 
@@ -3559,7 +3546,7 @@ It specifies the parameter type.
 
 #### parm.type=check
 
-It specifies a FST (Field Select Table) syntax verification. It replaces the field specified by the tag attibute with the error code (5 digits), a space and the syntax error pointer; or 00000 if there is no error.
+Permite a verificação da sintaxe de uma FST (Field Select Table). Atualiza o campo especificado pelo atributo tag com o código de erro (5 dígitos), um espaço e o ponto em que foi detectado o erro de sintaxe, ou 00000 caso não haja erro de sintaxe.
 
 **Exemplo**
 
@@ -3578,13 +3565,14 @@ It specifies a FST (Field Select Table) syntax verification. It replaces the fie
 
 May Contais `<pft>`
 
-*May Be Used in* `<call> <cgitable> <define> <display> <export> <extract> <field> <file> <flow> <htmlpft> <label> <list> <parm> <pft> <proc> <return> <trace> <write>`
+**Pode Ser Usado Em** `<call> <cgitable> <define> <display> <export> <extract> <field> <file> <flow> <htmlpft> <label> <list> <parm> <pft> <proc> <return> <trace> <write>`
 
-*Attributes* `type`
+**Atributos** `type`
 
 **Sintaxe** `<pft> ... </pft>`
 
-It formats the current record.
+Formata o registro corrente.
+
 
 **Exemplo**
 
@@ -3605,11 +3593,12 @@ It formats the current record.
 
 *Options* `check reload`
 
-*May Be Used in* `<field> <file> <htmlpft> <list> <pft>`
+**Pode Ser Usado Em** `<field> <file> <htmlpft> <list> <pft>`
 
 **Sintaxe** `type=...`
 
-It specifies the action type for format execution.
+Tipo de ação a ser tomada para execução do formato.
+
 
 *Exemplo*
 
@@ -3635,7 +3624,7 @@ It specifies the action type for format execution.
 
 #### pft.type=check
 
-It allows the format syntax validation. It returns the error code (5 digits), a space character and the detected syntax error pointer, or 00000 if there is no error.
+Permite a verificação da sintaxe de um formato. Retorna o código de erro (5 dígitos), um espaço e o ponto em que foi detectado o erro de sintaxe, ou 00000 caso não haja erro de sintaxe.
 
 **Exemplo**
 
@@ -3655,7 +3644,8 @@ It allows the format syntax validation. It returns the error code (5 digits), a 
 
 #### pft.type=reload
 
-It specifies that the format must be recompiled each time this instruction is executed.
+Use esta opção para informar ao IsisScript que o formato terá que ser recompilado cada vez que esta instrução for executada.
+
 
 **Exemplo**
 
@@ -3680,7 +3670,7 @@ It specifies that the format must be recompiled each time this instruction is ex
 
 **Sintaxe** `<proc> ... </proc>`
 
-It modifies the contents of the current record.
+Modifica o conteúdo do registro corrente.
 
 **Exemplo**
 
@@ -3704,8 +3694,7 @@ It modifies the contents of the current record.
 **Sintaxe** `<return> ... </return>`
 
 
-
-It exits the current function.
+Sai da funcão corrente.
 
 
 **Exemplo**
@@ -3731,7 +3720,8 @@ It exits the current function.
 
 **See** `<field action=...>`
 
-It returns parameters to the caller function. It is functionally equivalent to the action attribute of the `<field>` element.
+Retorno de parâmetros para quem chamou a função. Tem a mesma funcionalidade do atributo action do elemento `<field>`.
+
 
 **Exemplo**
 
@@ -3755,7 +3745,8 @@ It returns parameters to the caller function. It is functionally equivalent to t
 
 **See** `<field split=...>`
 
-It returns parameters to the caller function. It is functionally equivalent to the split attribute of the `<field>` element.
+Retorno de parâmetros para quem chamou a função. Tem a mesma funcionalidade do atributo split da instrução `<field>`.
+
  
 
 **Exemplo**
@@ -3780,6 +3771,9 @@ It returns parameters to the caller function. It is functionally equivalent to t
 ### return.tag
 
 **See** `<field tag=...>`
+
+Retorno de parâmetros para quem chamou a função. Tem a mesma funcionalidade do atributo tag da instrução `<field>`.
+
 
 **Exemplo**
 
@@ -3810,9 +3804,9 @@ It returns parameters to the caller function. It is functionally equivalent to t
 **Sintaxe** `<section> ... </section>`
 
 
-The `<section>` element is used to begin a sequence of instructions.
+O elemento `<section>` é usado para iniciar uma seqüência de instruções que acessam campos comuns e utilizam-se de tabelas comuns.
 
-The name attribute may be used for identification purposes.
+O atributo name pode ser utilizado para identificação.
 
 
 **Exemplo**
@@ -3835,7 +3829,7 @@ The name attribute may be used for identification purposes.
 
 **Sintaxe** `name=...`
 
-The name attribute is optional and may be used it for identification purposes.
+O atributo **name** é opcional, quando usado serve para identificação da seção.
 
 **Exemplo**
 
@@ -3859,7 +3853,8 @@ The name attribute is optional and may be used it for identification purposes.
 **Sintaxe** `<trace> ... </trace>`
 
 
-It activates or deactivates the display of the instruction that is being executed. The possible options are normal, line by line, or table, respectively: On, BR, or Table.
+Ativa ou destiva a mostra da instrução que está sendo executada. Os modos possíveis são normal, linha a linha ou tabela, respectivamente: On, BR e Table.
+
 
 **Exemplo**
 
@@ -3879,7 +3874,7 @@ It activates or deactivates the display of the instruction that is being execute
 
 **Sintaxe** `<update> ... </update>`
 
-It starts the set of instructions to modify or add a record.
+Inicia um bloco de instruções para modificação ou adição de um registro.
 
 **Exemplo**
 
@@ -3909,15 +3904,11 @@ It starts the set of instructions to modify or add a record.
 
 **Sintaxe** `<write> ... </write>`
 
-This element stores the modified record.
+Elemento que grava a modificação do registro.
 
-If the `<parm name=mfn>` element value is New, then a new record is added, otherwise the mfn passed as argument is updated.
+Se o elemento `<parm name=mfn>` indicar New ou GetNew então adiciona um novo registro, senão atualiza o mfn passado como argumento.
 
-Possible values for the argument of the `<write>` element:
-Unlock - it unlocks the record after it is stored
-Lock - record remains locked after it is stored
-NoUnlock - the record remains locked after it is stored and the lock information is not changed
-Delete - the record is deleted
+Se o argumento do elemento `<write>` for Unlock o registro será desbloqueado após ser gravado, se for Lock o registro será gravado e bloqueado, se for NoUnlock o registro permanecerá bloqueado e a informação de bloqueio permanecerá a mesma, se for Delete o registro será deletado.
 
 
 **Exemplo**

@@ -5,8 +5,8 @@
     <description>{&quot;en&quot;=&gt;&quot;This document aims at providing all relevant background information and instructions on how to use the integrated library and documentation management system &apos;ABCD&apos;. Both the basic operations and the advanced management of the software are discussed, as are useful and necessary topics concerning the ISIS-software on which ABCD is based. In this new edition the new features of version 2.0 are added - the use of different flavors of CISIS, of Unicode,and the digital library capabilities as well as some additional modules (ODDS, LDAP, DSpaceBridge) and utilities (UTF8-conversion, loanobjects creation...) .&quot;, &quot;pt&quot;=&gt;&quot;Este documento tem como objetivo fornecer todas as informações e instruções relevantes sobre como usar a biblioteca integrada e o sistema de gerenciamento de documentação ‘ABCD’. Tanto as operações básicas como o gerenciamento avançado do software são discutidos, assim como os tópicos úteis e necessários relativos ao software ISIS no qual o ABCD se baseia. Nesta nova edição, as novas características da versão 2.0 são adicionadas- o uso de diferentes sabores de CISIS, de Unicode e as capacidades da biblioteca digital, bem como alguns módulos adicionais (ODDS, LDAP, DSpaceBridge) e utilitários (conversão UTF8, criação de objetos de empréstimo…) .&quot;}</description>
     <link>http://localhost:9898/</link>
     <atom:link href="http://localhost:9898/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 19 Oct 2021 08:40:36 -0300</pubDate>
-    <lastBuildDate>Tue, 19 Oct 2021 08:40:36 -0300</lastBuildDate>
+    <pubDate>Tue, 19 Oct 2021 15:10:27 -0300</pubDate>
+    <lastBuildDate>Tue, 19 Oct 2021 15:10:27 -0300</lastBuildDate>
     <generator>Jekyll v3.9.0</generator>
     
   </channel>

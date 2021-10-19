@@ -214,8 +214,8 @@
                       <li class="collapse show" id="">
                         
                           
-                            <a class="td-sidebar-link td-sidebar-link__page " id="m-home-tecnologia-abcd-cisis-utilitários" href="/pt/abcd-technology/cisis-utils">CISIS Utilitários</a>
-                            <a class="td-sidebar-link td-sidebar-link__page " id="m-home-tecnologia-abcd-cisis-linguagem-de-formato" href="/pt/abcd-technology/cisis-formatting">CISIS Linguagem de formato</a>
+                            <a class="td-sidebar-link td-sidebar-link__page " id="m-home-tecnologia-abcd-utilitários-cisis" href="/pt/abcd-technology/cisis-utils">Utilitários CISIS</a>
+                            <a class="td-sidebar-link td-sidebar-link__page " id="m-home-tecnologia-abcd-formato-cisis" href="/pt/abcd-technology/cisis-formatting">Formato CISIS</a>
                             <a class="td-sidebar-link td-sidebar-link__page " id="m-home-tecnologia-abcd-isis-script" href="/pt/abcd-technology/isis-script">ISIS Script</a>
                         
                       </li>
@@ -396,10 +396,31 @@
 
 	      <h1 id="linguagem-isisscript">Linguagem IsisScript</h1>
 
+<p>IsisScripts são armazenados como arquivos com a extensão .xis.</p>
+
+<p>ABCD usa muitos scripts, a maioria deles na pasta <strong>central/dataentry/wxis</strong>.
+O iAH faz amplo uso de tais scripts.
+A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags <code class="language-plaintext highlighter-rouge">&lt;pft&gt;</code> e <code class="language-plaintext highlighter-rouge">&lt;/pft&gt;</code> pode ser colocado um formato de impressão e esse formato pode ser apresentado, colocando-o entre as tags <code class="language-plaintext highlighter-rouge">&lt;display&gt;</code> e <code class="language-plaintext highlighter-rouge">&lt;/display&gt;</code>.</p>
+
+<p>Todos os parâmetros WXIS podem ser definidos dentro das tags <code class="language-plaintext highlighter-rouge">&lt;parm&gt;</code> e <code class="language-plaintext highlighter-rouge">&lt;/parm&gt;</code> e campos podem ser definidos com valores, por exemplo <code class="language-plaintext highlighter-rouge">&lt;field action=”replace” tag=”6000″&gt; valor_do_campo_6000 &lt;/field&gt;</code> vai colocar a string “Valor_do_campo_6000” no campo de tag 6000 (tais valores elevados de tag, na verdade todas as tags  acima de 999, são utilizadas em geral em aplicativos ISIS para valores temporários internos que na realidade não são armazenados em registros ISIS, mas como “registros virtuais”.</p>
+
+<p>IsisScript permite uma manipulação mais flexível de elementos de dados, provenientes de bases de dados ISIS, em páginas web. Em combinação com o PHP, que é uma linguagem para criação de páginas web, resultados sofisticados são possíveis e isto certamente contribui para a funcionalidade geral avançada do ABCD.</p>
+
+<h1 id="como-usar-esta-linguagem">Como usar esta linguagem</h1>
+
+<p>Toda a liguagem está nesta página contendo todos os comandos, parâmetros e opções disponíveis na linguagem IsisScript.</p>
+
+<p>Os comandos estão organizados no nível hierárquico 2 e seus elementos seguem a hierarquia até o nível 4.</p>
+
+<p>Cada comando, parâmetro ou opção conterá uma breve descrição de seu propósito. Informação adicional como atributos, sintaxe, elementos contidos e onde se aplica também são fornecidos, completando um exemplo de código para ilustrar o comando, opção ou parâmetro.</p>
+
+<p>Os únicos pré-requisitos ao usuário são o conhecimento de linguagem de formato e o modelo e estrutura de uma base CDS/ISIS padrão.</p>
+
 <h2 class="no_toc no_toc text-delta" id="conteúdo">Conteúdo</h2>
 
 <ol id="markdown-toc">
   <li><a href="#linguagem-isisscript" id="markdown-toc-linguagem-isisscript">Linguagem IsisScript</a></li>
+  <li><a href="#como-usar-esta-linguagem" id="markdown-toc-como-usar-esta-linguagem">Como usar esta linguagem</a></li>
   <li><a href="#referência-isisscript" id="markdown-toc-referência-isisscript">Referência IsisScript</a>    <ol>
       <li><a href="#-isisscript-" id="markdown-toc--isisscript-">&lt; IsisScript &gt;</a>        <ol>
           <li><a href="#isisscriptname" id="markdown-toc-isisscriptname">IsisScript.name</a></li>
@@ -439,10 +460,9 @@
               <li><a href="#fieldactionocc" id="markdown-toc-fieldactionocc">field.action=occ</a></li>
               <li><a href="#fieldactionreplace" id="markdown-toc-fieldactionreplace">field.action=replace</a></li>
               <li><a href="#fieldactionstatusdb" id="markdown-toc-fieldactionstatusdb">field.action=statusdb</a></li>
-              <li><a href="#fieldactionstatusfile" id="markdown-toc-fieldactionstatusfile">field.action=statusfile</a></li>
             </ol>
           </li>
-          <li><a href="#fieldactionstatusfile-1" id="markdown-toc-fieldactionstatusfile-1">field.action=statusfile</a></li>
+          <li><a href="#fieldactionstatusfile" id="markdown-toc-fieldactionstatusfile">field.action=statusfile</a></li>
           <li><a href="#fieldfrom" id="markdown-toc-fieldfrom">field.from</a></li>
           <li><a href="#fieldprevious" id="markdown-toc-fieldprevious">field.previous</a>            <ol>
               <li><a href="#fieldpreviousadd" id="markdown-toc-fieldpreviousadd">field.previous=add</a></li>
@@ -589,23 +609,6 @@
       <li><a href="#-write-" id="markdown-toc--write-">&lt; write &gt;</a></li>
     </ol>
   </li>
-</ol>
-
-<hr />
-
-<p>IsisScripts são armazenados como arquivos com a extensão .xis. 
-ABCD usa muitos scripts, a maioria deles na pasta central/dataentry/wxis.
-O iAH faz amplo uso de tais scripts.
-A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags <code class="language-plaintext highlighter-rouge">&lt;pft&gt;</code> e <code class="language-plaintext highlighter-rouge">&lt;/pft&gt;</code> pode ser colocado um formato de impressão e esse formato pode ser apresentado, colocando-o entre as tags <code class="language-plaintext highlighter-rouge">&lt;display&gt;</code> e <code class="language-plaintext highlighter-rouge">&lt;/display&gt;</code>.</p>
-
-<p>Todos os parâmetros WXIS podem ser definidos dentro das tags <code class="language-plaintext highlighter-rouge">&lt;parm&gt;</code> e <code class="language-plaintext highlighter-rouge">&lt;/parm&gt;</code> e campos podem ser definidos com valores, por exemplo <code class="language-plaintext highlighter-rouge">&lt;field action=”replace” tag=”6000″&gt; valor_do_campo_6000 &lt;/field&gt;</code> vai colocar a string “Valor_do_campo_6000” no campo de tag 6000 (tais valores elevados de tag, na verdade todas as tags  acima de 999, são utilizadas em geral em aplicativos ISIS para valores temporários internos que na realidade não são armazenados em registros ISIS, mas como “registros virtuais”.</p>
-
-<p>IsisScript permite uma manipulação mais flexível de elementos de dados, provenientes de bases de dados ISIS, em páginas web. Em combinação com o PHP, que é uma linguagem para criação de páginas web, resultados sofisticados são possíveis e isto certamente contribui para a funcionalidade geral avançada do ABCD.</p>
-
-<h2 class="no_toc no_toc text-delta" id="conteúdo-1">Conteúdo</h2>
-
-<ol>
-  <li>TOC</li>
 </ol>
 
 <hr />
@@ -844,7 +847,7 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <h3 id="dotask">do.task</h3>
 
-<p><strong>Options</strong> <code class="language-plaintext highlighter-rouge">fullinvertion import invertedload keyrange list mastersort mfnrange search update</code></p>
+<p><strong>Opções</strong> <code class="language-plaintext highlighter-rouge">fullinvertion import invertedload keyrange list mastersort mfnrange search update</code></p>
 
 <p><strong>Pode Ser Usado Em</strong> <code class="language-plaintext highlighter-rouge">&lt;do&gt;</code></p>
 
@@ -1288,7 +1291,7 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <h3 id="fieldaction">field.action</h3>
 
-<p><strong>Options</strong> add cgi define delete export hl import occ replace statusdb statusfile</p>
+<p><strong>Opções</strong> add cgi define delete export hl import occ replace statusdb statusfile</p>
 
 <p><strong>Pode Ser Usado Em</strong> <code class="language-plaintext highlighter-rouge">&lt;field&gt; &lt;file&gt; &lt;flow&gt; &lt;function&gt; &lt;htmlpft&gt; &lt;list&gt; &lt;return&gt;</code></p>
 
@@ -1495,27 +1498,7 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 </code></pre>
 
-<hr />
-
-<h4 id="fieldactionstatusfile">field.action=statusfile</h4>
-
-<p>It replaces the content of the field specified by the tag attribute with the status of the file indicated by the argument of the <code class="language-plaintext highlighter-rouge">&lt;field&gt;</code> element.</p>
-
-<p>If the file exists, the field contains the s subfield (^s) with the character “e”, otherwise the field is absent.</p>
-
-<p><strong>Exemplo</strong></p>
-
-<pre><code class="language-language">...
-  &lt;field action=statusfile tag=1091&gt;C:\AUTOEXEC.BAT&lt;/field&gt;
-  &lt;flow action=jump&gt;
-     &lt;pft&gt;if v1091^s : 'e' then 'LABEL_OK' fi&lt;/pft&gt;
-  &lt;/flow&gt;
-...
-</code></pre>
-
-<hr />
-
-<h3 id="fieldactionstatusfile-1">field.action=statusfile</h3>
+<h3 id="fieldactionstatusfile">field.action=statusfile</h3>
 
 <p>Substitui o conteúdo do campo especificado pelo atributo <strong>tag</strong> com o estado do arquivo informado pelo argumento do elemento <code class="language-plaintext highlighter-rouge">&lt;field&gt;</code>.</p>
 
@@ -1560,7 +1543,7 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <h3 id="fieldprevious">field.previous</h3>
 
-<p><strong>Options</strong> <code class="language-plaintext highlighter-rouge">add</code> <code class="language-plaintext highlighter-rouge">delete</code></p>
+<p><strong>Opções</strong> <code class="language-plaintext highlighter-rouge">add</code> <code class="language-plaintext highlighter-rouge">delete</code></p>
 
 <p><strong>Pode Ser Usado Em</strong> <code class="language-plaintext highlighter-rouge">&lt;field&gt;</code></p>
 
@@ -1608,7 +1591,7 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <h3 id="fieldsplit">field.split</h3>
 
-<p><strong>Options</strong> <code class="language-plaintext highlighter-rouge">flddir</code> <code class="language-plaintext highlighter-rouge">occ</code></p>
+<p><strong>Opções</strong> <code class="language-plaintext highlighter-rouge">flddir</code> <code class="language-plaintext highlighter-rouge">occ</code></p>
 
 <p><strong>Pode Ser Usado Em</strong> <code class="language-plaintext highlighter-rouge">&lt;field&gt;</code></p>
 
@@ -1662,7 +1645,7 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <h3 id="fieldtag">field.tag</h3>
 
-<p><strong>Options</strong> <code class="language-plaintext highlighter-rouge">list</code></p>
+<p><strong>Opções</strong> <code class="language-plaintext highlighter-rouge">list</code></p>
 
 <p><strong>Pode Ser Usado Em</strong> <code class="language-plaintext highlighter-rouge">&lt;field&gt; &lt;parm&gt;</code></p>
 
@@ -1698,7 +1681,7 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <h3 id="fieldtype">field.type</h3>
 
-<p><strong>Options</strong> <code class="language-plaintext highlighter-rouge">flag</code></p>
+<p><strong>Opções</strong> <code class="language-plaintext highlighter-rouge">flag</code></p>
 
 <p><strong>Pode Ser Usado Em</strong> <code class="language-plaintext highlighter-rouge">&lt;field&gt; &lt;file&gt; &lt;htmlpft&gt; &lt;list&gt; &lt;pft&gt;</code></p>
 
@@ -1759,7 +1742,7 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <h3 id="fileaction">file.action</h3>
 
-<p><strong>Options</strong> <code class="language-plaintext highlighter-rouge">append close create delete unlock</code></p>
+<p><strong>Opções</strong> <code class="language-plaintext highlighter-rouge">append close create delete unlock</code></p>
 
 <p><strong>Pode Ser Usado Em</strong> <code class="language-plaintext highlighter-rouge">&lt;field&gt; &lt;file&gt; &lt;flow&gt; &lt;function&gt; &lt;htmlpft&gt; &lt;list&gt; &lt;return&gt;</code></p>
 
@@ -1850,7 +1833,7 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <h3 id="filetype">file.type</h3>
 
-<p><strong>Options</strong> <code class="language-plaintext highlighter-rouge">database file inverted master output tempfile</code></p>
+<p><strong>Opções</strong> <code class="language-plaintext highlighter-rouge">database file inverted master output tempfile</code></p>
 
 <p><strong>Pode Ser Usado Em</strong> <code class="language-plaintext highlighter-rouge">&lt;field&gt; &lt;file&gt; &lt;htmlpft&gt; &lt;list&gt; &lt;pft&gt;</code></p>
 
@@ -1990,7 +1973,7 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <h3 id="flowaction">flow.action</h3>
 
-<p><strong>Options</strong> <code class="language-plaintext highlighter-rouge">exit jump skip</code></p>
+<p><strong>Opções</strong> <code class="language-plaintext highlighter-rouge">exit jump skip</code></p>
 
 <p><strong>Pode Ser Usado Em</strong> <code class="language-plaintext highlighter-rouge">&lt;field&gt; &lt;field&gt; &lt;flow&gt; &lt;function&gt; &lt;htmlpft&gt; &lt;list&gt; &lt;return&gt;</code></p>
 
@@ -2271,7 +2254,7 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <h3 id="htmlpftaction">htmlpft.action</h3>
 
-<p><strong>Options</strong> <code class="language-plaintext highlighter-rouge">convert</code></p>
+<p><strong>Opções</strong> <code class="language-plaintext highlighter-rouge">convert</code></p>
 
 <p><strong>Pode Ser Usado Em</strong> <code class="language-plaintext highlighter-rouge">&lt;field&gt; &lt;file&gt; &lt;flow&gt; &lt;function&gt; &lt;htmlpft&gt; &lt;list&gt; &lt;return&gt;</code></p>
 
@@ -2363,7 +2346,7 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <h3 id="listaction">list.action</h3>
 
-<p><strong>Options</strong> <code class="language-plaintext highlighter-rouge">delete load</code></p>
+<p><strong>Opções</strong> <code class="language-plaintext highlighter-rouge">delete load</code></p>
 
 <p><strong>Pode Ser Usado Em</strong> <code class="language-plaintext highlighter-rouge">&lt;field&gt; &lt;file&gt; &lt;flow&gt; &lt;function&gt; &lt;htmlpft&gt; &lt;list&gt; &lt;return&gt;</code></p>
 
@@ -2382,7 +2365,7 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <h3 id="listtype">list.type</h3>
 
-<p><strong>Options</strong> <code class="language-plaintext highlighter-rouge">freq list sort</code></p>
+<p><strong>Opções</strong> <code class="language-plaintext highlighter-rouge">freq list sort</code></p>
 
 <p><strong>Pode Ser Usado Em</strong> <code class="language-plaintext highlighter-rouge">&lt;field&gt; &lt;file&gt; &lt;htmlpft&gt; &lt;list&gt; &lt;pft&gt;</code></p>
 
@@ -2496,7 +2479,7 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <h3 id="parmname">parm.name</h3>
 
-<p><strong>Options</strong> <code class="language-plaintext highlighter-rouge">actab buffersize cipar count db decod delimiter expire expression file freqsum from fst gizmo indexlist key keyfield keylength keys keysdb lockid maxlk mfn posting posttag prefix reset reverse sort stw suffix task to type uctab</code></p>
+<p><strong>Opções</strong> <code class="language-plaintext highlighter-rouge">actab buffersize cipar count db decod delimiter expire expression file freqsum from fst gizmo indexlist key keyfield keylength keys keysdb lockid maxlk mfn posting posttag prefix reset reverse sort stw suffix task to type uctab</code></p>
 
 <p><strong>Pode Ser Usado Em</strong> <code class="language-plaintext highlighter-rouge">&lt;call&gt; &lt;function&gt; &lt;IsisScript&gt; &lt;parm&gt; &lt;section&gt;</code></p>
 
@@ -2641,7 +2624,7 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <h4 id="parmnamedb">parm.name=db</h4>
 
-<p>It specifies the database to be used by any of the following tasks:</p>
+<p>Informa a base de dados a ser acessada nas seguintes tarefas:</p>
 
 <ul>
   <li>task=mfnrange</li>
@@ -2673,7 +2656,7 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <h4 id="parmnamedecod">parm.name=decod</h4>
 
-<p>It specifies the expansion database for decoded fields.</p>
+<p>Informa a base de dados de parâmetros de expansão de campos decodificados.</p>
 
 <p><strong>Exemplo</strong></p>
 
@@ -2696,7 +2679,7 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 <table>
   <tbody>
     <tr>
-      <td>It indicates the field separator when importing records with the option RLine. The default parameter is the character</td>
+      <td>Informa o separador de campos para importação de registros na opção RLine. Na ausência deste parâmetro é assumido o caracter</td>
       <td>(pipe).</td>
     </tr>
   </tbody>
@@ -2720,9 +2703,9 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <h4 id="parmnameexpire">parm.name=expire</h4>
 
-<p>It specifies the maximum time limit for the record to remain locked.</p>
+<p>Informa o tempo máximo que o registro permanecerá bloqueado.</p>
 
-<p>Another user (with a different identification) can lock the same record after that time limit has expired.</p>
+<p>Após ese período o registro pode ser bloqueado por outro usuário (outra identificação).</p>
 
 <p><strong>Exemplo</strong></p>
 
@@ -2756,7 +2739,7 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <h4 id="parmnameexpression">parm.name=expression</h4>
 
-<p>It specifies the search expression.</p>
+<p>Informa a expressão de pesquisa.</p>
 
 <p><strong>Exemplo</strong></p>
 
@@ -2778,7 +2761,7 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <h4 id="parmnamefile">parm.name=file</h4>
 
-<p>It specifies the name of the file that will be imported or exported.</p>
+<p>Informa o nome do arquivo que será importado ou exportado.</p>
 
 <p><strong>Exemplo</strong></p>
 
@@ -2799,7 +2782,7 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <h4 id="parmnamefreqsum">parm.name=freqsum</h4>
 
-<p>It specifies the value to be added to the sum when items are included in the frequency list.</p>
+<p>Informa o valor a ser somado na adição de novos itens na lista de freqüência.</p>
 
 <p><strong>Exemplo</strong></p>
 
@@ -2820,7 +2803,7 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <h4 id="parmnamefrom">parm.name=from</h4>
 
-<p>It indicates is the first item to be accessed by the set of intructions within the <loop> element.</loop></p>
+<p>Informa qual é o primeiro item a ser acessado pelo grupo do elemento <code class="language-plaintext highlighter-rouge">&lt;loop&gt;</code>.</p>
 
 <p><strong>Exemplo</strong></p>
 
@@ -2841,7 +2824,7 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <h4 id="parmnamefst">parm.name=fst</h4>
 
-<p>It specifies the FST (Field Select Table) that is used for inverted file updating or for record keys extraction.</p>
+<p>Informa a FST (Field Select Table) que será usada para atualização do arquivo invertido ou para extração de chaves.</p>
 
 <p><strong>Exemplo</strong></p>
 
@@ -2872,7 +2855,7 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <h4 id="parmnamegizmo">parm.name=gizmo</h4>
 
-<p>It specifies the conversion database.</p>
+<p>Informa a base de dados de parâmetros de conversão de conteúdo.</p>
 
 <p><strong>Exemplo</strong></p>
 
@@ -2903,7 +2886,7 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <h4 id="parmnameindexlist">parm.name=indexlist</h4>
 
-<p>It specifies the list of indices for searching on the database.</p>
+<p>Informa a lista de índices para a pesquisa na base de dados.</p>
 
 <p><strong>Exemplo</strong></p>
 
@@ -2932,7 +2915,7 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <h4 id="parmnamekey">parm.name=key</h4>
 
-<p>It specifies the record sorting key of the database.</p>
+<p>Chave para ordenação da base de dados.</p>
 
 <p>Exemplo</p>
 
@@ -2962,7 +2945,7 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <h4 id="parmnamekeyfield">parm.name=keyfield</h4>
 
-<p>It specifies the field number used as database sorting key.</p>
+<p>Especifica o campo que é a chave de ordenação da base de dados.</p>
 
 <p><strong>Exemplo</strong></p>
 
@@ -2991,7 +2974,7 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <h4 id="parmnamekeylength">parm.name=keylength</h4>
 
-<p>It specifie the length of the record sorting key.</p>
+<p>Tamanho da chave de ordenação da base de dados.</p>
 
 <p><strong>Exemplo</strong></p>
 
@@ -3021,7 +3004,7 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <h4 id="parmnamekeys">parm.name=keys</h4>
 
-<p>It specifies the list of record keys for the text highlighting preferences.</p>
+<p>Informa a lista de chaves para o esquema de destaque de texto.</p>
 
 <p><strong>Exemplo</strong></p>
 
@@ -3065,9 +3048,9 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <h4 id="parmnamekeysdb">parm.name=keysdb</h4>
 
-<p>It specifies the database that contains the record keys extracted, if used as parameter of the <code class="language-plaintext highlighter-rouge">&lt;extract&gt;</code> element.</p>
+<p>Base de dados que conterá as chaves que serão extraídas, se usado como parâmetro para o elemento <code class="language-plaintext highlighter-rouge">&lt;extract&gt;</code>.</p>
 
-<p>It specifies the database with the record keys sorted for inverted file loading, if used as parameter of the <code class="language-plaintext highlighter-rouge">&lt;do task=invertedload&gt;</code> element.</p>
+<p>Base de dados com as chaves ordenadas para carga do arquivo invertido se usado como parâmetro do elemento <code class="language-plaintext highlighter-rouge">&lt;do task=invertedload&gt;</code>.</p>
 
 <p><strong>Exemplo</strong></p>
 
@@ -3100,7 +3083,7 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <h4 id="parmnamelockid">parm.name=lockid</h4>
 
-<p>It specifies the record lock identifier.</p>
+<p>Identificador de bloqueio de registro.</p>
 
 <p><strong>Exemplo</strong></p>
 
@@ -3137,9 +3120,9 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <h4 id="parmnamemaxlk">parm.name=maxlk</h4>
 
-<p>It specifies the maximum number of record keys (per record) during record keys extraction via FST (Field Select Table).</p>
+<p>Número máximo de chaves (por registro) na extração via FST (Field Select Table).</p>
 
-<p>The default value is 1024.</p>
+<p>Na ausência deste parâmetro o IsisScript assume 1024.</p>
 
 <p><strong>Exemplo</strong></p>
 
@@ -3166,12 +3149,7 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <h4 id="parmnamemfn">parm.name=mfn</h4>
 
-<p>It specifies:</p>
-<ul>
-  <li>the record number of the record to be updated;</li>
-  <li>new record to be added to the database, if the value is New;</li>
-  <li>new record to be added to the database importing fields from the previous scope record, if the value is <strong><em>GetNew</em></strong>;</li>
-</ul>
+<p>Número do registro a ser atualizado, ou New para indicar que será um novo registro da base de dados, ou GetNew para indicar que será um novo registro da base de dados contento os campos importados do registro do escopo anterior do IsisScript.</p>
 
 <p><strong>Exemplo</strong></p>
 
@@ -3208,9 +3186,9 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <h4 id="parmnameposting">parm.name=posting</h4>
 
-<p>If specifies the number of postings for each record key.</p>
+<p>Quantidade de postings para cada chave.</p>
 
-<p>Use All to specify “all postings”.</p>
+<p>Use <strong><em>All</em></strong> para indicar “todos os postings”</p>
 
 <p><strong>Exemplo</strong></p>
 
@@ -3244,7 +3222,7 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <h4 id="parmnameposttag">parm.name=posttag</h4>
 
-<p>It specifies the field number of the posting that shall be accessed within the record key range.</p>
+<p>Informa o número do campo do posting a ser acessaso no intervalo de chaves.</p>
 
 <p><strong>Exemplo</strong></p>
 
@@ -3278,7 +3256,7 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <h4 id="parmnameprefix">parm.name=prefix</h4>
 
-<p>It specifies the prefix to be inserted within the text highlighting specifications, or the prefix to be used by the <code class="language-plaintext highlighter-rouge">&lt;htmlpft&gt;</code> element.</p>
+<p>Prefixo a ser inserido no esquema de destaque de texto, ou prefixo a ser usado pelo elemento <code class="language-plaintext highlighter-rouge">&lt;htmlpft&gt;</code>.</p>
 
 <p><strong>Exemplo</strong></p>
 
@@ -3293,7 +3271,7 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <h4 id="parmnamereset">parm.name=reset</h4>
 
-<p>It specifies that the inverted file updating needs to keep set the “inverted file update is pending flag” into the master file record. It applies to databases with multi-inverted files.</p>
+<p>Permite que a atualização do arquivo invertido não altere a informação de registro do arquivo mestre com inversão pendente. Aplicável para bases de dados com múltiplos arquivo invertidos.</p>
 
 <p><strong>Exemplo</strong></p>
 
@@ -3315,7 +3293,7 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <h4 id="parmnamereverse">parm.name=reverse</h4>
 
-<p>It indicates that the records produced by the task specified in the <code class="language-plaintext highlighter-rouge">&lt;do&gt;</code> element shall be accessed in reverse order.</p>
+<p>Informa que os registros resultado da tarefa especificada no elemento <code class="language-plaintext highlighter-rouge">&lt;do&gt;</code> serão acessados em ordem reversa.</p>
 
 <p><strong>Exemplo</strong></p>
 
@@ -3338,7 +3316,7 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <h4 id="parmnamesort">parm.name=sort</h4>
 
-<p>It specifies the sort format for the <code class="language-plaintext highlighter-rouge">&lt;do task="list"&gt;</code> task.</p>
+<p>Informa o formato de ordenação da lista interna do IsisScript.</p>
 
 <p><strong>Exemplo</strong></p>
 
@@ -3367,7 +3345,7 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <h4 id="parmnamestw">parm.name=stw</h4>
 
-<p>It specifies the stop word table file used in the inverted file updating or in the record keys extraction.</p>
+<p>Informa o arquivo com a tabela de palavras que não devem ser incluídas no arquivo invertido (Stop Word Table) que será usada para atualização do arquivo invertido ou na extração de chaves.</p>
 
 <p><strong>Exemplo</strong></p>
 
@@ -3394,7 +3372,7 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <h4 id="parmnamesuffix">parm.name=suffix</h4>
 
-<p>It specifies the suffix to be inserted within the text highlighting specifications, or the suffix to be used by the <code class="language-plaintext highlighter-rouge">&lt;htmlpft&gt;</code> element.</p>
+<p>Sufixo a ser inserido no esquema de destaque de texto, ou sufixo a ser usado pelo elemento <code class="language-plaintext highlighter-rouge">&lt;htmlpft&gt;</code>.</p>
 
 <p><strong>Exemplo</strong></p>
 
@@ -3409,7 +3387,7 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <h4 id="parmnametask">parm.name=task</h4>
 
-<p>It indicates the task type for the <code class="language-plaintext highlighter-rouge">&lt;loop&gt;</code> element. It has no effect if the attribute task of the element <code class="language-plaintext highlighter-rouge">&lt;do&gt;</code> is specified.</p>
+<p>Indica o tipo de tarefa que será utilizada pelo elemento <code class="language-plaintext highlighter-rouge">&lt;loop&gt;</code>. Tem efeito se não for especificado o atributo task do elemento <code class="language-plaintext highlighter-rouge">&lt;do&gt;</code>.</p>
 
 <p><strong>Exemplo</strong></p>
 
@@ -3428,7 +3406,7 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <h4 id="parmnameto">parm.name=to</h4>
 
-<p>It indicates the last item to be accessed by the set of instructions within the <code class="language-plaintext highlighter-rouge">&lt;loop&gt;</code> element.</p>
+<p>Informa qual é o último item a ser acessado pelo grupo do elemento <code class="language-plaintext highlighter-rouge">&lt;loop&gt;</code>.</p>
 
 <p><strong>Exemplo</strong></p>
 
@@ -3451,17 +3429,17 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <h4 id="parmnametype">parm.name=type</h4>
 
-<p>It specifies the type of file for export or import.</p>
+<p>Informa o tipo de arquivo para exportação ou importação.</p>
 
-<p>Possible values are: ISO2709, HLine, RLine and VLine.</p>
+<p>Os tipos possíveis são: ISO2709, HLine, RLine e VLine.</p>
 
-<p>ISO2709 is an ISO (International Standards Organization) standard but it limits the field identification number to 3 digits.</p>
+<p><strong>ISO2709</strong> é uma norma ISO (International Standards Organization) mas limita o número de identificação dos campos em 3 dígitos.</p>
 
-<p>HLine is more efficient, uses the H command of the <code class="language-plaintext highlighter-rouge">&lt;proc&gt;</code> element.</p>
+<p><strong>HLine</strong> é o mais eficiente, utiliza o comando H do elemento <code class="language-plaintext highlighter-rouge">&lt;proc&gt;</code>.</p>
 
-<p>RLine is used only for importing purposes, where each line of a sequential file is stored as a record.</p>
+<p><strong>RLine</strong> é usado somente para importação, onde cada linha de um arquivo sequencial corresponde a um registro.</p>
 
-<p>VLine is recommended where data modifications has to be done via a text editor.</p>
+<p><strong>VLine</strong> é o recomendado para permitir modificação via editor de texto.</p>
 
 <p><strong>Exemplo</strong></p>
 
@@ -3484,11 +3462,11 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <h4 id="parmnameuctab">parm.name=uctab</h4>
 
-<p>It changes the uppercase conversion table of IsisScript for the <code class="language-plaintext highlighter-rouge">&lt;section&gt;</code>.</p>
+<p>Muda a tabela de conversão de caracteres para maiúscula do IsisScript durante a seção corrente.</p>
 
-<p>This uppercase conversion table specifies, for inverted file updating, for record keys extraction, and for the “mode” option of the formatting language, the correspondence from lowercase, uppercase and diacritical characters to uppercase non diacritical characters.</p>
+<p>Esta tabela informa, para a atualização do arquivo invertido, para a extração de chaves e para a opção mode da linguagem de formato, todos os caracteres correspondentes de minúsculo ou maiúsculo com acentuação para o correspondente maiúsculo sem acento.</p>
 
-<p>If the <code class="language-plaintext highlighter-rouge">&lt;parm name=uctab&gt;</code> option is not specified, IsisScript assumes its default ANSI table.</p>
+<p>Em uma seção sem o elemento <code class="language-plaintext highlighter-rouge">&lt;parm name=uctab&gt;</code> o IsisScript assume a tabela ANSI.</p>
 
 <p><strong>Exemplo</strong></p>
 
@@ -3524,7 +3502,7 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <h3 id="parmtag">parm.tag</h3>
 
-<p><strong>Pode Ser Usado Em</strong> <code class="language-plaintext highlighter-rouge">&lt;field&gt; &lt;parm&gt;</code></p>
+<p>O atributo <strong>tag</strong> é usado para especificar o número do campo.</p>
 
 <p><strong>Sintaxe</strong> <code class="language-plaintext highlighter-rouge">tag=...</code></p>
 
@@ -3564,7 +3542,7 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <h4 id="parmtypecheck">parm.type=check</h4>
 
-<p>It specifies a FST (Field Select Table) syntax verification. It replaces the field specified by the tag attibute with the error code (5 digits), a space and the syntax error pointer; or 00000 if there is no error.</p>
+<p>Permite a verificação da sintaxe de uma FST (Field Select Table). Atualiza o campo especificado pelo atributo tag com o código de erro (5 dígitos), um espaço e o ponto em que foi detectado o erro de sintaxe, ou 00000 caso não haja erro de sintaxe.</p>
 
 <p><strong>Exemplo</strong></p>
 
@@ -3581,13 +3559,13 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <p>May Contais <code class="language-plaintext highlighter-rouge">&lt;pft&gt;</code></p>
 
-<p><em>May Be Used in</em> <code class="language-plaintext highlighter-rouge">&lt;call&gt; &lt;cgitable&gt; &lt;define&gt; &lt;display&gt; &lt;export&gt; &lt;extract&gt; &lt;field&gt; &lt;file&gt; &lt;flow&gt; &lt;htmlpft&gt; &lt;label&gt; &lt;list&gt; &lt;parm&gt; &lt;pft&gt; &lt;proc&gt; &lt;return&gt; &lt;trace&gt; &lt;write&gt;</code></p>
+<p><strong>Pode Ser Usado Em</strong> <code class="language-plaintext highlighter-rouge">&lt;call&gt; &lt;cgitable&gt; &lt;define&gt; &lt;display&gt; &lt;export&gt; &lt;extract&gt; &lt;field&gt; &lt;file&gt; &lt;flow&gt; &lt;htmlpft&gt; &lt;label&gt; &lt;list&gt; &lt;parm&gt; &lt;pft&gt; &lt;proc&gt; &lt;return&gt; &lt;trace&gt; &lt;write&gt;</code></p>
 
-<p><em>Attributes</em> <code class="language-plaintext highlighter-rouge">type</code></p>
+<p><strong>Atributos</strong> <code class="language-plaintext highlighter-rouge">type</code></p>
 
 <p><strong>Sintaxe</strong> <code class="language-plaintext highlighter-rouge">&lt;pft&gt; ... &lt;/pft&gt;</code></p>
 
-<p>It formats the current record.</p>
+<p>Formata o registro corrente.</p>
 
 <p><strong>Exemplo</strong></p>
 
@@ -3605,11 +3583,11 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <p><em>Options</em> <code class="language-plaintext highlighter-rouge">check reload</code></p>
 
-<p><em>May Be Used in</em> <code class="language-plaintext highlighter-rouge">&lt;field&gt; &lt;file&gt; &lt;htmlpft&gt; &lt;list&gt; &lt;pft&gt;</code></p>
+<p><strong>Pode Ser Usado Em</strong> <code class="language-plaintext highlighter-rouge">&lt;field&gt; &lt;file&gt; &lt;htmlpft&gt; &lt;list&gt; &lt;pft&gt;</code></p>
 
 <p><strong>Sintaxe</strong> <code class="language-plaintext highlighter-rouge">type=...</code></p>
 
-<p>It specifies the action type for format execution.</p>
+<p>Tipo de ação a ser tomada para execução do formato.</p>
 
 <p><em>Exemplo</em></p>
 
@@ -3634,7 +3612,7 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <h4 id="pfttypecheck">pft.type=check</h4>
 
-<p>It allows the format syntax validation. It returns the error code (5 digits), a space character and the detected syntax error pointer, or 00000 if there is no error.</p>
+<p>Permite a verificação da sintaxe de um formato. Retorna o código de erro (5 dígitos), um espaço e o ponto em que foi detectado o erro de sintaxe, ou 00000 caso não haja erro de sintaxe.</p>
 
 <p><strong>Exemplo</strong></p>
 
@@ -3652,7 +3630,7 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <h4 id="pfttypereload">pft.type=reload</h4>
 
-<p>It specifies that the format must be recompiled each time this instruction is executed.</p>
+<p>Use esta opção para informar ao IsisScript que o formato terá que ser recompilado cada vez que esta instrução for executada.</p>
 
 <p><strong>Exemplo</strong></p>
 
@@ -3675,7 +3653,7 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <p><strong>Sintaxe</strong> <code class="language-plaintext highlighter-rouge">&lt;proc&gt; ... &lt;/proc&gt;</code></p>
 
-<p>It modifies the contents of the current record.</p>
+<p>Modifica o conteúdo do registro corrente.</p>
 
 <p><strong>Exemplo</strong></p>
 
@@ -3696,7 +3674,7 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <p><strong>Sintaxe</strong> <code class="language-plaintext highlighter-rouge">&lt;return&gt; ... &lt;/return&gt;</code></p>
 
-<p>It exits the current function.</p>
+<p>Sai da funcão corrente.</p>
 
 <p><strong>Exemplo</strong></p>
 
@@ -3719,7 +3697,7 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <p><strong>See</strong> <code class="language-plaintext highlighter-rouge">&lt;field action=...&gt;</code></p>
 
-<p>It returns parameters to the caller function. It is functionally equivalent to the action attribute of the <code class="language-plaintext highlighter-rouge">&lt;field&gt;</code> element.</p>
+<p>Retorno de parâmetros para quem chamou a função. Tem a mesma funcionalidade do atributo action do elemento <code class="language-plaintext highlighter-rouge">&lt;field&gt;</code>.</p>
 
 <p><strong>Exemplo</strong></p>
 
@@ -3741,7 +3719,7 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <p><strong>See</strong> <code class="language-plaintext highlighter-rouge">&lt;field split=...&gt;</code></p>
 
-<p>It returns parameters to the caller function. It is functionally equivalent to the split attribute of the <code class="language-plaintext highlighter-rouge">&lt;field&gt;</code> element.</p>
+<p>Retorno de parâmetros para quem chamou a função. Tem a mesma funcionalidade do atributo split da instrução <code class="language-plaintext highlighter-rouge">&lt;field&gt;</code>.</p>
 
 <p><strong>Exemplo</strong></p>
 
@@ -3762,6 +3740,8 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 <h3 id="returntag">return.tag</h3>
 
 <p><strong>See</strong> <code class="language-plaintext highlighter-rouge">&lt;field tag=...&gt;</code></p>
+
+<p>Retorno de parâmetros para quem chamou a função. Tem a mesma funcionalidade do atributo tag da instrução <code class="language-plaintext highlighter-rouge">&lt;field&gt;</code>.</p>
 
 <p><strong>Exemplo</strong></p>
 
@@ -3788,9 +3768,9 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <p><strong>Sintaxe</strong> <code class="language-plaintext highlighter-rouge">&lt;section&gt; ... &lt;/section&gt;</code></p>
 
-<p>The <code class="language-plaintext highlighter-rouge">&lt;section&gt;</code> element is used to begin a sequence of instructions.</p>
+<p>O elemento <code class="language-plaintext highlighter-rouge">&lt;section&gt;</code> é usado para iniciar uma seqüência de instruções que acessam campos comuns e utilizam-se de tabelas comuns.</p>
 
-<p>The name attribute may be used for identification purposes.</p>
+<p>O atributo name pode ser utilizado para identificação.</p>
 
 <p><strong>Exemplo</strong></p>
 
@@ -3809,7 +3789,7 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <p><strong>Sintaxe</strong> <code class="language-plaintext highlighter-rouge">name=...</code></p>
 
-<p>The name attribute is optional and may be used it for identification purposes.</p>
+<p>O atributo <strong>name</strong> é opcional, quando usado serve para identificação da seção.</p>
 
 <p><strong>Exemplo</strong></p>
 
@@ -3830,7 +3810,7 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <p><strong>Sintaxe</strong> <code class="language-plaintext highlighter-rouge">&lt;trace&gt; ... &lt;/trace&gt;</code></p>
 
-<p>It activates or deactivates the display of the instruction that is being executed. The possible options are normal, line by line, or table, respectively: On, BR, or Table.</p>
+<p>Ativa ou destiva a mostra da instrução que está sendo executada. Os modos possíveis são normal, linha a linha ou tabela, respectivamente: On, BR e Table.</p>
 
 <p><strong>Exemplo</strong></p>
 
@@ -3849,7 +3829,7 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <p><strong>Sintaxe</strong> <code class="language-plaintext highlighter-rouge">&lt;update&gt; ... &lt;/update&gt;</code></p>
 
-<p>It starts the set of instructions to modify or add a record.</p>
+<p>Inicia um bloco de instruções para modificação ou adição de um registro.</p>
 
 <p><strong>Exemplo</strong></p>
 
@@ -3878,15 +3858,11 @@ A linguagem usa instruções semelhantes a XML, como, por exemplo, entre as tags
 
 <p><strong>Sintaxe</strong> <code class="language-plaintext highlighter-rouge">&lt;write&gt; ... &lt;/write&gt;</code></p>
 
-<p>This element stores the modified record.</p>
+<p>Elemento que grava a modificação do registro.</p>
 
-<p>If the <code class="language-plaintext highlighter-rouge">&lt;parm name=mfn&gt;</code> element value is New, then a new record is added, otherwise the mfn passed as argument is updated.</p>
+<p>Se o elemento <code class="language-plaintext highlighter-rouge">&lt;parm name=mfn&gt;</code> indicar New ou GetNew então adiciona um novo registro, senão atualiza o mfn passado como argumento.</p>
 
-<p>Possible values for the argument of the <code class="language-plaintext highlighter-rouge">&lt;write&gt;</code> element:
-Unlock - it unlocks the record after it is stored
-Lock - record remains locked after it is stored
-NoUnlock - the record remains locked after it is stored and the lock information is not changed
-Delete - the record is deleted</p>
+<p>Se o argumento do elemento <code class="language-plaintext highlighter-rouge">&lt;write&gt;</code> for Unlock o registro será desbloqueado após ser gravado, se for Lock o registro será gravado e bloqueado, se for NoUnlock o registro permanecerá bloqueado e a informação de bloqueio permanecerá a mesma, se for Delete o registro será deletado.</p>
 
 <p><strong>Exemplo</strong></p>
 

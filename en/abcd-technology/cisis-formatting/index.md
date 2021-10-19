@@ -5,8 +5,18 @@ lang: en
 lang-ref: cisis-formatting
 ---
 
+# ISIS Formatting Language
 
-# Structure of Reference Listing
+The CISIS format language is made up of a series of commands and functions that allow the contents of the database fields to be formatted on screen.
+
+It is a very powerful language, and with it, it becomes possible to present the content of each record in a database in the desired order and appearance, especially if mixed with HTML and CSS.
+
+It is essential that the librarian masters this language in order to be able to create any kind of report or presentation from any of the databases.
+
+Formatting records requires the librarian to know the identification number of each data field that makes up each record in the database to be formatted.
+
+See below the commands and how to use them.
+
 
 {: .no_toc }
 
@@ -17,6 +27,62 @@ lang-ref: cisis-formatting
 {:toc}
 
 ---
+
+# The FL for presenting values [REF](/en/abcd-technology/cisis-formatting/#v---field--selector)
+
+This is by far the most important function of the Formatting Language : specifying which data exactly need to be taken and how they will be 'displayed' or 'printed' (to the screen, to a printer, to a file, to a webpage...).
+
+Separate documents exist to deal with this extensive language, e.g. the dedicated chapter in the ISIS Reference Manual, published by UNESCO (June 2004, chapter 8, p. 94-122).
+
+Basically there are three types of statements in the ISIS FL :
+1.  values from fields, given as : Vx, where 'V' denotes the value (or 'contents') of a field with tag 'x', Vx^a is the value of the subfield a (^a) of field x and (Vx/) is the series of all occurrences of field X separated by a 'new-line' (/) since the parenthese embrace a 'repeatable group' of statements to be applied to all occurrences (repeatable fields are a strong special feature of ISIS).
+
+2.  literals or quotes strings, which can be 'unconditional' (single quotes), |conditional| (pipes indicate the string will only be produced if the related field is present) and "repeatable" (double quotes will only produce the string at the first occurrence of a repeatable field).
+ISIS-applications on the web, such as ABCD, create web-pages with HTML-tags using this method of adding literals to field-values, e.g.
+
+```
+'<table><tr><td>' Vx '</td><td>' Vy '</td></tr></Table>'
+```
+
+will display resp. the fields x and y in two columns of a table in HTML. Note that all HTML- codes are quoted (as unconditionals) and the values taken from the fields in the database are inserted by referring to them with the V-statement.
+
+5. commands, which can be of different types, e.g. :
+
+-   mode commands : mhl/u (mode heading lowercase/uppercase), mdl (mode data upper/lowercase) or mpl/u (mode proofreading upper/lowercase)
+
+-   (in Windows-environments) : commands defining screen attributes (colors, fonts, boxes) or links (requesting the operating system to open other data, e.g. multimedia data referred to in a record), e.g.
+
+LINK('click here for tull-text', OPENFILE Vx) will request - when the user clicks on the hyperlinked text 'click here for full-text', Windows to open the file of which the name is in Vx, with the Windows-application associated to the extension of that file.
+-   the REF-command, which can retrieve data from other records (in the same or another database when ex- pressly referenced to), allowing semi-relations setups in ISIS-applications (but with the advantage that the relation is followed only at run-time when requested). e.g.
+
+`REF(['users']) L(['users']V2),V1)`
+
+will retrieve the value from field 1 in the database 'users' if the L(ookup) function has found the value of field 2 (in the actual database) in the index of the users-database, so that the MFN of the record can be identified.
+
+-   conditional routing statements : e.g. 
+
+`'IF...THEN... (ELSE....)FI'`
+
+or even the 
+
+`SELECT [case1 case2...] ELSE- CASE... ENDSEL`
+
+construct can be used to apply formatting statements only to database values which comply with given conditions.
+
+-   in the CISIS-environment extra FL statements are available, the most important one being a command which will actually **PROC**ess a record to alter the contents of the fields. The general syntax is :
+
+```code
+    proc(x|y...) 
+```
+
+where x or y can be any of the following : `'Dxxx'` (to delete field with tag xxx)
+- `|Axx#|value|#|` (to Add value into field xx)
+-   functions, mostly for string-operations (e.g. substr, size, val) or numerical (e.g. rmin, rmax, rsum...)
+
+
+---
+
+# Structure of Reference Listing
 
 
 **Support:**
@@ -47,7 +113,6 @@ Lists related commands and functions.
 -------
 
 
-
 # % # '' "" || () / /* @ 
 
 ## # - unconditional  newline
@@ -62,20 +127,21 @@ Begins  a  newline  unconditionally.
 
 **Examples:**
 
-```
+```code
 #,("address:"v3(9,9)+|;  |#),
 ```
 
-```
+```code
 (|Name:  |v1^n,c20,|Surname:|v1^s/),###,
 ```
-
 
 **See  also:**
 
 **/** [conditional  newline]
 
 **%** [reset  blank  line]
+
+---
 
 ## % - reset blank line
 
@@ -85,11 +151,12 @@ Begins  a  newline  unconditionally.
 Resets  all  previous blank  lines,  if  any.
 
 **Examples:**
-```
+
+```code
 |Name: |v1^n,c20,|Surname:|v1^s,###,%,/,
 ```
 
-```
+```code
 v10/#,v20/#,v30/#,%#,
 ```
 
@@ -99,36 +166,42 @@ v10/#,v20/#,v30/#,%#,
 
 **#** [unconditional  newline]
 
+---
+
+
 
 ## "string"  - conditional literal
 
 **Support:** Standard
 
 **Syntax:**
-```
+
+```code
 "<text>"<field selector>"<text>"
 	"<text>"<dummy field (selector)>
 "<text>"<not present>
 ```
 
 **Definition:**	
+
 Outputs the text between the quotes only if `<field selector>`,`<dummy field (selector)>` or `<not present>` evaluates to TRUE. Both prefix and suffix literals can be placed together when using <field selector>, and data field content is also output.
 If combined with `<dummy field (selector)>`, output is generated if data field is present. If combined with `<not present>`, outputs only if data field is absent.
 
 **Notes:**
+
 `<text>` is produced only once, independing on repeatable fields.
 
 **Examples:**
 
-```
+```code
 "Author: "v1^a,
 ```
 
-```
+```code
 "this text outputs if data field 10 is present"d10,
 ```
 
-```
+```code
 "this text outputs if data field 10 is absent"n5,
 ```
 
@@ -138,6 +211,9 @@ If combined with `<dummy field (selector)>`, output is generated if data field i
 **d** [dummy field selector]
 **n** [not present]
 **v** [field selector]
+
+---
+
 
 
 ## 'string' - unconditional literal
@@ -152,14 +228,16 @@ Unconditionally outputs the text contained between a single quotes pair.
 
 
 **Notes:**
+
 Unconditional literals may be placed anywhere in a format and can be passed as parameters to functions.
 
 **Examples:**
-```
+
+```code
 this text will always output',
 ```
 
-```
+```code
 'Name: ',v1/,
 ```
 
@@ -167,13 +245,16 @@ this text will always output',
 **"string"** [conditional literal]
 **|string|** [repeatable conditional literal]
 
+---
+
+
 ## |string| - repeatable conditional literal
 
 **Support:** Standard
 
 **Syntax:**
 
-```
+```code
 |<text>|<+><field selector><+>|<text>|
 ```
 
@@ -184,7 +265,7 @@ When `<+>` is present, the first prefix literal and/or the last suffix literal i
 
 ex: 
 
-```
+```code
 (|; |+v1), /* prefix-literal */ (v1+|; |), /* suffix-literal */
 ```
 
@@ -194,11 +275,11 @@ If a prefix or suffix-literal is used with `<+>` outside a repeatable group, lit
 
 **Examples:**
 
-```
+```code
 (|; |+v1^s,|,|v1^n*0.1|.|),
 ```
 
-```
+```code
 (v10|: |, ,v11,| - |v12),
 ```
 
@@ -209,12 +290,16 @@ If a prefix or suffix-literal is used with `<+>` outside a repeatable group, lit
 **(format)** [repeatable group]
 **v** [field selector]
 
+---
+
+
 
 ## (format) - repeatable group
 
 **Support:**  Standard
 
 **Syntax:**
+
 ```
  (<format>)
  ```
@@ -225,16 +310,17 @@ Applies  the  format  between  the  parenthesis  to  all  occurrences  of  repea
 **Notes:**  
 Repeatable  groups  cannot  be  nested.
 
-**Examples:
-```
+**Examples:**
+
+```code
 (|;  |+v2^s/),
 ```
 
-```
+```code
 (v1,c15,v2,c35,v3/),
 ```
 
-```
+```code
 (if  iocc<=3  then  f(iocc,1,0),|  -  |v3/ else  '-> more than  3'/,  fi),
 ```
 
@@ -244,12 +330,16 @@ Repeatable  groups  cannot  be  nested.
 
 **v** [field  selector]
 
+---
+
+
 
 ## / - conditional newline
 
-Support: Standard
+**Support:** Standard
 
-Syntax:
+**Syntax:**
+
 ```
 /
 ```
@@ -263,15 +353,16 @@ Begins a new line if not at the beginning of a line.
 Several conditional newline commands `(,/,/,/,/,)` have the same effect of a single one.
 
 **Examples:**
-```
+
+```code
 v1/,
 ```
 
-```
+```code
 v1/,v3/,v10/,mfn/,
 ```
 
-```
+```code
 s(v1,v3,v10)/,
 ```
 
@@ -281,13 +372,16 @@ s(v1,v3,v10)/,
 **#** [unconditional newline]
 **%** [reset blank line]
 
+---
+
+
 
 ## /\*string\*/ - comment
 
 **Support:** CISIS
 **Syntax:**
 
-```
+```code
 /* <comment> */
 ```
 
@@ -299,17 +393,21 @@ Comments can span over several lines.
 
 
 **Examples:**
-```
+
+```code
 /* this is a single line comment */,
 ```
 
-```
+```code
 /* this comment begins here and ends here */,
 ```
 
-```
+```code
 if a(v10) /*and p(v20) */ then v20/ fi,
 ```
+
+---
+
 
 
 
@@ -331,6 +429,7 @@ Includes a format specification stored in a file in the current format.
 
 **Examples:**
 
+
 ```language
 @test.pft,v20,
 ```
@@ -343,6 +442,7 @@ s(@c:\temp\test.pft,v3),
 if v1='L' then @large.pft, fi,
 ```
 
+---
 
 
 
@@ -354,7 +454,8 @@ if v1='L' then @large.pft, fi,
 **Function  type:**  Boolean
 
 **Syntax:**
-```
+
+```code
 a(<field  selector>)
 ```
 
@@ -365,12 +466,13 @@ Returns  TRUE  if  data  field  is  absent,  otherwise  returns  FALSE.
 All  components  of  field  selector may be  used,  except  indent.
 
 **Examples:**
-```
+
+```code
  if  a(v12) then  v13  else  v12, fi,
  ```
  
 
-```
+```code
 if  a(v20^b) and  p(v30) then  v40/,  fi,
 ```
 
@@ -380,6 +482,9 @@ if  a(v20^b) and  p(v30) then  v40/,  fi,
 
 **v** [field  selector]
 
+---
+
+
 
 
 # B
@@ -388,7 +493,8 @@ if  a(v20^b) and  p(v30) then  v40/,  fi,
 **Support:** CISIS
 
 Syntax:
-```
+
+```code
 break
 ```
 
@@ -401,12 +507,16 @@ Breaks  the  execution  of  a repeatable  group  format.  When  outside  a  repe
 The  execution  resumes  after  the  end  of  the  repeatable  group.  When  used  inside a **ref function**, execution continues with the format after the  function.
 
 **Examples:**
-```
+
+```code
 (if  iocc  >  10  then '10+  occurrences'/,**break** else  v5^n|-|,v5^s,/,  fi,),
 ```
 
 **See  also:**
 **(format)** [repeatable  group]
+
+---
+
 
 
 # C
@@ -414,7 +524,8 @@ The  execution  resumes  after  the  end  of  the  repeatable  group.  When  use
 **Support:** Standard
 
 **Syntax:**
-```
+
+```code
 c<int>
 ```
 
@@ -422,17 +533,21 @@ c<int>
 Skips  to  the  specified  column  in  the  current  or  next  line.
 
 **Examples:**
-```
+
+```code
 'Name:  ',c10,v1^n/,
 ```
 
-```
+```code
 if  p(v1^s)  then  c10,v1^s/,  fi,
 ```
 
 **See  also:**
 
 **x** [spacing]
+
+---
+
 
 
 ## cat(file) - dump  file
@@ -442,7 +557,8 @@ if  p(v1^s)  then  c10,v1^s/,  fi,
 **Function  type:** String
 
 **Syntax:**
-```
+
+```code
 cat(<format>)
 ```
 
@@ -451,15 +567,15 @@ Outputs  the  contents  of  a  file  whose  name  is  generated  by  `<format>`.
 
 **Examples:**
 
-```
+```code
 mfn,cat('myfile.html'),
 ```
 
-```
+```code
 cat('current  document'/,  ,if  v10='c'  then  'firstdoc.txt'  else  'default.doc'  fi),
 ```
 
-```
+```code
 cat(v101),
 ```
 
@@ -467,22 +583,39 @@ cat(v101),
 
 **s(expression)**
 
+---
+
+
 
 ## continue - repeatable  conditional  branching
 
-**Support:  CISIS
+**Support:  CISIS**
 
-Syntax:  **continue**
+**Syntax:** continue
 
-Definition:  Executes  the  next  occurrence  of  a  repeatable  group  if  at  least  one  data  field  has  a  subsequent  occurrence.
+**Definition:**  Executes  the  next  occurrence  of  a  repeatable  group  if  at  least  one  data  field  has  a  subsequent  occurrence.
 
-Notes:
+**Notes:**
 
-Examples: 1  (if  iocc  =  1  then  **continue** else  v10/  fi),
+**Examples:**
 
-2  (f(iocc,1,0),'=',v70,continue/),
 
-See  also:  **(**format**)** [repeatable  group]
+```language
+(if  iocc  =  1  then  **continue** else  v10/  fi),
+```
+
+
+```language
+(f(iocc,1,0),'=',v70,continue/),
+```
+
+
+**See also:**
+
+(format) [repeatable  group]
+
+---
+
 
 
 # D
@@ -506,6 +639,7 @@ Dummy  field  (selector) does  not  return  a  value.
 When  in  a  repeatable  group,  `<subfield>`  is  evaluated  only  for  the  first  occurrence  of  data  field.
 
 **Examples:**
+
 ```
 "this  text  outputs  if  data  field  10 exists"**d**10,
 ```
@@ -518,6 +652,9 @@ Name:  "v20(5,5)/,  ,"Name:  "n20,v21(5,5)/,
 **"string"**  [conditional  literal]
 **n**  [not  present]  v  [field  selector]
 
+---
+
+
 
 ## date date(keyword) - current  date
 
@@ -526,14 +663,14 @@ Name:  "v20(5,5)/,  ,"Name:  "n20,v21(5,5)/,
 
 **Syntax:**
 
-```date```
+`date`
 
-```date(<keyword>)```
+`date(<keyword>)`
 
 **Definition:**
 Outputs  current  system  date.  Used  without  parameters,  returns:
 
-```yyyymmdd  hhmmss  w  nnn```
+`yyyymmdd  hhmmss  w  nnn`
 
 where:
 - mm  = month
@@ -552,13 +689,16 @@ keywords  **DATETIME** and  **DATEONLY**
 
 **Examples:**
 
-```
+```code
 'Today  is  ',**date**,
 ```
 
-```
+```code
 'Current  date:  ',date(DATEONLY)/,  ,'Current  time:  ',mid(date(DATETIME),10,8)/,
 ```
+
+---
+
 
 
 
@@ -571,7 +711,7 @@ keywords  **DATETIME** and  **DATEONLY**
 
 **Syntax:**
 
-```
+```code
 f(<format>,<expr-1>,<expr-2>)
 ```
 
@@ -582,20 +722,24 @@ Converts a numeric value to string. `<format>` is the numeric expression to be c
 If `<format>` is not a valid numeric expression, an error is issued. If `<expr-2>` is set, `<expr-1>` must also be placed or a syntax error is issued. If only `<expr-1>` is defined, the result is output in scientific exponent notation. If the number of characters required to represent `<format>` is greater than `<expr-1>`, additional positions are provided automatically. If `<expr-1>` is missing, a width of 16 characters is assumed.
 
 **Examples:**
-```
+
+```code
 f(val(v1),2),
 ```
 
-```
+```code
 f(((3+5)/2)+1,4,2),
 ```
 
-```
+```code
 f(v2),
 ```
 
 **See also:**
 **val** function
+
+---
+
 
 
 # G
@@ -606,7 +750,8 @@ f(v2),
 **Function type:** String
 
 **Syntax:**
-```
+
+```code
 getenv(<format>)
 ```
 
@@ -617,16 +762,20 @@ Returns the value of an environment variable.
 If `<format>` does not generate a valid environment variable name, no value is returned.
 
 **Examples:**
-```
+
+```code
 'Current path: ',getenv('PATH'),
 ```
 
-```
+```code
 (v1|=|,getenv(v1)/),
 ```
 
 **See also:**
 **putenv** function
+
+---
+
 
 
 # I
@@ -646,13 +795,17 @@ Executes a block of formatting language specifications (`<format-1>`) if `<bool 
 Clause then precedes the first block of formatting language specifications. else is optional and if present in the code, must be followed by a format. The fi clause must always end the command scope and if missing, a syntax error is issued. The if…fi command can span over several lines, therefore it is recommended the use of indentation.
 
 **Examples:**
-```
+
+```code
 ,ifinstr(v5,'ab')>0 then ,v5/, fi,
 ```
 
-```
+```code
 ,if p(v10) then ,|Title: |v3, else ,|Alternate title: |v4, ,fi,
 ```
+
+---
+
 
 
 
@@ -685,6 +838,9 @@ if instr(s(|'|v1|'|),v5)>0 then v1, fi,
 left(v18,instr(v18,'.')-1),
 ```
 
+---
+
+
 
 
 ## iocc - occurrence  index
@@ -698,16 +854,20 @@ left(v18,instr(v18,'.')-1),
 Returns the occurrence index number (starting from 1), otherwise returns zero.
 
 **Examples:**
-```
+
+```code
 ("Author: "v1/, ,if iocc > 3 then 'et all',break, fi),
 ```
 
-```
+```code
 (f(iocc,3,0),|.|v10/),
 ```
 
 **See also:**
 **nocc** function
+
+---
+
 
 
 
@@ -719,11 +879,12 @@ Returns the occurrence index number (starting from 1), otherwise returns zero.
 **Function type:** Numeric
 
 **Syntax:**
-```
+
+```code
 l(<format key>)
 ```
 
-```
+```code
 l([<format ifname>]<format key>)
 ```
 
@@ -736,16 +897,20 @@ Keys are converted to upper case before the expression is seek. Default display 
 
 
 **Examples:**
-```
+
+```code
 if l(v15)<> 0 then |Term: |v15, fi,
 ```
 
-```
+```code
 ref(l(['books']v1,'-',v2),v10/),
 ```
 
 **See also:**
 **ref** function
+
+---
+
 
 
 ## left(string,length) - left  substring
@@ -766,17 +931,21 @@ Returns a new string, containing the leftmost characters from of the original st
 If the string generated by `<format-2>` is greater than the size defined by `<format-1>`, function returns the `<format-1>` string. If `<format-2>` is zero or is set to a negative number, returns a NULL string.
 
 **Examples:**
-```
+
+```code
 if left(v1^n,2)='Ma' then v1^n/, fi,
 ```
 
-```
+```code
 left(v1,instr(v1,'.')-1),
 ```
 
 **See also:**
 **right** function
 **mid** function
+
+---
+
 
 
 ## lw(number) - set  line  width
@@ -797,6 +966,7 @@ Sets the output line width to <int> characters.
 Output line width default depends on the application program
 
 **Examples:**
+
 ```
 if size(v10) > 76 then lw(254), fi,
 ```
@@ -804,6 +974,9 @@ if size(v10) > 76 then lw(254), fi,
 ```
 lw(70),v20/,lw(10),v30/,
 ```
+
+---
+
 
 
 # M
@@ -813,7 +986,8 @@ lw(70),v20/,lw(10),v30/,
 **Support:** Standard
 
 **Syntax:** 
-```
+
+```code
 m<mode><conv>
 ```
 
@@ -846,8 +1020,7 @@ mpu,"Second author: "v10[2]/,
 mdl,"Third author: "v10[3]/,
 ```
 
-
-
+---
 
 
 ## mfn mfn(length) - record number
@@ -888,6 +1061,8 @@ ref(mfn-1,v2/),
 **ref** function
 **l** function
 
+---
+
 
 ## mid(string, start, length) - substring
 
@@ -896,17 +1071,21 @@ ref(mfn-1,v2/),
 **Function type:** String
 
 **Syntax:** 
+
 ```
 mid(<format-1>,<format-2>,<format-3>)
 ```
 
 **Definition:**
+
 Returns a new string, containing a specified number of characters from the original string (`<format-1>`). `<format-3>` gives the actual number of characters to be read from `<format-1>` and `<format-2>` gives the start position in string where extraction begins.
 
 **Notes:**
+
 If `<format-2>` is greater than `<format-1>` size, function returns a `NULL` string. If `<format-2>` is zero or is set to a negative number, default is 1.
 
 **Examples:**
+
 ```
 mid(v2,2,80),
 ```
@@ -919,6 +1098,9 @@ mid(v1,instr(v1,'key'),size(v1))/,
 **right** function
 **left** function
 
+
+
+---
 
 
 
@@ -937,6 +1119,7 @@ mstname
 Returns the current master filename.
 
 **Examples:**
+
 ```
 'Current database: ',mstname/,
 ```
@@ -944,6 +1127,9 @@ Returns the current master filename.
 ```
 ref(['names']l(['names']'X39BJ'), ,'Database now is ',mstname/),
 ```
+
+---
+
 
 
 # N
@@ -961,6 +1147,7 @@ Tests the absence of a data field. Used in conjunction with conditional literals
 As a dummy (field) selector, it does not return a value.
 
 **Examples:**
+
 ```
 "this text outputs if data field 10 is absent"n10,
 ```
@@ -974,6 +1161,9 @@ As a dummy (field) selector, it does not return a value.
 **"string"** [conditional literal]
 **d** [dummy field selector]
 **v** [field selector]
+
+---
+
 
 
 ## newline(string) - set  newline
@@ -995,6 +1185,7 @@ Sets and/or resets default CR/LF pair with character(s) from resulting <format>.
 Subsequent `\` commands will be automatically replaced by resulting format until a newline sets a new character or string.
 
 **Examples:**
+
 ```
 newline(if v151='unix' then '\n' else '\r\n' fi,
 ```
@@ -1010,6 +1201,9 @@ newline('<BR>'),
 **See also:**
 **/** [conditional newline]
 **#** [unconditional newline]
+
+---
+
 
 
 ## nocc(field) - number  of  occurrences
@@ -1034,6 +1228,8 @@ Returns the number of occurrences of a data field or subfield defined by <field 
 ```
 if nocc(v3)> 10 then 'Too many occurrences.'/, fi,
 ```
+
+
 ```
 'There are ',f(nocc(v20),2,0),' authors.'/,
 ```
@@ -1041,6 +1237,9 @@ if nocc(v3)> 10 then 'Too many occurrences.'/, fi,
 **See also:**
 **iocc** function
 **v** [field selector]
+
+
+---
 
 
 
@@ -1063,6 +1262,7 @@ npost([<format>],<format key>)
 Returns the total postings for a key (given by `<format key>`) in an inverted file. `<format>` if defined, must generate a string containing the inverted file name. `<format key>` settles the key to be searched in the inverted file.
 
 **Examples:**
+
 ```
 if npost(v1)> 1 then 'duplicate key ',v1,' found'/, fi,
 ```
@@ -1075,6 +1275,9 @@ if npost(v1)> 1 then 'duplicate key ',v1,' found'/, fi,
 **l** function
 
 
+---
+
+
 
 
 # P
@@ -1085,6 +1288,7 @@ if npost(v1)> 1 then 'duplicate key ',v1,' found'/, fi,
 **Function type:** Boolean
 
 **Syntax:**
+
 ```
 p(<field selector>)
 ```
@@ -1109,6 +1313,9 @@ if p(v50^a) and p(v50^b) then v50^a/,v50^b/, fi,
 **See also:**
 **a** function
 **v** [field selector]
+
+
+---
 
 
 
@@ -1148,6 +1355,9 @@ proc('d70',|a10#|v70|#|),
 proc(if v24*0.4 = 'Tech' then 'd*', fi),
 ```
 
+---
+
+
 
 
 ## putenv(expression) - environment  variable  set
@@ -1183,6 +1393,9 @@ set
 **getenv** function
 
 
+---
+
+
 # R
 ## ravr(string) - average  value  of  expression
 
@@ -1192,7 +1405,7 @@ set
 
 **Syntax:**
 
-```
+```code
 ravr(<format>)
 ```
 
@@ -1203,15 +1416,16 @@ Returns  the  average  value  of a  given  format.  `<format>`  must  generate  
 Can  be  used  to  compute  the  average  of  numeric  values  in  repeatable  fields.
 
 **Examples:**
-```
+
+```code
 f(**ravr(**s(v8,x1,v1)**)**,3,0),
  ```
 
-```
+```code
 f(**ravr(**v1,x1,v2**)**,5,2),
 ```
 
-```
+```code
 f(**ravr(**'8;15;16.73'**)**,3,2),
 ```
 
@@ -1224,44 +1438,56 @@ if  **ravr(**v20|;|**)**>=5  then  'pass'/  else  'fail'/,  fi,
 **rmax** function
 **rsum** function
 
+---
+
+
 ## record number
 
 ## ref(mfn, format) ref([master file]mfn, format) - record  reference  link
+
 **Support:** Standard/CISIS
+
 **Function type:** String
 
 **Syntax:**
+
 `ref(<expr>,<format>)`
 `ref([<format dbname>]<expr>,<format>)`
 
 
 **Definition:**
-Executes <format> with the record selected by <expr>. If <format dbname> is set, another (or the same) database can be referenced and a different record is selected.
+
+Executes `<format>` with the record selected by `<expr>`. If `<format dbname>` is set, another (or the same) database can be referenced and a different record is selected.
 
 
 **Notes:**
-<expr> can be any format returning the MFN of a record. l function can be used to perform a seek and return the MFN.
+`<expr>` can be any format returning the MFN of a record. l function can be used to perform a seek and return the MFN.
 Examples:
 
-```
+
+```code
 ref(l(v3),v1/,v2/,v3/),
 ```
 
-```
+```code
 if ref(['account']l(['user']v2),v4)='active' then |Name: |v10/, fi,
 ```
 
-```
+```code
 (if p(v99) then ref([v99]1,v30/), fi),
 ```
 
 **See also:**
 **l** function
 
+---
+
+
 
 ## replace(string1, string2, string3) - replace
 
 **Support:** CISIS
+
 **Function type:** String
 
 **Syntax:**
@@ -1278,21 +1504,25 @@ If `<format-3>` is null, `<format-2>` string will be excluded from `<format-1>`.
 replace is case sensitive for both search string (`<format-2>`) and replace string (`<format-3>`).
 
 **Examples:**
-```
+
+```code
 replace('Mary And John','And','and')/,
 ```
 
-```
+```code
 if replace(v1^a,'01x','01X')= '894501X' then v1^n/, fi,
 ```
 
-```
+```code
 replace(s(v304,v333),',',', ')/,
 ```
 
-```
+```code
 replace(s(if v415='spanish' then v299 else 'none' fi),v1,v759)/,
 ```
+
+---
+
 
 
 ## right(string, length) - right  substring
@@ -1313,13 +1543,17 @@ Returns a new string, containing the rightmost characters of the original string
 If `<format-2>` is greater than `<format-1>` size, function returns `<format-1>` string. If `<format-2>` is zero or is set to a negative number, returns nothing.
 
 ***Examples:***
-```
+
+```code
 if right(v1^n,1) = 'r' then v1^n/, fi,
 ```
 
-```
+```code
 right(v65,4)/,
 ```
+
+---
+
 
 
 ## rmax(string) - maximum  value  of  expression
@@ -1327,25 +1561,30 @@ right(v65,4)/,
 **Support:** Standard
 **Function type:** Numeric
 **Syntax:** 
-```
+
+```code
 rmax(<format>)
 ```
 
 **Definition:**
 Returns the maximum value of a given format. `<format>` must generate a string expression.
 
-Notes:
+**Notes:**
+
 Can be used to compute the maximum of numeric values in a repeatable field.
-Examples:
-```
+
+
+**Examples:**
+
+```code
 f(rmax('72,54,2'),2,0),
 ```
 
-```
+```code
 f(rmax(v1,x1,v4,x1,(v8|,|)),5,2),
 ```
 
-```
+```code
 if rmax(v40|;|)>val(v41) then 'Limit of ',v41,'exceeded.'/, fi,
 ```
 
@@ -1353,6 +1592,9 @@ if rmax(v40|;|)>val(v41) then 'Limit of ',v41,'exceeded.'/, fi,
 **rmin** function
 **ravr** function
 **rsum** function
+
+---
+
 
 
 ## rmin(string) - minimum  value  of  expression
@@ -1363,7 +1605,8 @@ if rmax(v40|;|)>val(v41) then 'Limit of ',v41,'exceeded.'/, fi,
 
 **Syntax:** 
 
-```
+
+```code
 rmin(<format>)
 ```
 
@@ -1373,16 +1616,17 @@ Returns  the  minimum  value  of  a  given  format.  `<format>`  must  generate 
 **Notes:**
 Similar  to  **rmax  function**,  rmin  can  compute  the  minimum  of  numeric  values  in a  repeatable  field.
 
-**Examples: **
-```
+**Examples:**
+
+```code
 f(rmin('10;2;5;4;-2'),2,0),
 ```
 
-```
+```code
 f(rmin(v1,x1,v2,x1,'44'),4,2),
 ```
 
-```
+```code
 if rmin(v80||,v90|  |,v100|  |)<  1990  then  'Wrong  decade.'/,  fi,
 ```
 
@@ -1392,6 +1636,9 @@ if rmin(v80||,v90|  |,v100|  |)<  1990  then  'Wrong  decade.'/,  fi,
 **ravr** function
 **rsum** function
 
+---
+
+
 
 ## rsum(string) - sum  of  expression
 
@@ -1400,7 +1647,8 @@ if rmin(v80||,v90|  |,v100|  |)<  1990  then  'Wrong  decade.'/,  fi,
 **Function  type:**  Numeric
 
 **Syntax:**
-```
+
+```code
 rsum(<format>)
 ```
 
@@ -1410,15 +1658,16 @@ Returns  the  sum  of  a  given  format.  `<format>`  must  generate  a  string 
 Notes:  Similar  to **rmax** and  **rmin  functions**,  rsum  computes  the  sum  of  numeric  values  in a  repeatable  field.
 
 Examples:
-```
+
+```code
 f(rsum('102,45,-37'),2,0),
 ```
 
-```
+```code
 f(rsum(v1,x1,v3,x1,f(val(v8)+2)),4,2),
 ```
 
-```
+```code
 if rsum(v20^d)>1000  then  'Aborted.'/  else  'OK'/,  fi,
 ```
 
@@ -1426,6 +1675,9 @@ if rsum(v20^d)>1000  then  'Aborted.'/  else  'OK'/,  fi,
 **rmax** function
 **ravr** function
 **rmin** function
+
+---
+
 
 
 # S
@@ -1436,7 +1688,8 @@ if rsum(v20^d)>1000  then  'Aborted.'/  else  'OK'/,  fi,
 **Function  type:**  String
 
 **Syntax:**
-``` 
+
+```code
 s(<format>)[command  component]
 ``` 
 
@@ -1449,7 +1702,10 @@ extraction
 **extraction:**
 Extracts partial content of the resulting string. `<offset int>` is the first  position to start extraction, while `<length int>` determines how many  characters will be extracted. If `<length int>` is omitted or is greater than the  resulting  string,  the  default  is  the  end  of  the  resulting  string.
 
-Notes:  Can  be  passed  to  functions  that  require  a  string  expression  as  parameter.
+**Notes:**  Can  be  passed  to  functions  that  require  a  string  expression  as  parameter.
+
+---
+
 
 
 ## select … case … elsecase … endsel - conditional  branch  control
@@ -1458,7 +1714,8 @@ Notes:  Can  be  passed  to  functions  that  require  a  string  expression  as
 
 **Syntax:**
 
-```
+
+```code
 	select <format expr>
 case <option-1>: <format-1>
 	case <option-2>: <format-2>
@@ -1474,7 +1731,7 @@ Evaluates `<format expr>` and compares the result to each case option (`<option-
 
 **Examples:**
 
-```
+```code
 select s(v5)
 	case '1': ,f(val(v5)/2,2,2)/,
 	case '2': ,v5/,
@@ -1485,7 +1742,7 @@ endsel,
 ```
 
 
-```
+```code
 select nocc(v7)
 	case 0: 'absent'/,
 	case 1: 'one occurrence'/,
@@ -1498,11 +1755,15 @@ endsel,
 **See also:**
 if … then … else .. fi
 
+---
+
+
 ## size(string) - string  size
 **Support:**  CISIS
 **Function  type:**  Numeric
 **Syntax:**
-```
+
+```code
 size(<format>)
 ```
 
@@ -1514,13 +1775,17 @@ Returns  the  string  size.
 
 **Examples:**
 
-```
+```code
 if size(v10)>  76  then  lw(254),  fi,
 ```
 
-```
+```code
 f(size(v10,v20),1,0),
 ```
+
+
+---
+
 
 
 ## system(expression) - system  call
@@ -1528,7 +1793,8 @@ f(size(v10,v20),1,0),
 **Function  type:**  String
 
 **Syntax:**
-```
+
+```code
 system(<format>)
 ```
 
@@ -1538,16 +1804,18 @@ Executes  the  argument  produced  by  `<format>`  as  an  operating  system  co
 **Notes:**
 `<format>` must generate a string containing the code to be executed. The  possible  output  from  the  command  is  sent directly  to  the  standard  output.
 
-**Examples: **
-```
+**Examples:**
+
+```code
 system('dir'),
 ```
 
-```
+```code
 if p(v2) then system('type ',v2),fi,
 ```
 
 ---
+
 # T
 
 ## type(string) - string  type
@@ -1571,21 +1839,26 @@ Format  must  generate  a  string  or a  syntax  error  is  issued.
 
 **Examples:**
 
-```
+```code
 if  type(**v1**)**='N'  then  f(val(v1),3,2)/  else  v1/,  fi,
 ```
 
-```
+```code
 if  s(type(v1),type(v2),type(v3))<>'AAA'  then  'Invalid  character  type detected'/,  fi,
 ```
+
+---
+
 
 
 # V
 ## v - field  selector
+
 **Support:** Standard
 
 **Syntax:**
-```
+
+```code
 v<field tag>[command components]
 ```
 
@@ -1616,40 +1889,40 @@ Notes:	The behavior of the field command depends on the component(s) used. No ou
 
 **Examples:**	
 
-```
+```code
 v2/,v3^a| - |,v1/,
 ```
 
-```
+```code
 v1^n*0.3,
 ```
 
-```
+```code
 (|; |+v3^s)/,
 ```
 
-```
+```code
 v20[4],
 ```
 
 
-```
+```code
 v10[2..7]/,
 ```
 
-```
+```code
 v5[3..]/,/* equals to ,v5[3..LAST], */
 ```
 	
-```
+```code
 v1[LAST]*2.7/,
 ```
 
-```
+```code
 v1(5,5)/,
 ```
 
-```
+```code
 |Title: |v1^n(5,5)/,
 ```
 
@@ -1660,6 +1933,9 @@ v1(5,5)/,
 **|string|** [repeatable conditional literal]
 **(format)** [repeatable group]
 
+
+
+---
 
 
 
@@ -1688,6 +1964,9 @@ If  more  than  one  numeric  value  is encountered,  only  the  first one  is  
 `f(val(v2)/3,4,2),`
 
 
+---
+
+
 # X
 ## x - spacing
 
@@ -1704,11 +1983,11 @@ If  `<int>`  is  greater  than  the  available  space  in  the  current  line,  
 
 **Examples:**
 
-```
+```code
 'Name:  ', x5,v1^n/,
 ```
 
-```
+```code
 (v1,x3,v2,x8,v3/),
 ```
 

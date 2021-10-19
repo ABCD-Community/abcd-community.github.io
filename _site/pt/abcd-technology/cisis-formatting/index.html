@@ -214,8 +214,8 @@
                       <li class="collapse show" id="">
                         
                           
-                            <a class="td-sidebar-link td-sidebar-link__page " id="m-home-tecnologia-abcd-cisis-utilitários" href="/pt/abcd-technology/cisis-utils">CISIS Utilitários</a>
-                            <a class="td-sidebar-link td-sidebar-link__page " id="m-home-tecnologia-abcd-cisis-linguagem-de-formato" href="/pt/abcd-technology/cisis-formatting">CISIS Linguagem de formato</a>
+                            <a class="td-sidebar-link td-sidebar-link__page " id="m-home-tecnologia-abcd-utilitários-cisis" href="/pt/abcd-technology/cisis-utils">Utilitários CISIS</a>
+                            <a class="td-sidebar-link td-sidebar-link__page " id="m-home-tecnologia-abcd-formato-cisis" href="/pt/abcd-technology/cisis-formatting">Formato CISIS</a>
                             <a class="td-sidebar-link td-sidebar-link__page " id="m-home-tecnologia-abcd-isis-script" href="/pt/abcd-technology/isis-script">ISIS Script</a>
                         
                       </li>
@@ -394,15 +394,28 @@
 
            <div class="td-content">
 
-	      <h1 class="no_toc" id="estrutura-da-listagem-de-referência">Estrutura da Listagem de Referência</h1>
+	      <h1 id="linguagem-de-formato-cisis">Linguagem de formato CISIS</h1>
 
-<h2 class="no_toc text-delta" id="conteúdo">Conteúdo</h2>
+<p>A linguagem de formato CISIS é constituida de uma série de comandos e funcões que permitem a formatação do conteúdo dos campos de dados de bases de dados na tela.</p>
+
+<p>É uma linguagem poderosíssima, e com ela, se torna possível a apresentação do conteúdo de cada registro de uma base de dados na ordem e aparência desejada, principalmente se mesclada com HTML e CSS.</p>
+
+<p>É imprescindível que o bibliotecário domine esta linguagem para que possa criar qualquer tipo de relatório ou apresentações a partir de qualquer uma das bases de dados.</p>
+
+<p>A formatação de registros, pressupõe do bibliotecário, o conhecimento do número de identificação de cada campo de dados que compõe cada registro da base de dados a ser formatada.</p>
+
+<p>Veja abaixo os comandos e suas formas de usar.</p>
+
+<h2 class="no_toc no_toc text-delta" id="conteúdo">Conteúdo</h2>
 
 <ol id="markdown-toc">
-  <li><a href="#--------" id="markdown-toc---------">% # ‘’ “” || () / /* @</a>    <ol>
-      <li><a href="#---unconditional--newline" id="markdown-toc----unconditional--newline"># - unconditional  newline</a></li>
-      <li><a href="#---reset-blank-line" id="markdown-toc----reset-blank-line">% - reset blank line</a></li>
-      <li><a href="#string----conditional-literal" id="markdown-toc-string----conditional-literal">“string”  - conditional literal</a></li>
+  <li><a href="#linguagem-de-formato-cisis" id="markdown-toc-linguagem-de-formato-cisis">Linguagem de formato CISIS</a></li>
+  <li><a href="#a-linguagem-de-formatação-para-apresentação-de-valores-ref" id="markdown-toc-a-linguagem-de-formatação-para-apresentação-de-valores-ref">A Linguagem de Formatação para apresentação de valores REF</a></li>
+  <li><a href="#estrutura-da-listagem-de-referência" id="markdown-toc-estrutura-da-listagem-de-referência">Estrutura da Listagem de Referência</a></li>
+  <li><a href="#caracteres---------" id="markdown-toc-caracteres---------">Caracteres % # ‘’ “” || () / /* @</a>    <ol>
+      <li><a href="#---nova-linha-incondicional" id="markdown-toc----nova-linha-incondicional"># - nova linha incondicional</a></li>
+      <li><a href="#---cancela-linha-em-branco" id="markdown-toc----cancela-linha-em-branco">% - cancela linha em branco</a></li>
+      <li><a href="#string----literal-condicional" id="markdown-toc-string----literal-condicional">“string”  - literal condicional</a></li>
       <li><a href="#string---unconditional-literal" id="markdown-toc-string---unconditional-literal">‘string’ - unconditional literal</a></li>
       <li><a href="#string---repeatable-conditional-literal" id="markdown-toc-string---repeatable-conditional-literal">|string| - repeatable conditional literal</a></li>
       <li><a href="#format---repeatable-group" id="markdown-toc-format---repeatable-group">(format) - repeatable group</a></li>
@@ -449,46 +462,109 @@
 
 <hr />
 
-<p><strong>Suporte:</strong></p>
+<h1 id="a-linguagem-de-formatação-para-apresentação-de-valores-ref">A Linguagem de Formatação para apresentação de valores <a href="/pt/abcd-technology/cisis-formatting/#v---field--selector">REF</a></h1>
 
-<p>Se Padrão, significa que comando/função tem o mesmo uso/resultado tanto no ISIS quanto no CISIS. Se CISIS for especificado, significa que está disponível somente em CISIS. As funções que são aprimoradas no CISIS, são apresentadas com a notação Standard/CISISIS. (item sempre presente)</p>
+<p>Esta é de longe a mais importante função da Linguagem de Formatação: especificando exatamente quais dados precisam ser tomados e como serão “exibidos” ou “impressos” (para a tela, para uma impressora, para um arquivo, para uma página da web ).
+Existem documentos separados para lidar com esta linguagem extensa, por exemplo, o capítulo dedicado no Manual  de Referência ISIS, publicado pela UNESCO (Junho de 2004, capítulo 8, p. 94-122).</p>
 
-<p><strong>Function type:</strong>
-Displays the data type of a function return value. Possible values are: boolean, string and numeric. (item only applicable to functions)</p>
+<p>Basicamente, existem três tipos de declarações na LF ISIS:
+    a) valores de campos, dados como: Vx, onde “V” representa o valor (ou “conteúdo”) de um campo com a tag “x”, Vx^a é o valor de um subcampo (^a), do campo x e (Vx/) é o conjunto de todas as ocorrências do campo x separados por uma “nova linha” (/), desde que o parêntese abrace um “grupo repetitivo” de instruções para serem aplicadas a todas as ocorrências (campos repetitivos são uma característica forte e especial do ISIS).
+    b) literais ou strings, que podem ser ‘incondicionais’ (aspas simples), |condicionais| (barras verticais – pipes - indicam que a string só será produzida se o campo relacionado está presente) e “repetitivo” (aspas duplas só irá produzir a string na primeira ocorrência de um campo repetitivo).
+Aplicativos ISIS na web, como o ABCD, criam páginas web com tags HTML, utilizando este método de acrescentar literais aos valores dos campos, por exemplo,</p>
 
-<p><strong>Syntax:</strong>
-Formal notation of a command/function usage. (item always present)</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    '&lt;table&gt;&lt;tr&gt;&lt;td&gt;' Vx '&lt;/td&gt;&lt;td&gt;' Vy '&lt;/td&gt;&lt;/tr&gt;&lt;/Table&gt;'
+</code></pre></div></div>
 
-<p><strong>Definition:</strong>
-Explanation of a command/function usage.</p>
+<p>Irá exibir respectivamente os campos X e Y em duas colunas de uma tabela em HTML. Note que todos os códigos HTML são cotados (como incondicionais) e os valores extraídos dos campos da base de dados são inseridos referindo-se a eles com a instrução V.</p>
 
-<p><strong>Components:</strong>
-Explains additional features of a command/function.</p>
+<ol>
+  <li>comandos, que podem ser de diferentes tipos, por exemplo:</li>
+</ol>
 
-<p><strong>Notes:</strong>
-Elucidates particularities, restrictions and/or differences between ISIS and CISIS.</p>
+<ul>
+  <li>
+    <p>comandos de Modo: mhl/u (modo cabeçalho em minúsculas/maiúsculas), mdl (modo de dados maiúsculas/minúsculas) ou mpl/u (modo de revisão maiúsculas/minúsculas);</p>
+  </li>
+  <li>
+    <p>em ambientes Windows): comandos de definição de atributos de tela (cores, fontes, caixas) ou links (solicitando ao sistema operacional para abrir outros dados, por exemplo, dados multimídia referenciados em um registro), por exemplo:</p>
+  </li>
+</ul>
 
-<p><strong>Examples:</strong>
-Lists one or more examples of command/function usage.</p>
+<p>LINK (‘clique aqui para o texto integral’, OPENFILE Vx) irá pedir - quando o usuário clica no texto de hiperlink, ‘clique aqui para o texto integral’ - ao Windows para abrir o arquivo cujo nome está em Vx, com o aplicativo Windows associado à extensão do arquivo;</p>
 
-<p><strong>See also:</strong>
-Lists related commands and functions.</p>
+<ul>
+  <li>o comando REF, que pode recuperar dados de outros registros (no mesmo ou em outra base de dados quando expressamente referenciada), permitindo implementar semi-relações em aplicações ISIS (mas com a vantagem de que a relação é estabelecida apenas em tempo de execução, quando requerida), por exemplo,</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">REF(['users']) L(['users']V2),V1)</code></p>
+
+<p>recuperará o valor do campo 1 no banco de dados ‘usuários’ se a função L(ookup) tiver encontrado o valor do campo 2 (no banco de dados real) no índice do banco de dados de usuários, para que o MFN do registro possa ser identificado.</p>
+
+<ul>
+  <li>declarações de roteamento condicional</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">'IF...THEN... (ELSE....)FI'</code></p>
+
+<p>ou mesmo o</p>
+
+<p><code class="language-plaintext highlighter-rouge">SELECT [case1 case2...] ELSE- CASE... ENDSEL</code></p>
+
+<p>podem ser usadas para aplicar declarações de formatação somente aos valores do banco de dados que atendam a determinadas condições.</p>
+
+<ul>
+  <li>no ambiente CISIS declarações extras da LF estão disponíveis, o mais importante é um comando que realmente irá processar um registro para alterar o conteúdo dos campos. A sintaxe geral é:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>proc(x|y...) 
+</code></pre></div>    </div>
+    <p>onde x ou y pode ser qualquer um dos seguintes: <code class="language-plaintext highlighter-rouge">'Dxxx'</code>(para apagar o campo com tag xxx)</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">|Axx#|value|#|</code> (para agregar o valor  xx ao campo)</p>
+  </li>
+  <li>As funções, principalmente para operações de “strings” (por exemplo, substr, tamanho, valor) ou numéricas (por exemplo, rmin rmax, rsum …);</li>
+</ul>
+
+<h1 id="estrutura-da-listagem-de-referência">Estrutura da Listagem de Referência</h1>
+
+<p><strong>Suporte:</strong> 
+Se Padrão, significa que comando/função tem o mesmo uso/resultado tanto no ISIS quanto no CISIS. Se CISIS for especificado, significa que está disponível somente em CISIS. As funções que são aprimoradas no CISIS, são apresentadas com a notação Standard/CISISIS. (item sempre presente)</p>
+
+<p><strong>Tipo de função:</strong>
+Especifica o tipo do valor de retorno da função. Os possíveis valores são: Boolean, String e Numeric. (item só aplicável às funções)</p>
+
+<p><strong>Sintaxe:</strong>
+Notação formal do uso do comando/função. (item sempre presente)</p>
+
+<p><strong>Definição:</strong>
+Exposição do uso do comando/função.</p>
+
+<p><strong>Componentes:</strong>
+Exposição de características adicionais do comando/função.</p>
+
+<p><strong>Notas:</strong>
+Esclarece particularidades, restrições e/ou diferenças entre ISIS e CISIS.</p>
+
+<p><strong>Exemplos:</strong>
+Provê um ou mais exemplos de uso do comando/função.</p>
+
+<p><strong>Veja também:</strong>
+Lista comandos e funções relacionadas.</p>
 
 <hr />
 
-<h1 id="--------">% # ‘’ “” || () / /* @</h1>
+<h1 id="caracteres---------">Caracteres % # ‘’ “” || () / /* @</h1>
 
-<h2 id="---unconditional--newline"># - unconditional  newline</h2>
+<h2 id="---nova-linha-incondicional"># - nova linha incondicional</h2>
 
-<p><strong>Support:</strong>  Standard</p>
+<p><strong>Suporte:</strong>   Standard</p>
 
-<p><strong>Syntax:</strong><br />
+<p><strong>Sintaxe:</strong> <br />
 <code class="language-plaintext highlighter-rouge">#</code></p>
 
-<p><strong>Definition:</strong><br />
-Begins  a  newline  unconditionally.</p>
+<p><strong>Definição:</strong> 
+Salta para a linha seguinte incondicionalmente.</p>
 
-<p><strong>Examples:</strong></p>
+<p><strong>Exemplos:</strong></p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#,("address:"v3(9,9)+|;  |#),
 </code></pre></div></div>
@@ -496,37 +572,42 @@ Begins  a  newline  unconditionally.</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(|Name:  |v1^n,c20,|Surname:|v1^s/),###,
 </code></pre></div></div>
 
-<p><strong>See  also:</strong></p>
+<p><strong>Veja também:</strong></p>
 
 <p><strong>/</strong> [conditional  newline]</p>
 
 <p><strong>%</strong> [reset  blank  line]</p>
 
-<h2 id="---reset-blank-line">% - reset blank line</h2>
+<hr />
 
-<p><strong>Support:</strong> Standard
-<strong>Syntax:</strong>  <strong>%</strong>
-<strong>Definition:</strong> 
-Resets  all  previous blank  lines,  if  any.</p>
+<h2 id="---cancela-linha-em-branco">% - cancela linha em branco</h2>
 
-<p><strong>Examples:</strong></p>
+<p><strong>Suporte:</strong>  Standard
+<strong>Sintaxe:</strong>   <strong>%</strong>
+<strong>Definition:</strong></p>
+
+<p>Cancela as linhas em branco prévias, se houver.</p>
+
+<p><strong>Exemplos:</strong></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>|Name: |v1^n,c20,|Surname:|v1^s,###,%,/,
 </code></pre></div></div>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>v10/#,v20/#,v30/#,%#,
 </code></pre></div></div>
 
-<p><strong>See  also:</strong></p>
+<p><strong>Veja também:</strong></p>
 
 <p><strong>/</strong> [conditional  newline]</p>
 
 <p><strong>#</strong> [unconditional  newline]</p>
 
-<h2 id="string----conditional-literal">“string”  - conditional literal</h2>
+<hr />
 
-<p><strong>Support:</strong> Standard</p>
+<h2 id="string----literal-condicional">“string”  - literal condicional</h2>
 
-<p><strong>Syntax:</strong></p>
+<p><strong>Suporte:</strong>  Standard</p>
+
+<p><strong>Sintaxe:</strong></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"&lt;text&gt;"&lt;field selector&gt;"&lt;text&gt;"
 	"&lt;text&gt;"&lt;dummy field (selector)&gt;
 "&lt;text&gt;"&lt;not present&gt;
@@ -539,7 +620,7 @@ If combined with `&lt;dummy field (selector)&gt;`, output is generated if data f
 <p><strong>Notes:</strong>
 <code class="language-plaintext highlighter-rouge">&lt;text&gt;</code> is produced only once, independing on repeatable fields.</p>
 
-<p><strong>Examples:</strong></p>
+<p><strong>Exemplos:</strong></p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"Author: "v1^a,
 </code></pre></div></div>
@@ -557,11 +638,13 @@ If combined with `&lt;dummy field (selector)&gt;`, output is generated if data f
 <strong>n</strong> [not present]
 <strong>v</strong> [field selector]</p>
 
+<hr />
+
 <h2 id="string---unconditional-literal">‘string’ - unconditional literal</h2>
 
-<p><strong>Support:</strong> Standard</p>
+<p><strong>Suporte:</strong>  Standard</p>
 
-<p><strong>Syntax:</strong>	
+<p><strong>Sintaxe:</strong> 	
 <code class="language-plaintext highlighter-rouge">'&lt;text&gt;'</code></p>
 
 <p><strong>Definition:</strong>
@@ -570,7 +653,7 @@ Unconditionally outputs the text contained between a single quotes pair.</p>
 <p><strong>Notes:</strong>
 Unconditional literals may be placed anywhere in a format and can be passed as parameters to functions.</p>
 
-<p><strong>Examples:</strong></p>
+<p><strong>Exemplos:</strong></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>this text will always output',
 </code></pre></div></div>
 
@@ -581,11 +664,13 @@ Unconditional literals may be placed anywhere in a format and can be passed as p
 <strong>“string”</strong> [conditional literal]
 <strong>|string|</strong> [repeatable conditional literal]</p>
 
+<hr />
+
 <h2 id="string---repeatable-conditional-literal">|string| - repeatable conditional literal</h2>
 
-<p><strong>Support:</strong> Standard</p>
+<p><strong>Suporte:</strong>  Standard</p>
 
-<p><strong>Syntax:</strong></p>
+<p><strong>Sintaxe:</strong></p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>|&lt;text&gt;|&lt;+&gt;&lt;field selector&gt;&lt;+&gt;|&lt;text&gt;|
 </code></pre></div></div>
@@ -604,7 +689,7 @@ When <code class="language-plaintext highlighter-rouge">&lt;+&gt;</code> is pres
 Prefix and suffix-literals can be used together, including with <code class="language-plaintext highlighter-rouge">&lt;+&gt;</code> operator.
 If a prefix or suffix-literal is used with <code class="language-plaintext highlighter-rouge">&lt;+&gt;</code> outside a repeatable group, literal contents may not be output as desired. If field is not repeatable, literal output occurs for the first and only occurrence of data field.</p>
 
-<p><strong>Examples:</strong></p>
+<p><strong>Exemplos:</strong></p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(|; |+v1^s,|,|v1^n*0.1|.|),
 </code></pre></div></div>
@@ -619,31 +704,34 @@ If a prefix or suffix-literal is used with <code class="language-plaintext highl
 <strong>(format)</strong> [repeatable group]
 <strong>v</strong> [field selector]</p>
 
+<hr />
+
 <h2 id="format---repeatable-group">(format) - repeatable group</h2>
 
-<p><strong>Support:</strong>  Standard</p>
+<p><strong>Suporte:</strong>   Standard</p>
 
-<p><strong>Syntax:</strong></p>
+<p><strong>Sintaxe:</strong></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> (&lt;format&gt;)
 </code></pre></div></div>
 
-<p><strong>Definition:</strong><br />
+<p><strong>Definição:</strong> 
 Applies  the  format  between  the  parenthesis  to  all  occurrences  of  repeatable  field(s)  individually,  or  only  once,  if  no  repeatable  field  is  present.</p>
 
 <p><strong>Notes:</strong><br />
 Repeatable  groups  cannot  be  nested.</p>
 
-<p>**Examples:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(|;  |+v2^s/),
-</code></pre></div></div>
+<p><strong>Examples:</strong></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(v1,c15,v2,c35,v3/),
-</code></pre></div></div>
+<pre><code class="language-language">(|;  |+v2^s/),
+</code></pre>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(if  iocc&lt;=3  then  f(iocc,1,0),|  -  |v3/ else  '-&gt; more than  3'/,  fi),
-</code></pre></div></div>
+<pre><code class="language-language">(v1,c15,v2,c35,v3/),
+</code></pre>
 
-<p><strong>See  also:</strong></p>
+<pre><code class="language-language">(if  iocc&lt;=3  then  f(iocc,1,0),|  -  |v3/ else  '-&gt; more than  3'/,  fi),
+</code></pre>
+
+<p><strong>Veja também:</strong></p>
 
 <table>
   <tbody>
@@ -656,6 +744,8 @@ Repeatable  groups  cannot  be  nested.</p>
 </table>
 
 <p><strong>v</strong> [field  selector]</p>
+
+<hr />
 
 <h2 id="---conditional-newline">/ - conditional newline</h2>
 
@@ -672,7 +762,7 @@ Begins a new line if not at the beginning of a line.</p>
 
 <p>Several conditional newline commands <code class="language-plaintext highlighter-rouge">(,/,/,/,/,)</code> have the same effect of a single one.</p>
 
-<p><strong>Examples:</strong></p>
+<p><strong>Exemplos:</strong></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>v1/,
 </code></pre></div></div>
 
@@ -687,10 +777,12 @@ Begins a new line if not at the beginning of a line.</p>
 <p><strong>#</strong> [unconditional newline]
 <strong>%</strong> [reset blank line]</p>
 
+<hr />
+
 <h2 id="string---comment">/*string*/ - comment</h2>
 
-<p><strong>Support:</strong> CISIS
-<strong>Syntax:</strong></p>
+<p><strong>Suporte:</strong>  CISIS
+<strong>Sintaxe:</strong></p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/* &lt;comment&gt; */
 </code></pre></div></div>
@@ -701,7 +793,7 @@ Encapsulates a comment.</p>
 <p><strong>Notes:</strong>
 Comments can span over several lines.</p>
 
-<p><strong>Examples:</strong></p>
+<p><strong>Exemplos:</strong></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/* this is a single line comment */,
 </code></pre></div></div>
 
@@ -711,11 +803,13 @@ Comments can span over several lines.</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if a(v10) /*and p(v20) */ then v20/ fi,
 </code></pre></div></div>
 
+<hr />
+
 <h2 id="---include-format-file">@ - include format file</h2>
 
-<p><strong>Support:</strong> CISIS</p>
+<p><strong>Suporte:</strong>  CISIS</p>
 
-<p><strong>Syntax:</strong></p>
+<p><strong>Sintaxe:</strong></p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@&lt;filename&gt;
 </code></pre></div></div>
@@ -726,7 +820,7 @@ Includes a format specification stored in a file in the current format.</p>
 <p><strong>Notes:</strong>
 <code class="language-plaintext highlighter-rouge">&lt;filename&gt;</code> may include drive and path information. Syntax of commands from the included file is evaluated when current format is executed. It is mandatory to separate <code class="language-plaintext highlighter-rouge">&lt;filename&gt;</code> with commas.</p>
 
-<p><strong>Examples:</strong></p>
+<p><strong>Exemplos:</strong></p>
 
 <pre><code class="language-language">@test.pft,v20,
 </code></pre>
@@ -737,14 +831,16 @@ Includes a format specification stored in a file in the current format.</p>
 <pre><code class="language-language">if v1='L' then @large.pft, fi,
 </code></pre>
 
+<hr />
+
 <h1 id="a">A</h1>
 <h2 id="afield-selector---absence-check">a(field selector) - absence check</h2>
 
-<p><strong>Support:</strong>  Standard</p>
+<p><strong>Suporte:</strong>   Standard</p>
 
 <p><strong>Function  type:</strong>  Boolean</p>
 
-<p><strong>Syntax:</strong></p>
+<p><strong>Sintaxe:</strong></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a(&lt;field  selector&gt;)
 </code></pre></div></div>
 
@@ -754,23 +850,25 @@ Returns  TRUE  if  data  field  is  absent,  otherwise  returns  FALSE.</p>
 <p><strong>Notes:</strong>
 All  components  of  field  selector may be  used,  except  indent.</p>
 
-<p><strong>Examples:</strong></p>
+<p><strong>Exemplos:</strong></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> if  a(v12) then  v13  else  v12, fi,
 </code></pre></div></div>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if  a(v20^b) and  p(v30) then  v40/,  fi,
 </code></pre></div></div>
 
-<p><strong>See  also:</strong></p>
+<p><strong>Veja também:</strong></p>
 
 <p><strong>p</strong> function</p>
 
 <p><strong>v</strong> [field  selector]</p>
 
+<hr />
+
 <h1 id="b">B</h1>
 <h2 id="break---conditional--branchingquitting">break - conditional  branching/quitting</h2>
 
-<p><strong>Support:</strong> CISIS</p>
+<p><strong>Suporte:</strong>  CISIS</p>
 
 <p>Syntax:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>break
@@ -783,49 +881,53 @@ All  components  of  field  selector may be  used,  except  indent.</p>
 <p><strong>Notes:</strong>
 The  execution  resumes  after  the  end  of  the  repeatable  group.  When  used  inside a <strong>ref function</strong>, execution continues with the format after the  function.</p>
 
-<p><strong>Examples:</strong></p>
+<p><strong>Exemplos:</strong></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(if  iocc  &gt;  10  then '10+  occurrences'/,**break** else  v5^n|-|,v5^s,/,  fi,),
 </code></pre></div></div>
 
-<p><strong>See  also:</strong>
+<p><strong>Veja também:</strong> 
 <strong>(format)</strong> [repeatable  group]</p>
+
+<hr />
 
 <h1 id="c">C</h1>
 <h2 id="c---column">c - column</h2>
-<p><strong>Support:</strong> Standard</p>
+<p><strong>Suporte:</strong>  Standard</p>
 
-<p><strong>Syntax:</strong></p>
+<p><strong>Sintaxe:</strong></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>c&lt;int&gt;
 </code></pre></div></div>
 
 <p><strong>Definition:</strong>
 Skips  to  the  specified  column  in  the  current  or  next  line.</p>
 
-<p><strong>Examples:</strong></p>
+<p><strong>Exemplos:</strong></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'Name:  ',c10,v1^n/,
 </code></pre></div></div>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if  p(v1^s)  then  c10,v1^s/,  fi,
 </code></pre></div></div>
 
-<p><strong>See  also:</strong></p>
+<p><strong>Veja também:</strong></p>
 
 <p><strong>x</strong> [spacing]</p>
 
+<hr />
+
 <h2 id="catfile---dump--file">cat(file) - dump  file</h2>
 
-<p><strong>Support:</strong> CISIS</p>
+<p><strong>Suporte:</strong>  CISIS</p>
 
 <p><strong>Function  type:</strong> String</p>
 
-<p><strong>Syntax:</strong></p>
+<p><strong>Sintaxe:</strong></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cat(&lt;format&gt;)
 </code></pre></div></div>
 
 <p><strong>Definition:</strong>
 Outputs  the  contents  of  a  file  whose  name  is  generated  by  <code class="language-plaintext highlighter-rouge">&lt;format&gt;</code>. Used for display file.</p>
 
-<p><strong>Examples:</strong></p>
+<p><strong>Exemplos:</strong></p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mfn,cat('myfile.html'),
 </code></pre></div></div>
@@ -836,32 +938,41 @@ Outputs  the  contents  of  a  file  whose  name  is  generated  by  <code class
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cat(v101),
 </code></pre></div></div>
 
-<p><strong>See  also:</strong></p>
+<p><strong>Veja também:</strong></p>
 
 <p><strong>s(expression)</strong></p>
 
+<hr />
+
 <h2 id="continue---repeatable--conditional--branching">continue - repeatable  conditional  branching</h2>
 
-<p>**Support:  CISIS</p>
+<p><strong>Support:</strong>  CISIS</p>
 
-<p>Syntax:  <strong>continue</strong></p>
+<p><strong>Syntax:</strong> continue</p>
 
-<p>Definition:  Executes  the  next  occurrence  of  a  repeatable  group  if  at  least  one  data  field  has  a  subsequent  occurrence.</p>
+<p><strong>Definition:</strong>  Executes  the  next  occurrence  of  a  repeatable  group  if  at  least  one  data  field  has  a  subsequent  occurrence.</p>
 
-<p>Notes:</p>
+<p><strong>Notes:</strong></p>
 
-<p>Examples: 1  (if  iocc  =  1  then  <strong>continue</strong> else  v10/  fi),</p>
+<p>Examples:</p>
 
-<p>2  (f(iocc,1,0),’=’,v70,continue/),</p>
+<pre><code class="language-language">(if  iocc  =  1  then  **continue** else  v10/  fi),
+</code></pre>
 
-<p>See  also:  <strong>(</strong>format<strong>)</strong> [repeatable  group]</p>
+<pre><code class="language-language">2  (f(iocc,1,0),'=',v70,continue/),
+</code></pre>
+
+<p><strong>See  also:</strong>
+(format) [repeatable  group]</p>
+
+<hr />
 
 <h1 id="d">D</h1>
 <h2 id="d---dummy--field--selector">d - dummy  field  selector</h2>
 
-<p><strong>Support:</strong> Standard</p>
+<p><strong>Suporte:</strong>  Standard</p>
 
-<p><strong>Syntax:</strong></p>
+<p><strong>Sintaxe:</strong></p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>d&lt;field tag&gt;&lt;subfield&gt;
 </code></pre></div></div>
@@ -875,23 +986,25 @@ Dummy  field  (selector) does  not  return  a  value.</p>
 <p><strong>Known  bugs:</strong>
 When  in  a  repeatable  group,  <code class="language-plaintext highlighter-rouge">&lt;subfield&gt;</code>  is  evaluated  only  for  the  first  occurrence  of  data  field.</p>
 
-<p><strong>Examples:</strong></p>
+<p><strong>Exemplos:</strong></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"this  text  outputs  if  data  field  10 exists"**d**10,
 </code></pre></div></div>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Name:  "v20(5,5)/,  ,"Name:  "n20,v21(5,5)/,
 </code></pre></div></div>
 
-<p><strong>See  also:</strong>
+<p><strong>Veja também:</strong> 
 <strong>“string”</strong>  [conditional  literal]
 <strong>n</strong>  [not  present]  v  [field  selector]</p>
 
+<hr />
+
 <h2 id="date-datekeyword---current--date">date date(keyword) - current  date</h2>
 
-<p><strong>Support:</strong> CISIS
+<p><strong>Suporte:</strong>  CISIS
 <strong>Function  type:</strong>  String</p>
 
-<p><strong>Syntax:</strong></p>
+<p><strong>Sintaxe:</strong></p>
 
 <pre><code class="language-date```">
 ```date(&lt;keyword&gt;)```
@@ -916,7 +1029,7 @@ keywords  **DATETIME** and  **DATEONLY**
 
 **DATETIME** shows  system  date  in  european  format  plus  current  time  ***(dd/mm/yy hh:mm:ss)*** while **DATEONLY** displays the same output  without  time  information.
 
-**Examples:**
+**Exemplos:** 
 
 </code></pre>
 <p>‘Today  is  ‘,<strong>date</strong>,</p>
@@ -925,15 +1038,18 @@ keywords  **DATETIME** and  **DATEONLY**
 <p>‘Current  date:  ‘,date(DATEONLY)/,  ,’Current  time:  ‘,mid(date(DATETIME),10,8)/,</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 
+---
+
+
 
 # F
 ## f(num expr,length,decimals) - format value
 
-**Support:** Standard
+**Suporte:**  Standard
 
 **Function type:** String
 
-**Syntax:**
+**Sintaxe:** 
 
 </code></pre></div></div>
 <p>f(<format>,<expr-1>,<expr-2>)</expr-2></expr-1></format></p>
@@ -944,7 +1060,7 @@ Converts a numeric value to string. `&lt;format&gt;` is the numeric expression t
 **Notes:**
 If `&lt;format&gt;` is not a valid numeric expression, an error is issued. If `&lt;expr-2&gt;` is set, `&lt;expr-1&gt;` must also be placed or a syntax error is issued. If only `&lt;expr-1&gt;` is defined, the result is output in scientific exponent notation. If the number of characters required to represent `&lt;format&gt;` is greater than `&lt;expr-1&gt;`, additional positions are provided automatically. If `&lt;expr-1&gt;` is missing, a width of 16 characters is assumed.
 
-**Examples:**
+**Exemplos:** 
 </code></pre></div></div>
 <p>f(val(v1),2),</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
@@ -957,15 +1073,18 @@ If `&lt;format&gt;` is not a valid numeric expression, an error is issued. If `&
 **See also:**
 **val** function
 
+---
+
+
 
 # G
 ## getenv(expression) - get  environment  variable
 
-**Support:** CISIS
+**Suporte:**  CISIS
 
 **Function type:** String
 
-**Syntax:**
+**Sintaxe:** 
 </code></pre></div></div>
 <p>getenv(<format>)</format></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
@@ -975,7 +1094,7 @@ Returns the value of an environment variable.
 **Notes:**
 If `&lt;format&gt;` does not generate a valid environment variable name, no value is returned.
 
-**Examples:**
+**Exemplos:** 
 </code></pre></div></div>
 <p>‘Current path: ‘,getenv(‘PATH’),</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
@@ -986,12 +1105,15 @@ If `&lt;format&gt;` does not generate a valid environment variable name, no valu
 **putenv** function
 
 
+---
+
+
 # I
 ## if … then … else … fi - conditional  flow  control
 
-**Support:** Standard
+**Suporte:**  Standard
 
-**Syntax:**
+**Sintaxe:** 
 </code></pre></div></div>
 <p>if <bool expr=""> then <format-1> [else <format-2> ] fi</format-2></format-1></bool></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
@@ -1001,21 +1123,24 @@ Executes a block of formatting language specifications (`&lt;format-1&gt;`) if `
 **Notes:**
 Clause then precedes the first block of formatting language specifications. else is optional and if present in the code, must be followed by a format. The fi clause must always end the command scope and if missing, a syntax error is issued. The if…fi command can span over several lines, therefore it is recommended the use of indentation.
 
-**Examples:**
+**Exemplos:** 
 </code></pre></div></div>
 <p>,ifinstr(v5,’ab’)&gt;0 then ,v5/, fi,</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 </code></pre></div></div>
 <p>,if p(v10) then ,|Title: |v3, else ,|Alternate title: |v4, ,fi,</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+---
+
+
 
 
 ## instr(string1,string2) - find  string
-**Support:** CISIS
+**Suporte:**  CISIS
 
 **Function type:** Numeric
 
-**Syntax:**
+**Sintaxe:** 
 </code></pre></div></div>
 <p>instr(<format-1>,<format-2>)</format-2></format-1></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
@@ -1035,19 +1160,22 @@ Examples:
 </code></pre></div></div>
 <p>left(v18,instr(v18,’.’)-1),</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+---
+
+
 
 
 ## iocc - occurrence  index
-**Support:** CISIS
+**Suporte:**  CISIS
 
 **Function type:** Numeric
 
-**Syntax:** iocc
+**Sintaxe:**  iocc
 
 **Definition:**
 Returns the occurrence index number (starting from 1), otherwise returns zero.
 
-**Examples:**
+**Exemplos:** 
 </code></pre></div></div>
 <p>(“Author: “v1/, ,if iocc &gt; 3 then ‘et all’,break, fi),</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
@@ -1058,15 +1186,18 @@ Returns the occurrence index number (starting from 1), otherwise returns zero.
 **nocc** function
 
 
+---
+
+
 
 # L
 ## l(key) l([inverted file],key) - key  lookup
 
-**Support:** Standard/CISIS
+**Suporte:**  Standard/CISIS
 
 **Function type:** Numeric
 
-**Syntax:**
+**Sintaxe:** 
 </code></pre></div></div>
 <p>l(<format key="">)</format></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
@@ -1081,7 +1212,7 @@ Returns the MFN of the first posting (if any) by using the key generated by `&lt
 Keys are converted to upper case before the expression is seek. Default display mode used by lookup is mpl. If a different mode is specified in the FST file, key must also use the appropriate mode. If key is not found, function returns zero. The `&lt;format ifname&gt;` parameter must evaluate to a string having a valid inverted file name, otherwise a syntax error is issued. This is often used in conjunction with ref function to allow output of data fields from a different record.
 
 
-**Examples:**
+**Exemplos:** 
 </code></pre></div></div>
 <p>if l(v15)&lt;&gt; 0 then |Term: |v15, fi,</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
@@ -1092,13 +1223,16 @@ Keys are converted to upper case before the expression is seek. Default display 
 **ref** function
 
 
+---
+
+
 ## left(string,length) - left  substring
 
-**Support:** CISIS
+**Suporte:**  CISIS
 
 **Function type:** String
 
-**Syntax:** 
+**Sintaxe:**  
 </code></pre></div></div>
 <p>left(<format-1>,<format-2>)</format-2></format-1></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
@@ -1108,7 +1242,7 @@ Returns a new string, containing the leftmost characters from of the original st
 **Notes:**
 If the string generated by `&lt;format-2&gt;` is greater than the size defined by `&lt;format-1&gt;`, function returns the `&lt;format-1&gt;` string. If `&lt;format-2&gt;` is zero or is set to a negative number, returns a NULL string.
 
-**Examples:**
+**Exemplos:** 
 </code></pre></div></div>
 <p>if left(v1^n,2)=’Ma’ then v1^n/, fi,</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
@@ -1119,14 +1253,17 @@ If the string generated by `&lt;format-2&gt;` is greater than the size defined b
 **right** function
 **mid** function
 
+---
+
+
 
 ## lw(number) - set  line  width
 
-**Support:** CISIS
+**Suporte:**  CISIS
 
 **Function type:** Numeric
 
-**Syntax:** 
+**Sintaxe:**  
 </code></pre></div></div>
 <p>lw(<int>)</int></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
@@ -1136,21 +1273,24 @@ Sets the output line width to &lt;int&gt; characters.
 **Notes:**
 Output line width default depends on the application program
 
-**Examples:**
+**Exemplos:** 
 </code></pre></div></div>
 <p>if size(v10) &gt; 76 then lw(254), fi,</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 </code></pre></div></div>
 <p>lw(70),v20/,lw(10),v30/,</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+---
+
+
 
 # M
 
 ## mdl, mdu, mhl, mhu, mpl, mpu - mode
 
-**Support:** Standard
+**Suporte:**  Standard
 
-**Syntax:** 
+**Sintaxe:**  
 </code></pre></div></div>
 <p>m<mode><conv></conv></mode></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
@@ -1169,7 +1309,7 @@ Default mode is mpl. `&lt;mode&gt;` represents the desired mode to be set. `&lt;
 - u: converts data to upper case
 - l: leaves data unchanged
 
-**Examples:**
+**Exemplos:** 
 
 </code></pre></div></div>
 <p>mpl,”First author: “v10[1]/,</p>
@@ -1181,16 +1321,19 @@ Default mode is mpl. `&lt;mode&gt;` represents the desired mode to be set. `&lt;
 <p>mdl,”Third author: “v10[3]/,</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 
+---
+
+
 
 
 
 ## mfn mfn(length) - record number
 
-**Support:** Standard
+**Suporte:**  Standard
 
 **Function type:** String or numeric
 
-**Syntax:** 
+**Sintaxe:**  
 </code></pre></div></div>
 <p>mfn</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
@@ -1203,7 +1346,7 @@ Returns the master file number of a record.
 **Notes:**
 An integer value can be passed as parameter to set the return value size. mfn returns the appropriate return type according to the format requirements.
 
-**Examples:**
+**Exemplos:** 
 </code></pre></div></div>
 <p>‘Record: ‘,mfn(3)/,</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
@@ -1217,14 +1360,17 @@ An integer value can be passed as parameter to set the return value size. mfn re
 **ref** function
 **l** function
 
+---
+
+
 
 ## mid(string, start, length) - substring
 
-**Support:** CISIS
+**Suporte:**  CISIS
 
 **Function type:** String
 
-**Syntax:** 
+**Sintaxe:**  
 </code></pre></div></div>
 <p>mid(<format-1>,<format-2>,<format-3>)</format-3></format-2></format-1></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
@@ -1234,7 +1380,7 @@ Returns a new string, containing a specified number of characters from the origi
 **Notes:**
 If `&lt;format-2&gt;` is greater than `&lt;format-1&gt;` size, function returns a `NULL` string. If `&lt;format-2&gt;` is zero or is set to a negative number, default is 1.
 
-**Examples:**
+**Exemplos:** 
 </code></pre></div></div>
 <p>mid(v2,2,80),</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
@@ -1246,35 +1392,41 @@ If `&lt;format-2&gt;` is greater than `&lt;format-1&gt;` size, function returns 
 **left** function
 
 
+---
+
+
 
 
 ## mstname - master file name
 
-**Support:** CISIS
+**Suporte:**  CISIS
 
 **Function type:** String
 
-**Syntax:** 
+**Sintaxe:**  
 </code></pre></div></div>
 <p>mstname</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 **Definition:**
 Returns the current master filename.
 
-**Examples:**
+**Exemplos:** 
 </code></pre></div></div>
 <p>‘Current database: ‘,mstname/,</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 </code></pre></div></div>
 <p>ref([‘names’]l([‘names’]’X39BJ’), ,’Database now is ‘,mstname/),</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+---
+
+
 
 # N
 ## n - not  present  (dummy  field  selector)
 
-**Support:** Standard
+**Suporte:**  Standard
 
-**Syntax:** 
+**Sintaxe:**  
 `n&lt;field tag&gt;`
 
 **Definition:**
@@ -1283,7 +1435,7 @@ Tests the absence of a data field. Used in conjunction with conditional literals
 **Notes:**
 As a dummy (field) selector, it does not return a value.
 
-**Examples:**
+**Exemplos:** 
 </code></pre></div></div>
 <p>“this text outputs if data field 10 is absent”n10,</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
@@ -1297,13 +1449,16 @@ As a dummy (field) selector, it does not return a value.
 **v** [field selector]
 
 
+---
+
+
 ## newline(string) - set  newline
 
-**Support:** CISIS
+**Suporte:**  CISIS
 
 **Function type:** String
 
-**Syntax:** 
+**Sintaxe:**  
 `newline(&lt;format&gt;)`
 
 **Definition:**
@@ -1315,7 +1470,7 @@ Sets and/or resets default CR/LF pair with character(s) from resulting &lt;forma
 `\n` - line feed
 Subsequent `\` commands will be automatically replaced by resulting format until a newline sets a new character or string.
 
-**Examples:**
+**Exemplos:** 
 </code></pre></div></div>
 <p>newline(if v151=’unix’ then ‘\n’ else ‘\r\n’ fi,</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
@@ -1330,12 +1485,15 @@ Subsequent `\` commands will be automatically replaced by resulting format until
 **#** [unconditional newline]
 
 
+---
+
+
 ## nocc(field) - number  of  occurrences
 
-**Support:** CISIS
+**Suporte:**  CISIS
 **Function type:** Numeric
 
-**Syntax:** 
+**Sintaxe:**  
 </code></pre></div></div>
 <p>nocc(<field selector="">)</field></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
@@ -1346,7 +1504,7 @@ Returns the number of occurrences of a data field or subfield defined by &lt;fie
 
 `&lt;field selector&gt;` means only field and subfield in this function scope. All other field selector components, if used, issue a syntax error.
 
-**Examples:**
+**Exemplos:** 
 
 </code></pre></div></div>
 <p>if nocc(v3)&gt; 10 then ‘Too many occurrences.’/, fi,</p>
@@ -1359,13 +1517,16 @@ Returns the number of occurrences of a data field or subfield defined by &lt;fie
 
 
 
+---
+
+
 ## npost(key) npost([inverted file],key)
 
-**Support:** CISIS
+**Suporte:**  CISIS
 
 **Function type:** Numeric
 
-**Syntax:** 
+**Sintaxe:**  
 </code></pre></div></div>
 <p>npost(<format key="">)</format></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
@@ -1375,7 +1536,7 @@ Returns the number of occurrences of a data field or subfield defined by &lt;fie
 **Definition:**
 Returns the total postings for a key (given by `&lt;format key&gt;`) in an inverted file. `&lt;format&gt;` if defined, must generate a string containing the inverted file name. `&lt;format key&gt;` settles the key to be searched in the inverted file.
 
-**Examples:**
+**Exemplos:** 
 </code></pre></div></div>
 <p>if npost(v1)&gt; 1 then ‘duplicate key ‘,v1,’ found’/, fi,</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
@@ -1387,15 +1548,18 @@ Returns the total postings for a key (given by `&lt;format key&gt;`) in an inver
 
 
 
+---
+
+
 
 # P
 ## p(field selector) - presence  check
 
-**Support:** Standard
+**Suporte:**  Standard
 
 **Function type:** Boolean
 
-**Syntax:**
+**Sintaxe:** 
 </code></pre></div></div>
 <p>p(<field selector="">)</field></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
@@ -1405,7 +1569,7 @@ Returns TRUE if data field is present, otherwise returns FALSE.
 **Notes:**
 All field selector components can be used, except indent.
 
-**Examples:**
+**Exemplos:** 
 
 </code></pre></div></div>
 <p>if p(v12) then v12 else v13, fi,</p>
@@ -1419,13 +1583,16 @@ All field selector components can be used, except indent.
 **v** [field selector]
 
 
+---
+
+
 
 ## proc(field update format) - field  update
 
-**Support:** CISIS
+**Suporte:**  CISIS
 **Function type:** String
 
-**Syntax:**
+**Sintaxe:** 
 
 </code></pre></div></div>
 <p>proc(<fldupd format="">)</fldupd></p>
@@ -1445,7 +1612,7 @@ A CISIS field update specification is a string of d (delete) and a(add) and h (a
 The `#` delimiter may be any non-numeric character.
 A space must be provided between the `&lt;field tag&gt;`,  `&lt;n&gt;` and `&lt;string&gt;` parameters of the h command.
 
-**Examples:**
+**Exemplos:** 
 
 </code></pre></div></div>
 <p>proc(‘d70’,|a10#|v70|#|),</p>
@@ -1454,14 +1621,17 @@ A space must be provided between the `&lt;field tag&gt;`,  `&lt;n&gt;` and `&lt;
 <p>proc(if v24<em>0.4 = ‘Tech’ then ‘d</em>’, fi),</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 
+---
+
+
 
 ## putenv(expression) - environment  variable  set
 
-**Support:** CISIS
+**Suporte:**  CISIS
 
 **Function type:** String
 
-**Syntax:**
+**Sintaxe:** 
 
 </code></pre></div></div>
 <p>putenv(<format>)</format></p>
@@ -1472,7 +1642,7 @@ Sets an environment variable at the operating system level with its correspondin
 **Notes:**
 The variable is available only within the scope of current process.
 
-**Examples:**
+**Exemplos:** 
 </code></pre></div></div>
 <p>putenv(‘TEST=test’),getenv(‘TEST’),</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code></code></pre></div></div>
@@ -1485,14 +1655,17 @@ set</p>
 **getenv** function
 
 
+---
+
+
 # R
 ## ravr(string) - average  value  of  expression
 
-**Support:** Standard
+**Suporte:**  Standard
 
 **Function  type:** Numeric
 
-**Syntax:**
+**Sintaxe:** 
 
 </code></pre></div></div>
 <p>ravr(<format>)</format></p>
@@ -1503,7 +1676,7 @@ Returns  the  average  value  of a  given  format.  `&lt;format&gt;`  must  gene
 **Notes:**
 Can  be  used  to  compute  the  average  of  numeric  values  in  repeatable  fields.
 
-**Examples:**
+**Exemplos:** 
 </code></pre></div></div>
 <p>f(<strong>ravr(</strong>s(v8,x1,v1)<strong>)</strong>,3,0),</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
@@ -1516,18 +1689,21 @@ Can  be  used  to  compute  the  average  of  numeric  values  in  repeatable  f
 </code></pre></div></div>
 <p>if  <strong>ravr(</strong>v20|;|<strong>)</strong>&gt;=5  then  ‘pass’/  else  ‘fail’/,  fi,</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-**See  also:**
+**Veja também:** 
 **rmin** function
 **rmax** function
 **rsum** function
 
+---
+
+
 ## record number
 
 ## ref(mfn, format) ref([master file]mfn, format) - record  reference  link
-**Support:** Standard/CISIS
+**Suporte:**  Standard/CISIS
 **Function type:** String
 
-**Syntax:**
+**Sintaxe:** 
 `ref(&lt;expr&gt;,&lt;format&gt;)`
 `ref([&lt;format dbname&gt;]&lt;expr&gt;,&lt;format&gt;)`
 
@@ -1552,13 +1728,16 @@ Examples:
 **See also:**
 **l** function
 
+---
+
+
 
 ## replace(string1, string2, string3) - replace
 
-**Support:** CISIS
+**Suporte:**  CISIS
 **Function type:** String
 
-**Syntax:**
+**Sintaxe:** 
 </code></pre></div></div>
 <p>replace(<format-1>,<format-2>, &lt;format3)</format-2></format-1></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
@@ -1570,7 +1749,7 @@ If `&lt;format-2&gt;` is a null string or is not found in `&lt;format-1&gt;`), f
 If `&lt;format-3&gt;` is null, `&lt;format-2&gt;` string will be excluded from `&lt;format-1&gt;`.
 replace is case sensitive for both search string (`&lt;format-2&gt;`) and replace string (`&lt;format-3&gt;`).
 
-**Examples:**
+**Exemplos:** 
 </code></pre></div></div>
 <p>replace(‘Mary And John’,’And’,’and’)/,</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
@@ -1583,14 +1762,17 @@ replace is case sensitive for both search string (`&lt;format-2&gt;`) and replac
 </code></pre></div></div>
 <p>replace(s(if v415=’spanish’ then v299 else ‘none’ fi),v1,v759)/,</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+---
+
+
 
 ## right(string, length) - right  substring
 
-**Support:** CISIS
+**Suporte:**  CISIS
 
 **Function type:** String
 
-**Syntax:**
+**Sintaxe:** 
 </code></pre></div></div>
 <p>right(<format-1>,<format-2>)</format-2></format-1></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
@@ -1600,19 +1782,22 @@ Returns a new string, containing the rightmost characters of the original string
 **Notes:**
 If `&lt;format-2&gt;` is greater than `&lt;format-1&gt;` size, function returns `&lt;format-1&gt;` string. If `&lt;format-2&gt;` is zero or is set to a negative number, returns nothing.
 
-***Examples:***
+***Exemplos:** *
 </code></pre></div></div>
 <p>if right(v1^n,1) = ‘r’ then v1^n/, fi,</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 </code></pre></div></div>
 <p>right(v65,4)/,</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+---
+
+
 
 ## rmax(string) - maximum  value  of  expression
 
-**Support:** Standard
+**Suporte:**  Standard
 **Function type:** Numeric
-**Syntax:** 
+**Sintaxe:**  
 </code></pre></div></div>
 <p>rmax(<format>)</format></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
@@ -1636,14 +1821,17 @@ Examples:
 **ravr** function
 **rsum** function
 
+---
+
+
 
 ## rmin(string) - minimum  value  of  expression
 
-**Support:** Standard
+**Suporte:**  Standard
 
 **Function  type:** Numeric
 
-**Syntax:** 
+**Sintaxe:**  
 
 </code></pre></div></div>
 <p>rmin(<format>)</format></p>
@@ -1654,10 +1842,12 @@ Returns  the  minimum  value  of  a  given  format.  `&lt;format&gt;`  must  gen
 **Notes:**
 Similar  to  **rmax  function**,  rmin  can  compute  the  minimum  of  numeric  values  in a  repeatable  field.
 
-**Examples: **
+**Examples:**
+
 </code></pre></div></div>
 <p>f(rmin(‘10;2;5;4;-2’),2,0),</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+
 </code></pre></div></div>
 <p>f(rmin(v1,x1,v2,x1,’44’),4,2),</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
@@ -1665,19 +1855,22 @@ Similar  to  **rmax  function**,  rmin  can  compute  the  minimum  of  numeric 
 <p>if rmin(v80||,v90|  |,v100|  |)&lt;  1990  then  ‘Wrong  decade.’/,  fi,</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 
-**See  also:**
+**Veja também:** 
 **rmax** function
 **ravr** function
 **rsum** function
 
+---
+
+
 
 ## rsum(string) - sum  of  expression
 
-**Support:**  Standard
+**Suporte:**   Standard
 
 **Function  type:**  Numeric
 
-**Syntax:**
+**Sintaxe:** 
 </code></pre></div></div>
 <p>rsum(<format>)</format></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
@@ -1696,20 +1889,23 @@ Examples:
 </code></pre></div></div>
 <p>if rsum(v20^d)&gt;1000  then  ‘Aborted.’/  else  ‘OK’/,  fi,</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-**See  also:**
+**Veja também:** 
 **rmax** function
 **ravr** function
 **rmin** function
+
+---
+
 
 
 # S
 ## s(expression) - string
 
-**Support:**  Standard
+**Suporte:**   Standard
 
 **Function  type:**  String
 
-**Syntax:**
+**Sintaxe:** 
 </code></pre></div></div>
 <p>s(<format>)[command  component]</format></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
@@ -1725,11 +1921,14 @@ Extracts partial content of the resulting string. `&lt;offset int&gt;` is the fi
 Notes:  Can  be  passed  to  functions  that  require  a  string  expression  as  parameter.
 
 
+---
+
+
 ## select … case … elsecase … endsel - conditional  branch  control
 
-**Support:** CISIS
+**Suporte:**  CISIS
 
-**Syntax:**
+**Sintaxe:** 
 
 </code></pre></div></div>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>select &lt;format expr&gt; case &lt;option-1&gt;: &lt;format-1&gt;
@@ -1744,7 +1943,7 @@ Evaluates <code class="language-plaintext highlighter-rouge">&lt;format expr&gt;
 <p><strong>Notes:</strong>
 <code class="language-plaintext highlighter-rouge">&lt;format expr&gt;</code> must generate a string or numeric value. If <code class="language-plaintext highlighter-rouge">&lt;format expr&gt;</code> evaluates to string, all option values in case clauses must be of string type, otherwise, if <code class="language-plaintext highlighter-rouge">&lt;format expr&gt;</code> is numeric, option values must be also numeric.</p>
 
-<p><strong>Examples:</strong></p>
+<p><strong>Exemplos:</strong></p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>select s(v5)
 	case '1': ,f(val(v5)/2,2,2)/,
@@ -1766,10 +1965,12 @@ endsel,
 <p><strong>See also:</strong>
 if … then … else .. fi</p>
 
+<hr />
+
 <h2 id="sizestring---string--size">size(string) - string  size</h2>
-<p><strong>Support:</strong>  CISIS
+<p><strong>Suporte:</strong>   CISIS
 <strong>Function  type:</strong>  Numeric
-<strong>Syntax:</strong></p>
+<strong>Sintaxe:</strong></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>size(&lt;format&gt;)
 </code></pre></div></div>
 
@@ -1779,7 +1980,7 @@ Returns  the  string  size.</p>
 <p><strong>Notes:</strong>
 <code class="language-plaintext highlighter-rouge">&lt;format&gt;</code>  must  return  a string  or a  syntax  error occurs.</p>
 
-<p><strong>Examples:</strong></p>
+<p><strong>Exemplos:</strong></p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if size(v10)&gt;  76  then  lw(254),  fi,
 </code></pre></div></div>
@@ -1787,11 +1988,13 @@ Returns  the  string  size.</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>f(size(v10,v20),1,0),
 </code></pre></div></div>
 
+<hr />
+
 <h2 id="systemexpression---system--call">system(expression) - system  call</h2>
 <p><strong>Support</strong>:  CISIS
 <strong>Function  type:</strong>  String</p>
 
-<p><strong>Syntax:</strong></p>
+<p><strong>Sintaxe:</strong></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>system(&lt;format&gt;)
 </code></pre></div></div>
 
@@ -1801,7 +2004,7 @@ Executes  the  argument  produced  by  <code class="language-plaintext highlight
 <p><strong>Notes:</strong>
 <code class="language-plaintext highlighter-rouge">&lt;format&gt;</code> must generate a string containing the code to be executed. The  possible  output  from  the  command  is  sent directly  to  the  standard  output.</p>
 
-<p>**Examples: **</p>
+<p><strong>Examples:</strong></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>system('dir'),
 </code></pre></div></div>
 
@@ -1809,15 +2012,17 @@ Executes  the  argument  produced  by  <code class="language-plaintext highlight
 </code></pre></div></div>
 
 <hr />
+
+<hr />
 <h1 id="t">T</h1>
 
 <h2 id="typestring---string--type">type(string) - string  type</h2>
 
-<p><strong>Support:</strong>  CISIS</p>
+<p><strong>Suporte:</strong>   CISIS</p>
 
 <p><strong>Function  type:</strong> String</p>
 
-<p><strong>Syntax:</strong></p>
+<p><strong>Sintaxe:</strong></p>
 
 <p><code class="language-plaintext highlighter-rouge">type(&lt;format&gt;)</code></p>
 
@@ -1832,7 +2037,7 @@ Returns  the  string  type  as  follows:</p>
 <p><strong>Notes:</strong>
 Format  must  generate  a  string  or a  syntax  error  is  issued.</p>
 
-<p><strong>Examples:</strong></p>
+<p><strong>Exemplos:</strong></p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if  type(**v1**)**='N'  then  f(val(v1),3,2)/  else  v1/,  fi,
 </code></pre></div></div>
@@ -1840,11 +2045,13 @@ Format  must  generate  a  string  or a  syntax  error  is  issued.</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if  s(type(v1),type(v2),type(v3))&lt;&gt;'AAA'  then  'Invalid  character  type detected'/,  fi,
 </code></pre></div></div>
 
+<hr />
+
 <h1 id="v">V</h1>
 <h2 id="v---field--selector">v - field  selector</h2>
-<p><strong>Support:</strong> Standard</p>
+<p><strong>Suporte:</strong>  Standard</p>
 
-<p><strong>Syntax:</strong></p>
+<p><strong>Sintaxe:</strong></p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>v&lt;field tag&gt;[command components]
 </code></pre></div></div>
 
@@ -1872,7 +2079,7 @@ indent:	Aligns the output of data field, subfield, occurrence or extracted conte
 Notes:	The behavior of the field command depends on the component(s) used. No output is generated when data field is absent or when component performs a restriction or extraction that is out of data boundary.</li>
 </ol>
 
-<p><strong>Examples:</strong></p>
+<p><strong>Exemplos:</strong></p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>v2/,v3^a| - |,v1/,
 </code></pre></div></div>
@@ -1908,13 +2115,15 @@ Notes:	The behavior of the field command depends on the component(s) used. No ou
 <strong>|string|</strong> [repeatable conditional literal]
 <strong>(format)</strong> [repeatable group]</p>
 
+<hr />
+
 <h2 id="valstring---string--to--value">val(string) - string  to  value</h2>
 
-<p><strong>Support:</strong> Standard</p>
+<p><strong>Suporte:</strong>  Standard</p>
 
 <p><strong>Function  type:</strong> Numeric</p>
 
-<p><strong>Syntax:</strong></p>
+<p><strong>Sintaxe:</strong></p>
 
 <p><code class="language-plaintext highlighter-rouge">val(&lt;format&gt;)</code></p>
 
@@ -1926,18 +2135,20 @@ If  <code class="language-plaintext highlighter-rouge">&lt;format&gt;</code>  pr
 
 <p>If  more  than  one  numeric  value  is encountered,  only  the  first one  is  returned.</p>
 
-<p><strong>Examples:</strong></p>
+<p><strong>Exemplos:</strong></p>
 
 <p><code class="language-plaintext highlighter-rouge">if  val(v2)&gt;5  then 'Error'/  else 'OK'/, fi,</code></p>
 
 <p><code class="language-plaintext highlighter-rouge">f(val(v2)/3,4,2),</code></p>
 
+<hr />
+
 <h1 id="x">X</h1>
 <h2 id="x---spacing">x - spacing</h2>
 
-<p><strong>Support:</strong>  Standard</p>
+<p><strong>Suporte:</strong>   Standard</p>
 
-<p><strong>Syntax:</strong>
+<p><strong>Sintaxe:</strong> 
 <code class="language-plaintext highlighter-rouge">x&lt;int&gt;</code></p>
 
 <p><strong>Definition:</strong>
@@ -1946,7 +2157,7 @@ Inserts  the  number  of  spaces  defined  by  <code class="language-plaintext h
 <p><strong>Notes:</strong>
 If  <code class="language-plaintext highlighter-rouge">&lt;int&gt;</code>  is  greater  than  the  available  space  in  the  current  line,  it  skips  to  the  next  line.</p>
 
-<p><strong>Examples:</strong></p>
+<p><strong>Exemplos:</strong></p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'Name:  ', x5,v1^n/,
 </code></pre></div></div>
@@ -1954,7 +2165,7 @@ If  <code class="language-plaintext highlighter-rouge">&lt;int&gt;</code>  is  g
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(v1,x3,v2,x8,v3/),
 </code></pre></div></div>
 
-<p><strong>See  also:</strong>
+<p><strong>Veja também:</strong> 
 <strong>c</strong> [column]</p>
 
 <script

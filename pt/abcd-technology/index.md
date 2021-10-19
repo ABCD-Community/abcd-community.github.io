@@ -32,6 +32,8 @@ Todos os valores especificados por uma "Tabela de Seleção de Campo" (que usa a
 
 Então, tipicamente bases de dados ISIS contém cerca de 10 arquivos: um MST com XRF, os Arquivos Invertidos Árvore B e algumas tabelas de definição para os campos, os dados do formulário de entrada e de indexação. Tudo isso está mudando com as novas tecnologias de bases de dados introduzidas em 2009 com, por exemplo, J-ISIS: usa Berkeley DB, um tipo de armazenamento diferente em arquivos separados com as definições incorporadas nos principais arquivos de dados. Mas basicamente o conceito de pares "tag-valor" (um identificador e um conteúdo), em que é aplicada uma poderosa Linguagem de Formatação, baseada em campos, e acrescido de indexação de texto integral, continuam a ser o núcleo de bases de dados ISIS.
 
+
+
 ## Utilitários CISIS
 
 Utilitários CISIS é um conjunto de softwares desenvolvidos pela BIREME para manipular bases de dados ISIS através de linha de comandos em UNIX/Linux ou DOS/Windows. Este software foi escrito na linguagem de programação C e daí o nome desse membro da família ISIS. CISIS consiste principalmente de uma série de "utilitários", ou seja, executáveis ativados por comandos que realizam todos os tipos de funções nas bases de dados ISIS, como criar registros, atualização e recuperá-los, atualização do arquivo invertido, importação e exportação e muitas outras funções, por vezes únicos na "Família ISIS", por exemplo, juntar registros de diferentes bases de dados, de acordo com chaves comuns, indexação e pesquisa a partir de diferentes arquivos invertidos para uma base de dados.
@@ -101,63 +103,18 @@ Outras ferramentas que podem ser apenas mencionadas brevemente são:
 A Linguagem de Formatação ISIS (LF é uma das peças mais importantes do software porque oferece aos gerentes ISIS a possibilidade de definir exatamente o que ISIS irá produzir como saída de bases de dados em vários estágios do software, por exemplo:
 
   • o que ISIS irá mostrar na tela, ou seja, apresentar (definido no tabela de formato de impressão ou PFT);
+
   • o que ISIS irá utilizar para a criação de chaves de indexação (definido na coluna 3 da Tabela ou Seleção de Campo (FST));
+
   • o que ISIS irá utilizar para classificar os registros;
+
   • o que ISIS irá utilizar como valores exportados (definido na FST de reformatação);
+
   • o que ISIS irá usar como valores para validar a entrada  de dados em campos (indicados nas tabelas de validação).
 
-### A Linguagem de Formatação para apresentação de valores
-
-Esta é de longe a mais importante função da Linguagem de Formatação: especificando exatamente quais dados precisam ser tomados e como serão "exibidos" ou "impressos" (para a tela, para uma impressora, para um arquivo, para uma página da web ).
-Existem documentos separados para lidar com esta linguagem extensa, por exemplo, o capítulo dedicado no Manual  de Referência ISIS, publicado pela UNESCO (Junho de 2004, capítulo 8, p. 94-122).
-
-Basicamente, existem três tipos de declarações na LF ISIS:
-    a) valores de campos, dados como: Vx, onde “V” representa o valor (ou "conteúdo") de um campo com a tag “x”, Vx^a é o valor de um subcampo (^a), do campo x e (Vx/) é o conjunto de todas as ocorrências do campo x separados por uma “nova linha” (/), desde que o parêntese abrace um “grupo repetitivo" de instruções para serem aplicadas a todas as ocorrências (campos repetitivos são uma característica forte e especial do ISIS).
-    b) literais ou strings, que podem ser ‘incondicionais’ (aspas simples), |condicionais| (barras verticais – pipes - indicam que a string só será produzida se o campo relacionado está presente) e "repetitivo" (aspas duplas só irá produzir a string na primeira ocorrência de um campo repetitivo).
-Aplicativos ISIS na web, como o ABCD, criam páginas web com tags HTML, utilizando este método de acrescentar literais aos valores dos campos, por exemplo,
-
-```
-    '<table><tr><td>' Vx '</td><td>' Vy '</td></tr></Table>'
-```
-
-Irá exibir respectivamente os campos X e Y em duas colunas de uma tabela em HTML. Note que todos os códigos HTML são cotados (como incondicionais) e os valores extraídos dos campos da base de dados são inseridos referindo-se a eles com a instrução V.
-
-5.  comandos, que podem ser de diferentes tipos, por exemplo:
-
-- comandos de Modo: mhl/u (modo cabeçalho em minúsculas/maiúsculas), mdl (modo de dados maiúsculas/minúsculas) ou mpl/u (modo de revisão maiúsculas/minúsculas);
-
-- em ambientes Windows): comandos de definição de atributos de tela (cores, fontes, caixas) ou links (solicitando ao sistema operacional para abrir outros dados, por exemplo, dados multimídia referenciados em um registro), por exemplo:
+A documentação completa sobre a Linguagem de Formatação CISIS (LF) está disponível [nesta página](/pt/abcd-technology/cisis-formatting/)
 
 
-LINK (‘clique aqui para o texto integral’, OPENFILE Vx) irá pedir - quando o usuário clica no texto de hiperlink, ‘clique aqui para o texto integral’ - ao Windows para abrir o arquivo cujo nome está em Vx, com o aplicativo Windows associado à extensão do arquivo;
-
--   o comando REF, que pode recuperar dados de outros registros (no mesmo ou em outra base de dados quando expressamente referenciada), permitindo implementar semi-relações em aplicações ISIS (mas com a vantagem de que a relação é estabelecida apenas em tempo de execução, quando requerida), por exemplo,
-
-```REF(['users']) L(['users']V2),V1)``` 
-
-recuperará o valor do campo 1 no banco de dados 'usuários' se a função L(ookup) tiver encontrado o valor do campo 2 (no banco de dados real) no índice do banco de dados de usuários, para que o MFN do registro possa ser identificado.
-
-- declarações de roteamento condicional
-
-```'IF...THEN... (ELSE....)FI'```
-
-ou mesmo o 
-
-```SELECT [case1 case2...] ELSE- CASE... ENDSEL``` 
-
-podem ser usadas para aplicar declarações de formatação somente aos valores do banco de dados que atendam a determinadas condições.
-
--   no ambiente CISIS declarações extras da LF estão disponíveis, o mais importante é um comando que realmente irá processar um registro para alterar o conteúdo dos campos. A sintaxe geral é:
-```
-    proc(x|y...) 
-```
-onde x ou y pode ser qualquer um dos seguintes: ```'Dxxx' ```(para apagar o campo com tag xxx)
-
-- ```|Axx#|value|#| ``` (para agregar o valor  xx ao campo)
-
--   As funções, principalmente para operações de “strings” (por exemplo, substr, tamanho, valor) ou numéricas (por exemplo, rmin rmax, rsum ...);
-
-A documentação completa sobre a Linguagem de Formatação CISIS está disponível [nesta página](/pt/abcd-technology/cisis-formatting/)
 
 ### A LF para definição de chaves de indexação
   
@@ -193,18 +150,29 @@ Instruções mais sofisticadas podem ser usadas para obter qualidade de verifica
 
 ISIS Script é uma linguagem de script, desenvolvida pela BIREME, a fim de tornar mais forte as funções disponíveis para o servidor WEB ISIS “WWWISIS" para criação de páginas com elementos de Bases de dados ISIS. ISIS Script de fato foi um dos principais elementos na evolução de WWWISIS para “WXIS" que é o servidor web subjacente para o ABCD.
 
-Scripts de ISIS script são armazenados como arquivos com a extensão .XIS. ABCD usa mais de 100 scripts, a maioria deles na pasta php/dataentry/wxis mas também o iAH (o OPAC) faz amplo uso de tais scripts. 
-
-Obviamente não se pode discutir todo o poder da linguagem de ISIS Script aqui. Como uma linguagem, usa instruções semelhantes a XML, como, por exemplo, entre as tags  ```<pft>``` e ```</pft>``` pode ser colocado um formato de impressão e esse formato pode ser apresentado, colocando-o entre as tags ```<display>``` and ```</display>```. Todos os parâmetros WXIS podem ser definidos dentro das tags ```<parm>``` e ```</parm>``` e campos podem ser definidos com valores, por exemplo
+IsisScript usa uma linguagem semelhante a XML, como, por exemplo, entre as tags  ```<pft>``` e ```</pft>``` pode ser colocado um formato de impressão e esse formato pode ser apresentado, colocando-o entre as tags ```<display>``` and ```</display>```. Todos os parâmetros WXIS podem ser definidos dentro das tags ```<parm>``` e ```</parm>``` e campos podem ser definidos com valores, por exemplo:
  
 ```
 <field action="replace" tag="6000">ValueOfField6000</field>
 ```
-vai colocar a string “Valor_do_campo_6000” no campo de tag 6000 (tais valores elevados de tag, na verdade todas as tags  acima de 999, são utilizadas em geral em aplicativos ISIS para valores temporários internos que na realidade não são armazenados em registros ISIS, mas como “registros virtuais".
+A expressão acima vai colocar a string “Valor_do_campo_6000” no campo de tag 6000 (tais valores elevados de tag, na verdade todas as tags  acima de 999, são utilizadas em geral em aplicativos ISIS para valores temporários internos que na realidade não são armazenados em registros ISIS, mas como “registros virtuais".
 
-ISIS Script permite uma manipulação mais flexível de elementos de dados, provenientes de bases de dados ISIS,  em páginas web. Em combinação com o PHP (veja a seção dedicada a PHP), que é uma linguagem para criação de páginas web, resultados sofisticados são possíveis e isto certamente contribui para a funcionalidade geral avançada do ABCD. 
+IsisScript permite uma manipulação mais flexível de elementos de dados, provenientes de bases de dados ISIS,  em páginas web. Em combinação com o PHP ([veja a seção dedicada a PHP](/pt/abcd-technology/#php)), que é uma linguagem para criação de páginas web, resultados sofisticados são possíveis e isto certamente contribui para a funcionalidade geral avançada do ABCD. 
 
-É claro que mais detalhes sobre a linguagem ISIS Script podem ser encontradas na documentação específica.
+Para conhecer em detalhes a linguagem IsisScript, [vá até a página específica](/pt/abcd-technology/isis-script).
+
+
+
+É muito comum fazer confusão entre Utilitários CISIS, Linguagem de Formato CISIS e IsisScript, então veja a diferença na tabela abaixo.
+
+
+|Utilitários Cisis (terminal) |Formatação CISIS (browser) |IsisScript (servidor) |
+|-|-|-|
+|Pequenos aplicativos usados via terminal Linux ou Windows|Liguagem de formatação visual, usado para exibir resultados na web|Scripts de manipulação de banco de dados que utiliza a estrutura cliente servidor|
+
+
+
+
 
 ## J-ISIS
 

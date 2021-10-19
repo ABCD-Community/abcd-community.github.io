@@ -7,30 +7,27 @@ lang-ref: isis-script
 
 # IsisScript language
 
-{: .no_toc }
-
-## Content
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
-
----
-
-
-IsisScript is a scripting language, developed by BIREME, in order to make stronger the functions available to the WEB ISIS server "WWWISIS" for the creation of pages with elements of ISIS databases. ISIS Script in fact was one of the main elements in the evolution from WWWISIS to "WXIS" which is the underlying web server for ABCD.
-
-
 IsisScripts are stored as files with the extension .xis. 
-ABCD uses many scripts, most of them in the central/dataentry/wxis folder.
-iAH makes extensive use of such scripts.
-The language uses XML-like instructions, such as, for example, between the `<pft>` and `</pft>` tags a print format can be placed and that format can be displayed by placing it between the `<display>` and `</display>` tags. 
+ABCD uses many scripts, most of them in the **central/dataentry/wxis folder**.
+iAH (/iah/scripts) makes extensive use of such scripts.
+The language uses XML like instructions, such as, for example, between the `<pft>` and `</pft>` tags a print format can be placed and that format can be displayed by placing it between the `<display>` and `</display>` tags. 
 
 All WXIS parameters can be set within the `<parm>` and `</parm>` tags and fields can be set with values, for example `<field action="replace" tag="6000″>field_value_6000 </field>` will put the string "`Field_value_6000`" into the 6000 tag field (such high tag values, actually all tags above 999, are used in general in ISIS applications for internal temporary values that are not actually stored in ISIS records but as "virtual records".
 
 IsisScript allows a more flexible manipulation of data elements, coming from ISIS databases, in web pages. In combination with PHP, which is a language for creating web pages, sophisticated results are possible and this certainly contributes to the overall advanced functionality of ABCD.
 
 
+# How to use this language
+
+All the liguage is on this page containing all the commands, parameters and options available in the IsisScript language.
+
+The commands are organized at hierarchy level 2 and their elements follow the hierarchy up to level 4.
+
+Each command, parameter or option will contain a brief description of its purpose. Additional information such as attributes, syntax, elements contained and where it applies are also provided, completing an example of code to illustrate the command, option or parameter.
+
+The only prerequisites to the user are knowledge of format language and the model and structure of a standard CDS/ISIS base.
+
+
 
 {: .no_toc }
 
@@ -41,6 +38,7 @@ IsisScript allows a more flexible manipulation of data elements, coming from ISI
 {:toc}
 
 ---
+
 
 
 # IsisScript reference
@@ -1163,31 +1161,6 @@ If the master file exists, then the field will also contain the n subfield (^n) 
   </flow>
 ...
 
-```
-
-----------
-
-
-#### field.action=statusfile
-
-
-
-It replaces the content of the field specified by the tag attribute with the status of the file indicated by the argument of the `<field>` element.
-
-If the file exists, the field contains the s subfield (^s) with the character "e", otherwise the field is absent.
-
-
-
-**Example**
-
-
-```language
-...
-  <field action=statusfile tag=1091>C:\AUTOEXEC.BAT</field>
-  <flow action=jump>
-     <pft>if v1091^s : 'e' then 'LABEL_OK' fi</pft>
-  </flow>
-...
 ```
 
 ----------
