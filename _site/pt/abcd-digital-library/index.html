@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="pt"  class="no-js">
+  <!-- Copyright 2019-2021 Vanessa Sochat-->
+  <head>
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Jekyll" />
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+<link rel="alternate" type="application/rss&#43;xml" href="/docs/index.xml">
+
+<link rel="shortcut icon" href="/assets/favicons/favicon.ico" >
+<link rel="icon" type="image/png" href="/assets/favicons/favicon.png" sizes="16x16">
+
+ 
+ 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M0LM60C9WY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M0LM60C9WY');
+</script>
+
+ 
+
+<title>Comunidade ABCD</title>
+<meta property="og:title" content="Comunidade ABCD" />
+<meta property="og:description" content="Este documento tem como objetivo fornecer todas as informações e instruções relevantes sobre como usar a biblioteca integrada e o sistema de gerenciamento de documentação ‘ABCD’. Tanto as operações básicas como o gerenciamento avançado do software são discutidos, assim como os tópicos úteis e necessários relativos ao software ISIS no qual o ABCD se baseia. Nesta nova edição, as novas características da versão 2.0 são adicionadas- o uso de diferentes sabores de CISIS, de Unicode e as capacidades da biblioteca digital, bem como alguns módulos adicionais (ODDS, LDAP, DSpaceBridge) e utilitários (conversão UTF8, criação de objetos de empréstimo…) ." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://localhost:9898" />
+<meta property="og:site_name" content="http://localhost:9898" />
+
+<meta itemprop="name" content="Comunidade ABCD">
+<meta itemprop="description" content="">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Comunidade ABCD"/>
+<meta name="twitter:description" content="Este documento tem como objetivo fornecer todas as informações e instruções relevantes sobre como usar a biblioteca integrada e o sistema de gerenciamento de documentação ‘ABCD’. Tanto as operações básicas como o gerenciamento avançado do software são discutidos, assim como os tópicos úteis e necessários relativos ao software ISIS no qual o ABCD se baseia. Nesta nova edição, as novas características da versão 2.0 são adicionadas- o uso de diferentes sabores de CISIS, de Unicode e as capacidades da biblioteca digital, bem como alguns módulos adicionais (ODDS, LDAP, DSpaceBridge) e utilitários (conversão UTF8, criação de objetos de empréstimo…) ."/>
+
+<link rel="stylesheet" href="/assets/css/main.min.css">
+<link rel="stylesheet" href="/assets/css/palette.css">
+<script
+  src="/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+
+
+  
+  
+    
+  <link rel="alternate" hreflang="en" href="/en/abcd-digital-library/" />
+    
+  <link rel="alternate" hreflang="pt" href="/pt/abcd-digital-library/" />
+    
+  
+
+  
+</head>
+
+  
+
+
+  <body class="td-section">
+    
+<header>
+    <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="/pt">
+            <span class="navbar-logo"></span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 167.73 167.77"><defs><style>.cls-1{fill:#ffffff;}</style></defs><g id="Camada_2" data-name="Camada 2"><g id="Camada_1-2" data-name="Camada 1"><path class="cls-1" d="M66.62,83.14c-41-2.06-66.62,18-66.62,18V18.42S20.94-.08,66.62,0Z"/><path class="cls-1" d="M84.59,66.62c2.06-41-18-66.62-18-66.62h82.73s18.5,20.94,18.42,66.62Z"/><path class="cls-1" d="M101.11,84.63c41,2.06,66.62-18,66.62-18v82.74s-20.94,18.49-66.62,18.41Z"/><path class="cls-1" d="M83.14,101.15c-2.06,41,18,66.62,18,66.62H18.42S-.08,146.83,0,101.15Z"/></g></g></svg><span class="text-uppercase font-weight-bold">Comunidade ABCD</span>
+        </a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+            
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/pt//" ><span>Início</span></a>
+			</li>
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/pt/docs" ><span>Documentação</span></a>
+			</li>
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/pt/collab" ><span>Colaboração</span></a>
+			</li>
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/pt/about" ><span>Sobre</span></a>
+			</li>
+
+
+  <li class="nav-item dropdown mr-4 d-none d-lg-block">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Português</a>
+    <div class="dropdown-menu">
+        
+            
+            
+            
+                
+
+                <a title="Ver em English" class="en dropdown-item" href="/en/abcd-digital-library/">English</a>
+
+
+            
+
+                <a title="Ver em Português" class="pt dropdown-item" href="/pt/abcd-digital-library/">Português</a>
+
+
+            
+            
+        
+   </div>
+  </li>
+
+		</ul>
+	</div>
+	
+    <div class="navbar-nav d-none d-lg-block">
+        <input type="search" class="form-control td-search-input" placeholder="&#xf002 Buscar no site…" aria-label="Search this site…" autocomplete="off"> 
+    </div>
+   
+	<div class="navbar-nav d-none d-lg-block">
+          <a class="gh-source" data-gh-source="github" href="https://github.com/ABCD-Community/ABCD-Community.github.io" title="Go to repository" data-md-state="done">
+            <i class="fab fa fa-github fa-2x" style='color: #fff;padding-right:20px; float:left; margin-top:5px'></i></a>
+        </div>
+      </div>
+
+
+</nav>
+</header>
+
+
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+          <div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    <input type="search" class="form-control td-search-input" placeholder="&#xf002 Buscar no site…" aria-label="Search this site…" autocomplete="on">
+      <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+      </button>
+  </form>  
+
+  <nav class="collapse td-sidebar-nav" id="td-section-nav">
+    <div class="nav-item dropdown d-block d-lg-none pl-4">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Português</a>
+
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+        
+            
+            
+            
+                
+
+                <a title="Ver em English" class="en dropdown-item" href="/en/abcd-digital-library/">English</a>
+
+
+            
+
+                <a title="Ver em Português" class="pt dropdown-item" href="/pt/abcd-digital-library/">Português</a>
+
+
+            
+            
+        
+      </div>
+    </div>
+
+
+    
+      <ul class="td-sidebar-nav__section pr-md-3"> 
+
+        
+        
+
+        <li class="td-sidebar-nav__section-title">
+          <a  href="" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section"></a>
+        </li>
+        
+      </ul>
+    
+      <ul class="td-sidebar-nav__section pr-md-3"> 
+
+        
+        
+
+        <li class="td-sidebar-nav__section-title">
+          <a  href="/pt/docs" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Home</a>
+        </li>
+        
+          <ul>
+            <li class="collapse show" id="home">
+              <ul class="td-sidebar-nav__section pr-md-3">
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-introduction
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Introdução
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-technology
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Tecnologia ABCD
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-installation
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Instalação
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-modules
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Módulos
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-utilities
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Utilitários
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-thesaurus
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Thesaurus
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-odds
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">O Serviço de Entrega de Documentos Online (ODDS)
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-digital-library
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Características da biblioteca digital
+                    </a>
+                  </li>
+                  
+                    <ul>
+                      <li class="collapse show" id="">
+                        
+                      </li>
+                    </ul>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-oai
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">A interface OAI
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-opac
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">OPAC
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/opac-iah
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">iAH OPAC
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-site
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD Site
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/secs-web
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Controle de periódicos
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-unicode
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD Unicode
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-localisation
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Localização e pastas
+                    </a>
+                  </li>
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        
+      </ul>
+    
+  </nav>
+</div>
+
+          </aside> <!--col-12 col-md-3 col-xl-2 td-sidebar d-print-none-->
+          
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+                  <a href="https://github.com/ABCD-Community/ABCD-Community.github.io/edit/main/pt/abcd-digital-library/index.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Editar esta página</a>
+
+<a href="https://github.com/ABCD-Community/ABCD-Community.github.io/issues/new?labels=question&title=Question:&body=Question on: https://github.com/ABCD-Community/ABCD-Community.github.io/tree/master/pt/abcd-digital-library/index.md" target="_blank"><i class="fab fa-github fa-fw"></i> Criar questão de documentação</a>
+
+<a href="https://github.com/ABCD-Community/ABCD-Community.github.io/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Apontar um problema no projeto</a>
+<!-- this will parse through the header fields and add a button to open
+     an issue / ask a question on Github. The editable field should be in
+     the post frontend matter, and refer to the label to open the issue for -->
+
+            </div>
+            <div class="td-toc">
+              <nav id="TableOfContents">
+                <ul id="TOC">
+                   <!-- Links will be appended here-->
+                </ul>
+              </nav>
+            </div>
+ 
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">     
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+              <ol class="breadcrumb spb-1">
+              
+              
+                <li class="breadcrumb-item">
+                  <a href="http://localhost:9898/pt/">Pt</a>
+                </li>
+                
+                <li class="breadcrumb-item active" aria-current="page">
+	          <a href="http://localhost:9898/pt/abcd-digital-library/">Características da biblioteca digital em ABCD</a>
+                </li>
+                
+	      </ol>
+           </nav>
+
+           <div class="td-content">
+
+	      <h1 id="recursos-da-biblioteca-digital-no-abcd">Recursos da biblioteca digital no ABCD</h1>
+
+<h2 class="no_toc no_toc text-delta" id="conteúdo">Conteúdo</h2>
+
+<ol id="markdown-toc">
+  <li><a href="#recursos-da-biblioteca-digital-no-abcd" id="markdown-toc-recursos-da-biblioteca-digital-no-abcd">Recursos da biblioteca digital no ABCD</a>    <ol>
+      <li><a href="#o-conceito-de-biblioteca-digital-no-abcd" id="markdown-toc-o-conceito-de-biblioteca-digital-no-abcd">O conceito de Biblioteca Digital no ABCD</a></li>
+      <li><a href="#criação-de-uma-coleção-em-modo" id="markdown-toc-criação-de-uma-coleção-em-modo">Criação de uma coleção em modo</a>        <ol>
+          <li><a href="#preparação-de-sua-coleção" id="markdown-toc-preparação-de-sua-coleção">Preparação de sua coleção</a></li>
+          <li><a href="#usando-o-script-de-criação" id="markdown-toc-usando-o-script-de-criação">Usando o script de criação</a></li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+<hr />
+
+<p>Nesta seção, discutimos alguns recursos e técnicas para criar e usar bibliotecas digitais como bancos de dados de ‘texto completo’ no ABCD.</p>
+
+<h2 id="o-conceito-de-biblioteca-digital-no-abcd">O conceito de Biblioteca Digital no ABCD</h2>
+
+<p>No ABCD, simplificamos o significado de uma ‘biblioteca digital’ como um banco de dados de ‘texto completo’, em que os registros contêm, além de ‘metadados’ - o texto completo de um documento ou têm um link para o documento de texto completo enquanto as palavras nesse texto completo podem ser pesquisadas.</p>
+
+<p>Como o ABCD é baseado na tecnologia CDS/ISIS, portanto, foca na recuperação de texto, as imagens e outros elementos não-textuais de um documento não serão processados, mas permanecerão disponíveis, é claro, nos documentos vinculados originais.</p>
+
+<p>Por exemplo, as ilustrações em um PDF não farão parte do registro ABCD, mas clicando nos links dos documentos o PDF, incluindo as figuras, será aberto no navegador.</p>
+
+<p>Uma limitação importante é a ausência de ‘classificação de relevância’: o mecanismo de indexação do ISIS pode lidar com palavras (indexação de texto completo), mas não tem provisão para classificação de relevância, por exemplo, armazenando um ‘peso’ denotando a relevância de um documento com base no frequência (estatística) da palavra que ocorre no documento. No ABCD 2.0 existe uma palavra ou não, e isso certamente tem consequências para a eficiência da busca. Para a ‘indexação de texto completo classificado’, temos que nos referir à versão de nova geração do ABCD: versão 3.0, que é baseada no J-ISIS e, portanto, no mecanismo Lucene que possui provisão para classificação.</p>
+
+<p>Outra limitação é o tamanho dos documentos: se for usada a versão especial do CISIS ‘BigISIS’, os registros podem conter até 1 Mb de texto. Em nossos testes, a maioria dos documentos (PDFs) cabem dentro desse limite, exceto para os documentos textuais realmente longos. A maioria dos arquivos PDF maiores são grandes porque contêm muitas imagens ou elementos binários (BLOBs), mas o texto extraído caberá principalmente no limite de 1 MB. Colocar o texto do documento dentro do registro, portanto, deve ser usado apenas - afinal, é uma opção - se a maior parte da coleção consistir em documentos textuais não muito longos. O script gerar os ABCD-registros de um banco de dados biblioteca digital irá avisar para documentos não cabendo (ou superior do conjunto PHP-limite para upload_max_filesize’ parâmetro -. Que por sinal tem muito baixa correlação com o texto-tamanho real dos documentos.</p>
+
+<p>Entretanto , apesar das limitações, usar um banco de dados para uma biblioteca digital no ABCD também tem vantagens:</p>
+
+<ol>
+  <li>
+    <p>A biblioteca digital pode ser gerenciada como qualquer outro banco de dados, por exemplo, pesquisar / editar no ABCD Central, incluindo adicionar / editar campos de metadados</p>
+  </li>
+  <li>
+    <p>O banco de dados ou biblioteca digital pode ser apresentado no site ABCD e pesquisado junto como qualquer outro banco de dados (por exemplo, catálogo, coleção de periódicos …) na opção MetaSearch do ABCD</p>
+  </li>
+  <li>
+    <p>Se o documento-texto for - como recurso opcional - armazenado dentro do registro, ele também pode ser editado junto com quaisquer outros campos (metadados).</p>
+  </li>
+  <li>
+    <p>O número de documentos na coleção dificilmente afeta a velocidade das operações, por exemplo, o CISIS pode lidar com quase 17 milhões de documentos sem qualquer penalidade de velocidade na pesquisa.</p>
+  </li>
+  <li>
+    <p>Se os diretórios dos arquivos originais forem estruturados em subdiretórios, o ABCD irá gerar e indexar esses nomes de diretório automaticamente como metadados no campo ‘seções’ dos registros. Isso significa que a pesquisa pode ser baseada nesses nomes de diretório ou pasta.</p>
+  </li>
+</ol>
+
+<p>Um recurso especial usado pelo ABCD - assim como muitos outros softwares de biblioteca digital dedicados semelhantes - é usar o recurso de extração de ‘metadados’ da biblioteca TIKA da Apache Software Foundation, que é um extrator de texto de uso geral. Isso significa que, desde (não é óbvio - a maioria dos autores não está dando atenção a esse recurso de seu processador de texto) que nas propriedades do documento os campos relacionados foram inseridos, os metadados disponíveis, como título e autor, serão inseridos automaticamente nos campos de o registro do banco de dados (veja abaixo um registro de amostra com esses metadados extraídos automaticamente). Se definidos na Tabela de Seleção de Campos, esses campos também poderão ser pesquisados na Central e no OPAC (ou Site Metasearch).</p>
+
+<p>Uma instância especial de uma biblioteca digital no ABCD seria um ‘repositório DSpace’ criado a partir de uma coleção existente do DSpace. Para isso, consulte a seção dedicada neste manual.</p>
+
+<h2 id="criação-de-uma-coleção-em-modo">Criação de uma coleção em modo</h2>
+
+<p>A criação em lote de uma coleção refere-se à possibilidade de adicionar um conjunto de documentos, pré-organizados em uma ou mais (sub-)pastas, em uma base de dados ABCD existente. Sugerimos utilizar a base de dados demográfica “Dublin Core”, uma vez que ela já tem os campos básicos do Dublin Core disponíveis e o roteiro de criação apresenta estes campos já como padrão (mas eles ainda podem ser alterados).</p>
+
+<p>Um caso de uso típico seria a criação inicial de uma coleção de teses, onde as teses como documentos PDF são armazenadas em uma pasta, estruturada, por exemplo, pelo corpo docente, departamento e ano de apresentação. Estes nomes de pastas serão automaticamente introduzidos como meta-dados (‘seções’) no banco de dados - registros e podem ser usados como critérios de pesquisa.</p>
+
+<p>Outro caso de uso é adicionar uma série de documentos recém-chegados (por exemplo, artigos de periódicos) a uma coleção existente. Para adições de documentos individuais, seja em um registro novo ou existente da coleção, um script diferente será usado, veja a próxima seção 1.3.</p>
+
+<h3 id="preparação-de-sua-coleção">Preparação de sua coleção</h3>
+
+<p>Os elementos a seguir são os pré-requisitos para permitir a criação de uma coleção em modo de lote:</p>
+<ul>
+  <li>Um banco de dados com FDT, FST e PFT pré-definidos, no qual os documentos serão adicionados como registros</li>
+  <li>Um novo parâmetro ‘COLLECTION=’ no arquivo dr_path.def do banco de dados relacionado: este parâmetro indica o caminho completo para a subpasta de coleção na qual os arquivos de coleção serão armazenados. Esta subpasta pode estar em qualquer lugar em seu sistema, mas normalmente será ou um diretório ‘coleção’ no diretório ‘bases’ de seu sistema ABCD (por exemplo, ABCD\bases\ coleção em Windows) ou um diretório-subdiretório de coleção para um banco de dados específico (por exemplo, /var/opt/ABCD/bases/dubcore/collection em Linux). Esta pasta precisará de acesso/controle completo para o script que cria os registros de documentos.</li>
+  <li>Opcionalmente: um campo no qual o texto do documento será armazenado</li>
+  <li>Um PFT especial (a ser editado manualmente ou copiado da base de dados existente na biblioteca digital PFT), no qual duas instruções especiais são dadas:</li>
+</ul>
+
+<ol>
+  <li>instrução para exibir o texto-conteúdo do documento em um ‘Iframe’ da janela :</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if p(v96) then 
+'&lt;tr&gt;
+&lt;td width=20% valign=top&gt;&lt;font face=arial size=2&gt;&lt;b&gt;Text source&lt;/b&gt;'
+'&lt;/td&gt;
+&lt;td valign=top&gt;
+&lt;font face=arial size=2&gt;
+&lt;iframe height=200 width=800 scrolling=yes src=http://localhost:9090/', replace(v96*1,'ABCD/www/bases/','collec- tion/') ,'&gt;
+&lt;/iframe&gt;&lt;/td&gt;&lt;/tr&gt;' 
+fi
+</code></pre></div></div>
+
+<blockquote>
+  <p>Nota:
+Este exemplo funciona para ‘localhost’ com a porta 9090, pois a
+‘fonte’ do arquivo é referenciada por ‘http: // localhost: 9090’, e a
+string ‘ABCD/www/bases/’ no caminho do arquivo e nome na v96 serão
+substituídos por ‘coleção’, então isso supõe que o Apache tem um ‘apelido’ no
+qual ‘coleção’ se refere ao diretório do banco de dados real. O nome do
+banco de dados (por exemplo, ‘dubcore’) deverá estar presente, bem como o
+nome da subpasta&gt; ‘ABCDSourceRepo’.</p>
+</blockquote>
+
+<ol>
+  <li>Instruções para exibir o link para o arquivo de documento original no servidor :</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if p(v98) then 
+'&lt;tr&gt;&lt;td width=20% valign=top&gt;
+&lt;font face=arial size=2&gt;&lt;b&gt;URL&lt;/b&gt;&lt;/td&gt;
+&lt;td valign=top&gt; 
+&lt;div id=divurld',f(mfn,1,0),' name=di- vurld',f(mfn,1,0),'&gt;
+&lt;a href=javascript:DisplayURL(',f(mfn,1,0),')&gt;DISPLAY&lt;/a&gt;&lt;/div&gt;
+&lt;div id=divurl',f(mfn,1,0),' name=divurl',f(mfn,1,0),' style=display:none&gt;
+&lt;font face=arial size=2&gt;
+&lt;a href="',v98'" target=new&gt;'v98+|&lt;br&gt;|,'&lt;/A&gt;
+&lt;/div&gt;
+&lt;/td&gt;' 
+fi/
+</code></pre></div></div>
+
+<blockquote>
+  <p>Nota:
+Este exemplo é um pouco mais avançado, pois inclui o
+mecanismo para ocultar o URL com apenas um link ‘DISPLAY’, que aciona uma
+função Javascript ‘DisplayURL’ que convida o usuário a fazer login
+como um usuário da biblioteca e somente se estiver corretamente logado irá realmente
+exibir o URL real. Esse URL é indicado pelo valor
+de v98 neste exemplo. Como alternativa ao ‘login’, o ABCD também pode usar uma verificação no número de IP dos usuários finais (ou intervalo) e mostrar a URL apenas para usuários dentro do intervalo de IP aceito:</p>
+</blockquote>
+
+<p>O código Javascript de login, a ser adicionado no topo do PFT, está listado aqui:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;script  language=javascript&gt;  
+function  DisplayURL(id)  {  
+var  login- to=document.getElementById("into").value;  
+if  (loginto=="no")  {  
+var posicion_x;  
+var  posicion_y;  
+posicion_x=(screen.width/2)-(315);  
+posicion_y=(screen.height/2)-(235); 
+sel = window.open("/site/login.php?id="+id, "ABCD Log In Windows", 
+"width=630,
+height=470,
+menubar=0,
+toolbar=0,
+directories=0,
+scrollbars=no,
+resizable=no,left="+posicion_x+",top="+posi- cion_y+"");  
+}  else  {  
+document.getElementById("divurld"+id).style.dis- play="none";
+document.getElementById("divurl"+id).style.display="block"; 
+} 
+}
+&lt;/script&gt;
+</code></pre></div></div>
+
+<p>Como alternativa, a faixa IP do usuário final pode ser verificada para (des)permitir a exibição da URL, com o seguinte código adicionado ao PFT:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>proc('&lt;9000&gt;',getenv('REMOTE_ADDR'),'&lt;/9000&gt;'),
+s1:=(left(v9000,instr(v9000,'.')-1)),
+s2:=(mid(v9000,instr(v9000,'.')+1,size(v9000)))/, 
+s2:=(left(s2,instr(s2,'.')-1)),
+if p(v98) then '&lt;tr&gt;&lt;td width=20% valign=top&gt;
+&lt;font face=arial size=2&gt;&lt;b&gt;URL&lt;/b&gt;&lt;/td&gt;
+&lt;td valign=top&gt;', if val(s1)=127 then if
+val(s2)=0 then 
+'&lt;a href="http://127.0.0.1:9090//docs/dubcore/collec-
+tion/',v98, '" target="new"&gt;'v98,'&lt;/a&gt;&lt;/td&gt;' 
+else 'IP not allowed' fi else
+'IP not allowed' fi fi,
+</code></pre></div></div>
+
+<blockquote>
+  <p>Nota:
+Esta instrução tem duas partes separadas: no início do
+PFT um’ proc ‘é usado para armazenar o número do IP em um campo virtual v9000
+e então suas partes nas variáveis ​​locais ‘s1’ e ‘s2’ respectivamente.
+Então, no local do PFT onde você deseja exibir (ou não)
+o URL, e se v98 (com as informações do URL) estiver presente apenas, os valores de
+s1 e s2 são verificados para ver se eles estão contidos dentro do permitido intervalo,
+neste caso ‘localhost’ (127.0.xx).</p>
+</blockquote>
+
+<p>Em princípio, o gerente do sistema (ou bibliotecário) precisa decidir qual método restringir o acesso aos documentos originais a serem usados: com base no login ou com base no intervalo de IP. No entanto, usando as instruções normais de PFT (por exemplo, <code class="language-plaintext highlighter-rouge">IF ... THEN ... FI</code>), pode-se combiná-los ou simplesmente usar ambos, por exemplo, rotulados como ‘Exibir após o login’ e ‘Exibir no campus’.</p>
+
+<ul>
+  <li>
+    <p>Um FST especial, denominado ‘fulltext.fst’ no diretório ‘data’ do banco de dados, que contém uma instrução de indexação (linha) que usa o texto do documento como entrada para o mecanismo de indexação com a instrução ‘cat’, por exemplo, no caso do banco de dados Dublin Core existente (‘dubcore’):</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  99 8 '/TW_/',if p(v96) then proc('Gload/99/nonl='v96) fi,v99
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>Esta instrução cria um índice identificado por ‘99’, usando o método de indexação de palavras prefixadas (8) do ISIS, criando primeiro o prefixo ‘TW_’ (palavras-texto, normalmente o índice para a pesquisa simples de ABCD OPAC), então se o campo 96 estiver presente para indicar o caminho / nome do arquivo-texto, para carregar esse arquivo em v99 (sem caracteres de nova linha) e use esse texto como entrada para o mecanismo de indexação. Além desta instrução especial, todas as outras instruções de indexação orientadas a metadados, por exemplo, para incluir título / autor, etc., podem ser usadas neste FST especial.</p>
+
+<ul>
+  <li>Um FST ‘normal’, principalmente orientado a metadados, a ser usado sempre que os campos de metadados do registro forem editados e salvos.</li>
+  <li>Um subdiretório de ‘coleção’ de nome fixo do diretório de banco de dados relacionado</li>
+  <li>Um subdiretório de nome fixo do diretório de COLEÇÃO ‘ABCDImportRepo’ no qual os documentos a serem processados estão localizados.</li>
+</ul>
+
+<p><em>**É de extrema importância que as subpastas da coleção - e ABCDImportRepo- tenham acesso total (ou no ‘Controle Total’ do Windows) aos usuários, uma vez que os arquivos serão movidos de lá e novos arquivos serão gravados na coleção- pasta. **</em> Certifique-se, usando a interface do seu sistema operacional, que esta condição seja cumprida. Por exemplo, no Windows, clique com o botão direito do mouse na pasta e verifique se a guia ‘segurança’ indica ‘controle total’ para os usuários. No Linux, certifique-se de que o diretório tenha atributos ‘777’ (por exemplo, com o comando ‘chmod -R 777 collection’). Observe também que também os diretórios ou pastas de nível superior precisam ter acesso total, já que o sistema operacional analisará todos os níveis, desde a ‘raiz’ até o diretório de coleção relacionado, e parará de fazer isso se nenhum acesso completo for permitido.</p>
+
+<p>Uma estrutura típica será semelhante à seguinte, onde os documentos estão relacionados a ABCD, ISIS, Greenstone (GSDO) ou J-ISIS, portanto, dentro do subdiretório ABCDImportRepo, os documentos originais foram armazenados em subpastas com nomes correspondentes (ABCD, ISIS, GSDL, J-ISIS), exceto para um documento especial ‘ISISorigins.pdf’ que foi deixado de fora desta estrutura de seções e, portanto, acabará na ‘raiz’ da coleção.</p>
+
+<p>Figura 2.3. Estrutura COLEÇÃO
+<img src="https://lh4.googleusercontent.com/PQFZshDsKeQgHWqg3KQJQtHAxt6rghclE-Oocr7XFxLeIrvGesQomgc9GSXGspQZUCQM_1-I1uXtagHYuPcYmnhLQWIlJL5QwTV1O1fTQ-wkMPpKbQM5xkC7k238VEO2E0cpSKE=s0" alt="" /></p>
+
+<p>O subdiretório ABCDSourceRepo conterá todos-arquivos HTML com textos extraídos, todos os docu- mentos originais (por exemplo, PDFs, Documentos do Word …) serão armazenados nas subpastas correspondentes conforme estavam presentes no diretório ABCDImportRepo, mas com alguma numeração aleatória adicionada ao nome do arquivo. Isso é para garantir que os documentos com os mesmos nomes de documentos ainda sejam identificados individualmente. O registro ABCD resultante terá tanto a referência ao arquivo HTML (em ABCDSourceRepo) quanto o documento original em seus campos dedicados, no banco de dados DUBCORE demo: resp. v96 e v99. Neste exemplo, o’isisorigins.pdf ‘não foi movido para uma subpasta</p>
+
+<ul>
+  <li>apenas para fins de demonstração - porque dentro da pasta ABCDImportRepo ele também residia no nível’ raiz ‘.</li>
+</ul>
+
+<h3 id="usando-o-script-de-criação">Usando o script de criação</h3>
+
+<p>Depois de garantir que todas as etapas de preparação sejam tratadas corretamente, o uso do script para criar registros de biblioteca digital é bastante simples.</p>
+
+<p>O script para importação em lote de documentos é o primeiro no novo submenu ‘UTILITÁRIOS EXTRA’ do menu Utilitários Centrais:</p>
+
+<p>Figura 2.4. Menu de utilitários
+<img src="https://lh4.googleusercontent.com/HbIp-oJ7MU0pbCdUwPAylXr_k-YHkSxBk56VH6yAX7SA3XVmhm_I-va0BIT6xWaJOBUx-q75COsJbxiIv-svzrn09dwDStX5rr2vsup0MFy0VQ1XGvvsqP5T2wxyXVVrmiJg3jE=s0" alt="" /></p>
+
+<p>Após a opção ‘Documentos lote de importação’ é selecionado, a tela principal é mostrado, na caso da versão Linux após uma contagem regressiva para carregar o servidor Tika na memória (já que a versão do servidor, não usada no Windows) leva mais tempo para carregar):</p>
+
+<p>Figura 2.5. Principais documentos em lote tela
+<img src="https://lh3.googleusercontent.com/3vgNTxShUJRVhdHVohjIycFHPKXHydrJ5F7TQ7LoNTkkMsh1HhveSSZKsxVTjWxrq5wNKM96ODpfNtllM0pTAVylxRptKB7qm3Yd3_-H2ICIMtpUs-tfBmXPVrptJ2jQpXKcppc=s0" alt="" /></p>
+
+<p>Nesta tela o bibliotecário tem a ‘match’ os metadados extraídos automaticamente (Dublin Core baseado em) para os campos da sua base de dados, juntamente com alguns campos especiais: o campo que contém as ‘secções’ (= subpastas da colecção), a fonte do documento, o identificador do documento e opcionalmente o campo que contém o texto completo do documento extraído pelo TIKA. Observe que isso não é usado por padrão, pois exigirá a versão do BIGISIS CISIS para usar registros maiores.</p>
+
+<p>Clicar no botão ‘Atualizar’ iniciará o script iterativo que processa todos os arquivos no subdiretório ABCDImportRepo e exibe o progresso na tela até que seja concluído. A ilustração abaixo mostra a última parte dessa lista quando o script foi concluído.</p>
+
+<p>Figura 2.6. Resultados da lista após a execução de script de criação de coleção
+<img src="https://lh6.googleusercontent.com/oeMq4ObdTqwxsm6_KI4KGnjJq3YumujJAkEzY23sfUpIgHqS-v3KM_tSXOWFv4Dkl8DkdY4KfiWzTzQc_aXnM7E2wD5X6-5jp1RBPx6kBXBKYmfpofvnNwrRV9DZnPEYTdOOV9I=s0" alt="" /></p>
+
+<p>Agora entrando (ainda dentro Central) no banco de dados e navegar para o último registro mostrará um registro típico da seguinte forma:</p>
+
+<p>Figura 2.7. Mostrar registro DigLib em Central 
+<img src="https://lh5.googleusercontent.com/3SZi9Ww6HrOvKFmXRCUEEjGb9I6EwyVFCU4df5ZMdHtwZOa7969XSck-BzqRyHU1gbhManGNLNPBYcvvrFA7COfCYvvl9psrHBrokCq0RQMs2-P0S8gH_yiSfeWiJqaR8k5TTQw=s0" alt="" /></p>
+
+<p>As necessidades de banco de dados para ser totalmente indexados ( ‘geração do arquivo invertido completo’ em ISIS-vocabulário) usando os homens anteriores - referenciado FST especial ‘fulltext.fst’, mas também usando o parâmetro especial ‘/ m’ a fim de evitar o armazenamento de todas as informações detalhadas de posição nas postagens de índice:</p>
+
+<p>Figura 2.8. Indexação de texto completo da coleção da Biblioteca Digital</p>
+
+<p><img src="https://lh4.googleusercontent.com/t-EXYP1O9uwEvVQUCvfbZe3YgnksOCrjkgR_NpXSb8dykJ2X4n1iK_QwNArgPZw1GEivtflK177dj6pjEyKPJ5cmlKe3SIVLe7rbdE-c7_n-67NXQqUD1Y0cm7ycPDhc6aU8FdQ=s0" alt="" /></p>
+
+<p>Um exemplo de - parte de - um índice de texto completo é mostrado na próxima ilustração:</p>
+
+<p>Figura 2.9. Índice de texto completo listando
+<img src="https://lh5.googleusercontent.com/Oi-1e6Lpk7x0CXxOw1vDATQAR0RT4uI8nPV8oeYNceH0mfzlZY8fqSRuz1rlMx8ldIUN03FzL3w_skJn3cQoFVfunDBhU-JS-_KJxdlOUBUeA2MSyRX7cUGXNZwcaRs_9127OR8=s0" alt="" /></p>
+
+<p>Selecionando uma ou mais palavras, como também é feito em qualquer outra ação de pesquisa Central em qualquer outro banco de dados, resultados na exibição do (s) registro (s) com destaque para os termos de pesquisa:</p>
+
+<p>Figura 2.10. Pesquisa Biblioteca Digital de exibição recorde
+<img src="https://lh3.googleusercontent.com/QmOzgg-3Am4rhfEsGWk5OWWDnuxpCQ5jox4XY27IJUFsi6Ysk4-zHePLIspTecuz25z6-Ep816yO2i1QdRu8aXQ0kZLWnObFthLC2PVkXDO5TuX4FfzLIwCqDJg4IxpC0ksj-GQ=s0" alt="" /></p>
+
+<p>O texto-fonte é mostrado apenas como uma primeira verificação rápida para avaliar a relevância do documento; isso é de uso limitado, mas, por exemplo, no OPAC pode ajudar os usuários finais a decidir se clicam ou não no link da URL para visualizar o documento original em formato completo.</p>
+
+<p>Para ilustrar o recurso de ‘seções’ mencionado anteriormente, onde o ABCD usa as subpastas pré-configuradas do diretório ABCDImportRepo para atribuir automaticamente ‘seções’ à coleção, aqui está a lista do índice de ‘seções’ no ABCD Central:</p>
+
+<p>Figura 2.11. Secções Biblioteca Digital ABCD listagem 
+<img src="https://lh4.googleusercontent.com/BtVS6AiGpMAqOU69jbw5W_mtlDFKnSylzcA1Hx0MXX52p7rHY-1JhrJX47OZ0QAr6O_j5LyPyTl6i-fd8VAvTPvEG7DIA5N8SOyG6aOTjJESa6wx-JH5vlxepeed4GsuEFQD9P0=s0" alt="" /></p>
+
+<p>Isso reflete a estrutura da pasta agora ajustado da  subpastas de ABCDImportRepo foram reconstruídos para a coleção -root pasta com os arquivos originais movidos para lá, e a pasta ABCDImportRepo é esvaziada, deixando apenas os arquivos não processados lá (por exemplo, muito grandes):</p>
+
+<p>Figura 2.12. Biblioteca Digital ABCD nova estrutura de diretório coleção
+<img src="https://lh5.googleusercontent.com/XJchXKfLypvlu2RfnnGQpoZLzQsLO_H8CXUhCeclnmsjGzZE1yv_DIHXjH2hPqaNy4qLa0p0bj6J4qztaJsedEOj2f1c98T9yWvNlkz8Crf89l-RGYaHUlCPwBvk-51E98SXdN8=s0" alt="" /></p>
+
+<p>Como se pode  além de pasta ‘ABCDImportRepo’ (agora esvaziado) há uma pasta ‘ABCDSourceRepo’ contendo todos os arquivos html com textos extraídos, e há pastas de ‘seção’ para ABCD, GSDL, ISIS, JISIS e ‘Vários’, enquanto dois PDFs não faziam parte das seções e, portanto, permanecem na ‘raiz’ -nível da coleção sem informações de ‘seção’.</p>
+
+<p>O banco de dados da biblioteca digital pode ser incluído no ABCD Site MetaSearch (como é o caso na instalação de demonstração) e pesquisado pelos usuários finais como qualquer outro banco de dados. A exibição do resultado é muito semelhante à acima na Central:</p>
+
+<p>Figura 2.13. Biblioteca Digital resultado da pesquisa em iAH-OPAC
+<img src="https://lh6.googleusercontent.com/Y1XhawZUTMcJzw_p_RRcBxW1cGwa4-uA3wUrPvudm6M5iHUSzLtzfNzFx2IG-tnz1yJtSrPpHvsZ0kJwlGNMfu2YdyTtnNhO8ToMiLR9s9UaLpI71XA8ilmgVr9zjftZGm59xcU=s0" alt="" /></p>
+
+<p>Esta imagem mostra também no lado direito do documento PDF original, depois de ter clicado no URL -link como um hiperlink.</p>
+
+<blockquote>
+  <p>Nota:
+O método de proteção baseado em ‘login’ usando o javascript
+‘Display_URL’ não funciona no Central, mas funciona - conforme pretendido -
+no iAH OPAC.</p>
+</blockquote>
+
+<script
+  src="/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function() {
+
+    var toc = $('#TOC');
+
+    // Select each header
+    sections = $('.td-content h1');
+        $.each(sections, function(idx, v) {
+            section = $(v);
+            var div_id = $(section).attr('id');
+            var div_text = section.text().split('¶')[0];
+            var parent = $("#" + div_id)
+            var content = '<li id="link_' + div_id + '" class="md-nav__item"><small><a class="md-nav__link" href="#' + div_id + '" title="' + div_text +'">' + div_text +'</small></a></li>';
+            $(toc).append(content);
+
+            // Add section code to subnavigation
+            var children = $('<nav class="md-nav"><ul class="md-nav__list"></nav></ul>')
+            var contenders = $("#" + div_id).nextUntil("h1");
+            $.each(contenders, function(idx, contender){
+               if($(contender).is('h2') || $(contender).is('h3')) {
+                   var contender_id = $(contender).attr('id');
+                   var contender_text = $(contender).text().split('¶')[0];
+                   var content = '<li class="md-nav__item"><a class="md-nav__link " href="#' + contender_id + '" title="' + contender_text +'"><small>' + contender_text +'</small></a></li>';
+                   children.append(content);
+                }
+             })
+             $("#link_" + div_id).append(children);
+        });
+    });
+</script>
+
+<script>
+var headers = ["h1", "h2", "h3", "h4"]
+var colors = ["red", "orange", "green", "blue"]
+
+$.each(headers, function(i, header){
+    var color = colors[i];
+    $(header).each(function () {
+        var href=$(this).attr("id");
+        $(this).append('<a class="headerlink" style="color:' + color + '" href="#' + href + '" title="Permanent link">¶</a>')
+    });
+})
+</script>
+
+<script>
+$('h1').first().append('<div><span style="font-size:12px" class="badge badge-primary"><a style="cursor:pointer; color:white" href="http://localhost:9898/tags#biblioteca digital ">biblioteca digital</a></span><span style="font-size:12px" class="badge badge-primary"><a style="cursor:pointer; color:white" href="http://localhost:9898/tags#coleções ">coleções</a></span></div>')</script>
+
+	
+              
+              <style>
+  .feedback--answer {
+    display: inline-block;
+  }
+  .feedback--answer-no {
+    margin-left: 1em;
+  }
+  .feedback--response {
+    display: none;
+    margin-top: 1em;
+  }
+  .feedback--response__visible {
+    display: block;
+  }
+</style>
+<div class="d-print-none">
+<h2 class="feedback--title">Dê sua opinião</h5>
+<p class="feedback--question">Esta página foi útil?</p>
+<button class="btn btn-primary mb-4 feedback--answer feedback--answer-yes">Sim</button>
+<button class="btn btn-primary mb-4 feedback--answer feedback--answer-no">Não</button>
+<p class="feedback--response feedback--response-yes">
+  Fico feliz em ouvir isso! Por favor, <a href='{{ site.repo }}/issues/new'>nos diga como podemos melhorar</a>.
+</p>
+<p class="feedback--response feedback--response-no">
+  Sinto muito em ouvir isso. Por favor, <a href='{{ site.repo  }}/issues/new'>diga-nos como podemos melhorar</a>.
+</p>
+</div>
+<script>
+  const yesButton = document.querySelector('.feedback--answer-yes');
+  const noButton = document.querySelector('.feedback--answer-no');
+  const yesResponse = document.querySelector('.feedback--response-yes');
+  const noResponse = document.querySelector('.feedback--response-no');
+  const disableButtons = () => {
+    yesButton.disabled = true;
+    noButton.disabled = true;
+  };
+  const sendFeedback = (value) => {
+    if (typeof ga !== 'function') return;
+    const args = {
+      command: 'send',
+      hitType: 'event',
+      category: 'Helpful',
+      action: 'click',
+      label: window.location.pathname,
+      value: value
+    };
+    ga(args.command, args.hitType, args.category, args.action, args.label, args.value);
+  };
+  yesButton.addEventListener('click', () => {
+    yesResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(1);
+  });
+  noButton.addEventListener('click', () => {
+    noResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(0);
+  });
+</script><br/>
+
+
+
+
+           </div>
+
+          </main> <!--col-12 col-md-9 col-xl-8 pl-md-5-->
+        </div> <!--./row flex-xl-nowrap-->
+      </div> <!--./td-main-->
+      
+      <footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        <ul class="list-inline mb-0">  
+          
+          
+        </ul>
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        <ul class="list-inline mb-0">  
+          <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="GitHub" data-original-title="GitHub">
+            <a class="text-white" target="_blank" href="https://github.com/ABCD-Community/ABCD-Community.github.io">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">© 2021 Comunidade ABCD All Rights Reserved</small>
+        
+        <p class="mt-2">
+
+            
+                <a href="/pt//" >Início</a> <span class="text-primary"> </span>
+          
+                <a href="/pt/docs" >Documentação</a> <span class="text-primary"> </span>
+          
+                <a href="/pt/collab" >Colaboração</a> <span class="text-primary"> </span>
+          
+                <a href="/pt/about" >Sobre</a> <span class="text-primary"> </span>
+          
+
+        </p>	
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div> <!--./container-fluid td-outer--> 
+    <script src="/assets/js/popper.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/main.js"></script>
+
+
+<script src="/assets/js/tabpane-persist.js"></script>
+
+  </body>
+</html>

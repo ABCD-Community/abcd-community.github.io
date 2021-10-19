@@ -1,0 +1,124 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing these this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
+
+title: 
+  en: ABCD Community
+  pt: Comunidade ABCD
+email: contact@abcd-community.org
+author: 
+  en: Egbert de Smet
+  pt: Egbert de Smet
+editor:
+  en: Roger C. Guilherme
+  pt: Roger C. Guilherme  
+translator:
+  en:
+  pt: Roger C. Guilherme e Edwin Hubner
+description: 
+  en: This document aims at providing all relevant background information and instructions on how to use the integrated library and documentation management system 'ABCD'. Both the basic operations and the advanced management of the software are discussed, as are useful and necessary topics concerning the ISIS-software on which ABCD is based. In this new edition the new features of version 2.0 are added - the use of different flavors of CISIS, of Unicode,and the digital library capabilities as well as some additional modules (ODDS, LDAP, DSpaceBridge) and utilities (UTF8-conversion, loanobjects creation...) .
+  pt: Este documento tem como objetivo fornecer todas as informações e instruções relevantes sobre como usar a biblioteca integrada e o sistema de gerenciamento de documentação ‘ABCD’. Tanto as operações básicas como o gerenciamento avançado do software são discutidos, assim como os tópicos úteis e necessários relativos ao software ISIS no qual o ABCD se baseia. Nesta nova edição, as novas características da versão 2.0 são adicionadas- o uso de diferentes sabores de CISIS, de Unicode e as capacidades da biblioteca digital, bem como alguns módulos adicionais (ODDS, LDAP, DSpaceBridge) e utilitários (conversão UTF8, criação de objetos de empréstimo…) .
+
+
+
+
+
+# Add your baseurl here (your repository) but DO NOT CHANGE THE LINE NUMBER without editing .circleci/circle_urls.sh
+#baseurl: "/abcofabcd" # the subpath of your site, e.g. /blog
+
+# This is mostly for testing
+url: "https://abcd-community.github.io" # the base hostname & protocol for your site
+
+# Social (First three Required)
+repo: "https://github.com/ABCD-Community/ABCD-Community.github.io"
+github_user: "ABCD-Community"
+github_repo: "ABCD-Community.github.io"
+github_branch: "main"
+
+# Optional
+#twitter: abcd-community
+#linkedin: abcd-community
+#dockerhub: abcd-community
+
+# Should there be feedback buttons at the bottom of pages?
+feedback: true
+
+# Link to a privacy policy in footer, uncomment and define if wanted
+# privacy: https://domain.com/privacy
+
+# google-analytics: UA-XXXXXXXXXX
+# Image and (square) dimension for logo (don't start with /)
+# If commented, will use material hat theme
+# logo: "assets/img/logo/SRCC-square-red.png"
+logo_pixels: 34
+color: "#124078"
+# color: "#8c1515" # primary color for header, buttons
+
+# If you add tags to pages, define this variable to link them to some external search
+# If you want to link to tags locally on the site, leave this commented out
+# tag_search_endpoint: https://ask.cyberinfrastructure.org/search?q=
+tag_color: primary # danger, success, warning, primary, info, secondary
+
+accentColor: red # purple, green, etc.
+themeColor: red # purple, green, blue, orange, purple, grey
+fixedNav: 'true' # true or false
+
+permalink: /:categories/:title/
+markdown: kramdown
+exclude: [_site, CHANGELOG.md, LICENSE, README.md, vendor]
+
+# Collections
+collections:
+  docs:
+    output: true
+    permalink: /:collection/:path
+
+# Defaults
+defaults:
+  #languages
+  -
+    scope:
+      path: ""
+    values:
+      lang: "en"
+      layout: default
+  -
+    scope:
+      path: "pt"
+    values:
+      lang: "pt"
+  - scope:
+      path: "_docs"
+      type: "docs"
+    values:
+      layout: page
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  -
+    scope:
+      path: "posts"
+      type: "posts"
+    values:
+      layout: "post"
+
+# Google Analytics Tracking (optional)
+# e.g, UA-1234567-89
+ga_tracking: G-M0LM60C9WY
+ga_tracking_anonymize_ip: true # Use GDPR compliant Google Analytics settings (true/nil by default)      

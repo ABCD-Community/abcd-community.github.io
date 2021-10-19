@@ -1,0 +1,50 @@
+    <header>
+      <nav class="js-navbar-scroll navbar navbar-expand navbar-dark td-navbar-cover flex-column flex-md-row td-navbar navbar-bg-onscroll--fade">
+        <a class="navbar-brand" href="{{ site.baseurl }}/{{ page.lang }}">
+            <span class="navbar-logo">{% include logo.svg %}</span>
+            <span class="text-uppercase font-weight-bold">{{ site.title[page.lang] }}</span>
+        </a>
+
+    <div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+
+
+        <ul class="navbar-nav mt-2 mt-lg-0">
+        
+
+            {% for link in site.data.navigation[page.lang] %}
+            <li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="{% if link.url %}{{ site.baseurl }}/{{page.lang}}/{{ link.url }}{% else %}{{ link.external_url }}{% endif %}" ><span>{{ link.title }}</span></a>
+            </li>{% endfor %}
+
+
+            <li class="nav-item dropdown mr-4 d-none d-lg-block">
+
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ site.data.languages[page.lang].label }}</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                {% if page.layout != 'index' %}
+                    {% assign posts=site.posts | where:"lang-ref", page.lang-ref | sort: 'lang' %}
+                    {% if posts.size == 0 %}
+                        {% assign posts=site.pages | where:"lang-ref", page.lang-ref | sort: 'lang' %}
+                    {% endif %}
+                    {% if posts.size > 1 %}
+                        {% for post in posts %}
+
+                        <a title="{{ site.data.translations['viewIn'][page.lang] }} {{ site.data.languages[post.lang].label }}" class="{{post.lang}} dropdown-item" href="{{ site.baseurl }}{{ post.url }}">{{ site.data.languages[post.lang].label }}</a>
+
+
+                    {% endfor %}
+                    {% endif %}
+                {% endif %}
+    
+            </div>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="navbar-nav d-none d-lg-block">
+        <input type="search" class="form-control td-search-input" placeholder="&#xf002 {{ site.data.translations['SearchIn'][page.lang] }}" aria-label="Search this site…" autocomplete="on">
+
+</div>
+</nav>
+
+    </header>

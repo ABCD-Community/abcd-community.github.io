@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en"  class="no-js">
+  <!-- Copyright 2019-2021 Vanessa Sochat-->
+  <head>
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Jekyll" />
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+<link rel="alternate" type="application/rss&#43;xml" href="/docs/index.xml">
+
+<link rel="shortcut icon" href="/assets/favicons/favicon.ico" >
+<link rel="icon" type="image/png" href="/assets/favicons/favicon.png" sizes="16x16">
+
+ 
+ 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M0LM60C9WY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M0LM60C9WY');
+</script>
+
+ 
+
+<title>ABCD Community</title>
+<meta property="og:title" content="ABCD Community" />
+<meta property="og:description" content="This document aims at providing all relevant background information and instructions on how to use the integrated library and documentation management system 'ABCD'. Both the basic operations and the advanced management of the software are discussed, as are useful and necessary topics concerning the ISIS-software on which ABCD is based. In this new edition the new features of version 2.0 are added - the use of different flavors of CISIS, of Unicode,and the digital library capabilities as well as some additional modules (ODDS, LDAP, DSpaceBridge) and utilities (UTF8-conversion, loanobjects creation...) ." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://localhost:9898" />
+<meta property="og:site_name" content="http://localhost:9898" />
+
+<meta itemprop="name" content="ABCD Community">
+<meta itemprop="description" content="">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ABCD Community"/>
+<meta name="twitter:description" content="This document aims at providing all relevant background information and instructions on how to use the integrated library and documentation management system 'ABCD'. Both the basic operations and the advanced management of the software are discussed, as are useful and necessary topics concerning the ISIS-software on which ABCD is based. In this new edition the new features of version 2.0 are added - the use of different flavors of CISIS, of Unicode,and the digital library capabilities as well as some additional modules (ODDS, LDAP, DSpaceBridge) and utilities (UTF8-conversion, loanobjects creation...) ."/>
+
+<link rel="stylesheet" href="/assets/css/main.min.css">
+<link rel="stylesheet" href="/assets/css/palette.css">
+<script
+  src="/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+
+
+  
+  
+    
+  <link rel="alternate" hreflang="en" href="/en/abcd-modules/abcd-statistics/" />
+    
+  <link rel="alternate" hreflang="pt" href="/pt/abcd-modules/abcd-statistics/" />
+    
+  
+
+  
+</head>
+
+  
+
+
+  <body class="td-section">
+    
+<header>
+    <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="/en">
+            <span class="navbar-logo"></span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 167.73 167.77"><defs><style>.cls-1{fill:#ffffff;}</style></defs><g id="Camada_2" data-name="Camada 2"><g id="Camada_1-2" data-name="Camada 1"><path class="cls-1" d="M66.62,83.14c-41-2.06-66.62,18-66.62,18V18.42S20.94-.08,66.62,0Z"/><path class="cls-1" d="M84.59,66.62c2.06-41-18-66.62-18-66.62h82.73s18.5,20.94,18.42,66.62Z"/><path class="cls-1" d="M101.11,84.63c41,2.06,66.62-18,66.62-18v82.74s-20.94,18.49-66.62,18.41Z"/><path class="cls-1" d="M83.14,101.15c-2.06,41,18,66.62,18,66.62H18.42S-.08,146.83,0,101.15Z"/></g></g></svg><span class="text-uppercase font-weight-bold">ABCD Community</span>
+        </a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+            
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/en//" ><span>Home</span></a>
+			</li>
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/en/docs" ><span>Documentation</span></a>
+			</li>
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/en/collab" ><span>Collaboration</span></a>
+			</li>
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/en/about" ><span>About</span></a>
+			</li>
+
+
+  <li class="nav-item dropdown mr-4 d-none d-lg-block">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">English</a>
+    <div class="dropdown-menu">
+        
+            
+            
+            
+                
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-modules/abcd-statistics/">English</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-modules/abcd-statistics/">Português</a>
+
+
+            
+            
+        
+   </div>
+  </li>
+
+		</ul>
+	</div>
+	
+    <div class="navbar-nav d-none d-lg-block">
+        <input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off"> 
+    </div>
+   
+	<div class="navbar-nav d-none d-lg-block">
+          <a class="gh-source" data-gh-source="github" href="https://github.com/ABCD-Community/ABCD-Community.github.io" title="Go to repository" data-md-state="done">
+            <i class="fab fa fa-github fa-2x" style='color: #fff;padding-right:20px; float:left; margin-top:5px'></i></a>
+        </div>
+      </div>
+
+
+</nav>
+</header>
+
+
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+          <div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    <input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="on">
+      <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+      </button>
+  </form>  
+
+  <nav class="collapse td-sidebar-nav" id="td-section-nav">
+    <div class="nav-item dropdown d-block d-lg-none pl-4">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">English</a>
+
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+        
+            
+            
+            
+                
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-modules/abcd-statistics/">English</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-modules/abcd-statistics/">Português</a>
+
+
+            
+            
+        
+      </div>
+    </div>
+
+
+    
+      <ul class="td-sidebar-nav__section pr-md-3"> 
+
+        
+        
+
+        <li class="td-sidebar-nav__section-title">
+          <a  href="" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section"></a>
+        </li>
+        
+      </ul>
+    
+      <ul class="td-sidebar-nav__section pr-md-3"> 
+
+        
+        
+
+        <li class="td-sidebar-nav__section-title">
+          <a  href="/en/docs" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Home</a>
+        </li>
+        
+          <ul>
+            <li class="collapse show" id="home">
+              <ul class="td-sidebar-nav__section pr-md-3">
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-introduction
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Introduction
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-technology
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD Technology
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-installation
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Installation
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-modules
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Modules
+                    </a>
+                  </li>
+                  
+                    <ul>
+                      <li class="collapse show" id="">
+                        
+                          
+                            <a class="td-sidebar-link td-sidebar-link__page " id="m-home-modules-database-management" href="/en/abcd-modules/database-management">Database management</a>
+                            <a class="td-sidebar-link td-sidebar-link__page " id="m-home-modules-data-entry-cataloging" href="/en/abcd-modules/data-entry">Data-entry (cataloging)</a>
+                            <a class="td-sidebar-link td-sidebar-link__page " id="m-home-modules-statistics-in-abcd" href="/en/abcd-modules/abcd-statistics">Statistics in ABCD</a>
+                            <a class="td-sidebar-link td-sidebar-link__page " id="m-home-modules-acquisitions-management" href="/en/abcd-modules/abcd-acquisitions">Acquisitions management</a>
+                            <a class="td-sidebar-link td-sidebar-link__page " id="m-home-modules-loans-circulation" href="/en/abcd-modules/abcd-circulation">Loans/circulation</a>
+                        
+                      </li>
+                    </ul>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-utilities
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Utilities
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-thesaurus
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Thesaurus
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-odds
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">The Online Document Delivery Service (ODDS)
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-digital-library
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Digital library features in ABCD
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-oai
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">The OAI interface
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-opac
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD OPAC
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/opac-iah
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">iAH OPAC
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-site
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD Site
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/secs-web
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Serials Control
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-unicode
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD Unicode
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-localisation
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD Localisation
+                    </a>
+                  </li>
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        
+      </ul>
+    
+  </nav>
+</div>
+
+          </aside> <!--col-12 col-md-3 col-xl-2 td-sidebar d-print-none-->
+          
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+                  <a href="https://github.com/ABCD-Community/ABCD-Community.github.io/edit/main/en/abcd-modules/abcd-statistics.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+
+<a href="https://github.com/ABCD-Community/ABCD-Community.github.io/issues/new?labels=question&title=Question:&body=Question on: https://github.com/ABCD-Community/ABCD-Community.github.io/tree/master/en/abcd-modules/abcd-statistics.md" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+
+<a href="https://github.com/ABCD-Community/ABCD-Community.github.io/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
+<!-- this will parse through the header fields and add a button to open
+     an issue / ask a question on Github. The editable field should be in
+     the post frontend matter, and refer to the label to open the issue for -->
+
+            </div>
+            <div class="td-toc">
+              <nav id="TableOfContents">
+                <ul id="TOC">
+                   <!-- Links will be appended here-->
+                </ul>
+              </nav>
+            </div>
+ 
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">     
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+              <ol class="breadcrumb spb-1">
+              
+              
+                <li class="breadcrumb-item">
+                  <a href="http://localhost:9898/en/">En</a>
+                </li>
+                
+                <li class="breadcrumb-item">
+                  <a href="http://localhost:9898/en/abcd-modules/">Abcd modules</a>
+                </li>
+                
+                <li class="breadcrumb-item active" aria-current="page">
+	          <a href="http://localhost:9898/en/abcd-modules/abcd-statistics/">Central module - statistics in ABCD</a>
+                </li>
+                
+	      </ol>
+           </nav>
+
+           <div class="td-content">
+
+	      <h1 id="central-module--statistics-in-abcd">Central module : statistics in ABCD</h1>
+
+<h2 class="no_toc no_toc text-delta" id="content">Content</h2>
+
+<ol id="markdown-toc">
+  <li><a href="#central-module--statistics-in-abcd" id="markdown-toc-central-module--statistics-in-abcd">Central module : statistics in ABCD</a></li>
+</ol>
+
+<hr />
+
+<p>The Statistics module can be invoked from either the main Administration menu or from the cataloging toolbar’s option :<br />
+<img src="https://lh5.googleusercontent.com/gzZ2q9bFONPZ2N5UeHYQIR0T-pF8jcpP0G0LuS8b_OUYNPiTcOnSxoXqw3nBakDrNqBoXSCABu9fYaEza7oic4tRlutLO3h6wCHSG-irEL5GUoQJdPwSMNJXTPBl60NBkfHXPuBq=s0" alt="" /></p>
+
+<p>The main Statistics screen offers three functions :</p>
+
+<ol>
+  <li>Use an existing table</li>
+  <li>Create a new table</li>
+  <li>Generate output</li>
+</ol>
+
+<p><strong>a.  Use an existing table</strong></p>
+
+<p>Existing tables will be listed in the options list by their row/column criteria. In the ABCD demo version one table has been pre-defined : a ‘classification code by publication date’ table.</p>
+
+<blockquote>
+  <p>Note:
+The list of available tables is taken from a text-file ‘tabs.cfg’
+in the /bases/{dbname]/def/[language]/ folder. This file contains, for
+each pre-defined table, three values separated by the ‘|’ character :</p>
+</blockquote>
+
+<ul>
+  <li>the name as displayed in the menu of tables (which for clarity could be a mentioning of both criteria)</li>
+  <li>the field for the rows</li>
+  <li>the field for the columns</li>
+</ul>
+
+<p>e.g.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Classification number / Date of publication|Classification LC|Publication Date
+</code></pre></div></div>
+
+<p><img src="https://lh6.googleusercontent.com/KSGmBH6TP029dpZR91ls8wBU9_g9r-_p5bpnPfkQmMwGmV7bd3QsLmYoXrdx0bagQ7rT4SLMtjhJR7SWFJXiBoDZ1wf7A6TZyOsq5IBLCHZ-A7i2GXqicVo8D-wzYl__WbM4Ilbq=s0" alt="" /></p>
+
+<p>After selection of the table one simply has to continue by using the ‘Generate output’ option, see below.</p>
+
+<p><strong>b.  Create a new table</strong></p>
+
+<p>A table has to be defined by identifying which values (as contained in an ISIS database field) will be used in the horizontal (rows) direction and which ones in the vertical (columns) direction. ABCD will display a list of available criteria (or fields) to select from for both rows and columns.<br />
+<img src="https://lh5.googleusercontent.com/6HRJwhc7FHzsgYn1yxE6LmfWRRLnLB36mPWzCZBm9BdKMgJOWpavn0X0SkymDGizl1FY7l1HMqDLGNpMq1nH1iVEkRvAmGiOuLUszofWUZxcCNc-6IjBZCA5XOO3M0qaCUn9e9Wk=s0" alt="" /></p>
+
+<blockquote>
+  <p>Note:
+The list with available fields or criteria is taken from the
+text-file ‘stat.cfg’ in the folder /bases/ [dbname]/def/[language,
+which contains on each line one criterion, specified as a field name
+and a PFT to exactly define how the values should be extracted from
+the field. The MARC database demo example is :</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Classification LC|v50^a
+Date of publication|if val(v260^c)&lt;2000 then '1900-2000' else F(val(v260^c),1,0) fi
+</code></pre></div></div>
+
+<p>in which the second line illustrates how it can be more than just a simple field value statement by using conditions etc.</p>
+
+<p>Once both the ‘Rows’ and ‘Column’ criteria have been defined, the table can be used to generate output as explained below.</p>
+
+<p><strong>c.  Generate output</strong></p>
+
+<p>Generation of output in ABCD involves 2 stages : creating the table with the values and - if so desired - creating graphical output charts or exporting the table to other external document formats (e.g. worksheet for spreadsheet software which offers mostly more advanced/detailed graphical output possibilities).</p>
+
+<p>Before creating the output one has to define the range of MFN’s (ISIS records) to be used or a ‘query’ statement to apply the statistics only on a certain sub-set of the database. In the ‘search’ (or query) box one can use the ISIS Query Language with any accepted statement.<img src="https://lh3.googleusercontent.com/0UTY_HsC5tEBG8Zuz6ZfoPt4Di48TORKL8bSXtdTeyBwyPZi_mu_1UE_NmQiMDIs7qA_0LIC4Dms0LzzXcB79w8SqXD9_TKlkOvZefIGKmfOJ6hUhuECmHZuHsuln2CKTYctL048=s0" alt="" /></p>
+
+<p>In the first stage it is a matter to actually create the table with all the values in the cells combining both row- and column criteria (e.g. the documents published at a certain publication date belonging to a given</p>
+
+<p>LC classification code). Be careful to not calculate tables with individual extended range values (e.g. all years or all LC-codes), but rather use the Formatting Language to combine values into classes, as these make probably much more sense in your statistical report. The example above gives some hints on how to obtain such classes by using a condition on the value of a date, so the user can derive more classes from this basic example.</p>
+
+<p>In this sense the following excerpt of a table gives a BAD example, as cell values are mostly if not always ‘1’ due to too-detailed row- and column- criteria :
+<img src="https://lh4.googleusercontent.com/vTGdwtE8RvBohzz3Yw-mIKgvK_szBkwFKHyl1f2WVhQM-LnPW_Rve-z5Z9oUOeUocPuaZe9rP9X_j544KzpUg1uZJtYMhZQ7tv0bSe8eg16gJ4QtAIO9QKEQLt0T0-BvEkJZhg3D=s0" alt="" /></p>
+
+<p>The output options given by ABCD are the following :<img src="https://lh6.googleusercontent.com/5qhfX-KIM9I15TZsAJvy8jmLTtEoxQAo6VLQ-l6dxS8G9qn0fuT6G7KGO0xnQKZ8zxj2DUTnfYYh_CUcxg1QtaATNLHsNgCDCvj_zgt4zpQoE94WQf944dg_OeHsbhQY4UjKcjNi=s0" alt="" /></p>
+
+<ul>
+  <li>Output to a worksheet will transfer the table to a Spreadsheet for further processing</li>
+  <li>Output to a document will transfer the table to a Word Processor document for further processing - this could be practical to include results into your annual report document etc..</li>
+  <li>Output to printer allows direct printing of the table using the printer(s) available to your Operating System</li>
+  <li>There are 2 graphic outputs provided by ABCD itself :
+    <ul>
+      <li>Animated graphic : this is a fancy way of displaying the graphs, mostly suited for attention-tracking presentations (but requiring Flash software to be installed on the computer)</li>
+      <li>Non-animated graphic : displaying the graphs but without the fancy animation.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>In both cases several typical graphical output styles (horizontal or vertical bars, lines, three-dimensional bars etc…) are available and should be selected.</p>
+
+<p><img src="https://lh3.googleusercontent.com/_XN6GSF_plEf4t8H1r8GNik03E6yOsUkTX1jgwq0nx8q_dos_cdODA898XMyAcniXTsybak9XNonVjEOalsOw2DVfEvLztC72RDKENqlCbTuFHYQIQW45_adAQSuEbB3mHt-mac3=s0" alt="" /></p>
+
+<p>If you are not acquainted with such styles, why not just try them and decide for yourself which one presents the message of the statistics in the most clear way ? Remember that conveying a message is the crucial thing here with statistics, not impressing an audience or reader with a jungle of too-much data - as is often the case with statistical tools. Often the simpler the more convincing !</p>
+
+<p>An example output of the graphical output looks like this :<img src="https://lh6.googleusercontent.com/wMHIN8P61F5tJh-0ucps73HvKaCGy6sKCX0MIir8Y92EJ3-z80RZRR0mv1SNJjGCoKYjBMO8oNE_QDtB6DlRod5cbaKABK1pS2pwNFG4GXm-bAkfGABZ0i3H1foX57wnZZN6kphE=s0" alt="" /></p>
+
+<script
+  src="/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function() {
+
+    var toc = $('#TOC');
+
+    // Select each header
+    sections = $('.td-content h1');
+        $.each(sections, function(idx, v) {
+            section = $(v);
+            var div_id = $(section).attr('id');
+            var div_text = section.text().split('¶')[0];
+            var parent = $("#" + div_id)
+            var content = '<li id="link_' + div_id + '" class="md-nav__item"><small><a class="md-nav__link" href="#' + div_id + '" title="' + div_text +'">' + div_text +'</small></a></li>';
+            $(toc).append(content);
+
+            // Add section code to subnavigation
+            var children = $('<nav class="md-nav"><ul class="md-nav__list"></nav></ul>')
+            var contenders = $("#" + div_id).nextUntil("h1");
+            $.each(contenders, function(idx, contender){
+               if($(contender).is('h2') || $(contender).is('h3')) {
+                   var contender_id = $(contender).attr('id');
+                   var contender_text = $(contender).text().split('¶')[0];
+                   var content = '<li class="md-nav__item"><a class="md-nav__link " href="#' + contender_id + '" title="' + contender_text +'"><small>' + contender_text +'</small></a></li>';
+                   children.append(content);
+                }
+             })
+             $("#link_" + div_id).append(children);
+        });
+    });
+</script>
+
+<script>
+var headers = ["h1", "h2", "h3", "h4"]
+var colors = ["red", "orange", "green", "blue"]
+
+$.each(headers, function(i, header){
+    var color = colors[i];
+    $(header).each(function () {
+        var href=$(this).attr("id");
+        $(this).append('<a class="headerlink" style="color:' + color + '" href="#' + href + '" title="Permanent link">¶</a>')
+    });
+})
+</script>
+
+
+
+	
+              
+              <style>
+  .feedback--answer {
+    display: inline-block;
+  }
+  .feedback--answer-no {
+    margin-left: 1em;
+  }
+  .feedback--response {
+    display: none;
+    margin-top: 1em;
+  }
+  .feedback--response__visible {
+    display: block;
+  }
+</style>
+<div class="d-print-none">
+<h2 class="feedback--title">Feedback</h5>
+<p class="feedback--question">Was this page helpful?</p>
+<button class="btn btn-primary mb-4 feedback--answer feedback--answer-yes">Yes</button>
+<button class="btn btn-primary mb-4 feedback--answer feedback--answer-no">No</button>
+<p class="feedback--response feedback--response-yes">
+  Glad to hear it! Please <a href='{{ site.repo }}/issues/new'>tell us how we can improve</a>.
+</p>
+<p class="feedback--response feedback--response-no">
+  Sorry to hear that. Please <a href='{{ site.repo  }}/issues/new'>tell us how we can improve</a>.
+</p>
+</div>
+<script>
+  const yesButton = document.querySelector('.feedback--answer-yes');
+  const noButton = document.querySelector('.feedback--answer-no');
+  const yesResponse = document.querySelector('.feedback--response-yes');
+  const noResponse = document.querySelector('.feedback--response-no');
+  const disableButtons = () => {
+    yesButton.disabled = true;
+    noButton.disabled = true;
+  };
+  const sendFeedback = (value) => {
+    if (typeof ga !== 'function') return;
+    const args = {
+      command: 'send',
+      hitType: 'event',
+      category: 'Helpful',
+      action: 'click',
+      label: window.location.pathname,
+      value: value
+    };
+    ga(args.command, args.hitType, args.category, args.action, args.label, args.value);
+  };
+  yesButton.addEventListener('click', () => {
+    yesResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(1);
+  });
+  noButton.addEventListener('click', () => {
+    noResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(0);
+  });
+</script><br/>
+
+
+
+
+           </div>
+
+          </main> <!--col-12 col-md-9 col-xl-8 pl-md-5-->
+        </div> <!--./row flex-xl-nowrap-->
+      </div> <!--./td-main-->
+      
+      <footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        <ul class="list-inline mb-0">  
+          
+          
+        </ul>
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        <ul class="list-inline mb-0">  
+          <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="GitHub" data-original-title="GitHub">
+            <a class="text-white" target="_blank" href="https://github.com/ABCD-Community/ABCD-Community.github.io">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">© 2021 ABCD Community All Rights Reserved</small>
+        
+        <p class="mt-2">
+
+            
+                <a href="/en//" >Home</a> <span class="text-primary"> </span>
+          
+                <a href="/en/docs" >Documentation</a> <span class="text-primary"> </span>
+          
+                <a href="/en/collab" >Collaboration</a> <span class="text-primary"> </span>
+          
+                <a href="/en/about" >About</a> <span class="text-primary"> </span>
+          
+
+        </p>	
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div> <!--./container-fluid td-outer--> 
+    <script src="/assets/js/popper.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/main.js"></script>
+
+
+<script src="/assets/js/tabpane-persist.js"></script>
+
+  </body>
+</html>

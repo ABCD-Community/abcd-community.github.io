@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+ <title>{"en"=>"ABCD Community", "pt"=>"Comunidade ABCD"}</title>
+ <link href="http://localhost:9898/atom.xml" rel="self"/>
+ <link href="http://localhost:9898/"/>
+ <updated>2021-10-19T08:40:36-03:00</updated>
+ <id>http://localhost:9898</id>
+ <author>
+   <name></name>
+   <email></email>
+ </author>
+
+ 
+
+</feed>

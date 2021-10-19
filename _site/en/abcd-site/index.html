@@ -1,0 +1,1740 @@
+<!DOCTYPE html>
+<html lang="en"  class="no-js">
+  <!-- Copyright 2019-2021 Vanessa Sochat-->
+  <head>
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Jekyll" />
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+<link rel="alternate" type="application/rss&#43;xml" href="/docs/index.xml">
+
+<link rel="shortcut icon" href="/assets/favicons/favicon.ico" >
+<link rel="icon" type="image/png" href="/assets/favicons/favicon.png" sizes="16x16">
+
+ 
+ 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M0LM60C9WY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M0LM60C9WY');
+</script>
+
+ 
+
+<title>ABCD Community</title>
+<meta property="og:title" content="ABCD Community" />
+<meta property="og:description" content="This document aims at providing all relevant background information and instructions on how to use the integrated library and documentation management system 'ABCD'. Both the basic operations and the advanced management of the software are discussed, as are useful and necessary topics concerning the ISIS-software on which ABCD is based. In this new edition the new features of version 2.0 are added - the use of different flavors of CISIS, of Unicode,and the digital library capabilities as well as some additional modules (ODDS, LDAP, DSpaceBridge) and utilities (UTF8-conversion, loanobjects creation...) ." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://localhost:9898" />
+<meta property="og:site_name" content="http://localhost:9898" />
+
+<meta itemprop="name" content="ABCD Community">
+<meta itemprop="description" content="">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ABCD Community"/>
+<meta name="twitter:description" content="This document aims at providing all relevant background information and instructions on how to use the integrated library and documentation management system 'ABCD'. Both the basic operations and the advanced management of the software are discussed, as are useful and necessary topics concerning the ISIS-software on which ABCD is based. In this new edition the new features of version 2.0 are added - the use of different flavors of CISIS, of Unicode,and the digital library capabilities as well as some additional modules (ODDS, LDAP, DSpaceBridge) and utilities (UTF8-conversion, loanobjects creation...) ."/>
+
+<link rel="stylesheet" href="/assets/css/main.min.css">
+<link rel="stylesheet" href="/assets/css/palette.css">
+<script
+  src="/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+
+
+  
+  
+    
+  <link rel="alternate" hreflang="en" href="/en/abcd-site/" />
+    
+  <link rel="alternate" hreflang="pt" href="/pt/abcd-site/" />
+    
+  
+
+  
+</head>
+
+  
+
+
+  <body class="td-section">
+    
+<header>
+    <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="/en">
+            <span class="navbar-logo"></span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 167.73 167.77"><defs><style>.cls-1{fill:#ffffff;}</style></defs><g id="Camada_2" data-name="Camada 2"><g id="Camada_1-2" data-name="Camada 1"><path class="cls-1" d="M66.62,83.14c-41-2.06-66.62,18-66.62,18V18.42S20.94-.08,66.62,0Z"/><path class="cls-1" d="M84.59,66.62c2.06-41-18-66.62-18-66.62h82.73s18.5,20.94,18.42,66.62Z"/><path class="cls-1" d="M101.11,84.63c41,2.06,66.62-18,66.62-18v82.74s-20.94,18.49-66.62,18.41Z"/><path class="cls-1" d="M83.14,101.15c-2.06,41,18,66.62,18,66.62H18.42S-.08,146.83,0,101.15Z"/></g></g></svg><span class="text-uppercase font-weight-bold">ABCD Community</span>
+        </a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+            
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/en//" ><span>Home</span></a>
+			</li>
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/en/docs" ><span>Documentation</span></a>
+			</li>
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/en/collab" ><span>Collaboration</span></a>
+			</li>
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/en/about" ><span>About</span></a>
+			</li>
+
+
+  <li class="nav-item dropdown mr-4 d-none d-lg-block">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">English</a>
+    <div class="dropdown-menu">
+        
+            
+            
+            
+                
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-site/">English</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-site/">Português</a>
+
+
+            
+            
+        
+   </div>
+  </li>
+
+		</ul>
+	</div>
+	
+    <div class="navbar-nav d-none d-lg-block">
+        <input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off"> 
+    </div>
+   
+	<div class="navbar-nav d-none d-lg-block">
+          <a class="gh-source" data-gh-source="github" href="https://github.com/ABCD-Community/ABCD-Community.github.io" title="Go to repository" data-md-state="done">
+            <i class="fab fa fa-github fa-2x" style='color: #fff;padding-right:20px; float:left; margin-top:5px'></i></a>
+        </div>
+      </div>
+
+
+</nav>
+</header>
+
+
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+          <div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    <input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="on">
+      <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+      </button>
+  </form>  
+
+  <nav class="collapse td-sidebar-nav" id="td-section-nav">
+    <div class="nav-item dropdown d-block d-lg-none pl-4">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">English</a>
+
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+        
+            
+            
+            
+                
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-site/">English</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-site/">Português</a>
+
+
+            
+            
+        
+      </div>
+    </div>
+
+
+    
+      <ul class="td-sidebar-nav__section pr-md-3"> 
+
+        
+        
+
+        <li class="td-sidebar-nav__section-title">
+          <a  href="" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section"></a>
+        </li>
+        
+      </ul>
+    
+      <ul class="td-sidebar-nav__section pr-md-3"> 
+
+        
+        
+
+        <li class="td-sidebar-nav__section-title">
+          <a  href="/en/docs" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Home</a>
+        </li>
+        
+          <ul>
+            <li class="collapse show" id="home">
+              <ul class="td-sidebar-nav__section pr-md-3">
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-introduction
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Introduction
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-technology
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD Technology
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-installation
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Installation
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-modules
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Modules
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-utilities
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Utilities
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-thesaurus
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Thesaurus
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-odds
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">The Online Document Delivery Service (ODDS)
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-digital-library
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Digital library features in ABCD
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-oai
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">The OAI interface
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-opac
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD OPAC
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/opac-iah
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">iAH OPAC
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-site
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD Site
+                    </a>
+                  </li>
+                  
+                    <ul>
+                      <li class="collapse show" id="">
+                        
+                      </li>
+                    </ul>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/secs-web
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Serials Control
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-unicode
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD Unicode
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-localisation
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD Localisation
+                    </a>
+                  </li>
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        
+      </ul>
+    
+  </nav>
+</div>
+
+          </aside> <!--col-12 col-md-3 col-xl-2 td-sidebar d-print-none-->
+          
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+                  <a href="https://github.com/ABCD-Community/ABCD-Community.github.io/edit/main/en/abcd-site/index.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+
+<a href="https://github.com/ABCD-Community/ABCD-Community.github.io/issues/new?labels=question&title=Question:&body=Question on: https://github.com/ABCD-Community/ABCD-Community.github.io/tree/master/en/abcd-site/index.md" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+
+<a href="https://github.com/ABCD-Community/ABCD-Community.github.io/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
+<!-- this will parse through the header fields and add a button to open
+     an issue / ask a question on Github. The editable field should be in
+     the post frontend matter, and refer to the label to open the issue for -->
+
+            </div>
+            <div class="td-toc">
+              <nav id="TableOfContents">
+                <ul id="TOC">
+                   <!-- Links will be appended here-->
+                </ul>
+              </nav>
+            </div>
+ 
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">     
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+              <ol class="breadcrumb spb-1">
+              
+              
+                <li class="breadcrumb-item">
+                  <a href="http://localhost:9898/en/">En</a>
+                </li>
+                
+                <li class="breadcrumb-item active" aria-current="page">
+	          <a href="http://localhost:9898/en/abcd-site/">ABCD Site</a>
+                </li>
+                
+	      </ol>
+           </nav>
+
+           <div class="td-content">
+
+	      <h1 id="abcd-site-administration">ABCD-Site administration</h1>
+
+<h2 class="no_toc no_toc text-delta" id="content">Content</h2>
+
+<ol id="markdown-toc">
+  <li><a href="#abcd-site-administration" id="markdown-toc-abcd-site-administration">ABCD-Site administration</a></li>
+  <li><a href="#objective-of-the-chapter" id="markdown-toc-objective-of-the-chapter">Objective of the chapter</a></li>
+  <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
+  <li><a href="#general-features-of-the-system" id="markdown-toc-general-features-of-the-system">General features of the system</a>    <ol>
+      <li><a href="#access" id="markdown-toc-access">Access</a></li>
+      <li><a href="#main-menu" id="markdown-toc-main-menu">Main menu</a>        <ol>
+          <li><a href="#structure" id="markdown-toc-structure">Structure</a></li>
+          <li><a href="#components" id="markdown-toc-components">Components</a></li>
+          <li><a href="#access-1" id="markdown-toc-access-1">Access</a></li>
+        </ol>
+      </li>
+      <li><a href="#main-functions" id="markdown-toc-main-functions">Main functions</a>        <ol>
+          <li><a href="#preview" id="markdown-toc-preview">Preview</a></li>
+          <li><a href="#exit" id="markdown-toc-exit">Exit</a></li>
+        </ol>
+      </li>
+      <li><a href="#general-tools" id="markdown-toc-general-tools">General tools</a>        <ol>
+          <li><a href="#save" id="markdown-toc-save">Save</a></li>
+          <li><a href="#add" id="markdown-toc-add">Add</a></li>
+          <li><a href="#modify" id="markdown-toc-modify">Modify</a></li>
+          <li><a href="#delete" id="markdown-toc-delete">Delete</a></li>
+          <li><a href="#exit-1" id="markdown-toc-exit-1">Exit</a></li>
+          <li><a href="#items-list" id="markdown-toc-items-list">Items list</a></li>
+          <li><a href="#move-up" id="markdown-toc-move-up">Move up</a></li>
+          <li><a href="#moves-down" id="markdown-toc-moves-down">Moves down</a></li>
+          <li><a href="#specific-tools" id="markdown-toc-specific-tools">Specific tools:</a></li>
+          <li><a href="#area-identification" id="markdown-toc-area-identification">Area identification</a></li>
+          <li><a href="#status" id="markdown-toc-status">Status</a></li>
+          <li><a href="#modify-1" id="markdown-toc-modify-1">Modify</a></li>
+          <li><a href="#exit-2" id="markdown-toc-exit-2">Exit</a></li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li><a href="#structure-area-management" id="markdown-toc-structure-area-management">STRUCTURE area management</a>    <ol>
+      <li><a href="#abcd-logo" id="markdown-toc-abcd-logo">ABCD Logo</a></li>
+      <li><a href="#identification" id="markdown-toc-identification">Identification</a></li>
+      <li><a href="#contact" id="markdown-toc-contact">Contact</a></li>
+      <li><a href="#versions" id="markdown-toc-versions">Versions</a></li>
+      <li><a href="#institutions" id="markdown-toc-institutions">Institutions</a></li>
+      <li><a href="#metasearch" id="markdown-toc-metasearch">Metasearch</a></li>
+      <li><a href="#responsible-institution" id="markdown-toc-responsible-institution">Responsible Institution</a></li>
+      <li><a href="#meta-information-of-the-site" id="markdown-toc-meta-information-of-the-site">Meta information of the site</a></li>
+      <li><a href="#texts" id="markdown-toc-texts">Texts</a></li>
+      <li><a href="#file-manager" id="markdown-toc-file-manager">File manager</a></li>
+      <li><a href="#components-1" id="markdown-toc-components-1">Components</a>        <ol>
+          <li><a href="#types-of-components" id="markdown-toc-types-of-components">Types of Components</a></li>
+          <li><a href="#warning" id="markdown-toc-warning">Warning</a></li>
+          <li><a href="#sources-collection" id="markdown-toc-sources-collection">Sources collection</a></li>
+          <li><a href="#communities" id="markdown-toc-communities">Communities</a></li>
+          <li><a href="#highlights" id="markdown-toc-highlights">Highlights</a></li>
+          <li><a href="#portals" id="markdown-toc-portals">Portals</a></li>
+          <li><a href="#about" id="markdown-toc-about">About</a></li>
+          <li><a href="#topics" id="markdown-toc-topics">Topics</a></li>
+          <li><a href="#html" id="markdown-toc-html">HTML</a></li>
+          <li><a href="#rss" id="markdown-toc-rss">RSS</a></li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li><a href="#components-area-management" id="markdown-toc-components-area-management">COMPONENTS area management</a>    <ol>
+      <li><a href="#metasearch-1" id="markdown-toc-metasearch-1">Metasearch</a>        <ol>
+          <li><a href="#configuration-parameters-for-metasearch" id="markdown-toc-configuration-parameters-for-metasearch">Configuration parameters for Metasearch</a></li>
+          <li><a href="#parameters-for-configuring-databases-available-with-iah" id="markdown-toc-parameters-for-configuring-databases-available-with-iah">Parameters for configuring DATABASES available with iAH</a></li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li><a href="#access-area-management" id="markdown-toc-access-area-management">ACCESS area management</a></li>
+  <li><a href="#abcd-site---tips" id="markdown-toc-abcd-site---tips">ABCD Site - tips</a>    <ol>
+      <li><a href="#bvs-site--google-analytics" id="markdown-toc-bvs-site--google-analytics">BVS-Site &amp; Google Analytics</a></li>
+      <li><a href="#activation-of-the-function-step-by-step" id="markdown-toc-activation-of-the-function-step-by-step">Activation of the function step by step</a></li>
+      <li><a href="#abcd-site-in-multiple-languages" id="markdown-toc-abcd-site-in-multiple-languages">ABCD-Site in multiple languages</a></li>
+      <li><a href="#steps-to-add-a-new-language-to-abcd-site" id="markdown-toc-steps-to-add-a-new-language-to-abcd-site">Steps to add a new language to ABCD Site</a></li>
+      <li><a href="#abcd-site-adding-your-own-java-scripts" id="markdown-toc-abcd-site-adding-your-own-java-scripts">ABCD-Site: adding your own java scripts</a></li>
+    </ol>
+  </li>
+</ol>
+
+<hr />
+
+<h1 id="objective-of-the-chapter">Objective of the chapter</h1>
+
+<p>ABCD-Site is a customized partial version of VHL-Site, produced and maintained by BIREME. The full package of VHL-Site can be downloaded from: <a href="http://bvsmodelo.bvsalud.org/php/level.php?lang=en&amp;component=27&amp;item=10">http://bvsmodelo.bvsalud.org/php/level.php?lang=en&amp;component=27&amp;item=10</a></p>
+
+<p>This manual has been written to provide information to ABCD-Site users in the software operation and configuration.</p>
+
+<p>This document provides an overall description of the components that make up both the administration site and the public site, going more into details about the former, describing the operations that may be accomplished in systematically organized topics and following the same hierarchy as the stages.</p>
+
+<p>The ABCD-Site is assumed to have been installed and configured in compliance with the readme file in the setup.</p>
+
+<p>The manual also comprises a section on the methodology’s bibliographic references and a glossary of the ABCD model, in addition to three attachments with additional information for Metasearch, search field acronyms and tips to create search strategies in databases with the iAH search interface.</p>
+
+<p>A Virtual Library is a model for the management of information and knowledge, which includes the cooperation and convergence between institutions, systems, networks, and initiatives of producers, intermediaries, and users in the operation of networks of local, national, regional and international information sources favoring open and universal access.</p>
+
+<p>ABCD-Site organizes information in a structure that integrates and interconnects reference databases, specialist directories, events and institutions, a catalogue of the information resources available on the internet, collections of full texts.</p>
+
+<p>The space of the ABCD is, therefore, a dynamic and decentralized network of information sources based on which it is possible to retrieve and extract information and knowledge to support decision-making processes.</p>
+
+<h1 id="introduction">Introduction</h1>
+
+<p>The ABCD-Site is an integral tool of information sources which enables you to create, manage and publish your site.
+Information source is any entity that responds to user demand for information. These information sources are generated, updated, stored and operated –through the Internet or intranet– by information producers, integrators and intermediaries, in a decentralized way and according to common methodologies for ABCD integration.</p>
+
+<p>ABCD-Site Main Features:</p>
+
+<ul>
+  <li>
+    <p>management of ABCD structure and contents</p>
+  </li>
+  <li>
+    <p>integration to ABCD with internal and external sources</p>
+  </li>
+</ul>
+
+<p>The public site is configured using CSS (Cascading Style Sheets) and XSL(T) (eXtreme Style Language Transformer) technologies for presentation of its contents.</p>
+
+<h1 id="general-features-of-the-system">General features of the system</h1>
+
+<h2 id="access">Access</h2>
+
+<p>The administration area is available through the main address of ABCD-Site. Therefore, if the address is http://localhost:9090/site/php/index.php/, all you have to do is to modify the URL to enter to the ABCD administration area, according to the example:</p>
+
+<p>http://localhost:9090/site/admin/</p>
+
+<p><strong>Initial Screen for the ABCD-Site Administration System</strong></p>
+
+<p><strong><img src="https://lh6.googleusercontent.com/nG6703_3wNktO-mihl_x5GyRQYONM7L5NMuQSWOCzrg5qyYIBkVGnJC5cMPcpUrpJwX2SZkE1HzTE_S7AvIUxEuus3U_w0hM_4CSrkgfJdygsDCPs0HLzJRhIQARma8MzoqBJ8bq=s0" alt="" /></strong></p>
+
+<p>Figure 1</p>
+
+<p>To use the management tool, you must be a registered user and have an access password. The ABCD-Site currently has interfaces in 4 (four) languages and it is possible to work in any number or combinations of the languages. The content of each interface is managed separately with the use of a code and a password.</p>
+
+<p>There are two types of users on the ABCD-Site administration system:</p>
+
+<ul>
+  <li>
+    <p>Administrator: with full access to all areas of the ABCD-Site</p>
+  </li>
+  <li>
+    <p>Content: restricted Access to Components area</p>
+  </li>
+</ul>
+
+<p>At the time of installation of the system a set of <em>standard</em> <strong>passwords</strong> is available to enable immediate access to the system, and which for reasons of safety <strong>should be changed by the ABCD administrator.</strong></p>
+
+<p>The passwords are:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>user: adm
+password: x
+</code></pre></div></div>
+
+<p>Note: The same password can be used on the interface of any language. For further information on user access and management, see item 6 – Management of the access area in this Manual.</p>
+
+<h2 id="main-menu">Main menu</h2>
+
+<p>The main allows management of the content of an ABCD-Site with identification of sources, topics, links with other sites, etc. It is divided into 3 main areas: Structure, Components and Access.</p>
+
+<p><strong><img src="https://lh3.googleusercontent.com/PrLM7VXSfMADkoke52ZescTM2zXN64qTmBDq8o1oJqRycNjpvlGyUBPTcg8GWusSFDAo51h-V9iucwrQa-EVk_nbzVbAqsPnwbxza0Gi3L_vdG9RXKHQtgeYutuv6CkKREZkQwab=s0" alt="" /></strong>
+Figure 2</p>
+
+<h3 id="structure">Structure</h3>
+
+<p>Structure refers to the management of the ABCD elements : nomenclature, labels, languages, content access control (information sources, topics and communities) and to annexes (highlights and notices) etc.</p>
+
+<h3 id="components">Components</h3>
+
+<p>Components refer to content management (information sources, topics and communities) which will be available in the ABCD interface.</p>
+
+<h3 id="access-1">Access</h3>
+
+<p>Access refers to the access mode of the producers responsible for information, updates and validations of the content of the site.</p>
+
+<h2 id="main-functions">Main functions</h2>
+
+<p>After entering the user and the password, the administrator views the screen of the General Administration System, where it is possible to access: structure, content and access (users registration).</p>
+
+<p>The main page of the administration system has three main functions located on the top of the screen.</p>
+
+<p><strong><img src="https://lh3.googleusercontent.com/PrLM7VXSfMADkoke52ZescTM2zXN64qTmBDq8o1oJqRycNjpvlGyUBPTcg8GWusSFDAo51h-V9iucwrQa-EVk_nbzVbAqsPnwbxza0Gi3L_vdG9RXKHQtgeYutuv6CkKREZkQwab=s0" alt="" /></strong></p>
+
+<p>Figure 3</p>
+
+<h3 id="preview">Preview</h3>
+
+<p>It shows a preview the ABCD site. The purpose is to facilitate the administration job by enabling immediate preview of the changes made without having to resort to the public stage.</p>
+
+<h3 id="exit">Exit</h3>
+
+<p>A feature used to exit the current screen and to return to system’s access page. If the user is on the home page of the Administration System, this option will return to the page to enter the system.</p>
+
+<h2 id="general-tools">General tools</h2>
+
+<p>These relate to features available in any ABCD content management window, whether in STRUCTURE, COMPONENTS or ACCESS. In the example below, we select the <strong>SERVICE</strong> box.</p>
+
+<p><strong><img src="https://lh6.googleusercontent.com/uAVOHZ8E0_bWh6K5_lLx22hiugFKF2s9iGjAfjPGYI6tS0o0VHIM3iwURB8jpm9nzz-t9aIRnisGa9cvCAssQPFRInTHxmZoeVGwFbglAp2C-Jl4kAF3pHGcGBmDMbmY9cpmRKm6=s0" alt="" /></strong></p>
+
+<p>Figure 4</p>
+
+<h3 id="save">Save</h3>
+<p>Saves the changes made in the current section and records them into the interface files.</p>
+
+<h3 id="add">Add</h3>
+
+<p>Adds data items according to the type of content existing in the section.</p>
+
+<h3 id="modify">Modify</h3>
+<p>Edits content data items existing in the section.</p>
+
+<h3 id="delete">Delete</h3>
+<p>Deletes content data items existing in the section.</p>
+
+<h3 id="exit-1">Exit</h3>
+<p>Returns to the main menu.</p>
+
+<h3 id="items-list">Items list</h3>
+
+<p>Lists data items according to the type of content existing in the section. It shows the information on a hierarchical level determining how it is displayed in the ABCD interface.</p>
+
+<h3 id="move-up">Move up</h3>
+<p>Moves up the selected item, enabling to change its order/sequence.</p>
+
+<h3 id="moves-down">Moves down</h3>
+<p>Moves up the selected item, enabling to change its order/sequence.</p>
+
+<h3 id="specific-tools">Specific tools:</h3>
+<p>Features that vary according to the type available for each component of the system. In the example below we have selected the SciELO element of the first column</p>
+
+<p><strong><img src="https://lh6.googleusercontent.com/SDmhfxD_VYp2waCsklbRQptCqPbupr69us5MQFmAauVMU6yflrGGf0-JpU5YjO3tLmZ02eD0IZvPtKvL_c00AGJKdmQ-7N1gZCCacjvx5Nh6ACnp4HNAHk-jl1EZYTse3QMwTygB=s0" alt="" /></strong>
+Figure 5</p>
+
+<h3 id="area-identification">Area identification</h3>
+<p>Name of the section to be changed (in the example, we have <em>Connection with other sites</em>).</p>
+
+<h3 id="status">Status</h3>
+<p>Current status, which may be defined as Available or Unavailable.</p>
+
+<p><strong>Available:</strong> data are stored and available on the ABCD public interface.</p>
+
+<p><strong>Unavailable:</strong> data are stored and visualized only by the system’s administrators.</p>
+
+<h3 id="modify-1">Modify</h3>
+
+<p>It saves the changes made in the current section and applies them to the interface.</p>
+
+<h3 id="exit-2">Exit</h3>
+
+<p>It returns to the main menu.</p>
+
+<h1 id="structure-area-management">STRUCTURE area management</h1>
+
+<p><strong><img src="https://lh3.googleusercontent.com/PrLM7VXSfMADkoke52ZescTM2zXN64qTmBDq8o1oJqRycNjpvlGyUBPTcg8GWusSFDAo51h-V9iucwrQa-EVk_nbzVbAqsPnwbxza0Gi3L_vdG9RXKHQtgeYutuv6CkKREZkQwab=s0" alt="" /></strong>
+Figure 6</p>
+
+<p>Features available in the <strong>STRUCTURE</strong> area:</p>
+
+<h2 id="abcd-logo">ABCD Logo</h2>
+
+<p>URL of the logo and URL for the responsible organisation providing ABCD (ABCD-Father).</p>
+
+<p><strong><img src="https://lh5.googleusercontent.com/Y2hiylkb6MAbobfDTjYe7gSdJnf_1nELwdO_44_ComGgGqnAgq2yHD9iUFazK_wSaXbDdC_Trwr9GcMTQ2zZt8o-C37G6caEuSUUSqwSujzLiV-qwiuG_DcwCwbzqblnBOQym7Xc=s0" alt="" /></strong>
+Figure 7</p>
+
+<ul>
+  <li>
+    <p><strong>Label</strong>
+Identifies the logo name available at the ABCD.</p>
+  </li>
+  <li>
+    <p><strong>Image</strong>
+URL of the image that will make up the ABCD banner (or logo)</p>
+  </li>
+  <li>
+    <p><strong>Link</strong>
+Inserts the link to the ABCD home</p>
+  </li>
+</ul>
+
+<h2 id="identification">Identification</h2>
+
+<p>Identifies the ABCD name that will be displayed in the banner and at the top of the administration system page.</p>
+
+<p><strong><img src="https://lh5.googleusercontent.com/ncuyoqqsqZ6YvgTr5xXgkQOnjLQOgorgmDy9wiblK8ea6MhdhpQXtjIbA7TIEaMbBZ6RniETj2PdQ_mSk0Cm03mga4z3p3yPTQ-QtZU3ulAEePAN1amjnW9p-du3pX1HNvD0f9eR=s0" alt="" /></strong>
+Figure 8</p>
+
+<ul>
+  <li>
+    <p><strong>Label</strong>
+ABCD name.</p>
+  </li>
+  <li>
+    <p><strong>Image</strong>
+Site identification image</p>
+  </li>
+</ul>
+
+<blockquote>
+  <p>Note: 
+In ABCD identification the user must choose between the label or the image, never use both at the same time.</p>
+</blockquote>
+
+<h2 id="contact">Contact</h2>
+
+<p>E-mail to contact the person(s) responsible for ABCD. More than one address can be registered, which in the public interface will be selected via a box, in the form.</p>
+
+<p><strong><img src="https://lh3.googleusercontent.com/RAcmWfQoF1XojZ2_UXClug_k5Cevrk2Zt36mfkR4ff7hT4sfkuOhGQdPbBTppHni3GAi_bitNNZojkoklZ-Sbs7hgUx30E1QWk9U8qxRwdDbKznnA8VW6cJv-l9t8dRerhWV5Yik=s0" alt="" /></strong>
+Figure 9</p>
+
+<ul>
+  <li>
+    <p><strong>E-mail subject</strong>
+Indication of contact name. We suggest that personal data should be avoided.</p>
+  </li>
+  <li>
+    <p><strong>E-mail</strong><br />
+Corresponding e-mail address.</p>
+  </li>
+</ul>
+
+<blockquote>
+  <p>Note: 
+Personal addresses may be used as contact as these data are visible for the user of the public interface.</p>
+</blockquote>
+
+<h2 id="versions">Versions</h2>
+
+<p>Makes available public interfaces in other languages. These currently can be: English, French, Spanish and Portuguese, available in the administration module, depending on the work language. Example: for the Portuguese work language, other versions available are English, French and Spanish.</p>
+
+<p><img src="https://lh3.googleusercontent.com/I1qlg5lxIyvkcTQKw_tSEm5RMxC0INmMeaf8fAxms8lQx7Dc-QR5XLYtILKV8bCFl9KUYnHSLzvKo_2yM6sjdMZ1_vGNeVIu5Zd8cctxBw0YQmUI0Q_btGnssz8rtkQxAo8gMlO4=s0" alt="" /></p>
+
+<p>Figure 10</p>
+
+<ul>
+  <li>
+    <p>Name
+Identification of the version made available or not.</p>
+  </li>
+  <li>
+    <p>Link
+Identifies the action in the system that will make the public interface available.</p>
+  </li>
+</ul>
+
+<h2 id="institutions">Institutions</h2>
+
+<p>Name of and link to institutions responsible for ABCD, displayed on the top right hand corner of the public site. This area enables the separate registration of image links and logos’ links.</p>
+
+<p><img src="https://lh5.googleusercontent.com/V-r3BYY_ijiLuAzKCCwkokPEFomtqK-sCc-nfNRPRRDKsfPJTS8XoTrvPa0nTNboONm9Q5coGk-DbpR8Vn9RZp4ez8JL6N5cQpatp_DHQMaZStBcrXW1qTPKiCxKO8EtfiVttdlK=s0" alt="" /></p>
+
+<p>Figure 11</p>
+
+<ul>
+  <li>
+    <p>Name
+Identifies the institution.</p>
+  </li>
+  <li>
+    <p>Image
+URL of the logo image (if there is a logo )</p>
+  </li>
+  <li>
+    <p>Link
+Link to the institution website (whenever available)</p>
+  </li>
+</ul>
+
+<h2 id="metasearch">Metasearch</h2>
+
+<p>Identifies and enables changing labels of research services available on the public interface.</p>
+
+<p><img src="https://lh5.googleusercontent.com/rCQu6tHW98iYXe5iZFD4X5P0FslvpDl1_ZK2Taig4Vrk5tKfCLGKvejhhnaV6dJ3dOnftLhRWuhwnqXd07OrJ9S9QDKk3gCd3crBSy6y0QvjbZymIge1AvEmQh7BFiWN0bd3Q8tb=s0" alt="" /></p>
+
+<p>Figure 12</p>
+
+<ul>
+  <li>Text
+ Changes the text of the metasearch labels</li>
+</ul>
+
+<p>The labels can be modified using the option “Metasearch” of the structure column, or directly editing the file <code class="language-plaintext highlighter-rouge">…/bases/site/xml/&lt;lang&gt;/metasearch.xml</code></p>
+
+<p>The last 5 rows grayed are implemented in the full version of this Site editor, because are related with special search features using the Thesaurus MeSH/DeCS of BIREME.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Meta label</th>
+      <th>Text to display</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>search_title</td>
+      <td>ABCD Search</td>
+    </tr>
+    <tr>
+      <td>search_entryWords</td>
+      <td>Entry one or more words</td>
+    </tr>
+    <tr>
+      <td>search_submit</td>
+      <td>Search</td>
+    </tr>
+    <tr>
+      <td>search_howToSearch</td>
+      <td>how to search?</td>
+    </tr>
+    <tr>
+      <td>search_allWords</td>
+      <td>All words</td>
+    </tr>
+    <tr>
+      <td>search_anyWord</td>
+      <td>Any word</td>
+    </tr>
+    <tr>
+      <td>search_error</td>
+      <td>Please use a search expression.</td>
+    </tr>
+    <tr>
+      <td>search_advancedSearch</td>
+      <td>search filter</td>
+    </tr>
+    <tr>
+      <td>search_freeSearch</td>
+      <td>by words</td>
+    </tr>
+    <tr>
+      <td>search_results</td>
+      <td>Result</td>
+    </tr>
+    <tr>
+      <td>search_method</td>
+      <td>Method</td>
+    </tr>
+    <tr>
+      <td>search_demo</td>
+      <td>Demo</td>
+    </tr>
+    <tr>
+      <td>conceptSearch_title</td>
+      <td>by relevance</td>
+    </tr>
+    <tr>
+      <td>conceptSearch_entryWords</td>
+      <td>Search documents more related to the concepts</td>
+    </tr>
+    <tr>
+      <td>decs_mesh</td>
+      <td>Search by DeCS/MeSH terminology</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="responsible-institution">Responsible Institution</h2>
+
+<p>Information on the site’s footnote. Describes data for contacting the institution in charge of the ABCD, as address, phone number, etc.</p>
+
+<p><img src="https://lh3.googleusercontent.com/85RZOciBOisYtO1J0zR5eFeXVypW2cmM428xRE1Lm2xd39ep-DcCcGp5h7Scv85xIRiOOP5y77p4DBaEFlzQIiXApd0SrnHV1Dz5gDJ-RpnULlp4ZyzCU03VqdsjiLz9IBX70XZ1=s0" alt="" /></p>
+
+<p>Figure 13</p>
+
+<ul>
+  <li>
+    <p>Name
+Indicates the institution that will have its contact data published at the page’s footnote.</p>
+  </li>
+  <li>
+    <p>XHTML Editor
+Enables the creation of the welcome text to be made available at the public interface (for more information about he text editor in XHTML see item Sources Collection).</p>
+  </li>
+</ul>
+
+<h2 id="meta-information-of-the-site">Meta information of the site</h2>
+
+<p>Space for a ABCD’s brief description, which will allow the ABCD to be indexed and retrieved by web browsers. Enables description by author, keyword and description, etc.</p>
+
+<p><img src="https://lh4.googleusercontent.com/wSIjjgLMGSDGTR2hYV35w6I4bepKYZ9l7rL0QDQOaoXcgwXKVcJKVyRQ69A42maAGsjbKLbBfL8AKpIyVbfiedkMrECmDrdHR1pQoO5_ZZChlbpHMYX3l7T471el0nEns1lLBPv6=s0" alt="" /></p>
+
+<p>Figure 14</p>
+
+<ul>
+  <li>Element
+Indicates the field to be indexed by the Internet search engines. These may be:
+    <ul>
+      <li>author: Institution’s URL;</li>
+      <li>keywords: key words, describing the site’s content;</li>
+      <li>description: site identification</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="texts">Texts</h2>
+
+<p>Manages the list comprising all labels and image URLs that identify common actions and areas of the ABCD site, other than the search services.</p>
+
+<p>The labels can be modified using the option “Texts” of the structure column, or directly editing the file …/bases/site/xml/<lang>/bvs.xml</lang></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Meta label</th>
+      <th>Text to display</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Button_moreInformation</td>
+      <td>More information</td>
+    </tr>
+    <tr>
+      <td>Default_print</td>
+      <td>print</td>
+    </tr>
+    <tr>
+      <td>Default_close</td>
+      <td>close</td>
+    </tr>
+    <tr>
+      <td>Home</td>
+      <td>home</td>
+    </tr>
+    <tr>
+      <td>Contact</td>
+      <td>Contact</td>
+    </tr>
+    <tr>
+      <td>Contact: subject</td>
+      <td>Subject</td>
+    </tr>
+    <tr>
+      <td>Contact: name</td>
+      <td>Name</td>
+    </tr>
+    <tr>
+      <td>Contact: email</td>
+      <td>Email</td>
+    </tr>
+    <tr>
+      <td>Contact: message</td>
+      <td>Message</td>
+    </tr>
+    <tr>
+      <td>Contact: send</td>
+      <td>Send</td>
+    </tr>
+    <tr>
+      <td>Contact: error</td>
+      <td>Please fill in the fields:</td>
+    </tr>
+    <tr>
+      <td>Contact: response</td>
+      <td>Your message has been successfully sent</td>
+    </tr>
+    <tr>
+      <td>topic.expand</td>
+      <td>show subtopics</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="https://lh6.googleusercontent.com/anr60MER2b3YL78gjS9SOgN5ML0c1-HJ9J0vId8VAV0jrozeg57XZUAEMhbKyysIUgYSlGsGwjnSTegQq8ILWS7Glek7qpob-jFicgopXDjUB6cR2bgGAYwK_VcTRh0nf_HJDTlc=s0" alt="" /></p>
+
+<p>Figure 15</p>
+
+<ul>
+  <li>Identification</li>
+</ul>
+
+<p>Indicates the corresponding label</p>
+
+<ul>
+  <li>XHTML Editor</li>
+</ul>
+
+<p>Enables the creation of the warning text to be made available at the public interface (for more information about he text editor in XHTML see item Sources Collection later in 3.10.3)</p>
+
+<ul>
+  <li>Image</li>
+</ul>
+
+<p>Image URL.</p>
+
+<h2 id="file-manager">File manager</h2>
+
+<p>Allows the uploading of local files to a dedicated area of the server. ABCD Site is configured to load files under /abcd/www/htdocs/local. The administrator of the Server should give read/write access to the folder.</p>
+
+<p><img src="https://lh3.googleusercontent.com/RmQ4XNvuQm7afPiqYODo6aW_rX9-J_i2eEHu0JkmXjEyX5IYp23aZugcik3z9ZdctnDb9Va19I763sXjUBNMDKzWvpOH_zjsaqCtgLph4rByjEkAlmgOfsHOOGD04RyJ8c23BgPt=s0" alt="" /></p>
+
+<p><img src="https://lh3.googleusercontent.com/wa4_rsMLvTdl-Y9k4egEr_LfDdoWuyPFoFQK-VOlPQoKkI2FklCjU9GRV2XDLJxaI3fqHyz-gY2oOnGW5GUFc7s9pP_bg142a8aYxqhvKgwKx05JbHW038wH_km-bVd--da4o34u=s0" alt="" /></p>
+
+<p>The administrator can filter the type of files admited to upload, modifying the variable in the configuration file:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/htdocs/site/admin/fnow/include_config_system.php
+
+$cfg["allowed_extensions"] = "(gif|bmp|png|jpg|jpeg|doc|txt|xml|pdf)";
+</code></pre></div></div>
+
+<p>It is recommended to design a clear strategy of filing archives in this area classifying them by type. If there were a lot of files of the same class, it is recommended to prepare a balanced hierarchical structure, so that there are not too many files in a folder at the same level.</p>
+
+<p>Opening a decimal tree is recommended, as shown in the figure at the right.</p>
+
+<h2 id="components-1">Components</h2>
+
+<p>Version 4.02 of the ABCD Site enables administration of the system via “columns” subdivided into components (or boxes) displayed in up to three (3) columns, with no limits as to the number of component inside each one of them in that:</p>
+
+<p>Column 1 – links to other Libraries or related portals.</p>
+
+<p>Column 2 – collection of ABCD information sources.</p>
+
+<p>Column 3 – space available for highlights, news, etc.</p>
+
+<p><img src="https://lh3.googleusercontent.com/b-Jk9WEw6XFaMXmC9V80Ukr5r8UgOxV2iUpcuCf6y_iI8Ml67WGPk1iHOVrmKnWnUl-ILQk5Z0QMPWPgURgQ7yCqGjKrZF0tLKTyF4tyRzDylskeE2UHvPD89j0X56jhCUI5iHj7=s0" alt="" /></p>
+
+<p>Figure 16</p>
+
+<p>The order of each component, as well as that of the columns (depending on the ABCD scope) may be changed from the COMPONENT administration, where we have the columns as well as each one of the components (available or not in the public interface).</p>
+
+<p><img src="https://lh3.googleusercontent.com/7B5nFnm_WxdJPY3DdyNvtBPZ4t9NStUPqgKAiIEiXKi1JyZvDPooviflrc0HGz2SqaC1WgRq-CNzey9JOZ0qwE7CysLir0_mC9Ebm-B9aiLHIxodh-OVwMb1d9UJgwt7P70mG8gM=s0" alt="" /></p>
+
+<p>Figure 17</p>
+
+<p>Each component of the column is represented by a title with the type of function that will make working on the content:</p>
+
+<p><img src="https://lh4.googleusercontent.com/LxMSIw8ZrFagvw76phE_WYdeTznCZvyPY0BNBvTxujB4dagGUyvHli82xqPJ6PHhy4v6ULXuIPL9bBq8DDfO6fXRzdCEj9c3MjiQBoHtOdM1g7DMvSzUo9J0Z0I1jO01pyE1Z1q5=s0" alt="" /></p>
+
+<p>Figure 18</p>
+
+<h3 id="types-of-components">Types of Components</h3>
+
+<p>In addition to the structuring in “Columns”, version 4.0 of the ABCD Site also works by using some types of components that may be distributed along ABCD.</p>
+
+<p><img src="https://lh5.googleusercontent.com/ssnbueCcErC53P1mKtvpvUEQPuSmD9Ij08htXz2E_5-tJviOYxrZ6IfG2hkAXURz6sgptONPLRnftDdpsQFvzx_o-z_ePBOzAIRFSPC4MQFzbjGK8-hDkU-Umsf9lRM8UDdTpAab=s0" alt="" /></p>
+
+<p>Figure 19</p>
+
+<p>Types of components may be:</p>
+
+<h3 id="warning">Warning</h3>
+
+<p>Enables insertion of warning messages relative to ABCD : site under maintenance, site for demonstration only, etc.</p>
+
+<p><img src="https://lh3.googleusercontent.com/7hY4hzt2iUsbrs4_U50vtMRchwL0cD3yCJDfRObjAp-POC7MVtJNvKdb3uy8hNINCzbU98mbQZdgPbhenaQjge05rae6yDmLcPukmCON47IdZ2EhMSi1WjXCCr6D9Do1VM4zOTmP=s0" alt="" /></p>
+
+<p>Figure 20</p>
+
+<ul>
+  <li>Name</li>
+</ul>
+
+<p>Indicates the title of the warning (only for the administration module. Not published).</p>
+
+<ul>
+  <li>XHTML Editor</li>
+</ul>
+
+<p>Enables the creation of the warning text to be made available at the public interface (for more information about he text editor in XHTML see item Sources Collection).</p>
+
+<h3 id="sources-collection">Sources collection</h3>
+
+<p>Enables registration of each information resource, as well as its configuration, to take part in the Metasearch.</p>
+
+<p><img src="https://lh5.googleusercontent.com/yHzGAXK-SaCMbzX7Pz2c7ux-M_ZA-iZyibyOAdmMI9ldcRE34eji1-DqetOY0vqJsWpnoxpcCZpkMrUMRA9t3xgHDIXrbgH3Mlwm2krQVNeVn_fZtvAm-eLyVEaBXXNsQXRzXEKX=s0" alt="" /></p>
+
+<p>Figure 21</p>
+
+<ul>
+  <li>Name</li>
+</ul>
+
+<p>Source identification.</p>
+
+<ul>
+  <li>Image</li>
+</ul>
+
+<p>URL of the source image.</p>
+
+<ul>
+  <li>Link</li>
+</ul>
+
+<p>Link to the search area source of the information resource.</p>
+
+<ul>
+  <li>XHTML description</li>
+</ul>
+
+<p>Reserved for a brief description on the information resource and its contents.</p>
+
+<p>Example of XHTML Description usage.</p>
+
+<p><img src="https://lh4.googleusercontent.com/Yxpeknf61g2_XEakB4DR1jVhqjy67bL9JXqOkaUdhSL3ultIaqXoXNkdPdgDHSSw1Gy8KNpfbZANYgPdZ72go2qzzAUIM8chfZVseQndFVa51czgyZ975yD4gnUKebEAe17jCqdJ=s0" alt="" /></p>
+
+<p>Figure 22</p>
+
+<ul>
+  <li>Portal web page (XHTML)</li>
+</ul>
+
+<p>When used, the content of this field generates a second level page (portal) in ABCD. Follows the same editing rules as the description area, but the link field must not be filled out.</p>
+
+<p>Example of Portal web page use (XHTML)</p>
+
+<p>In order to active a second level page, the first LINK box should be empty, otherwise the first XHTML page will be displayed. The link to the external site should be included in the text of this web page.</p>
+
+<p><img src="https://lh3.googleusercontent.com/KxuLLgp99uD89fapssrZQDgZAQJzcO50N4w0l1tQpLdDWud3vXazvwguxneQF-ehSQauxVuaAg1JwY26ifTmCO5uXNE0N6wQp6BUpq7bl4g1CuDayb7ULZu_lFW6LfpTvu-7AQPr=s0" alt="" /></p>
+
+<p>Figure 23</p>
+
+<ul>
+  <li>Metasearch</li>
+</ul>
+
+<p>This mechanism enables the user to conduct a free query or a query by subject over different information resources included in the Site. Some Metasearch configuration is required so that the resources operate with this search system.</p>
+
+<p>Information on how to configure the search system is explained in topics “Configuration parameters for Metasearch” and “Topics” in this manual.</p>
+
+<h3 id="communities">Communities</h3>
+
+<p>Enables the registration of a specific Community information resource such as virtual communities, forums, etc.</p>
+
+<p><img src="https://lh5.googleusercontent.com/Hr2pDo49V9zQmZbR7jaHPg2KqU2CkyBnUENV8fHEpysFxAl3OkOUl546PmpbLzKjVNc8IbA2NMTnQwYRuhASisjAleNYZOgWWW3aAJCRl5ojwlGxxfQ9NPCSnClc-QBM3qwQP54W=s0" alt="" /></p>
+
+<p>Figure 24</p>
+
+<ul>
+  <li>Name</li>
+</ul>
+
+<p>Resource identification.</p>
+
+<ul>
+  <li>Image</li>
+</ul>
+
+<p>URL of the resource image.</p>
+
+<ul>
+  <li>Link</li>
+</ul>
+
+<p>Link to the search interface of the information resource.</p>
+
+<ul>
+  <li>XHTML description</li>
+</ul>
+
+<p>Reserved for a brief description of the information source and its content</p>
+
+<ul>
+  <li>Portal web page (XHTML)</li>
+</ul>
+
+<p>When used, the content of this field generates a second level page (portal) in the ABCD. Follows the same editing rules as the description area, but the link field must not be filled out (for more information on the XHTML text editor see item (Sources Collection).</p>
+
+<h3 id="highlights">Highlights</h3>
+
+<p>Collection of records highlighted in the main page of the ABCD.</p>
+
+<p><img src="https://lh5.googleusercontent.com/hTnvZxoex-8CRRgG8pBDjq9rwRHrjOgLZajq8cOwIwBYBQIhFfvl23ofBdn7hlD_Y1oe7aAL_wrcPk_kHY0LOka7Cb6GFzasFa0GY_kSa-CUYkn9Q7vlz3Lc0zRvb6AJ7RWo2tuz=s0" alt="" /></p>
+
+<p>Figure 25</p>
+
+<ul>
+  <li>Name</li>
+</ul>
+
+<p>Resource identification.</p>
+
+<ul>
+  <li>Image</li>
+</ul>
+
+<p>URL of the source image.</p>
+
+<ul>
+  <li>Link</li>
+</ul>
+
+<p>Link to the search interface of the information source.</p>
+
+<h3 id="portals">Portals</h3>
+
+<p>Collection of links to other web portals related to ABCD.</p>
+
+<p><img src="https://lh5.googleusercontent.com/dRHyeXDthzMtQvbo8DNaFrWd54kibJMMLj_TVI6yS3ehcE-xxSXPSVLUuQ6HM_XjiUDLGALns4LxajP6weJQ9ZmE1funNIsbS2zBURAOqDYR9kidz4bOMoeA5nPDH_a7m0nyNHzV=s0" alt="" /></p>
+
+<p>Figure 26</p>
+
+<ul>
+  <li>Name</li>
+</ul>
+
+<p>Resource identification.</p>
+
+<ul>
+  <li>Image</li>
+</ul>
+
+<p>URL of the source image.</p>
+
+<ul>
+  <li>Link</li>
+</ul>
+
+<p>Link to the search interface of the information resource.</p>
+
+<h3 id="about">About</h3>
+
+<p>Enables registration of information on ABCD such as objective, reach, etc.</p>
+
+<p><img src="https://lh3.googleusercontent.com/IruSjJq0uydwnjPVA9vybDF5dBrRkaW2h4oE6E8E61Y7zJnNyyqKvL_AMGBJWzcNvseM1uXlKhqyf5VsrDdz_ZVxlyo3U5tfBzCzz5fy8WYIlk_HBTySIS_rdXcMqwMjAKSpMujW=s0" alt="" /></p>
+
+<p>Figure 27</p>
+
+<ul>
+  <li>
+    <p>Name
+Resource identification.</p>
+  </li>
+  <li>
+    <p>Image
+URL of the source image.</p>
+  </li>
+  <li>
+    <p>Link
+Link to the search interface of the information resource.</p>
+  </li>
+  <li>
+    <p>XHTML description</p>
+  </li>
+</ul>
+
+<p>Reserved for a brief description of the information source and its conte</p>
+
+<ul>
+  <li>Portal web page (XHTML)</li>
+</ul>
+
+<p>When used, the content of this field generates a second level page (portal) in ABCD. Follows the same editing rules as the description area, but the link field must not be filled out (for more information on the XHTML text editor see item (Sources Collection).</p>
+
+<h3 id="topics">Topics</h3>
+
+<p>Collection of related topics that enables an automatic metasearch in a set of sources previously configured to offer this feature. This service requires a controlled vocabulary to be efficient.</p>
+
+<p>Information on how to configure the search system is spelled out in topics “Configuration parameters for Metasearch” and “Subjects” in the full version of the BVS Site manual.  <a href="http://bvsmodelo.bvsalud.org/download/bvs/Manual_BVS-Site4.0_en.pdf">http://bvsmodelo.bvsalud.org/download/bvs/Manual_BVS-Site4.0_en.pdf</a></p>
+
+<h3 id="html">HTML</h3>
+
+<p>Use of the HTML editor page to publish information directly on the ABCD main page..</p>
+
+<p><img src="https://lh5.googleusercontent.com/8TDLybDPszqiDgyZ3AVg71uNKcHLsSQPC0GyzLFpsvUoWo071iK-3IspSy9HOWgTlr8Gez_lVP8bG731xrqwDOxlXwV6g6eAGtaWAdpE0eNeZVQl_oY0kUZinqcf0MQzbUR3kbBQ=s0" alt="" /></p>
+
+<p>Figure 28</p>
+
+<h3 id="rss">RSS</h3>
+
+<p>Creates a link with news agencies that make the RSS feature available to users.</p>
+
+<p><img src="https://lh3.googleusercontent.com/vGQixwHVhc5kM_nEG-N8etapOOnZ94zWstBl0kAkOV3o58R9dh6FvxirIksLfv0iKBGzJwSEoWFEcbcQqL7ww_lOb71V-NJCTIw1zmjPgX6x3k1hqXfKiLmSmO6FTbznxZwMKq-5=s0" alt="" /></p>
+
+<p>Figure 29</p>
+
+<ul>
+  <li>
+    <p>Link to the RSS file
+Indication of the URL corresponding to the RSS service.</p>
+  </li>
+  <li>
+    <p>Check
+Checks if the RSS address is correct. Checking will be made in the box below, named RSS.</p>
+  </li>
+  <li>RSS</li>
+  <li>Box to check the RSS feature indicated.</li>
+</ul>
+
+<h1 id="components-area-management">COMPONENTS area management</h1>
+
+<p><img src="https://lh3.googleusercontent.com/PrLM7VXSfMADkoke52ZescTM2zXN64qTmBDq8o1oJqRycNjpvlGyUBPTcg8GWusSFDAo51h-V9iucwrQa-EVk_nbzVbAqsPnwbxza0Gi3L_vdG9RXKHQtgeYutuv6CkKREZkQwab=s0" alt="" /></p>
+
+<p>Figure 30</p>
+
+<p>Once the components of each column are defined (item 4.10), its content must be managed via the COMPONENTS area, depending on each component selected.</p>
+
+<p>Detailed information on how to work with each type of component in the system is provided in the item “<a href="https://docs.google.com/document/d/13kW8gJdtY0rSvjYdMlF0-pcGTaVnzIyv3zhU01vsiyk/edit#heading=h.vx1227">Types of Components</a>”.</p>
+
+<h2 id="metasearch-1">Metasearch</h2>
+
+<p>Configuration of the Metasearch (which is done in free search or search by topic) is essential for effective search of information resources within ABCD, and the parameters must be correctly filled in and the resource correctly registered so that Metasearch works.</p>
+
+<p><img src="https://lh3.googleusercontent.com/huLkWCa7aNLN9-fM4HvIrAcyXs3i7hgAETfR6vQ2IJqTX-nP4WnvGzzvhk_FWwjNy1Vm5tiY9IL25w9iU8vIhpE9KhXlF_y-BSf81e0UVvUpymtTc2mq_ux-maxlixJEq21K_wxM=s0" alt="" /></p>
+
+<p>Figure 31</p>
+
+<ul>
+  <li>Search link - fixed part</li>
+</ul>
+
+<p>A set of parameters that determines the information resource that is being queried.</p>
+
+<ul>
+  <li>Free search parameters</li>
+</ul>
+
+<p>A variable that receives the argument of the search on the information resource to be queried.</p>
+
+<ul>
+  <li>Show result link - fixed part</li>
+</ul>
+
+<p>Set of parameters that determine the visualization of the search results.</p>
+
+<p>Note: In the standard installation of a ABCD some information sources are already configured, but when inserting a new Source the fields mentioned are empty and have to be set up.</p>
+
+<h3 id="configuration-parameters-for-metasearch">Configuration parameters for Metasearch</h3>
+
+<p>Configuration of the Metasearch engine is always based on the Information Resources URL and should be adjusted according to the type of information source.</p>
+
+<p>Example of URL from the DBLIL database in ABCD demo.</p>
+
+<p>With the full path:</p>
+
+<p>[http://<my-host>/cgi-bin/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;lang=es&amp;base=DBLIL](http://localhost:9090/cgi-bin/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;lang=es&amp;base=DBLIL)</my-host></p>
+
+<p>Using a relative path if the database is in the same host of your ABCD Site.</p>
+
+<p>/iah/?base=DBLIL&amp;lang=es</p>
+
+<p>in this case, you could refer to the server as %HOST% in the metasearch parameters.</p>
+
+<p>In order to conduct a search, configurations of links and parameters must be entered correctly.</p>
+
+<p>Notes: The methodology used for configuration of the Metasearch engine in this manual is based on the use of ABCD applications in its standard model. Adjustments may be necessary in specific cases or at the time of customization of applications. In this case, the help of the ABCD system analyst/developer is important to identify the parameters required for the Metasearch engine.</p>
+
+<h3 id="parameters-for-configuring-databases-available-with-iah">Parameters for configuring DATABASES available with iAH</h3>
+
+<p>We have taken as an example the DBLIL database from BIREME included in the ABCD package as demo. This database that has the following URL:</p>
+
+<p><a href="http://localhost:9090/cgi-bin/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;lang=es&amp;base=DBLIL">http://localhost:9090/cgi-bin/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;lang=es&amp;base=DBLIL</a></p>
+
+<p>In this URL we have:</p>
+
+<p>Term</p>
+
+<p>Description</p>
+
+<p>http://localhost:9090</p>
+
+<p>name and address of server where search is started.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/cgi-bin/wxis.exe/iah/scripts/?IsisScript=iah.xis
+</code></pre></div></div>
+
+<p>search mechanism to be used (in the examples we have iAH), where wxislind.exe is the executable file that may also be found as wxis.exe, wxis1660, etc.</p>
+
+<p>base=DBLIL</p>
+
+<p>name of database where the search is performed</p>
+
+<p>lang=e</p>
+
+<p>language to be used in the search:<br />
+pt = Portuguese<br />
+en= English<br />
+es = Spanish</p>
+
+<p>Table 1</p>
+
+<p>Once the URL of the base has been identified, one needs only to add the parameters below at the end of each field for the Metasearch to work smoothly.</p>
+
+<ul>
+  <li>Search link - fixed part:</li>
+</ul>
+
+<p>&amp;nextAction=xml&amp;count=1[&amp;fmt=citation]</p>
+
+<p>parameter &amp;fmt is optional, if you don’t declare it the result will be displayed using the default format of the database as declared in the <base />.def file</p>
+
+<ul>
+  <li>Free Search parameters:</li>
+</ul>
+
+<p>exprSearch=</p>
+
+<ul>
+  <li>Show result link – fixed part:</li>
+</ul>
+
+<p>&amp;nextAction=lnk</p>
+
+<p>Following the example above we have:</p>
+
+<ul>
+  <li>
+    <p>URL of the source</p>
+
+    <p>/iah/?base=DBLIL&amp;lang=es</p>
+  </li>
+  <li>
+    <p>Search link - fixed part:
+http://%HOST%/cgi-bin/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;base=DBLIL&amp;lang=en&amp;nextAction=xml&amp;count=1</p>
+  </li>
+  <li>
+    <p>Free search parameters (here there is no variation):
+exprSearch=</p>
+  </li>
+  <li>
+    <p>Show result link – fixed part:</p>
+
+    <p>http://%HOST%/cgi-bin/wxis.exe/iah/scripts/?IsisScript=iah.xis&amp;base=DBLIL&amp;lang=en&amp;nextAction=lnk</p>
+  </li>
+</ul>
+
+<p><img src="https://lh5.googleusercontent.com/0TKZAd8lWomvxI00--4dwDkYpi5jQKqs99jRZAGfImsE0gf3vuBmNgw_-GmyO3e82VfJe_FkJtuUcuTapB_SDjAi0tqjd-tVH0N6YKun_V9y9RgDeelW_l7Vi1-g_BjCfdFPhrde=s0" alt="" /></p>
+
+<p>Figure 32</p>
+
+<blockquote>
+  <p>Hint:
+in Parameters for free search of database, the standard variable used by iAH is exprSearch=, which will receive the expression used by the user in the free search (typed by the user in the search box) or by topic. However, it may vary from source to source.</p>
+</blockquote>
+
+<h1 id="access-area-management">ACCESS area management</h1>
+
+<p><img src="https://lh3.googleusercontent.com/PrLM7VXSfMADkoke52ZescTM2zXN64qTmBDq8o1oJqRycNjpvlGyUBPTcg8GWusSFDAo51h-V9iucwrQa-EVk_nbzVbAqsPnwbxza0Gi3L_vdG9RXKHQtgeYutuv6CkKREZkQwab=s0" alt="" /></p>
+
+<p>Figure 33</p>
+
+<p>It refers to the management and control of users, passwords and those responsible for the administration of ABCD. In this section, one may add, edit or delete the registration of users and passwords to limit the management of the Interface.</p>
+
+<p>Features available in the <strong>ACCESS</strong> area:</p>
+
+<p><img src="https://lh4.googleusercontent.com/4CSNEjdr8uYX1sDvsjjGFysRXpIzzROA_5VYn4aVBgz37-BDYJ8LqmdvxUVZy3gBeW6k8AhUKj7A-M9-ZTFxADbbl-ylFG3JXbKXnYXIggyDZT4bsvoi_ZIb3zmUGmteMpKEA1mH=s0" alt="" /></p>
+
+<p>Figure 34</p>
+
+<ul>
+  <li>
+    <p>Name
+Identifies the user’s login access</p>
+  </li>
+  <li>Type
+Identifies system’s user permit for site management.
+There are two types of permissions:
+    <ul>
+      <li>Administrator – the system administrator, who has access to all modules (structure, content, access)</li>
+      <li>Content – Access permitted only for management of content and of some structure items</li>
+    </ul>
+  </li>
+  <li>Password
+Identifies the user’s login access
+    <ul>
+      <li>ABCD-Site Administration menu, with administrator’s permission displays the full standard menu.</li>
+      <li>ABCD-Site Administration Menu with content permission</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="https://lh4.googleusercontent.com/lzsQ1ifAcwwbpKju0DipLN-mYUffzO1xN5L4g6XOa_2YhEysF_KB92u5omF9sLAAH9utPugdVLmHFe9PGVSTPbRcOjcazwUNbWXdqXXoQcN5hnONiYP2FyMhAQ2bywepnzOL94wC=s0" alt="" /></p>
+
+<p>Figure 35</p>
+
+<h1 id="abcd-site---tips">ABCD Site - tips</h1>
+
+<h2 id="bvs-site--google-analytics">BVS-Site &amp; Google Analytics</h2>
+
+<p>This section explains how to add to ABCD Site the script of Google Analytics to keep statistics of visits.</p>
+
+<h2 id="activation-of-the-function-step-by-step">Activation of the function step by step</h2>
+
+<p>Step 1: Register the Site in Google Analytics <a href="https://www.google.com/analytics/">https://www.google.com/analytics/</a>.</p>
+
+<p>More information about registration and how the sytem works can be obtained in the support page of Google: <a href="http://www.google.com/support/googleanalytics/?hl=en">http://www.google.com/support/googleanalytics/?hl=en</a></p>
+
+<p>Step 2: Add your Site to be monitored by Google tool. This step should be done using the control interface of Google Analytics. After the completion of this step, you should receive an ID (tracking code) which is an unique autogenerated code for each site being monitored. You should write down this code in a safe place.</p>
+
+<p>Step 3: Edit the file ../htdocs/site/bvs-site-conf.php of your installation of ABCD Site, adding the following lines:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ANALYTICS]
+GOOGLE_ANALYTICS_ID=XX-99999 (code received in step 2)
+</code></pre></div></div>
+
+<h2 id="abcd-site-in-multiple-languages">ABCD-Site in multiple languages</h2>
+
+<p>ABCD Site works in 3 languages by default: English, Portuguese, and Spanish. This section describes the required steps to add new languaes to the system.</p>
+
+<blockquote>
+  <p>Note: 
+The present version uses character encoding ISO-8859-1,
+therefore only languages that can be represented by this encoding will function correctly. In version 4.1.x and better of the system (not yet released) the encoding is changed to UTF-8 with the objective to increase the numer of supported languages.</p>
+</blockquote>
+
+<h2 id="steps-to-add-a-new-language-to-abcd-site">Steps to add a new language to ABCD Site</h2>
+
+<p>Step 1: Create directories for the new language using the two-letter language notation of ISO (pt-Portuguese, es-Spanish, fr-French, en-English, etc.) below the ../bases directory of the installation of ABCD Site.</p>
+
+<p>Example: adding support for French (assuming ABCD Site is installed under /ABCD/www/)</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd /ABCD/www/bases/site/xml/
+
+mkdir fr
+
+cd /ABCD/www/bases/site/html/
+
+mkdir fr
+
+cd /ABCD/www/bases/site/ini/
+
+mkdir fr
+</code></pre></div></div>
+
+<p>When finished this step, the directory /bases will have with the following structure of directories</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xml/
+    pt/
+    es/
+    en/
+    fr/
+ini/
+    pt/
+    es/
+	en/
+    fr/
+html/
+    pt/
+    es/
+    en/
+    fr/
+</code></pre></div></div>
+
+<p>Step 2: copy all XML directories of an available language in ABCD Site into the directory of the new languages</p>
+
+<p>Example: copying English files to French language</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd /ABCD/www/bases/site/xml/en
+
+cp *.* /ABCD/www/bases/site/xml/fr
+</code></pre></div></div>
+
+<p>Step 3: edit the file bvs.xml in the folder /xml/[new_language] replacing the two-letter code corresponding to the source language with the two-letter code of the new language.</p>
+
+<p>Note: use the text editor of your choice (Notepad, Textpad, Vi, etc.) and check that the file is saved as plain text.</p>
+
+<p>Example: change the code “en” to “fr” using the editor Vi</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:s/\/en\//\/fr\//g
+</code></pre></div></div>
+
+<p>Step 4: edit the file adm.xml in the folder /xml/[new_language] replacing the two-letter code corresponding to the source language with the two-letter code of the new language.</p>
+
+<p>Note: use the text editor of your choice (Notepad, Textpad, Vi, etc.) and check that the file is saved as plain text.</p>
+
+<p>Example: change the code “en” to “fr” using the editor Vi</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:s/\/en\//\/fr\//g
+</code></pre></div></div>
+
+<h2 id="abcd-site-adding-your-own-java-scripts">ABCD-Site: adding your own java scripts</h2>
+
+<p>This section explains how to add to ABCD Site other javascript functions to be available in different places of ABCD Site.</p>
+
+<p>Step 1: create the folder</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>../htdocs/site/local/js
+</code></pre></div></div>
+
+<p>Step 2: create in this folder a file named function.js  and include there all your javascript functions</p>
+
+<p>Step 3: declare the use of the file in ../htdocs/site/php/head.php  including the following line:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;script type="text/javascript"
+src="&lt;?php echo $def['DIRECTORY']?&gt;local/js/functions.js"&gt;
+&lt;/script&gt;
+</code></pre></div></div>
+
+
+<script
+  src="/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function() {
+
+    var toc = $('#TOC');
+
+    // Select each header
+    sections = $('.td-content h1');
+        $.each(sections, function(idx, v) {
+            section = $(v);
+            var div_id = $(section).attr('id');
+            var div_text = section.text().split('¶')[0];
+            var parent = $("#" + div_id)
+            var content = '<li id="link_' + div_id + '" class="md-nav__item"><small><a class="md-nav__link" href="#' + div_id + '" title="' + div_text +'">' + div_text +'</small></a></li>';
+            $(toc).append(content);
+
+            // Add section code to subnavigation
+            var children = $('<nav class="md-nav"><ul class="md-nav__list"></nav></ul>')
+            var contenders = $("#" + div_id).nextUntil("h1");
+            $.each(contenders, function(idx, contender){
+               if($(contender).is('h2') || $(contender).is('h3')) {
+                   var contender_id = $(contender).attr('id');
+                   var contender_text = $(contender).text().split('¶')[0];
+                   var content = '<li class="md-nav__item"><a class="md-nav__link " href="#' + contender_id + '" title="' + contender_text +'"><small>' + contender_text +'</small></a></li>';
+                   children.append(content);
+                }
+             })
+             $("#link_" + div_id).append(children);
+        });
+    });
+</script>
+
+<script>
+var headers = ["h1", "h2", "h3", "h4"]
+var colors = ["red", "orange", "green", "blue"]
+
+$.each(headers, function(i, header){
+    var color = colors[i];
+    $(header).each(function () {
+        var href=$(this).attr("id");
+        $(this).append('<a class="headerlink" style="color:' + color + '" href="#' + href + '" title="Permanent link">¶</a>')
+    });
+})
+</script>
+
+
+
+	
+              
+              <style>
+  .feedback--answer {
+    display: inline-block;
+  }
+  .feedback--answer-no {
+    margin-left: 1em;
+  }
+  .feedback--response {
+    display: none;
+    margin-top: 1em;
+  }
+  .feedback--response__visible {
+    display: block;
+  }
+</style>
+<div class="d-print-none">
+<h2 class="feedback--title">Feedback</h5>
+<p class="feedback--question">Was this page helpful?</p>
+<button class="btn btn-primary mb-4 feedback--answer feedback--answer-yes">Yes</button>
+<button class="btn btn-primary mb-4 feedback--answer feedback--answer-no">No</button>
+<p class="feedback--response feedback--response-yes">
+  Glad to hear it! Please <a href='{{ site.repo }}/issues/new'>tell us how we can improve</a>.
+</p>
+<p class="feedback--response feedback--response-no">
+  Sorry to hear that. Please <a href='{{ site.repo  }}/issues/new'>tell us how we can improve</a>.
+</p>
+</div>
+<script>
+  const yesButton = document.querySelector('.feedback--answer-yes');
+  const noButton = document.querySelector('.feedback--answer-no');
+  const yesResponse = document.querySelector('.feedback--response-yes');
+  const noResponse = document.querySelector('.feedback--response-no');
+  const disableButtons = () => {
+    yesButton.disabled = true;
+    noButton.disabled = true;
+  };
+  const sendFeedback = (value) => {
+    if (typeof ga !== 'function') return;
+    const args = {
+      command: 'send',
+      hitType: 'event',
+      category: 'Helpful',
+      action: 'click',
+      label: window.location.pathname,
+      value: value
+    };
+    ga(args.command, args.hitType, args.category, args.action, args.label, args.value);
+  };
+  yesButton.addEventListener('click', () => {
+    yesResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(1);
+  });
+  noButton.addEventListener('click', () => {
+    noResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(0);
+  });
+</script><br/>
+
+
+
+
+           </div>
+
+          </main> <!--col-12 col-md-9 col-xl-8 pl-md-5-->
+        </div> <!--./row flex-xl-nowrap-->
+      </div> <!--./td-main-->
+      
+      <footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        <ul class="list-inline mb-0">  
+          
+          
+        </ul>
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        <ul class="list-inline mb-0">  
+          <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="GitHub" data-original-title="GitHub">
+            <a class="text-white" target="_blank" href="https://github.com/ABCD-Community/ABCD-Community.github.io">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">© 2021 ABCD Community All Rights Reserved</small>
+        
+        <p class="mt-2">
+
+            
+                <a href="/en//" >Home</a> <span class="text-primary"> </span>
+          
+                <a href="/en/docs" >Documentation</a> <span class="text-primary"> </span>
+          
+                <a href="/en/collab" >Collaboration</a> <span class="text-primary"> </span>
+          
+                <a href="/en/about" >About</a> <span class="text-primary"> </span>
+          
+
+        </p>	
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div> <!--./container-fluid td-outer--> 
+    <script src="/assets/js/popper.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/main.js"></script>
+
+
+<script src="/assets/js/tabpane-persist.js"></script>
+
+  </body>
+</html>

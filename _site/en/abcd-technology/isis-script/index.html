@@ -1,0 +1,4092 @@
+<!DOCTYPE html>
+<html lang="en"  class="no-js">
+  <!-- Copyright 2019-2021 Vanessa Sochat-->
+  <head>
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Jekyll" />
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+<link rel="alternate" type="application/rss&#43;xml" href="/docs/index.xml">
+
+<link rel="shortcut icon" href="/assets/favicons/favicon.ico" >
+<link rel="icon" type="image/png" href="/assets/favicons/favicon.png" sizes="16x16">
+
+ 
+ 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M0LM60C9WY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M0LM60C9WY');
+</script>
+
+ 
+
+<title>ABCD Community</title>
+<meta property="og:title" content="ABCD Community" />
+<meta property="og:description" content="This document aims at providing all relevant background information and instructions on how to use the integrated library and documentation management system 'ABCD'. Both the basic operations and the advanced management of the software are discussed, as are useful and necessary topics concerning the ISIS-software on which ABCD is based. In this new edition the new features of version 2.0 are added - the use of different flavors of CISIS, of Unicode,and the digital library capabilities as well as some additional modules (ODDS, LDAP, DSpaceBridge) and utilities (UTF8-conversion, loanobjects creation...) ." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://localhost:9898" />
+<meta property="og:site_name" content="http://localhost:9898" />
+
+<meta itemprop="name" content="ABCD Community">
+<meta itemprop="description" content="">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ABCD Community"/>
+<meta name="twitter:description" content="This document aims at providing all relevant background information and instructions on how to use the integrated library and documentation management system 'ABCD'. Both the basic operations and the advanced management of the software are discussed, as are useful and necessary topics concerning the ISIS-software on which ABCD is based. In this new edition the new features of version 2.0 are added - the use of different flavors of CISIS, of Unicode,and the digital library capabilities as well as some additional modules (ODDS, LDAP, DSpaceBridge) and utilities (UTF8-conversion, loanobjects creation...) ."/>
+
+<link rel="stylesheet" href="/assets/css/main.min.css">
+<link rel="stylesheet" href="/assets/css/palette.css">
+<script
+  src="/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+
+
+  
+  
+    
+  <link rel="alternate" hreflang="en" href="/en/abcd-technology/isis-script/" />
+    
+  <link rel="alternate" hreflang="pt" href="/pt/abcd-technology/isis-script/" />
+    
+  
+
+  
+</head>
+
+  
+
+
+  <body class="td-section">
+    
+<header>
+    <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="/en">
+            <span class="navbar-logo"></span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 167.73 167.77"><defs><style>.cls-1{fill:#ffffff;}</style></defs><g id="Camada_2" data-name="Camada 2"><g id="Camada_1-2" data-name="Camada 1"><path class="cls-1" d="M66.62,83.14c-41-2.06-66.62,18-66.62,18V18.42S20.94-.08,66.62,0Z"/><path class="cls-1" d="M84.59,66.62c2.06-41-18-66.62-18-66.62h82.73s18.5,20.94,18.42,66.62Z"/><path class="cls-1" d="M101.11,84.63c41,2.06,66.62-18,66.62-18v82.74s-20.94,18.49-66.62,18.41Z"/><path class="cls-1" d="M83.14,101.15c-2.06,41,18,66.62,18,66.62H18.42S-.08,146.83,0,101.15Z"/></g></g></svg><span class="text-uppercase font-weight-bold">ABCD Community</span>
+        </a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+            
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/en//" ><span>Home</span></a>
+			</li>
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/en/docs" ><span>Documentation</span></a>
+			</li>
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/en/collab" ><span>Collaboration</span></a>
+			</li>
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/en/about" ><span>About</span></a>
+			</li>
+
+
+  <li class="nav-item dropdown mr-4 d-none d-lg-block">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">English</a>
+    <div class="dropdown-menu">
+        
+            
+            
+            
+                
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-technology/isis-script/">English</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-technology/isis-script/">Português</a>
+
+
+            
+            
+        
+   </div>
+  </li>
+
+		</ul>
+	</div>
+	
+    <div class="navbar-nav d-none d-lg-block">
+        <input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off"> 
+    </div>
+   
+	<div class="navbar-nav d-none d-lg-block">
+          <a class="gh-source" data-gh-source="github" href="https://github.com/ABCD-Community/ABCD-Community.github.io" title="Go to repository" data-md-state="done">
+            <i class="fab fa fa-github fa-2x" style='color: #fff;padding-right:20px; float:left; margin-top:5px'></i></a>
+        </div>
+      </div>
+
+
+</nav>
+</header>
+
+
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+          <div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    <input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="on">
+      <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+      </button>
+  </form>  
+
+  <nav class="collapse td-sidebar-nav" id="td-section-nav">
+    <div class="nav-item dropdown d-block d-lg-none pl-4">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">English</a>
+
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+        
+            
+            
+            
+                
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-technology/isis-script/">English</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-technology/isis-script/">Português</a>
+
+
+            
+            
+        
+      </div>
+    </div>
+
+
+    
+      <ul class="td-sidebar-nav__section pr-md-3"> 
+
+        
+        
+
+        <li class="td-sidebar-nav__section-title">
+          <a  href="" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section"></a>
+        </li>
+        
+      </ul>
+    
+      <ul class="td-sidebar-nav__section pr-md-3"> 
+
+        
+        
+
+        <li class="td-sidebar-nav__section-title">
+          <a  href="/en/docs" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Home</a>
+        </li>
+        
+          <ul>
+            <li class="collapse show" id="home">
+              <ul class="td-sidebar-nav__section pr-md-3">
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-introduction
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Introduction
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-technology
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD Technology
+                    </a>
+                  </li>
+                  
+                    <ul>
+                      <li class="collapse show" id="">
+                        
+                          
+                            <a class="td-sidebar-link td-sidebar-link__page " id="m-home-abcd-technology-cisis-utilities" href="/en/abcd-technology/cisis-utils/">CISIS Utilities</a>
+                            <a class="td-sidebar-link td-sidebar-link__page " id="m-home-abcd-technology-cisis-formatting-language" href="/en/abcd-technology/cisis-formatting/">CISIS Formatting Language</a>
+                            <a class="td-sidebar-link td-sidebar-link__page " id="m-home-abcd-technology-isis-script" href="/en/abcd-technology/isis-script/">ISIS Script</a>
+                        
+                      </li>
+                    </ul>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-installation
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Installation
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-modules
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Modules
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-utilities
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Utilities
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-thesaurus
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Thesaurus
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-odds
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">The Online Document Delivery Service (ODDS)
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-digital-library
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Digital library features in ABCD
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-oai
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">The OAI interface
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-opac
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD OPAC
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/opac-iah
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">iAH OPAC
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-site
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD Site
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/secs-web
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Serials Control
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-unicode
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD Unicode
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-localisation
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD Localisation
+                    </a>
+                  </li>
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        
+      </ul>
+    
+  </nav>
+</div>
+
+          </aside> <!--col-12 col-md-3 col-xl-2 td-sidebar d-print-none-->
+          
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+                  <a href="https://github.com/ABCD-Community/ABCD-Community.github.io/edit/main/en/abcd-technology/isis-script/index.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+
+<a href="https://github.com/ABCD-Community/ABCD-Community.github.io/issues/new?labels=question&title=Question:&body=Question on: https://github.com/ABCD-Community/ABCD-Community.github.io/tree/master/en/abcd-technology/isis-script/index.md" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+
+<a href="https://github.com/ABCD-Community/ABCD-Community.github.io/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
+<!-- this will parse through the header fields and add a button to open
+     an issue / ask a question on Github. The editable field should be in
+     the post frontend matter, and refer to the label to open the issue for -->
+
+            </div>
+            <div class="td-toc">
+              <nav id="TableOfContents">
+                <ul id="TOC">
+                   <!-- Links will be appended here-->
+                </ul>
+              </nav>
+            </div>
+ 
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">     
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+              <ol class="breadcrumb spb-1">
+              
+              
+                <li class="breadcrumb-item">
+                  <a href="http://localhost:9898/en/">En</a>
+                </li>
+                
+                <li class="breadcrumb-item">
+                  <a href="http://localhost:9898/en/abcd-technology/">Abcd technology</a>
+                </li>
+                
+                <li class="breadcrumb-item active" aria-current="page">
+	          <a href="http://localhost:9898/en/abcd-technology/isis-script/">IsisScript language</a>
+                </li>
+                
+	      </ol>
+           </nav>
+
+           <div class="td-content">
+
+	      <h1 id="isisscript-language">IsisScript language</h1>
+
+<h2 class="no_toc no_toc text-delta" id="content">Content</h2>
+
+<ol id="markdown-toc">
+  <li><a href="#isisscript-language" id="markdown-toc-isisscript-language">IsisScript language</a></li>
+  <li><a href="#isisscript-reference" id="markdown-toc-isisscript-reference">IsisScript reference</a>    <ol>
+      <li><a href="#-isisscript-" id="markdown-toc--isisscript-">&lt; IsisScript &gt;</a>        <ol>
+          <li><a href="#isisscriptname" id="markdown-toc-isisscriptname">IsisScript.name</a></li>
+        </ol>
+      </li>
+      <li><a href="#-call-" id="markdown-toc--call-">&lt; call &gt;</a>        <ol>
+          <li><a href="#callname" id="markdown-toc-callname">call.name</a></li>
+        </ol>
+      </li>
+      <li><a href="#-cgitable-" id="markdown-toc--cgitable-">&lt; cgitable &gt;</a></li>
+      <li><a href="#-define-" id="markdown-toc--define-">&lt; define &gt;</a></li>
+      <li><a href="#-display-" id="markdown-toc--display-">&lt; display &gt;</a></li>
+      <li><a href="#-do-" id="markdown-toc--do-">&lt; do &gt;</a>        <ol>
+          <li><a href="#dotask" id="markdown-toc-dotask">do.task</a></li>
+          <li><a href="#dotaskfullinvertion" id="markdown-toc-dotaskfullinvertion">do.task=fullinvertion</a></li>
+          <li><a href="#dotaskimport" id="markdown-toc-dotaskimport">do.task=import</a></li>
+          <li><a href="#dotaskinvertedload" id="markdown-toc-dotaskinvertedload">do.task=invertedload</a></li>
+          <li><a href="#dotaskkeyrange" id="markdown-toc-dotaskkeyrange">do.task=keyrange</a></li>
+          <li><a href="#dotasklist" id="markdown-toc-dotasklist">do.task=list</a></li>
+          <li><a href="#do-taskmastersort" id="markdown-toc-do-taskmastersort">do. task=mastersort</a></li>
+          <li><a href="#dotaskmfnrange" id="markdown-toc-dotaskmfnrange">do.task=mfnrange</a></li>
+          <li><a href="#dotasksearch" id="markdown-toc-dotasksearch">do.task=search</a></li>
+          <li><a href="#dotaskupdate" id="markdown-toc-dotaskupdate">do.task=update</a></li>
+        </ol>
+      </li>
+      <li><a href="#-export-" id="markdown-toc--export-">&lt; export &gt;</a></li>
+      <li><a href="#-extract-" id="markdown-toc--extract-">&lt; extract &gt;</a></li>
+      <li><a href="#-field-" id="markdown-toc--field-">&lt; field &gt;</a>        <ol>
+          <li><a href="#fieldaction" id="markdown-toc-fieldaction">field.action</a>            <ol>
+              <li><a href="#fieldactionadd" id="markdown-toc-fieldactionadd">field.action=add</a></li>
+              <li><a href="#fieldactioncgi" id="markdown-toc-fieldactioncgi">field.action=cgi</a></li>
+              <li><a href="#fieldactiondefine" id="markdown-toc-fieldactiondefine">field.action=define</a></li>
+              <li><a href="#fieldactiondelete" id="markdown-toc-fieldactiondelete">field.action=delete</a></li>
+              <li><a href="#fieldactionexport" id="markdown-toc-fieldactionexport">field.action=export</a></li>
+              <li><a href="#fieldactionhl" id="markdown-toc-fieldactionhl">field.action=hl</a></li>
+              <li><a href="#fieldactionimport" id="markdown-toc-fieldactionimport">field.action=import</a></li>
+              <li><a href="#fieldactionocc" id="markdown-toc-fieldactionocc">field.action=occ</a></li>
+              <li><a href="#fieldactionreplace" id="markdown-toc-fieldactionreplace">field.action=replace</a></li>
+              <li><a href="#fieldactionstatusdb" id="markdown-toc-fieldactionstatusdb">field.action=statusdb</a></li>
+              <li><a href="#fieldactionstatusfile" id="markdown-toc-fieldactionstatusfile">field.action=statusfile</a></li>
+            </ol>
+          </li>
+          <li><a href="#fieldactionstatusfile-1" id="markdown-toc-fieldactionstatusfile-1">field.action=statusfile</a></li>
+          <li><a href="#fieldfrom" id="markdown-toc-fieldfrom">field.from</a></li>
+          <li><a href="#fieldprevious" id="markdown-toc-fieldprevious">field.previous</a>            <ol>
+              <li><a href="#fieldpreviousadd" id="markdown-toc-fieldpreviousadd">field.previous=add</a></li>
+              <li><a href="#fieldpreviousdelete" id="markdown-toc-fieldpreviousdelete">field.previous=delete</a></li>
+            </ol>
+          </li>
+          <li><a href="#fieldsplit" id="markdown-toc-fieldsplit">field.split</a>            <ol>
+              <li><a href="#fieldsplitflddir" id="markdown-toc-fieldsplitflddir">field.split=flddir</a></li>
+              <li><a href="#fieldsplitocc" id="markdown-toc-fieldsplitocc">field.split=occ</a></li>
+            </ol>
+          </li>
+          <li><a href="#fieldtag" id="markdown-toc-fieldtag">field.tag</a>            <ol>
+              <li><a href="#fieldtaglist" id="markdown-toc-fieldtaglist">field.tag=list</a></li>
+            </ol>
+          </li>
+          <li><a href="#fieldtype" id="markdown-toc-fieldtype">field.type</a>            <ol>
+              <li><a href="#fieldtypeflag" id="markdown-toc-fieldtypeflag">field.type=flag</a></li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+      <li><a href="#-file-" id="markdown-toc--file-">&lt; file &gt;</a>        <ol>
+          <li><a href="#fileaction" id="markdown-toc-fileaction">file.action</a>            <ol>
+              <li><a href="#fileactionappend" id="markdown-toc-fileactionappend">file.action=append</a></li>
+              <li><a href="#fileactionclose" id="markdown-toc-fileactionclose">file.action=close</a></li>
+              <li><a href="#fileactioncreate" id="markdown-toc-fileactioncreate">file.action=create</a></li>
+              <li><a href="#fileactiondelete" id="markdown-toc-fileactiondelete">file.action=delete</a></li>
+              <li><a href="#fileactionunlock" id="markdown-toc-fileactionunlock">file.action=unlock</a></li>
+            </ol>
+          </li>
+          <li><a href="#filetype" id="markdown-toc-filetype">file.type</a>            <ol>
+              <li><a href="#filetypedatabase" id="markdown-toc-filetypedatabase">file.type=database</a></li>
+              <li><a href="#filetypefile" id="markdown-toc-filetypefile">file.type=file</a></li>
+              <li><a href="#filetypeinverted" id="markdown-toc-filetypeinverted">file.type=inverted</a></li>
+              <li><a href="#filetypemaster" id="markdown-toc-filetypemaster">file.type=master</a></li>
+              <li><a href="#filetypeoutput" id="markdown-toc-filetypeoutput">file.type=output</a></li>
+              <li><a href="#filetypetempfile" id="markdown-toc-filetypetempfile">file.type=tempfile</a></li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+      <li><a href="#-flow-" id="markdown-toc--flow-">&lt; flow &gt;</a>        <ol>
+          <li><a href="#flowaction" id="markdown-toc-flowaction">flow.action</a>            <ol>
+              <li><a href="#flowactionexit" id="markdown-toc-flowactionexit">flow.action=exit</a></li>
+              <li><a href="#flowactionjump" id="markdown-toc-flowactionjump">flow.action=jump</a></li>
+              <li><a href="#flowactionskip" id="markdown-toc-flowactionskip">flow.action=skip</a></li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+      <li><a href="#-function-" id="markdown-toc--function-">&lt; function &gt;</a>        <ol>
+          <li><a href="#functionaction" id="markdown-toc-functionaction">function.action</a></li>
+          <li><a href="#functionfrom" id="markdown-toc-functionfrom">function.from</a></li>
+          <li><a href="#functionname" id="markdown-toc-functionname">function.name</a></li>
+          <li><a href="#functionsplit" id="markdown-toc-functionsplit">function.split</a></li>
+          <li><a href="#functiontag" id="markdown-toc-functiontag">function.tag</a></li>
+        </ol>
+      </li>
+      <li><a href="#-hl-" id="markdown-toc--hl-">&lt; hl &gt;</a></li>
+      <li><a href="#-htmlpft-" id="markdown-toc--htmlpft-">&lt; htmlpft &gt;</a>        <ol>
+          <li><a href="#htmlpftaction" id="markdown-toc-htmlpftaction">htmlpft.action</a></li>
+          <li><a href="#htmlpfttype" id="markdown-toc-htmlpfttype">htmlpft.type</a></li>
+        </ol>
+      </li>
+      <li><a href="#-label-" id="markdown-toc--label-">&lt; label &gt;</a></li>
+      <li><a href="#-list-" id="markdown-toc--list-">&lt; list &gt;</a>        <ol>
+          <li><a href="#listaction" id="markdown-toc-listaction">list.action</a></li>
+          <li><a href="#listtype" id="markdown-toc-listtype">list.type</a>            <ol>
+              <li><a href="#listtypefreq" id="markdown-toc-listtypefreq">list.type=freq</a></li>
+              <li><a href="#listtypelist" id="markdown-toc-listtypelist">list.type=list</a></li>
+              <li><a href="#listtypesort" id="markdown-toc-listtypesort">list.type=sort</a></li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+      <li><a href="#-loop-" id="markdown-toc--loop-">&lt; loop &gt;</a></li>
+      <li><a href="#-parm-" id="markdown-toc--parm-">&lt; parm &gt;</a>        <ol>
+          <li><a href="#parmname" id="markdown-toc-parmname">parm.name</a>            <ol>
+              <li><a href="#parmnameactab" id="markdown-toc-parmnameactab">parm.name=actab</a></li>
+              <li><a href="#parmnamebuffersize" id="markdown-toc-parmnamebuffersize">parm.name=buffersize</a></li>
+              <li><a href="#parmnamecipar" id="markdown-toc-parmnamecipar">parm.name=cipar</a></li>
+              <li><a href="#parmnamecount" id="markdown-toc-parmnamecount">parm.name=count</a></li>
+              <li><a href="#parmnamedb" id="markdown-toc-parmnamedb">parm.name=db</a></li>
+              <li><a href="#parmnamedecod" id="markdown-toc-parmnamedecod">parm.name=decod</a></li>
+              <li><a href="#parmnamedelimiter" id="markdown-toc-parmnamedelimiter">parm.name=delimiter</a></li>
+              <li><a href="#parmnameexpire" id="markdown-toc-parmnameexpire">parm.name=expire</a></li>
+              <li><a href="#parmnameexpression" id="markdown-toc-parmnameexpression">parm.name=expression</a></li>
+              <li><a href="#parmnamefile" id="markdown-toc-parmnamefile">parm.name=file</a></li>
+              <li><a href="#parmnamefreqsum" id="markdown-toc-parmnamefreqsum">parm.name=freqsum</a></li>
+              <li><a href="#parmnamefrom" id="markdown-toc-parmnamefrom">parm.name=from</a></li>
+              <li><a href="#parmnamefst" id="markdown-toc-parmnamefst">parm.name=fst</a></li>
+              <li><a href="#parmnamegizmo" id="markdown-toc-parmnamegizmo">parm.name=gizmo</a></li>
+              <li><a href="#parmnameindexlist" id="markdown-toc-parmnameindexlist">parm.name=indexlist</a></li>
+              <li><a href="#parmnamekey" id="markdown-toc-parmnamekey">parm.name=key</a></li>
+              <li><a href="#parmnamekeyfield" id="markdown-toc-parmnamekeyfield">parm.name=keyfield</a></li>
+              <li><a href="#parmnamekeylength" id="markdown-toc-parmnamekeylength">parm.name=keylength</a></li>
+              <li><a href="#parmnamekeys" id="markdown-toc-parmnamekeys">parm.name=keys</a></li>
+              <li><a href="#parmnamekeysdb" id="markdown-toc-parmnamekeysdb">parm.name=keysdb</a></li>
+              <li><a href="#parmnamelockid" id="markdown-toc-parmnamelockid">parm.name=lockid</a></li>
+              <li><a href="#parmnamemaxlk" id="markdown-toc-parmnamemaxlk">parm.name=maxlk</a></li>
+              <li><a href="#parmnamemfn" id="markdown-toc-parmnamemfn">parm.name=mfn</a></li>
+              <li><a href="#parmnameposting" id="markdown-toc-parmnameposting">parm.name=posting</a></li>
+              <li><a href="#parmnameposttag" id="markdown-toc-parmnameposttag">parm.name=posttag</a></li>
+              <li><a href="#parmnameprefix" id="markdown-toc-parmnameprefix">parm.name=prefix</a></li>
+              <li><a href="#parmnamereset" id="markdown-toc-parmnamereset">parm.name=reset</a></li>
+              <li><a href="#parmnamereverse" id="markdown-toc-parmnamereverse">parm.name=reverse</a></li>
+              <li><a href="#parmnamesort" id="markdown-toc-parmnamesort">parm.name=sort</a></li>
+              <li><a href="#parmnamestw" id="markdown-toc-parmnamestw">parm.name=stw</a></li>
+              <li><a href="#parmnamesuffix" id="markdown-toc-parmnamesuffix">parm.name=suffix</a></li>
+              <li><a href="#parmnametask" id="markdown-toc-parmnametask">parm.name=task</a></li>
+              <li><a href="#parmnameto" id="markdown-toc-parmnameto">parm.name=to</a></li>
+              <li><a href="#parmnametype" id="markdown-toc-parmnametype">parm.name=type</a></li>
+              <li><a href="#parmnameuctab" id="markdown-toc-parmnameuctab">parm.name=uctab</a></li>
+            </ol>
+          </li>
+          <li><a href="#parmtag" id="markdown-toc-parmtag">parm.tag</a></li>
+          <li><a href="#parmtype" id="markdown-toc-parmtype">parm.type</a>            <ol>
+              <li><a href="#parmtypecheck" id="markdown-toc-parmtypecheck">parm.type=check</a></li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+      <li><a href="#-pft-" id="markdown-toc--pft-">&lt; pft &gt;</a>        <ol>
+          <li><a href="#pfttype" id="markdown-toc-pfttype">pft.type</a>            <ol>
+              <li><a href="#pfttypecheck" id="markdown-toc-pfttypecheck">pft.type=check</a></li>
+              <li><a href="#pfttypereload" id="markdown-toc-pfttypereload">pft.type=reload</a></li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+      <li><a href="#-proc-" id="markdown-toc--proc-">&lt; proc &gt;</a></li>
+      <li><a href="#-return-" id="markdown-toc--return-">&lt; return &gt;</a>        <ol>
+          <li><a href="#returnaction" id="markdown-toc-returnaction">return.action</a></li>
+          <li><a href="#returnsplit" id="markdown-toc-returnsplit">return.split</a></li>
+          <li><a href="#returntag" id="markdown-toc-returntag">return.tag</a></li>
+        </ol>
+      </li>
+      <li><a href="#-section-" id="markdown-toc--section-">&lt; section &gt;</a>        <ol>
+          <li><a href="#sectionname" id="markdown-toc-sectionname">section.name</a></li>
+        </ol>
+      </li>
+      <li><a href="#-trace-" id="markdown-toc--trace-">&lt; trace &gt;</a></li>
+      <li><a href="#-update-" id="markdown-toc--update-">&lt; update &gt;</a></li>
+      <li><a href="#-write-" id="markdown-toc--write-">&lt; write &gt;</a></li>
+    </ol>
+  </li>
+</ol>
+
+<hr />
+
+<p>IsisScript is a scripting language, developed by BIREME, in order to make stronger the functions available to the WEB ISIS server “WWWISIS” for the creation of pages with elements of ISIS databases. ISIS Script in fact was one of the main elements in the evolution from WWWISIS to “WXIS” which is the underlying web server for ABCD.</p>
+
+<p>IsisScripts are stored as files with the extension .xis. 
+ABCD uses many scripts, most of them in the central/dataentry/wxis folder.
+iAH makes extensive use of such scripts.
+The language uses XML-like instructions, such as, for example, between the <code class="language-plaintext highlighter-rouge">&lt;pft&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;/pft&gt;</code> tags a print format can be placed and that format can be displayed by placing it between the <code class="language-plaintext highlighter-rouge">&lt;display&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;/display&gt;</code> tags.</p>
+
+<p>All WXIS parameters can be set within the <code class="language-plaintext highlighter-rouge">&lt;parm&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;/parm&gt;</code> tags and fields can be set with values, for example <code class="language-plaintext highlighter-rouge">&lt;field action="replace" tag="6000″&gt;field_value_6000 &lt;/field&gt;</code> will put the string “<code class="language-plaintext highlighter-rouge">Field_value_6000</code>” into the 6000 tag field (such high tag values, actually all tags above 999, are used in general in ISIS applications for internal temporary values that are not actually stored in ISIS records but as “virtual records”.</p>
+
+<p>IsisScript allows a more flexible manipulation of data elements, coming from ISIS databases, in web pages. In combination with PHP, which is a language for creating web pages, sophisticated results are possible and this certainly contributes to the overall advanced functionality of ABCD.</p>
+
+<h2 class="no_toc no_toc text-delta" id="content-1">Content</h2>
+
+<ol>
+  <li>TOC</li>
+</ol>
+
+<hr />
+
+<h1 id="isisscript-reference">IsisScript reference</h1>
+
+<h2 id="-isisscript-">&lt; IsisScript &gt;</h2>
+
+<p><strong>May Contais</strong> <code class="language-plaintext highlighter-rouge">&lt;function&gt;</code> <code class="language-plaintext highlighter-rouge">&lt;section&gt;</code> <code class="language-plaintext highlighter-rouge">&lt;trace&gt;</code></p>
+
+<p><strong>Attributes</strong>  <code class="language-plaintext highlighter-rouge">name</code></p>
+
+<p><strong>Syntax</strong> <code class="language-plaintext highlighter-rouge">&lt;IsisScript&gt; ... &lt;/IsisScript&gt;</code></p>
+
+<p>The  <code class="language-plaintext highlighter-rouge">&lt;IsisScript&gt;</code>  element is used to indicate an IsisScript instruction group.</p>
+
+<p>The  <em>name</em>  attribute is used to name and document the group.</p>
+
+<p><strong>Example</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;IsisScript name=HelloWorld&gt;
+  &lt;section&gt;
+    &lt;display&gt;Hello World!&lt;/display&gt;
+  &lt;/section&gt;
+&lt;/IsisScript&gt;
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="isisscriptname">IsisScript.name</h3>
+
+<p><strong>May Be Used in</strong> <code class="language-plaintext highlighter-rouge">&lt;call&gt; &lt;function&gt; &lt;IsisScript&gt; &lt;section&gt;</code></p>
+
+<p><strong>Syntax</strong>  <code class="language-plaintext highlighter-rouge">name=...</code></p>
+
+<p>The  <strong>name</strong>  attribute is optional and it can be used for documentation purposes.</p>
+
+<p><strong>Example</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;IsisScript name=HelloWorld&gt;
+  &lt;section&gt;
+    &lt;display&gt;Hello World!&lt;/display&gt;
+  &lt;/section&gt;
+&lt;/IsisScript&gt;
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="-call-">&lt; call &gt;</h2>
+
+<p><strong>May Contais</strong> <code class="language-plaintext highlighter-rouge">&lt;pft&gt;</code></p>
+
+<p><strong>May Be Used in</strong> <code class="language-plaintext highlighter-rouge">&lt;do&gt; &lt;function&gt; &lt;hl&gt; &lt;loop&gt; &lt;section&gt; &lt;update&gt;</code></p>
+
+<p><strong>Attributes</strong> <code class="language-plaintext highlighter-rouge">name</code></p>
+
+<p><strong>Syntax</strong> <code class="language-plaintext highlighter-rouge">&lt;call&gt; ... &lt;/call&gt;</code></p>
+
+<p>The  <code class="language-plaintext highlighter-rouge">&lt;call&gt;</code>  element indicates a call to a function. The function to be called is specified by the  <em>name</em>  attribute.</p>
+
+<p>The argument of the  <code class="language-plaintext highlighter-rouge">&lt;call&gt;</code>  element is passed as parameter to the function.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-script">&lt;IsisScript&gt;
+
+  &lt;function name=First&gt;
+    &lt;display&gt;FIRST &lt;/display&gt;
+  &lt;/function&gt;
+
+  &lt;function name=Second&gt;
+    &lt;display&gt;SECOND &lt;/display&gt;
+  &lt;/function&gt;
+
+  &lt;function name=ParamTest action=replace tag=1 split=occ&gt;
+    &lt;display&gt;&lt;pft&gt;##'ParamTest'/&lt;/pft&gt;&lt;/display&gt;
+    &lt;display&gt;&lt;pft&gt;ALL&lt;/pft&gt;&lt;/display&gt;
+    &lt;return action=replace tag=9999 split=occ&gt;&lt;pft&gt;(v1/)&lt;/pft&gt;&lt;/return&gt;
+  &lt;/function&gt;
+
+  &lt;section&gt;
+    &lt;call name=First&gt;now&lt;/call&gt;
+    &lt;call name=Second&gt;now&lt;/call&gt;
+    &lt;call name=ParamTest&gt;&lt;pft&gt;'One'/'Two'/&lt;/pft&gt;&lt;/call&gt;
+
+    &lt;display&gt;&lt;pft&gt;ALL&lt;/pft&gt;&lt;/display&gt;
+  &lt;/section&gt;
+&lt;/IsisScript&gt;
+</code></pre>
+
+<hr />
+
+<h3 id="callname">call.name</h3>
+
+<p><strong>May Be Used in</strong> <code class="language-plaintext highlighter-rouge">&lt;call&gt; &lt;function&gt; &lt;IsisScript&gt; &lt;parm&gt; &lt;section&gt;</code></p>
+
+<p><strong>Syntax</strong> <code class="language-plaintext highlighter-rouge">name=...</code></p>
+
+<p>Name of the function to be called.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-script">&lt;IsisScript&gt;
+
+
+  &lt;function name=First&gt;
+    &lt;display&gt;FIRST &lt;/display&gt;
+  &lt;/function&gt;
+
+  &lt;function name=Second&gt;
+    &lt;display&gt;SECOND &lt;/display&gt;
+  &lt;/function&gt;
+
+  &lt;function name=ParamTest action=replace tag=1 split=occ&gt;
+    &lt;display&gt;&lt;pft&gt;##'ParamTest'/&lt;/pft&gt;&lt;/display&gt;
+    &lt;display&gt;&lt;pft&gt;ALL&lt;/pft&gt;&lt;/display&gt;
+    &lt;return action=replace tag=9999 split=occ&gt;&lt;pft&gt;(v1/)&lt;/pft&gt;&lt;/return&gt;
+  &lt;/function&gt;
+
+  &lt;section&gt;
+    &lt;call name=First&gt;now&lt;/call&gt;
+    &lt;call name=Second&gt;now&lt;/call&gt;
+    &lt;call name=ParamTest&gt;&lt;pft&gt;'One'/'Two'/&lt;/pft&gt;&lt;/call&gt;
+
+    &lt;display&gt;&lt;pft&gt;ALL&lt;/pft&gt;&lt;/display&gt;
+  &lt;/section&gt;
+&lt;/IsisScript&gt;
+</code></pre>
+
+<hr />
+
+<h2 id="-cgitable-">&lt; cgitable &gt;</h2>
+
+<p><strong>May Contais</strong> <code class="language-plaintext highlighter-rouge">&lt;pft&gt;</code></p>
+
+<p><strong>May Be Used in</strong> <code class="language-plaintext highlighter-rouge">&lt;do&gt; &lt;function&gt; &lt;hl&gt; &lt;loop&gt; &lt;section&gt; &lt;update&gt;</code></p>
+
+<p><strong>Syntax</strong> <code class="language-plaintext highlighter-rouge">&lt;cgitable&gt; ... &lt;/cgitable&gt;</code></p>
+
+<p>For each line of the specified argument, adds the CGI content (“value”) of the “name” specifield for the given field. Each argument line is equivalent to the <code class="language-plaintext highlighter-rouge">&lt;field action="cgi" tag="..."&gt;</code>name<code class="language-plaintext highlighter-rouge">&lt;/field&gt;</code> definition.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+   &lt;cgitable&gt;
+     &lt;pft&gt;'2001 db'/
+          '2002 from'/
+          ref(['CONFIG']1,(v1^t,x1,v1^n/))/
+     &lt;/pft&gt;
+   &lt;/cgitable&gt;
+...
+</code></pre>
+
+<hr />
+
+<h2 id="-define-">&lt; define &gt;</h2>
+
+<p><strong>May Contais</strong> <code class="language-plaintext highlighter-rouge">&lt;pft&gt;</code></p>
+
+<p><strong>May Be Used in</strong> <code class="language-plaintext highlighter-rouge">&lt;do&gt; &lt;function&gt; &lt;hl&gt; &lt;loop&gt; &lt;section&gt; &lt;update&gt;</code></p>
+
+<p><strong>Syntax</strong> <code class="language-plaintext highlighter-rouge">&lt;define&gt; ... &lt;/define&gt;</code></p>
+
+<p>It defines the fields to be used inside the <code class="language-plaintext highlighter-rouge">&lt;loop&gt;</code> element. Each argument line is equivalent to the <code class="language-plaintext highlighter-rouge">&lt;field action="define" tag="..."&gt;Isis_...&lt;/field&gt;</code> definition.</p>
+
+<p><strong>Example:</strong></p>
+
+<pre><code class="language-language">...
+   &lt;define&gt;
+     &lt;pft&gt;'1001 Isis_Current'/
+          '2002 Isis_Total'/
+     &lt;/pft&gt;
+   &lt;/define&gt;
+...
+</code></pre>
+
+<hr />
+
+<h2 id="-display-">&lt; display &gt;</h2>
+
+<p><strong>May Contais</strong> <code class="language-plaintext highlighter-rouge">&lt;htmlpft&gt; &lt;pft&gt;</code></p>
+
+<p><strong>May Be Used in</strong> <code class="language-plaintext highlighter-rouge">&lt;do&gt; &lt;function&gt; &lt;hl&gt; &lt;loop&gt; &lt;section&gt; &lt;update&gt;</code></p>
+
+<p><strong>Syntax</strong> <code class="language-plaintext highlighter-rouge">&lt;display&gt; ... &lt;/display&gt;</code></p>
+
+<p>It sends text to the current output. IsisScript’s current output is initially set to the “standard output” of the operating system.
+The current output can be redirected with the <code class="language-plaintext highlighter-rouge">&lt;file&gt;</code> element.</p>
+
+<p><strong>Example:</strong></p>
+
+<pre><code class="language-language">&lt;IsisScript&gt;
+ &lt;section&gt;
+  &lt;display&gt;&lt;pft&gt;'Content-type: text/html'/#&lt;/pft&gt;&lt;/display&gt;
+  &lt;display&gt;Hello World!&lt;br&gt;&lt;/display&gt;
+  &lt;field action=cgi tag=100&gt;^n^v&lt;/field&gt;
+  &lt;display&gt;&lt;pft&gt;(|100=|v100|&lt;br&gt;|/)&lt;/pft&gt;&lt;/display&gt;
+ &lt;/section&gt;
+&lt;/IsisScript&gt;
+</code></pre>
+
+<hr />
+
+<h2 id="-do-">&lt; do &gt;</h2>
+
+<p><strong>May Contais</strong> <code class="language-plaintext highlighter-rouge">&lt;call&gt; &lt;cgitable&gt; &lt;define&gt; &lt;display&gt; &lt;do&gt; &lt;export&gt; &lt;extract&gt; &lt;field&gt; &lt;file&gt; &lt;flow&gt; &lt;hl&gt; &lt;label&gt; &lt;list&gt; &lt;loop&gt; &lt;parm&gt; &lt;proc&gt; &lt;return&gt; &lt;trace&gt; &lt;update&gt;</code></p>
+
+<p><strong>May Be Used in</strong> <code class="language-plaintext highlighter-rouge">&lt;do&gt; &lt;function&gt; &lt;hl&gt; &lt;loop&gt; &lt;section&gt; &lt;update&gt;</code></p>
+
+<p><strong>Attributes</strong> <code class="language-plaintext highlighter-rouge">task</code></p>
+
+<p><strong>Syntax</strong> <code class="language-plaintext highlighter-rouge">&lt;do&gt; ... &lt;/do&gt;</code></p>
+
+<p>The <code class="language-plaintext highlighter-rouge">&lt;do&gt;</code> element indicates the beginning of an IsisScript task. The possible tasks are: record range, key range, search, repetition, list, record importing, data base sorting, inverted file loading, and full inverted file generation. The list task can be a frequency list, a sorted list, or a simple list.</p>
+
+<p>The task attribute is used to indicate the type of task to be executed.</p>
+
+<p>The parameters for execution of a task are indicated with the <code class="language-plaintext highlighter-rouge">&lt;parm&gt;</code> element.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">&lt;loop&gt;</code> element indicates the set of instructions to be executed for each task item.</p>
+
+<p><strong>Example:</strong></p>
+
+<pre><code class="language-language">...
+  &lt;do task=search&gt;
+    &lt;parm name=db&gt;CDS&lt;/parm&gt;
+    &lt;parm name=expression&gt;plants * water&lt;/parm&gt;
+    &lt;loop&gt;
+       &lt;display&gt;&lt;pft&gt;mfn/&lt;/pft&gt;&lt;/display&gt;
+    &lt;/loop&gt;
+  &lt;/do&gt;
+...
+
+</code></pre>
+
+<hr />
+
+<h3 id="dotask">do.task</h3>
+
+<p><strong>Options</strong> fullinvertion import invertedload keyrange list mastersort mfnrange search update</p>
+
+<p><strong>May Be Used in</strong> <code class="language-plaintext highlighter-rouge">&lt;do&gt;</code></p>
+
+<p><strong>Syntax</strong> <code class="language-plaintext highlighter-rouge">task=...</code></p>
+
+<p>It identifies the task to be performed.</p>
+
+<p>The absence of the task attribute indicates a task independent repetition.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;do&gt;
+     &lt;parm name=to&gt;500&lt;/field&gt;
+     &lt;field action=define tag=1001&gt;Isis_Current&lt;/field&gt;
+     &lt;field action=define tag=1002&gt;Isis_Total&lt;/field&gt;
+     &lt;loop&gt;
+        &lt;display&gt;
+          &lt;pft&gt;newline('&lt;br&gt;'),v1001,'/',v1002/&lt;/pft&gt;
+        &lt;/display&gt;
+     &lt;/loop&gt;
+   &lt;/do&gt;
+...
+</code></pre>
+<hr />
+
+<h3 id="dotaskfullinvertion">do.task=fullinvertion</h3>
+
+<p>Full generation of the database inverted file.</p>
+
+<p>The database name is specified by the <code class="language-plaintext highlighter-rouge">&lt;parm name=db&gt;</code> element.</p>
+
+<p>The FST (Field Select Table) is specified by the <code class="language-plaintext highlighter-rouge">&lt;parm name=fst&gt;</code> element.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;do task=fullinvertion&gt;
+     &lt;parm name=db&gt;&lt;pft&gt;v2001&lt;/pft&gt;&lt;/parm&gt;
+     &lt;parm name=fst&gt;&lt;pft&gt;v2061&lt;/pft&gt;&lt;/parm&gt;
+     &lt;field action=define tag=1102&gt;Isis_Status&lt;/field&gt;
+     &lt;display&gt;&lt;pft&gt;'Full invertion: ',v2001/&lt;/pft&gt;&lt;/display&gt;
+     &lt;loop&gt;&lt;/loop&gt;
+     &lt;display&gt;&lt;pft&gt;'Finished.'/&lt;/pft&gt;&lt;/display&gt;
+     &lt;display&gt;&lt;pft&gt;'Lock status = 'v1102/&lt;/pft&gt;&lt;/display&gt;
+  &lt;/do&gt;
+...
+
+</code></pre>
+
+<hr />
+
+<h3 id="dotaskimport">do.task=import</h3>
+
+<p>It imports data from a text file, loading it as database records.</p>
+
+<p>The file name is specified by the <code class="language-plaintext highlighter-rouge">&lt;parm name=file&gt;</code> element.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">&lt;parm name=type&gt;</code> element may be used to specify the type of the text file; <strong><em>ISO-2709</em></strong> type text file is assumed if the type is not specified.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;do task=import&gt;
+     &lt;parm name=file&gt;&lt;pft&gt;v2041&lt;/pft&gt;&lt;/parm&gt;
+     &lt;parm name=type&gt;&lt;pft&gt;v2042&lt;/pft&gt;&lt;/parm&gt;
+     &lt;loop&gt;
+        &lt;display&gt;&lt;pft&gt;ALL&lt;/pft&gt;&lt;/display&gt;
+     &lt;/loop&gt;
+  &lt;/do&gt;
+...
+
+</code></pre>
+
+<hr />
+
+<h3 id="dotaskinvertedload">do.task=invertedload</h3>
+
+<p>It loads the inverted file using a database containing the sorted keys.</p>
+
+<p>The database name whose inverted file is being loaded is specified by the <code class="language-plaintext highlighter-rouge">&lt;parm name=db&gt;</code> element.</p>
+
+<p>The sorted keys database name is specified by the <code class="language-plaintext highlighter-rouge">&lt;parm name=keysdb&gt;</code> element.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;do task=invertedload&gt;
+     &lt;parm name=db&gt;TEST&lt;/parm&gt;
+     &lt;parm name=keysdb&gt;TESTKEYS&lt;/parm&gt;
+     &lt;field action=define tag=1&gt;Isis_Posting&lt;/field&gt;
+     &lt;field action=define tag=2&gt;Isis_Key&lt;/field&gt;
+     &lt;field action=define tag=1102&gt;Isis_Status&lt;/field&gt;
+     &lt;display&gt;&lt;pft&gt;'Inverted load ...'/&lt;/pft&gt;&lt;/display&gt;
+     &lt;loop&gt;&lt;/loop&gt;
+     &lt;display&gt;&lt;pft&gt;'Lock status = 'v1102/&lt;/pft&gt;&lt;/display&gt;
+     &lt;flow action=exit&gt;
+        &lt;pft&gt;if val(v1102) &lt;&gt; 0 then v1102 fi&lt;/pft&gt;
+     &lt;/flow&gt;
+     &lt;display&gt;&lt;pft&gt;'Inverted load: TEST loaded.'/&lt;/pft&gt;&lt;/display&gt;
+  &lt;/do&gt;
+...
+
+</code></pre>
+
+<hr />
+
+<h3 id="dotaskkeyrange">do.task=keyrange</h3>
+
+<p>It accesses the database inverted file.</p>
+
+<p>The data base name is specified by the <code class="language-plaintext highlighter-rouge">&lt;parm name=db&gt;</code> element.</p>
+
+<p>The initial inverted file key is specified by the <code class="language-plaintext highlighter-rouge">&lt;parm name=from&gt;</code> element.</p>
+
+<p>The final inverted file key is specified by the <code class="language-plaintext highlighter-rouge">&lt;parm name=to&gt;</code> element.</p>
+
+<p>The number of inverted file keys may be limited by the <code class="language-plaintext highlighter-rouge">&lt;parm name=count&gt;</code> element.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">&lt;parm name=reverse&gt;</code> element may be used to access the inverted file keys in a reverse order.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">&lt;parm name=posting&gt;</code> element may be used to go through the postings list of each inverted file key.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">&lt;parm name=posttag&gt;</code> element may be used to go through the postings list of each inverted file key for a given tag.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;do task=keyrange&gt;
+
+    &lt;parm name=db&gt;&lt;pft&gt;v2001&lt;/pft&gt;&lt;/parm&gt;
+    &lt;parm name=from&gt;
+       &lt;pft&gt;v2002,if a(v2002) then v2101 fi&lt;/pft&gt;
+    &lt;/parm&gt;
+    &lt;parm name=count&gt;&lt;pft&gt;v2003,"20"n2003&lt;/pft&gt;&lt;/parm&gt;
+    &lt;parm name=reverse&gt;&lt;pft&gt;v2004&lt;/pft&gt;&lt;/parm&gt;
+    &lt;parm name=to&gt;&lt;pft&gt;v2006&lt;/pft&gt;&lt;/parm&gt;
+
+    &lt;field action=define tag=1001&gt;Isis_Current&lt;/field&gt;
+    &lt;field action=define tag=1&gt;Isis_Key&lt;/field&gt;
+    &lt;field action=define tag=2&gt;Isis_Postings&lt;/field&gt;
+
+    &lt;display&gt;&lt;pft&gt;'##) POSTINGS',c15,'KEY'/#&lt;/pft&gt;&lt;/display&gt;
+
+    &lt;loop&gt;
+
+       &lt;display&gt;
+         &lt;pft&gt;f(val(v1001),2,0),') ',v2,c15,v1/&lt;/pft&gt;
+       &lt;/display&gt;
+       &lt;field action=export tag=1031&gt;
+          &lt;pft&gt;if val(v1001) = 1 then '1' fi&lt;/pft&gt;
+       &lt;/field&gt;
+       &lt;field action=export tag=1032&gt;1&lt;/field&gt;
+
+    &lt;/loop&gt;
+
+    &lt;display&gt;
+       &lt;pft&gt;'***************'/,
+            f(val(v1001),2,0),') ',v1031,' / ',v1032/
+       &lt;/pft&gt;
+    &lt;/display&gt;
+
+  &lt;/do&gt;
+...
+</code></pre>
+
+<hr />
+
+<h3 id="dotasklist">do.task=list</h3>
+
+<p>It accesses the list of items previously loaded with the <code class="language-plaintext highlighter-rouge">&lt;list action=load type=...&gt;</code> element.</p>
+
+<p>The list may be sorted using the <code class="language-plaintext highlighter-rouge">&lt;parm name=sort&gt;</code> element.</p>
+
+<p>The starting item is set by the <code class="language-plaintext highlighter-rouge">&lt;parm name=from&gt;</code> element.</p>
+
+<p>The last item is set by the <code class="language-plaintext highlighter-rouge">&lt;parm name=to&gt;</code> element.</p>
+
+<p>The number of items can be limited by the <code class="language-plaintext highlighter-rouge">&lt;parm name=count&gt;</code> element.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">&lt;parm name=reverse&gt;</code> element may be used to go access the list in reverse order.</p>
+
+<p><strong>Example:</strong></p>
+
+<pre><code class="language-code">...
+  &lt;list action=load type=sort&gt;&lt;pft&gt;'1'/,'2'/,'3'/&lt;/pft&gt;&lt;/list&gt;
+  &lt;list action=load type=sort&gt;&lt;pft&gt;'9'/,'8'/,&lt;/pft&gt;&lt;/list&gt;
+  &lt;list action=load type=sort&gt;&lt;pft&gt;'F'/,'Z'/,'A'/&lt;/pft&gt;&lt;/list&gt;
+
+  &lt;do task=list&gt;
+     &lt;field action=define tag=1001&gt;Isis_Current&lt;/field&gt;
+     &lt;field action=define tag=1002&gt;Isis_Items&lt;/field&gt;
+     &lt;field action=define tag=1&gt;Isis_Item&lt;/field&gt;
+     &lt;loop&gt;
+         &lt;display&gt;
+            &lt;pft&gt;v1001,'/',v1002,c10,v1/)&lt;/pft&gt;
+         &lt;/display&gt;
+     &lt;/loop&gt;
+  &lt;/do&gt;
+...
+</code></pre>
+
+<hr />
+
+<h3 id="do-taskmastersort">do. task=mastersort</h3>
+
+<p>It sorts the records of a data base.</p>
+
+<p>The data base name is specified by the <code class="language-plaintext highlighter-rouge">&lt;parm name=db&gt;</code> element.</p>
+
+<p>The sort key is specified by the <code class="language-plaintext highlighter-rouge">&lt;parm name=key&gt;</code> element.</p>
+
+<p>The sort key length is specified by the <code class="language-plaintext highlighter-rouge">&lt;parm name=keylength&gt;</code> element.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;do task=mastersort&gt;
+
+     &lt;parm name=db&gt;CDS&lt;/parm&gt;
+     &lt;parm name=key&gt;&lt;pft&gt;v24&lt;/pft&gt;&lt;/parm&gt;
+     &lt;parm name=keylength&gt;100&lt;/parm&gt;
+
+     &lt;field action=define tag=1102&gt;Isis_Status&lt;/field&gt;
+
+     &lt;display&gt;&lt;pft&gt;'Key sort ...'/&lt;/pft&gt;&lt;/display&gt;
+     &lt;loop&gt;&lt;/loop&gt;
+     &lt;display&gt;&lt;pft&gt;'Lock status = 'v1102/&lt;/pft&gt;&lt;/display&gt;
+
+     &lt;flow action=exit&gt;
+        &lt;pft&gt;if val(v1102) &lt;&gt; 0 then v1102 fi&lt;/pft&gt;
+     &lt;/flow&gt;
+
+     &lt;display&gt;&lt;pft&gt;'Key sort: CDS sorted.'/&lt;/pft&gt;&lt;/display&gt;
+
+  &lt;/do&gt;
+... 
+
+</code></pre>
+
+<hr />
+
+<h3 id="dotaskmfnrange">do.task=mfnrange</h3>
+
+<p>It accesses a range of database records - MFN (Master File Number) range.</p>
+
+<p>The database name is specified by the <code class="language-plaintext highlighter-rouge">&lt;parm name=db&gt;</code> element.</p>
+
+<p>The initial record (MFN) is specified by the <code class="language-plaintext highlighter-rouge">&lt;parm name=from&gt;</code> element.</p>
+
+<p>The final record (MFN) is specified by the <code class="language-plaintext highlighter-rouge">&lt;parm name=to&gt;</code> element.</p>
+
+<p>The number of records (MFN range) may be limited by the <code class="language-plaintext highlighter-rouge">&lt;parm name=count&gt;</code> element.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">&lt;parm name=reverse&gt;</code> element may be used to access the records (MFN range) in reverse order, regarding MFN.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;do task=mfnrange&gt;
+
+    &lt;parm name=db&gt;CDS&lt;/parm&gt;
+    &lt;parm name=from&gt;25&lt;/parm&gt;
+    &lt;parm name=count&gt;10&lt;/parm&gt;
+
+    &lt;loop&gt;
+       &lt;display&gt;&lt;pft&gt;ALL&lt;/pft&gt;&lt;/display&gt;
+    &lt;/loop&gt;
+
+  &lt;/do&gt;
+...
+</code></pre>
+
+<hr />
+
+<h3 id="dotasksearch">do.task=search</h3>
+
+<p>It accesses the database records according to a search expression.</p>
+
+<p>The data base name is specified by the <code class="language-plaintext highlighter-rouge">&lt;parm name=db&gt;</code> element.</p>
+
+<p>The search expression is specified by the <code class="language-plaintext highlighter-rouge">&lt;parm name=expression&gt;</code> element.</p>
+
+<p>The initial record is specified by the <code class="language-plaintext highlighter-rouge">&lt;parm name=from&gt;</code> element.</p>
+
+<p>The final record is specified by the <code class="language-plaintext highlighter-rouge">&lt;parm name=to&gt;</code> element.</p>
+
+<p>The number of records may be limited by the <code class="language-plaintext highlighter-rouge">&lt;parm name=count&gt;</code> element.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">&lt;parm name=reverse&gt;</code> element may be used to access the retrieved records in reverse order.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;do task=search&gt;
+    &lt;parm name=db&gt;CDS&lt;/parm&gt;
+    &lt;parm name=expression&gt;plants * water&lt;/parm&gt;
+    &lt;loop&gt;
+       &lt;display&gt;&lt;pft&gt;mfn/&lt;/pft&gt;&lt;/display&gt;
+    &lt;/loop&gt;
+  &lt;/do&gt;
+...
+</code></pre>
+
+<hr />
+
+<h3 id="dotaskupdate">do.task=update</h3>
+
+<p>It updates the database records, or adds a new record to the database.</p>
+
+<p>The data base name is specified by the <code class="language-plaintext highlighter-rouge">&lt;parm name=db&gt;</code> element.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">&lt;parm name=mfn&gt;</code> element is used to indicate the MFN to be updated, or that a new record is to be added to the data base.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">&lt;parm name=lockid&gt;</code> element is used to identify the “owner” of the record.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">&lt;parm name=expire&gt;</code> element may be used to indicate how long the record “belongs” to the “owner”.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;do task=update&gt;
+
+     &lt;parm name=db&gt;CDS&lt;/parm&gt;
+     &lt;parm name=mfn&gt;New&lt;/parm&gt;
+
+     &lt;field action=define tag=1102&gt;Isis_Status&lt;/field&gt;
+
+     &lt;update&gt;
+        &lt;field action=replace tag=20&gt;
+           &lt;pft&gt;date&lt;/pft&gt;
+        &lt;/field&gt;
+        &lt;write&gt;Unlock&lt;/write&gt;
+        &lt;display&gt;&lt;pft&gt;ALL&lt;/pft&gt;&lt;/display&gt;
+     &lt;/update&gt;
+
+  &lt;/do&gt;
+...
+</code></pre>
+
+<hr />
+
+<h2 id="-export-">&lt; export &gt;</h2>
+
+<p><strong>May Contais</strong> <code class="language-plaintext highlighter-rouge">&lt;pft&gt;</code></p>
+
+<p><strong>May Be Used in</strong> <code class="language-plaintext highlighter-rouge">&lt;do&gt; &lt;function&gt; &lt;hl&gt; &lt;loop&gt; &lt;section&gt; &lt;update&gt;</code></p>
+
+<p><strong>Syntax</strong> <code class="language-plaintext highlighter-rouge">&lt;export&gt; ... &lt;/export&gt;</code></p>
+
+<p>It adds the current record to a text file.</p>
+
+<p>The file name must be previously indicated by the <code class="language-plaintext highlighter-rouge">&lt;parm file=...&gt;</code> element.</p>
+
+<p>The default file type is ISO2709; other export file type can be specified with the <code class="language-plaintext highlighter-rouge">&lt;parm type=...&gt;</code> element. The export file types are: ISO2709, HLine, and VLine.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;do task=mfnrange&gt;
+    &lt;parm name=db&gt;CDS&lt;/parm&gt;
+    &lt;parm name=file&gt;CDS.ISO&lt;/parm&gt;
+    &lt;loop&gt;
+      &lt;export&gt;this&lt;/export&gt;
+    &lt;/loop&gt;
+  &lt;/do&gt;
+...
+</code></pre>
+
+<hr />
+
+<h2 id="-extract-">&lt; extract &gt;</h2>
+
+<p><strong>May Contais</strong> <code class="language-plaintext highlighter-rouge">&lt;pft&gt;</code></p>
+
+<p><strong>May Be Used in</strong> <code class="language-plaintext highlighter-rouge">&lt;do&gt; &lt;function&gt; &lt;hl&gt; &lt;loop&gt; &lt;section&gt; &lt;update&gt;</code></p>
+
+<p><strong>Syntax</strong> <code class="language-plaintext highlighter-rouge">&lt;extract&gt; ... &lt;/extract&gt;</code></p>
+
+<p>It adds the keys extracted from the current record to the keys database.</p>
+
+<p>The FST (Field Select Table) must be previously indicated by the <code class="language-plaintext highlighter-rouge">&lt;parm name=fst&gt;</code> element.</p>
+
+<p>The keys data base must be previously indicated by the <code class="language-plaintext highlighter-rouge">&lt;parm name=keysdb&gt;</code> element.</p>
+
+<p>The field that shall contain the keys must be previously indicated by the <code class="language-plaintext highlighter-rouge">&lt;field action=define tag=...&gt;Isis_Key&lt;/field&gt;</code> element.</p>
+
+<p>The field that shall contain the postings data must be previously indicated by the <code class="language-plaintext highlighter-rouge">&lt;field action=define tag=...&gt;Isis_Posting&lt;/field&gt;</code> element.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;do task=mfnrange&gt;
+    &lt;parm name=fst&gt;1 0 v1&lt;/parm&gt;
+    &lt;parm name=keysdb&gt;tmp1&lt;/parm&gt;
+    &lt;field action=define tag=1&gt;Isis_Posting&lt;/field&gt;
+    &lt;field action=define tag=2&gt;Isis_Key&lt;/field&gt;
+    &lt;loop&gt;
+       &lt;extract&gt;this&lt;/extract&gt;
+    &lt;/loop&gt;
+  &lt;/do&gt;
+...
+</code></pre>
+
+<hr />
+
+<h2 id="-field-">&lt; field &gt;</h2>
+
+<p><strong>May Contais</strong> <code class="language-plaintext highlighter-rouge">&lt;pft&gt;</code></p>
+
+<p><strong>May Be Used in</strong> <code class="language-plaintext highlighter-rouge">&lt;do&gt; &lt;function&gt; &lt;hl&gt; &lt;loop&gt; &lt;section&gt; &lt;update&gt;</code></p>
+
+<p><strong>Attributes</strong> action from previous split tag type</p>
+
+<p><strong>Syntax</strong> <code class="language-plaintext highlighter-rouge">&lt;field&gt; ... &lt;/field&gt;</code></p>
+
+<p>The <code class="language-plaintext highlighter-rouge">&lt;field&gt;</code> element is used to add, modify, delete, import, export or define fields.</p>
+
+<p>The action attribute indicates the usage of the element.</p>
+
+<p>The tag attribute indicates the field that is subject to the action.</p>
+
+<p>The split attribute may be used to indicate that each line will be a new occurrence of the field.</p>
+
+<p>The previous attribute indicates whether the previous content is to be eliminated or not.</p>
+
+<p>The type attribute indicates the type of field to be accessed.</p>
+
+<p>The from attribute indicates the number of the field to be accessed.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+   &lt;field action=replace tag=2&gt;&lt;pft&gt;v400^b&lt;/pft&gt;&lt;/field&gt;
+...
+</code></pre>
+
+<hr />
+
+<h3 id="fieldaction">field.action</h3>
+
+<p><strong>Options</strong> add cgi define delete export hl import occ replace statusdb statusfile</p>
+
+<p><strong>May Be Used in</strong> <code class="language-plaintext highlighter-rouge">&lt;field&gt; &lt;file&gt; &lt;flow&gt; &lt;function&gt; &lt;htmlpft&gt; &lt;list&gt; &lt;return&gt;</code></p>
+
+<p><strong>Syntax</strong> <code class="language-plaintext highlighter-rouge">action=...</code></p>
+
+<p>It indicates the action that the <code class="language-plaintext highlighter-rouge">&lt;field&gt;</code> element is to execute.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+   &lt;field action=replace tag=2&gt;&lt;pft&gt;v400^b&lt;/pft&gt;&lt;/field&gt;
+...
+
+</code></pre>
+
+<hr />
+
+<h4 id="fieldactionadd">field.action=add</h4>
+
+<p>It adds a new occurrence to the field specified by the tag atribute.</p>
+
+<p>The argument of the element contains the data to be added.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;field action=add tag=2&gt;A&lt;/field&gt;
+  &lt;field action=add tag=2&gt;B&lt;/field&gt;
+  &lt;field action=add tag=2&gt;C&lt;/field&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="fieldactioncgi">field.action=cgi</h4>
+
+<p>It adds the CGI item value, of the corresponding CGI item name, to the field tag specified by the tag attribute.</p>
+
+<p>The argument of the <code class="language-plaintext highlighter-rouge">&lt;field&gt;</code> element indicates the CGI item name.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;field action=cgi tag=2&gt;phone&lt;/field&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="fieldactiondefine">field.action=define</h4>
+
+<p>It defines the field number specified by the tag attribute to be automatically generated inside the <code class="language-plaintext highlighter-rouge">&lt;loop&gt;</code> scope.</p>
+
+<p>The argument of the <code class="language-plaintext highlighter-rouge">&lt;field&gt;</code> element indicates the type of information stored in the field.</p>
+
+<p>Possible argument values:</p>
+
+<p><strong>Isis_Current</strong> - Current execution index of the <code class="language-plaintext highlighter-rouge">&lt;loop&gt;</code></p>
+
+<p><strong>Isis_Total</strong> - Total possible count for the <code class="language-plaintext highlighter-rouge">&lt;loop&gt;</code></p>
+
+<p><strong>Isis_From</strong> - from parameter of the <code class="language-plaintext highlighter-rouge">&lt;loop&gt;</code></p>
+
+<p><strong>Isis_To</strong> - to parameter of the <code class="language-plaintext highlighter-rouge">&lt;loop&gt;</code></p>
+
+<p><strong>Isis_Lock</strong> - Record lock control</p>
+
+<p><strong>Isis_Status</strong> - Task execution status</p>
+
+<p><strong>Isis_Item</strong> - IsisScript list item</p>
+
+<p><strong>Isis_Value</strong> - Number of items as calculated by frequency count</p>
+
+<p><strong>Isis_Key</strong> - Current key</p>
+
+<p><strong>Isis_Posting</strong> - Current posting data</p>
+
+<p><strong>Isis_Postings</strong> - Current key total postings</p>
+
+<p><strong>Isis_Items</strong> - Number of items on IsisScript list</p>
+
+<p><strong>Isis_ErrorInfo</strong> - Search error pointer</p>
+
+<p><strong>Isis_Keys</strong> - Highlight keys</p>
+
+<p><strong>Isis_MFN</strong> - Field number to store the record number (MFN) for import or export task</p>
+
+<p><strong>Isis_RecordStatus</strong> - Field number to store the record status</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...  &lt;field action=define tag=1001&gt;Isis_Current&lt;/field&gt;...
+</code></pre>
+
+<hr />
+
+<h4 id="fieldactiondelete">field.action=delete</h4>
+
+<p>Deletes one or all occurrences of the field specified by the tag attribute.</p>
+
+<p>The argument of the <code class="language-plaintext highlighter-rouge">&lt;field&gt;</code> element indicates the occurrence to be deleted; ALL in the argument indicates the deletion of all ocurrences.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;field action=delete tag=5&gt;ALL&lt;/field&gt;
+  &lt;field action=delete tag=6&gt;1&lt;/field&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="fieldactionexport">field.action=export</h4>
+
+<p>It modifies the content of one or more fields within the previous scope of IsisScript.</p>
+
+<p>The field is specified by the tag attribute.</p>
+
+<p>Use tag=list to indicate that the argument contains a list of fields to be exported.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;field action=export tag=2205&gt;5&lt;/field&gt;
+  &lt;field action=export tag=list&gt;6,7,21/29&lt;/field&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="fieldactionhl">field.action=hl</h4>
+
+<p>It replaces the contents of the field specified by the tag attribute with a new value accorfing to text highlighting specifications.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;parm name=prefix&gt;&lt;b&gt;&lt;/parm&gt;
+  &lt;parm name=suffix&gt;&lt;/b&gt;&lt;/parm&gt;
+  &lt;parm name=keys&gt;&lt;pft&gt;(v1022/)&lt;/pft&gt;&lt;/parm&gt;
+  &lt;field action=hl tag=70&gt;&lt;pft&gt;(v70/)&lt;/pft&gt;&lt;/field&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="fieldactionimport">field.action=import</h4>
+
+<p>It modifies the content of one or more fields within the current scope of IsisScript by copying the fields from the previous scope.</p>
+
+<p>The field is specified by the tag attribute.</p>
+
+<p>Use tag=list to indicate that the argument contains the list of fields to be imported.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;field action=import tag=2070&gt;70&lt;/field&gt;
+  &lt;field action=import tag=list&gt;201,206,301/314,321&lt;/field&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="fieldactionocc">field.action=occ</h4>
+
+<p>It replaces the content of the field specified by the tag attribute with the content of the field specified by the from attribute, but only with the content of the occurrence specified by the element argument.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;do&gt;
+    &lt;parm name=to&gt;&lt;pft&gt;f(nocc(v70),1,0)&lt;/pft&gt;&lt;/parm&gt;
+    &lt;field action=define tag=1001&gt;Isis_Current&lt;/field&gt;
+    &lt;loop&gt;
+      &lt;field action=import tag=70&gt;70&lt;/field&gt;
+      &lt;field action=occ tag=1 from=70&gt;&lt;pft&gt;v1001&lt;/pft&gt;&lt;/field&gt;
+      ...
+    &lt;/loop&gt;
+  &lt;/do&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="fieldactionreplace">field.action=replace</h4>
+
+<p>It replaces the content of the field specified by the tag attribute with the the new content specified by the argument.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+   &lt;field action=replace tag=2&gt;&lt;pft&gt;v400^b&lt;/pft&gt;&lt;/field&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="fieldactionstatusdb">field.action=statusdb</h4>
+
+<p>It replaces the content of the field specified by the tag attribute with the status of the data base indicated by the argument of the <code class="language-plaintext highlighter-rouge">&lt;field&gt;</code> element.</p>
+
+<p>If either the master file or the inverted file exists or both of them exist, a field will be created containing the s subfield (^s). The s subfield will contain the character m if the master file exists, and the character i if the inverted file exists.</p>
+
+<p>If the master file exists, then the field will also contain the n subfield (^n) storing the total number of data base records plus one, the d subfield (^d) storing Data Entry Lock number, and the e subfield (^e) storing the Exclusive Write Lock number.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;field action=statusdb tag=1091&gt;&lt;pft&gt;v2001&lt;/pft&gt;&lt;/field&gt;
+  &lt;flow action=jump&gt;
+     &lt;pft&gt;if v1091^s : 'm' then 'LABEL_OK' fi&lt;/pft&gt;
+  &lt;/flow&gt;
+...
+
+</code></pre>
+
+<hr />
+
+<h4 id="fieldactionstatusfile">field.action=statusfile</h4>
+
+<p>It replaces the content of the field specified by the tag attribute with the status of the file indicated by the argument of the <code class="language-plaintext highlighter-rouge">&lt;field&gt;</code> element.</p>
+
+<p>If the file exists, the field contains the s subfield (^s) with the character “e”, otherwise the field is absent.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;field action=statusfile tag=1091&gt;C:\AUTOEXEC.BAT&lt;/field&gt;
+  &lt;flow action=jump&gt;
+     &lt;pft&gt;if v1091^s : 'e' then 'LABEL_OK' fi&lt;/pft&gt;
+  &lt;/flow&gt;
+...
+</code></pre>
+
+<hr />
+
+<h3 id="fieldactionstatusfile-1">field.action=statusfile</h3>
+
+<p>It replaces the content of the field specified by the tag attribute with the status of the file indicated by the argument of the <field> element.</field></p>
+
+<p>If the file exists, the field contains the s subfield (^s) with the character “e”, otherwise the field is absent.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;field action=statusfile tag=1091&gt;C:\AUTOEXEC.BAT&lt;/field&gt;
+  &lt;flow action=jump&gt;
+     &lt;pft&gt;if v1091^s : 'e' then 'LABEL_OK' fi&lt;/pft&gt;
+  &lt;/flow&gt;
+...
+</code></pre>
+
+<hr />
+
+<h3 id="fieldfrom">field.from</h3>
+
+<p><strong>May Be Used in</strong> <code class="language-plaintext highlighter-rouge">&lt;field&gt;</code></p>
+
+<p><strong>Syntax</strong> <code class="language-plaintext highlighter-rouge">from=...</code></p>
+
+<p>It specifies the field number accessed by the action=occ attribute.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;do&gt;
+    &lt;parm name=to&gt;&lt;pft&gt;f(nocc(v70),1,0)&lt;/pft&gt;&lt;/parm&gt;
+    &lt;field action=define tag=1001&gt;Isis_Current&lt;/field&gt;
+    &lt;loop&gt;
+      &lt;field action=import tag=70&gt;70&lt;/field&gt;
+      &lt;field action=occ tag=1 from=70&gt;&lt;pft&gt;v1001&lt;/pft&gt;&lt;/field&gt;
+      ...
+    &lt;/loop&gt;
+  &lt;/do&gt;
+...
+</code></pre>
+
+<hr />
+
+<h3 id="fieldprevious">field.previous</h3>
+
+<p><strong>Options</strong> <code class="language-plaintext highlighter-rouge">add</code> <code class="language-plaintext highlighter-rouge">delete</code></p>
+
+<p><strong>May Be Used in</strong> <code class="language-plaintext highlighter-rouge">&lt;field&gt;</code></p>
+
+<p><strong>Syntax</strong> <code class="language-plaintext highlighter-rouge">previous=...</code></p>
+
+<p>It specifies whether the previous content of the imported or exported field has to be deleted, or if new occurrences of the field have to be added to the existing data.</p>
+
+<p>The absence of this attribute means that the previous content will be deleted.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;field action=import tag=1 previous=add&gt;200&lt;/field&gt;
+...
+
+</code></pre>
+
+<hr />
+
+<h4 id="fieldpreviousadd">field.previous=add</h4>
+
+<p>Add new field occurrences to the data.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+   &lt;field action=export tag=200 previous=add&gt;1&lt;/field&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="fieldpreviousdelete">field.previous=delete</h4>
+
+<p>It deletes previous field occurrences.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+   &lt;field action=export tag=4001 previous=delete&gt;1&lt;/field&gt;
+...
+</code></pre>
+
+<hr />
+
+<h3 id="fieldsplit">field.split</h3>
+
+<p><strong>Options</strong> <code class="language-plaintext highlighter-rouge">flddir</code> <code class="language-plaintext highlighter-rouge">occ</code></p>
+
+<p><strong>May Be Used in</strong> <code class="language-plaintext highlighter-rouge">&lt;field&gt;</code></p>
+
+<p><strong>Syntax</strong> <code class="language-plaintext highlighter-rouge">split=...</code></p>
+
+<p>It indicates how to store the field data.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;field action=replace tag=1 split=occ&gt;&lt;pft&gt;(v200/)&lt;/pft&gt;&lt;/field&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="fieldsplitflddir">field.split=flddir</h4>
+
+<p>O texto a ser armazenado no campo especificado pelo atributo tag é o diretório de campos do registro com os respectivos conteúdos.</p>
+
+<p>Cada linha contém o número do campo (5 dígitos), um espaço em branco e o conteúdo do campo.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;do task="mfnrange"&gt;
+    &lt;parm name="db"&gt;CDS&lt;/parm&gt;
+    &lt;parm name="count"&gt;5&lt;/parm&gt;
+    &lt;loop&gt;
+      &lt;field action="replace" tag="1" split="flddir"&gt;ALL&lt;/field&gt;
+      &lt;display&gt;&lt;pft&gt;ALL&lt;/pft&gt;&lt;/display&gt;
+    &lt;/loop&gt;
+  &lt;/do&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="fieldsplitocc">field.split=occ</h4>
+
+<p>Indicates that each line of the argument of the <code class="language-plaintext highlighter-rouge">&lt;field&gt;</code> element shall be stored as a new occurrence of the field specified by the tag attribute.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;field action=replace tag=1 split=occ&gt;&lt;pft&gt;(v200/)&lt;/pft&gt;&lt;/field&gt;
+...
+</code></pre>
+
+<hr />
+
+<h3 id="fieldtag">field.tag</h3>
+
+<p><strong>Options</strong> <code class="language-plaintext highlighter-rouge">list</code></p>
+
+<p><strong>May Be Used in</strong> <code class="language-plaintext highlighter-rouge">&lt;field&gt; &lt;parm&gt;</code></p>
+
+<p><strong>Syntax</strong> <code class="language-plaintext highlighter-rouge">tag=...</code></p>
+
+<p>The tag attribute specifies the field number.</p>
+
+<p>Use tag=list to indicate that the field list will be passed as an argument of the <code class="language-plaintext highlighter-rouge">&lt;field&gt;</code> element.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+   &lt;field action=replace tag=2&gt;&lt;pft&gt;v400^b&lt;/pft&gt;&lt;/field&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="fieldtaglist">field.tag=list</h4>
+
+<p>It indicates that the field list is passed as an argument of the <code class="language-plaintext highlighter-rouge">&lt;field&gt;</code> element.</p>
+
+<p>Use a comma “,” to separate field number within the field list. Use a slash “/” to indicate a field range. Use openning bracket “[” to indicate that the field will be stored with the field number specified after the colon character “:” and before the closing bracket “]”.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;field action=import tag=list&gt;1,2,3,11/19,[30:20]&lt;/field&gt;
+...
+</code></pre>
+
+<hr />
+
+<h3 id="fieldtype">field.type</h3>
+
+<p><strong>Options</strong> <code class="language-plaintext highlighter-rouge">flag</code></p>
+
+<p><strong>May Be Used in</strong> <code class="language-plaintext highlighter-rouge">&lt;field&gt; &lt;file&gt; &lt;htmlpft&gt; &lt;list&gt; &lt;pft&gt;</code></p>
+
+<p><strong>Syntax</strong> <code class="language-plaintext highlighter-rouge">type=...</code></p>
+
+<p>It indicates the data type accessed.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;field action=cgi tag=2011 type=flag&gt;trace&lt;/field&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="fieldtypeflag">field.type=flag</h4>
+
+<p>It indicates if the CGI data is either present or absent.</p>
+
+<p>If the field is present but empty, then the field shall store a value of On, otherwise the field will store the value being passed.</p>
+
+<p>This attribute only is used with the action=cgi attribute.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;field action=cgi tag=2011 type=flag&gt;trace&lt;/field&gt;
+...
+</code></pre>
+
+<hr />
+
+<h2 id="-file-">&lt; file &gt;</h2>
+
+<p><strong>May Contais</strong> <code class="language-plaintext highlighter-rouge">&lt;pft&gt;</code></p>
+
+<p><strong>May Be Used in</strong> <code class="language-plaintext highlighter-rouge">&lt;do&gt; &lt;function&gt; &lt;hl&gt; &lt;loop&gt; &lt;section&gt; &lt;update&gt;</code></p>
+
+<p><strong>Attributes</strong> <code class="language-plaintext highlighter-rouge">action type</code></p>
+
+<p><strong>Syntax</strong> <code class="language-plaintext highlighter-rouge">&lt;file&gt; ... &lt;/file&gt;</code></p>
+
+<p>The <code class="language-plaintext highlighter-rouge">&lt;file&gt;</code> element may be used to create, unlock or close data bases, to create temporary files, to delete files, and to change the standard output of IsisScript.</p>
+
+<p>The action attribute indicates the action.</p>
+
+<p>The type attribute indicates the type of file that will be subject to the action.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;file action=create type=database&gt;TESTX&lt;/file&gt;
+...
+</code></pre>
+
+<hr />
+
+<h3 id="fileaction">file.action</h3>
+
+<p><strong>Options</strong> <code class="language-plaintext highlighter-rouge">append close create delete unlock</code></p>
+
+<p><strong>May Be Used in</strong> <code class="language-plaintext highlighter-rouge">&lt;field&gt; &lt;file&gt; &lt;flow&gt; &lt;function&gt; &lt;htmlpft&gt; &lt;list&gt; &lt;return&gt;</code></p>
+
+<p><strong>Syntax</strong> <code class="language-plaintext highlighter-rouge">action=...</code></p>
+
+<p>It indicates the action executed by the <code class="language-plaintext highlighter-rouge">&lt;file&gt;</code> element.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;file action=create type=database&gt;TESTX&lt;/file&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="fileactionappend">file.action=append</h4>
+
+<p>It opens an output where data will be appended.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;file action=append type=output&gt;TEST.LOG&lt;/file&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="fileactionclose">file.action=close</h4>
+
+<p>It closes either an output file when type=output or a database type=database.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;file action=close type=output&gt;TEST.LOG&lt;/file&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="fileactioncreate">file.action=create</h4>
+
+<p>It creates either a new output file if type=output or it initialize a database if type=database.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;file action=create type=database&gt;TESTX&lt;/file&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="fileactiondelete">file.action=delete</h4>
+
+<p>Deletes a file.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;file action=delete type=file&gt;TESTX&lt;/file&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="fileactionunlock">file.action=unlock</h4>
+
+<p>Unlocks a data base.</p>
+
+<p>The Data Entry Lock and the Exclusive Write Lock numbers are reset to zeroes.</p>
+
+<blockquote>
+  <p>ATTENTION: The records remain unchanged.</p>
+</blockquote>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;file action=unlock type=database&gt;CDS&lt;/file&gt;
+...
+
+</code></pre>
+
+<hr />
+
+<h3 id="filetype">file.type</h3>
+
+<p><strong>Options</strong> <code class="language-plaintext highlighter-rouge">database file inverted master output tempfile</code></p>
+
+<p><strong>May Be Used in</strong> <code class="language-plaintext highlighter-rouge">&lt;field&gt; &lt;file&gt; &lt;htmlpft&gt; &lt;list&gt; &lt;pft&gt;</code></p>
+
+<p><strong>Syntax</strong> <code class="language-plaintext highlighter-rouge">type=...</code></p>
+
+<p>Indicates the type of the file subject to the action.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;file action=create type=database&gt;TESTX&lt;/file&gt;
+...
+
+</code></pre>
+
+<hr />
+
+<h4 id="filetypedatabase">file.type=database</h4>
+
+<p>It indicates that the action is on a database.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;file action=create type=database&gt;TESTX&lt;/file&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="filetypefile">file.type=file</h4>
+
+<p>It indicates that the action is on a file.</p>
+
+<p>This option is valid only with the action=delete option.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;file action=delete type=file&gt;TEST.LOG&lt;/file&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="filetypeinverted">file.type=inverted</h4>
+
+<p>It indicates that the action is on the database inverted file.</p>
+
+<p>This option is valid only with the action=create option.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;file action=create type=inverted&gt;TESTX&lt;/file&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="filetypemaster">file.type=master</h4>
+
+<p>It indicates that the action is on the database master file.</p>
+
+<p>This option is valid only with the action=create option.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;file action=create type=master&gt;TESTX&lt;/file&gt;
+...
+
+</code></pre>
+
+<hr />
+
+<h4 id="filetypeoutput">file.type=output</h4>
+
+<p>It indicates that the action is on an output file.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;file action=create type=output&gt;TEST.LOG&lt;/file&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="filetypetempfile">file.type=tempfile</h4>
+
+<p>It indicates that the action is on a temporary file.</p>
+
+<p>This option is valid only with the action=create option.</p>
+
+<p>The argument indicates the field number of the field that stores the name of the uniquely identified temporary file created by the operating system.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;file action=create type=tempfile&gt;4001&lt;/file&gt;
+...
+</code></pre>
+
+<hr />
+
+<h2 id="-flow-">&lt; flow &gt;</h2>
+
+<p><strong>May Contais</strong> <code class="language-plaintext highlighter-rouge">&lt;pft&gt;</code></p>
+
+<p><strong>May Be Used in</strong> <code class="language-plaintext highlighter-rouge">&lt;do&gt; &lt;function&gt; &lt;hl&gt; &lt;loop&gt; &lt;section&gt; &lt;update&gt;</code></p>
+
+<p><strong>Attributes</strong> <code class="language-plaintext highlighter-rouge">action</code></p>
+
+<p><strong>Syntax</strong> <code class="language-plaintext highlighter-rouge">&lt;flow&gt; ... &lt;/flow&gt;</code></p>
+
+<p>The <code class="language-plaintext highlighter-rouge">&lt;flow&gt;</code> element is used to alter the execution flow of IsisScript instructions.</p>
+
+<p>The action attribute indicates the action.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+
+  &lt;flow action=jump&gt;&lt;pft&gt;if p(v1) then 'GO' fi&lt;/pft&gt;&lt;/flow&gt;
+  &lt;display&gt;Field 1 absent&lt;/display&gt;
+  &lt;flow action=exit&gt;1&lt;/flow&gt;
+
+  &lt;label&gt;GO&lt;/label&gt;
+  &lt;display&gt;Field 1 present, continue&lt;/display&gt;
+  ...
+
+...
+</code></pre>
+
+<hr />
+
+<h3 id="flowaction">flow.action</h3>
+
+<p><strong>Options</strong> <code class="language-plaintext highlighter-rouge">exit jump skip</code></p>
+
+<p><strong>May Be Used in</strong> <code class="language-plaintext highlighter-rouge">&lt;field&gt; &lt;field&gt; &lt;flow&gt; &lt;function&gt; &lt;htmlpft&gt; &lt;list&gt; &lt;return&gt;</code></p>
+
+<p><strong>Syntax</strong> <code class="language-plaintext highlighter-rouge">action=...</code></p>
+
+<p>It indicates the action that the <code class="language-plaintext highlighter-rouge">&lt;flow&gt;</code> element will follow.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+
+  &lt;flow action=jump&gt;&lt;pft&gt;if p(v1) then 'GO' fi&lt;/pft&gt;&lt;/flow&gt;
+  &lt;display&gt;Field 1 absent&lt;/display&gt;
+  &lt;flow action=exit&gt;1&lt;/flow&gt;
+
+  &lt;label&gt;GO&lt;/label&gt;
+  &lt;display&gt;Field 1 present, continue&lt;/display&gt;
+  ...
+
+...
+</code></pre>
+
+<hr />
+
+<h4 id="flowactionexit">flow.action=exit</h4>
+
+<p>It ends the execution of the current IsisScript script.</p>
+
+<p>The argument of the <code class="language-plaintext highlighter-rouge">&lt;flow&gt;</code> element indicates the return code that is passed to the operating system.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+
+  &lt;flow action=jump&gt;&lt;pft&gt;if p(v1) then 'GO' fi&lt;/pft&gt;&lt;/flow&gt;
+  &lt;display&gt;Field 1 absent&lt;/display&gt;
+  &lt;flow action=exit&gt;1&lt;/flow&gt;
+
+  &lt;label&gt;GO&lt;/label&gt;
+  &lt;display&gt;Field 1 present, continue&lt;/display&gt;
+  ...
+
+...
+
+</code></pre>
+
+<hr />
+
+<h4 id="flowactionjump">flow.action=jump</h4>
+
+<p>It branchs the execution of IsisScript to the corresponding <code class="language-plaintext highlighter-rouge">&lt;label&gt;</code> element.</p>
+
+<p>The argument of the <code class="language-plaintext highlighter-rouge">&lt;flow&gt;</code> instruction indicates the branching point.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+
+  &lt;flow action=jump&gt;&lt;pft&gt;if p(v1) then 'GO' fi&lt;/pft&gt;&lt;/flow&gt;
+  &lt;display&gt;Field 1 absent&lt;/display&gt;
+  &lt;flow action=exit&gt;1&lt;/flow&gt;
+
+  &lt;label&gt;GO&lt;/label&gt;
+  &lt;display&gt;Field 1 present, continue&lt;/display&gt;
+  ...
+
+...
+</code></pre>
+
+<hr />
+
+<h4 id="flowactionskip">flow.action=skip</h4>
+
+<p>Either it branches the execution of IsisScript to the beginning of the <code class="language-plaintext highlighter-rouge">&lt;loop&gt;</code> of the current scope if the <code class="language-plaintext highlighter-rouge">&lt;flow&gt;</code> argument is Next, or it leaves the current scope and returns to the previous scope, if the <code class="language-plaintext highlighter-rouge">&lt;flow&gt;</code> argument is Quit.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;do&gt;
+
+     &lt;parm name=db&gt;CDS&lt;/db&gt;
+
+     &lt;loop&gt;
+       &lt;flow action=skip&gt;
+         &lt;pft&gt;if a(v24) then 'Next'
+              else if val(v26^c) &gt; 1989 then 'Quit' fi
+              fi
+         &lt;/pft&gt;
+       &lt;/flow&gt;
+       &lt;display&gt;&lt;pft&gt;@CDS.PFT&lt;/pft&gt;&lt;/display&gt;
+     &lt;/loop&gt;
+
+  &lt;/do&gt;
+...
+
+</code></pre>
+
+<hr />
+
+<h2 id="-function-">&lt; function &gt;</h2>
+
+<p><strong>May Contais</strong> <code class="language-plaintext highlighter-rouge">&lt;call&gt; &lt;cgitable&gt; &lt;define&gt; &lt;display&gt; &lt;do&gt; &lt;export&gt; &lt;extract&gt; &lt;field&gt; &lt;file&gt; &lt;flow&gt; &lt;hl&gt; &lt;label&gt; &lt;list&gt; &lt;parm&gt; &lt;proc&gt; &lt;return&gt; &lt;trace&gt;</code></p>
+
+<p><strong>May Be Used in</strong> <code class="language-plaintext highlighter-rouge">&lt;IsisScript&gt;</code></p>
+
+<p><strong>Attributes</strong> <code class="language-plaintext highlighter-rouge">action from name split tag</code></p>
+
+<p><strong>Syntax</strong> <code class="language-plaintext highlighter-rouge">&lt;function&gt; ... &lt;/function&gt;</code></p>
+
+<p>The <code class="language-plaintext highlighter-rouge">&lt;function&gt;</code> element starts a declare block for a function.</p>
+
+<p>Use the action, tag and split attributes to receive parameters, as described for the <code class="language-plaintext highlighter-rouge">&lt;field&gt;</code> element.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;function name=Test action=replace tag=1&gt;
+    &lt;diplay&gt;Inside Test function&lt;br&gt;&lt;/display&gt;
+    &lt;diplay&gt;&lt;pft&gt;'Field 1 = ',v1&lt;/pft&gt;&lt;/display&gt;
+  &lt;/function&gt;
+...
+
+</code></pre>
+
+<hr />
+
+<h3 id="functionaction">function.action</h3>
+
+<p><strong>See</strong> <code class="language-plaintext highlighter-rouge">&lt;field action=...&gt;</code></p>
+
+<p>It passes the parameters for the function.</p>
+
+<p>This is functionally equivalent to the action attribute of the <code class="language-plaintext highlighter-rouge">&lt;field&gt;</code> element.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;function name=Test action=replace tag=1&gt;
+    &lt;diplay&gt;Inside Test function&lt;br&gt;&lt;/display&gt;
+    &lt;diplay&gt;&lt;pft&gt;'Field 1 = ',v1&lt;/pft&gt;&lt;/display&gt;
+  &lt;/function&gt;
+...
+</code></pre>
+
+<hr />
+
+<h3 id="functionfrom">function.from</h3>
+
+<p><strong>See</strong> <code class="language-plaintext highlighter-rouge">&lt;field from=...&gt;</code></p>
+
+<p>It passes the parameters for the function.</p>
+
+<p>This is functionally equivalent to the from attribute of the <code class="language-plaintext highlighter-rouge">&lt;field&gt;</code> element.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;function name=Test action=replace tag=1&gt;
+    &lt;diplay&gt;Inside Test function&lt;br&gt;&lt;/display&gt;
+    &lt;diplay&gt;&lt;pft&gt;'Field 1 = ',v1&lt;/pft&gt;&lt;/display&gt;
+  &lt;/function&gt;
+...
+</code></pre>
+
+<hr />
+
+<h3 id="functionname">function.name</h3>
+
+<p><strong>May Be Used in</strong> <code class="language-plaintext highlighter-rouge">&lt;call&gt; &lt;function&gt; &lt;IsisScript&gt; &lt;section&gt;</code></p>
+
+<p><strong>Syntax</strong> <code class="language-plaintext highlighter-rouge">name=...</code></p>
+
+<p>The name attribute identifies the function declared.</p>
+
+<p>This name will be used by the <code class="language-plaintext highlighter-rouge">&lt;call&gt;</code> element to call the function.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;function name=Test action=replace tag=1&gt;
+    &lt;diplay&gt;Inside Test function&lt;br&gt;&lt;/display&gt;
+    &lt;diplay&gt;&lt;pft&gt;'Field 1 = ',v1&lt;/pft&gt;&lt;/display&gt;
+  &lt;/function&gt;
+...
+</code></pre>
+
+<hr />
+
+<h3 id="functionsplit">function.split</h3>
+
+<p><strong>See</strong> <code class="language-plaintext highlighter-rouge">&lt;field split=...&gt;</code></p>
+
+<p>It passes the parameters for the function.</p>
+
+<p>This is functionally equivalent to the split attribute of the <code class="language-plaintext highlighter-rouge">&lt;field&gt;</code> element.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;function name=Test action=replace tag=1&gt;
+    &lt;diplay&gt;Inside Test function&lt;br&gt;&lt;/display&gt;
+    &lt;diplay&gt;&lt;pft&gt;'Field 1 = ',v1&lt;/pft&gt;&lt;/display&gt;
+  &lt;/function&gt;
+...
+</code></pre>
+
+<hr />
+
+<h3 id="functiontag">function.tag</h3>
+
+<p><strong>See</strong> <code class="language-plaintext highlighter-rouge">&lt;field tag=...&gt;</code></p>
+
+<p>It passes the parameters for the function.</p>
+
+<p>This is functionally equivalent to the tag attribute of the <code class="language-plaintext highlighter-rouge">&lt;field&gt;</code> element.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;function name=Test action=replace tag=1&gt;
+    &lt;diplay&gt;Inside Test function&lt;br&gt;&lt;/display&gt;
+    &lt;diplay&gt;&lt;pft&gt;'Field 1 = ',v1&lt;/pft&gt;&lt;/display&gt;
+  &lt;/function&gt;
+...
+</code></pre>
+
+<hr />
+
+<h2 id="-hl-">&lt; hl &gt;</h2>
+
+<p><strong>May Contais</strong> <code class="language-plaintext highlighter-rouge">&lt;call&gt; &lt;cgitable&gt; &lt;define&gt; &lt;display&gt; &lt;do&gt; &lt;export&gt; &lt;extract&gt; &lt;field&gt; &lt;file&gt; &lt;flow&gt; &lt;label&gt; &lt;list&gt; &lt;parm&gt; &lt;proc&gt; &lt;trace&gt;</code></p>
+
+<p><strong>May Be Used in</strong> <code class="language-plaintext highlighter-rouge">&lt;do&gt; &lt;function&gt; &lt;loop&gt; &lt;section&gt; &lt;update&gt;</code></p>
+
+<p><strong>Syntax</strong> <code class="language-plaintext highlighter-rouge">&lt;loop&gt; ... &lt;/loop&gt;</code></p>
+
+<p>The <code class="language-plaintext highlighter-rouge">&lt;hl&gt;</code> element starts a block of instructions that highlight text.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;hl&gt;
+    &lt;parm prefix&gt;&lt;b&gt;&lt;/parm&gt;
+    &lt;parm suffix&gt;&lt;/b&gt;&lt;/parm&gt;
+    &lt;parm keys&gt;&lt;pft&gt;(v1022/)&lt;/pft&gt;&lt;/parm&gt;
+    &lt;field action=hl tag=18&gt;&lt;pft&gt;v18&lt;/pft&gt;&lt;/field&gt;
+    &lt;display&gt;&lt;pft&gt;ALL&lt;/pft&gt;&lt;/display&gt;
+  &lt;/hl&gt;
+...
+</code></pre>
+
+<hr />
+
+<h2 id="-htmlpft-">&lt; htmlpft &gt;</h2>
+
+<p><strong>May Contais</strong> <code class="language-plaintext highlighter-rouge">&lt;pft&gt;</code></p>
+
+<p><strong>May Be Used in</strong> <code class="language-plaintext highlighter-rouge">&lt;display&gt;</code></p>
+
+<p><strong>Attributes</strong> <code class="language-plaintext highlighter-rouge">action type</code></p>
+
+<p><strong>Syntax</strong> <code class="language-plaintext highlighter-rouge">&lt;htmlpft&gt; ... &lt;/htmlpft&gt;</code></p>
+
+<p>It interprets and formats an HTML file that contains formatting language instructions.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;display&gt;
+     &lt;htmlpft&gt;&lt;pft&gt;cat('Test.htm')&lt;/pft&gt;&lt;/htmlpft&gt;
+  &lt;/display&gt;
+...
+</code></pre>
+
+<hr />
+
+<h3 id="htmlpftaction">htmlpft.action</h3>
+
+<p><strong>Options</strong> <code class="language-plaintext highlighter-rouge">convert</code></p>
+
+<p><strong>May Be Used in</strong> <code class="language-plaintext highlighter-rouge">&lt;field&gt; &lt;file&gt; &lt;flow&gt; &lt;function&gt; &lt;htmlpft&gt; &lt;list&gt; &lt;return&gt;</code></p>
+
+<p><strong>Syntax</strong> <code class="language-plaintext highlighter-rouge">action=...</code></p>
+
+<p>It specifies an action that is different from the standard action of the <code class="language-plaintext highlighter-rouge">&lt;htmlpft&gt;</code> element.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+   &lt;file action=create type=output&gt;TEST.PFT&lt;/file&gt;
+   &lt;display&gt;
+     &lt;htmlpft action=convert&gt;
+       &lt;pft&gt;cat('TEST.HTML')&lt;/pft&gt;
+     &lt;/htmlpft&gt;
+   &lt;/display&gt;
+   &lt;file action=close type=output&gt;now&lt;/file&gt;
+...
+</code></pre>
+
+<hr />
+
+<h3 id="htmlpfttype">htmlpft.type</h3>
+
+<p><strong>See</strong> <code class="language-plaintext highlighter-rouge">&lt;pft type=...&gt;</code></p>
+
+<p>It specifies the yype of action to be taken for the execution of the format.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;display&gt;
+     &lt;htmlpft type=reload&gt;
+        &lt;pft&gt;cat('Test.htm')&lt;/pft&gt;
+     &lt;/htmlpft&gt;
+  &lt;/display&gt;
+...
+</code></pre>
+
+<hr />
+
+<h2 id="-label-">&lt; label &gt;</h2>
+
+<p><strong>May Be Used in</strong> <code class="language-plaintext highlighter-rouge">&lt;do&gt; &lt;function&gt; &lt;hl&gt; &lt;loop&gt; &lt;section&gt; &lt;update&gt;</code></p>
+
+<p><strong>Syntax</strong> <code class="language-plaintext highlighter-rouge">&lt;label&gt; ... &lt;/label&gt;</code></p>
+
+<p>The <code class="language-plaintext highlighter-rouge">&lt;label&gt;</code> element indicates a point within the instructions where IsisScript may direct the flow of execution as specified by the <code class="language-plaintext highlighter-rouge">&lt;flow action=jump&gt;</code> element.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;field action=cgi tag=2001&gt;db&lt;/field&gt;
+  &lt;flow action=jump&gt;&lt;pft&gt;if p(v2001) then 'OK' fi&lt;/flow&gt;
+  &lt;display&gt;db parameter absent, must exit&lt;/display&gt;
+  &lt;flow action=exit&gt;0&lt;/exit&gt;
+
+  &lt;label&gt;OK&lt;/label&gt;
+  &lt;display&gt;db parameter present, continue&lt;/display&gt;
+...
+</code></pre>
+
+<hr />
+
+<h2 id="-list-">&lt; list &gt;</h2>
+
+<p><strong>May Contais</strong> <code class="language-plaintext highlighter-rouge">&lt;pft&gt;</code></p>
+
+<p><strong>May Be Used in</strong> <code class="language-plaintext highlighter-rouge">&lt;do&gt; &lt;function&gt; &lt;hl&gt; &lt;loop&gt; &lt;section&gt; &lt;update&gt;</code></p>
+
+<p><strong>Attributes</strong> <code class="language-plaintext highlighter-rouge">action type</code></p>
+
+<p><strong>Syntax</strong> <code class="language-plaintext highlighter-rouge">&lt;list&gt; ... &lt;/list&gt;</code></p>
+
+<p>The <code class="language-plaintext highlighter-rouge">&lt;list&gt;</code> element modifies IsisScript’s internal list. The options are: add items to the list or delete all the items on the list.</p>
+
+<p>The action attribute indicates the option.</p>
+
+<p>The type attribute indicates the list type.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;list action=load type=freq&gt;&lt;pft&gt;(v66/)&lt;/pft&gt;&lt;/list&gt;
+...
+</code></pre>
+
+<hr />
+
+<h3 id="listaction">list.action</h3>
+
+<p><strong>Options</strong> <code class="language-plaintext highlighter-rouge">delete load</code></p>
+
+<p><strong>May Be Used in</strong> <code class="language-plaintext highlighter-rouge">&lt;field&gt; &lt;file&gt; &lt;flow&gt; &lt;function&gt; &lt;htmlpft&gt; &lt;list&gt; &lt;return&gt;</code></p>
+
+<p><strong>Syntax</strong> <code class="language-plaintext highlighter-rouge">action=...</code></p>
+
+<p>Indicates the action to be executed on IsisScript’s list.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;list action=load type=freq&gt;&lt;pft&gt;(v66/)&lt;/pft&gt;&lt;/list&gt;
+...
+</code></pre>
+
+<hr />
+
+<h3 id="listtype">list.type</h3>
+
+<p><strong>Options</strong> <code class="language-plaintext highlighter-rouge">freq list sort</code></p>
+
+<p><strong>May Be Used in</strong> <code class="language-plaintext highlighter-rouge">&lt;field&gt; &lt;file&gt; &lt;htmlpft&gt; &lt;list&gt; &lt;pft&gt;</code></p>
+
+<p>It indicates the type of storage on the list.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;list action=load type=freq&gt;&lt;pft&gt;(v66/)&lt;/pft&gt;&lt;/list&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="listtypefreq">list.type=freq</h4>
+
+<p>Item frequency counting list. It indicates that the list contains frequency counting for the item.</p>
+
+<p>Istead of adding repeated item, the counting is incremented.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;list action=load type=freq&gt;&lt;pft&gt;(v66/)&lt;/pft&gt;&lt;/list&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="listtypelist">list.type=list</h4>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;list action=load type=list&gt;&lt;pft&gt;(v66/)&lt;/pft&gt;&lt;/list&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="listtypesort">list.type=sort</h4>
+
+<p>It indicates that the list is sorted by item value.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;list action=load type=sort&gt;&lt;pft&gt;(v66/)&lt;/pft&gt;&lt;/list&gt;
+...
+</code></pre>
+
+<hr />
+
+<h2 id="-loop-">&lt; loop &gt;</h2>
+
+<p><strong>May Contais</strong> <code class="language-plaintext highlighter-rouge">&lt;call&gt; &lt;cgitable&gt; &lt;define&gt; &lt;display&gt; &lt;do&gt; &lt;export&gt; &lt;extract&gt; &lt;field&gt; &lt;file&gt; &lt;flow&gt; &lt;hl&gt; &lt;label&gt; &lt;list&gt; &lt;parm&gt; &lt;proc&gt; &lt;return&gt; &lt;trace&gt;</code></p>
+
+<p><strong>May Be Used in</strong> <code class="language-plaintext highlighter-rouge">&lt;do&gt;</code></p>
+
+<p><strong>Syntax</strong> <code class="language-plaintext highlighter-rouge">&lt;loop&gt; ... &lt;/loop&gt;</code></p>
+
+<p>The <code class="language-plaintext highlighter-rouge">&lt;loop&gt;</code> element indicates the group of instructions that will be repeated upon all itens found, according to the type of task in the corresponding <do> element and the specified parameters.</do></p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+ &lt;do task=search&gt;
+
+   &lt;parm name=db&gt;        &lt;pft&gt;v2001&lt;/pft&gt;&lt;/parm&gt;
+   &lt;parm name=expression&gt;&lt;pft&gt;v2005&lt;/pft&gt;&lt;/parm&gt;
+
+   &lt;loop&gt;
+      &lt;display&gt;&lt;pft&gt;mfn/&lt;/pft&gt;&lt;/display&gt;
+   &lt;/loop&gt;
+
+ &lt;/do&gt;
+...
+</code></pre>
+
+<hr />
+
+<h2 id="-parm-">&lt; parm &gt;</h2>
+
+<p><strong>May Contais</strong> <code class="language-plaintext highlighter-rouge">&lt;pft&gt;</code></p>
+
+<p><strong>May Be Used in</strong> <code class="language-plaintext highlighter-rouge">&lt;do&gt; &lt;function&gt; &lt;hl&gt; &lt;loop&gt; &lt;section&gt; &lt;update&gt;</code></p>
+
+<p><strong>Attributes</strong> <code class="language-plaintext highlighter-rouge">name tag type</code></p>
+
+<p><strong>Syntax</strong> <code class="language-plaintext highlighter-rouge">&lt;parm&gt; ... &lt;/parm&gt;</code></p>
+
+<p>The <code class="language-plaintext highlighter-rouge">&lt;parm&gt;</code> element indicates a parameter for the corresponding set of instructions.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+ &lt;do task=search&gt;
+
+   &lt;parm name=db&gt;        &lt;pft&gt;v2001&lt;/pft&gt;&lt;/parm&gt;
+   &lt;parm name=expression&gt;&lt;pft&gt;v2005&lt;/pft&gt;&lt;/parm&gt;
+
+   &lt;loop&gt;
+       &lt;display&gt;&lt;pft&gt;mfn/&lt;/pft&gt;&lt;/display&gt;
+   &lt;/loop&gt;
+
+ &lt;/do&gt;
+...
+</code></pre>
+
+<hr />
+
+<h3 id="parmname">parm.name</h3>
+
+<p><strong>Options</strong> <code class="language-plaintext highlighter-rouge">actab buffersize cipar count db decod delimiter expire expression file freqsum from fst gizmo indexlist key keyfield keylength keys keysdb lockid maxlk mfn posting posttag prefix reset reverse sort stw suffix task to type uctab</code></p>
+
+<p><strong>May Be Used in</strong> <code class="language-plaintext highlighter-rouge">&lt;call&gt; &lt;function&gt; &lt;IsisScript&gt; &lt;parm&gt; &lt;section&gt;</code></p>
+
+<p><strong>Syntax</strong> <code class="language-plaintext highlighter-rouge">name=...</code></p>
+
+<p>It is the name of the parameter.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">&lt;IsisScript&gt;
+  &lt;section&gt;
+
+    &lt;parm name=actab&gt;&lt;pft&gt;cat('ISISAC.TAB')&lt;/pft&gt;&lt;/parm&gt;
+    &lt;parm name=uctab&gt;&lt;pft&gt;cat('ISISUC.TAB')&lt;/pft&gt;&lt;/parm&gt;
+    &lt;parm cipar&gt;&lt;pft&gt;'CDS.*=/bases/cds/cds.*'/,
+                     'ACTAB=/isis/menu/isisac.tab'/&lt;/pft&gt;
+                     'UCTAB=/isis/menu/isisuc.tab'/&lt;/pft&gt;
+    &lt;/parm&gt;
+
+    &lt;do task=search&gt;
+
+      &lt;parm name=db&gt;CDS&lt;/parm&gt;
+      &lt;parm name=expression&gt;plants*water&lt;/parm&gt;
+      &lt;parm name=to&gt;10&lt;/parm&gt;
+
+      &lt;loop&gt;
+         ...
+      &lt;/loop&gt;
+
+    &lt;/do&gt;
+
+    ...
+
+  &lt;/section&gt;
+&lt;/IsisScript&gt;
+</code></pre>
+
+<hr />
+
+<h4 id="parmnameactab">parm.name=actab</h4>
+
+<p>It changes the alphabetic characters table of IsisScript for the current <code class="language-plaintext highlighter-rouge">&lt;section&gt;</code>.</p>
+
+<p>The alphabetic characters table specifies, for inverted file updating and for record keys extraction, which characters are to be considered as alphabetic.</p>
+
+<p>Characters not included on this table is considered as delimiter characters.</p>
+
+<p>If the <code class="language-plaintext highlighter-rouge">&lt;parm name=actab&gt;</code> is not specified, IsisScript assumes its default ANSI alphabetic characters table.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">&lt;IsisScript&gt;
+  &lt;section&gt;
+
+    &lt;parm cipar&gt;&lt;pft&gt;'CDS.*=/bases/cds/cds.*'/,
+                     'ACTAB=/isis/menu/isisac.tab'/&lt;/pft&gt;
+                     'UCTAB=/isis/menu/isisuc.tab'/&lt;/pft&gt;
+    &lt;/parm&gt;
+    &lt;parm name=actab&gt;&lt;pft&gt;cat('ACTAB')&lt;/pft&gt;&lt;/parm&gt;
+    &lt;parm name=uctab&gt;&lt;pft&gt;cat('UCTAB')&lt;/pft&gt;&lt;/parm&gt;
+
+    &lt;do task=search&gt;
+
+      &lt;parm name=db&gt;CDS&lt;/parm&gt;
+      &lt;parm name=expression&gt;plants*water&lt;/parm&gt;
+      &lt;parm name=to&gt;10&lt;/parm&gt;
+
+      &lt;loop&gt;
+         &lt;display&gt;&lt;pft&gt;mpu,v24,mpl&lt;/pft&gt;&lt;/display&gt;
+      &lt;/loop&gt;
+
+    &lt;/do&gt;
+
+    ...
+
+  &lt;/section&gt;
+&lt;/IsisScript&gt;
+</code></pre>
+
+<hr />
+
+<h4 id="parmnamebuffersize">parm.name=buffersize</h4>
+
+<p>It allows to change the WXIS internal buffer size (in bytes). The buffer is used to store the format result.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+   &lt;parm name="buffersize"&gt;90000&lt;/parm&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="parmnamecipar">parm.name=cipar</h4>
+
+<p>It activates a table associating of logical names with physical names of files for the <code class="language-plaintext highlighter-rouge">&lt;section&gt;</code>.</p>
+
+<p>Each line establishes an association: to the left of the = character (equal sign) the logical name is specified, and to its right the physical name of the file.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">*</code> character (asterisk) specifies that the correspondence is valid for any data base physical file.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;parm name=cipar&gt;
+    &lt;pft&gt;
+       'CDS.ISO=/bases/cds/cds.iso'/
+       'CDS.*=/bases/cds/cds.*'/
+       'TEST.PFT=/bases/cds/test.pft'/
+    &lt;/pft&gt;
+  &lt;/parm&gt;
+...
+
+</code></pre>
+
+<hr />
+
+<h4 id="parmnamecount">parm.name=count</h4>
+
+<p>It indicates the number of times the set of instruction within the <code class="language-plaintext highlighter-rouge">&lt;loop&gt;</code> element will be executed.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+     &lt;do task=search&gt;
+
+       &lt;parm name=db&gt;        &lt;pft&gt;v2001&lt;/pft&gt;&lt;/parm&gt;
+       &lt;parm name=expression&gt;&lt;pft&gt;v2005&lt;/pft&gt;&lt;/parm&gt;
+       &lt;parm name=from&gt;      &lt;pft&gt;v2002&lt;/pft&gt;&lt;/parm&gt;
+       &lt;parm name=count&gt;10&lt;/parm&gt;
+
+       &lt;loop&gt;
+           &lt;display&gt;&lt;pft&gt;mfn/&lt;/pft&gt;&lt;/display&gt;
+       &lt;/loop&gt;
+
+     &lt;/do&gt;
+    ...
+</code></pre>
+
+<hr />
+
+<h4 id="parmnamedb">parm.name=db</h4>
+
+<p>It specifies the database to be used by any of the following tasks:</p>
+
+<ul>
+  <li>task=mfnrange</li>
+  <li>task=keyrange</li>
+  <li>task=search</li>
+  <li>task=update</li>
+  <li>task=fullinvertion</li>
+  <li>task=mastersort</li>
+  <li>task=invertedload</li>
+</ul>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+ &lt;do task=search&gt;
+
+   &lt;parm name=db&gt;        &lt;pft&gt;v2001&lt;/pft&gt;&lt;/parm&gt;
+   &lt;parm name=expression&gt;&lt;pft&gt;v2005&lt;/pft&gt;&lt;/parm&gt;
+
+   &lt;loop&gt;
+       &lt;display&gt;&lt;pft&gt;mfn/&lt;/pft&gt;&lt;/display&gt;
+   &lt;/loop&gt;
+
+ &lt;/do&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="parmnamedecod">parm.name=decod</h4>
+
+<p>It specifies the expansion database for decoded fields.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+ &lt;do task=search&gt;
+   &lt;parm name=db&gt;        &lt;pft&gt;v2001&lt;/pft&gt;&lt;/parm&gt;
+   &lt;parm name=decod&gt;     &lt;pft&gt;v2101&lt;/pft&gt;&lt;/parm&gt;
+   &lt;parm name=expression&gt;&lt;pft&gt;v2005&lt;/pft&gt;&lt;/parm&gt;
+   &lt;loop&gt;
+       &lt;display&gt;&lt;pft&gt;mfn/&lt;/pft&gt;&lt;/display&gt;
+   &lt;/loop&gt;
+ &lt;/do&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="parmnamedelimiter">parm.name=delimiter</h4>
+
+<table>
+  <tbody>
+    <tr>
+      <td>It indicates the field separator when importing records with the option RLine. The default parameter is the character</td>
+      <td>(pipe).</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;do task="import"&gt;
+    &lt;parm name="file"&gt;&lt;pft&gt;v2041&lt;/pft&gt;&lt;/parm&gt;
+    &lt;parm name="type"&gt;&lt;pft&gt;v2042&lt;/pft&gt;&lt;/parm&gt;
+    &lt;parm name="delimiter"&gt;&lt;pft&gt;v2043&lt;/pft&gt;&lt;/parm&gt;
+    &lt;loop&gt;
+      &lt;display&gt;&lt;pft&gt;ALL&lt;/pft&gt;&lt;/display&gt;
+    &lt;/loop&gt;
+  &lt;/do&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="parmnameexpire">parm.name=expire</h4>
+
+<p>It specifies the maximum time limit for the record to remain locked.</p>
+
+<p>Another user (with a different identification) can lock the same record after that time limit has expired.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+ &lt;do task=update&gt;
+
+   &lt;field action=cgi tag=2001&gt;db&lt;/field&gt;
+   &lt;field action=cgi tag=2002&gt;mfn&lt;/field&gt;
+
+   &lt;parm name=db&gt;&lt;pft&gt;v2001&lt;/pft&gt;&lt;/parm&gt;
+   &lt;parm name=mfn&gt;&lt;pft&gt;v2002&lt;/pft&gt;&lt;/parm&gt;
+   &lt;parm name=expire&gt;14400&lt;/parm&gt;
+
+   &lt;field action=define tag=1101&gt;Isis_Lock&lt;/field&gt;
+   &lt;field action=define tag=1102&gt;Isis_Status&lt;/field&gt;
+
+   &lt;update&gt;
+
+     &lt;write&gt;Unlock&lt;/write&gt;
+
+     &lt;display&gt;&lt;pft&gt;ALL&lt;/pft&gt;&lt;/display&gt;
+     &lt;display&gt;&lt;pft&gt;'*** LOCK STATUS: 'v1102/&lt;/pft&gt;&lt;/display&gt;
+
+   &lt;/update&gt;
+
+ &lt;/do&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="parmnameexpression">parm.name=expression</h4>
+
+<p>It specifies the search expression.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+ &lt;do task=search&gt;
+
+   &lt;parm name=db&gt;        &lt;pft&gt;v2001&lt;/pft&gt;&lt;/parm&gt;
+   &lt;parm name=expression&gt;&lt;pft&gt;v2005&lt;/pft&gt;&lt;/parm&gt;
+
+   &lt;loop&gt;
+       &lt;display&gt;&lt;pft&gt;mfn/&lt;/pft&gt;&lt;/display&gt;
+   &lt;/loop&gt;
+
+ &lt;/do&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="parmnamefile">parm.name=file</h4>
+
+<p>It specifies the name of the file that will be imported or exported.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;do task=import&gt;
+
+    &lt;parm name=file&gt;&lt;pft&gt;v2041&lt;/pft&gt;&lt;/parm&gt;
+    &lt;parm name=type&gt;&lt;pft&gt;v2042&lt;/pft&gt;&lt;/parm&gt;
+
+    &lt;loop&gt;
+       &lt;display&gt;&lt;pft&gt;ALL&lt;/pft&gt;&lt;/display&gt;
+    &lt;/loop&gt;
+  &lt;/do&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="parmnamefreqsum">parm.name=freqsum</h4>
+
+<p>It specifies the value to be added to the sum when items are included in the frequency list.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;loop&gt;
+
+     &lt;!-- field 1 = Product
+          field 2 = Quantity --&gt;
+
+     &lt;parm name=freqsum&gt;&lt;pft&gt;v2&lt;/pft&gt;&lt;/parm&gt;
+     &lt;list action=load type=freq&gt;&lt;pft&gt;v1&lt;/pft&gt;&lt;/list&gt;
+  &lt;/loop&gt;
+...
+
+</code></pre>
+
+<hr />
+
+<h4 id="parmnamefrom">parm.name=from</h4>
+
+<p>It indicates is the first item to be accessed by the set of intructions within the <code class="language-plaintext highlighter-rouge">&lt;loop&gt;</code> element.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+ &lt;do task=search&gt;
+   &lt;parm name=db&gt;        &lt;pft&gt;v2001&lt;/pft&gt;&lt;/parm&gt;
+   &lt;parm name=expression&gt;&lt;pft&gt;v2005&lt;/pft&gt;&lt;/parm&gt;
+   &lt;parm name=from&gt;      &lt;pft&gt;v2002&lt;/pft&gt;&lt;/parm&gt;
+   &lt;parm name=count&gt;     &lt;pft&gt;v2003&lt;/pft&gt;&lt;/parm&gt;
+   &lt;loop&gt;
+       &lt;display&gt;&lt;pft&gt;mfn/&lt;/pft&gt;&lt;/display&gt;
+   &lt;/loop&gt;
+ &lt;/do&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="parmnamefst">parm.name=fst</h4>
+
+<p>It specifies the FST (Field Select Table) that is used for inverted file updating or for record keys extraction.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;do task=update&gt;
+
+     &lt;parm name=db&gt;&lt;pft&gt;v2001&lt;/pft&gt;&lt;/parm&gt;
+     &lt;parm name=mfn&gt;New&lt;/parm&gt;
+     &lt;parm name=fst&gt;1 0 v1&lt;/parm&gt;
+
+     &lt;field action=define tag=1102&gt;Isis_Status&lt;/field&gt;
+
+     &lt;update&gt;
+
+        &lt;field action=cgi tag=1&gt;Name&lt;/field&gt;
+        &lt;field action=cgi tag=2&gt;Phone&lt;/field&gt;
+        &lt;write&gt;Unlock&lt;/write&gt;
+        &lt;display&gt;&lt;pft&gt;ALL&lt;/pft&gt;&lt;/display&gt;
+
+     &lt;/update&gt;
+
+  &lt;/do&gt;
+...
+
+</code></pre>
+
+<hr />
+
+<h4 id="parmnamegizmo">parm.name=gizmo</h4>
+
+<p>It specifies the conversion database.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;file action=create type=database&gt;GIZMO_DIAC&lt;/file&gt;
+  &lt;do task=update&gt;
+    &lt;parm name=db&gt;GIZMO_DIAC&lt;/parm&gt;
+    &lt;parm name=mfn&gt;New&lt;/parm&gt;
+    &lt;field action=define tag=1101&gt;Isis_Status&lt;/field&gt;
+    &lt;update&gt;
+      &lt;field action=replace tag=1&gt;á&lt;/field&gt;
+      &lt;field action=replace tag=2&gt;á&lt;/field&gt;
+      &lt;write&gt;Unlock&lt;/write&gt;
+    &lt;/update&gt;
+  &lt;/do&gt;
+
+  &lt;do task=mfnrange&gt;
+    &lt;parm name=db&gt;CDS&lt;/parm&gt;
+    &lt;parm name=gizmo&gt;GIZMO_DIAC&lt;/parm&gt;
+    &lt;loop&gt;
+       &lt;display&gt;&lt;pft&gt;ALL&lt;/pft&gt;&lt;/display&gt;
+    &lt;/loop&gt;
+  &lt;/do&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="parmnameindexlist">parm.name=indexlist</h4>
+
+<p>It specifies the list of indices for searching on the database.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;do task=search&gt;
+
+    &lt;parm name=db&gt;cds&lt;/parm&gt;
+    &lt;parm name=indexlist&gt;&lt;pft&gt;
+       '^p*^ycds^m** '/,
+       '^pAU ^ycdsaut^mAU '/,
+       '^pTI ^ycdstit^mTI '/
+    &lt;/pft&gt;&lt;/parm&gt;
+    &lt;parm name=expression&gt;
+      Au Mag$ or ([Ti] plants AND water)
+    &lt;/parm&gt;
+
+    &lt;loop&gt;
+       &lt;display&gt;&lt;pft&gt;ALL&lt;/pft&gt;&lt;/display&gt;
+    &lt;/loop&gt;
+
+  &lt;/do&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="parmnamekey">parm.name=key</h4>
+
+<p>It specifies the record sorting key of the database.</p>
+
+<p>Example</p>
+
+<pre><code class="language-language">...
+  &lt;do task=mastersort&gt;
+
+    &lt;parm name=db&gt;CDS&lt;/parm&gt;
+    &lt;parm name=key&gt;&lt;pft&gt;v24&lt;/pft&gt;&lt;/parm&gt;
+    &lt;parm name=keylength&gt;100&lt;/parm&gt;
+
+    &lt;field action=define tag=1102&gt;Isis_Status&lt;/field&gt;
+
+    &lt;display&gt;&lt;pft&gt;'Sort ...'/&lt;/pft&gt;&lt;/display&gt;
+    &lt;loop&gt;&lt;/loop&gt;
+    &lt;display&gt;&lt;pft&gt;'Lock status = 'v1102/&lt;/pft&gt;&lt;/display&gt;
+
+    &lt;flow action=exit&gt;
+       &lt;pft&gt;if val(v1102) &lt;&gt; 0 then v1102 fi&lt;/pft&gt;
+    &lt;/flow&gt;
+    &lt;display&gt;&lt;pft&gt;'Sort: CDS sorted.'/&lt;/pft&gt;&lt;/display&gt;
+
+  &lt;/do&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="parmnamekeyfield">parm.name=keyfield</h4>
+
+<p>It specifies the field number used as database sorting key.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+   &lt;do task="mastersort"&gt;
+      &lt;parm name="db"&gt;CDS&lt;/parm&gt;
+      &lt;parm name="keyfield"&gt;24&lt;/parm&gt;
+      &lt;parm name="keylength"&gt;200&lt;/parm&gt;
+      &lt;field action="define" tag="1102"&gt;Isis_Status&lt;/field&gt;
+      &lt;display&gt;&lt;pft&gt;'Key sort ...'/&lt;/pft&gt;&lt;/display&gt;
+      &lt;loop&gt;&lt;/loop&gt;
+      &lt;display&gt;
+         &lt;pft&gt;'Lock status = 'v1102/&lt;/pft&gt;
+      &lt;/display&gt;
+      &lt;flow action="exit"&gt;
+         &lt;pft&gt;if val(v1102) &lt;&gt; 0 then v1102 fi&lt;/pft&gt;
+      &lt;/flow&gt;
+      &lt;display&gt;
+         &lt;pft&gt;'Key sort: ',v2001,' sorted.'/&lt;/pft&gt;
+      &lt;/display&gt;
+   &lt;/do&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="parmnamekeylength">parm.name=keylength</h4>
+
+<p>It specifie the length of the record sorting key.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;do task=mastersort&gt;
+
+    &lt;parm name=db&gt;CDS&lt;/parm&gt;
+    &lt;parm name=key&gt;&lt;pft&gt;v24&lt;/pft&gt;&lt;/parm&gt;
+    &lt;parm name=keylength&gt;100&lt;/parm&gt;
+
+    &lt;field action=define tag=1102&gt;Isis_Status&lt;/field&gt;
+
+    &lt;display&gt;&lt;pft&gt;'Sort ...'/&lt;/pft&gt;&lt;/display&gt;
+    &lt;loop&gt;&lt;/loop&gt;
+    &lt;display&gt;&lt;pft&gt;'Lock status = 'v1102/&lt;/pft&gt;&lt;/display&gt;
+
+    &lt;flow action=exit&gt;
+       &lt;pft&gt;if val(v1102) &lt;&gt; 0 then v1102 fi&lt;/pft&gt;
+    &lt;/flow&gt;
+    &lt;display&gt;&lt;pft&gt;'Sort: CDS sorted.'/&lt;/pft&gt;&lt;/display&gt;
+
+  &lt;/do&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="parmnamekeys">parm.name=keys</h4>
+
+<p>It specifies the list of record keys for the text highlighting preferences.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;do task=search&gt;
+
+    &lt;parm name=db&gt;cds&lt;/parm&gt;
+    &lt;parm name=expression&gt;&lt;pft&gt;v2005&lt;/pft&gt;&lt;/parm&gt;
+    &lt;parm name=from&gt;&lt;pft&gt;v2002,"1"n2002&lt;/pft&gt;&lt;/parm&gt;
+    &lt;parm name=count&gt;10&lt;/parm&gt;
+
+    &lt;field action=define tag=1001&gt;Isis_Current&lt;/field&gt;
+    &lt;field action=define tag=1002&gt;Isis_Total&lt;/field&gt;
+    &lt;field action=define tag=1022&gt;Isis_Keys&lt;/field&gt;
+
+    &lt;loop&gt;
+
+      &lt;hl&gt;
+
+	&lt;parm name=prefix&gt;&lt;b&gt;&lt;/parm&gt;
+	&lt;parm name=suffix&gt;&lt;/b&gt;&lt;/parm&gt;
+	&lt;parm name=keys&gt;&lt;pft&gt;(v1022/)&lt;/pft&gt;&lt;/parm&gt;
+
+       	&lt;field action=hl tag=24&gt;&lt;pft&gt;v24&lt;/pft&gt;&lt;/field&gt;
+       	&lt;field action=hl tag=70 split=occ&gt;&lt;pft&gt;(v70/)&lt;/pft&gt;&lt;/field&gt;
+        &lt;display&gt;&lt;pft&gt;ALL&lt;/pft&gt;&lt;/display&gt;
+
+      &lt;/hl&gt;
+
+    &lt;/loop&gt;
+
+    &lt;display&gt;&lt;pft&gt;
+      if val(v1002) = 0 then 'No record found!' fi
+    &lt;/pft&gt;&lt;/display&gt;
+
+   &lt;/do&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="parmnamekeysdb">parm.name=keysdb</h4>
+
+<p>It specifies the database that contains the record keys extracted, if used as parameter of the <code class="language-plaintext highlighter-rouge">&lt;extract&gt;</code> element.</p>
+
+<p>It specifies the database with the record keys sorted for inverted file loading, if used as parameter of the <code class="language-plaintext highlighter-rouge">&lt;do task=invertedload&gt;</code> element.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;do task=invertedload&gt;
+
+    &lt;parm name=db&gt;&lt;pft&gt;v2001&lt;/pft&gt;&lt;/parm&gt;
+    &lt;parm name=keysdb&gt;&lt;pft&gt;v2064&lt;/pft&gt;&lt;/parm&gt;
+
+    &lt;field action=define tag=1&gt;Isis_Posting&lt;/field&gt;
+    &lt;field action=define tag=2&gt;Isis_Key&lt;/field&gt;
+    &lt;field action=define tag=1102&gt;Isis_Status&lt;/field&gt;
+
+    &lt;display&gt;&lt;pft&gt;'Inverted load ...'/&lt;/pft&gt;&lt;/display&gt;
+    &lt;loop&gt;&lt;/loop&gt;
+    &lt;display&gt;&lt;pft&gt;'Lock status = 'v1102/&lt;/pft&gt;&lt;/display&gt;
+
+    &lt;flow action=exit&gt;&lt;pft&gt;
+      if val(v1102) &lt;&gt; 0 then v1102 fi
+    &lt;/pft&gt;&lt;/flow&gt;
+    &lt;display&gt;&lt;pft&gt;
+       'Inverted load: ',v2001,' loaded.'/
+    &lt;/pft&gt;&lt;/display&gt;
+
+   &lt;/do&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="parmnamelockid">parm.name=lockid</h4>
+
+<p>It specifies the record lock identifier.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;do task=update&gt;
+
+    &lt;parm name=db&gt;&lt;pft&gt;v2023&lt;/pft&gt;&lt;/parm&gt;
+    &lt;parm name=mfn&gt;&lt;pft&gt;mfn&lt;/pft&gt;&lt;/parm&gt;
+
+    &lt;field action=define tag=1101&gt;Isis_Lock&lt;/field&gt;
+    &lt;parm name=lockid&gt;
+      &lt;pft&gt;getenv('REMOTE_ADDR'),x1,s(date).8&lt;/pft&gt;
+    &lt;/parm&gt;
+    &lt;field action=define tag=1102&gt;Isis_Status&lt;/field&gt;
+
+    &lt;update&gt;
+
+      &lt;field action=cgi tag=1&gt;phone&lt;/field&gt;
+      &lt;field action=replace tag=1&gt;&lt;pft&gt;v1&lt;/pft&gt;&lt;/field&gt;
+
+      &lt;write&gt;Unlock&lt;/write&gt;
+      &lt;display&gt;&lt;pft&gt;ALL&lt;/pft&gt;&lt;/display&gt;
+      &lt;display&gt;
+        &lt;pft&gt;'*** LOCK STATUS: 'v1102/&lt;/pft&gt;
+      &lt;/display&gt;
+
+    &lt;/update&gt;
+
+  &lt;/do&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="parmnamemaxlk">parm.name=maxlk</h4>
+
+<p>It specifies the maximum number of record keys (per record) during record keys extraction via FST (Field Select Table).</p>
+
+<p>The default value is 1024.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;do task=fullinvertion&gt;
+
+    &lt;parm name=db&gt;&lt;pft&gt;v2001&lt;/pft&gt;&lt;/parm&gt;
+    &lt;parm name=fst&gt;&lt;pft&gt;v2061&lt;/pft&gt;&lt;/parm&gt;
+    &lt;parm name=maxlk&gt;5000&lt;/parm&gt;
+
+    &lt;field action=define tag=1102&gt;Isis_Status&lt;/field&gt;
+    &lt;display&gt;&lt;pft&gt;'Full invertion: ',v2001/&lt;/pft&gt;&lt;/display&gt;
+
+    &lt;loop&gt;&lt;/loop&gt;
+
+    &lt;display&gt;&lt;pft&gt;'Finished.'/&lt;/pft&gt;&lt;/display&gt;
+    &lt;display&gt;&lt;pft&gt;'Lock status = 'v1102/&lt;/pft&gt;&lt;/display&gt;
+
+  &lt;/do&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="parmnamemfn">parm.name=mfn</h4>
+
+<p>It specifies:</p>
+<ul>
+  <li>the record number of the record to be updated;</li>
+  <li>new record to be added to the database, if the value is New;</li>
+  <li>new record to be added to the database importing fields from the previous scope record, if the value is <strong><em>GetNew</em></strong>;</li>
+</ul>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;do task=update&gt;
+
+    &lt;parm name=db&gt;&lt;pft&gt;v2023&lt;/pft&gt;&lt;/parm&gt;
+    &lt;parm name=mfn&gt;&lt;pft&gt;mfn&lt;/pft&gt;&lt;/parm&gt;
+
+    &lt;field action=define tag=1101&gt;Isis_Lock&lt;/field&gt;
+    &lt;parm name=lockid&gt;
+      &lt;pft&gt;getenv('REMOTE_ADDR'),x1,s(date).8&lt;/pft&gt;
+    &lt;/parm&gt;
+    &lt;field action=define tag=1102&gt;Isis_Status&lt;/field&gt;
+
+    &lt;update&gt;
+
+      &lt;field action=cgi tag=1&gt;phone&lt;/field&gt;
+      &lt;field action=replace tag=1&gt;&lt;pft&gt;v1&lt;/pft&gt;&lt;/field&gt;
+
+      &lt;write&gt;Unlock&lt;/write&gt;
+      &lt;display&gt;&lt;pft&gt;ALL&lt;/pft&gt;&lt;/display&gt;
+      &lt;display&gt;
+        &lt;pft&gt;'*** LOCK STATUS: 'v1102/&lt;/pft&gt;
+      &lt;/display&gt;
+
+    &lt;/update&gt;
+
+  &lt;/do&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="parmnameposting">parm.name=posting</h4>
+
+<p>If specifies the number of postings for each record key.</p>
+
+<p>Use All to specify “all postings”.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;do task=keyrange&gt;
+
+    &lt;parm name=db&gt;CDS&lt;/parm&gt;
+    &lt;parm name=from&gt;PLANTS&lt;/parm&gt;
+    &lt;parm name=count&gt;20&lt;/parm&gt;
+    &lt;parm name=posting&gt;All&lt;/parm&gt;
+
+    &lt;field action=define tag=1001&gt;Isis_Current&lt;/field&gt;
+    &lt;field action=define tag=1&gt;Isis_Key&lt;/field&gt;
+    &lt;field action=define tag=2&gt;Isis_Postings&lt;/field&gt;
+    &lt;field action=define tag=3&gt;Isis_Posting&lt;/field&gt;
+
+    &lt;display&gt;&lt;pft&gt;
+      '    POSTINGS',c15,'KEY',c46,'POSTING DETAIL'/#
+    &lt;/pft&gt;&lt;/display&gt;
+    &lt;loop&gt;
+      &lt;display&gt;&lt;pft&gt;
+        f(val(v1001),2,0),') ',v2,c15,v1,c46,v3/
+      &lt;/pft&gt;&lt;/display&gt;
+    &lt;/loop&gt;
+
+  &lt;/do&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="parmnameposttag">parm.name=posttag</h4>
+
+<p>It specifies the field number of the posting that shall be accessed within the record key range.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;do task=keyrange&gt;
+
+    &lt;parm name=db&gt;CDS&lt;/parm&gt;
+    &lt;parm name=from&gt;B&lt;/parm&gt;
+    &lt;parm name=count&gt;20&lt;/parm&gt;
+    &lt;parm name=posttag&gt;70&lt;/parm&gt;
+
+    &lt;field action=define tag=1001&gt;Isis_Current&lt;/field&gt;
+    &lt;field action=define tag=1&gt;Isis_Key&lt;/field&gt;
+    &lt;field action=define tag=2&gt;Isis_Postings&lt;/field&gt;
+    &lt;field action=define tag=3&gt;Isis_Posting&lt;/field&gt;
+
+    &lt;display&gt;&lt;pft&gt;
+      '    POSTINGS',c15,'KEY',c46,'POSTING DETAIL'/#
+    &lt;/pft&gt;&lt;/display&gt;
+    &lt;loop&gt;
+      &lt;display&gt;&lt;pft&gt;
+        f(val(v1001),2,0),') ',v2,c15,v1,c46,v3/
+      &lt;/pft&gt;&lt;/display&gt;
+    &lt;/loop&gt;
+
+  &lt;/do&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="parmnameprefix">parm.name=prefix</h4>
+
+<p>It specifies the prefix to be inserted within the text highlighting specifications, or the prefix to be used by the <code class="language-plaintext highlighter-rouge">&lt;htmlpft&gt;</code> element.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+   &lt;parm name=prefix&gt;[pft]&lt;/prefix&gt;
+   &lt;parm name=suffix&gt;[/pft]&lt;/suffix&gt;
+   &lt;htmlpft&gt;&lt;pft&gt;cat('TEST.HTM')&lt;/pft&gt;&lt;/htmlpft&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="parmnamereset">parm.name=reset</h4>
+
+<p>It specifies that the inverted file updating needs to keep set the “inverted file update is pending flag” into the master file record. It applies to databases with multi-inverted files.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+   &lt;do task="fullinvertion"&gt;
+     &lt;parm name="db"&gt;CDS&lt;/parm&gt;
+     &lt;parm name="fst"&gt;CDS.FST&lt;/parm&gt;
+     &lt;parm name="reset"&gt;Off&lt;/parm&gt;
+     &lt;field action="define" tag="1102"&gt;Isis_Status&lt;/field&gt;
+     &lt;display&gt;&lt;pft&gt;'Full invertion: CDS'/&lt;/pft&gt;&lt;/display&gt;
+     &lt;loop&gt;&lt;/loop&gt;
+     &lt;display&gt;&lt;pft&gt;'Finished.'/&lt;/pft&gt;&lt;/display&gt;
+     &lt;display&gt;&lt;pft&gt;'Lock status = 'v1102/&lt;/pft&gt;&lt;/display&gt;
+   &lt;/do&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="parmnamereverse">parm.name=reverse</h4>
+
+<p>It indicates that the records produced by the task specified in the <code class="language-plaintext highlighter-rouge">&lt;do&gt;</code> element shall be accessed in reverse order.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;do task=search&gt;
+
+    &lt;parm name=db&gt;&lt;pft&gt;v2001&lt;/pft&gt;&lt;/parm&gt;
+    &lt;parm name=expression&gt;&lt;pft&gt;v2005&lt;/pft&gt;&lt;/parm&gt;
+    &lt;parm name=reverse&gt;On&lt;/parm&gt;
+
+    &lt;loop&gt;
+      &lt;display&gt;&lt;pft&gt;mfn/&lt;/pft&gt;&lt;/display&gt;
+    &lt;/loop&gt;
+
+  &lt;/do&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="parmnamesort">parm.name=sort</h4>
+
+<p>It specifies the sort format for the <code class="language-plaintext highlighter-rouge">&lt;do task="list"&gt;</code> task.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;list action=load type=list&gt;
+    &lt;pft&gt;'5.00'/,'1.50'/,'10.00'/,'8'/,'3.75'/,'14.20'/,'0.40'/
+  &lt;/pft&gt;&lt;/list&gt;
+
+  &lt;do task=list&gt;
+
+    &lt;field action=define tag=1001&gt;Isis_Current&lt;/field&gt;
+    &lt;field action=define tag=1002&gt;Isis_Itens&lt;/field&gt;
+    &lt;field action=define tag=1&gt;Isis_Item&lt;/field&gt;
+
+    &lt;parm name=sort&gt;&lt;pft&gt;f(val(v1),10,2)&lt;/pft&gt;&lt;/parm&gt;
+
+    &lt;loop&gt;
+      &lt;display&gt;&lt;pft&gt;v1001,'/',v1002,c10,v1/&lt;/pft&gt;&lt;/display&gt;
+    &lt;/loop&gt;
+
+  &lt;/do&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="parmnamestw">parm.name=stw</h4>
+
+<p>It specifies the stop word table file used in the inverted file updating or in the record keys extraction.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;do task=fullinvertion&gt;
+
+    &lt;parm name=db&gt;&lt;pft&gt;v2001&lt;/pft&gt;&lt;/parm&gt;
+    &lt;parm name=fst&gt;&lt;pft&gt;v2061&lt;/pft&gt;&lt;/parm&gt;
+    &lt;parm name=stw&gt;&lt;pft&gt;v2001,'.stw'&lt;/pft&gt;&lt;/parm&gt;
+
+    &lt;field action=define tag=1102&gt;Isis_Status&lt;/field&gt;
+
+    &lt;display&gt;&lt;pft&gt;'Full invertion: ',v2001/&lt;/pft&gt;&lt;/display&gt;
+    &lt;loop&gt;&lt;/loop&gt;
+    &lt;display&gt;&lt;pft&gt;'Finished.'/&lt;/pft&gt;&lt;/display&gt;
+
+    &lt;display&gt;&lt;pft&gt;'Lock status = 'v1102/&lt;/pft&gt;&lt;/display&gt;
+
+   &lt;/do&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="parmnamesuffix">parm.name=suffix</h4>
+
+<p>It specifies the suffix to be inserted within the text highlighting specifications, or the suffix to be used by the <code class="language-plaintext highlighter-rouge">&lt;htmlpft&gt;</code> element.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+   &lt;parm name=prefix&gt;[pft]&lt;/prefix&gt;
+   &lt;parm name=suffix&gt;[/pft]&lt;/suffix&gt;
+   &lt;htmlpft&gt;&lt;pft&gt;cat('TEST.HTM')&lt;/pft&gt;&lt;/htmlpft&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="parmnametask">parm.name=task</h4>
+
+<p>It indicates the task type for the <code class="language-plaintext highlighter-rouge">&lt;loop&gt;</code> element. It has no effect if the attribute task of the element <code class="language-plaintext highlighter-rouge">&lt;do&gt;</code> is specified.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;do&gt;
+    &lt;field action="cgi" tag="2081"&gt;dotask&lt;/field&gt;
+    &lt;parm name="task"&gt;&lt;pft&gt;v2081&lt;/pft&gt;
+    &lt;loop&gt;
+       ...
+    &lt;/loop&gt;
+  &lt;/do&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="parmnameto">parm.name=to</h4>
+
+<p>It indicates the last item to be accessed by the set of instructions within the <code class="language-plaintext highlighter-rouge">&lt;loop&gt;</code> element.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+ &lt;do task=keyrange&gt;
+
+   &lt;parm name=db&gt;  &lt;pft&gt;v2001&lt;/pft&gt;&lt;/parm&gt;
+   &lt;parm name=from&gt;&lt;pft&gt;v2002&lt;/pft&gt;&lt;/parm&gt;
+   &lt;parm name=to&gt;  &lt;pft&gt;v2002,'ZZZZZZZZZ'&lt;/pft&gt;&lt;/parm&gt;
+
+   &lt;loop&gt;
+       &lt;display&gt;&lt;pft&gt;v1/&lt;/pft&gt;&lt;/display&gt;
+   &lt;/loop&gt;
+
+ &lt;/do&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="parmnametype">parm.name=type</h4>
+
+<p>It specifies the type of file for export or import.</p>
+
+<p>Possible values are: ISO2709, HLine, RLine and VLine.</p>
+
+<p>ISO2709 is an ISO (International Standards Organization) standard but it limits the field identification number to 3 digits.</p>
+
+<p>HLine is more efficient, uses the H command of the <code class="language-plaintext highlighter-rouge">&lt;proc&gt;</code> element.</p>
+
+<p>RLine is used only for importing purposes, where each line of a sequential file is stored as a record.</p>
+
+<p>VLine is recommended where data modifications has to be done via a text editor.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;do task=import&gt;
+
+    &lt;parm name=file&gt;&lt;pft&gt;v2041&lt;/pft&gt;&lt;/parm&gt;
+    &lt;parm name=type&gt;&lt;pft&gt;v2042&lt;/pft&gt;&lt;/parm&gt;
+
+    &lt;loop&gt;
+      &lt;display&gt;&lt;pft&gt;ALL&lt;/pft&gt;&lt;/display&gt;
+    &lt;/loop&gt;
+
+  &lt;/do&gt;
+...
+
+</code></pre>
+
+<hr />
+
+<h4 id="parmnameuctab">parm.name=uctab</h4>
+
+<p>It changes the uppercase conversion table of IsisScript for the <code class="language-plaintext highlighter-rouge">&lt;section&gt;</code>.</p>
+
+<p>This uppercase conversion table specifies, for inverted file updating, for record keys extraction, and for the “mode” option of the formatting language, the correspondence from lowercase, uppercase and diacritical characters to uppercase non diacritical characters.</p>
+
+<p>If the <code class="language-plaintext highlighter-rouge">&lt;parm name=uctab&gt;</code> option is not specified, IsisScript assumes its default ANSI table.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">&lt;IsisScript&gt;
+  &lt;section&gt;
+
+    &lt;parm cipar&gt;&lt;pft&gt;'CDS.*=/bases/cds/cds.*'/,
+                     'ACTAB=/isis/menu/isisac.tab'/&lt;/pft&gt;
+                     'UCTAB=/isis/menu/isisuc.tab'/&lt;/pft&gt;
+    &lt;/parm&gt;
+    &lt;parm name=actab&gt;&lt;pft&gt;cat('ACTAB')&lt;/pft&gt;&lt;/parm&gt;
+    &lt;parm name=uctab&gt;&lt;pft&gt;cat('UCTAB')&lt;/pft&gt;&lt;/parm&gt;
+
+    &lt;do task=search&gt;
+
+      &lt;parm name=db&gt;CDS&lt;/parm&gt;
+      &lt;parm name=expression&gt;plants*water&lt;/parm&gt;
+      &lt;parm name=to&gt;10&lt;/parm&gt;
+
+      &lt;loop&gt;
+         &lt;display&gt;&lt;pft&gt;mpu,v24,mpl&lt;/pft&gt;&lt;/display&gt;
+      &lt;/loop&gt;
+
+    &lt;/do&gt;
+
+    ...
+
+  &lt;/section&gt;
+&lt;/IsisScript&gt;
+</code></pre>
+
+<hr />
+
+<h3 id="parmtag">parm.tag</h3>
+
+<p><strong>May Be Used in</strong> <code class="language-plaintext highlighter-rouge">&lt;field&gt; &lt;parm&gt;</code></p>
+
+<p><strong>Syntax</strong> <code class="language-plaintext highlighter-rouge">tag=...</code></p>
+
+<p>The tag attribute is used to specify the field number.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+   &lt;parm name="fst" type="check" tag="1"&gt;
+     &lt;pft&gt;cat(v2065)&lt;/pft&gt;
+   &lt;/parm&gt;
+...
+</code></pre>
+
+<hr />
+
+<h3 id="parmtype">parm.type</h3>
+
+<p><em>Options</em> <code class="language-plaintext highlighter-rouge">check</code></p>
+
+<p><strong>May Be Used in</strong> <code class="language-plaintext highlighter-rouge">&lt;do&gt;</code></p>
+
+<p><strong>Syntax</strong> <code class="language-plaintext highlighter-rouge">type=check</code></p>
+
+<p>It specifies the parameter type.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+   &lt;parm name="fst" type="check" tag="1"&gt;
+     &lt;pft&gt;cat(v2065)&lt;/pft&gt;
+   &lt;/parm&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="parmtypecheck">parm.type=check</h4>
+
+<p>It specifies a FST (Field Select Table) syntax verification. It replaces the field specified by the tag attibute with the error code (5 digits), a space and the syntax error pointer; or 00000 if there is no error.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+   &lt;field action="cgi" tag="2065"&gt;fst&lt;/field&gt;
+   &lt;parm name="fst" type="check" tag="1"&gt;&lt;pft&gt;cat(v2065)&lt;/pft&gt;&lt;/parm&gt;
+   &lt;display&gt;&lt;pft&gt;ALL&lt;/pft&gt;&lt;/display&gt;
+...
+</code></pre>
+
+<hr />
+
+<h2 id="-pft-">&lt; pft &gt;</h2>
+
+<p>May Contais <code class="language-plaintext highlighter-rouge">&lt;pft&gt;</code></p>
+
+<p><em>May Be Used in</em> <code class="language-plaintext highlighter-rouge">&lt;call&gt; &lt;cgitable&gt; &lt;define&gt; &lt;display&gt; &lt;export&gt; &lt;extract&gt; &lt;field&gt; &lt;file&gt; &lt;flow&gt; &lt;htmlpft&gt; &lt;label&gt; &lt;list&gt; &lt;parm&gt; &lt;pft&gt; &lt;proc&gt; &lt;return&gt; &lt;trace&gt; &lt;write&gt;</code></p>
+
+<p><em>Attributes</em> <code class="language-plaintext highlighter-rouge">type</code></p>
+
+<p><strong>Syntax</strong> <code class="language-plaintext highlighter-rouge">&lt;pft&gt; ... &lt;/pft&gt;</code></p>
+
+<p>It formats the current record.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;display&gt;&lt;pft&gt;("Autor: "v70+|; |)&lt;/pft&gt;&lt;/display&gt;
+  &lt;display&gt;&lt;pft&gt;@CDS.PFT&lt;/pft&gt;&lt;/display&gt;
+  &lt;display&gt;&lt;pft&gt;cat('C:\AUTOEXEC.BAT')&lt;/pft&gt;&lt;/display&gt;
+  &lt;display&gt;&lt;pft&gt;ref(['CONFIG']1,v500/)&lt;/pft&gt;&lt;/display&gt;
+...
+</code></pre>
+
+<hr />
+
+<h3 id="pfttype">pft.type</h3>
+
+<p><em>Options</em> <code class="language-plaintext highlighter-rouge">check reload</code></p>
+
+<p><em>May Be Used in</em> <code class="language-plaintext highlighter-rouge">&lt;field&gt; &lt;file&gt; &lt;htmlpft&gt; &lt;list&gt; &lt;pft&gt;</code></p>
+
+<p><strong>Syntax</strong> <code class="language-plaintext highlighter-rouge">type=...</code></p>
+
+<p>It specifies the action type for format execution.</p>
+
+<p><em>Example</em></p>
+
+<pre><code class="language-language">...
+  &lt;do&gt;
+
+    &lt;parm name=to&gt;10&lt;/parm&gt;
+
+    &lt;loop&gt;
+      &lt;display&gt;
+        &lt;pft type=reload&gt;
+          &lt;pft&gt;ref(['CONFIG']val(v1),v500/)&lt;/pft&gt;
+        &lt;/pft&gt;
+      &lt;/display&gt;
+    &lt;/loop&gt;
+
+  &lt;/do&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="pfttypecheck">pft.type=check</h4>
+
+<p>It allows the format syntax validation. It returns the error code (5 digits), a space character and the detected syntax error pointer, or 00000 if there is no error.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+   &lt;field action="cgi" tag="2065"&gt;pft&lt;/field&gt;
+   &lt;display&gt;
+     &lt;pft type="check"&gt;
+       &lt;pft&gt;v2065&lt;/pft&gt;
+     &lt;/pft&gt;
+   &lt;/display&gt;
+...
+</code></pre>
+
+<hr />
+
+<h4 id="pfttypereload">pft.type=reload</h4>
+
+<p>It specifies that the format must be recompiled each time this instruction is executed.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;display&gt;
+    &lt;pft type=reload&gt;
+       &lt;pft&gt;ref(['CONFIG']1,v500/)&lt;/pft&gt;
+    &lt;/pft&gt;
+  &lt;/display&gt;
+...
+</code></pre>
+
+<hr />
+
+<h2 id="-proc-">&lt; proc &gt;</h2>
+
+<p><strong>May Contais</strong> <code class="language-plaintext highlighter-rouge">&lt;pft&gt;</code></p>
+
+<p><strong>May Be Used in</strong> <code class="language-plaintext highlighter-rouge">&lt;do&gt; &lt;function&gt; &lt;hl&gt; &lt;loop&gt; &lt;section&gt; &lt;update&gt;</code></p>
+
+<p><strong>Syntax</strong> <code class="language-plaintext highlighter-rouge">&lt;proc&gt; ... &lt;/proc&gt;</code></p>
+
+<p>It modifies the contents of the current record.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;proc&gt;&lt;pft&gt;'a',v2024,'~',v2027,'~'&lt;/pft&gt;&lt;/proc&gt;
+...
+</code></pre>
+
+<hr />
+
+<h2 id="-return-">&lt; return &gt;</h2>
+
+<p><strong>May Contais</strong> <code class="language-plaintext highlighter-rouge">&lt;pft&gt;</code></p>
+
+<p><strong>May Be Used in</strong> <code class="language-plaintext highlighter-rouge">&lt;function&gt;</code></p>
+
+<p><strong>Attributes</strong> <code class="language-plaintext highlighter-rouge">action split tag</code></p>
+
+<p><strong>Syntax</strong> <code class="language-plaintext highlighter-rouge">&lt;return&gt; ... &lt;/return&gt;</code></p>
+
+<p>It exits the current function.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+ &lt;function name=ParamTest action=replace tag=1 split=occ&gt;
+   &lt;display&gt;&lt;pft&gt;##'ParamTest'/&lt;/pft&gt;&lt;/display&gt;
+   &lt;display&gt;&lt;pft&gt;ALL&lt;/pft&gt;&lt;/display&gt;
+   &lt;return action=replace tag=9999 split=occ&gt;
+      &lt;pft&gt;(v1/)&lt;/pft&gt;
+   &lt;/return&gt;
+   &lt;display&gt;Parameter field 1 absent!&lt;/display&gt;
+ &lt;/function&gt;
+...
+
+</code></pre>
+
+<hr />
+
+<h3 id="returnaction">return.action</h3>
+
+<p><strong>See</strong> <code class="language-plaintext highlighter-rouge">&lt;field action=...&gt;</code></p>
+
+<p>It returns parameters to the caller function. It is functionally equivalent to the action attribute of the <code class="language-plaintext highlighter-rouge">&lt;field&gt;</code> element.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+ &lt;function name=ParamTest action=replace tag=1 split=occ&gt;
+   &lt;display&gt;&lt;pft&gt;##'ParamTest'/&lt;/pft&gt;&lt;/display&gt;
+   &lt;display&gt;&lt;pft&gt;ALL&lt;/pft&gt;&lt;/display&gt;
+   &lt;return action=replace tag=9999 split=occ&gt;
+      &lt;pft&gt;(v1/)&lt;/pft&gt;
+   &lt;/return&gt;
+   &lt;display&gt;Parameter field 1 absent!&lt;/display&gt;
+ &lt;/function&gt;
+...
+</code></pre>
+
+<hr />
+
+<h3 id="returnsplit">return.split</h3>
+
+<p><strong>See</strong> <code class="language-plaintext highlighter-rouge">&lt;field split=...&gt;</code></p>
+
+<p>It returns parameters to the caller function. It is functionally equivalent to the split attribute of the <code class="language-plaintext highlighter-rouge">&lt;field&gt;</code> element.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+ &lt;function name=ParamTest action=replace tag=1 split=occ&gt;
+   &lt;display&gt;&lt;pft&gt;##'ParamTest'/&lt;/pft&gt;&lt;/display&gt;
+   &lt;display&gt;&lt;pft&gt;ALL&lt;/pft&gt;&lt;/display&gt;
+   &lt;return action=replace tag=9999 split=occ&gt;
+      &lt;pft&gt;(v1/)&lt;/pft&gt;
+   &lt;/return&gt;
+   &lt;display&gt;Parameter field 1 absent!&lt;/display&gt;
+ &lt;/function&gt;
+...
+</code></pre>
+
+<hr />
+
+<h3 id="returntag">return.tag</h3>
+
+<p><strong>See</strong> <code class="language-plaintext highlighter-rouge">&lt;field tag=...&gt;</code></p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+ &lt;function name=ParamTest action=replace tag=1 split=occ&gt;
+   &lt;display&gt;&lt;pft&gt;##'ParamTest'/&lt;/pft&gt;&lt;/display&gt;
+   &lt;display&gt;&lt;pft&gt;ALL&lt;/pft&gt;&lt;/display&gt;
+   &lt;return action=replace tag=9999 split=occ&gt;
+      &lt;pft&gt;(v1/)&lt;/pft&gt;
+   &lt;/return&gt;
+   &lt;display&gt;Parameter field 1 absent!&lt;/display&gt;
+ &lt;/function&gt;
+...
+</code></pre>
+
+<hr />
+
+<h2 id="-section-">&lt; section &gt;</h2>
+<p><strong>May Contais</strong> <code class="language-plaintext highlighter-rouge">&lt;call&gt; &lt;cgitable&gt; &lt;define&gt; &lt;display&gt; &lt;do&gt; &lt;export&gt; &lt;extract&gt; &lt;field&gt; &lt;file&gt; &lt;flow&gt; &lt;hl&gt; &lt;label&gt; &lt;list&gt; &lt;parm&gt; &lt;proc&gt; &lt;trace&gt;</code></p>
+
+<p><strong>May Be Used in</strong> <code class="language-plaintext highlighter-rouge">&lt;IsisScript&gt;</code></p>
+
+<p><strong>Attributes</strong> <code class="language-plaintext highlighter-rouge">name</code></p>
+
+<p><strong>Syntax</strong> <code class="language-plaintext highlighter-rouge">&lt;section&gt; ... &lt;/section&gt;</code></p>
+
+<p>The <code class="language-plaintext highlighter-rouge">&lt;section&gt;</code> element is used to begin a sequence of instructions.</p>
+
+<p>The name attribute may be used for identification purposes.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">&lt;IsisScript name=Test&gt;
+  &lt;section name=TestFirst&gt;
+    &lt;display&gt;&lt;pft&gt;mpu,'Test'&lt;/pft&gt;&lt;/display&gt;
+  &lt;/section&gt;
+&lt;/IsisScript&gt;
+</code></pre>
+
+<hr />
+
+<h3 id="sectionname">section.name</h3>
+
+<p><strong>May Be Used in</strong> <code class="language-plaintext highlighter-rouge">&lt;call&gt; &lt;function&gt; &lt;IsisScript&gt; &lt;section&gt;</code></p>
+
+<p><strong>Syntax</strong> <code class="language-plaintext highlighter-rouge">name=...</code></p>
+
+<p>The name attribute is optional and may be used it for identification purposes.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">&lt;IsisScript name=Test&gt;
+  &lt;section name=TestFirst&gt;
+    &lt;display&gt;&lt;pft&gt;mpu,'Test'&lt;/pft&gt;&lt;/display&gt;
+  &lt;/section&gt;
+&lt;/IsisScript&gt;
+</code></pre>
+
+<hr />
+
+<h2 id="-trace-">&lt; trace &gt;</h2>
+
+<p><strong>May Contais</strong> <code class="language-plaintext highlighter-rouge">&lt;pft&gt;</code></p>
+
+<p><strong>May Be Used in</strong> <code class="language-plaintext highlighter-rouge">&lt;do&gt; &lt;function&gt; &lt;hl&gt; &lt;IsisScript&gt; &lt;loop&gt; &lt;section&gt; &lt;update&gt;</code></p>
+
+<p><strong>Syntax</strong> <code class="language-plaintext highlighter-rouge">&lt;trace&gt; ... &lt;/trace&gt;</code></p>
+
+<p>It activates or deactivates the display of the instruction that is being executed. The possible options are normal, line by line, or table, respectively: On, BR, or Table.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+   &lt;trace&gt;On&lt;/trace&gt;
+...
+
+</code></pre>
+
+<hr />
+
+<h2 id="-update-">&lt; update &gt;</h2>
+<p><strong>May Contais</strong> <code class="language-plaintext highlighter-rouge">&lt;call&gt; &lt;cgitable&gt; &lt;define&gt; &lt;display&gt; &lt;do&gt; &lt;export&gt; &lt;extract&gt; &lt;field&gt; &lt;file&gt; &lt;flow&gt; &lt;hl&gt; &lt;label&gt; &lt;list&gt; &lt;parm&gt; &lt;proc&gt; &lt;return&gt; &lt;trace&gt; &lt;write&gt;</code></p>
+
+<p><strong>May Be Used in</strong> <code class="language-plaintext highlighter-rouge">&lt;do&gt;</code></p>
+
+<p><strong>Syntax</strong> <code class="language-plaintext highlighter-rouge">&lt;update&gt; ... &lt;/update&gt;</code></p>
+
+<p>It starts the set of instructions to modify or add a record.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;do task=update&gt;
+    &lt;parm name=db&gt;CDS&lt;/parm&gt;
+    &lt;parm name=mfn&gt;New&lt;/parm&gt;
+    &lt;field action=define tag=1102&gt;Isis_Status&lt;/field&gt;
+    &lt;update&gt;
+      &lt;field action=append tag=1&gt;One more&lt;/field&gt;
+      &lt;write&gt;Unlock&lt;/write&gt;
+      &lt;display&gt;&lt;pft&gt;ALL&lt;/pft&gt;&lt;/display&gt;
+    &lt;/update&gt;
+  &lt;/do&gt;
+...
+
+</code></pre>
+
+<hr />
+
+<h2 id="-write-">&lt; write &gt;</h2>
+
+<p><strong>May Contais</strong> <code class="language-plaintext highlighter-rouge">&lt;pft&gt;</code></p>
+
+<p><strong>May Be Used in</strong> <code class="language-plaintext highlighter-rouge">&lt;update&gt;</code></p>
+
+<p><strong>Syntax</strong> <code class="language-plaintext highlighter-rouge">&lt;write&gt; ... &lt;/write&gt;</code></p>
+
+<p>This element stores the modified record.</p>
+
+<p>If the <code class="language-plaintext highlighter-rouge">&lt;parm name=mfn&gt;</code> element value is New, then a new record is added, otherwise the mfn passed as argument is updated.</p>
+
+<p>Possible values for the argument of the <code class="language-plaintext highlighter-rouge">&lt;write&gt;</code> element:
+Unlock - it unlocks the record after it is stored
+Lock - record remains locked after it is stored
+NoUnlock - the record remains locked after it is stored and the lock information is not changed
+Delete - the record is deleted</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-language">...
+  &lt;do task=update&gt;
+
+    &lt;parm name=db&gt;CDS&lt;/parm&gt;
+    &lt;parm name=mfn&gt;New&lt;/parm&gt;
+
+    &lt;field action=define tag=1102&gt;Isis_Status&lt;/field&gt;
+
+    &lt;update&gt;
+
+      &lt;field action=add tag=1&gt;Mais um&lt;/field&gt;
+      &lt;write&gt;Unlock&lt;/write&gt;
+      &lt;display&gt;&lt;pft&gt;ALL&lt;/pft&gt;&lt;/display&gt;
+
+    &lt;/update&gt;
+
+  &lt;/do&gt;
+...
+</code></pre>
+
+
+<script
+  src="/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function() {
+
+    var toc = $('#TOC');
+
+    // Select each header
+    sections = $('.td-content h1');
+        $.each(sections, function(idx, v) {
+            section = $(v);
+            var div_id = $(section).attr('id');
+            var div_text = section.text().split('¶')[0];
+            var parent = $("#" + div_id)
+            var content = '<li id="link_' + div_id + '" class="md-nav__item"><small><a class="md-nav__link" href="#' + div_id + '" title="' + div_text +'">' + div_text +'</small></a></li>';
+            $(toc).append(content);
+
+            // Add section code to subnavigation
+            var children = $('<nav class="md-nav"><ul class="md-nav__list"></nav></ul>')
+            var contenders = $("#" + div_id).nextUntil("h1");
+            $.each(contenders, function(idx, contender){
+               if($(contender).is('h2') || $(contender).is('h3')) {
+                   var contender_id = $(contender).attr('id');
+                   var contender_text = $(contender).text().split('¶')[0];
+                   var content = '<li class="md-nav__item"><a class="md-nav__link " href="#' + contender_id + '" title="' + contender_text +'"><small>' + contender_text +'</small></a></li>';
+                   children.append(content);
+                }
+             })
+             $("#link_" + div_id).append(children);
+        });
+    });
+</script>
+
+<script>
+var headers = ["h1", "h2", "h3", "h4"]
+var colors = ["red", "orange", "green", "blue"]
+
+$.each(headers, function(i, header){
+    var color = colors[i];
+    $(header).each(function () {
+        var href=$(this).attr("id");
+        $(this).append('<a class="headerlink" style="color:' + color + '" href="#' + href + '" title="Permanent link">¶</a>')
+    });
+})
+</script>
+
+
+
+	
+              
+              <style>
+  .feedback--answer {
+    display: inline-block;
+  }
+  .feedback--answer-no {
+    margin-left: 1em;
+  }
+  .feedback--response {
+    display: none;
+    margin-top: 1em;
+  }
+  .feedback--response__visible {
+    display: block;
+  }
+</style>
+<div class="d-print-none">
+<h2 class="feedback--title">Feedback</h5>
+<p class="feedback--question">Was this page helpful?</p>
+<button class="btn btn-primary mb-4 feedback--answer feedback--answer-yes">Yes</button>
+<button class="btn btn-primary mb-4 feedback--answer feedback--answer-no">No</button>
+<p class="feedback--response feedback--response-yes">
+  Glad to hear it! Please <a href='{{ site.repo }}/issues/new'>tell us how we can improve</a>.
+</p>
+<p class="feedback--response feedback--response-no">
+  Sorry to hear that. Please <a href='{{ site.repo  }}/issues/new'>tell us how we can improve</a>.
+</p>
+</div>
+<script>
+  const yesButton = document.querySelector('.feedback--answer-yes');
+  const noButton = document.querySelector('.feedback--answer-no');
+  const yesResponse = document.querySelector('.feedback--response-yes');
+  const noResponse = document.querySelector('.feedback--response-no');
+  const disableButtons = () => {
+    yesButton.disabled = true;
+    noButton.disabled = true;
+  };
+  const sendFeedback = (value) => {
+    if (typeof ga !== 'function') return;
+    const args = {
+      command: 'send',
+      hitType: 'event',
+      category: 'Helpful',
+      action: 'click',
+      label: window.location.pathname,
+      value: value
+    };
+    ga(args.command, args.hitType, args.category, args.action, args.label, args.value);
+  };
+  yesButton.addEventListener('click', () => {
+    yesResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(1);
+  });
+  noButton.addEventListener('click', () => {
+    noResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(0);
+  });
+</script><br/>
+
+
+
+
+           </div>
+
+          </main> <!--col-12 col-md-9 col-xl-8 pl-md-5-->
+        </div> <!--./row flex-xl-nowrap-->
+      </div> <!--./td-main-->
+      
+      <footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        <ul class="list-inline mb-0">  
+          
+          
+        </ul>
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        <ul class="list-inline mb-0">  
+          <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="GitHub" data-original-title="GitHub">
+            <a class="text-white" target="_blank" href="https://github.com/ABCD-Community/ABCD-Community.github.io">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">© 2021 ABCD Community All Rights Reserved</small>
+        
+        <p class="mt-2">
+
+            
+                <a href="/en//" >Home</a> <span class="text-primary"> </span>
+          
+                <a href="/en/docs" >Documentation</a> <span class="text-primary"> </span>
+          
+                <a href="/en/collab" >Collaboration</a> <span class="text-primary"> </span>
+          
+                <a href="/en/about" >About</a> <span class="text-primary"> </span>
+          
+
+        </p>	
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div> <!--./container-fluid td-outer--> 
+    <script src="/assets/js/popper.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/main.js"></script>
+
+
+<script src="/assets/js/tabpane-persist.js"></script>
+
+  </body>
+</html>

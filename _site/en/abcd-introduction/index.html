@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en"  class="no-js">
+  <!-- Copyright 2019-2021 Vanessa Sochat-->
+  <head>
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Jekyll" />
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+<link rel="alternate" type="application/rss&#43;xml" href="/docs/index.xml">
+
+<link rel="shortcut icon" href="/assets/favicons/favicon.ico" >
+<link rel="icon" type="image/png" href="/assets/favicons/favicon.png" sizes="16x16">
+
+ 
+ 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M0LM60C9WY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M0LM60C9WY');
+</script>
+
+ 
+
+<title>ABCD Community</title>
+<meta property="og:title" content="ABCD Community" />
+<meta property="og:description" content="This document aims at providing all relevant background information and instructions on how to use the integrated library and documentation management system 'ABCD'. Both the basic operations and the advanced management of the software are discussed, as are useful and necessary topics concerning the ISIS-software on which ABCD is based. In this new edition the new features of version 2.0 are added - the use of different flavors of CISIS, of Unicode,and the digital library capabilities as well as some additional modules (ODDS, LDAP, DSpaceBridge) and utilities (UTF8-conversion, loanobjects creation...) ." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://localhost:9898" />
+<meta property="og:site_name" content="http://localhost:9898" />
+
+<meta itemprop="name" content="ABCD Community">
+<meta itemprop="description" content="">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ABCD Community"/>
+<meta name="twitter:description" content="This document aims at providing all relevant background information and instructions on how to use the integrated library and documentation management system 'ABCD'. Both the basic operations and the advanced management of the software are discussed, as are useful and necessary topics concerning the ISIS-software on which ABCD is based. In this new edition the new features of version 2.0 are added - the use of different flavors of CISIS, of Unicode,and the digital library capabilities as well as some additional modules (ODDS, LDAP, DSpaceBridge) and utilities (UTF8-conversion, loanobjects creation...) ."/>
+
+<link rel="stylesheet" href="/assets/css/main.min.css">
+<link rel="stylesheet" href="/assets/css/palette.css">
+<script
+  src="/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+
+
+  
+  
+    
+  <link rel="alternate" hreflang="en" href="/en/abcd-introduction/" />
+    
+  <link rel="alternate" hreflang="pt" href="/pt/abcd-introduction/" />
+    
+  
+
+  
+</head>
+
+  
+
+
+  <body class="td-section">
+    
+<header>
+    <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="/en">
+            <span class="navbar-logo"></span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 167.73 167.77"><defs><style>.cls-1{fill:#ffffff;}</style></defs><g id="Camada_2" data-name="Camada 2"><g id="Camada_1-2" data-name="Camada 1"><path class="cls-1" d="M66.62,83.14c-41-2.06-66.62,18-66.62,18V18.42S20.94-.08,66.62,0Z"/><path class="cls-1" d="M84.59,66.62c2.06-41-18-66.62-18-66.62h82.73s18.5,20.94,18.42,66.62Z"/><path class="cls-1" d="M101.11,84.63c41,2.06,66.62-18,66.62-18v82.74s-20.94,18.49-66.62,18.41Z"/><path class="cls-1" d="M83.14,101.15c-2.06,41,18,66.62,18,66.62H18.42S-.08,146.83,0,101.15Z"/></g></g></svg><span class="text-uppercase font-weight-bold">ABCD Community</span>
+        </a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+            
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/en//" ><span>Home</span></a>
+			</li>
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/en/docs" ><span>Documentation</span></a>
+			</li>
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/en/collab" ><span>Collaboration</span></a>
+			</li>
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/en/about" ><span>About</span></a>
+			</li>
+
+
+  <li class="nav-item dropdown mr-4 d-none d-lg-block">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">English</a>
+    <div class="dropdown-menu">
+        
+            
+            
+            
+                
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-introduction/">English</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-introduction/">Português</a>
+
+
+            
+            
+        
+   </div>
+  </li>
+
+		</ul>
+	</div>
+	
+    <div class="navbar-nav d-none d-lg-block">
+        <input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off"> 
+    </div>
+   
+	<div class="navbar-nav d-none d-lg-block">
+          <a class="gh-source" data-gh-source="github" href="https://github.com/ABCD-Community/ABCD-Community.github.io" title="Go to repository" data-md-state="done">
+            <i class="fab fa fa-github fa-2x" style='color: #fff;padding-right:20px; float:left; margin-top:5px'></i></a>
+        </div>
+      </div>
+
+
+</nav>
+</header>
+
+
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+          <div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    <input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="on">
+      <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+      </button>
+  </form>  
+
+  <nav class="collapse td-sidebar-nav" id="td-section-nav">
+    <div class="nav-item dropdown d-block d-lg-none pl-4">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">English</a>
+
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+        
+            
+            
+            
+                
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-introduction/">English</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-introduction/">Português</a>
+
+
+            
+            
+        
+      </div>
+    </div>
+
+
+    
+      <ul class="td-sidebar-nav__section pr-md-3"> 
+
+        
+        
+
+        <li class="td-sidebar-nav__section-title">
+          <a  href="" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section"></a>
+        </li>
+        
+      </ul>
+    
+      <ul class="td-sidebar-nav__section pr-md-3"> 
+
+        
+        
+
+        <li class="td-sidebar-nav__section-title">
+          <a  href="/en/docs" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Home</a>
+        </li>
+        
+          <ul>
+            <li class="collapse show" id="home">
+              <ul class="td-sidebar-nav__section pr-md-3">
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-introduction
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Introduction
+                    </a>
+                  </li>
+                  
+                    <ul>
+                      <li class="collapse show" id="">
+                        
+                      </li>
+                    </ul>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-technology
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD Technology
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-installation
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Installation
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-modules
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Modules
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-utilities
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Utilities
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-thesaurus
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Thesaurus
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-odds
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">The Online Document Delivery Service (ODDS)
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-digital-library
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Digital library features in ABCD
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-oai
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">The OAI interface
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-opac
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD OPAC
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/opac-iah
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">iAH OPAC
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-site
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD Site
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/secs-web
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Serials Control
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-unicode
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD Unicode
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-localisation
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD Localisation
+                    </a>
+                  </li>
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        
+      </ul>
+    
+  </nav>
+</div>
+
+          </aside> <!--col-12 col-md-3 col-xl-2 td-sidebar d-print-none-->
+          
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+                  <a href="https://github.com/ABCD-Community/ABCD-Community.github.io/edit/main/en/abcd-introduction/index.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+
+<a href="https://github.com/ABCD-Community/ABCD-Community.github.io/issues/new?labels=question&title=Question:&body=Question on: https://github.com/ABCD-Community/ABCD-Community.github.io/tree/master/en/abcd-introduction/index.md" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+
+<a href="https://github.com/ABCD-Community/ABCD-Community.github.io/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
+<!-- this will parse through the header fields and add a button to open
+     an issue / ask a question on Github. The editable field should be in
+     the post frontend matter, and refer to the label to open the issue for -->
+
+            </div>
+            <div class="td-toc">
+              <nav id="TableOfContents">
+                <ul id="TOC">
+                   <!-- Links will be appended here-->
+                </ul>
+              </nav>
+            </div>
+ 
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">     
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+              <ol class="breadcrumb spb-1">
+              
+              
+                <li class="breadcrumb-item">
+                  <a href="http://localhost:9898/en/">En</a>
+                </li>
+                
+                <li class="breadcrumb-item active" aria-current="page">
+	          <a href="http://localhost:9898/en/abcd-introduction/">Introduction - background information</a>
+                </li>
+                
+	      </ol>
+           </nav>
+
+           <div class="td-content">
+
+	      <h1 id="introduction-background-information">Introduction: background information</h1>
+
+<h2 class="no_toc no_toc text-delta" id="content">Content</h2>
+
+<ol id="markdown-toc">
+  <li><a href="#introduction-background-information" id="markdown-toc-introduction-background-information">Introduction: background information</a>    <ol>
+      <li><a href="#general-introduction-to-abcd-as-a-software-suite" id="markdown-toc-general-introduction-to-abcd-as-a-software-suite">General introduction to ABCD as a software suite</a>        <ol>
+          <li><a href="#the-abcd-central" id="markdown-toc-the-abcd-central">the ABCD Central</a></li>
+          <li><a href="#the-abcd-opac-iah" id="markdown-toc-the-abcd-opac-iah">the ABCD OPAC (iAH)</a></li>
+          <li><a href="#the-abcd-site" id="markdown-toc-the-abcd-site">the ABCD Site</a></li>
+          <li><a href="#the-abcd-serials-control-system-secs" id="markdown-toc-the-abcd-serials-control-system-secs">the ABCD Serials Control System (SeCS)</a></li>
+          <li><a href="#the-abcd-advanced-loans-module-empweb" id="markdown-toc-the-abcd-advanced-loans-module-empweb">the ABCD Advanced Loans module (EmpWeb)</a></li>
+        </ol>
+      </li>
+      <li><a href="#the-isis-software-family-history-and-overview" id="markdown-toc-the-isis-software-family-history-and-overview">The ISIS software family (history and overview)</a>        <ol>
+          <li><a href="#1975---the-first-generation" id="markdown-toc-1975---the-first-generation">1975 - The first generation</a></li>
+          <li><a href="#1985---the-second-generation" id="markdown-toc-1985---the-second-generation">1985 - The second generation</a></li>
+          <li><a href="#1995---the-third-generation" id="markdown-toc-1995---the-third-generation">1995 - The third generation</a></li>
+          <li><a href="#2005--the-fourth-generation" id="markdown-toc-2005--the-fourth-generation">2005 – The fourth generation</a></li>
+          <li><a href="#2008---the-fifth-generation" id="markdown-toc-2008---the-fifth-generation">2008 - The fifth generation</a></li>
+        </ol>
+      </li>
+      <li><a href="#from-free-to-foss" id="markdown-toc-from-free-to-foss">From ‘free’ to ‘FOSS’</a>        <ol>
+          <li><a href="#isis-as-open-software" id="markdown-toc-isis-as-open-software">ISIS as ‘open’ software</a></li>
+          <li><a href="#isis-as-full-open-source-software" id="markdown-toc-isis-as-full-open-source-software">ISIS as full open source software</a></li>
+        </ol>
+      </li>
+      <li><a href="#aims-of-abcd" id="markdown-toc-aims-of-abcd">Aims of ABCD</a>        <ol>
+          <li><a href="#abcd-as-a-generic-flexible-bibliographic-tool" id="markdown-toc-abcd-as-a-generic-flexible-bibliographic-tool">ABCD as a generic, flexible bibliographic tool</a></li>
+          <li><a href="#abcd-as-a-librarian-oriented-tool" id="markdown-toc-abcd-as-a-librarian-oriented-tool">ABCD as a librarian-oriented tool</a></li>
+          <li><a href="#abcd-as-a-tool-for-developing-countries" id="markdown-toc-abcd-as-a-tool-for-developing-countries">ABCD as a tool for developing countries</a></li>
+        </ol>
+      </li>
+      <li><a href="#actors-and-partners-of-abcd" id="markdown-toc-actors-and-partners-of-abcd">Actors and partners of ABCD</a></li>
+    </ol>
+  </li>
+</ol>
+
+<hr />
+
+<h2 id="general-introduction-to-abcd-as-a-software-suite">General introduction to ABCD as a software suite</h2>
+
+<p>ABCD is the acronym for a software suite for the automation of libraries and documentation centres. In Spanish this is, in full : ‘Automatisación de Bibliotécas y Centros de Documentación’, which keeps the same acronym valid also for French (Automation des Bibliothèques et Centres de Documentacion) or Portugese (Automatização das Bibliotecas e dos Centros de Documentação). Even in other non-latin languages, with some slight but quite acceptable variations, - e.g. Dutch : ‘Automatisering van Bibliotheken en Centra voor Documentatie’ - the acronym can still be maintained.</p>
+
+<p>The name itself already expresses the ambition of the software suite : not only providing automation functions for the ‘classic’ libraries but also other information providers such as documentation centres. Flexibility and versatility are at the forefront of the criteria on which the software is developed. This flexibility e.g. is illustrated by the fact that in principle, but also practically, any bibliographic structure can be managed by the software, or even created by itself. Even non-bibliographic structures can be created, as long as the information is mainly ‘textual’ information, as this is the limitation put by the underlying database technology, which is the (CDS/)ISIS textual database. Good understanding of some basic ISIS-related concepts and techniques, e.g. the Formatting Language, is crucial for full mastering of the ABCD-software. For this reason some sections of this Manual will also deal with the underlying ISIS-technology.</p>
+
+<p>ABCD is called a ‘suite’ of softwares for library and documentation centres automation because it exists of some relatively independent modules, which can fully co-operate but also can exist without each other. In fact some existing advanced softwares, mostly having already shown their potential in demanding environments in BIREME- applications (within the Virtual Health Library context), were adopted and adapted into ABCD - that is why the original names such as iAH, SeCS (both developed by BIREME) and EmpWeb (Empréstimos en Web) developed originally by KALIO ltda. of Uruguay and amply tested in Valparaiso at the University) are maintained. These main parts are shown, with their hierarchical relationships, at the second level in the following picture and subsequently discussed briefly :</p>
+
+<p><img src="https://user-images.githubusercontent.com/20482054/137317883-75797ad3-47d5-43f0-b3b7-7c405f646236.JPG" alt="Slide2" /></p>
+
+<h3 id="the-abcd-central">the ABCD Central</h3>
+
+<p>The ‘Central’ module of ABCD comprises modules for Database Administration (creation of databases, edit- ing of database-structures, database utilities), Cataloging, Acquisitions, Circulation/Loans and Statistics. A thesaurus management module is also being prepared as part of the cataloging module for a specific the- saurus-structure database with consistency control of the hierarchical levels. As part of this ‘central module’ we would also like to mention import- and export services, printing and database-tools like blocking/unblocking and ‘global changes’ to fields in records. This ‘Central’ part in fact represents the ‘back-office’ part of ABCD, end-users will not be confronted with this but what they will see and be offered is fully defined in this central management part of the software !</p>
+
+<p>Any ISIS-database structure can be defined and managed, with currently records of 1Mb maximum size and 4Gb max, databases (but these restrictions will be made obsolete by the NBP-based next generation of ISIS and ABCD). As compared to ‘normal’ ISIS-technology ,60-character (as compared to 30-character) indexing keys are used, there are much stronger authority control features available (picklists based on tables or authority databases such as thesauri) at the data-entry stage with flexible validation formats) and all interaction is based on WWW-technology of course, allowing e.g. HTML-coded text-strings for full-text indexing, hyperlinks to help-pages etc.</p>
+
+<p>It is perfectly possible to fully automate a smaller library with mostly internal users with all necessary functions, only using this Central part, as e.g. an advanced searching option is built-in, so that all functions are covered with a minimum of technological complexity (i.e. only ISIS and PHP).</p>
+
+<h3 id="the-abcd-opac-iah">the ABCD OPAC (iAH)</h3>
+
+<p>The public search interface (OPAC) is an adapted version of BIREME’s general ‘advanced interface for Health information’ (iAH). It allows meta-searches on not only the local catalogs but also many other information resources.</p>
+
+<p>The iAH interface developed by BIREME is currently being upgraded to iAHx, ensuring it will align perfectly with modern Information Retrieval concepts and techniques (e.g. clustering, relevance ranking based on Lucene indexing).</p>
+
+<h3 id="the-abcd-site">the ABCD Site</h3>
+
+<p>The search function is offered as part of an ‘end-users’ portal page, presenting the own catalog(s) in a much wider information context by providing access to other information resource.s (e.g. Google, Medline…) and communication (announcements, alerts), also paving the way for ‘Web 2.0’-like functions.</p>
+
+<p>The Site Administrator actually is a specific Content Management System which allows designing the structure and components of the portal page of ABCD.</p>
+
+<h3 id="the-abcd-serials-control-system-secs">the ABCD Serials Control System (SeCS)</h3>
+
+<p>This module offers an advanced management tool for serials/journals (classical and/or electronic) of any pub- lication type (referring to periodicity). Serials as such but also issues of a serial and all types of publication patterns can be managed by this module. BIREME uses this technology e.g. for its products ‘Portal of Scientific Journals’ (see : <a href="http://portal.revistas.bvs.br/main.php?home=true&amp;lang=en">http://portal.revistas.bvs.br/main.php?home=true&amp;lang=en)</a>) and SCAD (see : http://scad.bvs.br/php/index.php?lang=en) which is the Brazilian union catalog of over 12.000 journals (with millions of issues) of more than 50 libraries.</p>
+
+<h3 id="the-abcd-advanced-loans-module-empweb">the ABCD Advanced Loans module (EmpWeb)</h3>
+
+<p>This module offers advanced loans management with some more extra features for larger and more complex organisations. It offers a ‘MyLibrary’ function to end-users through the OPAC and is based on ‘web-services’ technology. It can be used to replace the integrated loans module of ABCD in case of a need to cope with multi-branch/policy and very high transactions volume situations.</p>
+
+<p>The ‘suite’ idea reflects the fact that ABCD has relatively independent parts - as is the case with office automation suites (e.g. Open Office, Microsoft Office) - but with obvious links to co-operate. The Statistics module e.g., as part of the Circulation/Loans module, can work on any ISIS-database, while the iAH-OPAC also can offer advanced web-based retrieval in any (set of) ISIS-databases, not only ABCD-maintained ones. The Serials Control System (SeCS) manages ISIS-databases for serials within or outside the ABCD-context. But together, we believe, these parts constitute a very powerful suite of tools, and as an integrated part we hope ‘the sum is more than just the parts added up’ !</p>
+
+<h2 id="the-isis-software-family-history-and-overview">The ISIS software family (history and overview)</h2>
+
+<p>In this paragraph we want to briefly introduce the wider ‘ISIS software family’ to which ABCD belongs. As with all ‘families’, members share a lot of characteristics but not all.</p>
+
+<p>The common characteristics of the ISIS family relate to the way how information (of textual nature) is stored and managed by putting it in repeatable fields of variable length with the possibility of subdividing fields into subfields. Fields are in fact couples of a field-ID (a ‘tag’) combined with a field-value (a text, or in newer ISIS generation, any object, like e.g. ‘binary large objects’ or blobs).</p>
+
+<p>In addition to technological common characteristics, most if not all ISIS family members share also ‘social’ char- acteristics, e.g.</p>
+<ul>
+  <li>being mainly used in Developing Countries or ‘the South’, with e.g. a very strong presence in Latin-America, but also - more than can be ‘measured’ in all kinds of small, often deprived non-connected (no Internet) information centres in Africa and Asia.</li>
+  <li>being promoted by many United Nation members and projects, of course first of all in UNESCO-environments, but - as shown by the BIREME example - also WHO and FAO (the AGRIS and ASFISIS systems of FAO can be given as examples here, but also the origin of the WEBLIS library system). The United Nations IFAP and ‘Knowledge Society’ programmes should not underestimate how much real impact comes from the UNES- CO-promoted information tools like ISIS, IDAMS, Greenstone etc. - sometimes even indicating that the impact can be the reverse of given financial input or publicity.</li>
+</ul>
+
+<p>The following illustration summarizes the full family up to now.</p>
+
+<p><img src="https://user-images.githubusercontent.com/20482054/137317911-2d69015b-5c84-4aaf-9004-58b6546ec262.JPG" alt="Slide1" /></p>
+
+<p>One could summarize the history by claiming the ‘family’ now has 4 generations while the 5th generation is being prepared :</p>
+
+<ul>
+  <li>The first generation : CDS/ISIS and Micro-ISIS</li>
+  <li>The second generation : enriched ISIS/Pascal interfaces, CISIS-tools</li>
+  <li>The third generation : graphical, multimedia and multi-database : WinISIS, ISISDLL</li>
+  <li>The fourth generation : WWW-enabled versions (wwwisis, isis3w, openisis…) .</li>
+</ul>
+
+<p>In view of some major technological changes introduced in the newest generation as of 2008 one should perhaps consider the newest ISIS-members (J-ISIS and ISIS/NBP) as representing yet another new 5th generation.</p>
+
+<p>Some highlights of each generation is given below.</p>
+
+<h4 id="1975---the-first-generation">1975 - The first generation</h4>
+
+<p>CDS/ISIS at the International Labour Organisation (ILO) Centralised Documentation System merged with Integrated Set of Information Services Running on VAX OS on mainframes</p>
+
+<h4 id="1985---the-second-generation">1985 - The second generation</h4>
+
+<p>Micro-ISIS G. Del Bigio joins UNESCO and creates PC-DOS based version and integrates separated functions into one general customizable, multilingual menu-based interface with full documentation as version 2.3 Version 3.0 - 3.8 : networked multi-user, ISIS/Pascal UNIX-version for Intel-based UNIX OS World-wide distri- bution and huge success in Developing Countries</p>
+
+<ul>
+  <li>ISIS/Pascal programmed add-ons (e.g. Heurisko, ADEM, IRIS and ODIN, LAMP) create rich tools; e.g. IR- BIS (Russia) for libraries, FAO uses ISIS for its AGRIS-system and ODIN/IRIS extensions for its ASFISIS- system</li>
+  <li>Bireme/OPS (WHO Brazil) creates CISIS-tools suite for command-line database management, uses it for its huge health information databases on the Internet; these are multi-platform (run on Unix/Linux and DOS)</li>
+</ul>
+
+<h4 id="1995---the-third-generation">1995 - The third generation</h4>
+<ul>
+  <li>UNESCO produces Windows version : WinISIS, with many graphical, multi-media and multi-database fea- tures
+    * Full library automation systems can be and are developed, e.g. PURNA (India)
+    * other libraries start using ISIS for full library automation, e.g. SNAL (Tanzania) uses networked ODIN/IRIS based library system for its university library
+    * Bireme distributes a web-server version of ISIS as ‘wwwisis’ running on both DOS/Windows and UNIX/ Linux; many applications are developed JavaISIS (Italy) and isis3w (Poland) added to the family</li>
+</ul>
+
+<h4 id="2005--the-fourth-generation">2005 – The fourth generation</h4>
+<ul>
+  <li>Advanced web-based tools spearhead further developments : GenISIS (France) allows easy creation of web- based search interfaces</li>
+  <li>WEBLIS (Poland/FAO) is a full-fledged advanced web-based library automation system</li>
+  <li>Bireme develops WXIS and adds XML to ISIS</li>
+  <li>WXIS-based library systems are developed in Latin-America (e.g. OpenMarcoPolo)</li>
+  <li>OpenISIS (Germany) creates first fully Open Source version (webserver, PHP-library) but goes its own way (Malete, Selene)</li>
+</ul>
+
+<h4 id="2008---the-fifth-generation">2008 - The fifth generation</h4>
+<ul>
+  <li>UNESCO developes a completely new Java-based graphical interface ‘J-ISIS” using not only JAVA-technol- ogy but also the embedded Berkeley DB for the storage layer. This project is a fully FOSS-oriented project.
+    * BIREME developes ABCD and - at the same time - a fully new technology for its future ISIS-products : ISIS/NBP. ABCD is meant to be the first applcation to be migrated into NBP.</li>
+</ul>
+
+<p>NBP or ‘Network Based Platform’ is the new ISIS technology with as the main characteristics :</p>
+<ul>
+  <li>
+    <p>flexible archtecture in which ‘ISIS-cells’ will communicate through known protocols with several plat- forms and interfaces; ISIS-cells will also allow to use different storage models as these will be contained within the cells but they behave in the same standardized way towards the external technology used;</p>
+  </li>
+  <li>ISIS databases will no longer have out-dated limitations re database-, record- and field-sizes;</li>
+  <li>ISIS databases will be UNICODE compatible</li>
+  <li>Indexing will be done by using other FOSS full-text indexers such as Lucene (from Apache Software Foundation).</li>
+</ul>
+
+<p>ISIS is being used by ten-thousands of users, mostly in the Developing Countries where it is promoted by UNES- CO and BIREME (for mostly Latin America). In Latin America ISIS is very strongly represented in libraries and documentation centres (it has a ‘dominant’ position even here), in Africa and Sout-East Asia there are an unknown but high number of users, many of them often non-connected to the internet and therefore still using older tech- nology and with relatively poor ICT-skills. This creates a special challenge to the support of the users-community.</p>
+
+<p>At the 3rd World Congress on ISIS (Rio de Janeiro, Brazil, September 2008) the Users Community decided to make ISIS fully ‘FOSS’ and co-ordinated by an ‘International Co-ordination Committee on ISIS’ (ICCI), see : <a href="http://www.unesco.org/new/en/member-states/single-view/news/3rd_world_congress_on_isis_to_focus_on_latest_developments_o/">http://www.unesco.org/new/en/member-states/single-view/news/3rd_world_congress_on_isis_to_focus_on_latest_developments_o/</a></p>
+
+<p>Summarizing the long history of ISIS, one could say that ISIS combines very sound basic ‘textual database’ princi- ples, a strong tradition and a world-wide but insufficiently co-ordinated users’ community with still modern state- of-the-art technological development.</p>
+
+<h2 id="from-free-to-foss">From ‘free’ to ‘FOSS’</h2>
+
+<blockquote>
+  <p>Tip:
+You might be interested to read the full article on this topic, published at : ‘Innovation’, no. 36 June 2008, p. 39-47.
+CDS/ISIS as a software has been ‘free’ and ‘open’ since its early days, long before ‘FOSS’ (Free and Open Source Software) became a known software model (or should it be put in the reverse way : long before ‘commercial closed software’ became widely practised’ ).</p>
+</blockquote>
+
+<h3 id="isis-as-open-software">ISIS as ‘open’ software</h3>
+
+<p>Whereas ISIS, from the DOS-version produced and distributed by UNESCO as from 1985, always has been ‘free’
+– i.e. without cost but with a restriction to the not-for-profit sectors only – the software was not ‘open’ in the strict meaning of the concept as nowadays known as ‘Open Source Software’ with its different definitions (see <a href="http://www.opensource.org/docs/osd">http://www.opensource.org/docs/osd)</a>) and licenses (e.g. (L)GPL, BSD, Creative Commons..).</p>
+
+<p>But in 3 meanings there were, already from this beginning - and therefore long before the FOSS movement began to become really visible –, elements of being ‘open’ in addition to being free(ware) :</p>
+
+<ol>
+  <li>
+    <p>the standards were open and published. In the ‘CDS/ISIS Reference Manual’, written by its founding father Gi- anpaolo Del Bigio (working for ILO then UNESCO), the technical details were published in the annexes, allowing others to program their own versions of ISIS using the same compatible standards. E.g. in Slovakia Marek Smihla had programmed executables (e.g. ADEM for data-entry) which ran independently from the ISIS-executables from UNESCO and could write and read ISIS-records. Bireme in Sao Paulo, Brazil, did something similar : they pro- grammed writing, reading and indexing tools with lots of advanced features (e.g. joining databases, linking them as relations etc…) in the C-language (therefore CISIS) which are still the basis for their other ISIS-related software : the DLL and the webservers (WWWISIS, WXIS) and which now have expanded capacity, e.g. 4 Gb max. database size, 1 Mb record size, 60 character-index keys. Co-operation was then set up with UNESCO, e.g. allowing the ‘CDS/ISIS for Windows’ to become a mix of UNESCO-programmed and Bireme-programmed modules.</p>
+  </li>
+  <li>
+    <p>an open, adjustable interface : the software itself was presented as a very flexible environment, with three main features which were used heavily all over the world not only to change its ‘interface’ but also the functions and features.</p>
+
+    <ul>
+      <li>
+        <p>An open menu-structure : Micro-CDS/ISIS was fully based on menus which could be produced and changed by using the software itself, including the definition of ‘actions’ to be invoked by each menu option and allowing hierarchical sub-menus as well as dropping/adding options.</p>
+      </li>
+      <li>An open message system : all messages were/are based on small ISIS-databases which can be edited (each language having its own message-database) and expanded. This not only allowed (often together with the previous feature of open menu’s) creation of rather different conformations of the software – taking into account also colors and screen-features which could be changed – but also expansion and introduction of parameters (which could then be ‘read’ as messages) for additional software running inside ISIS (see further : ISIS/Pascal add-ons), as amply used e.g. by the cataloguing interface ‘ODIN’ and OPAC ‘IRIS’ (by the author of this article).</li>
+      <li>
+        <p>A programming tool ‘ISIS/Pascal’ which acted as an ‘API’ (with published calls for functions and their para- meters) inside CDS/ISIS. ISIS/Pascal programmes, varying from a few lines to thousands of lines for sophisticated applications, could be included into the program either as ‘format exits’ (to expand the functions of the already very rich Formatting Language) or as ‘menu exits’ to expand the functions of the menus, allowing almost independent interfaces to ‘take over’ the CDS/ISIS environment in the creation and manipulation of its databases. One feature illustrating the ‘openness’ was the possibility of adding a parameter in the ‘SYSPAR.PAR’ initialization file to automatically invoke a menu and its option, therefore allowing the menu-interface to be skipped and immediately presenting the new ISIS/Pascal interface. In this way full OPAC (e.g. IRIS using a welcome-screen which could be invoked by a time-out mechanism after a previous session was left) and CD-ROM search modules (HEURISKO is an example) were written, loan-systems for libraries and thesaurus-management tools were produced.</p>
+      </li>
+      <li>Last but not least : the ‘open character’ of the Formatting Language. The Formatting Language is a grammar used to define in a detailed way how elements of the database-data, taken from repeatable fields and subfields, also from other records in the same or other databases (therefore resembling relational approaches) and with navigation links, will be ‘processed’ in some output (for display, sorting, printing, exporting). It was largely expanded with graphical features in the Windows version (RichText but also images and extra text- and image-boxes). Together these strong ‘data-processing’ and ‘presentation’ features of the Formatting Language have allowed the production of rather new ‘identities’ of the software, e.g. as a Library Management software with OPAC and Loans System (e.g. PURNA from India). In current applications, based on web-technology, the Formatting Language is still gracefully used to produce HTML-elements (e.g. links but also tables), even if more dedicated tools for that, e.g. PHP, are now added to the power of the own ISIS Formatting Language.</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="isis-as-full-open-source-software">ISIS as full open source software</h3>
+
+<p>Already in 2001 UNESCO decided to embark on this relatively new approach of not only providing the software for free but also making the source codes in principle ‘open’, i.e. publicly available (see : <a href="http://portal.unesco.org/ci/en/">http://portal.unesco.org/ci/en/</a> ev.php-URL_ID=13803&amp;URL_DO=DO_TOPIC&amp;URL_SECTION=201.html). This has finally lead to a frame- work of its wider ‘Free and Open Source Portal’ approach promoting the idea and adding other softwares, e.g. Greenstone, into their ‘basket’ of supported and promoted softwares for better professional development also in the Southern and transitional countries. UNESCO’s FOSS Portal can be found at : <a href="http://www.unesco.org/cgi-bin/webworld/portal_freesoftware/cgi/page.cgi?d=1">http://www.unesco.org/cgi-bin/webworld/portal_freesoftware/cgi/page.cgi?d=1</a>, with interesting links to discussions of the FOSS history, li- censes and case studies. In reality however the source codes for existing ISIS-software are to be requested from UNESCO, but the new softwares will be fully available on public websites.</p>
+
+<p>At Bireme/OPS/WHO a similar decision was taken in 2006/7. No longer would the institute charge a small fee for their software (as was the case before, e.g. 150 USD for official registration as a user with support rights) and therefore make it ‘free’, but also the sources have been and are still being prepared for publication of all their software, including the basic CISIS-modules. Their new ISIS-generation software, called ‘ISIS-NBP’ (Network Based Platform) will follow FOSS-methods (including a ‘community’ with possibilities to contribute, discuss and download sources at the URL http://reddes.bireme.br) to show their firm commitment to FOSS. As the newest full-fledged application, ABCD will be fully published as open source, even if the original development is still centrally managed by Bireme and its own programmers, as the project is now also supported by the Flemish Interuniversity Council (VLIR) with specific requirements to present it as a full competitor to other library systems (including other FOSS–softwares like KOHA and NewGenLib) and to this end needs some more central control for specific purposes.</p>
+
+<p>The advantage of becoming fully open source – for all software - lies in the fact that users, certainly (programming) skilled ones, can fully check on the internal mechanisms and propose/make changes if so desired. One example: WinISIS has a slightly different way of sorting values taken by the ‘VAL’-function (i.e. removing padding 0’s first) which is not a bug as such and therefore does not ‘need’ to be corrected by the software provider; with access to the source codes one could change this however.</p>
+
+<p>As is always the case with open source software, it would be best not to make such changes without consulting/in- forming the ‘developers’ community’.</p>
+
+<h2 id="aims-of-abcd">Aims of ABCD</h2>
+
+<p>ABCD aims at providing an integrated library management tool covering all main functions in a library, i.e. acquisitions, bibliographic databases management, users management, loans management, serials control, end- user searching on local and external bibliographic databases and library portal.</p>
+
+<p>it is not the first time in the ISIS-history and -environment that such effort has been undertaken. Open MarcoPolo, Clabel and - as a more advanced effort - WEBLIS are predecessors to ABCD in this sense.</p>
+
+<h4 id="abcd-as-a-generic-flexible-bibliographic-tool">ABCD as a generic, flexible bibliographic tool</h4>
+
+<p>As the name itself suggests, ABCD however aims not only at providing a solution for libraries, but for documen- tation centres as well. These typically have slightly different needs, e.g. have more specialized collections, higher needs re contents disclosure (e.g. by providing abstracts, using thesauri etc.) and requiring more flexibility in the bibliographic structures. For this reason ABCD not only has tried to include full-text features but was principally conceived to offer a very open solution, allowing any fields structure to be created and maintained within the same software. By the database technology of ISIS itself, which is quite flexible and non-restrictive, bibliographic structures can be created without a need to ‘normalise’ all elements into a series of tables or relations (as is the case with relational database technology) and in most cases all bibliographic elements can be contained into one single database - only for optimization purposes ISIS would expect some semi-relational approaches to be implemented.</p>
+
+<p>As a library system, however, ABCD comes pre-configured for some major bibliographic standards, i.e. MARC21, CEPAL and AGRIS. But we repeat : the same mechanisms, interface and forms can be used to create and maintain any structure, whether bibliographic or not.</p>
+
+<p>So, to put the aims a bit more precise : ABCD aims at providing a very generic/generalizable tool for managing libraries and documentation centres.</p>
+
+<h4 id="abcd-as-a-librarian-oriented-tool">ABCD as a librarian-oriented tool</h4>
+
+<p>Another specific aim of ABCD is to offer a tool for librarians, rather than ICT technicians. This is achieved by taking library and information science principles (rather than computer or programming principles) as the starting point, even in the design of the databases themselves. Typically a bibliographic record is one real entity in an ISIS database, not a complicated series of elements ‘queried’ or ‘joined’ together from many tables (as in relational sys- tems), however preserving criteria like efficiency (in space usage, speed of operation..). Each entity subsequently can be thoroughly ‘moulded’ by the librarians themselves with the use of the ISIS Formatting Language (FL), which allows dealing with all elements of an entity (e.g. a substring from a subfield of an occurrence of one specific field at micro-detail level) without real programming - even if the FL allows some degree of programming logics like loops and nested conditions - for the creation of any output format. This output can be anything like a sort key, an indexing key, a screen format or - as is the case in e.g. ABCD - ISIS-data embedded in web-pages or any other grammar such as XML. Lots of teaching experiences with ISIS show that librarians are perfectly capable of understanding and using all this, reaching advanced results without any real programming.</p>
+
+<h4 id="abcd-as-a-tool-for-developing-countries">ABCD as a tool for developing countries</h4>
+
+<p>ABCD aims at providing librarians and information workers in developing countries a very powerful tool, which however takes into account some specific realities, such as :</p>
+
+<ul>
+  <li>
+    <p>low availability of ICT skills : as with previous ISIS-based solutions, librarians are - in principle - enabled to solve their problems by avoiding unnecessary software architectures while still allowing flexibility within the software (e.g. through the Formatting Language);</p>
+  </li>
+  <li>
+    <p>low availability of bandwidth and connectivity : by using modern web-techniques such as AJAX and JavaScript, data-traffic in between client and server is kept minimal, allowing the local computer (at the ‘client-side’) to process the data as much as possible without always referring to the server; also the graphical design is kept rather sober for the same reason.</p>
+  </li>
+</ul>
+
+<h2 id="actors-and-partners-of-abcd">Actors and partners of ABCD</h2>
+
+<p>ABCD, as with all major software projects, is a conglomerate effort of several actors and partners. At the following URL a list of the main actors and partners is maintained : <a href="http://reddes.bvsaude.org/projects/abcd/wiki/HallFame?version=20">http://reddes.bvsaude.org/projects/abcd/wiki/HallFame?version=20</a></p>
+
+<p>The main input, obviously, comes from the Brazilian BIREME institute (see http://www.bireme.br), which has availed all of its ISIS-based technology to be combined into one ‘culmination’ product which is indeed ABCD. In fact the original idea stems from its actual Director, Mr. Abel Packer, who has generously availed also worktime of his programmers and software managers.</p>
+
+<p>A special mentioning certainly is appropriate for Mrs. Guilda Ascencio, Venezuela, who was the main programmer of the ABCD central part with its modules, based on her own ‘Orbital Documental’ software, in which she had proved that very advanced applications, combining library and other documentation management issues, could be built using ISIS and web-technology.</p>
+
+<p>[!!] Programmers’ generously availed by BIREME’s director, mr. Abel Packer, have contributed since years to the development of ABCD iAH, Site and SeCS. These contributions represent uncountable and invaluable contribu- tions to the ABCD software - and moreover they will continue developing the software as it will now also be used for BIREME’s own projects, adding significantly to the future ‘sustainability’.</p>
+
+<p>Both the author of this book and mr. Ernesto Spinak, co-ordinator of the BIREME-based team, have acted as coordinators of the ABCD development project, trying to assemble the many pieces of the puzzle - and to make sure the final picture of the puzzle not only is more or less correct but also somehow attractive.</p>
+
+<p>Two more institutional partners have to be mentioned as well :</p>
+<ul>
+  <li>
+    <p>UNESCO : as explained above in the section about ISIS history, it is clear that UNESCO has an enormous merit in developing and promoting ISIS. ABCD will become part of the set of UNESCO-promoted ISIS products, but through a Memory of Understanding in between UNESCO and BIREME close technical supervision by BIREME will be assured.</p>
+  </li>
+  <li>
+    <p>VLIR/UOS : the ‘Development Co-operation’ section of the Flemish Interuniversity Council (VLIR, Belgium, see http://www.vliruos.be), through a project ‘Development Of and Capacity Building in ISIS-Based Library Automation Systems’ (DOCBIBLAS) which is promoted by the Belgian co-author of this manual, has selected ABCD as the library automation solution it wants to promote with its partner university libraries in the South (Latin-America, Africa and South-East Asia).</p>
+  </li>
+</ul>
+
+<script
+  src="/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function() {
+
+    var toc = $('#TOC');
+
+    // Select each header
+    sections = $('.td-content h1');
+        $.each(sections, function(idx, v) {
+            section = $(v);
+            var div_id = $(section).attr('id');
+            var div_text = section.text().split('¶')[0];
+            var parent = $("#" + div_id)
+            var content = '<li id="link_' + div_id + '" class="md-nav__item"><small><a class="md-nav__link" href="#' + div_id + '" title="' + div_text +'">' + div_text +'</small></a></li>';
+            $(toc).append(content);
+
+            // Add section code to subnavigation
+            var children = $('<nav class="md-nav"><ul class="md-nav__list"></nav></ul>')
+            var contenders = $("#" + div_id).nextUntil("h1");
+            $.each(contenders, function(idx, contender){
+               if($(contender).is('h2') || $(contender).is('h3')) {
+                   var contender_id = $(contender).attr('id');
+                   var contender_text = $(contender).text().split('¶')[0];
+                   var content = '<li class="md-nav__item"><a class="md-nav__link " href="#' + contender_id + '" title="' + contender_text +'"><small>' + contender_text +'</small></a></li>';
+                   children.append(content);
+                }
+             })
+             $("#link_" + div_id).append(children);
+        });
+    });
+</script>
+
+<script>
+var headers = ["h1", "h2", "h3", "h4"]
+var colors = ["red", "orange", "green", "blue"]
+
+$.each(headers, function(i, header){
+    var color = colors[i];
+    $(header).each(function () {
+        var href=$(this).attr("id");
+        $(this).append('<a class="headerlink" style="color:' + color + '" href="#' + href + '" title="Permanent link">¶</a>')
+    });
+})
+</script>
+
+
+
+	
+              
+              <style>
+  .feedback--answer {
+    display: inline-block;
+  }
+  .feedback--answer-no {
+    margin-left: 1em;
+  }
+  .feedback--response {
+    display: none;
+    margin-top: 1em;
+  }
+  .feedback--response__visible {
+    display: block;
+  }
+</style>
+<div class="d-print-none">
+<h2 class="feedback--title">Feedback</h5>
+<p class="feedback--question">Was this page helpful?</p>
+<button class="btn btn-primary mb-4 feedback--answer feedback--answer-yes">Yes</button>
+<button class="btn btn-primary mb-4 feedback--answer feedback--answer-no">No</button>
+<p class="feedback--response feedback--response-yes">
+  Glad to hear it! Please <a href='{{ site.repo }}/issues/new'>tell us how we can improve</a>.
+</p>
+<p class="feedback--response feedback--response-no">
+  Sorry to hear that. Please <a href='{{ site.repo  }}/issues/new'>tell us how we can improve</a>.
+</p>
+</div>
+<script>
+  const yesButton = document.querySelector('.feedback--answer-yes');
+  const noButton = document.querySelector('.feedback--answer-no');
+  const yesResponse = document.querySelector('.feedback--response-yes');
+  const noResponse = document.querySelector('.feedback--response-no');
+  const disableButtons = () => {
+    yesButton.disabled = true;
+    noButton.disabled = true;
+  };
+  const sendFeedback = (value) => {
+    if (typeof ga !== 'function') return;
+    const args = {
+      command: 'send',
+      hitType: 'event',
+      category: 'Helpful',
+      action: 'click',
+      label: window.location.pathname,
+      value: value
+    };
+    ga(args.command, args.hitType, args.category, args.action, args.label, args.value);
+  };
+  yesButton.addEventListener('click', () => {
+    yesResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(1);
+  });
+  noButton.addEventListener('click', () => {
+    noResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(0);
+  });
+</script><br/>
+
+
+
+
+           </div>
+
+          </main> <!--col-12 col-md-9 col-xl-8 pl-md-5-->
+        </div> <!--./row flex-xl-nowrap-->
+      </div> <!--./td-main-->
+      
+      <footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        <ul class="list-inline mb-0">  
+          
+          
+        </ul>
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        <ul class="list-inline mb-0">  
+          <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="GitHub" data-original-title="GitHub">
+            <a class="text-white" target="_blank" href="https://github.com/ABCD-Community/ABCD-Community.github.io">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">© 2021 ABCD Community All Rights Reserved</small>
+        
+        <p class="mt-2">
+
+            
+                <a href="/en//" >Home</a> <span class="text-primary"> </span>
+          
+                <a href="/en/docs" >Documentation</a> <span class="text-primary"> </span>
+          
+                <a href="/en/collab" >Collaboration</a> <span class="text-primary"> </span>
+          
+                <a href="/en/about" >About</a> <span class="text-primary"> </span>
+          
+
+        </p>	
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div> <!--./container-fluid td-outer--> 
+    <script src="/assets/js/popper.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/main.js"></script>
+
+
+<script src="/assets/js/tabpane-persist.js"></script>
+
+  </body>
+</html>

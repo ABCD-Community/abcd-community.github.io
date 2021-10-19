@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en"  class="no-js">
+  <!-- Copyright 2019-2021 Vanessa Sochat-->
+  <head>
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Jekyll" />
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+<link rel="alternate" type="application/rss&#43;xml" href="/docs/index.xml">
+
+<link rel="shortcut icon" href="/assets/favicons/favicon.ico" >
+<link rel="icon" type="image/png" href="/assets/favicons/favicon.png" sizes="16x16">
+
+ 
+ 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M0LM60C9WY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M0LM60C9WY');
+</script>
+
+ 
+
+<title>ABCD Community</title>
+<meta property="og:title" content="ABCD Community" />
+<meta property="og:description" content="This document aims at providing all relevant background information and instructions on how to use the integrated library and documentation management system 'ABCD'. Both the basic operations and the advanced management of the software are discussed, as are useful and necessary topics concerning the ISIS-software on which ABCD is based. In this new edition the new features of version 2.0 are added - the use of different flavors of CISIS, of Unicode,and the digital library capabilities as well as some additional modules (ODDS, LDAP, DSpaceBridge) and utilities (UTF8-conversion, loanobjects creation...) ." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://localhost:9898" />
+<meta property="og:site_name" content="http://localhost:9898" />
+
+<meta itemprop="name" content="ABCD Community">
+<meta itemprop="description" content="">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ABCD Community"/>
+<meta name="twitter:description" content="This document aims at providing all relevant background information and instructions on how to use the integrated library and documentation management system 'ABCD'. Both the basic operations and the advanced management of the software are discussed, as are useful and necessary topics concerning the ISIS-software on which ABCD is based. In this new edition the new features of version 2.0 are added - the use of different flavors of CISIS, of Unicode,and the digital library capabilities as well as some additional modules (ODDS, LDAP, DSpaceBridge) and utilities (UTF8-conversion, loanobjects creation...) ."/>
+
+<link rel="stylesheet" href="/assets/css/main.min.css">
+<link rel="stylesheet" href="/assets/css/palette.css">
+<script
+  src="/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+
+
+  
+  
+    
+  <link rel="alternate" hreflang="en" href="/en/abcd-thesaurus/" />
+    
+  <link rel="alternate" hreflang="pt" href="/pt/abcd-thesaurus/" />
+    
+  
+
+  
+</head>
+
+  
+
+
+  <body class="td-section">
+    
+<header>
+    <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="/en">
+            <span class="navbar-logo"></span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 167.73 167.77"><defs><style>.cls-1{fill:#ffffff;}</style></defs><g id="Camada_2" data-name="Camada 2"><g id="Camada_1-2" data-name="Camada 1"><path class="cls-1" d="M66.62,83.14c-41-2.06-66.62,18-66.62,18V18.42S20.94-.08,66.62,0Z"/><path class="cls-1" d="M84.59,66.62c2.06-41-18-66.62-18-66.62h82.73s18.5,20.94,18.42,66.62Z"/><path class="cls-1" d="M101.11,84.63c41,2.06,66.62-18,66.62-18v82.74s-20.94,18.49-66.62,18.41Z"/><path class="cls-1" d="M83.14,101.15c-2.06,41,18,66.62,18,66.62H18.42S-.08,146.83,0,101.15Z"/></g></g></svg><span class="text-uppercase font-weight-bold">ABCD Community</span>
+        </a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+            
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/en//" ><span>Home</span></a>
+			</li>
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/en/docs" ><span>Documentation</span></a>
+			</li>
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/en/collab" ><span>Collaboration</span></a>
+			</li>
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/en/about" ><span>About</span></a>
+			</li>
+
+
+  <li class="nav-item dropdown mr-4 d-none d-lg-block">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">English</a>
+    <div class="dropdown-menu">
+        
+            
+            
+            
+                
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-thesaurus/">English</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-thesaurus/">Português</a>
+
+
+            
+            
+        
+   </div>
+  </li>
+
+		</ul>
+	</div>
+	
+    <div class="navbar-nav d-none d-lg-block">
+        <input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off"> 
+    </div>
+   
+	<div class="navbar-nav d-none d-lg-block">
+          <a class="gh-source" data-gh-source="github" href="https://github.com/ABCD-Community/ABCD-Community.github.io" title="Go to repository" data-md-state="done">
+            <i class="fab fa fa-github fa-2x" style='color: #fff;padding-right:20px; float:left; margin-top:5px'></i></a>
+        </div>
+      </div>
+
+
+</nav>
+</header>
+
+
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+          <div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    <input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="on">
+      <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+      </button>
+  </form>  
+
+  <nav class="collapse td-sidebar-nav" id="td-section-nav">
+    <div class="nav-item dropdown d-block d-lg-none pl-4">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">English</a>
+
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+        
+            
+            
+            
+                
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-thesaurus/">English</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-thesaurus/">Português</a>
+
+
+            
+            
+        
+      </div>
+    </div>
+
+
+    
+      <ul class="td-sidebar-nav__section pr-md-3"> 
+
+        
+        
+
+        <li class="td-sidebar-nav__section-title">
+          <a  href="" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section"></a>
+        </li>
+        
+      </ul>
+    
+      <ul class="td-sidebar-nav__section pr-md-3"> 
+
+        
+        
+
+        <li class="td-sidebar-nav__section-title">
+          <a  href="/en/docs" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Home</a>
+        </li>
+        
+          <ul>
+            <li class="collapse show" id="home">
+              <ul class="td-sidebar-nav__section pr-md-3">
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-introduction
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Introduction
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-technology
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD Technology
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-installation
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Installation
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-modules
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Modules
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-utilities
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Utilities
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-thesaurus
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Thesaurus
+                    </a>
+                  </li>
+                  
+                    <ul>
+                      <li class="collapse show" id="">
+                        
+                      </li>
+                    </ul>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-odds
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">The Online Document Delivery Service (ODDS)
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-digital-library
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Digital library features in ABCD
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-oai
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">The OAI interface
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-opac
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD OPAC
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/opac-iah
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">iAH OPAC
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-site
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD Site
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/secs-web
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Serials Control
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-unicode
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD Unicode
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-localisation
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD Localisation
+                    </a>
+                  </li>
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        
+      </ul>
+    
+  </nav>
+</div>
+
+          </aside> <!--col-12 col-md-3 col-xl-2 td-sidebar d-print-none-->
+          
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+                  <a href="https://github.com/ABCD-Community/ABCD-Community.github.io/edit/main/en/abcd-thesaurus/index.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+
+<a href="https://github.com/ABCD-Community/ABCD-Community.github.io/issues/new?labels=question&title=Question:&body=Question on: https://github.com/ABCD-Community/ABCD-Community.github.io/tree/master/en/abcd-thesaurus/index.md" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+
+<a href="https://github.com/ABCD-Community/ABCD-Community.github.io/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
+<!-- this will parse through the header fields and add a button to open
+     an issue / ask a question on Github. The editable field should be in
+     the post frontend matter, and refer to the label to open the issue for -->
+
+            </div>
+            <div class="td-toc">
+              <nav id="TableOfContents">
+                <ul id="TOC">
+                   <!-- Links will be appended here-->
+                </ul>
+              </nav>
+            </div>
+ 
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">     
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+              <ol class="breadcrumb spb-1">
+              
+              
+                <li class="breadcrumb-item">
+                  <a href="http://localhost:9898/en/">En</a>
+                </li>
+                
+                <li class="breadcrumb-item active" aria-current="page">
+	          <a href="http://localhost:9898/en/abcd-thesaurus/">ABCD Thesaurus</a>
+                </li>
+                
+	      </ol>
+           </nav>
+
+           <div class="td-content">
+
+	      <h1 id="abcd-thesaurus">ABCD Thesaurus</h1>
+
+<h2 class="no_toc no_toc text-delta" id="content">Content</h2>
+
+<ol id="markdown-toc">
+  <li><a href="#abcd-thesaurus" id="markdown-toc-abcd-thesaurus">ABCD Thesaurus</a>    <ol>
+      <li><a href="#thesaurus" id="markdown-toc-thesaurus">Thesaurus</a>        <ol>
+          <li><a href="#configuration-of-a-thesaurus-database-for-abcd-central" id="markdown-toc-configuration-of-a-thesaurus-database-for-abcd-central">Configuration of a thesaurus database for ABCD Central</a></li>
+          <li><a href="#the-use-of-a-thesaurus-in-data-entry" id="markdown-toc-the-use-of-a-thesaurus-in-data-entry">The use of a thesaurus in data-entry</a></li>
+          <li><a href="#the-use-of-a-thesaurus-in-searching" id="markdown-toc-the-use-of-a-thesaurus-in-searching">The use of a thesaurus in searching</a></li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+<hr />
+
+<h2 id="thesaurus">Thesaurus</h2>
+
+<p>In ABCD a thesaurus can be used as a ‘guided authority’ list of terms at two different stages : while assigning descriptors during data-entry and while defining keywords for searching in a database.</p>
+
+<p>The thesaurus itself is a database (remember in ABCD ‘everything is a database’) with a specific structure of fields which cover the main standard-thesaurus elements of identifier, descriptor, scope note, use, used-for, broader/nar- rower term and related terms as well as ‘non-descriptor’ (a term to be avoided and replaced by a ‘preferred’ one). For more background information on this standard ‘ISO 25964’ check e.g. the Wikipedia-page at the URL https://en.wikipedia.org/wiki/ISO_25964.</p>
+
+<h3 id="configuration-of-a-thesaurus-database-for-abcd-central">Configuration of a thesaurus database for ABCD Central</h3>
+
+<p>In the file ‘dr_path.def’ of the associated database (e.g. your MARC-catalog) the following parameters have to be added :</p>
+
+<ul>
+  <li>
+    <p>Thesaurus = , followed by the name of a thesaurus database, e.g. ‘agrovoc’ (without path information as that will be obtained, as for any database in ABCD, from its par-file in the bases/par directory;</p>
+  </li>
+  <li>
+    <p>prefix_search_tesaurus = , followed by a prefix which is used to index the ‘descriptors’ field in your database,</p>
+  </li>
+</ul>
+
+<p>e.g. ‘MA_’ in the demo MARC-database for field 650. This prefix will be added by the software in front of the selected term in order to search it in the (catalog-)database.</p>
+
+<p>In addition a file ‘dbn.dat’ (where ‘dbn’ is the name of the thesaurus database, e.g. ‘agrovoc’) needs to be created in the active language of the ‘def’-directory of the thesaurus-database, e.g. in the case of English agrovoc : bases/ agrovoc/def/en/agrovoc.dat. In that file 4 parameters need to be defined :</p>
+
+<ol>
+  <li>
+    <p>Alpha_prefix = : Prefix to use to retrieve the alphabetical list of thesaurus terms, as indexed in the FST</p>
+  </li>
+  <li>
+    <p>Perm_prefix = : Prefix to use to form permuted listing of terms. The prefix PER_ must be used and the line of the fst in which it is used must be indexed by technique 8 (each word of the term with addition of a prefix</p>
+  </li>
+  <li>
+    <p>Alpha_pft = : Format to use to display the term in the alphabetical or permuted list</p>
+  </li>
+  <li>
+    <p>Display = : Name of the format (without the .pft extension) to format the thesaurus record and display it in the thesaurus terms tab in full detail with links.</p>
+  </li>
+</ol>
+
+<p>An example such configuration file looks like the following :</p>
+
+<ul>
+  <li>Alpha_prefix = TE</li>
+  <li>Perm_prefix = PER_</li>
+  <li>Alpha_pft = v8</li>
+  <li>Display = tab</li>
+</ul>
+
+<p>The ‘Display = ‘ PFT, in this example therefore named ‘tab.pft’, will require some additional elaboration in order to format the record in a useful and attractive way. Here is an example of such PFT, using the fields :</p>
+
+<ul>
+  <li>v8 = Base term</li>
+  <li>v12 = Use or ‘see’ (US)</li>
+  <li>v13 = Used for (UF)</li>
+  <li>v14 = Scope note (SN)</li>
+  <li>v16 = Broader term (BT)</li>
+  <li>v17 = Narrower term (NT)</li>
+  <li>v18 = Related term (RT)</li>
+  <li>v30 = Notes</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'&lt;a href='javascript:Search("`v8`")'&gt;'
+'&lt;img src=../dataentry/img/search.gif border=0&gt;' 
+'&lt;/a&gt;'
+"&lt;Strong&gt;" V8 "&lt;/ Strong&gt;" v45/ "&lt;br&gt;" v32,/
+
+'&lt;Table&gt;',
+
+if p (v12) then 
+'&lt;tr&gt;'
+	'&lt;td valign = top&gt; Use &lt;/td&gt;'	 
+	'&lt;td&gt;'
+		(if p (v12) then `&lt;a href='javascript:Show("`v12`")'&gt;` V12 '' '/ fi), 
+	'&lt;/td&gt;' fi,
+if p (v13) then 
+'&lt;tr&gt;'
+	'&lt;td valign=top&gt;UF&lt;/td&gt;'	
+	'&lt;td&gt;'
+		(if p (v13) then `&lt;a href='javascript:Show("`v16`")'&gt;` V13 '' '/ fi), 
+	'&lt;/td&gt;' / 
+fi,
+'&lt;td&gt; &lt;/td&gt;'
+'&lt;td&gt; &lt;/td&gt;'
+
+if p (v16) then '&lt;tr&gt;' 
+'&lt;td valign=top&gt;BT&lt;/td&gt;' 
+'&lt;td&gt;' (if p (v16) then `&lt;a href='javascript:Show("`v16`")'&gt;` v16 '/'), '&lt;/td&gt;' / fi,
+if p (v17) then '&lt;Tr&gt; &lt;td valign = top&gt; NT &lt;/td&gt; &lt;td&gt;' (if p (v17) then `&lt;a href='javascript:Show("`v17`")'&gt;` V17 '' '/ fi), '&lt;/td&gt;' / fi,
+if p (v18) then '&lt;Tr&gt; &lt;td valign = top&gt; RT &lt;/td&gt; &lt;td&gt;' (if p (v18) then `&lt;a href='javascript:Show("`v18`")'&gt;` V18 '' '/ fi), '&lt;/td&gt;' / fi,
+if p (v30) then '&lt;Tr&gt; &lt;td valign = top&gt; See also &lt;/td&gt; &lt;td&gt;' (if p (v30) then `&lt;a href='javascript:Show("`v30`")'`` V30 '/'), '&lt;/td&gt;' / fi,
+'&lt;/table&gt;'
+/
+</code></pre></div></div>
+
+<p>The initial statement <code class="language-plaintext highlighter-rouge">&lt;a href='javascript:Search('v8')'&gt;&lt;img src=.. /dataentry/img /search.gif border=0&gt;&lt;/a&gt;</code> will allow to launch a search when clicking on the term.</p>
+
+<blockquote>
+  <p>Note:
+the use of the special quotes ` in this statement to still allow
+the ‘normal’ quotes ‘ and “ without disturbing the format</p>
+</blockquote>
+
+<p>The statements calling a javascript ‘Show’, generalized as follows :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(if p (vxx) then '&lt;a href='javascript:Show("`vxx`")'`` Vxx '' '/ fi),  
+</code></pre></div></div>
+
+<p>allows to use the terms of the relationships to navigate through the thesaurus by clicking on them (‘Vxx’ being the related field).</p>
+
+<blockquote>
+  <p>Note:
+The javascript codes for Search and Show are already inserted in
+the script tesaurus / show.php in charge of showing the full records
+of the thesaurus</p>
+</blockquote>
+
+<p>Finally, the descriptors field in the catalog FDT and FST has to be defined as a thesaurus-supported field as follows :</p>
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>FDT : in the ‘descriptors’ field (e.g. 650 in MARC) define ‘thesaurus’ as the picklist database-type and add the prefix used (e.g. MA_); put the field-tag in both ‘list as’ and ‘extract as’ columns, e.g. v650</td>
+          <td>v650</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <p>FST : if V8 contains the main term, at least two entries need to be present in the FST of the thesaurus database :</p>
+
+    <p>8 0 “TE_” v8
+8 8 ‘| PER_ |’ v8</p>
+  </li>
+</ul>
+
+<p>for resp. the base-term listing and the permuted listing.</p>
+
+<h3 id="the-use-of-a-thesaurus-in-data-entry">The use of a thesaurus in data-entry</h3>
+
+<p>When the previous configuration with its 2 parameters is found to be present, the Central toolbar will show the Thesaurus icon <img src="https://lh4.googleusercontent.com/lz_gPAo_tTdjEetjx7NR4l8D8dQnikSPnAFvazvdUqxeHI1Tf-YzC9zZhmpaPsyVzaU98MjUTQrRGG1z_0jp2T3Gn5KlexsAoUnVvWOelqXHGXDZIUV0ttAAQXNoM8LEyPvilzJM=s0" alt="" /></p>
+
+<p>Clicking on that icon will open a new sub-window with the initial listing of your thesaurus terms, e.g. in the case of agrovoc :<img src="https://lh6.googleusercontent.com/qQ_Phi6CQfOE6Lv-OExL36GFqc3ll501_GZeHubwrzGC5Z7FG4vydl0D73bwiGN8kQS7serih_JiOIoji7Tw6G6-gNGCiIolAB2lLvPjLJMbT5H1P1cxLqmRidDHopaAK2eH-MjQ=s0" alt="" /></p>
+
+<p>The listing shown is the ‘alphabetical’ one (‘ABC…’) with all Latin alphabet characters available for quick reposi- tioning in the thesaurus. Also the ‘go to’ box at the bottom can be used to enter a few characters and then immedi- ately jump to the closest term by clicking on ‘continue’.</p>
+
+<p>An alternative way of showing this listing is using the ‘permuted’ listing - see the two options ‘ABC…’ and ‘Per- muted’ at the bottom of the screen - which will show all terms starting with the selected character but with its context (other included words) before or after the word itself. In the illustration below we have opted for the ‘D’ character as the starting point and the list shows all terms with words starting with ‘D’ also if it is not the first words in the multi-word term :</p>
+
+<p><img src="https://lh3.googleusercontent.com/4K6aei9b3_GoezBpnd4qi4vh3VC60ytRrvmKUzIepY0Wg0CGpXfuFFES-eexwOK8cxzCM0PXL6kH6ZYbFBQGawxAvkw-Ywn5BBTw8U8RP2Oox11c4MCV5UpnYuq-xE20AFHt7XwE=s0" alt="" /></p>
+
+<p>Finally, when the tick-box at the upper-right corner is indeed ticked (active), selecting a term will first show the selected term with its relations, i.e. the full record formatted according to a pre-defined PFT (which is explained above in the configuration).<img src="https://lh5.googleusercontent.com/tOGns4MX5eI0RIg-etV937Bf3SA9xKLblr-g-PbcfCAP_yfITESxrTAQTVEw3Z4EHOkdG4uB0o76Mg0EXznUxWXoaXQwS7oVMsDY1LvBaChnYy6qZ5JTe2IDCSulTxZ8T0QB6qbS=s0" alt="" /></p>
+
+<p>Whenever the ‘thesaurus consultation’ is finished (by navigating into it or simply selecting a term), the finally selected term will be inserted into the data-entry form (field), however only at the field level [the sub-field level still needs to be implemented].</p>
+
+<h3 id="the-use-of-a-thesaurus-in-searching">The use of a thesaurus in searching</h3>
+
+<p>In fact exactly the same mechanisms of opening and consulting the thesaurus as above for data-entry apply for searching. After finally a term has been selected, it will be used as the current search-term and the resulting records will be shown.</p>
+
+<p>Note that such search will only result in real records when they were entered using thesaurus-terms at data-entry stage. When a database is searched which was created without a thesaurus, only by co-incidence the same terms from the thesaurus might have been used as non-authoritatively assigned descriptors.</p>
+
+<script
+  src="/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function() {
+
+    var toc = $('#TOC');
+
+    // Select each header
+    sections = $('.td-content h1');
+        $.each(sections, function(idx, v) {
+            section = $(v);
+            var div_id = $(section).attr('id');
+            var div_text = section.text().split('¶')[0];
+            var parent = $("#" + div_id)
+            var content = '<li id="link_' + div_id + '" class="md-nav__item"><small><a class="md-nav__link" href="#' + div_id + '" title="' + div_text +'">' + div_text +'</small></a></li>';
+            $(toc).append(content);
+
+            // Add section code to subnavigation
+            var children = $('<nav class="md-nav"><ul class="md-nav__list"></nav></ul>')
+            var contenders = $("#" + div_id).nextUntil("h1");
+            $.each(contenders, function(idx, contender){
+               if($(contender).is('h2') || $(contender).is('h3')) {
+                   var contender_id = $(contender).attr('id');
+                   var contender_text = $(contender).text().split('¶')[0];
+                   var content = '<li class="md-nav__item"><a class="md-nav__link " href="#' + contender_id + '" title="' + contender_text +'"><small>' + contender_text +'</small></a></li>';
+                   children.append(content);
+                }
+             })
+             $("#link_" + div_id).append(children);
+        });
+    });
+</script>
+
+<script>
+var headers = ["h1", "h2", "h3", "h4"]
+var colors = ["red", "orange", "green", "blue"]
+
+$.each(headers, function(i, header){
+    var color = colors[i];
+    $(header).each(function () {
+        var href=$(this).attr("id");
+        $(this).append('<a class="headerlink" style="color:' + color + '" href="#' + href + '" title="Permanent link">¶</a>')
+    });
+})
+</script>
+
+
+
+	
+              
+              <style>
+  .feedback--answer {
+    display: inline-block;
+  }
+  .feedback--answer-no {
+    margin-left: 1em;
+  }
+  .feedback--response {
+    display: none;
+    margin-top: 1em;
+  }
+  .feedback--response__visible {
+    display: block;
+  }
+</style>
+<div class="d-print-none">
+<h2 class="feedback--title">Feedback</h5>
+<p class="feedback--question">Was this page helpful?</p>
+<button class="btn btn-primary mb-4 feedback--answer feedback--answer-yes">Yes</button>
+<button class="btn btn-primary mb-4 feedback--answer feedback--answer-no">No</button>
+<p class="feedback--response feedback--response-yes">
+  Glad to hear it! Please <a href='{{ site.repo }}/issues/new'>tell us how we can improve</a>.
+</p>
+<p class="feedback--response feedback--response-no">
+  Sorry to hear that. Please <a href='{{ site.repo  }}/issues/new'>tell us how we can improve</a>.
+</p>
+</div>
+<script>
+  const yesButton = document.querySelector('.feedback--answer-yes');
+  const noButton = document.querySelector('.feedback--answer-no');
+  const yesResponse = document.querySelector('.feedback--response-yes');
+  const noResponse = document.querySelector('.feedback--response-no');
+  const disableButtons = () => {
+    yesButton.disabled = true;
+    noButton.disabled = true;
+  };
+  const sendFeedback = (value) => {
+    if (typeof ga !== 'function') return;
+    const args = {
+      command: 'send',
+      hitType: 'event',
+      category: 'Helpful',
+      action: 'click',
+      label: window.location.pathname,
+      value: value
+    };
+    ga(args.command, args.hitType, args.category, args.action, args.label, args.value);
+  };
+  yesButton.addEventListener('click', () => {
+    yesResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(1);
+  });
+  noButton.addEventListener('click', () => {
+    noResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(0);
+  });
+</script><br/>
+
+
+
+
+           </div>
+
+          </main> <!--col-12 col-md-9 col-xl-8 pl-md-5-->
+        </div> <!--./row flex-xl-nowrap-->
+      </div> <!--./td-main-->
+      
+      <footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        <ul class="list-inline mb-0">  
+          
+          
+        </ul>
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        <ul class="list-inline mb-0">  
+          <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="GitHub" data-original-title="GitHub">
+            <a class="text-white" target="_blank" href="https://github.com/ABCD-Community/ABCD-Community.github.io">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">© 2021 ABCD Community All Rights Reserved</small>
+        
+        <p class="mt-2">
+
+            
+                <a href="/en//" >Home</a> <span class="text-primary"> </span>
+          
+                <a href="/en/docs" >Documentation</a> <span class="text-primary"> </span>
+          
+                <a href="/en/collab" >Collaboration</a> <span class="text-primary"> </span>
+          
+                <a href="/en/about" >About</a> <span class="text-primary"> </span>
+          
+
+        </p>	
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div> <!--./container-fluid td-outer--> 
+    <script src="/assets/js/popper.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/main.js"></script>
+
+
+<script src="/assets/js/tabpane-persist.js"></script>
+
+  </body>
+</html>

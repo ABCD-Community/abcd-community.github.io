@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en"  class="no-js">
+  <!-- Copyright 2019-2021 Vanessa Sochat-->
+  <head>
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Jekyll" />
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+<link rel="alternate" type="application/rss&#43;xml" href="/docs/index.xml">
+
+<link rel="shortcut icon" href="/assets/favicons/favicon.ico" >
+<link rel="icon" type="image/png" href="/assets/favicons/favicon.png" sizes="16x16">
+
+ 
+ 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M0LM60C9WY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M0LM60C9WY');
+</script>
+
+ 
+
+<title>ABCD Community</title>
+<meta property="og:title" content="ABCD Community" />
+<meta property="og:description" content="This document aims at providing all relevant background information and instructions on how to use the integrated library and documentation management system 'ABCD'. Both the basic operations and the advanced management of the software are discussed, as are useful and necessary topics concerning the ISIS-software on which ABCD is based. In this new edition the new features of version 2.0 are added - the use of different flavors of CISIS, of Unicode,and the digital library capabilities as well as some additional modules (ODDS, LDAP, DSpaceBridge) and utilities (UTF8-conversion, loanobjects creation...) ." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://localhost:9898" />
+<meta property="og:site_name" content="http://localhost:9898" />
+
+<meta itemprop="name" content="ABCD Community">
+<meta itemprop="description" content="">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ABCD Community"/>
+<meta name="twitter:description" content="This document aims at providing all relevant background information and instructions on how to use the integrated library and documentation management system 'ABCD'. Both the basic operations and the advanced management of the software are discussed, as are useful and necessary topics concerning the ISIS-software on which ABCD is based. In this new edition the new features of version 2.0 are added - the use of different flavors of CISIS, of Unicode,and the digital library capabilities as well as some additional modules (ODDS, LDAP, DSpaceBridge) and utilities (UTF8-conversion, loanobjects creation...) ."/>
+
+<link rel="stylesheet" href="/assets/css/main.min.css">
+<link rel="stylesheet" href="/assets/css/palette.css">
+<script
+  src="/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+
+
+  
+  
+    
+  <link rel="alternate" hreflang="en" href="/en/abcd-localisation/" />
+    
+  <link rel="alternate" hreflang="pt" href="/pt/abcd-localisation/" />
+    
+  
+
+  
+</head>
+
+  
+
+
+  <body class="td-section">
+    
+<header>
+    <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="/en">
+            <span class="navbar-logo"></span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 167.73 167.77"><defs><style>.cls-1{fill:#ffffff;}</style></defs><g id="Camada_2" data-name="Camada 2"><g id="Camada_1-2" data-name="Camada 1"><path class="cls-1" d="M66.62,83.14c-41-2.06-66.62,18-66.62,18V18.42S20.94-.08,66.62,0Z"/><path class="cls-1" d="M84.59,66.62c2.06-41-18-66.62-18-66.62h82.73s18.5,20.94,18.42,66.62Z"/><path class="cls-1" d="M101.11,84.63c41,2.06,66.62-18,66.62-18v82.74s-20.94,18.49-66.62,18.41Z"/><path class="cls-1" d="M83.14,101.15c-2.06,41,18,66.62,18,66.62H18.42S-.08,146.83,0,101.15Z"/></g></g></svg><span class="text-uppercase font-weight-bold">ABCD Community</span>
+        </a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+            
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/en//" ><span>Home</span></a>
+			</li>
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/en/docs" ><span>Documentation</span></a>
+			</li>
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/en/collab" ><span>Collaboration</span></a>
+			</li>
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/en/about" ><span>About</span></a>
+			</li>
+
+
+  <li class="nav-item dropdown mr-4 d-none d-lg-block">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">English</a>
+    <div class="dropdown-menu">
+        
+            
+            
+            
+                
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-localisation/">English</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-localisation/">Português</a>
+
+
+            
+            
+        
+   </div>
+  </li>
+
+		</ul>
+	</div>
+	
+    <div class="navbar-nav d-none d-lg-block">
+        <input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off"> 
+    </div>
+   
+	<div class="navbar-nav d-none d-lg-block">
+          <a class="gh-source" data-gh-source="github" href="https://github.com/ABCD-Community/ABCD-Community.github.io" title="Go to repository" data-md-state="done">
+            <i class="fab fa fa-github fa-2x" style='color: #fff;padding-right:20px; float:left; margin-top:5px'></i></a>
+        </div>
+      </div>
+
+
+</nav>
+</header>
+
+
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+          <div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    <input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="on">
+      <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+      </button>
+  </form>  
+
+  <nav class="collapse td-sidebar-nav" id="td-section-nav">
+    <div class="nav-item dropdown d-block d-lg-none pl-4">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">English</a>
+
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+        
+            
+            
+            
+                
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-localisation/">English</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-localisation/">Português</a>
+
+
+            
+            
+        
+      </div>
+    </div>
+
+
+    
+      <ul class="td-sidebar-nav__section pr-md-3"> 
+
+        
+        
+
+        <li class="td-sidebar-nav__section-title">
+          <a  href="" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section"></a>
+        </li>
+        
+      </ul>
+    
+      <ul class="td-sidebar-nav__section pr-md-3"> 
+
+        
+        
+
+        <li class="td-sidebar-nav__section-title">
+          <a  href="/en/docs" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Home</a>
+        </li>
+        
+          <ul>
+            <li class="collapse show" id="home">
+              <ul class="td-sidebar-nav__section pr-md-3">
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-introduction
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Introduction
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-technology
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD Technology
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-installation
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Installation
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-modules
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Modules
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-utilities
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Utilities
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-thesaurus
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Thesaurus
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-odds
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">The Online Document Delivery Service (ODDS)
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-digital-library
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Digital library features in ABCD
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-oai
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">The OAI interface
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-opac
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD OPAC
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/opac-iah
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">iAH OPAC
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-site
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD Site
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/secs-web
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Serials Control
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-unicode
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD Unicode
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-localisation
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD Localisation
+                    </a>
+                  </li>
+                  
+                    <ul>
+                      <li class="collapse show" id="">
+                        
+                      </li>
+                    </ul>
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        
+      </ul>
+    
+  </nav>
+</div>
+
+          </aside> <!--col-12 col-md-3 col-xl-2 td-sidebar d-print-none-->
+          
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+                  <a href="https://github.com/ABCD-Community/ABCD-Community.github.io/edit/main/en/abcd-localisation/index.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+
+<a href="https://github.com/ABCD-Community/ABCD-Community.github.io/issues/new?labels=question&title=Question:&body=Question on: https://github.com/ABCD-Community/ABCD-Community.github.io/tree/master/en/abcd-localisation/index.md" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+
+<a href="https://github.com/ABCD-Community/ABCD-Community.github.io/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
+<!-- this will parse through the header fields and add a button to open
+     an issue / ask a question on Github. The editable field should be in
+     the post frontend matter, and refer to the label to open the issue for -->
+
+            </div>
+            <div class="td-toc">
+              <nav id="TableOfContents">
+                <ul id="TOC">
+                   <!-- Links will be appended here-->
+                </ul>
+              </nav>
+            </div>
+ 
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">     
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+              <ol class="breadcrumb spb-1">
+              
+              
+                <li class="breadcrumb-item">
+                  <a href="http://localhost:9898/en/">En</a>
+                </li>
+                
+                <li class="breadcrumb-item active" aria-current="page">
+	          <a href="http://localhost:9898/en/abcd-localisation/">ABCD Localisation</a>
+                </li>
+                
+	      </ol>
+           </nav>
+
+           <div class="td-content">
+
+	      <h1 id="abcd-localisation">ABCD Localisation</h1>
+
+<h2 class="no_toc no_toc text-delta" id="content">Content</h2>
+
+<ol id="markdown-toc">
+  <li><a href="#abcd-localisation" id="markdown-toc-abcd-localisation">ABCD Localisation</a>    <ol>
+      <li><a href="#localisation-of-central" id="markdown-toc-localisation-of-central">Localisation of Central</a>        <ol>
+          <li><a href="#create-new-directories-for-a-new-language" id="markdown-toc-create-new-directories-for-a-new-language">Create new directories for a new language</a></li>
+          <li><a href="#add-the-new-language-in-the-languages-lists" id="markdown-toc-add-the-new-language-in-the-languages-lists">Add the new language in the languages lists</a></li>
+          <li><a href="#translate-all-messages-for-all-central-submodules-using-the-interface" id="markdown-toc-translate-all-messages-for-all-central-submodules-using-the-interface">Translate all messages for all Central submodules using the interface</a></li>
+          <li><a href="#translate-all-help-messages-for-the-new-languageinterface" id="markdown-toc-translate-all-help-messages-for-the-new-languageinterface">Translate all help-messages for the new language/interface</a></li>
+          <li><a href="#create-language-folders-for-each-database" id="markdown-toc-create-language-folders-for-each-database">Create language folders for each database</a></li>
+        </ol>
+      </li>
+      <li><a href="#localisation-of-the-iah-opac" id="markdown-toc-localisation-of-the-iah-opac">Localisation of the iAH OPAC</a>        <ol>
+          <li><a href="#the-general-language-elements-in-the-subfolders-of-htdocsiah" id="markdown-toc-the-general-language-elements-in-the-subfolders-of-htdocsiah">The general language elements in the subfolders of htdocs/iah</a></li>
+          <li><a href="#the-script-generated-language-elements" id="markdown-toc-the-script-generated-language-elements">The script-generated language elements</a></li>
+        </ol>
+      </li>
+      <li><a href="#localisation-of-the-abcd-site" id="markdown-toc-localisation-of-the-abcd-site">Localisation of the ABCD Site</a></li>
+    </ol>
+  </li>
+</ol>
+
+<hr />
+
+<p>This section deals with the techniques and steps needed in order to create a ‘localised’ version of ABCD.
+Localisation refers to the idea of presenting the software in a way suitable for the local users, i.e. using a language and alphabet but in some cases also ‘style’ of wording and presentation which is most suitable for the targeted audience. E.g. for a children’s library one could imagine that all the mentioned elements : language, alphabet,</p>
+
+<p>wording and presentation, are adapted to the main characteristics of the target users, being children who have another vocabulary, their own preferences re styling (e.g. more colours and funny icons) etc.</p>
+
+<p>As an extension of this idea also the concept of a ‘responsive’ interface could me mentioned : the interface adapts to the device of the user. Generally this boils down to using other style-sheets when the user-device is a mobile phone with much more vertically oriented and smaller screens as compared to computers. Not everybody is fully happy with this concept, some even stating “don’t do it”, so we will refrain from going into this technique all the way. Let us simply refer to the idea that a lot of such ‘responsive’ behaviour can be facilitated by the creation of several style-sheets sets. For ABCD this has been done as a matter of fact.</p>
+
+<p>Here we will focus on creating a new interface based on the existing one but using a different - possibly new</p>
+
+<ul>
+  <li>language, if necessary written in a non-Latin alphabet. This not only needs to be done for the ABCD Central module but in fact more relevant for the other main end-user oriented modules iAH and Site. So when we ‘localise’ ABCD Central we consider the operators (librarians) also as end-users with their preference for a specific language, alphabet and vocabulary.</li>
+</ul>
+
+<p>Since ABCD is a very much ‘modular’ system, each of the main modules has its own requirements and techniques to translate the interface to any other language. These modules operate independently (however accessing the same ISIS-databases) with their own software technology and also use different ways to display texts on the screens.</p>
+
+<p>E.g ‘Central’ uses text-files .tab with simple key-value pairs in the language-database-folder whereas ‘Site’ uses HTML- and XML-files. For the iAH OPAC a single text-file with most messages can be used with available scripts to immediately create (most of) the necessary text-parts in the required files (mostly php and pft scripts).</p>
+
+<h2 id="localisation-of-central">Localisation of Central</h2>
+
+<p>Except for some texts which could contain language-dependent elements, e.g. in the header and footers, like the institutional name, version, website links etc., all language-sensitive elements for messages are in ‘tables’, i.e. text- files with key-value pairs (key=value) saved by submodule (e.g. administration, cataloging, circulation…) in a file ‘.tab’. E.g. the file ‘admin.tab’ contains the messages of the Central-interface to deal with database-definitions. For each language these files are stored in a sub-folder of the ‘lang’-folder in the bases-directory. This is not a real database-folder with ISIS-database files, like for other databases (e.g. MARC, CEPAL, USERS), but just the store of messages for each language used.</p>
+
+<p>Under here we show how the same file admin.tab above will look like accessed from within the interface of ABCD Central; for illustration purposes we included a non-Latin entry (Sinhalese) already for the 3rd value (acquisitions) :<img src="https://lh6.googleusercontent.com/pIHhCVbVEbFErJDurRdNLow9fIaOaM0nUmHpEymKXTZmVK-mdaQuSU47atdLd34bXGv5orNAAMGZvMvBbxqMhULYICmIKVwaz129zQqc48bHwlPElSzt4sGRUjB1axyQ30nf4hI=s0" alt="" />
+The first use of this interface therefore is to ‘adjust’ messages according to local taste or individual preferences. However the same technique can also be used to create a new language as follows.</p>
+
+<h3 id="create-new-directories-for-a-new-language">Create new directories for a new language</h3>
+
+<p>Using the file-manager of your OS (either Windows or Linux) and navigate to the bases-folder, i.e.</p>
+
+<ul>
+  <li>
+    <p>for Windows :</p>
+
+    <p>\ABCD\www\bases</p>
+  </li>
+  <li>
+    <p>for Linux :</p>
+
+    <p>/var/opt/ABCD/bases</p>
+  </li>
+</ul>
+
+<p>and locate the ‘lang’ sub-directory in the list of databases (each database has its own folder/directory). Enter into that directory and copy the one folder with the language you want to use as the ‘from’ (origin) language to be translated into a new one. E.g. if you want to create your new language based on the English, copy the folder ‘en’.</p>
+
+<p>Paste that folder back and (re-)name it with the code for your language, using preferably the ISO-codes for lan- guages. E.g. to create a Sinhalese interface we will use ‘si’, so the original folder ‘en’ is copies and added as a new folder ‘si’. In there all text-files still are English, by definition.</p>
+
+<h3 id="add-the-new-language-in-the-languages-lists">Add the new language in the languages lists</h3>
+
+<p>Still in your file manager, locate the file ‘lang.tab’ within your language folder and manually – e.g. with Notepad or Gedit – add your new language in the list, e.g. with Sinhalese the new list would look like :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>en=English
+es=Spanish
+fr=French
+pt=Portuguese
+am=Amharic
+si=Singalese
+</code></pre></div></div>
+<p>So if you use English as the default language for Central (see the file htdocs/central/config.php,in the line where the default language is defined, e.g. $lang=”en”; for English), you have to edit the file bases/lang/en/lang.tab and add the new language as a new entry.</p>
+
+<p>In Windows please check, esp. when using Notepad as the editor, that the extension of the file is maintained as ‘.tab’ whereas Notepad will try to add .txt’ to it as a new extension. ABCD will not recognize your languages list if it is not stored as lang.tab !</p>
+
+<p>Now, up one level in the ‘bases’-folder, another file ‘lang.tab’ is present which is used to list the available languages in the Central login-screen, where the previously edited file ‘lang.tab’ (in the language-specific subfolder) gives the display values (not the codes) for each language, so ‘en’ becomes ‘English’ etc. So here you simply have to list all language-codes you want to use, e.g.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>en
+fr
+es
+pt
+am
+si
+</code></pre></div></div>
+<p>If you want users to be allowed to switch languages within Central, you should also add the new language in the ‘lang.tab’-files for all active languages, so in their own sub-folders.</p>
+
+<h3 id="translate-all-messages-for-all-central-submodules-using-the-interface">Translate all messages for all Central submodules using the interface</h3>
+
+<p>Now enter the ABCD Central interface into the language for which you have added the new language in the list. So the new language should appear in the languages-selection list of both the main login-screen and the language-selection list within the Central interface. Either way : make sure your new language is the active one. When then selecting the option ‘Translate messages’ and choosing one of the submodules, you will be looking at the ‘origin’-language (e.g. English) at the left side fixed, and their values editable in boxes at the right side. So this is the big and main job : translate/transliterate all values to reflect as much as possible the correct language equivalent for the given message. This might require checking official glossaries e.g. maintained by your Ministry of Science and Technology, esp. for IT or even ‘library science’ in order to get the most appropriate authority files.</p>
+
+<p>In the screenshot above one can see how the 3rd entry (no. 2) for ‘acquisitions’ has been translated into the Sinhalese word (and alphabet) ‘#############’.</p>
+
+<p>Once the table is saved the next time (after refreshing the screens) the word ‘acquisitions’ in the interface will show as ‘#############’ :</p>
+
+<p><img src="https://lh4.googleusercontent.com/zmY-3GVoL-UVo7ASMvZdSedQR9zD03t6_DGbAKCSwt2T7nCvQfbr_kMAtpBLTvkI7uJuHA7b4HCeQYuaanWUBoX15mAlumzVTtOfFJXozBcDOsMtmnwcR0_lcN_1zsOCWV4Ir5Y=s0" alt="" /></p>
+
+<p>E.g. for the ‘Amharic’ interface (for Ethiopia) the same list of first few ‘cataloging’ interface messages will look like :</p>
+
+<p><img src="https://lh5.googleusercontent.com/GZP6UnHWGilHfOaA7X-KbL5VlFsjYlzOfNzE0kOBI6L3aXHr75H8cjv6qH92Zd7DNHpz3PVTGrrnWNrOXq5cDPd9OKo4Vq45s8RsjEP9FFXItaA-nJ2Smzr5uG2g76QKL2hreJk=s0" alt="" /></p>
+
+<p>One can also, with an extra option in the ABCD Central main menu, ‘compare’ the existing translations in different languages to make sure the real correct meaning is taken. E.g.<img src="https://lh6.googleusercontent.com/GV4yMiMm5NCXvtykif-qia63hactYCeGWrzUm5oQM6IsEbJVH6YFEl8FB4FCyGh_VcQyxUC8Q-yCuE38iZEBDFNIL_RSPqC1AteYWUgu91WxrQUNltGiMRtHyZHhm7MP4JUdHWE=s0" alt="" /></p>
+
+<p>The list of languages displayed in this overview should be manually edited in the script ‘compare_admin.php’ in the htdocs/central/lang sub-folder. Look for a section like :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (isset($msg_path) and $msg_path!="")
+$a=$msg_path."lang/am/$table";
+else
+$a=$db_path."lang/am/$table";
+</code></pre></div></div>
+
+<p>and change ‘/am/’ (Amharic) for the language you want to see – at the right-most side – instead of Amharic, or any other previous language if so preferred. E.g. ‘/si/’ .</p>
+
+<p>Alternatively, once this mechanism with the underlying system of files and (sub-)folders is well understood, one could also directly edit with a text-editor all .tab files immediately within the file-system, without using the ABCD- interface. ABCD indeed is nothing more – but also nothing less – than an ‘interface’ to the multitude of files, scripts and databases of which the system consists.</p>
+
+<blockquote>
+  <p>Note: 
+when saving text files with non-Latin scripts, like in the
+examples above, make sure you save the text-files as UTF-8 files, not
+the mostly default ‘ANSI’ characterset. In Windows there is an
+additional complication : some software will want to add a hidden
+‘BOM’ (binary order mark) as a few characters to indicate that the
+file is of Unicode-type. Since there has never been reached a real
+agreement on this – and quite some experts do not accept this to be a
+good solution – it is better to avoid this BOM additional code. If
+present the file won’t be correctly processed by e.g. JavaScript or
+PHP as in ABCD.</p>
+</blockquote>
+
+<p>When all messages of all modules/functions of ABCD Central have been translated, one can open the related language-version and the interface would look like for instance :<img src="https://lh5.googleusercontent.com/Px_MqV3jtD_B1ZnwdlLcVfl_8sCDZBq7O9y7l0A796uCGm9QOZv0y9WxiJh4XD1OOfXXSGzttUieGY9Z74IeMxvFXyvePmt0fq-Aem8_9AAB_ztRAksqe7A1rikArEOA6QK3f7w=s0" alt="" /></p>
+
+<h3 id="translate-all-help-messages-for-the-new-languageinterface">Translate all help-messages for the new language/interface</h3>
+
+<p>The ABCD Central help-pages are located as HTML-files in the bases-directory named ‘documentacion’. For each language used a subfolder needs to exist.</p>
+
+<p>So in the case of adding a new language (e.g. Sinhalese), copy the folder ‘en’ to a new folder ‘si’. Then inside this new folder you will find all English help-files in their original English version.</p>
+
+<blockquote>
+  <p>Note:
+There exist sub-directories for some specific interface parts :
+acquisitions, circulation, copies and stats. All other helpfiles are
+directly positioned into the main subdirectory.</p>
+</blockquote>
+
+<p>Then, using a suitable text-editor - try to use one which is more powerful than the dreaded Windows ‘Notepad’ but e.g. in Linux the basic ‘nano’-editor will do well - translate the visible text-contents of the HTML-files. In case a good text-editor is used, these parts will have their own colour so as to make them quite easy to distinguish from other parts which should be left untouched as they constitute HTML-codes. Be careful ! As an illustration we show how the help-file ‘alfa.html’ for English is displayed in the Linux nano-editor : the while-coloured texts as the ones to translate into the new or local language.</p>
+
+<p><img src="https://lh4.googleusercontent.com/4Y9Q-tEjpq-sMdCx8vTha3wCKRm50uD7zcjZzaltayXtG7pXmlNzLum86i18vaWLMTdewaF_BsEW01Pw6jpq6gN7p82NNG14RUFgd6FPzE6v63NBFtOIF2bNIal6qp_Kun4-Wic=s0" alt="" /></p>
+
+<h3 id="create-language-folders-for-each-database">Create language folders for each database</h3>
+
+<p>Since each database you want to use in ABCD also contains some language-dependent elements, e.g. the names of fields in the ‘Field Definition Table’ or in the display formats (PFT’s), you should also copy/paste and rename an ‘origin’ language-folder to a ‘destination’ (your new language) folder in the bases-folders. Once done, editing the ‘database definitions’ in the ABCD-Central interface will be done on the correct language version for that database. E.g. for the MARC-database, the default catalog database for a library in ABCD, and a new language ‘Singalese’, do the following :</p>
+
+<ul>
+  <li>copy the folder bases/marc/def/en as ‘origin’ to ‘bases/marc/def/si as destination</li>
+  <li>copy the folder bases/marc/pfts/en as ‘origin’ to ‘bases/marc/pfts/si’ as destination.</li>
+</ul>
+
+<p>Then when in the MARC-database in the new language (Singalese) and using the ABCD interface to create/edit database definitions, you will be actually editing the files in bases/marc/def/si and bases/marc/pfts/si, so all lan- guage-dependent parts like field-names can be translated into Singalese.</p>
+
+<p>As mentioned above, it is also possible to edit these files directly with a text-editor within the file-system without using ABCD, but then be careful because some understanding of the file-structure is necessary. E.g. deleting a pipe <code class="language-plaintext highlighter-rouge">'|'</code> - which serves as a ‘column’ separator in ABCD Central – by accident might spoil the whole file.</p>
+
+<h2 id="localisation-of-the-iah-opac">Localisation of the iAH OPAC</h2>
+
+<p>When checking the folder ‘htdocs/central/iah’, which contains all Central iAH scripts, one can see that again each language has its own sub-directory.</p>
+
+<h3 id="the-general-language-elements-in-the-subfolders-of-htdocsiah">The general language elements in the subfolders of htdocs/iah</h3>
+
+<p>These are mostly html-files, e.g. for the help related to searching the database ‘lilacs’, there is a file note_for- m_lilacs.htm with contents :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;hr&gt;
+&lt;font face="verdana" size="2"&gt;
+&lt;b&gt;Notas :&lt;/b&gt;&lt;br&gt;
+&lt;ul&gt; 
+&lt;li&gt;
+&lt;font face="verdana" size="2"&gt;
+This option re
+&lt;font color="Navy"&gt;title words&lt;/font&gt;, 
+
+&lt;font color="Navy"&gt;words from the abstract&lt;/font&gt;, 
+and &lt;font co
+&lt;/font&gt;&lt;/font&gt;
+&lt;li&gt;&lt;font face="verdana" size="2"&gt;Use the truncation symbol &lt;font color="#FF0033"&gt;$&lt;/font&gt;(dollar sign)
+to search words with the same root. Example: 
+&lt;font color="Navy"&gt;educ&lt;/font&gt;&lt;font face="verdana" size=
+retrieves educaci&amp;oacute;n, education, educa&amp;ccedil;&amp;atilde;o, etc.
+ &lt;/font&gt;
+&lt;li&gt;
+&lt;font face="verdana" size="2"&gt;Do not type boolean operators (AND,
+ OR ou AND NOT) between words. &lt;/
+&lt;li&gt;
+&lt;font face="verdana" size="2"&gt;
+Select the option 
+&lt;font color="Navy"&gt;
+All words (AND)&lt;/font&gt; to link the words (reduce the scope of the ret
+&lt;font color="Navy"&gt;Any word (OR)&lt;/font&gt; to add words (enlarge the scope of the retrieval).&lt;/font&gt;
+&lt;li&gt;&lt;font face="verdana" size="2"&gt;
+To search over other fields or to specify the field of the search use t
+&lt;/font&gt; &lt;/ul&gt; &lt;/font&gt;&lt;hr&gt;
+</code></pre></div></div>
+
+<p>If one understands HTML-coding it can be easily seen where are the HTML-codes in between brackets &lt; and &gt; and where we have pieces of text to be translated.</p>
+
+<p>If you want a new interface in iAH in another language, copy an existing ‘origin’ language folder and rename it under the new language-code. Then simply edit with a text-editor the pieces of text in your desired language/al- phabet. Again when using Unicode scripts don’t forget to ‘save as’ UTF-8 encoded file or use the ‘encoding’ or ‘charactersets’ option of your editor to assure the characters can be correctly stored.</p>
+
+<h3 id="the-script-generated-language-elements">The script-generated language elements</h3>
+
+<p>Within the htdocs/iah/scripts folder one will again note the existence of language-coded subfolders. In here iAH stores the HTML- and PFT- files or scripts it uses, with at many instances small language-related entries. While it would be possible to translate all such files in the same way as above, after having created a specific sub-folder for the new language by copying an ‘origin’ language folder, there are some scripts available in the folder ‘htdocs/iah/ scripts/translate’, which works as follows :</p>
+
+<ul>
+  <li>
+    <p>the ‘translate’ folder contains all the HTML- and PFT-templates used, as well as</p>
+  </li>
+  <li>
+    <p>a simple key-value list for each language saved under the language code with .txt extension, e.g. en.txt contains all keys and values for English.</p>
+  </li>
+</ul>
+
+<p>For creating the Amharic scripts of iAH the file ‘am.txt’ contains sections e.g. like :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>database=### ##
+database_search=### #### #####
+config=###
+</code></pre></div></div>
+<p>again stored in UTF-8 format.</p>
+
+<p>From the ‘model’ translation script ‘translate2en.sh’ (or translate2en.bat in Windows) easily a dedicated script can be generated for the new language, in the case of ‘am’-haric it became :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#!/bin/sh
+./mx seq=am.txt= "proc='d*a1~v1~a2~'v2'~'" -all now create=to_am
+for i in *.pft
+do
+./mx seq=$i£ gizmo=to_am lw=9000 pft=v1# now &gt; ../am/$i
+done
+for i in *.htm
+do
+./mx seq=$i£ gizmo=to_am lw=9000 pft=v1# now &gt; ../am/$i
+done
+</code></pre></div></div>
+<p>where basically the string ‘en’ was changed to ‘am’ and ‘to_en’ was changed into ‘to_am’.</p>
+
+<p>When running this script in a terminal (or CMD in Windows) some smart use of the CISIS mx-tool will read in the key-values text for your language and process the lines to add special brackets . Then these will be replaced, with a gizmo-parameter using the database created in the previous step, in the existing script-templates by their actual values, both for the PFT and HTM extension files.</p>
+
+<p>The resulting scripts then are stored in the language-specific subfolder one level up in the file-system (from the ‘translate’ subfolder).</p>
+
+<p>Some manual checking might remain necessary after this process, but most of the cumbersome work has been done intelligently by the above scripts using mx, the main CISIS-tool. So in ISIS-environments many problems can be solved by using the power of the software itself, albeit good understanding of the command-line tools will be necessary to create such solutions.</p>
+
+<p>The list of languages to be used in the interface is derived from the file ‘iah.def.php’ in the folder htdocs/iah/scripts. There is a line :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>AVAILABLE LANGUAGES=pt,es,en,fr,am
+</code></pre></div></div>
+
+<p>clearly listing the codes for the languages (and their sequence, which is quite important as it needs to correspond to the list of subfields in the iAH-configuration files for each database !). In other words and in this example : since we added ‘Amharic’ as the fifth language for the OPAC, each configuration line in dbn.def needs to get a subfield ^5 added with the appropriate term for the language.</p>
+
+<p>With the parameter</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MULTI-LANGUAGE=ON one can also switch if 'off' so as to only use the default language, set in the line
+
+$lang = ($_REQUEST['lang'] != '' ? $_REQUEST['lang'] : 'en');
+</code></pre></div></div>
+
+<p>of the file ‘index.php’ in the folder htdocs/iah.</p>
+
+<h2 id="localisation-of-the-abcd-site">Localisation of the ABCD Site</h2>
+
+<p>The ABCD Site again uses a different mechanism of using language-dependent elements. When one checks the folder ‘htdocs/site’ it immediately becomes clear no separate language subfolders are present as in iAH. Rather as in Central a ‘database’-folder will be used, named ‘site’ even if as with Central there is no real (ISIS-)database involved : rather this base-folder contains XML- and HTML-files for each language.</p>
+
+<p>So, as above with Central, one starts by copying/renaming an existing language-subfolder in the ‘bases/site’ folder, each for the XML and HTML-files.</p>
+
+<p>Then inside the newly created folder each of the files – about 30 but small in size – need to be manually edited with a text-editor. This is a job to be done carefully so as not to ‘touch’ on any real XML- or HTML-tag.</p>
+
+<p>The files are named with numbers, according to an intricate internal naming system managed by the Site-scripts.</p>
+
+<p>E.g. the file ‘22.xml’ has this contents :</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+&lt;warning id="22" lang="en" available="yes"&gt;
+&lt;item available="yes"&gt;Warming&lt;description&gt;This VHL is under development &lt;/description&gt;
+&lt;/item&gt;
+&lt;/warning&gt;
+</code></pre></div></div>
+<p>If one understand XML one can see that only the parts ‘Warning’ and ‘This VHL is under development’ are to be translated, everything else is to be left untouched as it is actual XML-code.</p>
+
+<p>A more illustrative file is e.g. ‘metasearch.xml’ which contains all labels used in the ‘metasearch’ interface :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;?xml version="1.0" encoding="iso-8859-1"?&gt;
+&lt;metasearch id="" lang="en" available=""&gt;
+&lt;text id="search_title" available="yes"&gt;ABCD Search&lt;/text&gt;
+&lt;text id="search_entryWords" available="yes"&gt;Entry one or more words&lt;/text&gt;
+&lt;text id="search_submit" available="yes"&gt;Search&lt;/text&gt;
+&lt;text id="search_howToSearch" available="yes"&gt;how to search?&lt;/text&gt;
+&lt;text id="search_allWords" available="yes"&gt;All words&lt;/text&gt;
+&lt;text id="search_anyWord" available="yes"&gt;Any word&lt;/text&gt;
+&lt;text id="search_error" available="yes"&gt;Please use a search expression.&lt;/text&gt;
+&lt;text id="search_advancedSearch" available="yes"&gt;search filter&lt;/text&gt;
+&lt;text id="search_freeSearch" available="yes"&gt;by words&lt;/text&gt;
+&lt;text id="search_results" available="yes"&gt;Result&lt;/text&gt;
+&lt;text id="search_method"&gt;method&lt;/text&gt;
+&lt;text id="search_demo"&gt;demo&lt;/text&gt;
+&lt;text id="conceptSearch_title" available="yes"&gt;by relevance&lt;/text&gt;
+&lt;text id="conceptSearch_entryWords" available="yes"&gt;Search documents more related to the concepts&lt;/text&gt;
+&lt;text id="decs_mesh" available="yes"&gt;Search by DeCS/MeSH terminology&lt;/text&gt;
+&lt;/metasearch&gt;
+</code></pre></div></div>
+
+<p>Here it should be clear that again not the parts inside <code class="language-plaintext highlighter-rouge">&lt;</code> and <code class="language-plaintext highlighter-rouge">&gt;</code> can be changed, only the actual texts as displayed outside the brackets.</p>
+
+<p>Using a ‘better’ text-editor than the very basic <strong>‘Notepad’</strong> in Windows, e.g. <strong>Notepad++</strong>, or in Linux : <strong>Gedit</strong>, one can easily benefit from the syntax-recognition features of these softwares : whatever is plain text will be shown in a  black color whereas anything ‘code’ (e.g. XML, HTML, PHP…) will have colors. E.g. in the following screenshot we show the same file ‘metasearch.xml’ for the ABCD-site when opened in such a richer editor, now all text-parts to be edited shown in black colour :</p>
+
+<p><img src="https://lh6.googleusercontent.com/24zm6BV_6z8Wqj1miCiVRfzO8nvQaylhTK__UaoTBKCNkiatJC-QIIziClcH580AoiY7wx3xNXmgfE3tdAR9DsE-RImVgUDtJkjNs9JSDXizNpOTRQX3KD1ddq9jpntMk77f5ow=s0" alt="" /></p>
+
+<p>Finally some buttons which are really fully embedded in the Site interface need to be edited for your language using the ‘Site Admin’ (the CMS part of the Site) interface, selecting the option ‘texts’ from the main menu of the Site Admin module :<img src="https://lh4.googleusercontent.com/eccq-2l4UiJjoOQugnWFR-tWYVEbmRm3jkEwl-oZKQvVfibr4P3cguXKOC5HwJhYDevDx9o3DMItYYm_7QKHNOWI8vt05A7x_JKHMEi64bSQ7W4FpO18fKZdNevBheSGwYzxB8Q=s0" alt="" /></p>
+
+<p>After selecting ‘Texts’ one can simply translate the option into the desired translated term :</p>
+
+<p><img src="https://lh6.googleusercontent.com/eeI61I7gTmSHmM1PAVa15ryO6Hr-BzuUZTCAb2A_xRSmo1SiD11A6h_BLiUQkSu58hNAfc2uSE3-OGXqi3xl44o-7cqT4q4YldtAlUxefTcwZNNjvxk-ZGNeaRLZ4U567UymOuU=s0" alt="" /></p>
+
+<p>Here the element ‘contact’ (the part of the screen where the Site will display contact-data) is simply translated as ‘contact’ but this could be done in another language/alphabet as well.</p>
+
+<p>Within all other ABCD Site Admin editing boxes there are still many more elements which can or should be translated, like each ‘structural component’ (the ‘components’ option of the main menu) when created also gets a name which could be yes or no translated into a specific language.</p>
+
+<p>The list of languages in Site is derived from the script <code class="language-plaintext highlighter-rouge">functions.php</code> (in <code class="language-plaintext highlighter-rouge">htdocs/site/adm/php</code>), where the following section contains the list of languages to be used :</p>
+
+<p>It is easy to see where to add/delete languages as listed by their codes in the array.</p>
+
+<p>Additionally, ABCD needs a stylesheet named as ‘style-xx’ where xx is the language code, in the directory ht- docs/site/css/public/skins/classic (which is the default ‘skin’ for the ABCD Site, but as in the VHL Site this can be changed so as to create ‘local’ or ‘regional’ skins). A dedicated language folder also needs to be created even if it only contains one empty file ‘redefine.css’.</p>
+
+<p>In <code class="language-plaintext highlighter-rouge">htdocs/site/admin/defaultXML</code> for the new language a new folder needs to be created and the texts in the file ‘texts.xml’ also translated with the new language added. However as this is really administration domain translation of all terminology might not be opportune, necessary or even possible.</p>
+
+<script
+  src="/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function() {
+
+    var toc = $('#TOC');
+
+    // Select each header
+    sections = $('.td-content h1');
+        $.each(sections, function(idx, v) {
+            section = $(v);
+            var div_id = $(section).attr('id');
+            var div_text = section.text().split('¶')[0];
+            var parent = $("#" + div_id)
+            var content = '<li id="link_' + div_id + '" class="md-nav__item"><small><a class="md-nav__link" href="#' + div_id + '" title="' + div_text +'">' + div_text +'</small></a></li>';
+            $(toc).append(content);
+
+            // Add section code to subnavigation
+            var children = $('<nav class="md-nav"><ul class="md-nav__list"></nav></ul>')
+            var contenders = $("#" + div_id).nextUntil("h1");
+            $.each(contenders, function(idx, contender){
+               if($(contender).is('h2') || $(contender).is('h3')) {
+                   var contender_id = $(contender).attr('id');
+                   var contender_text = $(contender).text().split('¶')[0];
+                   var content = '<li class="md-nav__item"><a class="md-nav__link " href="#' + contender_id + '" title="' + contender_text +'"><small>' + contender_text +'</small></a></li>';
+                   children.append(content);
+                }
+             })
+             $("#link_" + div_id).append(children);
+        });
+    });
+</script>
+
+<script>
+var headers = ["h1", "h2", "h3", "h4"]
+var colors = ["red", "orange", "green", "blue"]
+
+$.each(headers, function(i, header){
+    var color = colors[i];
+    $(header).each(function () {
+        var href=$(this).attr("id");
+        $(this).append('<a class="headerlink" style="color:' + color + '" href="#' + href + '" title="Permanent link">¶</a>')
+    });
+})
+</script>
+
+
+
+	
+              
+              <style>
+  .feedback--answer {
+    display: inline-block;
+  }
+  .feedback--answer-no {
+    margin-left: 1em;
+  }
+  .feedback--response {
+    display: none;
+    margin-top: 1em;
+  }
+  .feedback--response__visible {
+    display: block;
+  }
+</style>
+<div class="d-print-none">
+<h2 class="feedback--title">Feedback</h5>
+<p class="feedback--question">Was this page helpful?</p>
+<button class="btn btn-primary mb-4 feedback--answer feedback--answer-yes">Yes</button>
+<button class="btn btn-primary mb-4 feedback--answer feedback--answer-no">No</button>
+<p class="feedback--response feedback--response-yes">
+  Glad to hear it! Please <a href='{{ site.repo }}/issues/new'>tell us how we can improve</a>.
+</p>
+<p class="feedback--response feedback--response-no">
+  Sorry to hear that. Please <a href='{{ site.repo  }}/issues/new'>tell us how we can improve</a>.
+</p>
+</div>
+<script>
+  const yesButton = document.querySelector('.feedback--answer-yes');
+  const noButton = document.querySelector('.feedback--answer-no');
+  const yesResponse = document.querySelector('.feedback--response-yes');
+  const noResponse = document.querySelector('.feedback--response-no');
+  const disableButtons = () => {
+    yesButton.disabled = true;
+    noButton.disabled = true;
+  };
+  const sendFeedback = (value) => {
+    if (typeof ga !== 'function') return;
+    const args = {
+      command: 'send',
+      hitType: 'event',
+      category: 'Helpful',
+      action: 'click',
+      label: window.location.pathname,
+      value: value
+    };
+    ga(args.command, args.hitType, args.category, args.action, args.label, args.value);
+  };
+  yesButton.addEventListener('click', () => {
+    yesResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(1);
+  });
+  noButton.addEventListener('click', () => {
+    noResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(0);
+  });
+</script><br/>
+
+
+
+
+           </div>
+
+          </main> <!--col-12 col-md-9 col-xl-8 pl-md-5-->
+        </div> <!--./row flex-xl-nowrap-->
+      </div> <!--./td-main-->
+      
+      <footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        <ul class="list-inline mb-0">  
+          
+          
+        </ul>
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        <ul class="list-inline mb-0">  
+          <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="GitHub" data-original-title="GitHub">
+            <a class="text-white" target="_blank" href="https://github.com/ABCD-Community/ABCD-Community.github.io">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">© 2021 ABCD Community All Rights Reserved</small>
+        
+        <p class="mt-2">
+
+            
+                <a href="/en//" >Home</a> <span class="text-primary"> </span>
+          
+                <a href="/en/docs" >Documentation</a> <span class="text-primary"> </span>
+          
+                <a href="/en/collab" >Collaboration</a> <span class="text-primary"> </span>
+          
+                <a href="/en/about" >About</a> <span class="text-primary"> </span>
+          
+
+        </p>	
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div> <!--./container-fluid td-outer--> 
+    <script src="/assets/js/popper.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/main.js"></script>
+
+
+<script src="/assets/js/tabpane-persist.js"></script>
+
+  </body>
+</html>

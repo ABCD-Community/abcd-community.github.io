@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en"  class="no-js">
+  <!-- Copyright 2019-2021 Vanessa Sochat-->
+  <head>
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Jekyll" />
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+<link rel="alternate" type="application/rss&#43;xml" href="/docs/index.xml">
+
+<link rel="shortcut icon" href="/assets/favicons/favicon.ico" >
+<link rel="icon" type="image/png" href="/assets/favicons/favicon.png" sizes="16x16">
+
+ 
+ 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M0LM60C9WY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M0LM60C9WY');
+</script>
+
+ 
+
+<title>ABCD Community</title>
+<meta property="og:title" content="ABCD Community" />
+<meta property="og:description" content="This document aims at providing all relevant background information and instructions on how to use the integrated library and documentation management system 'ABCD'. Both the basic operations and the advanced management of the software are discussed, as are useful and necessary topics concerning the ISIS-software on which ABCD is based. In this new edition the new features of version 2.0 are added - the use of different flavors of CISIS, of Unicode,and the digital library capabilities as well as some additional modules (ODDS, LDAP, DSpaceBridge) and utilities (UTF8-conversion, loanobjects creation...) ." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://localhost:9898" />
+<meta property="og:site_name" content="http://localhost:9898" />
+
+<meta itemprop="name" content="ABCD Community">
+<meta itemprop="description" content="">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ABCD Community"/>
+<meta name="twitter:description" content="This document aims at providing all relevant background information and instructions on how to use the integrated library and documentation management system 'ABCD'. Both the basic operations and the advanced management of the software are discussed, as are useful and necessary topics concerning the ISIS-software on which ABCD is based. In this new edition the new features of version 2.0 are added - the use of different flavors of CISIS, of Unicode,and the digital library capabilities as well as some additional modules (ODDS, LDAP, DSpaceBridge) and utilities (UTF8-conversion, loanobjects creation...) ."/>
+
+<link rel="stylesheet" href="/assets/css/main.min.css">
+<link rel="stylesheet" href="/assets/css/palette.css">
+<script
+  src="/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+
+
+  
+  
+    
+  <link rel="alternate" hreflang="en" href="/en/abcd-technology/" />
+    
+  <link rel="alternate" hreflang="pt" href="/pt/abcd-technology/" />
+    
+  
+
+  
+</head>
+
+  
+
+
+  <body class="td-section">
+    
+<header>
+    <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="/en">
+            <span class="navbar-logo"></span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 167.73 167.77"><defs><style>.cls-1{fill:#ffffff;}</style></defs><g id="Camada_2" data-name="Camada 2"><g id="Camada_1-2" data-name="Camada 1"><path class="cls-1" d="M66.62,83.14c-41-2.06-66.62,18-66.62,18V18.42S20.94-.08,66.62,0Z"/><path class="cls-1" d="M84.59,66.62c2.06-41-18-66.62-18-66.62h82.73s18.5,20.94,18.42,66.62Z"/><path class="cls-1" d="M101.11,84.63c41,2.06,66.62-18,66.62-18v82.74s-20.94,18.49-66.62,18.41Z"/><path class="cls-1" d="M83.14,101.15c-2.06,41,18,66.62,18,66.62H18.42S-.08,146.83,0,101.15Z"/></g></g></svg><span class="text-uppercase font-weight-bold">ABCD Community</span>
+        </a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+            
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/en//" ><span>Home</span></a>
+			</li>
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/en/docs" ><span>Documentation</span></a>
+			</li>
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/en/collab" ><span>Collaboration</span></a>
+			</li>
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/en/about" ><span>About</span></a>
+			</li>
+
+
+  <li class="nav-item dropdown mr-4 d-none d-lg-block">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">English</a>
+    <div class="dropdown-menu">
+        
+            
+            
+            
+                
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-technology/">English</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-technology/">Português</a>
+
+
+            
+            
+        
+   </div>
+  </li>
+
+		</ul>
+	</div>
+	
+    <div class="navbar-nav d-none d-lg-block">
+        <input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off"> 
+    </div>
+   
+	<div class="navbar-nav d-none d-lg-block">
+          <a class="gh-source" data-gh-source="github" href="https://github.com/ABCD-Community/ABCD-Community.github.io" title="Go to repository" data-md-state="done">
+            <i class="fab fa fa-github fa-2x" style='color: #fff;padding-right:20px; float:left; margin-top:5px'></i></a>
+        </div>
+      </div>
+
+
+</nav>
+</header>
+
+
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+          <div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    <input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="on">
+      <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+      </button>
+  </form>  
+
+  <nav class="collapse td-sidebar-nav" id="td-section-nav">
+    <div class="nav-item dropdown d-block d-lg-none pl-4">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">English</a>
+
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+        
+            
+            
+            
+                
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-technology/">English</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-technology/">Português</a>
+
+
+            
+            
+        
+      </div>
+    </div>
+
+
+    
+      <ul class="td-sidebar-nav__section pr-md-3"> 
+
+        
+        
+
+        <li class="td-sidebar-nav__section-title">
+          <a  href="" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section"></a>
+        </li>
+        
+      </ul>
+    
+      <ul class="td-sidebar-nav__section pr-md-3"> 
+
+        
+        
+
+        <li class="td-sidebar-nav__section-title">
+          <a  href="/en/docs" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Home</a>
+        </li>
+        
+          <ul>
+            <li class="collapse show" id="home">
+              <ul class="td-sidebar-nav__section pr-md-3">
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-introduction
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Introduction
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-technology
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD Technology
+                    </a>
+                  </li>
+                  
+                    <ul>
+                      <li class="collapse show" id="">
+                        
+                          
+                            <a class="td-sidebar-link td-sidebar-link__page " id="m-home-abcd-technology-cisis-utilities" href="/en/abcd-technology/cisis-utils/">CISIS Utilities</a>
+                            <a class="td-sidebar-link td-sidebar-link__page " id="m-home-abcd-technology-cisis-formatting-language" href="/en/abcd-technology/cisis-formatting/">CISIS Formatting Language</a>
+                            <a class="td-sidebar-link td-sidebar-link__page " id="m-home-abcd-technology-isis-script" href="/en/abcd-technology/isis-script/">ISIS Script</a>
+                        
+                      </li>
+                    </ul>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-installation
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Installation
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-modules
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Modules
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-utilities
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Utilities
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-thesaurus
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Thesaurus
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-odds
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">The Online Document Delivery Service (ODDS)
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-digital-library
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Digital library features in ABCD
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-oai
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">The OAI interface
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-opac
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD OPAC
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/opac-iah
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">iAH OPAC
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-site
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD Site
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/secs-web
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Serials Control
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-unicode
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD Unicode
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-localisation
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD Localisation
+                    </a>
+                  </li>
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        
+      </ul>
+    
+  </nav>
+</div>
+
+          </aside> <!--col-12 col-md-3 col-xl-2 td-sidebar d-print-none-->
+          
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+                  <a href="https://github.com/ABCD-Community/ABCD-Community.github.io/edit/main/en/abcd-technology/index.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+
+<a href="https://github.com/ABCD-Community/ABCD-Community.github.io/issues/new?labels=question&title=Question:&body=Question on: https://github.com/ABCD-Community/ABCD-Community.github.io/tree/master/en/abcd-technology/index.md" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+
+<a href="https://github.com/ABCD-Community/ABCD-Community.github.io/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
+<!-- this will parse through the header fields and add a button to open
+     an issue / ask a question on Github. The editable field should be in
+     the post frontend matter, and refer to the label to open the issue for -->
+
+            </div>
+            <div class="td-toc">
+              <nav id="TableOfContents">
+                <ul id="TOC">
+                   <!-- Links will be appended here-->
+                </ul>
+              </nav>
+            </div>
+ 
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">     
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+              <ol class="breadcrumb spb-1">
+              
+              
+                <li class="breadcrumb-item">
+                  <a href="http://localhost:9898/en/">En</a>
+                </li>
+                
+                <li class="breadcrumb-item active" aria-current="page">
+	          <a href="http://localhost:9898/en/abcd-technology/">ABCD technology</a>
+                </li>
+                
+	      </ol>
+           </nav>
+
+           <div class="td-content">
+
+	      <h1 id="abcd-technology">ABCD technology</h1>
+
+<h2 class="no_toc no_toc text-delta" id="content">Content</h2>
+
+<ol id="markdown-toc">
+  <li><a href="#abcd-technology" id="markdown-toc-abcd-technology">ABCD technology</a>    <ol>
+      <li><a href="#isis-databases" id="markdown-toc-isis-databases">ISIS databases</a></li>
+      <li><a href="#cisis---utility-programs" id="markdown-toc-cisis---utility-programs">CISIS - Utility Programs</a>        <ol>
+          <li><a href="#the-master--xross-reference-tool--mx" id="markdown-toc-the-master--xross-reference-tool--mx">The Master / Xross-reference tool : mx</a></li>
+          <li><a href="#inverted-file-tools--mz-ifupd-ifkeys-ifload-ifmerge" id="markdown-toc-inverted-file-tools--mz-ifupd-ifkeys-ifload-ifmerge">Inverted File tools : mz, ifupd, ifkeys, ifload, ifmerge</a></li>
+          <li><a href="#other-cisis-tools" id="markdown-toc-other-cisis-tools">other CISIS-tools</a></li>
+        </ol>
+      </li>
+      <li><a href="#isis-formatting-language" id="markdown-toc-isis-formatting-language">ISIS Formatting Language</a>        <ol>
+          <li><a href="#the-fl-for-presenting-values" id="markdown-toc-the-fl-for-presenting-values">The FL for presenting values</a></li>
+          <li><a href="#the-fl-for-definition-of-indexing-keys" id="markdown-toc-the-fl-for-definition-of-indexing-keys">The FL for definition of indexing keys</a></li>
+          <li><a href="#the-fl-for-definition-of-sorting-keys" id="markdown-toc-the-fl-for-definition-of-sorting-keys">The FL for definition of sorting keys</a></li>
+          <li><a href="#the-fl-for-conversion-during-importexport" id="markdown-toc-the-fl-for-conversion-during-importexport">The FL for conversion during import/export</a></li>
+          <li><a href="#the-fl-for-validation-statements" id="markdown-toc-the-fl-for-validation-statements">The FL for validation statements</a></li>
+        </ol>
+      </li>
+      <li><a href="#isis-script" id="markdown-toc-isis-script">ISIS Script</a></li>
+      <li><a href="#j-isis" id="markdown-toc-j-isis">J-ISIS</a></li>
+      <li><a href="#php" id="markdown-toc-php">PHP</a></li>
+      <li><a href="#javascript" id="markdown-toc-javascript">JavaScript</a></li>
+      <li><a href="#java-groovy-and-jetty" id="markdown-toc-java-groovy-and-jetty">JAVA, Groovy and Jetty</a></li>
+      <li><a href="#mysql" id="markdown-toc-mysql">MySQL</a></li>
+      <li><a href="#yaz" id="markdown-toc-yaz">YAZ</a></li>
+      <li><a href="#apache" id="markdown-toc-apache">Apache</a></li>
+    </ol>
+  </li>
+</ol>
+
+<hr />
+
+<h2 id="isis-databases">ISIS databases</h2>
+
+<p>ISIS databases are files in which information is contained in sequentially numbered records (MFN’s or Master File Numbers) with values (mostly textual) stored in fields with a ‘tag’ (or numerical identifier) and subfields (with a one-character identifier). Subfields, fields and records all are variable-length and ‘variable occurrence’ varying from 0 (not present) to any higher number of occurrences, with a maximum depending on the ISIS-technology used but in the newest generation (in J-ISIS or Alpha-ISIS) without limit.</p>
+
+<p>Records are structurally described in a ‘header’ for each record itself, instead of the usual table-header in relational databases. By doing so ISIS reflects more the concept of each record being a ‘document’ in its own right with its own document structure, like e.g. books, articles or web-pages indeed. Therefore we prefer to call ISIS a ‘documentary database’ in which documents are stored as a record with variable structure and length. This avoids complicated structures of ‘normalized’ relational structures, which are very efficient in storing highly structured data but less so for semi-structured textual data.</p>
+
+<p>This means that the records themselves can be quite polymorph, meaning structurally different with any combi- nations of fields. In principle ISIS can handle bibliographic records along with user-data and transactional data (e.g. loans) in one single database, but because of ‘semi-relational’ capabilities (fast retrieval of any part of a record in any ISIS-database at run-time, i.e. by the Formatting Language creating the output without the need for these ‘relations’ to be pre-defined) typically ISIS-applications will use some few databases, e.g. in ABCD only 3 or 4 databases (one for bibliographic entities, one for users, one for transactions and possibly one for items) can allow to run a full library.</p>
+
+<p>In the ‘classic’ ISIS technology 1all variable-length records (with (sub-)fields containing the values) are stored in a ‘Master’ file (.MST) and record-positions are kept track of in the ‘Cross-Reference’ (.XRF) file, which can be seen as a ‘first-order’ normal index on the records in the database. New or even just edited records are always appended at the end of the Master file and references in the XRF are updated accordingly, necessitating some ‘compacting’ at times to get rid of deleted and/or inactive (versions of) records.2 All values specified by a ‘Field Selection Table’ (which uses the Formatting language, therefore allowing very flexible and powerful definition of selected elements), are included into a B-tree ‘Inverted File’, which can be seen as a ‘dictionary’ of terms with the exact ‘address’ (record, fieldtag, occurrence, position within occurrence) attached to them. This allows very efficient retrieval, including full-text based, of any element defined as being ‘retrievable’. ISIS was one of the first databases to offer full-text, which became only popular decades later. This ‘Inverted File’ (or IF) has several components (with nodes .N01/.N02 and leaves .L01/L02 files) for efficient organization - because in certain applications with intensive indexing the IF can be even larger than the database file itself ! So typically ISIS-databases exist of some 10 files : a MST with XRF, the B-Tree Inverted File files and some definition tables for the fields, the data-entry form and the indexation. Due to the memory types used in the ‘XRF’-file, which is a fixed-format table acting as a list of all MFNs with their ID and location into the MST, the maximum number of records which can be hold in one ISIS-database is slightly over 16 million. On the other hand within this limit the software performs remarkably well without almost any noticeable performance loss at higher numbers. All this is changing with the new database technologies introduced in 2009 with e.g. J-ISIS : Berkeley DB uses a different storage in separate files with the definitions incorporated into the main data-files. But basically the concept of ‘tag-value’ pairs (an identifier and a content), on which a powerful Formatting Language and fieldbased plus full-text indexing is applied, remain the core of ISIS-databases.</p>
+
+<h2 id="cisis---utility-programs">CISIS - Utility Programs</h2>
+
+<p>CISIS - Utility Programs is a set of software developed by BIREME to handle ISIS databases from the Command Line in UNIX/Linux or DOS/Windows. This sofware has been written in the C-programming language and hence the name of this ISIS family member. CISIS mainly exists of a series of ‘utilities’, i.e. command-driven executables which perform all types of functions in ISIS-databases, like creating records, updating and searching them, updating the Inverted File, import and export and many other functions, sometimes unique in the ‘ISIS Family’, e.g. joining records from different databases according to common keys, indexing and searching from different Inverted Files for one database.</p>
+
+<p>Actually CISIS as a set of utilities contains more than 25 different tools or executables.</p>
+
+<p>To know all the tools, go to the C<a href="/en/abcd-technology/cisis-utils/">ISIS - Utility Programs page</a></p>
+
+<h3 id="the-master--xross-reference-tool--mx">The Master / Xross-reference tool : mx</h3>
+
+<p>The mx tool is the main CISIS utility, it could easily be baptised as ‘CDS/ISIS for the command line’, meaning most things which can be done with (M)asterfiles and (X)rf-files - therefore ‘mx’ indeed - with ISIS can also be done with MX. Just to give an idea we give the list of parameters mx accepts (as this list is given when invoking the command in a command-line environment such as the CMD-window in Windows or a terminal-window in UNIX/Linux. As one will see, too many parameters are available, meaning mx is an enormously powerful tool for ISIS-database management, but it deserves a manual and training in its own right !</p>
+
+<p><strong><img src="https://lh5.googleusercontent.com/Onej8W2i6TGtd-ETfna8h0s3fvwzcspGkYwtHX-srEdQpo_Yadp41zI0Spis6Z31o5i3aYGo-PIu1qfmJ6L4RiuvPbElZA7L_TrRxEVcJ-PIu86gVhzvuB4nO1tYmfZPXjBJPgda=s0" alt="" /></strong></p>
+
+<p>A glance at the many parameters show that mx can not only search ISIS-databases (bool=) but apply on-the-fly GIZMO (string-substitutions) and ANSI-conversion (ansi=), join fields of records from different databases but identified by their IF-entry (join= and jchk=), apply data-entry processes (proc=) and inverted file operations.</p>
+
+<p>As CISIS comes in several varieties, according to the capacity of the databases and Inverted File keys intended, we need to specify that for ABCD we will only use the ‘16/60’ variety of mx and other CISIS-tools. This can be verified from the information mx gives when invoked without any parameter as illustrated :<img src="https://lh5.googleusercontent.com/0AvWw9FZmlv63nUjXS52-vb1P-FNLTMuWm-4EB871bhv3jZNiOvjwgon4BIQX9v1RrnesyPoOCkXFlZgGZ69PnZCk3ofRODNGhXwOInlggaXOPaFPjdGM1djTe667ByL008WRiaL=s0" alt="" /></p>
+
+<p>The most relevant uses of mx in this context of ABCD are :</p>
+<ul>
+  <li>import of ISO-records into an ISIS-database, e.g. the command :</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mx iso=myISOrecords.iso create=mydb now -all tell=100
+</code></pre></div></div>
+
+<p>will read the file myISOrecords.iso and create an ISIS database ‘mydb’ without waiting for any user-input (‘now’ait) and without showing any information on the screen (-all) but showing progress after every 100 records imported.</p>
+
+<blockquote>
+  <p>Note :
+In ABCD we use this to import a larger quantity of ISO-records
+into a database, as a high number and therefore long processing time
+would invoke the time-out of the web-server to stop the process.</p>
+</blockquote>
+
+<ul>
+  <li>index an ISIS-database, e.g. the command :
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mx mydb ifupd/create=mydb fst=@mydb.fst stw=@mydb.stw now -all
+</code></pre></div>    </div>
+    <p>will create an ‘Inverted File’ named ‘mydb’ using the mydb database with the indexing specifications given in the FST ‘mydb.fst’ and omitting the stopwords listed in mydb.stw, again without interactive mode or output (now -all).</p>
+  </li>
+</ul>
+
+<blockquote>
+  <p>Note:
+In ABCD we use this to create an index off-line in case - as is
+often the case - the database is r</p>
+</blockquote>
+
+<h3 id="inverted-file-tools--mz-ifupd-ifkeys-ifload-ifmerge">Inverted File tools : mz, ifupd, ifkeys, ifload, ifmerge</h3>
+
+<p>These are more specialized tools to generate/update the ISIS Inverted File with its B-Tree technology and parts (leaves and nodes) from the command line with some more optimized speed and more options. E.g. MFN-ranges can be defined, keys can be taken from the previously created LK (link) files (ifload) or nodes-files (ifmerge) of the B-Tree, which can be balanced etc.</p>
+
+<p>We don’t normally need to use this with ABCD, but knowing the possibilities exist, especially in the case of very large databases, is certainly useful.</p>
+
+<h3 id="other-cisis-tools">other CISIS-tools</h3>
+
+<p>Other tools to be briefly mentioned only are e.g. :</p>
+
+<ol>
+  <li>retag : this tool will change the tags of the fields according to a given specification - which can have instructions on many fields in one run</li>
+  <li>mfcrunch and ifcrunch : to convert the ISIS-files (resp. MST and the IF-files) from DOS/Windows to Unix and v.v.</li>
+  <li>mkxrf : to re-create the XRF-file for a given database, in case this is lost or got corrupted - the tool will analyze the MST-file and assign XRF-records into the XRF.</li>
+  <li>ctlmfn : to edit the values of the ‘control-record’ of the database, in which the maxMFN and other very technical values for the database are stored - for experts only !</li>
+</ol>
+
+<h2 id="isis-formatting-language">ISIS Formatting Language</h2>
+
+<p>The ISIS Formatting Language (FL) is one of the most important parts of the software because it gives ISIS- managers the possibility to exactly define what ISIS will produce out of the databases at many stages of the software, e.g.</p>
+
+<ul>
+  <li>what ISIS will show on the screen, i.e. ‘present (defined in the Print Format Table or PFT)</li>
+  <li>what ISIS will use for the creation of indexing keys (defined in the 3rd column of the Field Select Table or FST)</li>
+  <li>what ISIS will use for sorting the records</li>
+  <li>what ISIS will use as exported values (defined in the reformatting FST)</li>
+  <li>what ISIS will use as values to validate input in fields (given in the validation tables).</li>
+</ul>
+
+<h3 id="the-fl-for-presenting-values">The FL for presenting values</h3>
+
+<p>This is by far the most important function of the Formatting Language : specifying which data exactly need to be taken and how they will be ‘displayed’ or ‘printed’ (to the screen, to a printer, to a file, to a webpage…).</p>
+
+<p>Separate documents exist to deal with this extensive language, e.g. the dedicated chapter in the ISIS Reference Manual, published by UNESCO (June 2004, chapter 8, p. 94-122).</p>
+
+<p>Basically there are three types of statements in the ISIS FL :</p>
+<ol>
+  <li>
+    <p>values from fields, given as : Vx, where ‘V’ denotes the value (or ‘contents’) of a field with tag ‘x’, Vx^a is the value of the subfield a (^a) of field x and (Vx/) is the series of all occurrences of field X separated by a ‘new-line’ (/) since the parenthese embrace a ‘repeatable group’ of statements to be applied to all occurrences (repeatable fields are a strong special feature of ISIS).</p>
+  </li>
+  <li>
+    <p>literals or quotes strings, which can be ‘unconditional’ (single quotes), |conditional| (pipes indicate the string will only be produced if the related field is present) and “repeatable” (double quotes will only produce the string at the first occurrence of a repeatable field).
+ISIS-applications on the web, such as ABCD, create web-pages with HTML-tags using this method of adding literals to field-values, e.g.</p>
+  </li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'&lt;table&gt;&lt;tr&gt;&lt;td&gt;' Vx '&lt;/td&gt;&lt;td&gt;' Vy '&lt;/td&gt;&lt;/tr&gt;&lt;/Table&gt;'
+</code></pre></div></div>
+
+<p>will display resp. the fields x and y in two columns of a table in HTML. Note that all HTML- codes are quoted (as unconditionals) and the values taken from the fields in the database are inserted by referring to them with the V-statement.</p>
+
+<ol>
+  <li>commands, which can be of different types, e.g. :</li>
+</ol>
+
+<ul>
+  <li>
+    <p>mode commands : mhl/u (mode heading lowercase/uppercase), mdl (mode data upper/lowercase) or mpl/u (mode proofreading upper/lowercase)</p>
+  </li>
+  <li>
+    <p>(in Windows-environments) : commands defining screen attributes (colors, fonts, boxes) or links (requesting the operating system to open other data, e.g. multimedia data referred to in a record), e.g.</p>
+  </li>
+</ul>
+
+<p>LINK(‘click here for tull-text’, OPENFILE Vx) will request - when the user clicks on the hyperlinked text ‘click here for full-text’, Windows to open the file of which the name is in Vx, with the Windows-application associated to the extension of that file.</p>
+<ul>
+  <li>the REF-command, which can retrieve data from other records (in the same or another database when ex- pressly referenced to), allowing semi-relations setups in ISIS-applications (but with the advantage that the relation is followed only at run-time when requested). e.g.</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">REF(['users']) L(['users']V2),V1)</code></p>
+
+<p>will retrieve the value from field 1 in the database ‘users’ if the L(ookup) function has found the value of field 2 (in the actual database) in the index of the users-database, so that the MFN of the record can be identified.</p>
+
+<ul>
+  <li>conditional routing statements : e.g.</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">'IF...THEN... (ELSE....)FI'</code>
+or even the</p>
+
+<p><code class="language-plaintext highlighter-rouge">SELECT [case1 case2...] ELSE- CASE... ENDSEL</code></p>
+
+<p>construct can be used to apply formatting statements only to database values which comply with given conditions.</p>
+
+<ul>
+  <li>in the CISIS-environment extra FL statements are available, the most important one being a command which will actually <strong>PROC</strong>ess a record to alter the contents of the fields. The general syntax is :
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>proc(x|y...) 
+</code></pre></div>    </div>
+    <p>where x or y can be any of the following : <code class="language-plaintext highlighter-rouge">'Dxxx'</code>(to delete field with tag xxx)</p>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">|Axx#|value|#|</code> (to Add value into field xx)</li>
+  <li>functions, mostly for string-operations (e.g. substr, size, val) or numerical (e.g. rmin, rmax, rsum…)</li>
+</ul>
+
+<p>Full documentation on the CISIS Formatting Language is available on <a href="/en/abcd-technology/cisis-formatting/">this page</a></p>
+
+<h3 id="the-fl-for-definition-of-indexing-keys">The FL for definition of indexing keys</h3>
+
+<p>The same formatting language, but of course without any appearance-related effects, can be used to exactly define which values should go into the Inverted File of ISIS. This will be defined in the third column of the ‘Field Select Table’ where the extraction format using the FL is to be used. See also the discussion of the FST definition in the chapter on database definition and management of this manual.</p>
+
+<p>Since the full formatting language - except graphical elements - is available, the REF-function e.g. can be used to take into the Inverted File values different from the actual field contents, even from another database. This can
+e.g. be used to substitute codes for their full explanation or v.v.</p>
+
+<h3 id="the-fl-for-definition-of-sorting-keys">The FL for definition of sorting keys</h3>
+
+<p>The same reasoning can be applied for the definition of keys which ISIS will use to sort records : again the actual sorting values can be processed values derived from the actual field values, by using the FL.</p>
+
+<h3 id="the-fl-for-conversion-during-importexport">The FL for conversion during import/export</h3>
+
+<p>During import/export of records, most ISIS-applications will allow the use of a ‘reformatting’ FST, which has in its third column the exact definition of what to export/import, and in the first column (the ‘IDentifier’) the tag to be assigned to this value.</p>
+
+<h3 id="the-fl-for-validation-statements">The FL for validation statements</h3>
+
+<p>The Formatting Language can also be used to create error messages in case defined conditions are (not) met. These conditions will be checked when passing data entered into a data-entry form into the record for storage. ABCD provides this technique by default as explained in the section on record validation. An example again can clarify this easily :</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if a(Vx) then 'This field is mandatory, please check again !' fi
+</code></pre></div></div>
+
+<p>This statement will produce, on the screen, the message ‘This field is mandatory, please check again’ if the value of the field with tag x does not exist or is A(bsent).</p>
+
+<p>More sophisticated statements can be used for more advanced quality/consistency checking, e.g. using a ‘SELECT’ construct, or even checking the value in another database (with the earlier discussed ‘REF’-function) to see whether it is a valid entry.</p>
+
+<h2 id="isis-script">ISIS Script</h2>
+
+<p>ISIS Script is a scripting language developed by BIREME in order to make stronger functions available to the ISIS webserver ‘WWWISIS’ for creation of pages with elements from ISIS-databases. ISIS Script in fact was one of the main elements in the stepping-up from WWWISIS to ‘WXIS’ which is the underlying web-server for ABCD.</p>
+
+<p>ISIS Script scripts are stored as files with an extention .XIS. ABCD uses more than 100 such scripts, most of them in the php/dataentry/wxis folder but also iAH (the OPAC) makes extensive use of such scripts.</p>
+
+<p>Obviously we cannot discuss the whole power of the ISIS Script language here. As a longuage it uses XML-like statements, e.g. in between the tags <code class="language-plaintext highlighter-rouge">&lt;pft&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;/pft&gt;</code> a print format can be given and this format can be displayed by putting it in between <code class="language-plaintext highlighter-rouge">&lt;display&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;/display&gt;</code> tags. All WXIS parameters can be defined within the <code class="language-plaintext highlighter-rouge">&lt;parm&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;/parm&gt;</code> tags and fields can be defined with values, e.g.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;field action="replace" tag="6000"&gt;ValueOfField6000&lt;/field&gt;
+</code></pre></div></div>
+<p>will put the string ‘ValueOfField6000’ into the field with tag 6000 (such high-value tags, in fact all tags above 999, are mostly used within ISIS-applications for temporary internal values which are not really stored in ISIS- records but rather ‘virtual records’.</p>
+
+<p>ISIS Script allows more flexible manipulation of data-elements, taken from ISIS-databases, in web-pages. In com- bination with PHP (see the dedicated section on PHP), which is a language for creation of web-pages powerful results are possible and this certainly adds to the general advanced functionality of ABCD.</p>
+
+<p>Of course more details on the ISIS Script language can be found in the dedicated documentation.</p>
+
+<h2 id="j-isis">J-ISIS</h2>
+
+<p>J-ISIS or J(ava)-ISIS is the current new technology in the ISIS-family, based on Java.</p>
+
+<p>Longer ago a first attempt to create a java-based ISIS version was done by an Italian team. The result was a working solution to consult ISIS-databases remotely using java, although not very highly performant. This effort has stopped development after some years and is no longer maintained or available.</p>
+
+<p>As from 2005 the UNESCO software-expert, mr. Jean-Claude Dauphin, mostly responsible for the IDAMS soft- ware maintained by UNESCO (for statistical management), started developing a fully new ISIS-version, no longer based on the until then unique ‘MST/XRF’ approach, but storing the data in a schemeless key-value database ‘Berkeley DB’ (see e.g. <a href="http://www.oracle.com/technetwork/products/berkeleydb/overview/index-085366.html">http://www.oracle.com/technetwork/products/berkeleydb/overview/index-085366.html</a> ), available still as FOSS from Oracle. For the search-engine and indexing the proven technology of Lucene was used from the Apache Software Foundation.</p>
+
+<p>The real ISIS-technology of the concepts of variable-length records, fields and subfields with the ISIS Formatting Language (PFT) used not only in the output-presentation but also in the Field Selection Table (to define the exact string to be taken into the index) is still present and actually makes J-ISIS still being ISIS. J-ISIS by the way is the first version which contains a PFT-parser for grammar-checks and assistance.</p>
+
+<p>The use of Berkeley DB means that no longer any limits are imposed upon record lengths (in traditional ISIS up to 32Kb with an extension possibility in CISIS up to 1Mb) or database-sizes.</p>
+
+<p>The use of Lucene indexing technology means that not only all previously indexing techniques remain available but also ‘ranking’ now is added, making J-ISIS more suitable for e.g. full-text applications. A ‘digital library’ demo-database, based on the concept of using the TIKA-library for text-extraction of document formats by simply loading a document into a text-field, is included with the distribution package of J-ISIS.</p>
+
+<p>At least once a year a new update is made available, before through kenai.com, nowadays (as from April 2017) at the URL <a href="https://github.com/J-ISIS/J-ISIS">https://github.com/J-ISIS/J-ISIS</a>.</p>
+
+<p>The ‘new generation’ ABCD (version 3.x) will be based on J-ISIS and is currently being developed by a team at ‘Universidad de Ciencias Informáticas’ (UCI) in Havana, Cuba.</p>
+
+<h2 id="php">PHP</h2>
+
+<p>PHP is a ‘Hypertext Preprocessing’ language, which means it is a programming language for web-pages. As one of the successful ‘FOSS’ products it is nowadays very popular and wide used, often in combination with Apache and MySQL databases. This has even lead to packages such as ‘EasyPHP’ and ‘WAMP’ (Windows, Apache, MySQL and PHP) which allow to install these often-combined softwares into one package.</p>
+
+<p>As usual there are some criticisms on PHP as a language, but a fact is that it is very popular and getting more powerful with each release. ABCD uses e.g. also ‘controls’ or ready-available modules for specific functions, which are freely available.</p>
+
+<p>ABCD 2.0 is compatible with the current versions of PHP, i.e. 5.x and 7.x. No longer - as in ABCD 1.x - the parameter ‘short_open_tag’ needs to be switched on, but a few non-standard ‘extensions’ need to be activated (in php.ini) : gd2, xsl, yaz, xmlrpc, and if the related functions are used : ldap, mysqli (for EmpWeb) and mbstring (for Unicode).</p>
+
+<h2 id="javascript">JavaScript</h2>
+
+<p>The official name of JavaScript is ‘ECMA Script’ but JavaScript is the popular name of a technology which is nowadays used in many web-pages : relatively small programmes embedded into the HTML-codes of the pages. Contrary to the name the language is not really linked to the JAVA Programming Language. JavaScript nowadays is supported by all up-to-date web-browsers and does not need any extra software or configuration. However it remains to be an option which can also be switched off (in Firefox e.g. : <strong>Tools -&gt; Options -&gt; Content</strong>, where both JavaScript and Java can be disabled), so make sure that the JavaScript option is enabled for the use of ABCD.</p>
+
+<p>ABCD uses JavaScript ‘scripts’ inside its pages in very many instances, one reason being that by doing so the local computer can process data without a need for high traffic in between the server and the client (which is important in slow connectivity conditions).</p>
+
+<p>As an example of a simple JavaScript we can refer to the script ‘lrtrim.js’ (in the ABCD-folder <code class="language-plaintext highlighter-rouge">\ABCD\www\htdocs\php\dataentry\js\</code>) which is called upon from several ABCD-PHP pages. The script trims white-spaces at the right or at the left side from strings. This can be easily done locally, no need for sending the string to the server together with the request to trim it and then having it returned from the server. Therefore the script is loaded into an ABCD page and executed locally.
+Also generally available JavaScript existing modules are being used, e.g. for the calendar function in the Loans module or for the ‘HTML Editor’ (FCKEditor.js). Under here the calendar example is shown, based on the JavaScript ‘popcalendar.js’ which can be found e.g. in the folder php/loans/js of the ABCD home-folder (/ABCD/ www/htdocs).</p>
+
+<p>This little tool displays any month of the calendar and allows marking the holidays to take them into account when calculating the loans period !</p>
+
+<p><img src="https://lh6.googleusercontent.com/Mnn3D39lRsOzRc4pYefnVMSjV8Xg7d6yAIuKN7cqWRUR2GAhG8NKlE875jD7DJCnHTvewPZbYKkXASR5Er_YrKs6acSpIb9X-SU-IXgkgLF_RTOrHSi3Nel7C-OUGEBcZaDWJfyc=s0" alt="" /></p>
+
+<p>Most JavaScript functions however are not visible on the screen, but perform useful functions within the web- pages of ABCD. So even if tools like the above mentioned (the HTML editor or the calendar) are considered unnecessary, still it is important to keep the option to run JavaScript within your browser ‘on’. As with Java, this option e.g in Firefox can be checked in the <code class="language-plaintext highlighter-rouge">Tools|Options|Content</code> tab (in Internet Explorer one has to activate ‘Enable for Active Scripting’ in the Scripting section of the security zone ‘Internet’ under <code class="language-plaintext highlighter-rouge">Tools|Options|security</code>).</p>
+
+<h2 id="java-groovy-and-jetty">JAVA, Groovy and Jetty</h2>
+
+<p>JAVA is at the same time a programming language (like e.g. ‘C++’) and a ‘runtime compiler’, which means that programs written in JAVA need a ‘RunTime Environment’ (RTE) version of JAVA which will compile the program for the given Operating System and CPU combination at run-time (i.e. when the user executes the program). By doing so the JAVA programs are completely ‘multi-platform’ (Windows, UNIX, Linux, OS/X…) because such RTE’s exist for all platforms and are freely available for installation. So make sure your computer has its own JAVA RTE installed ! Both Sun (the real Java promoter) and Microsoft offer free versions of Java (e.g. at http:// java.com/en/download). JAVA is not only free but also ‘Open Source’ and therefore can be reported as being fully ‘FOSS’, as is ABCD.</p>
+
+<p>ABCD uses JAVA only for the ‘advanced’ loans module, which comes as an extra option (see the chapter on the Circulation module). This advanced circulation management module is intended only for larger institutions with more complex circulation rules and multiple branches with their own loans policies or with user-databases in other formats (e.g. SQL). Also more interactive ‘MyLibrary’ -style functions can be offered. In order to allow such more complicated software-combinations, ABCD calls upon JAVA to provide web-services and links with other database-models.</p>
+
+<p>Groovy is an object-oriented programming language for the Java Platform which can be used as a scripting lan- guage for the Java Platform.</p>
+
+<p>The advanced ABCD Loans module (EmpWeb) also uses Jetty-technology, which is aHTTP Server and Servlet container written in Java.</p>
+
+<p>Jetty can be used as:</p>
+<ul>
+  <li>a stand-alone traditional web server for static and dynamic content</li>
+  <li>a dynamic content server behind a dedicated HTTP server such as Apache using mod_proxy</li>
+  <li>an embedded component within a java application</li>
+</ul>
+
+<h2 id="mysql">MySQL</h2>
+
+<p>MySQL is a relational database developed as FOSS but with a ‘dual license’ scheme, allowing both commercial and free applications. Currently MySQL has been taken over by Sun Microsystems, a strong defender of FOSS software, e.g. JAVA. Recently Sun Microsystems has been taken over by Oracle, so the future is not so clear.</p>
+
+<p>As a database MySQL has become incredibly popular because of its ease of use and combined packing with e.g. Apache and PHP for easy deployment of database-driven websites.</p>
+
+<p>Examples of such pre-packaged combinations of Apache/PHP with MySQL are : EasyPHP (http://www.easyphp.org) and WAMP for Windows or XAMP for Linux (http://www.wampserver.com). Both are Open Source and free to use (GPL license).</p>
+
+<p>Critics claim its ‘relational’ qualities are still lagging behind - even if improved a lot since the earlier days - as compared to e.g. PosGreSQL or of course the major relational databases like Oracle or IBM DBII. Some other library automation packages are completely using MySQL for the databases, the best known being KOHA (albeit that KOHA currently envisages adding/changing to another type of database, i.e. ‘Zebra’, exactly to avoid limita- tions of MySQL for library purposes.</p>
+
+<p>The ‘SQL’ part of the name means ‘Standard Query Language’, denoting a standard grammar for retrieving data out of relations (related tables), heavily relying however on its relational structure. For this reason e.g. ISIS is not using SQL as it does not store its data into tables with fixed cells and structures.</p>
+
+<p>MySQL will only be used in ABCD within the ‘Advanced Loans’ module, which is a non-standard extra (see the chapter on the loans module in this manual). There it will be used to store the transactions of the loans system, as these are administrative data which can be more efficiently handled by this type of database as compared to ISIS with all its - in this case unnecessary - flexibility and text-oriented features.</p>
+
+<h2 id="yaz">YAZ</h2>
+
+<p>YAZ is a freely available software for embedding the Z39.50 protocol in applications. Z39.50 is used as a protocol to retrieve data from other catalogues, mostly in MARC-format. ABCD uses YAZ for its ‘Z39.50’ function in the cataloging module.</p>
+
+<h2 id="apache">Apache</h2>
+
+<p>Apache is the name of the webserver software very frequently used in ‘open source’ webservers. In fact we are talking about a software called ‘HTTPD’, which is only one product of the powerful ‘Apache Software Foundation’, which also provides other interesting products such as e.g. Lucene indexing (also going to be used in the next releases of ABCD), TomCat (a Java Servlet and Server Pages server) and the Derby DB.</p>
+
+<p>Apache as a webserver seems to be the most widely used in the actual Internet, which is one of the (few) examples where FOSS dominates over the commercial solutions offered. All information on the Apache web-server and download files can be found at the URL : <a href="http://www.apache.org/">http://www.apache.org.</a></p>
+
+<p>In many cases the Apache webserver software will already be installed on the server where ABCD will reside, as is probably also the case with PHP (and MySQL). For this reason ABCD came as a package both inclusive of Apache and PHP and another one without these, but in ABCD v2.0 only the non-inclusive package is available, leaving the Apache and PHP installation apart - good installers like WAMP and XAMP exist anyway also as FOSS. In the case of an existing Apache webserver, expertise on Apache should be available in order to integrate ABCD with the existing Apache-based applications. E.g. a virtual server for ABCD could be set up with ‘aliases’ specifically for the ABCD system (htdocs home) and cgi (scripts folder). In the case of the full package, as it came for ABCD 1.x, the latest ‘stable’ Apache httpd-version was included, pre-configured to work with ABCD as ‘localhost’ (which means : the PC itself runs both the client and the server). A small script launched the httpd (or Apache) service based on that configuration, so that installation and configuration efforts in principle could be kept to a strict minimum. Since nowadays too many different versions (32/64 bits, thread-safe or non-safe, MS VC10,12,14…) exist we think it is better to leave the installation of Apache and PHP to specialized packages such as the above mentioned WAMP and XAMP or, in the case of Linux, the ‘server-versions’ of the Linux-distributions which come with their own Apache and PHP pre-installed. In case of additional configuration still to be necessary, the user should be fully aware of the fact that Apache, as a Linux-based software, is case-sensitive for its parameters and file names (with path information) !</p>
+
+<p><em>In the case of webservers, we should mention ‘IIS’ (Internet Information Services) of Microsoft, free software but not open, which is the webserver coming with Windows. Differences are mostly in the way how it should/can be configured and managed, rather than performance, security etc… The terminology is a bit different (e.g. ‘aliases’ are called ‘virtual folders’ and there is no easily approachable ASCII-configuration file as with Apache and its ‘httpd.conf’.
+ABCD runs perfectly with IIS, as with other web-server software (e.g. Xitami), but this manual does not support the implementation on IIS. Dedicated manuals on configuring IIS for ABCD exist.</em></p>
+
+<script
+  src="/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function() {
+
+    var toc = $('#TOC');
+
+    // Select each header
+    sections = $('.td-content h1');
+        $.each(sections, function(idx, v) {
+            section = $(v);
+            var div_id = $(section).attr('id');
+            var div_text = section.text().split('¶')[0];
+            var parent = $("#" + div_id)
+            var content = '<li id="link_' + div_id + '" class="md-nav__item"><small><a class="md-nav__link" href="#' + div_id + '" title="' + div_text +'">' + div_text +'</small></a></li>';
+            $(toc).append(content);
+
+            // Add section code to subnavigation
+            var children = $('<nav class="md-nav"><ul class="md-nav__list"></nav></ul>')
+            var contenders = $("#" + div_id).nextUntil("h1");
+            $.each(contenders, function(idx, contender){
+               if($(contender).is('h2') || $(contender).is('h3')) {
+                   var contender_id = $(contender).attr('id');
+                   var contender_text = $(contender).text().split('¶')[0];
+                   var content = '<li class="md-nav__item"><a class="md-nav__link " href="#' + contender_id + '" title="' + contender_text +'"><small>' + contender_text +'</small></a></li>';
+                   children.append(content);
+                }
+             })
+             $("#link_" + div_id).append(children);
+        });
+    });
+</script>
+
+<script>
+var headers = ["h1", "h2", "h3", "h4"]
+var colors = ["red", "orange", "green", "blue"]
+
+$.each(headers, function(i, header){
+    var color = colors[i];
+    $(header).each(function () {
+        var href=$(this).attr("id");
+        $(this).append('<a class="headerlink" style="color:' + color + '" href="#' + href + '" title="Permanent link">¶</a>')
+    });
+})
+</script>
+
+
+
+	
+              
+              <style>
+  .feedback--answer {
+    display: inline-block;
+  }
+  .feedback--answer-no {
+    margin-left: 1em;
+  }
+  .feedback--response {
+    display: none;
+    margin-top: 1em;
+  }
+  .feedback--response__visible {
+    display: block;
+  }
+</style>
+<div class="d-print-none">
+<h2 class="feedback--title">Feedback</h5>
+<p class="feedback--question">Was this page helpful?</p>
+<button class="btn btn-primary mb-4 feedback--answer feedback--answer-yes">Yes</button>
+<button class="btn btn-primary mb-4 feedback--answer feedback--answer-no">No</button>
+<p class="feedback--response feedback--response-yes">
+  Glad to hear it! Please <a href='{{ site.repo }}/issues/new'>tell us how we can improve</a>.
+</p>
+<p class="feedback--response feedback--response-no">
+  Sorry to hear that. Please <a href='{{ site.repo  }}/issues/new'>tell us how we can improve</a>.
+</p>
+</div>
+<script>
+  const yesButton = document.querySelector('.feedback--answer-yes');
+  const noButton = document.querySelector('.feedback--answer-no');
+  const yesResponse = document.querySelector('.feedback--response-yes');
+  const noResponse = document.querySelector('.feedback--response-no');
+  const disableButtons = () => {
+    yesButton.disabled = true;
+    noButton.disabled = true;
+  };
+  const sendFeedback = (value) => {
+    if (typeof ga !== 'function') return;
+    const args = {
+      command: 'send',
+      hitType: 'event',
+      category: 'Helpful',
+      action: 'click',
+      label: window.location.pathname,
+      value: value
+    };
+    ga(args.command, args.hitType, args.category, args.action, args.label, args.value);
+  };
+  yesButton.addEventListener('click', () => {
+    yesResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(1);
+  });
+  noButton.addEventListener('click', () => {
+    noResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(0);
+  });
+</script><br/>
+
+
+
+
+           </div>
+
+          </main> <!--col-12 col-md-9 col-xl-8 pl-md-5-->
+        </div> <!--./row flex-xl-nowrap-->
+      </div> <!--./td-main-->
+      
+      <footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        <ul class="list-inline mb-0">  
+          
+          
+        </ul>
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        <ul class="list-inline mb-0">  
+          <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="GitHub" data-original-title="GitHub">
+            <a class="text-white" target="_blank" href="https://github.com/ABCD-Community/ABCD-Community.github.io">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">© 2021 ABCD Community All Rights Reserved</small>
+        
+        <p class="mt-2">
+
+            
+                <a href="/en//" >Home</a> <span class="text-primary"> </span>
+          
+                <a href="/en/docs" >Documentation</a> <span class="text-primary"> </span>
+          
+                <a href="/en/collab" >Collaboration</a> <span class="text-primary"> </span>
+          
+                <a href="/en/about" >About</a> <span class="text-primary"> </span>
+          
+
+        </p>	
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div> <!--./container-fluid td-outer--> 
+    <script src="/assets/js/popper.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/main.js"></script>
+
+
+<script src="/assets/js/tabpane-persist.js"></script>
+
+  </body>
+</html>

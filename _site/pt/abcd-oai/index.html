@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="pt"  class="no-js">
+  <!-- Copyright 2019-2021 Vanessa Sochat-->
+  <head>
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Jekyll" />
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+<link rel="alternate" type="application/rss&#43;xml" href="/docs/index.xml">
+
+<link rel="shortcut icon" href="/assets/favicons/favicon.ico" >
+<link rel="icon" type="image/png" href="/assets/favicons/favicon.png" sizes="16x16">
+
+ 
+ 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M0LM60C9WY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M0LM60C9WY');
+</script>
+
+ 
+
+<title>Comunidade ABCD</title>
+<meta property="og:title" content="Comunidade ABCD" />
+<meta property="og:description" content="Este documento tem como objetivo fornecer todas as informações e instruções relevantes sobre como usar a biblioteca integrada e o sistema de gerenciamento de documentação ‘ABCD’. Tanto as operações básicas como o gerenciamento avançado do software são discutidos, assim como os tópicos úteis e necessários relativos ao software ISIS no qual o ABCD se baseia. Nesta nova edição, as novas características da versão 2.0 são adicionadas- o uso de diferentes sabores de CISIS, de Unicode e as capacidades da biblioteca digital, bem como alguns módulos adicionais (ODDS, LDAP, DSpaceBridge) e utilitários (conversão UTF8, criação de objetos de empréstimo…) ." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://localhost:9898" />
+<meta property="og:site_name" content="http://localhost:9898" />
+
+<meta itemprop="name" content="Comunidade ABCD">
+<meta itemprop="description" content="">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Comunidade ABCD"/>
+<meta name="twitter:description" content="Este documento tem como objetivo fornecer todas as informações e instruções relevantes sobre como usar a biblioteca integrada e o sistema de gerenciamento de documentação ‘ABCD’. Tanto as operações básicas como o gerenciamento avançado do software são discutidos, assim como os tópicos úteis e necessários relativos ao software ISIS no qual o ABCD se baseia. Nesta nova edição, as novas características da versão 2.0 são adicionadas- o uso de diferentes sabores de CISIS, de Unicode e as capacidades da biblioteca digital, bem como alguns módulos adicionais (ODDS, LDAP, DSpaceBridge) e utilitários (conversão UTF8, criação de objetos de empréstimo…) ."/>
+
+<link rel="stylesheet" href="/assets/css/main.min.css">
+<link rel="stylesheet" href="/assets/css/palette.css">
+<script
+  src="/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+
+
+  
+  
+    
+  <link rel="alternate" hreflang="en" href="/en/abcd-oai/" />
+    
+  <link rel="alternate" hreflang="pt" href="/pt/abcd-oai/" />
+    
+  
+
+  
+</head>
+
+  
+
+
+  <body class="td-section">
+    
+<header>
+    <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="/pt">
+            <span class="navbar-logo"></span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 167.73 167.77"><defs><style>.cls-1{fill:#ffffff;}</style></defs><g id="Camada_2" data-name="Camada 2"><g id="Camada_1-2" data-name="Camada 1"><path class="cls-1" d="M66.62,83.14c-41-2.06-66.62,18-66.62,18V18.42S20.94-.08,66.62,0Z"/><path class="cls-1" d="M84.59,66.62c2.06-41-18-66.62-18-66.62h82.73s18.5,20.94,18.42,66.62Z"/><path class="cls-1" d="M101.11,84.63c41,2.06,66.62-18,66.62-18v82.74s-20.94,18.49-66.62,18.41Z"/><path class="cls-1" d="M83.14,101.15c-2.06,41,18,66.62,18,66.62H18.42S-.08,146.83,0,101.15Z"/></g></g></svg><span class="text-uppercase font-weight-bold">Comunidade ABCD</span>
+        </a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+            
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/pt//" ><span>Início</span></a>
+			</li>
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/pt/docs" ><span>Documentação</span></a>
+			</li>
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/pt/collab" ><span>Colaboração</span></a>
+			</li>
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/pt/about" ><span>Sobre</span></a>
+			</li>
+
+
+  <li class="nav-item dropdown mr-4 d-none d-lg-block">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Português</a>
+    <div class="dropdown-menu">
+        
+            
+            
+            
+                
+
+                <a title="Ver em English" class="en dropdown-item" href="/en/abcd-oai/">English</a>
+
+
+            
+
+                <a title="Ver em Português" class="pt dropdown-item" href="/pt/abcd-oai/">Português</a>
+
+
+            
+            
+        
+   </div>
+  </li>
+
+		</ul>
+	</div>
+	
+    <div class="navbar-nav d-none d-lg-block">
+        <input type="search" class="form-control td-search-input" placeholder="&#xf002 Buscar no site…" aria-label="Search this site…" autocomplete="off"> 
+    </div>
+   
+	<div class="navbar-nav d-none d-lg-block">
+          <a class="gh-source" data-gh-source="github" href="https://github.com/ABCD-Community/ABCD-Community.github.io" title="Go to repository" data-md-state="done">
+            <i class="fab fa fa-github fa-2x" style='color: #fff;padding-right:20px; float:left; margin-top:5px'></i></a>
+        </div>
+      </div>
+
+
+</nav>
+</header>
+
+
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+          <div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    <input type="search" class="form-control td-search-input" placeholder="&#xf002 Buscar no site…" aria-label="Search this site…" autocomplete="on">
+      <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+      </button>
+  </form>  
+
+  <nav class="collapse td-sidebar-nav" id="td-section-nav">
+    <div class="nav-item dropdown d-block d-lg-none pl-4">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Português</a>
+
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+        
+            
+            
+            
+                
+
+                <a title="Ver em English" class="en dropdown-item" href="/en/abcd-oai/">English</a>
+
+
+            
+
+                <a title="Ver em Português" class="pt dropdown-item" href="/pt/abcd-oai/">Português</a>
+
+
+            
+            
+        
+      </div>
+    </div>
+
+
+    
+      <ul class="td-sidebar-nav__section pr-md-3"> 
+
+        
+        
+
+        <li class="td-sidebar-nav__section-title">
+          <a  href="" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section"></a>
+        </li>
+        
+      </ul>
+    
+      <ul class="td-sidebar-nav__section pr-md-3"> 
+
+        
+        
+
+        <li class="td-sidebar-nav__section-title">
+          <a  href="/pt/docs" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Home</a>
+        </li>
+        
+          <ul>
+            <li class="collapse show" id="home">
+              <ul class="td-sidebar-nav__section pr-md-3">
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-introduction
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Introdução
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-technology
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Tecnologia ABCD
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-installation
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Instalação
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-modules
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Módulos
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-utilities
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Utilitários
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-thesaurus
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Thesaurus
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-odds
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">O Serviço de Entrega de Documentos Online (ODDS)
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-digital-library
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Características da biblioteca digital
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-oai
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">A interface OAI
+                    </a>
+                  </li>
+                  
+                    <ul>
+                      <li class="collapse show" id="">
+                        
+                      </li>
+                    </ul>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-opac
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">OPAC
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/opac-iah
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">iAH OPAC
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-site
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD Site
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/secs-web
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Controle de periódicos
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-unicode
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD Unicode
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-localisation
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Localização e pastas
+                    </a>
+                  </li>
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        
+      </ul>
+    
+  </nav>
+</div>
+
+          </aside> <!--col-12 col-md-3 col-xl-2 td-sidebar d-print-none-->
+          
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+                  <a href="https://github.com/ABCD-Community/ABCD-Community.github.io/edit/main/pt/abcd-oai/index.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Editar esta página</a>
+
+<a href="https://github.com/ABCD-Community/ABCD-Community.github.io/issues/new?labels=question&title=Question:&body=Question on: https://github.com/ABCD-Community/ABCD-Community.github.io/tree/master/pt/abcd-oai/index.md" target="_blank"><i class="fab fa-github fa-fw"></i> Criar questão de documentação</a>
+
+<a href="https://github.com/ABCD-Community/ABCD-Community.github.io/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Apontar um problema no projeto</a>
+<!-- this will parse through the header fields and add a button to open
+     an issue / ask a question on Github. The editable field should be in
+     the post frontend matter, and refer to the label to open the issue for -->
+
+            </div>
+            <div class="td-toc">
+              <nav id="TableOfContents">
+                <ul id="TOC">
+                   <!-- Links will be appended here-->
+                </ul>
+              </nav>
+            </div>
+ 
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">     
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+              <ol class="breadcrumb spb-1">
+              
+              
+                <li class="breadcrumb-item">
+                  <a href="http://localhost:9898/pt/">Pt</a>
+                </li>
+                
+                <li class="breadcrumb-item active" aria-current="page">
+	          <a href="http://localhost:9898/pt/abcd-oai/">A interface ABCD OAI</a>
+                </li>
+                
+	      </ol>
+           </nav>
+
+           <div class="td-content">
+
+	      <h1 id="the-abcd-oai-interface">The ABCD OAI interface</h1>
+
+<h2 class="no_toc no_toc text-delta" id="conteúdo">Conteúdo</h2>
+
+<ol id="markdown-toc">
+  <li><a href="#the-abcd-oai-interface" id="markdown-toc-the-abcd-oai-interface">The ABCD OAI interface</a>    <ol>
+      <li><a href="#short-introduction-to-the-oai-pmh-concept" id="markdown-toc-short-introduction-to-the-oai-pmh-concept">Short introduction to the OAI-PMH concept.</a></li>
+      <li><a href="#implementation-and-configuration-in-abcd" id="markdown-toc-implementation-and-configuration-in-abcd">Implementation and configuration in ABCD</a>        <ol>
+          <li><a href="#configuration-of-the-interface" id="markdown-toc-configuration-of-the-interface">Configuration of the interface</a></li>
+          <li><a href="#the-general-configuration" id="markdown-toc-the-general-configuration">The general configuration</a></li>
+          <li><a href="#the-databases-configuration" id="markdown-toc-the-databases-configuration">The databases configuration</a>            <ol>
+              <li><a href="#the-database-definition-" id="markdown-toc-the-database-definition-">The database definition :</a></li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+      <li><a href="#using-the-interface" id="markdown-toc-using-the-interface">Using the interface</a>        <ol>
+          <li><a href="#identify" id="markdown-toc-identify">Identify</a></li>
+          <li><a href="#listmetadataformats" id="markdown-toc-listmetadataformats">ListMetadataFormats<img src="https://lh3.googleusercontent.com/6f0E2NSTeGar6fjrd1bcAQeZYQHtzva_3wkuqxdLr7cH2AhUhehTCmeMWIzT6qQ7OEzPjcntEt6jp7cLRcKMHKYJDQ79JxOzv30AMn0GnCjGKMre-M10TpimikTVIj9IU0bW0Ng=s0" alt="" /></a></li>
+          <li><a href="#listsets" id="markdown-toc-listsets">ListSets<img src="https://lh5.googleusercontent.com/noGNA6WpWzDJxl6TocVjIGVOqHIvH6TE0Ro8xvhUJ2QUV7sVVafS3BxxjpJ7fXltzKKoXG3oItP1Gv9aOWsffrrTBOtkypv-P97sgRfWOjfuMxkwe9HBKzJbmRsyMIC126_ozTU=s0" alt="" /></a></li>
+          <li><a href="#listidentifiers" id="markdown-toc-listidentifiers">ListIdentifiers<img src="https://lh3.googleusercontent.com/wQz-eoTP6LfgmBsBfS5LOkwIYxbc9B5v5qbgeF_ELnZ8MYvXG5OVBFAVVgbhVV49Fw2POb-tmj9lnHKkRgJOAMk19X7Nx9MQSYIIdbbguixg_GHD8H543cwSkX1qj7CQgadwdo8=s0" alt="" /></a></li>
+          <li><a href="#listrecords" id="markdown-toc-listrecords">ListRecords</a></li>
+          <li><a href="#listrecord" id="markdown-toc-listrecord">ListRecord</a></li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+<hr />
+
+<p>This section will present the ABCD OAI interface, which is an implementation of BIREME’s ‘ISIS-OAI- PROVIDER’, a general tool for providing access to ISIS databases through the OAI-PMH protocol.</p>
+
+<h2 id="short-introduction-to-the-oai-pmh-concept">Short introduction to the OAI-PMH concept.</h2>
+
+<p>OAI, or ‘Open Archive Initiative’ is a world-wide initiative in the information communities to avail information in an open, free way.</p>
+
+<p>For more informaiton on this organisation, the ‘Openarchives.org’, see <a href="http://www.openarchives.org/">http://www.openarchives.org.</a></p>
+
+<p>The Open Archives Initiative develops and promotes interoperability standards that aim to facilitate the efficient dissemination of content. OAI has its roots in the open access and institutional repository movements.</p>
+
+<p>The three current main areas of activity are :</p>
+<ol>
+  <li>OAI-PMH : OAI Protocol for Metadata Harvesting : a protocol to allow retrieving metadata on electronic documents with an open standard, meaning one does not need to use the software with which the metadata were/are managed.</li>
+  <li>ResourceSync Framework Specification : a protocol to make it possible for servers to synchronize their refer- ences to resources which might move or migratie on the WWW so as to always remain updated (pointing to the correct URL)</li>
+  <li>Open Archives Initiative Object Exchange and Reuse : a mechanism to allow ‘rich information documents’ (with images, movies etc.) to be presented as one ‘aggregated resource’ independent from the individual locations of the components. E.g. social media The intent is to develop standards that generalize across all web-based information including the increasing popular social networks of “web 2.0.</li>
+</ol>
+
+<p>In ABCD the first of these three features is implemented : the Protocol for Metadata Harvesting or OAI-PMH. The OAI-PMH is the main protocol developed and promoted by the OAI, and described as :</p>
+
+<p>“The Open Archives Initiative Protocol for Metadata Harvesting (OAI-PMH) is a low-barrier mechanism for repository interoperability. Data Providers are repositories that expose structured metadata via OAI-PMH. Service Providers then make OAI-PMH service requests to harvest that metadata. OAI-PMH is a set of six verbs or services that are invoked within HTTP. ”</p>
+
+<p>The idea is to provide access to ‘open’ meta-data based information in as much a ‘generic’ and open way as possible, meaning that any need of specific software should be avoided. For this reason the protocol agreed on 6 ‘verrbs’ or commands which allow to identify properly the source of the information and retrieval of basic meta-data information of documents available, often in a ‘repository’, either in a list of document-identifiers or, based on one such identifier, a specific document. In order to facilitate easier update of repositories taking their info from other repositories, selections can be limited by dates.</p>
+
+<h2 id="implementation-and-configuration-in-abcd">Implementation and configuration in ABCD</h2>
+
+<p>The implementation in ABCD is fully based on the tool ‘ISIS-OAI-PROVIDER’ produced by BIREME as part of their Virtual Health Library (see e.g. the website about this tool :<a href="http://wiki.bireme.org/en/index.php/Isis-oai-">http://wiki.bireme.org/en/index.php/Isis-oai-</a> provider and for downloading the original software the GitHub repository : <a href="http://wiki.bireme.org/en/index.php/Isis-oai-provider">:https://github.com/bireme/isis-oai-</a>  <a href="http://wiki.bireme.org/en/index.php/Isis-oai-provider">provider .</a></p>
+
+<p>Since no ABCD or other ISIS-related software can be supposed to exist at the users’ side, the mechanism is to provide a URL and present the interface as just a web-page which is freely accessible. Therefore no links from within ABCD (e.g. in ‘Central’ module) is provided but the URL should be entered directly in the browser’s address bar (or referenced by a shortcut etc.). In the case of an ABCD ‘localhost:9090’ installation this URL would be : http://localhost:9090/isis-oai-provider/index.php.</p>
+
+<p>The page opened by that URL should like like the following illustration :<img src="https://lh5.googleusercontent.com/f1EYMwsBO1rReclD6jf-NCB0IKaarFg-mYaPDhikP964JQ4kTHP3YpEOte8zKnhgHuQKyhQ4e0qb980FJtvbN0OrkCxWfmnkyHJKYHBJxRFvCqpXCLB081DSmDvjIhhDGjPofXw=s0" alt="" />
+As can be seen, in the left part of the interface access is given to each of the 6 main ‘verbs’ or operators, with a short description of each verb after selection of one of them, while at the right part the user-interacion has two parts : the criteria defined by the user at the upper part and the XML-output (to be ‘captured’ with copy/paste, in some browsers from the ‘frame source’ if the full XML-code is needed) as the result of the harvesting action.</p>
+
+<p>We will first briefly discuss the configuration necessary to make this work for local ISIS-databases in ABCD and then discuss each of the 6 verbs with some illustration.</p>
+
+<h3 id="configuration-of-the-interface">Configuration of the interface</h3>
+
+<p>Configuring ABCD for the OAI-interface comprises two parts : a general configuration and a configuration file for all involved databases.</p>
+
+<h3 id="the-general-configuration">The general configuration</h3>
+
+<p>The file ‘oai-config.php’ is located at the ‘root’ of the Isis-OAI-Provder module in ABCD, which is stored, next to other modules like central, iah, secs-web and site, in the htdocs-folder of ABCD. A typical Windows file-manager view of this folder’s content looks like this :<img src="https://lh3.googleusercontent.com/7S58qqg99TZ3eMo4ikRuv8OWoNFdufxw6jigaiASdp-uX_yVx4XqTrUSCxaDAYry-oAP0z5WdnXU6KAf5iyMhtDcJY8ocLAuSx-7Lg7xDze5rLfbu_u9XhHil8_85lpCu-Kkl-E=s0" alt="" /></p>
+
+<p>So this module uses its own CSS stylesheets and images, allows for gizmo’s to be applied and uses one JavaScript file with ‘functions’ called from the scripts. The most important sudirectories here are :</p>
+
+<ul>
+  <li>
+    <p>lib : this directory contains the main PHP-scripts for the interface, partly taken - inherited - from the general PHP- OAI libraries (e.g. OAIServer.php) and partly dedicated PHP-scripts to deal with resp. ISIS-databases (ISISD- b.php) or one (ISISItem.php) or more (ISISItemFactory.php) ISIS records. The configuration parser-scripts are also here for resp. parsing the ABCD-OAI configuration or the ‘mapping’ of the database fields to the Dublin- Core standard.</p>
+  </li>
+  <li>
+    <p>map : this directory contains at least one file for each database involved, i.e. following either one of the two allowed syntaxes : OAI_DC (files with the name of the database followed by the .i2x extension) or ISIS (more traditional ISIS PFT formats with th eextension .pft). This mapping will be discussed in more detail below.</p>
+  </li>
+  <li>
+    <p>wxis : some ISIS-Scripts used by the main executalbe wxis (web-enabled ISIS). getidientifiers.xis, getrecord.xis and gettotal.xis. These are rather ‘normal’ ISISScript instructions, taking variables form the CGI-environment and then specifying the instructions to operate on the variables, e.g. printing the titles in a loop etc.</p>
+  </li>
+  <li>
+    <p>In the main isis-oai-provider directory itself we find the opening PHP-script index.php (which contains the interface) and the sample and real configuration files as PHP-scripts.</p>
+  </li>
+</ul>
+
+<p>For the configuration of the ABCD-OAI interface we need to consider two files : one for the general configuration, one for the databases.</p>
+
+<p>A sample listing, as it comes with the demo-implementation, is given here, where lines starting with ‘;’ are com- ments, e.g. to illustrate the Windows-alternatives :</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ENVIRONMENT]  
+; Set the directory of application. The effect will be [http://your-site.org/DIRECTORY](http://your-site.org/DIRECTORY)
+
+DIRECTORY=/isis-oai-provider 
+;Full path to folder 'site' in folder bases. Windows users must NOT put letter unit in path
+DATABASE_PATH=/var/opt/ABCD/bases/;
+DATABASE_PATH=/ABCD/www/bases/ EXE_EXTENSION=;
+EXE_EXTENSION=.exe
+
+;Set the directory configured to execute cgi-bin applications.
+
+CGI-BIN_DIRECTORY=/cgi-bin/ 
+
+;[INFORMATION] 
+;Set the repository's name. 
+NAME=ABCD
+
+; Set the email of the system admin [EMAIL=egbert.desmet@uantwerpen.be](mailto:EMAIL%3Degbert.desmet@uantwerpen.be) 
+IDPREFIX=be
+
+IDDOMAIN=netcat 
+EARLIESTDATESTAMP=2011-01-01 
+MAX_ITEMS_PER_PASS=20
+</code></pre></div></div>
+
+<p>In the [ENVIRONMENT[ section the following variables need to be defined :</p>
+
+<ul>
+  <li>DIRECTORY : the folder of the module, starting from the ‘ABCD DocumentRoot’ (as defined in the webserver,</li>
+</ul>
+
+<p>e.g. Apache), so in the default case of ABCD in Linux where the document-root is defined as ‘/opt/ABCD/www/ htdocs’, defineing the DIRECTOY as ‘isis-oai-provider’ means that the OAI-module is located in /opt/ABCD/ www/htdocs/isis-oai-provider.</p>
+<ul>
+  <li>DATABASE_PATH : the directory where the databases are to be found</li>
+  <li>EXE_EXTENSION : the extension to be added to the ‘wxis’ executable name, in Windows : ‘.exe’, in Linux no extension is used.</li>
+  <li>CGI-BIN_DIRECTORY : the directory as it should be recognized in the URL In the case of Apache the Apache- configuration explains which real directory corresponds with the URL-string ‘/cgi-bin/’.</li>
+</ul>
+
+<p>In the [INFORMATION] section we deinfe :</p>
+<ul>
+  <li>NAME : the name of your repository as you want it to be seen by the user</li>
+  <li>EMAIL : the e-mail address of the administrator who can be contacted about the repository</li>
+  <li>IDPREFIX and IDDOMAIN : together they identify the ‘domain’ of the server</li>
+  <li>EARLIESTDATESTAMP : the starting data of the repository, i.e. the date of the oldest documents, in the format YYYY-MM-DD.</li>
+  <li>MAX_ITEMS_PER_PASS : the number of records to be listed in the ListIdentifers or ListRecords verbs. At the end of the list a ‘resumption’-code will be given which can be used to define the start of the next batch. Default here is 20 items.</li>
+</ul>
+
+<h3 id="the-databases-configuration">The databases configuration</h3>
+
+<p>One or more databases can be used in the OAI-interface, where they are referred to, in the OAI-vocabulary, as ‘sets’. The sample implementation in ABCD uses 2 such sets : MARC (a marc21 catalog) and DUBCORE. (a repository with papers, but this is just a sample full-text database which the ABCD-administrator has to implement !)..</p>
+
+<h4 id="the-database-definition-">The database definition :</h4>
+<p>Each database needs to be defined, but also will need at least one ‘mapping’ file which we will discuss after- wards. The parameters to be defined for each are rather self-explanatory, like name, description, path (to the data- base-files), database (the actual file.name to which ‘.mst’ will be added to define the ISIS MST file), while some other parameters can be briefly explained additionally :</p>
+
+<ul>
+  <li>mapping : the file where the ‘mapping’ (the ISIS-fields corresponding with the related DublinCore elements) are described in either a very simple ‘DC’ format (.i2x) or a more sophisticated format based on the ISIS Formatting Language (.pft), see further;</li>
+  <li>idprefix : the string to be prefixed (added ‘before’) the actual identifier when listing the record-identifiers; this additional string is optional;</li>
+  <li>cisis_version : this is the identifer of the specific CISIS-version which is used (as from ABCD2.0 different CISIS-versions can be used, e.g. BIGISIS or UTF8/FFI etc. The version specified here should reflect the (sub-)directory structure naming into the ‘cgi-bin’ directory where the correct ‘wxis’ (or in Windows : wxis.exe) is located to deal with the database concenred. This can be different for any database defined.</li>
+</ul>
+
+<blockquote>
+  <p>Note:
+We changed the original BIREME-name of the variable
+‘isis_key_length’ (e.g. 1030, 1660…), but indeed in ABCD the CISIS
+version is to be referred to here. This is one real difference with
+the original default BIREME-tool.</p>
+</blockquote>
+
+<ul>
+  <li>identifier-field : the tag (number) of the ISIS-field which contains the identifier of the record;</li>
+  <li>date-stamp-field : the tag (number) of the ISIS-field which contains the datestamp of the record.</li>
+</ul>
+
+<p>We use the earlier mentioned 2 databases or ‘sets’ to illustrate the configuration of a database (in this case for Linux) :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[marc] name=marc
+
+description="MARC" 
+path=/var/opt/ABCD/bases/marc/data database=/var/opt/ABCD/bases/marc/data/marc 
+mapping=marc.i2x
+
+prefix=oai_date_ cisis_version=ansi 
+; identifier_field=1 
+datestamp_field=980 [dubcore] 
+name=dubcore  
+
+  
+
+description="DublinCore repository"
+path=/var/opt/ABCD/bases/dubcore/data
+database=/var/opt/ABCD/bases/dubcore/data/dubcore
+mapping=dubcore.i2x
+
+prefix=oai_date_ 
+cisis_version=utf8/bigisis ; dentifier_field=111
+datestamp_field=507
+</code></pre></div></div>
+
+<p>The database ‘mapping’ explains how the ISIS-fields correspond with the DC or XML-elements. It is best to illustrate this based on the samples provided, starting with the very simple example ‘marc.i2x’ :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root=oai-dc 245 dc:title
+500 dc:description
+650 dc:subject
+001 dc:identifier
+980 dc:date
+</code></pre></div></div>
+
+<p>First the ‘root’ string is defined as it will be used in the interface records-display. In the case of the oai-dc prefix used (see the ‘usage’ section below) just put ‘oai-dc.</p>
+
+<p>This ‘root’ is followed by a list of fields, one for each line, consisting of the ISIS-field-tag folllowed by the Dublin- Core element-name, e.g. the MARC21 title field 245 becomes : 245 dc-title. Note that this list can be a selection of fields to be shown. Non-defined fields here will just keep the field-tag as the XML-element, without translation to a proper DC-eleement.</p>
+
+<p>When more powerful formatting is desired, e.g. on the level of subfields, the alternative more complicated syntax of an ISIS PFT can be used, then referring to a file with the .pft extension. Such PFT ‘prints’ the necessary XML- tags, i.e. the XML-leader info, as ‘literals (unconditional quoted strings) :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;oai_dc:dc
+xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd"&gt;'/
+</code></pre></div></div>
+
+<p>followed by the individual ISIS-fields in the Formatting Language syntax used to add literals for the DC-XML output, in the case of e.g. the ‘title’ (v2 in Dubcore) :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if p(v2) then
+(| &lt;dc:title&gt;&lt;![CDATA[|v2^*|]]&gt;&lt;/dc:title&gt;|/), 
+fi,
+</code></pre></div></div>
+
+<p>or, for the title and authors n MARC :</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if p(v245) then
+(| &lt;dc:title&gt;&lt;![CDATA[|v245^*|]]&gt;&lt;/dc:title&gt;|/),
+| &lt;dc:title&gt;&lt;![CDATA[|v246^*|]]&gt;&lt;/dc:title&gt;|/,
+fi,
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if p(v100) or p(v110) then
+(if p(v100) then
+| &lt;dc:creator&gt;&lt;![CDATA[|v100^*|]]&gt;&lt;/dc:creator&gt;|/,
+else
+| &lt;dc:creator&gt;&lt;![CDATA[|v110^*|]]&gt;&lt;/dc:creator&gt;|/,
+fi), fi
+</code></pre></div></div>
+<p>which should be read as : if the title is present then print the XML tags <code class="language-plaintext highlighter-rouge">&lt;dc:title&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;/dc:title&gt;</code> with the actual value of v2 (any subfield, indicated by the <code class="language-plaintext highlighter-rouge">^*</code> operator, in between the [CDATA[…] attribute.
+Any more complicated PFT-statements can be used, e.g. for displaying the document-format, if it is indicated in
+<code class="language-plaintext highlighter-rouge">v9</code> :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>' &lt;dc:format&gt;'select s(mpu,v9,mpl)
+case 'A':'text',if p(v8^q) then '/'v8[1]^q fi,
+case 'MATERIAL TEXTUAL':'text',
+case 'G':'video',
+case 'I':'audio',
+elsecase if a(v9) then 'text',if p(v8^q) then '/'v8[1]^q fi, 
+else 'other' fi
+endsel,
+'&lt;/dc:format&gt;'/,
+</code></pre></div></div>
+<p>Any sequence of ISIS-fields can be treated this way, but fields not mentioned here will be omitted from the output.
+Instead of fields also subfields or groups of fields can be used, using the power of the Formatting Language.
+Best is to re-use an existing model, as provided with the demo-installation, for a new different local database, mostly adapting the field-tags to the local structure of the database. One has to be very careful, as always with the ISIS Formatting Language : missing a quote or any other syntax mistake will  produce no output at all but some error messages in the XML-output !</p>
+
+<h2 id="using-the-interface">Using the interface</h2>
+
+<p>When everything is properly configured - a lot of preliminary testing is advised, after all OAI means exposing your database to the whole world ! - the following outputs can be obtained, presented by each one of the six OAI- PHM ‘verbs’ :</p>
+
+<blockquote>
+  <p>Note: 
+With most illustratoins under here, the XML-output is
+incomplete, in other words : the actual output contains more data but
+only part can be shown here.</p>
+</blockquote>
+
+<blockquote>
+  <p>Note: The illustrations are generated with the Firefox browser,
+immediately showing the XML-output because no XML-style being
+available (‘This XML file does not appear to have any style
+information associated with it. The document tree is shown below’).
+Other browsers might show just the text-output, the full- XML still
+being available by right-clicking and requesting the ‘frame-source’.</p>
+</blockquote>
+
+<h3 id="identify">Identify</h3>
+
+<p>This verb returns the main protocol information. Compulsory parameters verb (automatcially entered by electing this verb).</p>
+
+<p>The output contains all necessary information as agreed per the protocol, e.g. the ‘name’ of the protocol as indicated in the oai-config script.</p>
+
+<h3 id="listmetadataformats">ListMetadataFormats<img src="https://lh3.googleusercontent.com/6f0E2NSTeGar6fjrd1bcAQeZYQHtzva_3wkuqxdLr7cH2AhUhehTCmeMWIzT6qQ7OEzPjcntEt6jp7cLRcKMHKYJDQ79JxOzv30AMn0GnCjGKMre-M10TpimikTVIj9IU0bW0Ng=s0" alt="" /></h3>
+
+<p>This verb describes the metadata formats used in the protocol. Compulsory parameters verb In ABCD we use two different formats : oai_dc and isis. which will correspond with the ‘mapping’ file defined, either i2x (for oai- dc) or pft for isis.</p>
+
+<h3 id="listsets">ListSets<img src="https://lh5.googleusercontent.com/noGNA6WpWzDJxl6TocVjIGVOqHIvH6TE0Ro8xvhUJ2QUV7sVVafS3BxxjpJ7fXltzKKoXG3oItP1Gv9aOWsffrrTBOtkypv-P97sgRfWOjfuMxkwe9HBKzJbmRsyMIC126_ozTU=s0" alt="" /></h3>
+
+<p>Retrieves a list of all databases available on this repository. Compulsory parameters verb Exclusive parameter resumptionToken</p>
+
+<blockquote>
+  <p>Note:
+‘exclusve parameter’ means that this parameter is not allowed as
+it is incompatible with the idea of the verb itself. The interface
+will not allow to put an exclusive parameter.</p>
+</blockquote>
+
+<p>In case of our 2 demo-databases here (marc and dubcore) the output will look somethng like :</p>
+
+<h3 id="listidentifiers">ListIdentifiers<img src="https://lh3.googleusercontent.com/wQz-eoTP6LfgmBsBfS5LOkwIYxbc9B5v5qbgeF_ELnZ8MYvXG5OVBFAVVgbhVV49Fw2POb-tmj9lnHKkRgJOAMk19X7Nx9MQSYIIdbbguixg_GHD8H543cwSkX1qj7CQgadwdo8=s0" alt="" /></h3>
+
+<p>This verb retrieves a list with the single identifier of each document published. Compulsory parameters verb metadataPrefix Optional parameters from until set Exclusive parameter resumptionToken retrieves a list with the single identifier of each document published. Compulsory parameters verb metadataPrefix Optional parameters from until set Exclusive parameter resumptionToken.</p>
+
+<p>Depending on the field given in the database configuration as containing the identifier of the record, the records will be listed with that field :</p>
+
+<p><img src="https://lh6.googleusercontent.com/91zcJCxAgaa4bosa0f86nu4spU7pi8-u4yEWuEsrfWeC1NO64TgeBCvxpA4gAQC19JG0HrgGupXIq87AKwIUiZkrH-D1-ujis6oPuwNcHF7KdtJGJt52JgnA3sIpN5kh63Vp0hE=s0" alt="" /></p>
+
+<p>We are showing here the end of the output, because an interesting feature is visible there : the ‘resumptionToken can be copied from there, to be filled in into the corresponding form-element in order to resume further listing with the given one as the first, so allowing subsequent batches to be retrieved (or ‘harvested’ in the IOAI-vocabulary).</p>
+
+<p><img src="https://lh5.googleusercontent.com/C25Nq5y3MGwZVEA7wDJM1EbuiH8fYY4M3acSer7otCSUVTFUoeHTtFfbPoOaisLONg4GwPZbS6pesNUNg20QV4fDbDowQaxcpHtBlNT31Gdlg140RCVxsM1_XnOP81_1hZ1w5Jw=s0" alt="" /></p>
+
+<h3 id="listrecords">ListRecords</h3>
+
+<p>This verb retrieves the list of documents. Compulsory parameters verb metadataPrefix Optional parameters from until set Exclusive parameter resumptionToken .</p>
+
+<p><img src="https://lh5.googleusercontent.com/C25Nq5y3MGwZVEA7wDJM1EbuiH8fYY4M3acSer7otCSUVTFUoeHTtFfbPoOaisLONg4GwPZbS6pesNUNg20QV4fDbDowQaxcpHtBlNT31Gdlg140RCVxsM1_XnOP81_1hZ1w5Jw=s0" alt="" /></p>
+
+<p>As with ‘ListIdentifiers’ a resumptionToken can be used to continue listing more records starting from the last one shown before. Note that also ‘from’ and ‘until’ dates can be entered to limit the records listed to a given span of time.</p>
+
+<h3 id="listrecord">ListRecord</h3>
+
+<p>Finally, the last ‘verb’ is to retrieve the metadata of a specific record. Compulsory parameters verb metadataPrefix identifier. Shown here is one record form the dubcore demo-database, using the dubcore_dc.pft ‘mapping file’ which is also part of the demo.</p>
+
+<p><img src="https://lh4.googleusercontent.com/14ZvlkoFGdbxtE8y1RxxOiA56KtM-91sVobilKzRbgSZ3eTm48vaS4FULlZRia7wxqYL1UekDhU7bkbJADaiHhEsJchq1pl--3lzBp7lQyb_DX-VQW_E5jP7C-CvLqdwMJ7SW_0=s0" alt="" /></p>
+
+<script
+  src="/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function() {
+
+    var toc = $('#TOC');
+
+    // Select each header
+    sections = $('.td-content h1');
+        $.each(sections, function(idx, v) {
+            section = $(v);
+            var div_id = $(section).attr('id');
+            var div_text = section.text().split('¶')[0];
+            var parent = $("#" + div_id)
+            var content = '<li id="link_' + div_id + '" class="md-nav__item"><small><a class="md-nav__link" href="#' + div_id + '" title="' + div_text +'">' + div_text +'</small></a></li>';
+            $(toc).append(content);
+
+            // Add section code to subnavigation
+            var children = $('<nav class="md-nav"><ul class="md-nav__list"></nav></ul>')
+            var contenders = $("#" + div_id).nextUntil("h1");
+            $.each(contenders, function(idx, contender){
+               if($(contender).is('h2') || $(contender).is('h3')) {
+                   var contender_id = $(contender).attr('id');
+                   var contender_text = $(contender).text().split('¶')[0];
+                   var content = '<li class="md-nav__item"><a class="md-nav__link " href="#' + contender_id + '" title="' + contender_text +'"><small>' + contender_text +'</small></a></li>';
+                   children.append(content);
+                }
+             })
+             $("#link_" + div_id).append(children);
+        });
+    });
+</script>
+
+<script>
+var headers = ["h1", "h2", "h3", "h4"]
+var colors = ["red", "orange", "green", "blue"]
+
+$.each(headers, function(i, header){
+    var color = colors[i];
+    $(header).each(function () {
+        var href=$(this).attr("id");
+        $(this).append('<a class="headerlink" style="color:' + color + '" href="#' + href + '" title="Permanent link">¶</a>')
+    });
+})
+</script>
+
+
+
+	
+              
+              <style>
+  .feedback--answer {
+    display: inline-block;
+  }
+  .feedback--answer-no {
+    margin-left: 1em;
+  }
+  .feedback--response {
+    display: none;
+    margin-top: 1em;
+  }
+  .feedback--response__visible {
+    display: block;
+  }
+</style>
+<div class="d-print-none">
+<h2 class="feedback--title">Dê sua opinião</h5>
+<p class="feedback--question">Esta página foi útil?</p>
+<button class="btn btn-primary mb-4 feedback--answer feedback--answer-yes">Sim</button>
+<button class="btn btn-primary mb-4 feedback--answer feedback--answer-no">Não</button>
+<p class="feedback--response feedback--response-yes">
+  Fico feliz em ouvir isso! Por favor, <a href='{{ site.repo }}/issues/new'>nos diga como podemos melhorar</a>.
+</p>
+<p class="feedback--response feedback--response-no">
+  Sinto muito em ouvir isso. Por favor, <a href='{{ site.repo  }}/issues/new'>diga-nos como podemos melhorar</a>.
+</p>
+</div>
+<script>
+  const yesButton = document.querySelector('.feedback--answer-yes');
+  const noButton = document.querySelector('.feedback--answer-no');
+  const yesResponse = document.querySelector('.feedback--response-yes');
+  const noResponse = document.querySelector('.feedback--response-no');
+  const disableButtons = () => {
+    yesButton.disabled = true;
+    noButton.disabled = true;
+  };
+  const sendFeedback = (value) => {
+    if (typeof ga !== 'function') return;
+    const args = {
+      command: 'send',
+      hitType: 'event',
+      category: 'Helpful',
+      action: 'click',
+      label: window.location.pathname,
+      value: value
+    };
+    ga(args.command, args.hitType, args.category, args.action, args.label, args.value);
+  };
+  yesButton.addEventListener('click', () => {
+    yesResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(1);
+  });
+  noButton.addEventListener('click', () => {
+    noResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(0);
+  });
+</script><br/>
+
+
+
+
+           </div>
+
+          </main> <!--col-12 col-md-9 col-xl-8 pl-md-5-->
+        </div> <!--./row flex-xl-nowrap-->
+      </div> <!--./td-main-->
+      
+      <footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        <ul class="list-inline mb-0">  
+          
+          
+        </ul>
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        <ul class="list-inline mb-0">  
+          <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="GitHub" data-original-title="GitHub">
+            <a class="text-white" target="_blank" href="https://github.com/ABCD-Community/ABCD-Community.github.io">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">© 2021 Comunidade ABCD All Rights Reserved</small>
+        
+        <p class="mt-2">
+
+            
+                <a href="/pt//" >Início</a> <span class="text-primary"> </span>
+          
+                <a href="/pt/docs" >Documentação</a> <span class="text-primary"> </span>
+          
+                <a href="/pt/collab" >Colaboração</a> <span class="text-primary"> </span>
+          
+                <a href="/pt/about" >Sobre</a> <span class="text-primary"> </span>
+          
+
+        </p>	
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div> <!--./container-fluid td-outer--> 
+    <script src="/assets/js/popper.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/main.js"></script>
+
+
+<script src="/assets/js/tabpane-persist.js"></script>
+
+  </body>
+</html>

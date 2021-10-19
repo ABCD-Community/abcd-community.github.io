@@ -1,0 +1,58 @@
+<head>
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Jekyll" />
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+<link rel="alternate" type="application/rss&#43;xml" href="/docs/index.xml">
+
+<link rel="shortcut icon" href="{{ site.baseurl }}/assets/favicons/favicon.ico" >
+<link rel="icon" type="image/png" href="{{ site.baseurl }}/assets/favicons/favicon.png" sizes="16x16">
+
+ {% if site.ga_tracking != nil %}
+ 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga_tracking }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '{{ site.ga_tracking }}');
+</script>
+
+ {% endif %}
+
+<title>{% if page.title[page.lang] %}{{ page.title[page.lang] }}{% else %}{{ site.title[page.lang] }}{% endif %}</title>
+<meta property="og:title" content="{% if page.title[page.lang] %}{{ page.title[page.lang] }}{% else %}{{ site.title[page.lang] }}{% endif %}" />
+<meta property="og:description" content="{% if page.description[page.lang] %}{{ page.description[page.lang] }}{% else %}{{ site.description[page.lang] }}{% endif %}" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ site.url }}" />
+<meta property="og:site_name" content="{{ site.url }}" />
+
+<meta itemprop="name" content="{% if page.title[page.lang] %}{{ page.title[page.lang] }}{% else %}{{ site.title[page.lang] }}{% endif %}">
+<meta itemprop="description" content="{% if page.description %}{{ page.description[page.lang] | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description[page.lang] }}{% endif %}">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="{% if page.title[page.lang] %}{{ page.title[page.lang] }}{% else %}{{ site.title[page.lang] }}{% endif %}"/>
+<meta name="twitter:description" content="{% if page.description[page.lang] %}{{ page.description[page.lang] | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description[page.lang] }}{% endif %}"/>
+
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.min.css">
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/palette.css">
+<script
+  src="{{ site.baseurl }}/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+
+{% assign posts=site.posts | where:"lang-ref", page.lang-ref | sort: 'lang' %}
+  {% if posts.size == 0 %}
+    {% assign posts=site.pages | where:"lang-ref", page.lang-ref | sort: 'lang' %}
+  {% endif %}
+  {% if posts.size > 0 %}
+    {% for post in posts %}
+  <link rel="alternate" hreflang="{{post.lang}}" href="{{ site.base-url }}{{ post.url }}" />
+    {% endfor %}
+  {% endif %}
+
+  
+</head>

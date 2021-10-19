@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="pt"  class="no-js">
+  <!-- Copyright 2019-2021 Vanessa Sochat-->
+  <head>
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Jekyll" />
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+<link rel="alternate" type="application/rss&#43;xml" href="/docs/index.xml">
+
+<link rel="shortcut icon" href="/assets/favicons/favicon.ico" >
+<link rel="icon" type="image/png" href="/assets/favicons/favicon.png" sizes="16x16">
+
+ 
+ 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M0LM60C9WY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M0LM60C9WY');
+</script>
+
+ 
+
+<title>Comunidade ABCD</title>
+<meta property="og:title" content="Comunidade ABCD" />
+<meta property="og:description" content="Este documento tem como objetivo fornecer todas as informações e instruções relevantes sobre como usar a biblioteca integrada e o sistema de gerenciamento de documentação ‘ABCD’. Tanto as operações básicas como o gerenciamento avançado do software são discutidos, assim como os tópicos úteis e necessários relativos ao software ISIS no qual o ABCD se baseia. Nesta nova edição, as novas características da versão 2.0 são adicionadas- o uso de diferentes sabores de CISIS, de Unicode e as capacidades da biblioteca digital, bem como alguns módulos adicionais (ODDS, LDAP, DSpaceBridge) e utilitários (conversão UTF8, criação de objetos de empréstimo…) ." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://localhost:9898" />
+<meta property="og:site_name" content="http://localhost:9898" />
+
+<meta itemprop="name" content="Comunidade ABCD">
+<meta itemprop="description" content="">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Comunidade ABCD"/>
+<meta name="twitter:description" content="Este documento tem como objetivo fornecer todas as informações e instruções relevantes sobre como usar a biblioteca integrada e o sistema de gerenciamento de documentação ‘ABCD’. Tanto as operações básicas como o gerenciamento avançado do software são discutidos, assim como os tópicos úteis e necessários relativos ao software ISIS no qual o ABCD se baseia. Nesta nova edição, as novas características da versão 2.0 são adicionadas- o uso de diferentes sabores de CISIS, de Unicode e as capacidades da biblioteca digital, bem como alguns módulos adicionais (ODDS, LDAP, DSpaceBridge) e utilitários (conversão UTF8, criação de objetos de empréstimo…) ."/>
+
+<link rel="stylesheet" href="/assets/css/main.min.css">
+<link rel="stylesheet" href="/assets/css/palette.css">
+<script
+  src="/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+
+
+  
+  
+    
+  <link rel="alternate" hreflang="en" href="/en/abcd-modules/abcd-circulation/" />
+    
+  <link rel="alternate" hreflang="pt" href="/pt/abcd-modules/abcd-circulation/" />
+    
+  
+
+  
+</head>
+
+  
+
+
+  <body class="td-section">
+    
+<header>
+    <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="/pt">
+            <span class="navbar-logo"></span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 167.73 167.77"><defs><style>.cls-1{fill:#ffffff;}</style></defs><g id="Camada_2" data-name="Camada 2"><g id="Camada_1-2" data-name="Camada 1"><path class="cls-1" d="M66.62,83.14c-41-2.06-66.62,18-66.62,18V18.42S20.94-.08,66.62,0Z"/><path class="cls-1" d="M84.59,66.62c2.06-41-18-66.62-18-66.62h82.73s18.5,20.94,18.42,66.62Z"/><path class="cls-1" d="M101.11,84.63c41,2.06,66.62-18,66.62-18v82.74s-20.94,18.49-66.62,18.41Z"/><path class="cls-1" d="M83.14,101.15c-2.06,41,18,66.62,18,66.62H18.42S-.08,146.83,0,101.15Z"/></g></g></svg><span class="text-uppercase font-weight-bold">Comunidade ABCD</span>
+        </a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+            
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/pt//" ><span>Início</span></a>
+			</li>
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/pt/docs" ><span>Documentação</span></a>
+			</li>
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/pt/collab" ><span>Colaboração</span></a>
+			</li>
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/pt/about" ><span>Sobre</span></a>
+			</li>
+
+
+  <li class="nav-item dropdown mr-4 d-none d-lg-block">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Português</a>
+    <div class="dropdown-menu">
+        
+            
+            
+            
+                
+
+                <a title="Ver em English" class="en dropdown-item" href="/en/abcd-modules/abcd-circulation/">English</a>
+
+
+            
+
+                <a title="Ver em Português" class="pt dropdown-item" href="/pt/abcd-modules/abcd-circulation/">Português</a>
+
+
+            
+            
+        
+   </div>
+  </li>
+
+		</ul>
+	</div>
+	
+    <div class="navbar-nav d-none d-lg-block">
+        <input type="search" class="form-control td-search-input" placeholder="&#xf002 Buscar no site…" aria-label="Search this site…" autocomplete="off"> 
+    </div>
+   
+	<div class="navbar-nav d-none d-lg-block">
+          <a class="gh-source" data-gh-source="github" href="https://github.com/ABCD-Community/ABCD-Community.github.io" title="Go to repository" data-md-state="done">
+            <i class="fab fa fa-github fa-2x" style='color: #fff;padding-right:20px; float:left; margin-top:5px'></i></a>
+        </div>
+      </div>
+
+
+</nav>
+</header>
+
+
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+          <div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    <input type="search" class="form-control td-search-input" placeholder="&#xf002 Buscar no site…" aria-label="Search this site…" autocomplete="on">
+      <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+      </button>
+  </form>  
+
+  <nav class="collapse td-sidebar-nav" id="td-section-nav">
+    <div class="nav-item dropdown d-block d-lg-none pl-4">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Português</a>
+
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+        
+            
+            
+            
+                
+
+                <a title="Ver em English" class="en dropdown-item" href="/en/abcd-modules/abcd-circulation/">English</a>
+
+
+            
+
+                <a title="Ver em Português" class="pt dropdown-item" href="/pt/abcd-modules/abcd-circulation/">Português</a>
+
+
+            
+            
+        
+      </div>
+    </div>
+
+
+    
+      <ul class="td-sidebar-nav__section pr-md-3"> 
+
+        
+        
+
+        <li class="td-sidebar-nav__section-title">
+          <a  href="" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section"></a>
+        </li>
+        
+      </ul>
+    
+      <ul class="td-sidebar-nav__section pr-md-3"> 
+
+        
+        
+
+        <li class="td-sidebar-nav__section-title">
+          <a  href="/pt/docs" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Home</a>
+        </li>
+        
+          <ul>
+            <li class="collapse show" id="home">
+              <ul class="td-sidebar-nav__section pr-md-3">
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-introduction
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Introdução
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-technology
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Tecnologia ABCD
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-installation
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Instalação
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-modules
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Módulos
+                    </a>
+                  </li>
+                  
+                    <ul>
+                      <li class="collapse show" id="">
+                        
+                          
+                            <a class="td-sidebar-link td-sidebar-link__page " id="m-home-módulos-gestão-de-banco-de-dados" href="/pt/abcd-modules/database-management">Gestão de banco de dados</a>
+                            <a class="td-sidebar-link td-sidebar-link__page " id="m-home-módulos-entrada-de-dados-catalogação" href="/pt/abcd-modules/data-entry">Entrada de dados (catalogação)</a>
+                            <a class="td-sidebar-link td-sidebar-link__page " id="m-home-módulos-estatísticas" href="/pt/abcd-modules/abcd-statistics">Estatísticas</a>
+                            <a class="td-sidebar-link td-sidebar-link__page " id="m-home-módulos-gestão-de-aquisições" href="/pt/abcd-modules/abcd-acquisitions">Gestão de aquisições</a>
+                            <a class="td-sidebar-link td-sidebar-link__page " id="m-home-módulos-empréstimos-e-circulação" href="/pt/abcd-modules/abcd-circulation">Empréstimos e circulação</a>
+                        
+                      </li>
+                    </ul>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-utilities
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Utilitários
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-thesaurus
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Thesaurus
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-odds
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">O Serviço de Entrega de Documentos Online (ODDS)
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-digital-library
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Características da biblioteca digital
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-oai
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">A interface OAI
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-opac
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">OPAC
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/opac-iah
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">iAH OPAC
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-site
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD Site
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/secs-web
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Controle de periódicos
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-unicode
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD Unicode
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-localisation
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Localização e pastas
+                    </a>
+                  </li>
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        
+      </ul>
+    
+  </nav>
+</div>
+
+          </aside> <!--col-12 col-md-3 col-xl-2 td-sidebar d-print-none-->
+          
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+                  <a href="https://github.com/ABCD-Community/ABCD-Community.github.io/edit/main/pt/abcd-modules/abcd-circulation.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Editar esta página</a>
+
+<a href="https://github.com/ABCD-Community/ABCD-Community.github.io/issues/new?labels=question&title=Question:&body=Question on: https://github.com/ABCD-Community/ABCD-Community.github.io/tree/master/pt/abcd-modules/abcd-circulation.md" target="_blank"><i class="fab fa-github fa-fw"></i> Criar questão de documentação</a>
+
+<a href="https://github.com/ABCD-Community/ABCD-Community.github.io/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Apontar um problema no projeto</a>
+<!-- this will parse through the header fields and add a button to open
+     an issue / ask a question on Github. The editable field should be in
+     the post frontend matter, and refer to the label to open the issue for -->
+
+            </div>
+            <div class="td-toc">
+              <nav id="TableOfContents">
+                <ul id="TOC">
+                   <!-- Links will be appended here-->
+                </ul>
+              </nav>
+            </div>
+ 
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">     
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+              <ol class="breadcrumb spb-1">
+              
+              
+                <li class="breadcrumb-item">
+                  <a href="http://localhost:9898/pt/">Pt</a>
+                </li>
+                
+                <li class="breadcrumb-item">
+                  <a href="http://localhost:9898/pt/abcd-modules/">Abcd modules</a>
+                </li>
+                
+                <li class="breadcrumb-item active" aria-current="page">
+	          <a href="http://localhost:9898/pt/abcd-modules/abcd-circulation/">Módulo central - empréstimos/circulação</a>
+                </li>
+                
+	      </ol>
+           </nav>
+
+           <div class="td-content">
+
+	      <h1 id="módulo-central--empréstimoscirculação">Módulo central : empréstimos/circulação</h1>
+
+<h2 class="no_toc no_toc text-delta" id="conteúdo">Conteúdo</h2>
+
+<ol id="markdown-toc">
+  <li><a href="#módulo-central--empréstimoscirculação" id="markdown-toc-módulo-central--empréstimoscirculação">Módulo central : empréstimos/circulação</a>    <ol>
+      <li><a href="#the-abcd-inventory-copies-and-loanobjects-databases" id="markdown-toc-the-abcd-inventory-copies-and-loanobjects-databases">The ABCD inventory copies and loanobjects databases</a></li>
+      <li><a href="#the-basic-abcd-loans-module" id="markdown-toc-the-basic-abcd-loans-module">The basic ABCD loans module</a>        <ol>
+          <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
+          <li><a href="#general-loans-parameters-and-configuration-in-abcddef" id="markdown-toc-general-loans-parameters-and-configuration-in-abcddef">General loans parameters and configuration in abcd.def</a></li>
+          <li><a href="#abcd-loans-detailed-configuration" id="markdown-toc-abcd-loans-detailed-configuration">ABCD Loans detailed configuration</a></li>
+          <li><a href="#transactions--loan-returns-reservation-renewals-finessuspensions" id="markdown-toc-transactions--loan-returns-reservation-renewals-finessuspensions">Transactions : loan, returns, reservation, renewals, fines/suspensions</a></li>
+          <li><a href="#issuing-a-loan-on-an-object" id="markdown-toc-issuing-a-loan-on-an-object">Issuing a loan on an object</a></li>
+          <li><a href="#returning-an-object" id="markdown-toc-returning-an-object">Returning an object</a></li>
+          <li><a href="#renewing-a-loan" id="markdown-toc-renewing-a-loan">Renewing a loan</a>            <ol>
+              <li><a href="#fines-and-suspension-of-users" id="markdown-toc-fines-and-suspension-of-users">Fines and suspension of users</a></li>
+              <li><a href="#the-borrower-statement" id="markdown-toc-the-borrower-statement">The borrower statement</a></li>
+              <li><a href="#state-of-an-item" id="markdown-toc-state-of-an-item">State of an item</a></li>
+            </ol>
+          </li>
+          <li><a href="#databases-in-the-loans-module" id="markdown-toc-databases-in-the-loans-module">Databases in the loans module<img src="https://lh5.googleusercontent.com/VUKJlGTEWKWBRywofBDcrrQvb5DCBlM59Akf1-yNTdUhSNCjDt0y4UVO0SVj2V0js_wNSTU0C7snhq9kM7uGDAPOEVZkmXIay5aYhyot1_zl5u7Z5jHQDoFIZGdgF3J_8pT4sx12=s0" alt="" /></a></li>
+          <li><a href="#loans-administration" id="markdown-toc-loans-administration">Loans administration</a></li>
+        </ol>
+      </li>
+      <li><a href="#the-advanced-loans-module" id="markdown-toc-the-advanced-loans-module">The advanced loans module</a></li>
+    </ol>
+  </li>
+</ol>
+
+<hr />
+
+<p>This section is about the ABCD basic loans module as it comes pre-configured with the system. Still, always following the ABCD philosophy of flexibility, the loans system can work with any bibliographic and objects database.</p>
+
+<p>In addition, ABCD offers an ‘advanced loans’ module (EmpWeb) which can cope with much more complicated situations in e.g. multi-branch organisations with different loans policies etc. [!!] The transactions in this Advanced Loans module will be stored in SQL-tables and it can also access user-data (through WebServices) stored in SQL-tables elsewhere in addition to accessing the user-data in the ABCD-user database (in ISIS-format). This of course allows very advanced high-performance applications of the loans module. In addition EmpWeb or ABCD Advanced Loans will offer a reservation function and a function ‘MySite’ where end-users can check and keep track of availability of loan-objects in their personal (password-protected) account of ABCD-Loans.</p>
+
+<p>[!!] This advanced module however requires installation of additional software (Java/Jetty and an SQL database) and is only offered as an optional extra module.</p>
+
+<p>We suggest to check the following criteria in order to decide on whether you will need the advanced module or not :</p>
+
+<ul>
+  <li>multiple servers in your system ?</li>
+  <li>multiple users/copies databases in your system ?</li>
+  <li>high volume of transactions ?</li>
+  <li>any data source needs ODBC drivers ? (ODBC drivers are software to couple mostly relational databases or SQL-tables to software)</li>
+</ul>
+
+<p>If you have a ‘yes’ with serious importance for your system, you will be better off with the advanced loans module. [!!] Most smaller libraries however, certainly where there is a lack of expertise on using Java and SQL-databases, will be better of with this ABCD Central Loans module as it is fully based on the ISIS-database technology and doesn’t need any additional software to be installed.</p>
+
+<h2 id="the-abcd-inventory-copies-and-loanobjects-databases">The ABCD inventory copies and loanobjects databases</h2>
+
+<p>ABCD uses two different databases to deal with information based on the physical objects in the library : the COPIES and LOANOBJECTS. Both databases have different purposes and scopes and therefore the data are kept separate. A good understanding of their different purposes and structures will help in understanding ABCD. Let’s discuss each of them here.</p>
+
+<ol>
+  <li>The ABCD copies database.</li>
+</ol>
+
+<p>This database has the function of keeping track of all administrative data on objects in the library collections. These data in principle need to be kept for inventory and book-keeping reasons, whereas data related to loan- objects can be deleted when the loan-object is removed from the collection. Actually the record created at the end of an Acquisitions procedure (from suggestion to received item or anywhere in between) will be stored in this copies database. The copies field structure is as follows (field tags are followed by the field name) :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1|Control number
+10|Database
+20|Call number
+30|Inventory number
+35|Main Library
+40|Branch library
+60|Volume/Part
+63|Copy Number
+68|Acquisition type
+70|Provider/Donor/Institution
+80|Date of arrival
+85|ISO Date of arrival
+90|Price
+100|Purchase order
+110|Suggestion number
+200|Status
+300|Conditions
+400|In exchange of
+</code></pre></div></div>
+
+<p>The field 30 (Inventory Number) is created by the auto-increment mechanism of ABCD : the next number to be assigned is stored in a small file ‘control_number.cn’ in the data-folder of the database (in this case COPIES), as each record has to be identified by a unique value which can be used for linking from the other databases (as ‘primary key’).</p>
+
+<p>Differently from the LOANOBJECTS-database the COPIES-database has one record per object. These records are normally created by the ‘Add to copies’ function of the cataloging module.or the Acquisitions module.</p>
+
+<p>This database has to be indexed with 2 mandatory keys :</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1 0 "CN_"V10,"_"V1,
+200 0 "STATUS_"V200^a
+</code></pre></div></div>
+
+<p>The first key here assures that the identifier of each copy can be quickly referred to by the prefix ‘CN_’ followed by the bibliographic database name V10 (because several catalogs can be combined into one copies-database) and the identifier in that catalog itself (V1). For an entry in the copies-database to be allowed to enter into the loanobjects database it needs such an entry in the Inverted File (and assumed the status-field is at least at level 2, which means ‘verified and stamped’, that is why the second FST-entry indexes on the status of each copy).</p>
+
+<p>In the cataloging module copy records will be shown in a separate smaller window when clicking on the ‘Add copy’ icon of the record-toolbar and then on ‘show copies’.</p>
+
+<ol>
+  <li>The ABCD loanobjects database</li>
+</ol>
+
+<p>This database has different goals from the copies-database : it’s purpose is only to provide the necessary data about all objects which can be used in the loans-system. Its contents are quite limited :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1|Control number 
+10|Database 
+959|Copies subfields :
+i|Inventory number
+l|Library  
+b|Branch library 
+o|Type of Object 
+b|Volume
+t|Part
+</code></pre></div></div>
+
+<p>As can be seen from this very short list of fields (in fact only 3), each loan-object is identified by its con- trol_number V1, the bibliographic database to be linked to <code class="language-plaintext highlighter-rouge">v10</code> and the actual details on each copy as a repeat- ed subfielded field <code class="language-plaintext highlighter-rouge">v959</code> (this gives, in ISIS-technology, the fastest performance in case of high number of copies). The subfields allow to specify the unique identifier (e.g. barcode) of each copy, the main library and location within that library (e.g. shelving information), the loan object type (books e.g. will have different loan- parameters from video’s) and in case of a multi-volume work the volume and part - identifiers.</p>
+
+<p>The loanobjects database has to be indexed with at least the following instruction :</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1 0 "CN_"v10,"_"V1
+</code></pre></div></div>
+
+<p>because (as in the copies-database) the string <code class="language-plaintext highlighter-rouge">'CN_'</code> followed by the catalog-name and catalog-identifier allows each copy to be identified. If this entry cannot be found in the loan-objects database for a given book, it will not be possible to use the object in the loans system.</p>
+
+<p>Loanobjects normally are created from the cataloging module after having created the according inventory copy with the icons in the record-toolbar of the cataloging module :<img src="https://lh4.googleusercontent.com/ebH3FxIFkYNd33i369lT3THlc09YBpK2rfnRVyX0dXK6ip_47_BEbMTnPYt9Bydfde94zRRI_TL2zlTNK2G4a8w7fh6xesi1u9UQ8KtH586nOumZCpzit89jR7jAouWGS35hRFTH=s0" alt="" /></p>
+
+<p>After having clicked on ‘Add to loan objects’ the record will have been created in the loanobjects database. If this database is to be edited directly as an ABCD-database, remember to include it in the list of databases (bases.dat, which can be accessed directly from the Operating System but also through the corresponding ‘Update database definitions’ menu in ABCD Central) and to the profile of users which need access to this database directly. There the loanobject records will be presented for browsing and editing in a table format (as explained in the section on the FDT-definition for ‘group’-fields).
+<strong><img src="https://lh5.googleusercontent.com/kGCCdxZMk5AkkHsZpOEWtuv7D6zocGllu-_hJZ3x85CX9BwTH8-yR8qOP2KR7IzRhCFHAfr_DIOrcudDcu9pGgX1PifR1xEGymxHSIQHUe2JaW7kirMS4migH5EuTQqVVLuLPSko=s0" alt="" /></strong></p>
+
+<h2 id="the-basic-abcd-loans-module">The basic ABCD loans module</h2>
+
+<h3 id="introduction">Introduction</h3>
+
+<p>This loans module is called ‘basic’ because it is fully integrated with the other ABCD Central modules, using the same underlying technology: ISIS-databases, ISIS Script and PHP. Looking at its functionality however one could hardly call this ‘basic’ : this module takes as its departing point the ‘objects’ created by the acquisitions module into the database ‘copies’, to apply rules on all kinds of ‘transactions’ on them : issuing to a user, returning, reservation, loans renewal. Rules for all types of transactions can be defined and will be applied according to the object category in combination with the user category. Categories for objects and users can be defined ‘ad libitum’ with specified number of objects, hours/days (taking into account a calendar specific for the library), fines and renewal conditions for each combination object/user.</p>
+
+<p>The main menu of this loans module has three sections :</p>
+
+<ol>
+  <li>Transactions : here the real every-day loans transactions (loaning a book to a user, returning it, reservations etc.) are dealt with.</li>
+  <li>Databases : here the databases on which the loans system is based can be accessed and managed : the borrowers or users, the transactions, the reservations and the fines.</li>
+  <li>Configuration of the loans system : here the ‘rules’ can be defined for combinations of object types with user categories, and calenders, currency etc. can be defined.</li>
+</ol>
+
+<h3 id="general-loans-parameters-and-configuration-in-abcddef">General loans parameters and configuration in abcd.def</h3>
+<p>The file ‘abcd.def’ (in the bases-folder of the ABCD-system) contains the parameters applied to the whole system. Some of them relate however specifically to the ABCD Central Circulation system. A brief listing with explanation is given here :</p>
+
+<p>Table 2.2. ABCD Central Loans configuration parameters in abcd.def</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>LOGO_OPAC</td>
+      <td>Url of the logo that is displayed in the key request, statement and online reservations</td>
+    </tr>
+    <tr>
+      <td>BG_WEB</td>
+      <td>Background color of the key request window</td>
+    </tr>
+    <tr>
+      <td>WEBRENO- VATION</td>
+      <td>Y / N to enable / disable online renewal option</td>
+    </tr>
+    <tr>
+      <td>RESERVATION</td>
+      <td>Y / N to enable / disable access to the reservation process from the loan menus</td>
+    </tr>
+    <tr>
+      <td>LOAN_POLICY</td>
+      <td>BY_USER to indicate that the object type of the item to be loaned is requested at the time of processing the loan. This option should be used when it is not provided from the database of copies and the inventory of the objects does not have a subfield with the type of object</td>
+    </tr>
+    <tr>
+      <td>ASK_LPN</td>
+      <td>Whether or not the option to request the return date is enabled, ie not calculate it from the policy</td>
+    </tr>
+    <tr>
+      <td>E-MAIL</td>
+      <td>Y / N to enable / disable sending loan reminder emails</td>
+    </tr>
+    <tr>
+      <td>AC_SUSP</td>
+      <td>Sets the date from which a suspension begins. The Y value indicates that it must start from the last active suspension of the user. The N value indicates that it starts from the day it is recorded.</td>
+    </tr>
+    <tr>
+      <td>CALENDAR</td>
+      <td>To establish the way in which the period of fines and suspensions is calculated</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>As an example section of the abcd.def loans configuration parameters :</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>LOGO_OPAC = ../css/logo_opac.png
+BG_WEB = #ffffff
+LOAN_POLICY = BY_USER
+WEBRENOVATION = N
+EMAIL = Y
+RESERVATION = N
+</code></pre></div></div>
+<h3 id="abcd-loans-detailed-configuration">ABCD Loans detailed configuration</h3>
+
+<p>The loans configuration in ABCD allows to define which source bibliographic databases (catalogs) to link the loans system to - it can be any database indeed ! - and to define the parameters which will constitute the ‘policy’ on each object/user combination to be applied.</p>
+
+<p><img src="https://lh4.googleusercontent.com/sTSX8m20ZtRIqe_0xI2Aow6MCkzq2IKRgsez9Y1uFaMtPmzrP5T5vTr8I5Bj8yMcta0aDo-dtaM7Hi_x_MhzEnIeymKyERV_gq_i_y4BSN0iqk3qjJWMFEujxmNQUm5vufSLUtZF=s0" alt="" /></p>
+
+<p>Since any database can be linked into the loans system as ‘source’, there is a need to explain to the loans system how values from these databases will be used in the loans system. We can best illustrate this by giving the example of the CEPAL-database of the ABCD-model application :</p>
+
+<p><img src="https://lh6.googleusercontent.com/h7xGmc7cp6O_342sS27bUebhaGIxmi4VKgkcklq-wToV2RPH3Va0u516LtoKGGGW9vrxNnojG4j1wj_FnM6DlrKYH-cef3nxDIqtvJyWH_RWtXYb22d1qIAYQYOhtCSKoYz8Fyir=s0" alt="" /></p>
+
+<p>This form shows the information needed for the loans system, e.g. which prefix is used in the index for the accession number or which print formats (PFT’s) to use to produce the data in the loans screens.</p>
+
+<p>The power of the Formatting Language can be applied here, of course. For example, instead of the rather dumb example above here as the ‘PFT to be used to extract the type of record’, one could define a different type (with consequently different loan parameters for the type) according to some conditions, e.g. the date, the month etc. So an object which is a normal loans object could be changed into ‘special material’ during the exams period etc. The ISIS Formatting Language provides most necessary functions (e.g. Date() with substring extraction) for this purpose.</p>
+
+<p>The same applies to the definition of the borrowers data :<br />
+<img src="https://lh5.googleusercontent.com/wLOo5NOPZiHWg8B6Q_CjF0m9mR2RzeXUCLnVsq1tW0ZfAHMdc2fwA78d5O8Ru6jftpDJylLdO3Q9kSUdrbT5QHMkAUWP_OoV_04llaElodP34f2P85W5v-SBU_c6R2IJStUg_hH2=s0" alt="" /></p>
+
+<p>Instead of simply taking the ‘value of Field 10’ (v10) to define the borrower type, one could put a more sophisticated Formatting Language statement here in order to make the status of the borrower even dynamically dependent on other conditions (again : date, but also other conditions can be defined).</p>
+
+<p>Using a table ABCD will then present the defined borrowers types and allows to add any number of more such types :</p>
+
+<p><img src="https://lh6.googleusercontent.com/rvBEt9ZoDB4vhrenRG6GVP_Y6qrhT50iL2aEPYiQ6jn08m1lDIZX4wgr651YWZ7VCTx5CRRMietK4pOn70_EqXwuKpWuwkIx8WnGmn5TNQj3POl9vpQpWXb-Nbnu8_hhSNALD7od=s0" alt="" /></p>
+
+<p>Here we only show part of the table, but in fact the interface will always offer a few more empty lines to add more types, and lines with a type can also be added in between existing rows.</p>
+
+<p>The same approach is used for the definition of the objects types :</p>
+
+<p><img src="https://lh6.googleusercontent.com/9ZQuOp9pys-PFpi8L6PsUNltDDpNeCybMppbHj7FAwmInaCgk7Uve8lr9W4xv1G0o4YKeGi0RxQX5NJzhUHuT7-_H8EZl7mm5XpT8riELdt3FViKkMPHYkz-1IgtnN5QTW4HRX0T=s0" alt="" /></p>
+
+<p>Needless to say that each time a ‘cancel’ or an ‘update’ button is provided to either cancel the editing of the table or to actually store it again.</p>
+
+<p>From these two types (users and objects), ABCD then creates the ‘loans policy table’, which lists in a matrix all possible combinations of user types and object types, and parameters can be entered for many aspects of the loans policy :</p>
+
+<p>As can be seen, lots of parameters are stored and used in the decision-making process of each transaction (e.g. is this user allowed to loan this type of material, how many of them, for how long, what is the fine for late return etc.). Units can be either days or hours and the calculation of ‘number of days elapsed’ will be based on a calendar function (see below).<img src="https://lh3.googleusercontent.com/68czHaXI1MwuSNOueTQ1Hz50sP4MUFXCPzyaXHNHxkj5RNSC6ORJrtAWCwlPaLFpYqUvt4I0keY__bzVRiSRzB3yqgZdknJ0IiSov8_xc17mTndZnW9Mb0poqriCx-RhXGwI6-_U=s0" alt="" /></p>
+
+<p>A special (new as from v1.5) feature is to allow the librarian to divert from the stored ‘duration’ parameter : at the time of lending out the number of days or return date can be changed manually, making it different from the official calculated duration according to the defined policy. For this a new parameter is to be added into the file abcd.def :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ASK_LPN =Y/N.
+</code></pre></div></div>
+
+<p>Configuration of the loans system continues with two more options :</p>
+
+<ul>
+  <li>definition of the currency , fine unit, date format and working days/hours :<img src="https://lh4.googleusercontent.com/6beCi6irD2Sl-95UpAmWFP6E3oX0exc4-MVfMYi8w3LfRspcOaJ61E4cZG_C6pq-LjZFQi9_w42A3UG-xAyernChFj4nNQJbQpC-XE4vT3l8IH01rC31KV3g-0vWzD_2Bb5CLWTM=s0" alt="" /></li>
+</ul>
+
+<p>Caution</p>
+
+<p>In order for the loans system to work well, don’t leave this ‘working days’ calendar empty ! If no working hours or days at all are defined the creation of a loans records will fail as no return date can be calculated.</p>
+<ul>
+  <li>definition of the holidays (non-working days) in the calendar , where simply the holidays need to be indicated on each month’s map :</li>
+</ul>
+
+<p><img src="https://lh6.googleusercontent.com/Mnn3D39lRsOzRc4pYefnVMSjV8Xg7d6yAIuKN7cqWRUR2GAhG8NKlE875jD7DJCnHTvewPZbYKkXASR5Er_YrKs6acSpIb9X-SU-IXgkgLF_RTOrHSi3Nel7C-OUGEBcZaDWJfyc=s0" alt="" /></p>
+
+<ul>
+  <li>generation of Loan reports : for each database in Loans (transactions, borrowers and suspensions) a set of PFT’s (as these are in fact the reports in ABCD) can be generated using the same interface as used for other PFT’s (e.g. in the Database Administration module). As the procedure is fully identical we won’t repeat the steps here, please refer to the dedicated section in the Database Administration module chapter.</li>
+</ul>
+
+<p><img src="https://lh6.googleusercontent.com/ZbZ4sQHpFvItLVlZFSJLnen4LXmtqY_1UHnpgTPMH5HZZAAE1LjYeGqmWsDU_y3Rs-HoG-tP05AeYF_4TwqPuVoQtYwYnveZQDlddxA4tt4rDCrB8xz0SRR8ujv39ZdGJTPGb2ot=s0" alt="" /></p>
+
+<h3 id="transactions--loan-returns-reservation-renewals-finessuspensions">Transactions : loan, returns, reservation, renewals, fines/suspensions</h3>
+
+<p>Most of the transactions themselves are rather easy to understand. Efficiency is the key here : mostly the system simply needs one or two bar-codes to be scanned in, and pressing a button ‘go’ to store the transaction. A list of possible transactions is shown in the transactions menu of ABCD :</p>
+
+<p><img src="https://lh6.googleusercontent.com/6YnR4t80Fo-q_PImJMADjjLBRhvSwuVztD-euVPu8xKn9CUluSkpgZbu4CUs_vsa76xRyU1bNocTynaY9QfLixkAE3dpYUdkEDYdDa0W2ka6gJlfe6Rh-EpNUNzlqSd3wQbdZopq=s0" alt="" /></p>
+
+<p>Let’s discuss each of them now.</p>
+
+<h3 id="issuing-a-loan-on-an-object">Issuing a loan on an object</h3>
+
+<p>This page offers identification boxes (in which either the barcode or identifier can be input directly or selected from a list) for both the object and the user, the two crucial elements of any loans transaction.
+<strong><img src="https://lh5.googleusercontent.com/2fSP_FSboOOmsz4xUSc1Lic4_q2oWHVsi96DlslGybteqcosWYQrBVd_X6eeifoRqgrHG7Inzhw0usASxEpM3YdgwZoay99bKe0yupLlcr964JpjnctEdNf4sifJkjbtTe74bkJl=s0" alt="" /></strong></p>
+
+<p>After having identified both elements, a simple click on the ‘loan’-button will actually create the transaction (into the ‘loans’ database). The user information is shown and all loans transactions related to the users will be listed in a table, where one or more transactions can be selected for immediate editing (e.g. returning or renewing the loan).
+<strong><img src="https://lh6.googleusercontent.com/DG-5Au7hLm3P8FkTDwtLddB-9O4lavdXbFC5VT-TmOZp5sjYuTa_ahs6NhC7GvJNmXEZyDviRFKc1PeHars5e2fdH9R0ZfteTTCwNoutFuK7wXLC0YLczI11kAsmpjJvDjtTPYEr=s0" alt="" /></strong></p>
+
+<h3 id="returning-an-object">Returning an object</h3>
+
+<p>Here only the object returned needs to be identified and with a simple click the transaction record in the loans database will note the fact that the object has been returned. The loaned object can also be returned from the table in the borrowers’ statement, then the transaction will be removed from the table. [!!]</p>
+
+<h3 id="renewing-a-loan">Renewing a loan</h3>
+
+<p>This is a simple continuation of a running loan, but dependent again on specified rules as on whether the object has not been reserved by someone else and the user requesting the renewal has no pending fines etc. When consulting the list, only the objects on loan will be listed. In case all conditions for renewal are fulfilled, the transaction will be granted and listed, if not a warning or error message will be shown, e.g.
+<strong><img src="https://lh5.googleusercontent.com/dNWC1wNy2xvr5fLMeStDh38yRPprjj19dRzXCNbGO2aca_a0yvZOkGsmT0p0YbLsVyN9zWRaH5Eo8H5bF1XoIJpi6KC-Ofs0xrV4nvgv4YjeA1J-c_XaQbq4WvWA5HxGkLzXsGkb=s0" alt="" /></strong></p>
+
+<h4 id="fines-and-suspension-of-users">Fines and suspension of users</h4>
+
+<p>Fines and suspension of users are offered in the same ABCD-page :</p>
+
+<p><img src="https://lh5.googleusercontent.com/1J4Vidce2YbB_6jVMmf6wAB-YeamvQH9AHbftJXf3Ofzmz-v8BC-p19SiJCcwnLXK9xbD5XOg_11WesLtwUf0lROIheLG4ZWWzRU31wF2wIqQT7wh1cBSQ91nm_ve8_yZQ1adc9r=s0" alt="" /></p>
+
+<p>For the selected user the following fields can be filled in : the type of sanction (fine or suspension), the date, the number of days or the amount of the fine, the reason (motivation) and any comments.</p>
+
+<h4 id="the-borrower-statement">The borrower statement</h4>
+<p>From this screen all information on a borrower or user is displayed, giving also direct access to other functions where only an access from the object was given, e.g. to allow renewal from the borrower’s identification instead of the object.</p>
+
+<p>[!!] Interesting to note that borrowers not only can be selected from the list of borrowers but also from the inven- tory-number of the objects loaned by the borrower.<img src="https://lh3.googleusercontent.com/P3gCoCY1EOshWnu8CqoEttEP8TRkzcD8WJtMDOoltTeQolpp_nA0m9CR9yLB0_XGcwECixpxrHU4MWXS7F1S_u0Hn3Fz1N21xlVmxoNnUgsBHRPaxPvwbPwYkWR2UZEOooDouS1A=s0" alt="" /></p>
+
+<h4 id="state-of-an-item">State of an item</h4>
+
+<p>As with the borrower’s statement, an overview (history) of all loans of this given item or object can be retrieved here.</p>
+
+<h3 id="databases-in-the-loans-module">Databases in the loans module<img src="https://lh5.googleusercontent.com/VUKJlGTEWKWBRywofBDcrrQvb5DCBlM59Akf1-yNTdUhSNCjDt0y4UVO0SVj2V0js_wNSTU0C7snhq9kM7uGDAPOEVZkmXIay5aYhyot1_zl5u7Z5jHQDoFIZGdgF3J_8pT4sx12=s0" alt="" /></h3>
+
+<p>The following databases are used in the Central Loans module :</p>
+
+<p><img src="https://lh6.googleusercontent.com/PvShCrOz6KIGdgpDbGO3nzwBxaGICizAb9MfG2o0cySUvNPQdmKVA64nVBzBbt2_goOGTchRTDk4iYJfLthjSuTNVwBSjQ_fwLBqpTYRoAUf2XK2own5jNW_MzEiJv8eJjVRYnsv=s0" alt="" /></p>
+
+<p>For each of these databases, whose names explain their purpose, an interface is presented which lists the records with a search function and edit or delete buttons.</p>
+
+<p>The transactions database records the actual events in the loans system. ABCD opts to keep this database as ‘mean and lean’ (i.e. compact) as possible, without duplicating data e.g. from the bibliographic databases. This database will be rather ‘dynamic’ with many movements, and since ISIS is not at its best in such environment (for which simple tables with fixed structures would be more suited), we need to keep its structure as compact as possible, using the REF-function of ISIS to ‘loan’ data from other databases, e.g. the bibliographic data.</p>
+
+<p>So this will allow the librarian to directly interact with the records of the borrowers (e.g. to create new library users), the transacions (e.g. to check a loans record), reservations and suspensions or fines. In this last database the librarian could interfere with existing due fines and suspensions of users in case of a necessity to do so by- passing the rules - take care !</p>
+
+<h3 id="loans-administration">Loans administration</h3>
+
+<p>This third and last section of the loans module not only offers the loans configuration option (discussed above here) but also gives access to the Statistics module (which is also discussed elsewhere in this manual) and the ‘Reports’ option, which will be added in a later version of the ABCD-software. This module will create all types of output documents, e.g. alerts, confirmations of loans etc.</p>
+
+<p><img src="https://lh5.googleusercontent.com/vfnqTJnSEqf6trRYHyyP3Euk7Bc0hdkZvyiq5yhCngDGvYQ7Lp2ugtBmYPgxv_S2bZW9idEQlEr9AUqvD-GiW8BW1tRxmhCBd7GMhyPYmhpuWS1buSMsaBU4LpQjvH1Uy97so9oX=s0" alt="" /></p>
+
+<h2 id="the-advanced-loans-module">The advanced loans module</h2>
+
+<p>The advanced loans module of ABCD is an add-on module which can be installed as a separate member of the ‘ABCD Suite’. It requires additional software technology (e.g. JAVA, MySQL) to be installed and can also be run as an independent software. Since this module was originally programmed as a DOS-software named ‘Emp’ (Por- tugese for ‘loans’= emprestímos’, the module is called ‘EmpWeb’ as for ABCD it has been converted into a Web- software, using new web-technology like web-services. So we consider this ‘E’mpweb as an ‘E’xtra or ‘E’nhanced module’, maybe changing ‘ABCD’ into ‘ABCDE’ ?</p>
+
+<p>Extra functionalities as compared to the integrated loans module are :</p>
+<ul>
+  <li>better capability to deal with complex organisational structures (multi-branch libraries with different loans poli- cies, different servers e.g.)</li>
+  <li>more robust handling of high-volume transactions situations</li>
+  <li>more interaction with users form the OPAC module, e.g. the ‘MySite’ function to allow logged-in users to keep track of their own status etc from the OPAC.</li>
+  <li>a ‘MySite’ function allows registered end-users (after logging in) to enter their own space in the loans system to check on their status as a library user and other interactive users. This function at this time is not yet available in the Central Loans module.</li>
+</ul>
+
+<p>Some important concepts of EmpWeb are briefly presented here :</p>
+<ul>
+  <li>web-services : instead of needing full access to external resources (databases), which can in some case create problems with the data-providers, web-based ‘requests’ are sent to the server to just deliver - as a response to the request - some specific data.</li>
+  <li>pipe-lines : any transaction (like a loan, a reservation, a return…) goes through a pipe-line of conditions which can be defined. Only if all conditions are met throughout the pipe-line, the transaction will be ‘granted’, if not it just stops and returns the defined (by the software) error message or instruction (e.g. ‘User has been suspended’). This allows any number of conditions and rules to be applied on any decision taken by the software.</li>
+</ul>
+
+<p>EmpWeb therefore can run on any set of external data for which drivers are available or can be accessed by webservices and apply any set of rules onto these data and perform processes (like changing a record) in case of having succeeded to pass all rules and conditions.</p>
+
+<p>[!!] EmpWeb in this way is more of a generic transactional engine but used as a loans system in ABCD.<br />
+  <strong><img src="https://lh5.googleusercontent.com/_K5Avz3PD4Pl_OG63mU5JEWnctpdBKIQ-qrvcmuIqRjwOU_Q58ViR1RgulNfC96nvoEW9iyMoHB2IRMYKlEpL6y0Q8AOWDEi0GVy8BwtJFmRMZkKHj3Rok6u2prokAIMPZejYjYX=s0" alt="" /></strong>
+[!!] This advanced loans module is discussed in detail in a separate Manual.</p>
+
+<script
+  src="/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function() {
+
+    var toc = $('#TOC');
+
+    // Select each header
+    sections = $('.td-content h1');
+        $.each(sections, function(idx, v) {
+            section = $(v);
+            var div_id = $(section).attr('id');
+            var div_text = section.text().split('¶')[0];
+            var parent = $("#" + div_id)
+            var content = '<li id="link_' + div_id + '" class="md-nav__item"><small><a class="md-nav__link" href="#' + div_id + '" title="' + div_text +'">' + div_text +'</small></a></li>';
+            $(toc).append(content);
+
+            // Add section code to subnavigation
+            var children = $('<nav class="md-nav"><ul class="md-nav__list"></nav></ul>')
+            var contenders = $("#" + div_id).nextUntil("h1");
+            $.each(contenders, function(idx, contender){
+               if($(contender).is('h2') || $(contender).is('h3')) {
+                   var contender_id = $(contender).attr('id');
+                   var contender_text = $(contender).text().split('¶')[0];
+                   var content = '<li class="md-nav__item"><a class="md-nav__link " href="#' + contender_id + '" title="' + contender_text +'"><small>' + contender_text +'</small></a></li>';
+                   children.append(content);
+                }
+             })
+             $("#link_" + div_id).append(children);
+        });
+    });
+</script>
+
+<script>
+var headers = ["h1", "h2", "h3", "h4"]
+var colors = ["red", "orange", "green", "blue"]
+
+$.each(headers, function(i, header){
+    var color = colors[i];
+    $(header).each(function () {
+        var href=$(this).attr("id");
+        $(this).append('<a class="headerlink" style="color:' + color + '" href="#' + href + '" title="Permanent link">¶</a>')
+    });
+})
+</script>
+
+
+
+	
+              
+              <style>
+  .feedback--answer {
+    display: inline-block;
+  }
+  .feedback--answer-no {
+    margin-left: 1em;
+  }
+  .feedback--response {
+    display: none;
+    margin-top: 1em;
+  }
+  .feedback--response__visible {
+    display: block;
+  }
+</style>
+<div class="d-print-none">
+<h2 class="feedback--title">Dê sua opinião</h5>
+<p class="feedback--question">Esta página foi útil?</p>
+<button class="btn btn-primary mb-4 feedback--answer feedback--answer-yes">Sim</button>
+<button class="btn btn-primary mb-4 feedback--answer feedback--answer-no">Não</button>
+<p class="feedback--response feedback--response-yes">
+  Fico feliz em ouvir isso! Por favor, <a href='{{ site.repo }}/issues/new'>nos diga como podemos melhorar</a>.
+</p>
+<p class="feedback--response feedback--response-no">
+  Sinto muito em ouvir isso. Por favor, <a href='{{ site.repo  }}/issues/new'>diga-nos como podemos melhorar</a>.
+</p>
+</div>
+<script>
+  const yesButton = document.querySelector('.feedback--answer-yes');
+  const noButton = document.querySelector('.feedback--answer-no');
+  const yesResponse = document.querySelector('.feedback--response-yes');
+  const noResponse = document.querySelector('.feedback--response-no');
+  const disableButtons = () => {
+    yesButton.disabled = true;
+    noButton.disabled = true;
+  };
+  const sendFeedback = (value) => {
+    if (typeof ga !== 'function') return;
+    const args = {
+      command: 'send',
+      hitType: 'event',
+      category: 'Helpful',
+      action: 'click',
+      label: window.location.pathname,
+      value: value
+    };
+    ga(args.command, args.hitType, args.category, args.action, args.label, args.value);
+  };
+  yesButton.addEventListener('click', () => {
+    yesResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(1);
+  });
+  noButton.addEventListener('click', () => {
+    noResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(0);
+  });
+</script><br/>
+
+
+
+
+           </div>
+
+          </main> <!--col-12 col-md-9 col-xl-8 pl-md-5-->
+        </div> <!--./row flex-xl-nowrap-->
+      </div> <!--./td-main-->
+      
+      <footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        <ul class="list-inline mb-0">  
+          
+          
+        </ul>
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        <ul class="list-inline mb-0">  
+          <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="GitHub" data-original-title="GitHub">
+            <a class="text-white" target="_blank" href="https://github.com/ABCD-Community/ABCD-Community.github.io">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">© 2021 Comunidade ABCD All Rights Reserved</small>
+        
+        <p class="mt-2">
+
+            
+                <a href="/pt//" >Início</a> <span class="text-primary"> </span>
+          
+                <a href="/pt/docs" >Documentação</a> <span class="text-primary"> </span>
+          
+                <a href="/pt/collab" >Colaboração</a> <span class="text-primary"> </span>
+          
+                <a href="/pt/about" >Sobre</a> <span class="text-primary"> </span>
+          
+
+        </p>	
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div> <!--./container-fluid td-outer--> 
+    <script src="/assets/js/popper.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/main.js"></script>
+
+
+<script src="/assets/js/tabpane-persist.js"></script>
+
+  </body>
+</html>

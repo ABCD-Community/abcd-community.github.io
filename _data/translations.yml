@@ -1,0 +1,42 @@
+selectLang:
+  en: "Select Your Language"
+  pt: "Selecionar o idioma"
+relatedPosts:
+  en: "Related Posts"
+  pt: "Artigos relacionados"
+differentLanguage:
+  en: "Translations"
+  pt: "Traduções"
+viewIn:
+  en: "View in"
+  pt: "Ver em"
+SearchIn:
+  en: "Search this site…"
+  pt: "Buscar no site…"
+Feedback:
+  en: "Feedback"
+  pt: "Dê sua opinião"
+FeedbackQuest:
+  en: "Was this page helpful?"
+  pt: "Esta página foi útil?"
+FeedbackPositive:
+  en: "Glad to hear it! Please <a href='{{ site.repo }}/issues/new'>tell us how we can improve</a>."
+  pt: "Fico feliz em ouvir isso! Por favor, <a href='{{ site.repo }}/issues/new'>nos diga como podemos melhorar</a>."
+FeedbackNegative:
+  en: "Sorry to hear that. Please <a href='{{ site.repo  }}/issues/new'>tell us how we can improve</a>."
+  pt: "Sinto muito em ouvir isso. Por favor, <a href='{{ site.repo  }}/issues/new'>diga-nos como podemos melhorar</a>."  
+GithubEdit:
+  en: "Edit this page"
+  pt: "Editar esta página"
+GithubCreate:
+  en: "Create documentation issue"
+  pt: "Criar questão de documentação"
+GithubProject:
+  en: "Create project issue"
+  pt: "Apontar um problema no projeto"  
+OpYes:
+  en: "Yes"
+  pt: "Sim"
+OpNo:
+  en: "No"
+  pt: "Não"

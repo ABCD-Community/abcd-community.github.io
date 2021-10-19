@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}" class="no-js">
+  {% include head-cover.html %}
+  {% include google-analytics.html %}
+
+  <body class="td-home">
+    {% include header-cover.html %}
+    <div class="container-fluid td-default td-outer">
+      <main role="main" class="td-main">
+        
+		<link rel="preload" as="image" href="/assets/img/featured-background.jpg" media="(max-width: 1200px)">
+
+		<style>
+		#td-cover-block-0 {
+    		background-image: url( {{site.baseurl}}{{ page.cover-image  }} ); 
+		}
+		@media only screen and (min-width: 1200px) {
+    	#td-cover-block-0 {
+        	background-image: url({{site.baseurl}}{{ page.cover-image  }}); 
+    	}
+		}
+		</style>
+
+<section id="td-cover-block-0" class="row td-cover-block td-cover-block--height-full js-td-cover td-overlay td-overlay--dark -bg-primary">
+  <div class="container td-overlay__inner">
+    <div class="row">
+      <div class="col-12">
+        <div class="text-center">
+       
+          <h1 class="display-1 mt-0 mt-md-5 pb-4">{{ page.welcome }}</h1>
+          
+          <div class="pt-3 lead">
+                     
+            <div class="mx-auto">
+            	<a class="btn btn-lg btn-primary mr-3 mb-4" href="{{ page.url-button1 }}">
+            		{{ page.button1 }} <i class="fas fa-arrow-alt-circle-right ml-2"></i>
+            	</a>
+            	<a class="btn btn-lg btn-secondary mr-3 mb-4" href="{{ page.url-button2 }}">
+            		{{ page.button2 }} <i class="fab fa-github ml-2 "></i>
+            	</a>
+            	<p class="lead mt-5">
+                {{ page.cover-description }}
+              </p>
+           	  <p class="mb-0"></p>
+              <p class="mb-0"></p>
+                <a class="btn btn-link text-info" href="#td-block-1" aria-label="Read more">
+                  <i class="fa fa-chevron-circle-down" style="font-size: 400%"></i>
+                </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</section>
+
+
+
+<a id="td-block-1" class="td-offset-anchor"></a>
+<section class="row td-box td-box--primary position-relative td-box--gradient td-box--height-auto">
+	<div class="container text-center td-arrow-down">
+		<span class="h4 mb-0">		
+				<p>
+          {{ page.section1 }}
+        </p>		
+		</span>
+	</div>
+</section>
+
+
+<a id="td-block-2" class="td-offset-anchor"></a>
+<section class="row td-box td-box--dark td-box--gradient td-box--height-auto">
+	<div class="col">
+		<div class="row ">
+
+      <div class="col-lg-4 mb-5 mb-lg-0 text-center ">
+        <div class="mb-4 h1">
+          <i class="fas fa-lightbulb"></i>
+        </div>
+        <h4 class="h3">
+            {{ page.featured1-title }}
+        </h4>
+        <p class="mb-0"></p>
+        <p>
+          {{ page.featured1-text }}
+        </p>
+        <p></p>
+         <p><a href="{{ page.featured1-link }}">{{ page.featured1-label }}</a></p>
+      </div>
+
+      <div class="col-lg-4 mb-5 mb-lg-0 text-center ">
+        <div class="mb-4 h1">
+          <i class="fab fa-github"></i>
+        </div>
+        <h4 class="h3">
+            {{ page.featured2-title }}
+        </h4>
+        <p class="mb-0"></p>
+        <p>
+          {{ page.featured2-text }}
+        </p>
+        <p></p>
+         <p><a href="{{ page.featured2-link }}">{{ page.featured2-label }}</a></p>
+      </div>
+
+      <div class="col-lg-4 mb-5 mb-lg-0 text-center ">
+        <div class="mb-4 h1">
+          <i class="fas fa-desktop"></i>
+        </div>
+        <h4 class="h3">
+            {{ page.featured3-title }}
+        </h4>
+        <p class="mb-0"></p>
+        <p>
+          {{ page.featured3-text }}
+        </p>
+        <p></p>
+         <p><a href="{{ page.featured3-link }}">{{ page.featured3-label }}</a></p>
+      </div>
+
+		</div>
+	</div>
+</section>
+
+
+      </main> 
+      {% include footer.html %}
+    </div>
+    {% include scripts.html %}
+  </body>
+</html>

@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="en"  class="no-js">
+  <!-- Copyright 2019-2021 Vanessa Sochat-->
+  <head>
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Jekyll" />
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+<link rel="alternate" type="application/rss&#43;xml" href="/docs/index.xml">
+
+<link rel="shortcut icon" href="/assets/favicons/favicon.ico" >
+<link rel="icon" type="image/png" href="/assets/favicons/favicon.png" sizes="16x16">
+
+ 
+ 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M0LM60C9WY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M0LM60C9WY');
+</script>
+
+ 
+
+<title>ABCD Community</title>
+<meta property="og:title" content="ABCD Community" />
+<meta property="og:description" content="This document aims at providing all relevant background information and instructions on how to use the integrated library and documentation management system 'ABCD'. Both the basic operations and the advanced management of the software are discussed, as are useful and necessary topics concerning the ISIS-software on which ABCD is based. In this new edition the new features of version 2.0 are added - the use of different flavors of CISIS, of Unicode,and the digital library capabilities as well as some additional modules (ODDS, LDAP, DSpaceBridge) and utilities (UTF8-conversion, loanobjects creation...) ." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://localhost:9898" />
+<meta property="og:site_name" content="http://localhost:9898" />
+
+<meta itemprop="name" content="ABCD Community">
+<meta itemprop="description" content="">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ABCD Community"/>
+<meta name="twitter:description" content="This document aims at providing all relevant background information and instructions on how to use the integrated library and documentation management system 'ABCD'. Both the basic operations and the advanced management of the software are discussed, as are useful and necessary topics concerning the ISIS-software on which ABCD is based. In this new edition the new features of version 2.0 are added - the use of different flavors of CISIS, of Unicode,and the digital library capabilities as well as some additional modules (ODDS, LDAP, DSpaceBridge) and utilities (UTF8-conversion, loanobjects creation...) ."/>
+
+<link rel="stylesheet" href="/assets/css/main.min.css">
+<link rel="stylesheet" href="/assets/css/palette.css">
+<script
+  src="/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+
+
+  
+  
+    
+  <link rel="alternate" hreflang="en" href="/en/abcd-technology/cisis-utils/" />
+    
+  <link rel="alternate" hreflang="pt" href="/pt/abcd-technology/cisis-utils/" />
+    
+  
+
+  
+</head>
+
+  
+
+
+  <body class="td-section">
+    
+<header>
+    <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="/en">
+            <span class="navbar-logo"></span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 167.73 167.77"><defs><style>.cls-1{fill:#ffffff;}</style></defs><g id="Camada_2" data-name="Camada 2"><g id="Camada_1-2" data-name="Camada 1"><path class="cls-1" d="M66.62,83.14c-41-2.06-66.62,18-66.62,18V18.42S20.94-.08,66.62,0Z"/><path class="cls-1" d="M84.59,66.62c2.06-41-18-66.62-18-66.62h82.73s18.5,20.94,18.42,66.62Z"/><path class="cls-1" d="M101.11,84.63c41,2.06,66.62-18,66.62-18v82.74s-20.94,18.49-66.62,18.41Z"/><path class="cls-1" d="M83.14,101.15c-2.06,41,18,66.62,18,66.62H18.42S-.08,146.83,0,101.15Z"/></g></g></svg><span class="text-uppercase font-weight-bold">ABCD Community</span>
+        </a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+            
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/en//" ><span>Home</span></a>
+			</li>
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/en/docs" ><span>Documentation</span></a>
+			</li>
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/en/collab" ><span>Collaboration</span></a>
+			</li>
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/en/about" ><span>About</span></a>
+			</li>
+
+
+  <li class="nav-item dropdown mr-4 d-none d-lg-block">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">English</a>
+    <div class="dropdown-menu">
+        
+            
+            
+            
+                
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-technology/cisis-utils/">English</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-technology/cisis-utils/">Português</a>
+
+
+            
+            
+        
+   </div>
+  </li>
+
+		</ul>
+	</div>
+	
+    <div class="navbar-nav d-none d-lg-block">
+        <input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off"> 
+    </div>
+   
+	<div class="navbar-nav d-none d-lg-block">
+          <a class="gh-source" data-gh-source="github" href="https://github.com/ABCD-Community/ABCD-Community.github.io" title="Go to repository" data-md-state="done">
+            <i class="fab fa fa-github fa-2x" style='color: #fff;padding-right:20px; float:left; margin-top:5px'></i></a>
+        </div>
+      </div>
+
+
+</nav>
+</header>
+
+
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+          <div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    <input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="on">
+      <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+      </button>
+  </form>  
+
+  <nav class="collapse td-sidebar-nav" id="td-section-nav">
+    <div class="nav-item dropdown d-block d-lg-none pl-4">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">English</a>
+
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+        
+            
+            
+            
+                
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-technology/cisis-utils/">English</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-technology/cisis-utils/">Português</a>
+
+
+            
+            
+        
+      </div>
+    </div>
+
+
+    
+      <ul class="td-sidebar-nav__section pr-md-3"> 
+
+        
+        
+
+        <li class="td-sidebar-nav__section-title">
+          <a  href="" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section"></a>
+        </li>
+        
+      </ul>
+    
+      <ul class="td-sidebar-nav__section pr-md-3"> 
+
+        
+        
+
+        <li class="td-sidebar-nav__section-title">
+          <a  href="/en/docs" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Home</a>
+        </li>
+        
+          <ul>
+            <li class="collapse show" id="home">
+              <ul class="td-sidebar-nav__section pr-md-3">
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-introduction
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Introduction
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-technology
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD Technology
+                    </a>
+                  </li>
+                  
+                    <ul>
+                      <li class="collapse show" id="">
+                        
+                          
+                            <a class="td-sidebar-link td-sidebar-link__page " id="m-home-abcd-technology-cisis-utilities" href="/en/abcd-technology/cisis-utils/">CISIS Utilities</a>
+                            <a class="td-sidebar-link td-sidebar-link__page " id="m-home-abcd-technology-cisis-formatting-language" href="/en/abcd-technology/cisis-formatting/">CISIS Formatting Language</a>
+                            <a class="td-sidebar-link td-sidebar-link__page " id="m-home-abcd-technology-isis-script" href="/en/abcd-technology/isis-script/">ISIS Script</a>
+                        
+                      </li>
+                    </ul>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-installation
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Installation
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-modules
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Modules
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-utilities
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Utilities
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-thesaurus
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Thesaurus
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-odds
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">The Online Document Delivery Service (ODDS)
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-digital-library
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Digital library features in ABCD
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-oai
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">The OAI interface
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-opac
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD OPAC
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/opac-iah
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">iAH OPAC
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-site
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD Site
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/secs-web
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Serials Control
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-unicode
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD Unicode
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-localisation
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD Localisation
+                    </a>
+                  </li>
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        
+      </ul>
+    
+  </nav>
+</div>
+
+          </aside> <!--col-12 col-md-3 col-xl-2 td-sidebar d-print-none-->
+          
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+                  <a href="https://github.com/ABCD-Community/ABCD-Community.github.io/edit/main/en/abcd-technology/cisis-utils/index.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+
+<a href="https://github.com/ABCD-Community/ABCD-Community.github.io/issues/new?labels=question&title=Question:&body=Question on: https://github.com/ABCD-Community/ABCD-Community.github.io/tree/master/en/abcd-technology/cisis-utils/index.md" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+
+<a href="https://github.com/ABCD-Community/ABCD-Community.github.io/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
+<!-- this will parse through the header fields and add a button to open
+     an issue / ask a question on Github. The editable field should be in
+     the post frontend matter, and refer to the label to open the issue for -->
+
+            </div>
+            <div class="td-toc">
+              <nav id="TableOfContents">
+                <ul id="TOC">
+                   <!-- Links will be appended here-->
+                </ul>
+              </nav>
+            </div>
+ 
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">     
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+              <ol class="breadcrumb spb-1">
+              
+              
+                <li class="breadcrumb-item">
+                  <a href="http://localhost:9898/en/">En</a>
+                </li>
+                
+                <li class="breadcrumb-item">
+                  <a href="http://localhost:9898/en/abcd-technology/">Abcd technology</a>
+                </li>
+                
+                <li class="breadcrumb-item active" aria-current="page">
+	          <a href="http://localhost:9898/en/abcd-technology/cisis-utils/">CISIS Utilities</a>
+                </li>
+                
+	      </ol>
+           </nav>
+
+           <div class="td-content">
+
+	      <h1 class="no_toc" id="cisis--utility-programs">CISIS – Utility Programs</h1>
+
+<h2 class="no_toc text-delta" id="content">Content</h2>
+
+<ol id="markdown-toc">
+  <li><a href="#acronymn-description" id="markdown-toc-acronymn-description">Acronymn Description</a></li>
+  <li><a href="#mx-utility" id="markdown-toc-mx-utility">MX Utility</a>    <ol>
+      <li><a href="#mx" id="markdown-toc-mx">MX</a></li>
+    </ol>
+  </li>
+  <li><a href="#utilities-for-the-master-file" id="markdown-toc-utilities-for-the-master-file">Utilities for the master file</a>    <ol>
+      <li><a href="#mxf0" id="markdown-toc-mxf0">MXF0</a></li>
+      <li><a href="#mxtb" id="markdown-toc-mxtb">MXTB</a></li>
+      <li><a href="#mxcp" id="markdown-toc-mxcp">MXCP</a></li>
+      <li><a href="#msrt" id="markdown-toc-msrt">MSRT</a></li>
+      <li><a href="#retag" id="markdown-toc-retag">RETAG</a></li>
+      <li><a href="#ctlmfn" id="markdown-toc-ctlmfn">CTLMFN</a></li>
+      <li><a href="#mkxrf" id="markdown-toc-mkxrf">MKXRF</a></li>
+      <li><a href="#i2id" id="markdown-toc-i2id">I2ID</a></li>
+      <li><a href="#id2i" id="markdown-toc-id2i">ID2I</a></li>
+      <li><a href="#crunchmf" id="markdown-toc-crunchmf">CRUNCHMF</a></li>
+    </ol>
+  </li>
+  <li><a href="#utilities-for-inverted-files" id="markdown-toc-utilities-for-inverted-files">Utilities for inverted files</a>    <ol>
+      <li><a href="#ifkeys" id="markdown-toc-ifkeys">IFKEYS</a></li>
+      <li><a href="#ifload" id="markdown-toc-ifload">IFLOAD</a></li>
+      <li><a href="#mys" id="markdown-toc-mys">MYS</a></li>
+      <li><a href="#ifmerge" id="markdown-toc-ifmerge">IFMERGE</a></li>
+      <li><a href="#mkiy0" id="markdown-toc-mkiy0">MKIY0</a></li>
+    </ol>
+  </li>
+  <li><a href="#installation-of-the-cisis-utilities" id="markdown-toc-installation-of-the-cisis-utilities">Installation of the CISIS utilities</a></li>
+  <li><a href="#execution-of-the-utilities" id="markdown-toc-execution-of-the-utilities">Execution of the utilities</a></li>
+  <li><a href="#syntax-conventions" id="markdown-toc-syntax-conventions">Syntax conventions</a></li>
+  <li><a href="#mx-utility-1" id="markdown-toc-mx-utility-1">MX Utility</a>    <ol>
+      <li><a href="#general-description" id="markdown-toc-general-description">General description</a></li>
+      <li><a href="#syntax" id="markdown-toc-syntax">Syntax</a></li>
+      <li><a href="#parameters-general-description" id="markdown-toc-parameters-general-description">Parameters. General description</a></li>
+      <li><a href="#initialization-parameters-setup" id="markdown-toc-initialization-parameters-setup">Initialization parameters (setup)</a></li>
+      <li><a href="#parameters-that-indicate-the-database-source" id="markdown-toc-parameters-that-indicate-the-database-source">Parameters that indicate the database source</a></li>
+      <li><a href="#parameters-for-processing-data" id="markdown-toc-parameters-for-processing-data">Parameters for processing data</a></li>
+      <li><a href="#parameters-for-searching-records" id="markdown-toc-parameters-for-searching-records">Parameters for searching records</a></li>
+      <li><a href="#parameters-that-carry-out-processes" id="markdown-toc-parameters-that-carry-out-processes">Parameters that carry out processes</a></li>
+    </ol>
+  </li>
+</ol>
+
+<hr />
+<p>-
+The CISIS Utilities are a group of programs developed in the C programming language that call functions offered by the CISIS Interface in order to carry out different functions on the Isis family of databases, such as finding and displaying records, maintenance of databases, etc. They can also carry out special functions that allow you to arrange master file records, generate tables from a master record, change the field tags etc.</p>
+
+<p>This group of utility programs is offered under four versions: 10/30 and 16/60, LIND, FFI. The main differences are in the length of the inverted file keys and the maximum supported record size measured in bytes, as is shown in the following table.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th><strong>10/30</strong></th>
+      <th><strong>16/60</strong></th>
+      <th><strong>LIND</strong></th>
+      <th><strong>FFI</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Inverted file key length</td>
+      <td>30</td>
+      <td>60</td>
+      <td>60</td>
+      <td>60</td>
+    </tr>
+    <tr>
+      <td>Maximum record size</td>
+      <td>32.767</td>
+      <td>32.767</td>
+      <td>32.767</td>
+      <td>1.048.576</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>Note: version 10/30 is the only one compatible with CDS/ISIS from UNESCO</p>
+</blockquote>
+
+<p>For more details on the structure of the master and inverted files see the Appendix: Structure of ISIS database records.</p>
+
+<p>The particular characteristics of these programs can be verified in the version declaration that you can obtain with what</p>
+
+<p>For example:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mx what
+CISIS Interface v5.2a/PC32/M/32767/10/30/I - Utility MX
+CISIS Interface v5.2a/.iy0/Z/4GB/GIZ/DEC/ISI/UTL/INVX/B7/FAT/CIP/CGI/MX Copyright (c)BIREME/PAHO 2006. [http://www.bireme.br/products/cisis]
+</code></pre></div></div>
+
+<h2 id="acronymn-description">Acronymn Description</h2>
+
+<ul>
+  <li>V5.2a : Version number</li>
+  <li>PC32 : Computer used (in this case Windows PC)</li>
+  <li>L : Lind version if it is present</li>
+  <li>M : Multi-user support</li>
+  <li>32767 : Maximum size of the record in bytes, value by default</li>
+  <li>10/30 : Inverted file keys</li>
+  <li>I : Permission to update the I/F</li>
+  <li>Utility MX : Name of the program</li>
+  <li>.iy0 : Single physical file for I/F (made for mkiy0)</li>
+  <li>Z : Compressed I/F (made for myz – discontinued)</li>
+  <li>4GB : Maximum size of the master file</li>
+  <li>GIZ : Gizmo</li>
+  <li>DEC : Decod</li>
+  <li>ISI : Iso-2709 import</li>
+  <li>UTL : Ciutl module</li>
+  <li>INVX : Multiple I/F searching</li>
+  <li>B7 : Version of the internal search mechanism</li>
+  <li>FAT : Fatal()</li>
+  <li>CIP : Cipar()</li>
+  <li>GCI : Supports operation in a CGI environment</li>
+  <li>MX : C isis_mx()</li>
+</ul>
+
+<h2 id="mx-utility">MX Utility</h2>
+
+<h3 id="mx">MX</h3>
+
+<p>The MX Program is a general purpose utility for working with  MicroISIS databases. It can carry out most of the CISIS Interface<br />
+functions, including the import/export of ISO-2709 records, searches,<br />
+processing global changes of patterns, joining records from a master<br />
+file by record number or key from the inverted file, incorporating fields<br />
+with data generated through a field selection table (FST), and functions 
+relating to the editing of fileds.</p>
+
+<h2 id="utilities-for-the-master-file">Utilities for the master file</h2>
+
+<h3 id="mxf0">MXF0</h3>
+
+<p>Analyzes all the records of a given master file, producing information  on fields present and the characters used in them.</p>
+
+<h3 id="mxtb">MXTB</h3>
+
+<p>The MXTB program counts the content of the fields, for example,  number of times that each author appears, each descriptor, or the<br />
+combination of an author and title of the publication, etc.<br />
+The result of running MXTB is a master file that contains a record for<br />
+each different phrase found (category). These records have fields for<br />
+storing the category and its frequency.</p>
+
+<h3 id="mxcp">MXCP</h3>
+
+<p>Copies records from an input master file to an output master file, allowing you to input data to be modified by global editing and/or procedures that supress spaces at the beginning and end, blank spaces, non-printable characters and final punctuation characters.
+It also converts fields that contain a specific delimeter into repeatable fields and it can discard input fields, according to the values of their tags.
+Another characteristic of MXCP is the recovery (undelete) of records deleted from a master file.</p>
+
+<h3 id="msrt">MSRT</h3>
+
+<p>Orders the records in a master file in an ascending form, according to  keys that are generated by applying a format to the records.</p>
+
+<h3 id="retag">RETAG</h3>
+<p>This program has two functions :<br />
+Change the tags of the fields in a given master file, according to a<br />
+renumbering table.<br />
+Unlock a master file.</p>
+
+<h3 id="ctlmfn">CTLMFN</h3>
+<p>Displays and updates the master file control record.  It can be used when a master file is reinitialized by accident.</p>
+
+<h3 id="mkxrf">MKXRF</h3>
+<p>A program for restoring the master file, that reads the .mst file and  creates the corresponding .xrf file.<br />
+It can be used to restore all the active records in a master file, which<br />
+has been logically reinitialized.</p>
+
+<h3 id="i2id">I2ID</h3>
+<p>Reads a master file and generates an ASCII file that can be edited and  modified.<br />
+It works together with the ID2I utility that carries out the opposite<br />
+function: reads an ASCII file and converts the data into a master file.</p>
+
+<h3 id="id2i">ID2I</h3>
+<p>Reads an ASCII file generated by I2ID (or with the same structure as a  file generated by this) and converts those data into master file records.</p>
+
+<h3 id="crunchmf">CRUNCHMF</h3>
+<p>Converts the master file from one operating system to another, for  example from Windows to Linux.</p>
+
+<h2 id="utilities-for-inverted-files">Utilities for inverted files</h2>
+
+<h3 id="ifkeys">IFKEYS</h3>
+<p>Displays the terms from the inverted file and the number of postings of  each of them.<br />
+Optionally the terms can be selected by the tags they were extracted<br />
+from.</p>
+
+<h3 id="ifload">IFLOAD</h3>
+<p>Loads an inverted file from the link file, according to the processing  options. It accepts other formats as well as the standard CDS/ISIS link<br />
+file.</p>
+
+<h3 id="mys">MYS</h3>
+<p>Sorts the link file in order to create the inverted file.</p>
+
+<h3 id="ifmerge">IFMERGE</h3>
+<p>Combines various inverted files from different master files into a single  inverted file, with a procedure to recover the records from the source<br />
+master files.</p>
+
+<h3 id="mkiy0">MKIY0</h3>
+<p>Combines the six files that make up the inverted file into a single file.  <br />
+CRUNCHIF Converts the inverted file from one operating system to another, for  example from Windows to Linux.</p>
+
+<h1 id="installation-of-the-cisis-utilities">Installation of the CISIS utilities</h1>
+
+<p>The installation of the CISIS utilities consists of creating a directory, usually  \CISIS\SYS\, and copying all the utilities into this.<br />
+For convenience it is possible to add the \CISIS\SYS directory to the operating  system PATH, so that it is possible to run the utilities from the location you are in,  without having to reference the \CISIS\SYS directory.<br />
+Examples<br />
+The examples are mostly based on the database CDS, and presume that it is  located in the directory:<br />
+\CISIS\DATABASES\<br />
+They are carried out on the database and often will modify it, therefore it is  advisable to make a backup copy.</p>
+
+<h1 id="execution-of-the-utilities">Execution of the utilities</h1>
+<p>The CISIS program is executed by a command, from the operating system  prompt, or from batch files from MS-DOS or scripts (shell scripts) in UNIX.</p>
+
+<p>Any program that uses CISIS can be executed by entering its name and one or  more parameters, if the directory \cisis\sys (the directory where the CISIS utilities  are found) is included in the system PATH list. If you do not provide parameters  in the command call, each utility program displays a brief description of its use.<br />
+For example, typing only the name <code class="language-plaintext highlighter-rouge">MXCP</code> at the DOS prompt displays:</p>
+
+<pre><code class="language-language">CISIS Interface v5.2a/PC32/M/32767/10/30/I - Utility MXCP  
+Copyright (c)BIREME/PAHO 2006. [http://www.bireme.br/products/cisis] 
+</code></pre>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mxcp {in=&lt;file&gt;|&lt;dbin&gt;} [create=]&lt;dbout&gt; [&lt;option&gt; [...]]
+</code></pre></div></div>
+
+<p>options:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{from|to|loop|count|tell|offset}=&lt;n&gt;
+ gizmo=&lt;dbgiz&gt;[,tag_list&gt;]
+ undelete
+ clean [mintag=1] [maxtag=9999]
+ period=.[,&lt;tag_list&gt;]
+ repeat=%[,&lt;tag_list&gt;]
+ log=&lt;filename&gt; 
+</code></pre></div></div>
+
+<p>Ex:</p>
+
+<pre><code class="language-language"> mxcp in create=out clean period=.,3 repeat=;,7 
+</code></pre>
+
+<pre><code class="language-language"> in = 3 « Field 3 occ 1. »
+ 3 «Field 3 occ 2 . »
+ 7 « Field 7/1;Field 7/2 ;Field 7/3.»
+ out = 3 «Field 3 occ 1»
+ 3 «Field 3 occ 2»
+ 7 «Field 7/1»
+ 7 «Field 7/2»
+ 7 «Field 7/3.»  
+</code></pre>
+
+<p>The parameters are displayed as a list separated by blank spaces and, for that  reason, each individual parameter should be put in quotation marks when it  contains blank spaces or any special system character (such as angle brackets,  pipe, etc.).<br />
+The following example executes the MX program with three parameters (database  name, search expression and a display format specification):</p>
+
+<pre><code class="language-language">mx \cisis\databases\cds "plants*water" "pft=mfn/,'Ti: 'v24/,(|Au: |v70/)"  
+</code></pre>
+
+<p>In order to use the colon as part of the parameter, it should be preceded by the  pipe:</p>
+
+<pre><code class="language-language">mx \cisis\databases\cds "plants*water" "pft=mfn/, \" Ti: \"v24/,(|Au: |v70/)"  
+</code></pre>
+
+<blockquote>
+  <p>Note: 
+The dollar sign, apostrophe, asterisk, question<br />
+mark, semi colon, and other characters that have<br />
+special significance in UNIX systems, should also<br />
+be put in quotation marks.</p>
+</blockquote>
+
+<h1 id="syntax-conventions">Syntax conventions</h1>
+
+<p>The following conventions are used to describe the syntax of the CISIS Utility  Programs:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;parameter&gt;</code></td>
+      <td>mandatory parameter</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">[&lt;parameter&gt;</code>]</td>
+      <td>optional parameter</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{&lt;option 1&gt;|&lt;option 2&gt;}</code></td>
+      <td>can choose between <code class="language-plaintext highlighter-rouge">&lt; option 1&gt;</code> or <code class="language-plaintext highlighter-rouge">&lt; option 2&gt;</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;option&gt; [...]</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;option&gt; </code>can repeat</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>Note: Some parameters are reserved words and, if they<br />
+are used, they should be used as indicated,<br />
+including capital letters or small letters.</p>
+</blockquote>
+
+<p>For example, MXCP has the general syntax:</p>
+
+<pre><code class="language-language">mxcp &lt;dbin&gt; [create=]&lt;dbout&gt; [&lt;option&gt; [...]]  
+</code></pre>
+
+<pre><code class="language-language">options:  
+{from|to|loop|count|tell|offset}=&lt;n&gt;  
+gizmo=&lt;dbgiz&gt;[,&lt;tag_list&gt;]  
+undelete  
+clean [mintag=1] [maxtag=9999]  
+period=.[,&lt;tag_list&gt;]  
+repeat=%[,&lt;tag_list&gt;]  
+log=&lt;filename&gt; 
+
+</code></pre>
+
+<p>showing that two parameters are mandatory: (a) name of the input database and  (b) name of the output database.<br />
+Then, the command:</p>
+
+<pre><code class="language-language">mxcp \cisis\databases\cds newcds  
+</code></pre>
+
+<p>copies the master file cds located in the directory \cisis\bases to the master file  newcds located in the same directory. The master file newcds must already exist,  otherwise an error will be produced.<br />
+If newcds does not exist you can create it using the optional parameter create as  can be seen in the following example:</p>
+
+<pre><code class="language-language">mxcp \cisis\databases\cds create=newcds  
+</code></pre>
+
+<p>The process options can be indicated using the optional parameters. To indicate,  for example, the range of records to process use from and to</p>
+
+<pre><code class="language-language">mxcp \cisis\databases\cds create=newcds from=10 to=20 
+</code></pre>
+
+<h1 id="mx-utility-1">MX Utility</h1>
+
+<p>MX is a general use program for CDS/ISIS databases that carries out most of the  CISIS Interface functions. Similarly to the other CISIS utility programs, MX is  executed from the operating system command line, indicating the operations to  carry out with parameters.<br />
+MX is used, for example, to search for and show a set of database records,  according to a search expression and a display format, as in the following line:</p>
+
+<pre><code class="language-language">mx \cisis\databases\cds "plants * water" "pft=mfn,x1,v24/"
+</code></pre>
+
+<p>Also, MX allows free-text searches even if an inverted file does not exist.<br />
+MX can also read ISO-2709 files or ASCII files, using delimiters as field separators.  In these cases the input records are converted to master file records through which  they are read.</p>
+
+<p>The following procedures can be applied to the input records:</p>
+<ol>
+  <li>Global change of patterns.</li>
+  <li>Joining of records, by record number or inverted file key.</li>
+  <li>Add fields with data generated by a field selection table.</li>
+  <li>Import and export of records, specified through a format language.<br />
+Records processed by MX can be sent to a master file, an ISO-2709 file or to a  standard output (which can be directed to a file or printer). Lines produced by a  format can be sent to the operating system.<br />
+The execution of MX can generate a call to the operating system so that a certain  program is run.<br />
+The result of applying a Field Selection Table (FST) to a master file can be sent to a  link file or combined into an inverted file.<br />
+The output file can be the same as the input.<br />
+MX also works in multi-user environments.</li>
+</ol>
+
+<h2 id="general-description">General description</h2>
+<p>In order to implement MX it is necessary to specify where the data are located that  it will work on. You can provide a master file, an ISO-2709 file or a text file. This is  the only mandatory parameter for the program.</p>
+
+<p>The line:</p>
+
+<pre><code class="language-language">mx \cisis\databases\cds  
+</code></pre>
+
+<p>generates an on-screen list of the cds database, that is found in the\cisis\databases  directory. The records are displayed without formatting.<br />
+Other processing parameters can be specified, for example:</p>
+
+<pre><code class="language-language">mx \cisis\databases\cds from=10 to=20  
+</code></pre>
+
+<p>presents the records 10 to 20 of the database cds on the screen. The database can  be found in the directory \cisis\databases and the records are displayed without  formatting.<br />
+The command line</p>
+
+<pre><code class="language-language">mx \cisis\databases\cds from=10 to=20 "pft=mfn,x1,v24(0,7)/" 
+</code></pre>
+
+<p>displays records 10 to 20 from the cds database on screen, applying the format  specified in the parameter <code class="language-plaintext highlighter-rouge">pft=mfn,x1,v24(0,7)/</code>. The database is found in the  <code class="language-plaintext highlighter-rouge">\cisis\databases</code> directory.<br />
+It is important to bear in mind that the order in which the optional parameters are  entered does not affect the execution of MX. The execution of these parameters is  made in the order in which they appear in the syntax declaration.<br />
+So the previous line could be:</p>
+
+<pre><code class="language-language">mx \cisis\databases\cds to=20 "pft=mfn,x1,v24(0,7)/" from=10  mx \cisis\databases\cds "pft=mfn,x1,v24(0,7)/" from=10 to=20
+</code></pre>
+
+<p>The following declarations are equivalent:</p>
+
+<pre><code class="language-language">mx \cisis\databases\cds pft=@file1 proc=@miproc.prc
+</code></pre>
+
+<pre><code class="language-language">mx \cisis\databases\cds proc=@miproc.prc pft=@file1 
+</code></pre>
+
+<pre><code class="language-language">mx \cisis\databases\cds gizmo=gizfile1 proc=@miproc.prc 
+</code></pre>
+
+<pre><code class="language-language">mx \cisis\bases\cds proc=@miproc.prc gizmo=gizfile1  
+</code></pre>
+
+<p>the gizmo parameter can be applied before the proc parameter, because it is  identified by the syntax.</p>
+
+<p>If the first parameter is a database and its corresponding inverted file is available,  the set of records to be processed can be obtained through a search.</p>
+
+<p>The following example returns cds database records, that are found in the  \cisis\databases directory, containing the words plants and water.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mx \cisis\databases\cds "plants * water"
+</code></pre></div></div>
+
+<p>MX can read input data from a ISO-2709 file or a delimited text file.<br />
+The following line displays the first five records of an ISO-2709 file called cds.iso, that is found in the \cisis\databases directory.</p>
+
+<pre><code class="language-language">mx iso=\cisis\databases\cds.iso to=5
+</code></pre>
+
+<p>In the next example MX uses an ASCII file called name as its input source, whose
+content is:</p>
+
+<pre><code class="language-language">Author 1|title 1|^aParis^bUnesco^c1965
+ |title 2|^aParis^bUnesco^c1965
+Author 3|title 3|^aParis^bUnesco^c1965 
+</code></pre>
+
+<p>This can be executed with the following call to MX:</p>
+
+<pre><code class="language-language">mx seq=name "pft=mfn,c11,v1,c21,v2,c31,v3/" now 
+</code></pre>
+
+<p>That generates the output:</p>
+
+<pre><code class="language-language">000001 Author 1 Title 1 ^aParis^bUnesco^c1965
+000002 Title 2 ^aParis^bUnesco^c1965
+000003 Author 3 Title 3 ^aParis^bUnesco^c1965
+</code></pre>
+
+<p>The processed records can be stored in a master file. The following lines create a
+master file sample:</p>
+
+<pre><code class="language-language">
+mx\cisis\databases\cds "plants * water" create=sample -all now
+mx iso=\cisis\databases\cds.iso to=5 create=sample -all now
+mx seq=name create=sample -all now 
+
+</code></pre>
+
+<p>These records, can also be exported to anISO-2709 file, for example sample.iso:</p>
+
+<pre><code class="language-language">mx \cisis\databases\cds "plants * water" iso=sample.iso -all now
+mx iso=\cisis\databases\cds.iso to=5 iso=sample.iso -all now
+mx seq=name iso=sample.iso -all now
+</code></pre>
+
+<p>When MX carries out one or more processes that modify records (whether read from a database, ISO-2709 file or a text file), these modifications are carried out in memory and <strong>do not modify the database</strong>, unless explicitly indicated.
+The modified records can be viewed on the screen or written to an output file.
+The main modification processes are:</p>
+
+<p>• procedures for changing global patterns (gizmo).<br />
+• joining records (or part of them) from another database (join).  • carrying out field operations (proc).<br />
+• applying a field selection table from CDS/ISIS and aggregating the results in a  file in memory (fst).</p>
+
+<p>The following example shows records from the master file cds, and indicates the  number of records to display using the keyboard.</p>
+
+<p>• MS-DOS:</p>
+
+<pre><code class="language-language">mx seq=con "join=cds='mfn='v1" "proc='D1/1D32001'"  
+</code></pre>
+
+<p>• UNIX:</p>
+
+<pre><code class="language-language">mx seq=/dev/ttyp0 "join=cds='mfn='v1" "proc='D1/1D32001'"  
+</code></pre>
+
+<p>MX can carry out the record modifications on the same master file that it uses as  input:</p>
+
+<pre><code class="language-language">mx cds "proc='D24'" copy=cds -all now  
+</code></pre>
+
+<p>The example deletes the field tag 24 from all the cds database records, making the  changes on the same database.<br />
+MX can take parameters from a text file, allowing it to exceed the limitations of the  operating system that are described here:</p>
+
+<ol>
+  <li>A call to MX has more characters than is permitted in a operating system  command line (128 characters in MS-DOS 512 characters in UNIX).  2. The command line that is added by keyboard contains special operating system  characters.</li>
+</ol>
+
+<p>The following example shows how to use a parameters file:</p>
+
+<pre><code class="language-language">mx in=somefile  
+</code></pre>
+
+<p>Where the file somefile contains:</p>
+
+<pre><code class="language-language">\cisis\databases\cds  
+proc='D1'  
+copy=\cisis\databases\cds  
+-all  
+now  
+
+</code></pre>
+
+<h2 id="syntax">Syntax</h2>
+
+<p>MX version 5.2a, syntax table:</p>
+
+<pre><code class="language-language">CISIS Interface v5.2a/PC32/L/M/32767/16/60/I - Utility MX  Copyright (c)BIREME/PAHO 2006. [http://www.bireme.br/products/cisis] 
+</code></pre>
+
+<pre><code class="language-language">mx [cipar=&lt;file&gt;] [{mfrl|load}=&lt;n&gt;] [cgi={mx|&lt;v2000_fmt&gt;}] [in=&lt;file&gt;]   {[db=]&lt;db&gt;|  
+ seq[/1m]=&lt;file&gt;|  
+ iso[={marc|&lt;n&gt;}]=&lt;isofile&gt; [isotag1=&lt;tag&gt;]|  
+ dict=&lt;if&gt;[,&lt;keytag&gt;[,&lt;posttag&gt;[/&lt;postsperrec&gt;]]] [k{1|2}=&lt;key&gt;]}  
+options:  
+ {from|to|loop|count|tell|btell}=&lt;n&gt;  
+ text[/show]=&lt;text&gt;  
+ [bool=]{&lt;bool_expr&gt;|@&lt;file&gt;} [invx=&lt;tag101_mf&gt;] [tmpx=&lt;tmp_mf&gt;]   gizmo=&lt;gizmo_mf&gt;[,&lt;taglist&gt;] [gizp[/h]=&lt;out_mfx&gt;] [decod=&lt;mf&gt;]  
+ join=&lt;mf&gt;[:&lt;offset&gt;][,&lt;taglist&gt;]=&lt;mfn=_fmt&gt;  
+ join=&lt;db&gt;[:&lt;offset&gt;][,&lt;taglist&gt;]=&lt;upkey_fmt&gt; [jmax=&lt;n&gt;]   jchk=&lt;if&gt;[+&lt;stwfile&gt;]=&lt;upkey_fmt&gt;  
+ proc=[&lt;proc_fmt&gt;|@&lt;file&gt;]  
+ D{&lt;tag&gt;[/&lt;occ&gt;]|*}  
+ A&lt;tag&gt;&lt;delim&gt;&lt;data&gt;&lt;delim&gt;  
+ H&lt;tag&gt; &lt;length&gt; &lt;data&gt;  
+ &lt;TAG[ &lt;stripmarklen&gt;[ &lt;minlen&gt;]]&gt;&lt;data&gt;&lt;/TAG&gt;  
+ S[&lt;tag&gt;]  
+ R&lt;mf&gt;,&lt;mfn&gt;  
+ G&lt;gizmo_mf&gt;[,&lt;taglist&gt;]  
+ Gsplit[/clean]=&lt;tag&gt;[={&lt;char&gt;|words|letters|numbers|trigrams}]   Gsplit=&lt;tag&gt;=6words[/if=&lt;if&gt;] 
+ Gload[/&lt;tag&gt;][/nonl][=&lt;file&gt;]  
+ Gmark[/&lt;tag&gt;]{/&lt;elem&gt;|/keys|/decs|/&lt;mf&gt;,&lt;otag&gt;[,&lt;ctag&gt;]}=&lt;if&gt;   Gmarx[/&lt;tag&gt;]/&lt;elem&gt;[@&lt;att&gt;="x"] =&lt;tag&gt;[:&amp;[&lt;att&gt;]|/c[=224]|/i]   Gdump[/&lt;tag&gt;][/nonl][/xml][=&lt;file&gt;]  
+ =&lt;mfn&gt;  
+ X[append=]&lt;mf&gt;  
+ convert=ansi [uctab={&lt;file&gt;|ansi}] [actab={&lt;file&gt;|ansi}]   fst[/h]={&lt;fst&gt;|@[&lt;file&gt;]} [stw=@[&lt;file&gt;]]  
+ [mono|mast|full] {create|copy|append|merge|updatf}=&lt;out_mf&gt;   [out]iso[={marc|&lt;n&gt;}]=&lt;out_isofile&gt; [outisotag1=&lt;tag&gt;]   fullinv[/dict][/keep][/ansi]=&lt;out_if&gt; [maxmfn=&lt;n&gt;|master=&lt;mf&gt;]   ln{1|2}=&lt;out_file&gt; [+fix[/m]]   fix=&lt;out_file&gt; tbin=&lt;tag&gt;  
+ tab[/lines:100000/width:100/tab:&lt;tag&gt;]=&lt;tab_fmt&gt;  
+ {prolog|pft|epilog}={&lt;diplay_fmt&gt;|@&lt;file&gt;} [lw={&lt;n&gt;|0}]   {+|-}{control|leader|xref|dir|fields|all} mfrl now
+
+</code></pre>
+
+<p>MX takes the parameters in the order shown in the table. In first place should be,  the initialisation (setup) parameters, followed by the source of the input data, and  finally the optional processing parameters. There are some exceptions that are  pointed out in the manual, for example btell= should go before bool=.</p>
+
+<h2 id="parameters-general-description">Parameters. General description</h2>
+
+<p>If you enter the name of the MX program without parameters, a menu of all  possible options and a brief description of their use is displayed, as is shown in the  previous section.</p>
+
+<h2 id="initialization-parameters-setup">Initialization parameters (setup)</h2>
+
+<p>When one or more of the optional initialization parameters (files, mfrl, fmtl, load)  are present, they should be placed before any other parameter.</p>
+
+<h2 id="parameters-that-indicate-the-database-source">Parameters that indicate the database source</h2>
+
+<p>A mandatory parameter that indicates the database source (database name, ISO 2709 file or text file), should be the first parameter, except for the initialization  parameters, in which case it should be entered immediately after.</p>
+
+<h2 id="parameters-for-processing-data">Parameters for processing data</h2>
+
+<p>Optional parameters that carry out tasks on the input data. In the command line  these follow the parameter that indicates the source.</p>
+
+<blockquote>
+  <p>Note: 
+By default, MX assumes that each string of
+characters that is found from the input source
+and that does not begin with a reserved word
+(from, to, join, etc.) is a search expression.</p>
+</blockquote>
+
+<p>Processing parameters can be classified as:</p>
+
+<h2 id="parameters-for-searching-records">Parameters for searching records</h2>
+<p>With these parameters you define a subgroup of source data on which to perform a
+task. The method of defining this subgroup can be by:
+• A search (bool)
+• A free-text search expression (text)
+• A range of records (whose limits are indicated with from, to)
+• Number of records (count)
+• Repeating for each record until a condition is met (loop)</p>
+
+<h2 id="parameters-that-carry-out-processes">Parameters that carry out processes</h2>
+<p>These are parameters which call internal processes that carry out tasks in memory
+on a set of records.
+These tasks could be:
+• Carry out global changes (gizmo)
+• Join records (join)
+• Compare master files with inverted files (jchk)
+• Carry out modifications in the record fields (proc)
+• Apply the field selection table (fst) to records
+• Apply formats to the records (pft)</p>
+
+<blockquote>
+  <p>Note: 
+The order of execution for these processes is:
+gizmo, join y/o jchk, proc, fst and pft.</p>
+</blockquote>
+
+<script
+  src="/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function() {
+
+    var toc = $('#TOC');
+
+    // Select each header
+    sections = $('.td-content h1');
+        $.each(sections, function(idx, v) {
+            section = $(v);
+            var div_id = $(section).attr('id');
+            var div_text = section.text().split('¶')[0];
+            var parent = $("#" + div_id)
+            var content = '<li id="link_' + div_id + '" class="md-nav__item"><small><a class="md-nav__link" href="#' + div_id + '" title="' + div_text +'">' + div_text +'</small></a></li>';
+            $(toc).append(content);
+
+            // Add section code to subnavigation
+            var children = $('<nav class="md-nav"><ul class="md-nav__list"></nav></ul>')
+            var contenders = $("#" + div_id).nextUntil("h1");
+            $.each(contenders, function(idx, contender){
+               if($(contender).is('h2') || $(contender).is('h3')) {
+                   var contender_id = $(contender).attr('id');
+                   var contender_text = $(contender).text().split('¶')[0];
+                   var content = '<li class="md-nav__item"><a class="md-nav__link " href="#' + contender_id + '" title="' + contender_text +'"><small>' + contender_text +'</small></a></li>';
+                   children.append(content);
+                }
+             })
+             $("#link_" + div_id).append(children);
+        });
+    });
+</script>
+
+<script>
+var headers = ["h1", "h2", "h3", "h4"]
+var colors = ["red", "orange", "green", "blue"]
+
+$.each(headers, function(i, header){
+    var color = colors[i];
+    $(header).each(function () {
+        var href=$(this).attr("id");
+        $(this).append('<a class="headerlink" style="color:' + color + '" href="#' + href + '" title="Permanent link">¶</a>')
+    });
+})
+</script>
+
+
+
+	
+              
+              <style>
+  .feedback--answer {
+    display: inline-block;
+  }
+  .feedback--answer-no {
+    margin-left: 1em;
+  }
+  .feedback--response {
+    display: none;
+    margin-top: 1em;
+  }
+  .feedback--response__visible {
+    display: block;
+  }
+</style>
+<div class="d-print-none">
+<h2 class="feedback--title">Feedback</h5>
+<p class="feedback--question">Was this page helpful?</p>
+<button class="btn btn-primary mb-4 feedback--answer feedback--answer-yes">Yes</button>
+<button class="btn btn-primary mb-4 feedback--answer feedback--answer-no">No</button>
+<p class="feedback--response feedback--response-yes">
+  Glad to hear it! Please <a href='{{ site.repo }}/issues/new'>tell us how we can improve</a>.
+</p>
+<p class="feedback--response feedback--response-no">
+  Sorry to hear that. Please <a href='{{ site.repo  }}/issues/new'>tell us how we can improve</a>.
+</p>
+</div>
+<script>
+  const yesButton = document.querySelector('.feedback--answer-yes');
+  const noButton = document.querySelector('.feedback--answer-no');
+  const yesResponse = document.querySelector('.feedback--response-yes');
+  const noResponse = document.querySelector('.feedback--response-no');
+  const disableButtons = () => {
+    yesButton.disabled = true;
+    noButton.disabled = true;
+  };
+  const sendFeedback = (value) => {
+    if (typeof ga !== 'function') return;
+    const args = {
+      command: 'send',
+      hitType: 'event',
+      category: 'Helpful',
+      action: 'click',
+      label: window.location.pathname,
+      value: value
+    };
+    ga(args.command, args.hitType, args.category, args.action, args.label, args.value);
+  };
+  yesButton.addEventListener('click', () => {
+    yesResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(1);
+  });
+  noButton.addEventListener('click', () => {
+    noResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(0);
+  });
+</script><br/>
+
+
+
+
+           </div>
+
+          </main> <!--col-12 col-md-9 col-xl-8 pl-md-5-->
+        </div> <!--./row flex-xl-nowrap-->
+      </div> <!--./td-main-->
+      
+      <footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        <ul class="list-inline mb-0">  
+          
+          
+        </ul>
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        <ul class="list-inline mb-0">  
+          <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="GitHub" data-original-title="GitHub">
+            <a class="text-white" target="_blank" href="https://github.com/ABCD-Community/ABCD-Community.github.io">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">© 2021 ABCD Community All Rights Reserved</small>
+        
+        <p class="mt-2">
+
+            
+                <a href="/en//" >Home</a> <span class="text-primary"> </span>
+          
+                <a href="/en/docs" >Documentation</a> <span class="text-primary"> </span>
+          
+                <a href="/en/collab" >Collaboration</a> <span class="text-primary"> </span>
+          
+                <a href="/en/about" >About</a> <span class="text-primary"> </span>
+          
+
+        </p>	
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div> <!--./container-fluid td-outer--> 
+    <script src="/assets/js/popper.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/main.js"></script>
+
+
+<script src="/assets/js/tabpane-persist.js"></script>
+
+  </body>
+</html>

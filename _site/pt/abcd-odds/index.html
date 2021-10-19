@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="pt"  class="no-js">
+  <!-- Copyright 2019-2021 Vanessa Sochat-->
+  <head>
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Jekyll" />
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+<link rel="alternate" type="application/rss&#43;xml" href="/docs/index.xml">
+
+<link rel="shortcut icon" href="/assets/favicons/favicon.ico" >
+<link rel="icon" type="image/png" href="/assets/favicons/favicon.png" sizes="16x16">
+
+ 
+ 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M0LM60C9WY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M0LM60C9WY');
+</script>
+
+ 
+
+<title>Comunidade ABCD</title>
+<meta property="og:title" content="Comunidade ABCD" />
+<meta property="og:description" content="Este documento tem como objetivo fornecer todas as informações e instruções relevantes sobre como usar a biblioteca integrada e o sistema de gerenciamento de documentação ‘ABCD’. Tanto as operações básicas como o gerenciamento avançado do software são discutidos, assim como os tópicos úteis e necessários relativos ao software ISIS no qual o ABCD se baseia. Nesta nova edição, as novas características da versão 2.0 são adicionadas- o uso de diferentes sabores de CISIS, de Unicode e as capacidades da biblioteca digital, bem como alguns módulos adicionais (ODDS, LDAP, DSpaceBridge) e utilitários (conversão UTF8, criação de objetos de empréstimo…) ." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://localhost:9898" />
+<meta property="og:site_name" content="http://localhost:9898" />
+
+<meta itemprop="name" content="Comunidade ABCD">
+<meta itemprop="description" content="">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Comunidade ABCD"/>
+<meta name="twitter:description" content="Este documento tem como objetivo fornecer todas as informações e instruções relevantes sobre como usar a biblioteca integrada e o sistema de gerenciamento de documentação ‘ABCD’. Tanto as operações básicas como o gerenciamento avançado do software são discutidos, assim como os tópicos úteis e necessários relativos ao software ISIS no qual o ABCD se baseia. Nesta nova edição, as novas características da versão 2.0 são adicionadas- o uso de diferentes sabores de CISIS, de Unicode e as capacidades da biblioteca digital, bem como alguns módulos adicionais (ODDS, LDAP, DSpaceBridge) e utilitários (conversão UTF8, criação de objetos de empréstimo…) ."/>
+
+<link rel="stylesheet" href="/assets/css/main.min.css">
+<link rel="stylesheet" href="/assets/css/palette.css">
+<script
+  src="/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+
+
+  
+  
+    
+  <link rel="alternate" hreflang="en" href="/en/abcd-odds/" />
+    
+  <link rel="alternate" hreflang="pt" href="/pt/abcd-odds/" />
+    
+  
+
+  
+</head>
+
+  
+
+
+  <body class="td-section">
+    
+<header>
+    <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="/pt">
+            <span class="navbar-logo"></span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 167.73 167.77"><defs><style>.cls-1{fill:#ffffff;}</style></defs><g id="Camada_2" data-name="Camada 2"><g id="Camada_1-2" data-name="Camada 1"><path class="cls-1" d="M66.62,83.14c-41-2.06-66.62,18-66.62,18V18.42S20.94-.08,66.62,0Z"/><path class="cls-1" d="M84.59,66.62c2.06-41-18-66.62-18-66.62h82.73s18.5,20.94,18.42,66.62Z"/><path class="cls-1" d="M101.11,84.63c41,2.06,66.62-18,66.62-18v82.74s-20.94,18.49-66.62,18.41Z"/><path class="cls-1" d="M83.14,101.15c-2.06,41,18,66.62,18,66.62H18.42S-.08,146.83,0,101.15Z"/></g></g></svg><span class="text-uppercase font-weight-bold">Comunidade ABCD</span>
+        </a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+            
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/pt//" ><span>Início</span></a>
+			</li>
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/pt/docs" ><span>Documentação</span></a>
+			</li>
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/pt/collab" ><span>Colaboração</span></a>
+			</li>
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/pt/about" ><span>Sobre</span></a>
+			</li>
+
+
+  <li class="nav-item dropdown mr-4 d-none d-lg-block">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Português</a>
+    <div class="dropdown-menu">
+        
+            
+            
+            
+                
+
+                <a title="Ver em English" class="en dropdown-item" href="/en/abcd-odds/">English</a>
+
+
+            
+
+                <a title="Ver em Português" class="pt dropdown-item" href="/pt/abcd-odds/">Português</a>
+
+
+            
+            
+        
+   </div>
+  </li>
+
+		</ul>
+	</div>
+	
+    <div class="navbar-nav d-none d-lg-block">
+        <input type="search" class="form-control td-search-input" placeholder="&#xf002 Buscar no site…" aria-label="Search this site…" autocomplete="off"> 
+    </div>
+   
+	<div class="navbar-nav d-none d-lg-block">
+          <a class="gh-source" data-gh-source="github" href="https://github.com/ABCD-Community/ABCD-Community.github.io" title="Go to repository" data-md-state="done">
+            <i class="fab fa fa-github fa-2x" style='color: #fff;padding-right:20px; float:left; margin-top:5px'></i></a>
+        </div>
+      </div>
+
+
+</nav>
+</header>
+
+
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+          <div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    <input type="search" class="form-control td-search-input" placeholder="&#xf002 Buscar no site…" aria-label="Search this site…" autocomplete="on">
+      <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+      </button>
+  </form>  
+
+  <nav class="collapse td-sidebar-nav" id="td-section-nav">
+    <div class="nav-item dropdown d-block d-lg-none pl-4">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Português</a>
+
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+        
+            
+            
+            
+                
+
+                <a title="Ver em English" class="en dropdown-item" href="/en/abcd-odds/">English</a>
+
+
+            
+
+                <a title="Ver em Português" class="pt dropdown-item" href="/pt/abcd-odds/">Português</a>
+
+
+            
+            
+        
+      </div>
+    </div>
+
+
+    
+      <ul class="td-sidebar-nav__section pr-md-3"> 
+
+        
+        
+
+        <li class="td-sidebar-nav__section-title">
+          <a  href="" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section"></a>
+        </li>
+        
+      </ul>
+    
+      <ul class="td-sidebar-nav__section pr-md-3"> 
+
+        
+        
+
+        <li class="td-sidebar-nav__section-title">
+          <a  href="/pt/docs" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Home</a>
+        </li>
+        
+          <ul>
+            <li class="collapse show" id="home">
+              <ul class="td-sidebar-nav__section pr-md-3">
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-introduction
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Introdução
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-technology
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Tecnologia ABCD
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-installation
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Instalação
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-modules
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Módulos
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-utilities
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Utilitários
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-thesaurus
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Thesaurus
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-odds
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">O Serviço de Entrega de Documentos Online (ODDS)
+                    </a>
+                  </li>
+                  
+                    <ul>
+                      <li class="collapse show" id="">
+                        
+                      </li>
+                    </ul>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-digital-library
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Características da biblioteca digital
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-oai
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">A interface OAI
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-opac
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">OPAC
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/opac-iah
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">iAH OPAC
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-site
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD Site
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/secs-web
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Controle de periódicos
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-unicode
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD Unicode
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-localisation
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Localização e pastas
+                    </a>
+                  </li>
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        
+      </ul>
+    
+  </nav>
+</div>
+
+          </aside> <!--col-12 col-md-3 col-xl-2 td-sidebar d-print-none-->
+          
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+                  <a href="https://github.com/ABCD-Community/ABCD-Community.github.io/edit/main/pt/abcd-odds/index.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Editar esta página</a>
+
+<a href="https://github.com/ABCD-Community/ABCD-Community.github.io/issues/new?labels=question&title=Question:&body=Question on: https://github.com/ABCD-Community/ABCD-Community.github.io/tree/master/pt/abcd-odds/index.md" target="_blank"><i class="fab fa-github fa-fw"></i> Criar questão de documentação</a>
+
+<a href="https://github.com/ABCD-Community/ABCD-Community.github.io/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Apontar um problema no projeto</a>
+<!-- this will parse through the header fields and add a button to open
+     an issue / ask a question on Github. The editable field should be in
+     the post frontend matter, and refer to the label to open the issue for -->
+
+            </div>
+            <div class="td-toc">
+              <nav id="TableOfContents">
+                <ul id="TOC">
+                   <!-- Links will be appended here-->
+                </ul>
+              </nav>
+            </div>
+ 
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">     
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+              <ol class="breadcrumb spb-1">
+              
+              
+                <li class="breadcrumb-item">
+                  <a href="http://localhost:9898/pt/">Pt</a>
+                </li>
+                
+                <li class="breadcrumb-item active" aria-current="page">
+	          <a href="http://localhost:9898/pt/abcd-odds/">O Serviço de Entrega de Documentos Online (ODDS)</a>
+                </li>
+                
+	      </ol>
+           </nav>
+
+           <div class="td-content">
+
+	      <h1 id="the-online-document-delivery-service-odds">The Online Document Delivery Service (ODDS)</h1>
+
+<h2 class="no_toc no_toc text-delta" id="conteúdo">Conteúdo</h2>
+
+<ol id="markdown-toc">
+  <li><a href="#the-online-document-delivery-service-odds" id="markdown-toc-the-online-document-delivery-service-odds">The Online Document Delivery Service (ODDS)</a>    <ol>
+      <li><a href="#configuration-of-odds" id="markdown-toc-configuration-of-odds">Configuration of ODDS</a>        <ol>
+          <li><a href="#new-files" id="markdown-toc-new-files">new files</a></li>
+          <li><a href="#modified-files" id="markdown-toc-modified-files">modified files</a></li>
+          <li><a href="#structure-of-the-odds-directory" id="markdown-toc-structure-of-the-odds-directory">Structure of the ODDS-directory</a></li>
+        </ol>
+      </li>
+      <li><a href="#the-workflow-of-odds" id="markdown-toc-the-workflow-of-odds">The workflow of ODDS</a>        <ol>
+          <li><a href="#the-request-created-from-abcd-site-or-iah" id="markdown-toc-the-request-created-from-abcd-site-or-iah">The request created from ABCD Site (or iAH)</a></li>
+          <li><a href="#the-odds-processing-by-the-library" id="markdown-toc-the-odds-processing-by-the-library">The ODDS processing by the library</a></li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+<hr />
+
+<p>This service is added in version ABCD 2.0 to facilitate the organisation of a document delivery service for elec- tronic documents. The idea is that end-users, from the link on the ABCD Site (now part of the demo Site), bring in the bibliographical data they know in a form as a request formulation. The form, when submitted, becomes a record in the ODDS database which is attended by a special library officer : librarians, having often better access and knowledge about how to locate electronic documents, identify the documents, put them on a library server and send out - semi-automated - an e-mail to the requesting end-user notifying her/him of the URL of the document and the time-span to download it.</p>
+
+<p>We discuss this process in this section but will have to start with some few configuration issues.</p>
+
+<h2 id="configuration-of-odds">Configuration of ODDS</h2>
+
+<p>The ODDS module is integrated into ABCD as from version 2.0, but can also be installed as an add-on in an existing ABCD-installation by unzipping the ODDS.zip archive and by doing so adding new files but also modifying existing files in your system. We explain these here.</p>
+
+<h3 id="new-files">new files</h3>
+
+<p>The following files are newly installed into ABCD for the purpose of the ODDS-module :</p>
+
+<ul>
+  <li>the directory <code class="language-plaintext highlighter-rouge">htdocs/central/odds</code>, which contain the main scripts and files needed;</li>
+  <li><code class="language-plaintext highlighter-rouge">htdocs/central/css/estilo_odds.css</code> : a CSS style-sheet used in ODDS, needs to be available in the Central stylesheets directory</li>
+  <li><code class="language-plaintext highlighter-rouge">/lang/odds.tab</code> and <code class="language-plaintext highlighter-rouge">bases/lang/odds_help_info.tab</code> : messages and help text to be copied into the related lan- guage-directory of your ABCD bases/lang directory.</li>
+  <li>/odds datase as a folder in your ABCD’s database-directory; this is the database to store the requests. The database may have some test records which should be deleted (‘initialize’ database) before starting to use it locally</li>
+  <li><code class="language-plaintext highlighter-rouge">/par/odds.par</code> file to be copied to the directory bases/par and edited if necessary to indicate the correct path to the ODDS database for your ABCD installation</li>
+</ul>
+
+<h3 id="modified-files">modified files</h3>
+
+<p>The following files exist in ABCD but have new contents added on behalf of ODDS :</p>
+
+<ul>
+  <li>central/iah/ver_documento.php</li>
+  <li>central/iah/configure.php</li>
+  <li>central/iah/ver_documento_ex.php</li>
+  <li>central/iah/view_document_ex-ODDS.php</li>
+  <li>central/iah/ver_documento_ex-WEBEX.php</li>
+  <li>Iah/scripts/<code class="language-plaintext highlighter-rouge">&lt;lang&gt;</code>/ahhead.pft</li>
+  <li>Iah/scripts/<code class="language-plaintext highlighter-rouge">&lt;lang&gt;</code>/ahfoot.pft</li>
+</ul>
+
+<h3 id="structure-of-the-odds-directory">Structure of the ODDS-directory</h3>
+
+<p>After installation of ODDS, the following structure will exist in your ABCD Central odds-directory :
+<img src="https://lh3.googleusercontent.com/Jt9okORMtmdkBEX5bmdMaGLRQtL75i3L7o2xY4XEr0yW0EDI2WdhLKMmkQFc5kjj1o-6gziwJJSd_74o_OkIAwYAClsq7gIC-jRBTA-3mtrU93Hkt6qnI_E8Ty-tTyQKBUtmnmyS=s0" alt="" /></p>
+
+<p>in which the following files side :</p>
+<ul>
+  <li>Form_odds.php : the ODSS home-page which contains the code to display the main ODDS request-form.</li>
+  <li>
+    <p>Process_odds.php : The data loaded in the form of the previous item are sent to this script for validation, pro- cessing and storage of the data in the ODDS database.</p>
+  </li>
+  <li>index.php : test examples for invoking the form with parameters and without parameters. The directory odds/lib/ contains the following files :<img src="https://lh6.googleusercontent.com/iHidAcGoGJFSn-qtNaAILWIqownUxbcN3jbZ_L9GxShuRAFNgqB843JtrNZxX4alBUMzZUebQ_UK2R3Cm0TGxz7iEbsY1pOSt9hUHyr3_p8yakFgtHqF4YaXEMNjzxBrkQpjbGiB=s0" alt="" /></li>
+</ul>
+
+<p>where these files implement various functionalities, needed by the ODDS module, more specifically :</p>
+
+<ul>
+  <li>Blat.exe Binary used to send emails (from ABCD) to the Windows operating system.</li>
+  <li>Footer.php Foot of the pages included in the ODDS module.</li>
+  <li>Header.php Head of the pages included in the ODDS module.</li>
+  <li>Header-ODDS.php Head for the box in which user validation is requested (from iAH or Site).</li>
+  <li>Header-SA-ODDS.php Head for the frame in which user validation is requested (from Alert Service).</li>
+  <li>Library.php Set of functions used to load messaging dynamically. The text of the messages are read from files with an extension tab. For details please see below.</li>
+  <li>logo.jpg Logo sent in the head of institutional emails.</li>
+  <li>Odds_title_back.png Background image for the title of the form.</li>
+  <li>SendMaiLinuxl.php Implements the functionality of sending emails (from ABCD) to the Linux operating system.</li>
+  <li>SendMail.php Used to centralize the sending of emails (regardless of the operating system). Validate the data required to make the sending and upload the text templates for the subject and the body of the mail according to the email to be sent (satisfied or canceled order).</li>
+  <li>SendMail.php Implements the sending of emails from ABCD (via Ajax). Validate the data required to make the shipment and upload the texts according to the email to be sent (order satisfied or canceled).</li>
+</ul>
+
+<p>In order to send mails, the ODDS module is provided with the getOutput function implemented in the JavaScript language and located in the central file /odds/js/lib.js To be able to send (using a call to Ajax built by the getOutput function) must be invoked using the following parameters) if not used send empty strings) :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>getOutput(email,email_proxy,date,name,status,uploadFiles,notes,title)
+</code></pre></div></div>
+
+<p>where :</p>
+<ul>
+  <li>Email: is the email of the recipient (can be sent to several separating the addresses of mails with a comma).</li>
+  <li>Email_proxy: if there is a proxy to which you want to send mail.</li>
+  <li>Date: date of application.</li>
+  <li>
+    <p>Name: name of the applicant.</p>
+  </li>
+  <li>
+    <p>Status: status of the request, used if the request corresponds to a satisfied request (2) or a cancellation (3).</p>
+  </li>
+  <li>UploadFiles: uploaded files separated by the pipe character.</li>
+  <li>Notes: additional notes.</li>
+  <li>Title: title of the work being served</li>
+  <li>Show_controls.php : Implements the load of the controls dynamically according to the option chosen in the “Bibliographic Level” combo. In other words, it dynamically determines what data will be requested at the time of making the bibliographic request according to the type of bibliography chosen. To load the controls, this file is invoked via Ajax, thus avoiding reloading the page.</li>
+</ul>
+
+<p>In the<code class="language-plaintext highlighter-rouge">base/odds/def/&lt;lang&gt;/odds_show_controls.tab</code> file, the blocks of controls to be set corresponding to the option chosen in the “Bibliographic Level” combo box are configured. That is, each block of controls maps with a combo option “Bibliographic Level”. For example, the control block started with “as” (“as” ignores serial analytics) is loaded when the “magazine article” entry is selected in the combo. This link between the value “as” and the entry of the “magazine article” combo is done in the file levelbiblio.tab (under bases <code class="language-plaintext highlighter-rouge">/odds/def/&lt;lang&gt;/</code>).</p>
+
+<p>In show_controls.php, each line in each of the blocks specifies which field to display and with what character- istics :</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;tagXXX&gt; | &lt;label_to_show&gt; | &lt;input_type&gt; | &lt;length&gt; | &lt;validate_method_1 validate_method_2&gt;
+</code></pre></div></div>
+
+<p>where :</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">&lt;tagXXX&gt;</code>: XXX is the field number defined in the FDT file</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;label_to_show&gt;</code>: Text to be displayed accompanying the input for data entry</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;input_type&gt;</code>: type of input for data input, for now we only have two possible values: text or textarea</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;length&gt;</code>: length of the input (only applies to input of type text)</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;validate_methods&gt;</code> Methods that apply to validate the data field. The methods must be defined in <code class="language-plaintext highlighter-rouge">htdocs/central/odds/js/JV.js</code></li>
+</ul>
+
+<p>The directory odds/js/ contains the following files as javaScript functions :</p>
+
+<ul>
+  <li>jquey.min.js General javaScript ibrary jquery</li>
+  <li>JV.js Validations and messages for all elements of the forms</li>
+</ul>
+
+<p>This file provides a list of validation methods provided by ODDS. All validations can be used by simply in- cluding the name of the validation function in bases / odds / def / <lang> /odds_show_controls.tab. In case you want to add or modify validations, as well as the messages they deployed, you must modify this file.</lang></p>
+
+<ul>
+  <li>
+    <p>Lib.js Auxiliary functions for sending emails and calling Ajax to sendMail.php</p>
+  </li>
+  <li>
+    <p>odds.js Validations and call to show_controls.php The directory htdocs/central/iah</p>
+  </li>
+</ul>
+
+<p>The files listed below should be overwritten should they already exist. These files implement the functionality to request identification from the user. Configure.php</p>
+
+<ul>
+  <li>View_document.php</li>
+  <li>View_document_ex.php</li>
+  <li>View_document_ex-ODDS.php</li>
+  <li>View_document_ex-WEBEX.php</li>
+</ul>
+
+<p>Clarification The parameterization of this functionality has not yet been completed; Therefore, some code fragments must be modified to be able to use it. See below.</p>
+
+<p>Text and configuratoin of ODDS summarized :</p>
+
+<p>Table 2.3. 
+|FUNCTION|RELATED FILES|
+|-|-|
+|Text and subject of the e-mails that are sent for the no- tification of orders ODDS (accessible from the ABCD)|In bases/odds/def/<code class="language-plaintext highlighter-rouge">&lt;lang&gt;</code>/ : odds_success_mail_sin- gle_file.tab odds_success_mail_multiple_file.tab odd- s_cancel_mail.tab|
+|Miscellaneous texts: Below the title, on the top bar Noti- fication text of success or failure of the order (after com- pleting the form), section REQUEST_MESSAGES La- bels of the fixed controls, that is, they do not vary ac- cording to the “Bibliographic Level” chosen (for exam- ple, ID, name, email, etc.)|bases/lang/<code class="language-plaintext highlighter-rouge">&lt;lang&gt;</code>/odds.tab|
+|Configuration of optional controls (those made visible according to the option chosen in the combo “Level Bib- liographic”)|bases/odds/def/<code class="language-plaintext highlighter-rouge">&lt;lang&gt;</code>/odds_show_controls.tab|
+|Text of the help box, on the right, in the main form|bases/lang/<code class="language-plaintext highlighter-rouge">&lt;lang&gt;</code>/odds_help_info.tab|
+|ABCD Text for ODDS Notification E-mail Buttons (Or- der Completed and Order Canceled)|bases/odds/pfts/<code class="language-plaintext highlighter-rouge">&lt;lang&gt;</code>/odds.pft|
+|Options in combos (whether or not visible) “source” “Bibliographic level” “category”|bases/odds/def/<code class="language-plaintext highlighter-rouge">&lt;lang&gt;</code>/source.tab bases/odds/def/<code class="language-plaintext highlighter-rouge">&lt;lang&gt;</code>/nivelbiblio.tab bases/odds/def/<code class="language-plaintext highlighter-rouge">&lt;lang&gt;</code>/categoria.tab|</p>
+
+<h2 id="the-workflow-of-odds">The workflow of ODDS</h2>
+
+<p>The workflow or ‘how to use’ of ODDS in ABCD pertains to 2 parts : the request by the end-user and the processing by the ‘information broker’ or librarian. The idea is that an end-user creates a request to get an electronic document which is not already available and which cannot easily be retrieved directly, e.g. because of licensing issues. A librarian would offer the service of locating the document, creating a local copy of it (given that the library is authorized to access the document) and alert the end-user by e-mail about the temporary availability of the document.</p>
+
+<h3 id="the-request-created-from-abcd-site-or-iah">The request created from ABCD Site (or iAH)</h3>
+
+<p>The process starts when an end-user creates the request through a form, to which a link exists in ABCD, mostly from the ABCD Site (as that is exactly the idea of the Site). The ABCD 2.0 demo site already has such a link in the 3rd column. A component of type ‘XHTML’ was created there, and in the component (as can be verified using the ABCD Site Admin or CMS) the following code was entered, in this case referring to the PHP-script for the form on a ‘localhost’ server, obviously needing adjustments for other server-URL’s :</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;p&gt;Online Documents Delivery System 
+&lt;a target="blank" href="http://localhost:9090/central/odds/form_odds.php"&gt;Odds
+&lt;/a&gt;
+&lt;/p&gt;
+</code></pre></div></div>
+
+<p>This is nothing else but a simple HTML link to the ABCD Central script : http://localhost:9090/central/odds/ form_odds.php</p>
+
+<p>and showing up in the ABCD Site as follows (example taken from the default demo ABCD Site) :
+<img src="https://lh4.googleusercontent.com/gtyRIocAppdIyIaXuovTYterlO08TnPy2b2LuaX_v53W1WYWyJn2rMXHm4mXnN-yrfr5BxI7YQWrxSOP473GJFBhFtePHEczYNHZFRhT0uG7dkVQDz0zom0L-L7W6BQaSPIjS3-r=s0" alt="" /></p>
+
+<p>Creating the same link in the iAH OPAC is also possible, but requires quite some more skills in locating the right spot for such link. Most links (e.g. the ‘shortcut’-links) in iAH are repeated for every single record of a result-set, which does not make sense here for a document request.</p>
+
+<blockquote>
+  <p>Note:
+The ODDS module is not a ‘document request’ feature for e.g.
+creating photocopies and having it physi- cally sent to the requester.
+Such feature are however also quite possible in ABCD iAH by e.g.
+creating an ISIS PFT as a ‘shortcut’ which sends a request to the
+library’s e-mail address requesting such copy. The initial developer
+of iAH (BIREME/PAHO) uses/used this service a lot as it was/is their
+main service.</p>
+</blockquote>
+
+<p>When clicking on the link given, a page will open in the browser with the request-form, which looks, with some demo-data already filled in, as follows :<img src="https://lh5.googleusercontent.com/3szfpD-HjZOJEGNc9B9d2fOLwyWvxfoRlPfYwuSg02zMDf38IJz1grNNu3eW4e26g4erISTdgjztWGjzx2Z_I848d40gj2IQhyHbjCT5_Uzcgrfuh0MrODCJiIyNeHn8y4Y_9jM7=s0" alt="" /></p>
+
+<p>One important observation here is that by selecting different ‘type of documents’ (here a ‘journal article’ is selected), the form will display and gather different fields to identify the bibliographic data of the document.</p>
+
+<p>The picklists for this form are resp. ‘categoria.tab’ (for request categories, e.g. by library branch), ‘nivelbib- lio.tab’ (for the bibliographic level of the requested document, changing the fields involved in the form), ‘source.tab’ (where did the user learn about the document), ‘status.tab’ (status of the request process), ‘tipoliteratu- ra.tab’ (type of literature, e.g. book, article…) and finally ‘topicarea.tab’ (topics). All of these can be edited directly (n the directory bases/odds/def/lang/) or from the worksheet-editor as ‘picklists’ for the ODDS-database.</p>
+
+<p>The requester, after filling in the mandatory and as many as possible the available fields, clicks on ‘Send’ and will then receive a confirmation :</p>
+
+<p><img src="https://lh4.googleusercontent.com/Jaqrjl7kiDwUWHtgw3STUYsTcosEIOkQZNcb4n691kCMtyNpbAL7N37ID5V0ZyXdt7AqBPaR_6qzECA4le3Yxhmi3Yb06N-rMrhGuKtkwpQg6_G9pl4Y4QaDr8cXiNCOq0AeyXAM=s0" alt="" />
+This ends the first phase, the ‘end-user’ request. The user now has to wait for an e-mail to be sent by the ODDS- responsible librarian about the availability of the document.</p>
+
+<h3 id="the-odds-processing-by-the-library">The ODDS processing by the library</h3>
+<p>The requests created by end-users are actually sent, by ‘sending’ the form, as records stored into the dedicated ‘odds’ database of ABCD. This means that the responsible officer or librarian needs to have administration access to this database in her/his profile. The database also needs to be included in the list of available databases (bases.dat in the bases-directory).</p>
+
+<p>So in reality the ODDS-officer will check - on a regular basis, e.g. daily - whether any new incoming requests have been stored in her/his database. By opening that database and navigating to the end, the last submitted request e.g. can be opened and will be displayed with the default ‘odds.pft’ (which can be adapted if so desired), e.g. :<img src="https://lh6.googleusercontent.com/bmvTjxxtffwY6rWRew6s1qY5zQjogwE85pCg3R7m-ru3mZ1M6-b_FLW9lsOhmHePE-TDaJovcdhbcGmyXU266Pekpf7HB9NDjWNcfthTRyZWV8U-ol-Hr2mBf11-GWDLwEi7bfhp=s0" alt="" /></p>
+
+<p>which then can be opened for editing, with an ‘editor’-form, just as any other database record can be edited in ABCD Central :</p>
+
+<p><img src="https://lh3.googleusercontent.com/lztzuIaI90g9qaXgcljedIdNvPczZjP8zJXnV2FEg3BWGooJdvDOHyZhTj8eXUamUGvarY_mHQJCsNhzstd1x3Q5yP4TZKflgghYhZO2oBEg632U_c0ddUBgtBvcU4kDhSI_iao4=s0" alt="" /></p>
+
+<p>The data in the record will hopefully allow the officer to indeed locate the document and download a copy on the local server. This is the main job of course and the responsibility of the ODDS-officer, who has - in principle - more or better tools available than the end-user to perform this service.</p>
+
+<p>When done, the officer would then change the ‘request status’ from ‘processing’ to ‘served’ (or ‘ready’, the pick-list values of this field can be locally adjusted as with any other database-field in ABCD). When the ‘request status’ field is changed to the value ‘2’, the PFT presenting the record will now show at the bottom an extra button, which actually will trigger an e-mail sent out to the requester (whose e-mail needs to be known from the user-database !).</p>
+
+<p><img src="https://lh3.googleusercontent.com/1hF1BRUWdyLCcbx1s5eMd6rxMSDGqsKAAjvVlp8ZQkJrnD2OFvGHIb1y5flaITmddBV4oLz9QBYCUoKV_30KjJGLhsfiZUBt3vum1YaGT5sCdX3grtj16pH-gIkj5KXX_mM92sVz=s0" alt="" /></p>
+
+<p>The ‘notification of successful request’ will actually, when clicked on, pass on the field-values to the JavaScript performing the e-mail client command as defined in the PFT,</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;a href="#" onclick="return getOutput('`,v528,`','`,v828,`','`,v100,`','`,v510,`','`, v94,`','`,v1938,`',
+</code></pre></div></div>
+
+<p>The javaScript ‘getOutput’ with its proper sequence of variables is included in the script ‘sendMail.php’ described above in the configuration section of this chapter. It is the responsibility of the system-manager to make sure the e-mail send-function is well tested and working. The sendMail script checks the configuration scripts either for Linux (senderMailLinux.php) and uses that configuration to send out the e-mail, or in case of using Windows, the executable ‘blat.exe’ (which is included in ODDS) will be executed by Windows with some e-mail fields pre- defined in the script itself, e.g. ‘sender’ (the name of the library), ‘from’, with possibly an embedded logo</p>
+
+<p>The exact wording of the e-mail letter sent out is defined in either the file ‘odds/def/$lang/odds_success_mail_sin- gle_file.tab’ or ‘odds/def/$lang/odds_success_mail_multiple_file.tab’ ($lang being the code of the language used) depending on whether just one or more documents were requested and uploaded. The format is given as follows :</p>
+
+<p>subject = Reference service - Reply to your request.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv=Content-Type content=text/html; charset=iso-8859-1&gt; 
+&lt;/head&gt;
+
+&lt;BODY&gt;
+
+&lt;p&gt;Dear &lt;b&gt;|name|&lt;/b&gt;.
+
+&lt;br/&gt;Your request dated |date| for the document |request_data| is available for |number_of_days| days at the following URL: |url|&lt;/p&gt;&lt;br&gt;
+
+&lt;p&gt;Sincerely,
+&lt;br&gt; Library Administration&lt;br&gt;
+&lt;font color=red&gt;Dept.&lt;/font&gt;&lt;br&gt;&lt;font color=#555555&gt;ADDRESS:&lt;br&gt;Tel.: Fax: &lt;br&gt;Address/Country&lt;/font&gt;&lt;br
+&lt;font color=green&gt;www: [http://abcd.netcat.be](http://abcd.netcat.be/) &lt;/font&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;/BODY&gt;
+&lt;/html&gt;
+</code></pre></div></div>
+<p>As can be noted, the file uses ‘variables’ like |name| and |url| which will be substituted for the real values by the software.</p>
+
+<p>If the e-mail wording needs adjustment, it can be easily done here by editing the text-file itself.</p>
+
+<p>When a request is cancelled, the file ‘odds_cancel_mail.tab’ in the same ‘def’-directory of the odds-database is used to define the contents.</p>
+
+<script
+  src="/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function() {
+
+    var toc = $('#TOC');
+
+    // Select each header
+    sections = $('.td-content h1');
+        $.each(sections, function(idx, v) {
+            section = $(v);
+            var div_id = $(section).attr('id');
+            var div_text = section.text().split('¶')[0];
+            var parent = $("#" + div_id)
+            var content = '<li id="link_' + div_id + '" class="md-nav__item"><small><a class="md-nav__link" href="#' + div_id + '" title="' + div_text +'">' + div_text +'</small></a></li>';
+            $(toc).append(content);
+
+            // Add section code to subnavigation
+            var children = $('<nav class="md-nav"><ul class="md-nav__list"></nav></ul>')
+            var contenders = $("#" + div_id).nextUntil("h1");
+            $.each(contenders, function(idx, contender){
+               if($(contender).is('h2') || $(contender).is('h3')) {
+                   var contender_id = $(contender).attr('id');
+                   var contender_text = $(contender).text().split('¶')[0];
+                   var content = '<li class="md-nav__item"><a class="md-nav__link " href="#' + contender_id + '" title="' + contender_text +'"><small>' + contender_text +'</small></a></li>';
+                   children.append(content);
+                }
+             })
+             $("#link_" + div_id).append(children);
+        });
+    });
+</script>
+
+<script>
+var headers = ["h1", "h2", "h3", "h4"]
+var colors = ["red", "orange", "green", "blue"]
+
+$.each(headers, function(i, header){
+    var color = colors[i];
+    $(header).each(function () {
+        var href=$(this).attr("id");
+        $(this).append('<a class="headerlink" style="color:' + color + '" href="#' + href + '" title="Permanent link">¶</a>')
+    });
+})
+</script>
+
+
+
+	
+              
+              <style>
+  .feedback--answer {
+    display: inline-block;
+  }
+  .feedback--answer-no {
+    margin-left: 1em;
+  }
+  .feedback--response {
+    display: none;
+    margin-top: 1em;
+  }
+  .feedback--response__visible {
+    display: block;
+  }
+</style>
+<div class="d-print-none">
+<h2 class="feedback--title">Dê sua opinião</h5>
+<p class="feedback--question">Esta página foi útil?</p>
+<button class="btn btn-primary mb-4 feedback--answer feedback--answer-yes">Sim</button>
+<button class="btn btn-primary mb-4 feedback--answer feedback--answer-no">Não</button>
+<p class="feedback--response feedback--response-yes">
+  Fico feliz em ouvir isso! Por favor, <a href='{{ site.repo }}/issues/new'>nos diga como podemos melhorar</a>.
+</p>
+<p class="feedback--response feedback--response-no">
+  Sinto muito em ouvir isso. Por favor, <a href='{{ site.repo  }}/issues/new'>diga-nos como podemos melhorar</a>.
+</p>
+</div>
+<script>
+  const yesButton = document.querySelector('.feedback--answer-yes');
+  const noButton = document.querySelector('.feedback--answer-no');
+  const yesResponse = document.querySelector('.feedback--response-yes');
+  const noResponse = document.querySelector('.feedback--response-no');
+  const disableButtons = () => {
+    yesButton.disabled = true;
+    noButton.disabled = true;
+  };
+  const sendFeedback = (value) => {
+    if (typeof ga !== 'function') return;
+    const args = {
+      command: 'send',
+      hitType: 'event',
+      category: 'Helpful',
+      action: 'click',
+      label: window.location.pathname,
+      value: value
+    };
+    ga(args.command, args.hitType, args.category, args.action, args.label, args.value);
+  };
+  yesButton.addEventListener('click', () => {
+    yesResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(1);
+  });
+  noButton.addEventListener('click', () => {
+    noResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(0);
+  });
+</script><br/>
+
+
+
+
+           </div>
+
+          </main> <!--col-12 col-md-9 col-xl-8 pl-md-5-->
+        </div> <!--./row flex-xl-nowrap-->
+      </div> <!--./td-main-->
+      
+      <footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        <ul class="list-inline mb-0">  
+          
+          
+        </ul>
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        <ul class="list-inline mb-0">  
+          <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="GitHub" data-original-title="GitHub">
+            <a class="text-white" target="_blank" href="https://github.com/ABCD-Community/ABCD-Community.github.io">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">© 2021 Comunidade ABCD All Rights Reserved</small>
+        
+        <p class="mt-2">
+
+            
+                <a href="/pt//" >Início</a> <span class="text-primary"> </span>
+          
+                <a href="/pt/docs" >Documentação</a> <span class="text-primary"> </span>
+          
+                <a href="/pt/collab" >Colaboração</a> <span class="text-primary"> </span>
+          
+                <a href="/pt/about" >Sobre</a> <span class="text-primary"> </span>
+          
+
+        </p>	
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div> <!--./container-fluid td-outer--> 
+    <script src="/assets/js/popper.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/main.js"></script>
+
+
+<script src="/assets/js/tabpane-persist.js"></script>
+
+  </body>
+</html>

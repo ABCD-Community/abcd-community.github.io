@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en"  class="no-js">
+  <!-- Copyright 2019-2021 Vanessa Sochat-->
+  <head>
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Jekyll" />
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+<link rel="alternate" type="application/rss&#43;xml" href="/docs/index.xml">
+
+<link rel="shortcut icon" href="/assets/favicons/favicon.ico" >
+<link rel="icon" type="image/png" href="/assets/favicons/favicon.png" sizes="16x16">
+
+ 
+ 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M0LM60C9WY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M0LM60C9WY');
+</script>
+
+ 
+
+<title>ABCD Community</title>
+<meta property="og:title" content="ABCD Community" />
+<meta property="og:description" content="This document aims at providing all relevant background information and instructions on how to use the integrated library and documentation management system 'ABCD'. Both the basic operations and the advanced management of the software are discussed, as are useful and necessary topics concerning the ISIS-software on which ABCD is based. In this new edition the new features of version 2.0 are added - the use of different flavors of CISIS, of Unicode,and the digital library capabilities as well as some additional modules (ODDS, LDAP, DSpaceBridge) and utilities (UTF8-conversion, loanobjects creation...) ." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://localhost:9898" />
+<meta property="og:site_name" content="http://localhost:9898" />
+
+<meta itemprop="name" content="ABCD Community">
+<meta itemprop="description" content="">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ABCD Community"/>
+<meta name="twitter:description" content="This document aims at providing all relevant background information and instructions on how to use the integrated library and documentation management system 'ABCD'. Both the basic operations and the advanced management of the software are discussed, as are useful and necessary topics concerning the ISIS-software on which ABCD is based. In this new edition the new features of version 2.0 are added - the use of different flavors of CISIS, of Unicode,and the digital library capabilities as well as some additional modules (ODDS, LDAP, DSpaceBridge) and utilities (UTF8-conversion, loanobjects creation...) ."/>
+
+<link rel="stylesheet" href="/assets/css/main.min.css">
+<link rel="stylesheet" href="/assets/css/palette.css">
+<script
+  src="/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+
+
+  
+  
+    
+  <link rel="alternate" hreflang="en" href="/en/abcd-installation/" />
+    
+  <link rel="alternate" hreflang="pt" href="/pt/abcd-installation/" />
+    
+  
+
+  
+</head>
+
+  
+
+
+  <body class="td-section">
+    
+<header>
+    <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="/en">
+            <span class="navbar-logo"></span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 167.73 167.77"><defs><style>.cls-1{fill:#ffffff;}</style></defs><g id="Camada_2" data-name="Camada 2"><g id="Camada_1-2" data-name="Camada 1"><path class="cls-1" d="M66.62,83.14c-41-2.06-66.62,18-66.62,18V18.42S20.94-.08,66.62,0Z"/><path class="cls-1" d="M84.59,66.62c2.06-41-18-66.62-18-66.62h82.73s18.5,20.94,18.42,66.62Z"/><path class="cls-1" d="M101.11,84.63c41,2.06,66.62-18,66.62-18v82.74s-20.94,18.49-66.62,18.41Z"/><path class="cls-1" d="M83.14,101.15c-2.06,41,18,66.62,18,66.62H18.42S-.08,146.83,0,101.15Z"/></g></g></svg><span class="text-uppercase font-weight-bold">ABCD Community</span>
+        </a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+            
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/en//" ><span>Home</span></a>
+			</li>
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/en/docs" ><span>Documentation</span></a>
+			</li>
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/en/collab" ><span>Collaboration</span></a>
+			</li>
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/en/about" ><span>About</span></a>
+			</li>
+
+
+  <li class="nav-item dropdown mr-4 d-none d-lg-block">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">English</a>
+    <div class="dropdown-menu">
+        
+            
+            
+            
+                
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-installation/">English</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-installation/">Português</a>
+
+
+            
+            
+        
+   </div>
+  </li>
+
+		</ul>
+	</div>
+	
+    <div class="navbar-nav d-none d-lg-block">
+        <input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off"> 
+    </div>
+   
+	<div class="navbar-nav d-none d-lg-block">
+          <a class="gh-source" data-gh-source="github" href="https://github.com/ABCD-Community/ABCD-Community.github.io" title="Go to repository" data-md-state="done">
+            <i class="fab fa fa-github fa-2x" style='color: #fff;padding-right:20px; float:left; margin-top:5px'></i></a>
+        </div>
+      </div>
+
+
+</nav>
+</header>
+
+
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+          <div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    <input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="on">
+      <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+      </button>
+  </form>  
+
+  <nav class="collapse td-sidebar-nav" id="td-section-nav">
+    <div class="nav-item dropdown d-block d-lg-none pl-4">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">English</a>
+
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+        
+            
+            
+            
+                
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-installation/">English</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-installation/">Português</a>
+
+
+            
+            
+        
+      </div>
+    </div>
+
+
+    
+      <ul class="td-sidebar-nav__section pr-md-3"> 
+
+        
+        
+
+        <li class="td-sidebar-nav__section-title">
+          <a  href="" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section"></a>
+        </li>
+        
+      </ul>
+    
+      <ul class="td-sidebar-nav__section pr-md-3"> 
+
+        
+        
+
+        <li class="td-sidebar-nav__section-title">
+          <a  href="/en/docs" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Home</a>
+        </li>
+        
+          <ul>
+            <li class="collapse show" id="home">
+              <ul class="td-sidebar-nav__section pr-md-3">
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-introduction
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Introduction
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-technology
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD Technology
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-installation
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Installation
+                    </a>
+                  </li>
+                  
+                    <ul>
+                      <li class="collapse show" id="">
+                        
+                      </li>
+                    </ul>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-modules
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Modules
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-utilities
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Utilities
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-thesaurus
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Thesaurus
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-odds
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">The Online Document Delivery Service (ODDS)
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-digital-library
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Digital library features in ABCD
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-oai
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">The OAI interface
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-opac
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD OPAC
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/opac-iah
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">iAH OPAC
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-site
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD Site
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/secs-web
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Serials Control
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-unicode
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD Unicode
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-localisation
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD Localisation
+                    </a>
+                  </li>
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        
+      </ul>
+    
+  </nav>
+</div>
+
+          </aside> <!--col-12 col-md-3 col-xl-2 td-sidebar d-print-none-->
+          
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+                  <a href="https://github.com/ABCD-Community/ABCD-Community.github.io/edit/main/en/abcd-installation/index.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+
+<a href="https://github.com/ABCD-Community/ABCD-Community.github.io/issues/new?labels=question&title=Question:&body=Question on: https://github.com/ABCD-Community/ABCD-Community.github.io/tree/master/en/abcd-installation/index.md" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+
+<a href="https://github.com/ABCD-Community/ABCD-Community.github.io/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
+<!-- this will parse through the header fields and add a button to open
+     an issue / ask a question on Github. The editable field should be in
+     the post frontend matter, and refer to the label to open the issue for -->
+
+            </div>
+            <div class="td-toc">
+              <nav id="TableOfContents">
+                <ul id="TOC">
+                   <!-- Links will be appended here-->
+                </ul>
+              </nav>
+            </div>
+ 
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">     
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+              <ol class="breadcrumb spb-1">
+              
+              
+                <li class="breadcrumb-item">
+                  <a href="http://localhost:9898/en/">En</a>
+                </li>
+                
+                <li class="breadcrumb-item active" aria-current="page">
+	          <a href="http://localhost:9898/en/abcd-installation/">ABCD installation</a>
+                </li>
+                
+	      </ol>
+           </nav>
+
+           <div class="td-content">
+
+	      <h1 id="abcd-installation">ABCD installation</h1>
+
+<h2 class="no_toc no_toc text-delta" id="content">Content</h2>
+
+<ol id="markdown-toc">
+  <li><a href="#abcd-installation" id="markdown-toc-abcd-installation">ABCD installation</a>    <ol>
+      <li><a href="#available-installation-versions" id="markdown-toc-available-installation-versions">Available installation versions</a></li>
+      <li><a href="#installation-issues" id="markdown-toc-installation-issues">Installation issues</a>        <ol>
+          <li><a href="#php-settings-and-phpini" id="markdown-toc-php-settings-and-phpini">PHP settings and php.ini</a></li>
+        </ol>
+      </li>
+      <li><a href="#directory-structure-and-access-rights" id="markdown-toc-directory-structure-and-access-rights">Directory structure and access rights</a>        <ol>
+          <li><a href="#apache-abcd-1x-only" id="markdown-toc-apache-abcd-1x-only">apache [ABCD 1.x only]</a></li>
+          <li><a href="#php-abcd-1x-only" id="markdown-toc-php-abcd-1x-only">php [ABCD 1.x only]</a></li>
+          <li><a href="#www" id="markdown-toc-www">www</a></li>
+          <li><a href="#cgi-bin" id="markdown-toc-cgi-bin">cgi-bin</a></li>
+          <li><a href="#htdocs" id="markdown-toc-htdocs">htdocs</a></li>
+          <li><a href="#empweb-only-if-installation-of-empweb-was-added-" id="markdown-toc-empweb-only-if-installation-of-empweb-was-added-">EmpWeb (only if installation of EmpWeb was added !)</a></li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+<hr />
+
+<h2 id="available-installation-versions">Available installation versions</h2>
+
+<p>ABCD version 1.0 came originally in three main versions :</p>
+
+<ol>
+  <li>
+    <p>non-assisted installation package for Windows : this is a ZIP-file containing all necessary files, which simply need to be unzipped into the root of (one of your) harddisk(s), e.g. C:. Since it encompasses both Apache and PHP, after simply unzipping it should normally work ! Here Apache comes with its own configuration file (httpd.conf) where port 9090 is activated to allow running next to possible other running Apache installations. Only for some specific uses, e.g. the use of Z39.50 which needs additional PHP-modules (YAZ), it will be necessary to do some editing (of e.g. php.ini).
+ ABCD installations which will use the Advanced Loans module (EmpWeb) need to additionally unpack the most recent EmpWeb.  zip package, where an extra main subfolder in \ABCD will be created and some additional files will be added to the ABCD Central directory.</p>
+  </li>
+  <li>
+    <p>assisted installation for Windows : this is a self-installing executable, which will first check whether Apache and PHP are already installed on the system. If so these installations will be skipped, if not they will be added to the basic ABCD installation. This requires mainly following the dialogs and instructions of the installer itself. At the end a similar directory-folder as with the package under 1. will be the result.</p>
+  </li>
+  <li>
+    <p>non-assisted installation package for Linux : this is a .tar.gz archive for Linux systems which should be un- packed into the Linux file-system, depending on its organisation (definition on where such applications can be put). If the correct access-rights are granted (with the appropriate Linux-commands such as chown and chmod) ABCD can be installed, like in Windows, under the file-system root ‘/’. In Linux systems the assumption is that Apache and PHP are installed separately (e.g. with the dedicated tool like apt-get or Synaptic), so the package only contains the proper ABCD files in the ‘www’-directory.</p>
+  </li>
+</ol>
+
+<p>The new version 2.0 distribution is simplified : no longer ABCD comes with its own conifguration of Apache with PHP for Windows, since nowadays very good installation packages for these environments exist (WAMP, XAMP) but also these packages arein a better position to keep the different versions of Apache (ASF, Bauhaus ??) in thread-safe or not compiled with one of the many MS Visual C versions (9, 10. 14) streamlined with the correct
+versions of PHP, again 32- or 64-bit versions etc.</p>
+
+<p>So the installation for Windows is now very similar to the one for Linux : Apache and PHP are supposed to have been pre-installed and -configured. ABCD only needs a ‘virtual host’ configuration file to be added into the Apache-server in order to run from that pre-installed version. In e.g. WAMP the file - coming with the installation</p>
+
+<ul>
+  <li>httpd-hosts-abcd.conf simply needs to be added into the ‘alias’-directory and Apache restarted.</li>
+</ul>
+
+<h2 id="installation-issues">Installation issues</h2>
+
+<p>This section deals with the installation issues for ABCD. Since ABCD has several totally different components, installation by definition encompasses quite some potential pitfalls. Three main reasons can be given for the in- stallation to be complex :</p>
+
+<ol>
+  <li>ABCD is a combination of several software technologies : ISIS-databases, ISIS-scripts and ISIS-formats, a webserver, PHP-scripting, plus (in the case of the advanced Loans module) some JAVA and MySQL parts;</li>
+  <li>being web-based, which means a web-server has to be installed and special measures have to be taken about access rights and security : in principle the whole world - with access to the WWW - can interfere.</li>
+  <li>ABCD will be installed in quite different situations, varying from a simple stand-alone (even non-networked) PC upto servers in big networks with a webserver and often also PHP-scripting services already pre-installed.</li>
+</ol>
+
+<p>Previously the installation packages came in two types :</p>
+
+<ol>
+  <li>a full package, containing all ABCD-proper files plus the Apache webserver and PHP-scripting engine.
+In this situation an archive (.zip) needs to be unpacked into a root-folder of the file system (which can be any operating system in which Apache/PHP and ISIS can run). After unpacking there will be a dedicated folder for Apache, another one for PHP, a cgi-folder (to contain the web-accessible executables) and a ‘documents’ folder (in Apache called ‘ htdocs’) which acts as the homepage of the ABCD-application.
+    <ul>
+      <li>Apache comes with a pre-defined configuration file (httpd.conf in the conf subfolder of the Apache folder) which defines the following specific parameters :</li>
+    </ul>
+  </li>
+</ol>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Apache parameter</strong></th>
+      <th><strong>explanation</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ServerRoot “/ABCD/apache”</td>
+      <td>the directory from where Apache runs</td>
+    </tr>
+    <tr>
+      <td>Listen 9090</td>
+      <td>the port used by ABCD, the default http-port being 80, but in order to avoid interference with other ex- isting http-applications, if so desired, a different port can be used, e.g. 9090. In case of using a different port-number, some adjustments will have to be made in the ABCD_start.bat script and in some OPAC- URL’s.</td>
+    </tr>
+    <tr>
+      <td>PHPIniDir “/ABCD/php”</td>
+      <td>The folder from where PHP is running</td>
+    </tr>
+    <tr>
+      <td>DocumentRoot “/ABCD/www/htdocs”</td>
+      <td>The root-folder for all the files which are part of the application itself, so the ‘ homepage’</td>
+    </tr>
+    <tr>
+      <td>ScriptAlias /cgi-bin/ “/ABCD/www/cgi-bin/”</td>
+      <td>The folder in which Apache will executables allow to run from instructions in the web-pages</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>Note: Make sure the ‘cgi’ module of PHP is installed into Apache,
+which is no longer the case (as before) in newer Apache installations.
+The command to install this module in Linux is :</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo a2enmod cgi
+</code></pre></div></div>
+<ul>
+  <li>PHP comes with a predefined configuration in php.ini.</li>
+</ul>
+
+<h4 id="php-settings-and-phpini">PHP settings and php.ini</h4>
+
+<p>Since ABCD uses PHP throughout with some additional PHP modules (YAZ, XSLTProcessor…) Pears should be installed within the PHP-installation and some extra modules need to be copied into the PHP ‘ex- tensions’ folder : php_yaz.dll, yaz.dll, yaz3.dll (these two serve the Z39.50 function of ABCD cataloging), iconv.dll, libxm2l.dll, libxslt.dll (for the XSLT Processor). The PHP-extensions folder needs to be present in the system’s path environment variable (in Windows e.g. : go to ‘My Computer (right-click) <code class="language-plaintext highlighter-rouge">| Properties | Advanced | Environment Variables | System</code> variables and edit the Path variable by adding, if not present : ‘;C:\ABCD\php\ext’). Also make sure your php.ini (in \ABCD\php) has the extensions mentioned here com- mented out (i.e. remove the leading ‘;’ to activate the extension).</p>
+
+<ul>
+  <li>extension=iconv.dll</li>
+  <li>extension=iconv.dll</li>
+  <li>extension=libxml2.dll</li>
+  <li>extension=libxslt.dll</li>
+  <li>extension=yaz3.dll</li>
+  <li>extension=php_yaz.dll</li>
+</ul>
+
+<p>Be careful with possible other php.ini files existing, e.g. in \Windows or \PHP as these might disturb your ABCD-PHP. A PHP-test option is available with ABCD at the URL : http://localthos:9090/info.php. We are specifically interested in the following section below, where XSL and YAZ should be mentioned as running</p>
+
+<ul>
+  <li>if not check your path-environment variable and all paths again, as well as the ‘extensions’ section of your php.ini !</li>
+</ul>
+
+<p><img src="https://lh3.googleusercontent.com/pbkmTbhGVKMZUoDhfCpUtppoiU7g62SzdWYvph68NZ6bmxAk7jxFzqSCuuJOM1uw4zLhJclusfPHuLy2TkeeukzIDPnMZVm8PCXcMnCrS-v9HUwgEEO3hYrHLEF4_4EhhWFOfTgl=s0" alt="" /></p>
+
+<p>The php.ini file contains a few more settings which need to be checked for ABCD to run correctly :</p>
+<ul>
+  <li>register_globals = On (default = Off)</li>
+  <li>extension_dir = “/ABCD/php/ext” (or adjust to the real path to your ABCD installation)</li>
+  <li>default_charset = “iso-8859-1” (default = not active) or “utf8” if Unicode is to be used</li>
+  <li>extension_dir = “/ABCD/php/ext” =&gt; defines the extensions directory</li>
+  <li>extension=yaz3.dll and extension=php_yaz.dll are listed in the =&gt; are added in the ‘Dy- namic Extensions’ section in order to allow the YAZ-module for Z39,50 to work</li>
+</ul>
+
+<p>Note
+As from ABCD 2.0 it is no longer required to keep the setting for ‘short_open_tag’ to ‘On’ (which is contra-indicated anyway). All ‘short open tags’ <code class="language-plaintext highlighter-rouge">&lt;?</code> have been changed to <code class="language-plaintext highlighter-rouge">&lt;?php</code> .</p>
+
+<ol>
+  <li>an ABCD-only package, requiring Apache (or another web-server) and PHP already being installed.</li>
+</ol>
+
+<p>In this case the assumption is that at least some expertise is available to understand the existing web-server installation and PHP configuration. Using ‘ aliases’ for the ABCD-installation and cgi-folder, which can be put in a virtual host configuration file, ABCD can be installed anywhere inside or outside the existing home-folder for the web-server. So only the cgi-folder and htdocs-folder is included into this package. System managers should refer to the Apache and PHP manuals in case they are not sure about how to proceed with this type of installation.</p>
+
+<p>Alternatively one could also use prepackaged installations like EasyPHP or WAMP (for Windows) / XAMP (for UNIX/Linux). Again in this case Apache and PHP (and MySQL) will be automatically installed and the ABCD cgi-bin and htdocs folders have to be moved into the existing folder-structures (of Apache) and php.ini has to be edited.</p>
+
+<p>As from ABCD 2.0 only the second type of distributions will be available, leaving the installation of Apache and PHP to other, more specialised packages such as WAMP or XAMP. Only a specific ‘virtual host’ configuration file for ABCD needs to be added to the Apache configuration (e.g. in WAMP : by putting it into the ‘alias’ directory) and some PHP settings need to be checked in php.ini to activate additional extensions e.g. for gd2, libxml, xsl, and if the related functions are used : ldap, yaz, mysqli (for Empweb) and mbstring (for Unicode).</p>
+
+<p>A dedicated installation tool will be created as part of the ABCD-software, but in essence still doing the same as described above, only after collecting some parameters for installation (like which disk to use, which port etc.).</p>
+
+<h2 id="directory-structure-and-access-rights">Directory structure and access rights</h2>
+
+<p>After installation of ABCD the following folder structure will be created (in this case EmpWeb is included) :<img src="https://lh4.googleusercontent.com/qLB6IsXz6bzbMin7kOq6XtfMJUFdkHZUzMBv0eAOZHTTtrrgJZ1H0ziZM7xsbJnwdVeNzQ6gVg17NG-rhtiHqK3fiaWqYI-mpnzbDKzIzIXgbYXp_QAA5XRF1G00OmffiXQ9p5GP=s0" alt="" /></p>
+
+<p>As can be seen, 3 (or 4 if EmpWeb is included) sub-folders have been created in the main folder /ABCD. In the case of installation of the optional Advanced Loans folder one more folder containing basic technology for ABCD will be added : the Java Development Kit (JDK). The standard folders are resp. :</p>
+
+<h4 id="apache-abcd-1x-only">apache [ABCD 1.x only]</h4>
+
+<p>The Apache folder contains the Apache web-server software, which is in fact only of several important soft- wares developed by the Apache Software Foundation. By default Apache webserver is installed in another base- folder (e.g. in Windows : C:\Program Files\Apache Software Foundation\Apache2.2) and network-managers will probably have installed Apache on their server(s) according to their own preferences, but when installed from the ‘full ABCD-package’ Apache will run - with its configuration file httpd.conf adjusted for this situation from \ABCD\Apache.</p>
+
+<h4 id="php-abcd-1x-only">php [ABCD 1.x only]</h4>
+
+<p>The PHP folder contains the PHP scripting software. Again, as with Apache, in many instances this software will be installed in its own right, e.g. in C:\PHP, or often also as part of a combined package containing Apache, MySQL and PHP, e.g. with EasyPHP or WAMP-server. When installed as part of ABCD however PHP will run from here with the necessary adjustments done in the main PHP-configuration file php.ini.</p>
+
+<h4 id="www">www</h4>
+<p>The www folder contains the whole ABCD system, which is subdivided in 4 folders :</p>
+
+<p><img src="https://lh5.googleusercontent.com/L8VMgbN73AAypaMHcVUEOHhI9UrXunKxtYtccKqiI-zlfep4M_mdguSBw7q0B8m3m94pCc5qhy5dZ41Ii-B4vEh9W9-btdHUw366bmpvEEc8FJeM5UzztH8Lso9mU7YeK9LGjVjx=s0" alt="" /></p>
+
+<ul>
+  <li>bases</li>
+</ul>
+
+<p>The bases folder contains the databases of your ABCD installation, which one dedicated subfolder (with many subfolders in its turn) for each database. When an additional database is copied or created using ABCD, the system will create such a dedicated extra subfolder here. A typical list of database-folders in the /bases folder looks as follows :</p>
+
+<p><img src="https://lh6.googleusercontent.com/LabEXUm9-Q2wVGwdg5rAzOSpf1CFC9hIZOBrv5_8SV174Q6yrlT1u5GC1LgsSoYQ-i50enpQwQZDgG6rJfy80AI8LAHji71wZSGkOzke4_V8wxTGPwbHC5-Z9Ou2TLbLOXvkzqr7=s0" alt="" /></p>
+
+<p>[!!] As can be seen, many databases exist (but not as many as there are tables in a relational setup, since ISIS does not practice ‘normalisation’ into related tables), some of them - e.g. marc, biblo, dblil - are models coming with the installation of ABCD, others - in this case e.g. ‘gemim’ - are created by ABCD in the author’s installation only, while finally others are serving specific modules of the library system, e.g. ‘providers’ and ‘purchaseorder’, are used for the acquisitions module, ‘suggestions’, ‘suspml’, trans and users are used for the Loans Module. ‘recommend’ and ‘reserva’ meanwhile are legacy folders to older ABCD-versions pre 1.0. So each ABCD-bases folder will be different according to the actual databases used.</p>
+
+<p>Some essential configuration files to be located in this folder are :</p>
+
+<ul>
+  <li>bases.dat : the list of databases available to this Central-installation (i.e. a database-name, a column-sep- arator <code class="language-plaintext highlighter-rouge">'|'</code> and a description</li>
+  <li>lang.tab : a list of languages used as key-value pairs for code-full language, e.g. en=english</li>
+  <li>abcd.def : the main system-wide configuration file, see the configuration section</li>
+  <li>loans.dat : if this file exists, ABCD Central will use the copies/loanobjects directly from the catalog-data- base, not from the dedicated copies/loanobjects databases;</li>
+  <li>
+    <p>acquisitions.dat : a file listing the catalog databases to be used for acquisition of copies, e.g.</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>marc</td>
+          <td>Marc</td>
+        </tr>
+        <tr>
+          <td>biblo</td>
+          <td>Cepal</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<p>Note that since more than one bases-directory can be defined (in db_path.dat), also different files abcd.def (with e.g. different LEGEND1 and LEGEND2 parameters to identify the base-directory on the screen in the footer) can be used.</p>
+
+<p>A special database is the database ‘acces’ which holds the users (with their login data) and their access-rights (authority level) to the databases.</p>
+
+<p>In the ‘www’-folder ABCD keeps some small special files, e.g. the ‘prolog’ and ‘epilog’ html-codes which will be invoked resp. before and after the main page contents of each ABCD-page produced by an ISIS-PFT. This is where system manager could - if so desired - add code (e.g. JavaScript) they want to be executed at each page.</p>
+
+<p>The ‘LANG’-folder is also quite special : it contains, for each language used, the tables with messages used for each of the Central modules. E.g. the ‘lang.tab’ file contains the information on the actually officially supported 4 languages : pt=Portuguese fr=French en=English es=Spanish. This list of languages for each language is based on the basic language-authority file lang.tab in the bases-folder itself (where it resides along with the authority list of databases available : bases.dat).</p>
+
+<blockquote>
+  <p>Note: 
+[!!] The ‘00’ lang subfolder contains the tables serving as
+‘master’ for the other languages. Whenever a message is not found by
+ABCD in the language selected, it will refer to these tables and use
+the messages contained there, to avoid missing messages in any
+language. This way one can also start translating into a new language
+without having to finish the full job before using ABCD, as the
+missing messages will be taken from the language ‘00’.</p>
+</blockquote>
+
+<p>Finally also the folder ‘par’ is, like ‘lang’, not a database folder but it holds the .par files for each database known to ABCD. A .par file actually is a small text-file (so it can be edited by any TXT-editor like Notepad) with on each line the full path reference to parts of the database concerned. E.g. a typical .par file for ABCD looks like this :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>marc.*=%path_database%marc/data/marc.* 
+prologoact.pft=%path_database%www/prologoact.pft 
+prologo.pft=%path_database%www/prologo.pft
+epilogoact.pft=%path_database%www/epilogoact.pft
+epilogo.pft=%path_database%www/epilogo.pft
+autoridades.pft=%path_database%marc/pfts/en/autoridades.pft”
+</code></pre></div></div>
+
+<p>Each element gets, after the equation sign, its path in the file-system. As can be seen, variables taken from the Operating System’s Environment can be used, in this case %path_database%, which is substituted by the real pathname as defined in the main configuration file config.php (see infra).</p>
+
+<p>[!!] While normally all elements referred to here belong to the database in question, elements of other data- bases should also be added if they are used in ‘REF’-statements of the formats used in this database, since ISIS will have to know where to locate such external database element if called from a format - and will look for its path here !</p>
+
+<h4 id="cgi-bin">cgi-bin</h4>
+
+<p>The cgi-bin folder contains the executables which ABCD will call from its web-pages and which therefore should be authorized to run by the webserver (Apache) using the CGI-protocol. In the case of ABCD the main executable is the wxis.exe ISIS-server, which does the main part of the job. Some other CISIS-tools are however also included for specific tasks.</p>
+
+<p>The wxis-modules subfolder here contains scripts (with .xis extension) for the wxis-server, while the ‘gizmo’ folder contains some small ISIS-databases which define strings to be substituted by another one, e.g. for changes due to different environments used (DOS/ASCII, Windows/ANSI, WWW/XML.</p>
+
+<h4 id="htdocs">htdocs</h4>
+
+<p>The htdocs (we use the traditional Apache ‘hypertext documents’ folder name) is the ‘home-folder’ of the web-site served by the ABCD-Apache server. So therefore it contains all the software elements (except the basic external technology such as Apache and PHP) specifically produced for ABCD :</p>
+
+<p><img src="https://lh6.googleusercontent.com/sMJ-zXYZyOb7bqWiOXNhZrCwJcjDM4wMvDfQeBnPVvZNCQndBx7axGxsSj-RBXab_ZbqgtLplxoPpKSMcKaAfxK7zACGetmaU9_qmgbWQ9d_XcjFtdCZ440jyQI7DrxdZ7_SKn_7=s0" alt="" /></p>
+
+<p>Two initial scripts are present within this homepage folder : index.php (which is the default home-page indeed, allowing the URL of ABCD only to refer to the server-part) and the [!!] ‘what.php’ script for including the footer info.</p>
+
+<p>An optional file ‘db_path.dat’ can be located here to point to different (each on one line) database-folders.</p>
+
+<p>Since ABCD is a ‘suite’ of different functions, each one has its own homepage, i.e. the ‘index.html’ file located in the appropriate subfolder.</p>
+
+<p>The main folders of the ABCD-system are briefly described below here :</p>
+
+<ol>
+  <li>
+    <p><strong>bases</strong>
+Here for each database (in a dedicated subfolder) external files linked to from the records in the database,
+e.g. full-text PDF’s or images, will be stored E.g. the user images can be stored here in a subfolder ‘users’, so the photos of the user will be shown whenever a loans-system user is presented. [!!] Don’t mix this folder up with the ‘bases’ folder where the actual databases reside !</p>
+  </li>
+  <li>
+    <p><strong>central</strong>
+This is indeed, as suggested by the name, the ‘central’ part of the system where most of the database administration and many core-activities of the software are included. We will therefore deal with the important subfolders contained in here :</p>
+  </li>
+</ol>
+
+<p><img src="https://lh4.googleusercontent.com/oAeaF6wjkV-srtvdNT7KsY7pnflDrxcCU7E-uN4E0v-GdTvGwGzEyQ1Fka6AJTAu_359kJoQSjhNNJ3aGbPKpB4ukRNKGZpfoevjmVursjPkc01DMh2s3vjhJ2icywVN-1arTz_8=s0" alt="" /></p>
+
+<p>Some initial scripts are located at this level : homepage.php and inicio.php are the starting pages, which read into memory the main configuration parameters defined in config.php (or config.loans.php for the Loans module). For the ‘mySite’ functionality, additional initial scripts will be found here too : ini- ciomysite.php, homepagemysite.php and availibility.php. These scripts now (as from ABCD2.0) contain both the code for EmpWeb (using SQL-queries) and Central Loans (using ISIS-QL), so e.g. ‘empwe- bavailability.php’ is no longer used since the code is included in ‘availability.php’.</p>
+
+<p>The basic configuration files CONFIG.PHP, SYSTEM_CONF.PHP and DATABASE_CONF.PHP, which are also found here, will be discussed in more detail in their dedicated sections on the ABCD- configuration.</p>
+
+<p>The following folders here deal with one specific function or module of ABCD by storing the PHP-scripts with lots of additional elements (images and style-sheets for the webpages etc.) : acquisitions, dataentry, dbadmin, loans, statistics and usersadm.</p>
+
+<p>The names of the folders are sufficiently self-explanatory in these cases. Here we would only like to underline the presence of a module ‘database administration’ which allows creation of any ISIS-structure  to deal with any type of textual data, allowing ABCD to be more flexible than most other systems and more than just a library system.</p>
+
+<p>Special folders here dedicated to special functions in ABCD here are the following :</p>
+
+<ul>
+  <li>common : in here there are some crucial php-scripts which are needed by all modules, e.g. ‘header’ and ‘footer’, but also ‘wxis-llamar.php’ (which allows using either the cgi-method of calling executables (safer) or direct executable calls from PHP (faster). The instituational_info.php script defines the name of the resonsible institution of the ABCD-installation, which will be called upon in many pages.</li>
+  <li>documentacion : obviously this folder contains scripts to deal with the online-help functions of ABCD.</li>
+  <li>images : contains small images used in many pages (mostly .png and .gif)</li>
+  <li>css : contains the Cascading Style Sheets used in this central part of ABCD</li>
+  <li>styles : contains the basic main stylesheet ‘basic.css’</li>
+  <li>lang : contains for each module a script to facilitate language switching or reverting to the default language</li>
+  <li>[deprecated] test : contains some scripts testing the ABCD-installation and access to the cgi-executable.</li>
+</ul>
+
+<ol>
+  <li><strong>empweb</strong></li>
+</ol>
+
+<p>This folder is non-standard and contains the subfolders and software parts used by the Advanced Loans module of ABCD, which is not further detailed in this manual.</p>
+
+<ol>
+  <li>
+    <p><strong>iah</strong>
+iAH is the original name of the advanced web-interface for ‘Health Information’ of BIREME which acts as the OPAC of ABCD but also as a meta-search engine on other defined-as-relevant sources.</p>
+  </li>
+  <li>
+    <p><strong>isisws</strong>
+This folder contains scripts for the SOAP-related functions of ABCD.</p>
+  </li>
+  <li>
+    <p><strong>secs-web</strong></p>
+  </li>
+</ol>
+
+<p>This module allows ABCD to offer advanced serials management tools within the web-environment :
+Serials Control System. vii.site</p>
+
+<p>Finally the ‘Site’ module combines advanced OPAC searching (with meta-search possibilities) with a ‘por- tal’ service, offering the search option within an environment of other networked information resources and communication with users. The structure and the contents of this portal can be edited online with a built-in ABCD Content Management System.</p>
+
+<h4 id="empweb-only-if-installation-of-empweb-was-added-">EmpWeb (only if installation of EmpWeb was added !)</h4>
+
+<p>This folder contains most but not all files necessary to run EmpWeb, e.g. the Java Jetty server and the scripts. EmpWeb however additionally needs also added scripts in ABCD Central (this allows the Advanced Loans to be compatible with the built-in Loans system of ABCD) and - since it uses an SQL-database for storing the transactions - an installation of one of the common SQL-databases (MySQL, PostGres, Oracle…), which needs to be done separately - use the installation instructions for the SQL-solution chosen. A separate manual on EmpWeb is available.</p>
+
+<script
+  src="/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function() {
+
+    var toc = $('#TOC');
+
+    // Select each header
+    sections = $('.td-content h1');
+        $.each(sections, function(idx, v) {
+            section = $(v);
+            var div_id = $(section).attr('id');
+            var div_text = section.text().split('¶')[0];
+            var parent = $("#" + div_id)
+            var content = '<li id="link_' + div_id + '" class="md-nav__item"><small><a class="md-nav__link" href="#' + div_id + '" title="' + div_text +'">' + div_text +'</small></a></li>';
+            $(toc).append(content);
+
+            // Add section code to subnavigation
+            var children = $('<nav class="md-nav"><ul class="md-nav__list"></nav></ul>')
+            var contenders = $("#" + div_id).nextUntil("h1");
+            $.each(contenders, function(idx, contender){
+               if($(contender).is('h2') || $(contender).is('h3')) {
+                   var contender_id = $(contender).attr('id');
+                   var contender_text = $(contender).text().split('¶')[0];
+                   var content = '<li class="md-nav__item"><a class="md-nav__link " href="#' + contender_id + '" title="' + contender_text +'"><small>' + contender_text +'</small></a></li>';
+                   children.append(content);
+                }
+             })
+             $("#link_" + div_id).append(children);
+        });
+    });
+</script>
+
+<script>
+var headers = ["h1", "h2", "h3", "h4"]
+var colors = ["red", "orange", "green", "blue"]
+
+$.each(headers, function(i, header){
+    var color = colors[i];
+    $(header).each(function () {
+        var href=$(this).attr("id");
+        $(this).append('<a class="headerlink" style="color:' + color + '" href="#' + href + '" title="Permanent link">¶</a>')
+    });
+})
+</script>
+
+<script>
+$('h1').first().append('<div><span style="font-size:12px" class="badge badge-primary"><a style="cursor:pointer; color:white" href="http://localhost:9898/tags#installation ">installation</a></span><span style="font-size:12px" class="badge badge-primary"><a style="cursor:pointer; color:white" href="http://localhost:9898/tags#server ">server</a></span><span style="font-size:12px" class="badge badge-primary"><a style="cursor:pointer; color:white" href="http://localhost:9898/tags#apache ">apache</a></span></div>')</script>
+
+	
+              
+              <style>
+  .feedback--answer {
+    display: inline-block;
+  }
+  .feedback--answer-no {
+    margin-left: 1em;
+  }
+  .feedback--response {
+    display: none;
+    margin-top: 1em;
+  }
+  .feedback--response__visible {
+    display: block;
+  }
+</style>
+<div class="d-print-none">
+<h2 class="feedback--title">Feedback</h5>
+<p class="feedback--question">Was this page helpful?</p>
+<button class="btn btn-primary mb-4 feedback--answer feedback--answer-yes">Yes</button>
+<button class="btn btn-primary mb-4 feedback--answer feedback--answer-no">No</button>
+<p class="feedback--response feedback--response-yes">
+  Glad to hear it! Please <a href='{{ site.repo }}/issues/new'>tell us how we can improve</a>.
+</p>
+<p class="feedback--response feedback--response-no">
+  Sorry to hear that. Please <a href='{{ site.repo  }}/issues/new'>tell us how we can improve</a>.
+</p>
+</div>
+<script>
+  const yesButton = document.querySelector('.feedback--answer-yes');
+  const noButton = document.querySelector('.feedback--answer-no');
+  const yesResponse = document.querySelector('.feedback--response-yes');
+  const noResponse = document.querySelector('.feedback--response-no');
+  const disableButtons = () => {
+    yesButton.disabled = true;
+    noButton.disabled = true;
+  };
+  const sendFeedback = (value) => {
+    if (typeof ga !== 'function') return;
+    const args = {
+      command: 'send',
+      hitType: 'event',
+      category: 'Helpful',
+      action: 'click',
+      label: window.location.pathname,
+      value: value
+    };
+    ga(args.command, args.hitType, args.category, args.action, args.label, args.value);
+  };
+  yesButton.addEventListener('click', () => {
+    yesResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(1);
+  });
+  noButton.addEventListener('click', () => {
+    noResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(0);
+  });
+</script><br/>
+
+
+
+
+           </div>
+
+          </main> <!--col-12 col-md-9 col-xl-8 pl-md-5-->
+        </div> <!--./row flex-xl-nowrap-->
+      </div> <!--./td-main-->
+      
+      <footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        <ul class="list-inline mb-0">  
+          
+          
+        </ul>
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        <ul class="list-inline mb-0">  
+          <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="GitHub" data-original-title="GitHub">
+            <a class="text-white" target="_blank" href="https://github.com/ABCD-Community/ABCD-Community.github.io">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">© 2021 ABCD Community All Rights Reserved</small>
+        
+        <p class="mt-2">
+
+            
+                <a href="/en//" >Home</a> <span class="text-primary"> </span>
+          
+                <a href="/en/docs" >Documentation</a> <span class="text-primary"> </span>
+          
+                <a href="/en/collab" >Collaboration</a> <span class="text-primary"> </span>
+          
+                <a href="/en/about" >About</a> <span class="text-primary"> </span>
+          
+
+        </p>	
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div> <!--./container-fluid td-outer--> 
+    <script src="/assets/js/popper.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/main.js"></script>
+
+
+<script src="/assets/js/tabpane-persist.js"></script>
+
+  </body>
+</html>

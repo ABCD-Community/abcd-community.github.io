@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="pt" class="no-js">
+  <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">  
+<head>
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Jekyll" />
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+<link rel="alternate" type="application/rss&#43;xml" href="/docs/index.xml">
+
+<link rel="shortcut icon" href="/assets/favicons/favicon.ico" >
+<link rel="icon" type="image/png" href="/assets/favicons/favicon.png" sizes="16x16">
+
+
+ 
+ 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M0LM60C9WY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M0LM60C9WY');
+</script>
+
+ 
+
+<title>Comunidade ABCD</title>
+
+ <meta property="og:title" content="Comunidade ABCD" />
+<meta property="og:description" content="Este documento tem como objetivo fornecer todas as informações e instruções relevantes sobre como usar a biblioteca integrada e o sistema de gerenciamento de documentação ‘ABCD’. Tanto as operações básicas como o gerenciamento avançado do software são discutidos, assim como os tópicos úteis e necessários relativos ao software ISIS no qual o ABCD se baseia. Nesta nova edição, as novas características da versão 2.0 são adicionadas- o uso de diferentes sabores de CISIS, de Unicode e as capacidades da biblioteca digital, bem como alguns módulos adicionais (ODDS, LDAP, DSpaceBridge) e utilitários (conversão UTF8, criação de objetos de empréstimo…) ." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://localhost:9898" />
+<meta property="og:site_name" content="http://localhost:9898" />
+
+<meta itemprop="name" content="Comunidade ABCD">
+<meta itemprop="description" content="Este documento tem como objetivo fornecer todas as informações e instruções relevantes sobre como usar a biblioteca integrada e o sistema de gerenciamento de documentação ‘ABCD’. Tanto as operações básicas como o gerenciamento avançado do software são discutidos, assim como os tópicos úteis e necessários relativos ao software ISIS no qual o ABCD se baseia. Nesta nova edição, as novas características da versão 2.0 são adicionadas- o uso de diferentes sabores de CISIS, de Unicode e as capacidades da biblioteca digital, bem como alguns módulos adicionais (ODDS, LDAP, DSpaceBridge) e utilitários (conversão UTF8, criação de objetos de empréstimo…) .">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Comunidade ABCD"/>
+<meta name="twitter:description" content="Este documento tem como objetivo fornecer todas as informações e instruções relevantes sobre como usar a biblioteca integrada e o sistema de gerenciamento de documentação ‘ABCD’. Tanto as operações básicas como o gerenciamento avançado do software são discutidos, assim como os tópicos úteis e necessários relativos ao software ISIS no qual o ABCD se baseia. Nesta nova edição, as novas características da versão 2.0 são adicionadas- o uso de diferentes sabores de CISIS, de Unicode e as capacidades da biblioteca digital, bem como alguns módulos adicionais (ODDS, LDAP, DSpaceBridge) e utilitários (conversão UTF8, criação de objetos de empréstimo…) ."/>
+
+
+
+
+<link rel="stylesheet" href="/assets/css/main-cover.css">
+<link rel="stylesheet" href="/assets/css/palette.css">
+<script src="/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+
+
+
+  
+  
+    
+  <link rel="alternate" hreflang="en" href="/en/" />
+    
+  <link rel="alternate" hreflang="pt" href="/pt/" />
+    
+  
+
+
+
+
+<style type="text/css">/* Copyright 2014-present Evernote Corporation. All rights reserved. */
+
+@keyframes caretBlink {
+    from { opacity: 1.0; }
+    to { opacity: 0.0; }
+}
+
+@keyframes rotateSpinner {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+#text-tool-caret {
+    animation-name: caretBlink;  
+    animation-iteration-count: infinite;  
+    animation-timing-function: cubic-bezier(1.0,0,0,1.0);
+    animation-duration: 1s; 
+}
+
+#en-markup-loading-spinner {
+    position: absolute;
+    top: calc(50% - 16px);
+    left: calc(50% - 16px);
+    width: 32px;
+    height: 32px;
+}
+
+#en-markup-loading-spinner img {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    animation-name: rotateSpinner;
+    animation-duration: 0.6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.skitchToastBoxContainer {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 30px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    pointer-events: none;
+}
+
+.skitchToastBox {
+    width: 200px;
+    height: 16px;
+    padding: 12px;
+    background-color: rgba(47, 55, 61, 0.95);
+    border-radius: 4px;
+    color: white;
+    cursor: default;
+    font-size: 10pt;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.32);
+    font-family: 'Soleil', Helvetica, Arial, sans-serif;
+    border: 2px rgba(255, 255, 255, 0.38) solid;
+}
+
+.lang-zh-cn .skitchToastBox {
+    font-family: '微软雅黑', 'Microsoft YaHei', SimSun,
+        '&#x30E1;&#x30A4;&#x30EA;&#x30AA;', Meiryo, 'MS PGothic', 'Soleil',
+        Helvetica, Arial, sans-serif;
+}
+
+.lang-ja-jp .skitchToastBox {
+    font-family: '&#x30E1;&#x30A4;&#x30EA;&#x30AA;', Meiryo, 'MS PGothic',
+        '微软雅黑', 'Microsoft YaHei', SimSun, 'Soleil', Helvetica, Arial,
+        sans-serif;
+}
+
+.skitchToast {
+    padding-left: 20px;
+    padding-right: 20px;
+    display: inline-block;
+    height: 10px;
+    color: #f1f5f8;
+    text-align: center;
+}
+
+.skitchVisible {
+    /* Don't remove this class it's a hack used by the Evernote Clipper */
+}
+
+
+#en-markup-disabled {
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    cursor: default;
+    -webkit-user-select: none;
+}
+
+#en-markup-alert-container {
+    position: absolute;
+    z-index: 9999;
+    width: 450px;
+    left: calc(50% - 225px);
+    top: calc(50% - 85px);
+    background-color: white;
+    box-shadow: 0 2px 7px 1px rgba(0,0,0,0.35);
+    -webkit-user-select: none;
+}
+
+
+#en-markup-alert-container .cell-2 {
+    position: relative;
+    float: left;
+    width: 345px;
+    margin-top: 29px;
+    margin-bottom: 20px;
+}
+
+#en-markup-alert-container .cell-2 .cell-2-title {
+    margin-bottom: 5px;
+    padding-right: 30px;
+    font-size: 12pt;
+    font-family: Tahoma, Arial;
+}
+
+#en-markup-alert-container .cell-2 .cell-2-message {
+    padding-right: 30px;
+    font-size: 9.5pt;
+    font-family: Tahoma, Arial;
+}
+
+#en-markup-alert-container .cell-3 {
+    position: relative;
+    width: 450px;
+    height: 60px;
+    float: left;
+    background-color: rgb(240,240,240);
+}
+
+#en-markup-alert-container .cell-3 button {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    width: 110px;
+    height: 36px;
+}
+
+#en-markup-alert-container .cell-3 button.alt-button {
+    position: absolute;
+    top: 12px;
+    right: 140px;
+    width: 110px;
+    height: 36px;
+}
+</style>
+
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+  <body class="td-home">
+        <header>
+      <nav class="js-navbar-scroll navbar navbar-expand navbar-dark td-navbar-cover flex-column flex-md-row td-navbar navbar-bg-onscroll--fade">
+        <a class="navbar-brand" href="/pt">
+            <span class="navbar-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 167.73 167.77"><defs><style>.cls-1{fill:#ffffff;}</style></defs><g id="Camada_2" data-name="Camada 2"><g id="Camada_1-2" data-name="Camada 1"><path class="cls-1" d="M66.62,83.14c-41-2.06-66.62,18-66.62,18V18.42S20.94-.08,66.62,0Z"/><path class="cls-1" d="M84.59,66.62c2.06-41-18-66.62-18-66.62h82.73s18.5,20.94,18.42,66.62Z"/><path class="cls-1" d="M101.11,84.63c41,2.06,66.62-18,66.62-18v82.74s-20.94,18.49-66.62,18.41Z"/><path class="cls-1" d="M83.14,101.15c-2.06,41,18,66.62,18,66.62H18.42S-.08,146.83,0,101.15Z"/></g></g></svg></span>
+            <span class="text-uppercase font-weight-bold">Comunidade ABCD</span>
+        </a>
+
+    <div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+
+
+        <ul class="navbar-nav mt-2 mt-lg-0">
+        
+
+            
+            <li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/pt//" ><span>Início</span></a>
+            </li>
+            <li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/pt/docs" ><span>Documentação</span></a>
+            </li>
+            <li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/pt/collab" ><span>Colaboração</span></a>
+            </li>
+            <li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/pt/about" ><span>Sobre</span></a>
+            </li>
+
+
+            <li class="nav-item dropdown mr-4 d-none d-lg-block">
+
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Português</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                
+                    
+                    
+                    
+                        
+
+                        <a title="Ver em English" class="en dropdown-item" href="/en/">English</a>
+
+
+                    
+
+                        <a title="Ver em Português" class="pt dropdown-item" href="/pt/">Português</a>
+
+
+                    
+                    
+                
+    
+            </div>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="navbar-nav d-none d-lg-block">
+        <input type="search" class="form-control td-search-input" placeholder="&#xf002 Buscar no site…" aria-label="Search this site…" autocomplete="on">
+
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-default td-outer">
+      <main role="main" class="td-main">
+        
+		<link rel="preload" as="image" href="/assets/img/featured-background.jpg" media="(max-width: 1200px)">
+
+		<style>
+		#td-cover-block-0 {
+    		background-image: url( /assets/img/featured-background.jpg ); 
+		}
+		@media only screen and (min-width: 1200px) {
+    	#td-cover-block-0 {
+        	background-image: url(/assets/img/featured-background.jpg); 
+    	}
+		}
+		</style>
+
+<section id="td-cover-block-0" class="row td-cover-block td-cover-block--height-full js-td-cover td-overlay td-overlay--dark -bg-primary">
+  <div class="container td-overlay__inner">
+    <div class="row">
+      <div class="col-12">
+        <div class="text-center">
+       
+          <h1 class="display-1 mt-0 mt-md-5 pb-4">Bem-vindo ao ABCD: uma poderosa suíte para bibliotecas</h1>
+          
+          <div class="pt-3 lead">
+                     
+            <div class="mx-auto">
+            	<a class="btn btn-lg btn-primary mr-3 mb-4" href="/pt/docs">
+            		Leia mais <i class="fas fa-arrow-alt-circle-right ml-2"></i>
+            	</a>
+            	<a class="btn btn-lg btn-secondary mr-3 mb-4" href="https://github.com/ABCD-DEVCOM/ABCD2/archive/refs/heads/master.zip">
+            		Baixar <i class="fab fa-github ml-2 "></i>
+            	</a>
+            	<p class="lead mt-5">
+                ABCD é Software Livre e de Código Aberto projetado para apoiar comunidades de conhecimento.</br>O software tem como alvo bibliotecas de universidades e institutos de pesquisa, bem como bibliotecas públicas menores, centros de documentação, arquivos e museus.
+              </p>
+           	  <p class="mb-0"></p>
+              <p class="mb-0"></p>
+                <a class="btn btn-link text-info" href="#td-block-1" aria-label="Read more">
+                  <i class="fa fa-chevron-circle-down" style="font-size: 400%"></i>
+                </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</section>
+
+
+
+<a id="td-block-1" class="td-offset-anchor"></a>
+<section class="row td-box td-box--primary position-relative td-box--gradient td-box--height-auto">
+	<div class="container text-center td-arrow-down">
+		<span class="h4 mb-0">		
+				<p>
+          O ABCD é uma suíte de diversos programas unificados para diversos fins.<br>A tecnologia ABCD pode ser resumida da seguinte forma: totalmente baseada na web, baseada em ISIS, usando PHP, IsisScript, JavaScript, multiplataforma e multilíngue.
+        </p>		
+		</span>
+	</div>
+</section>
+
+
+<a id="td-block-2" class="td-offset-anchor"></a>
+<section class="row td-box td-box--dark td-box--gradient td-box--height-auto">
+	<div class="col">
+		<div class="row ">
+
+      <div class="col-lg-4 mb-5 mb-lg-0 text-center ">
+        <div class="mb-4 h1">
+          <i class="fas fa-lightbulb"></i>
+        </div>
+        <h4 class="h3">
+            Lista de e-mails do ISIS
+        </h4>
+        <p class="mb-0"></p>
+        <p>
+          Esta lista tem mais de 1500 membros, a maioria deles usuários de uma das muitas variedades de CDS/ISIS. Você pode fazer perguntas de natureza bastante geral, mas também perguntas específicas sobre o ABCD. Possivelmente você obterá a resposta em algum idioma.
+        </p>
+        <p></p>
+         <p><a href="http://lists.iccisis.org/listinfo/isis-users">Ver lista…</a></p>
+      </div>
+
+      <div class="col-lg-4 mb-5 mb-lg-0 text-center ">
+        <div class="mb-4 h1">
+          <i class="fab fa-github"></i>
+        </div>
+        <h4 class="h3">
+            Contribuições são bem vindas!
+        </h4>
+        <p class="mb-0"></p>
+        <p>
+          Você pode contribuir traduzindo a documentação para seu idioma, ajudando a testar o sistema, sugerindo mudanças no código. Basta criar uma conta no Github.
+        </p>
+        <p></p>
+         <p><a href="/pt/collab">Leia mais…</a></p>
+      </div>
+
+      <div class="col-lg-4 mb-5 mb-lg-0 text-center ">
+        <div class="mb-4 h1">
+          <i class="fas fa-desktop"></i>
+        </div>
+        <h4 class="h3">
+            Demontração
+        </h4>
+        <p class="mb-0"></p>
+        <p>
+          Você pode acessar o ABCD para saber mais. Veja nossa instalação de demonstração. Muitas das características não estão ativas porque esta instalação passa por atualizações frequentes, mas para obter uma visão geral do sistema é bastante útil
+        </p>
+        <p></p>
+         <p><a href="https://abcd-community.org/demo/">Leia mais…</a></p>
+      </div>
+
+		</div>
+	</div>
+</section>
+
+
+      </main> 
+      <footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        <ul class="list-inline mb-0">  
+          
+          
+        </ul>
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        <ul class="list-inline mb-0">  
+          <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="GitHub" data-original-title="GitHub">
+            <a class="text-white" target="_blank" href="https://github.com/ABCD-Community/ABCD-Community.github.io">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">© 2021 Comunidade ABCD All Rights Reserved</small>
+        
+        <p class="mt-2">
+
+            
+                <a href="/pt//" >Início</a> <span class="text-primary"> </span>
+          
+                <a href="/pt/docs" >Documentação</a> <span class="text-primary"> </span>
+          
+                <a href="/pt/collab" >Colaboração</a> <span class="text-primary"> </span>
+          
+                <a href="/pt/about" >Sobre</a> <span class="text-primary"> </span>
+          
+
+        </p>	
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/assets/js/popper.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/main.js"></script>
+
+
+<script src="/assets/js/tabpane-persist.js"></script>
+
+  </body>
+</html>

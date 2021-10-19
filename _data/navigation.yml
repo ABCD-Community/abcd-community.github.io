@@ -1,0 +1,19 @@
+en:
+- title: Home
+  url: /
+- title: Documentation
+  url: docs 
+- title: Collaboration
+  url: collab  
+- title: About
+  url: about
+
+pt:
+- title: Início
+  url: /
+- title: Documentação
+  url: docs  
+- title: Colaboração
+  url: collab  
+- title: Sobre
+  url: about

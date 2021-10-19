@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="pt"  class="no-js">
+  <!-- Copyright 2019-2021 Vanessa Sochat-->
+  <head>
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Jekyll" />
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+<link rel="alternate" type="application/rss&#43;xml" href="/docs/index.xml">
+
+<link rel="shortcut icon" href="/assets/favicons/favicon.ico" >
+<link rel="icon" type="image/png" href="/assets/favicons/favicon.png" sizes="16x16">
+
+ 
+ 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M0LM60C9WY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M0LM60C9WY');
+</script>
+
+ 
+
+<title>Comunidade ABCD</title>
+<meta property="og:title" content="Comunidade ABCD" />
+<meta property="og:description" content="Este documento tem como objetivo fornecer todas as informações e instruções relevantes sobre como usar a biblioteca integrada e o sistema de gerenciamento de documentação ‘ABCD’. Tanto as operações básicas como o gerenciamento avançado do software são discutidos, assim como os tópicos úteis e necessários relativos ao software ISIS no qual o ABCD se baseia. Nesta nova edição, as novas características da versão 2.0 são adicionadas- o uso de diferentes sabores de CISIS, de Unicode e as capacidades da biblioteca digital, bem como alguns módulos adicionais (ODDS, LDAP, DSpaceBridge) e utilitários (conversão UTF8, criação de objetos de empréstimo…) ." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://localhost:9898" />
+<meta property="og:site_name" content="http://localhost:9898" />
+
+<meta itemprop="name" content="Comunidade ABCD">
+<meta itemprop="description" content="">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Comunidade ABCD"/>
+<meta name="twitter:description" content="Este documento tem como objetivo fornecer todas as informações e instruções relevantes sobre como usar a biblioteca integrada e o sistema de gerenciamento de documentação ‘ABCD’. Tanto as operações básicas como o gerenciamento avançado do software são discutidos, assim como os tópicos úteis e necessários relativos ao software ISIS no qual o ABCD se baseia. Nesta nova edição, as novas características da versão 2.0 são adicionadas- o uso de diferentes sabores de CISIS, de Unicode e as capacidades da biblioteca digital, bem como alguns módulos adicionais (ODDS, LDAP, DSpaceBridge) e utilitários (conversão UTF8, criação de objetos de empréstimo…) ."/>
+
+<link rel="stylesheet" href="/assets/css/main.min.css">
+<link rel="stylesheet" href="/assets/css/palette.css">
+<script
+  src="/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+
+
+  
+  
+    
+  <link rel="alternate" hreflang="en" href="/en/abcd-modules/" />
+    
+  <link rel="alternate" hreflang="pt" href="/pt/abcd-modules/" />
+    
+  
+
+  
+</head>
+
+  
+
+
+  <body class="td-section">
+    
+<header>
+    <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="/pt">
+            <span class="navbar-logo"></span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 167.73 167.77"><defs><style>.cls-1{fill:#ffffff;}</style></defs><g id="Camada_2" data-name="Camada 2"><g id="Camada_1-2" data-name="Camada 1"><path class="cls-1" d="M66.62,83.14c-41-2.06-66.62,18-66.62,18V18.42S20.94-.08,66.62,0Z"/><path class="cls-1" d="M84.59,66.62c2.06-41-18-66.62-18-66.62h82.73s18.5,20.94,18.42,66.62Z"/><path class="cls-1" d="M101.11,84.63c41,2.06,66.62-18,66.62-18v82.74s-20.94,18.49-66.62,18.41Z"/><path class="cls-1" d="M83.14,101.15c-2.06,41,18,66.62,18,66.62H18.42S-.08,146.83,0,101.15Z"/></g></g></svg><span class="text-uppercase font-weight-bold">Comunidade ABCD</span>
+        </a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+            
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/pt//" ><span>Início</span></a>
+			</li>
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/pt/docs" ><span>Documentação</span></a>
+			</li>
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/pt/collab" ><span>Colaboração</span></a>
+			</li>
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/pt/about" ><span>Sobre</span></a>
+			</li>
+
+
+  <li class="nav-item dropdown mr-4 d-none d-lg-block">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Português</a>
+    <div class="dropdown-menu">
+        
+            
+            
+            
+                
+
+                <a title="Ver em English" class="en dropdown-item" href="/en/abcd-modules/">English</a>
+
+
+            
+
+                <a title="Ver em Português" class="pt dropdown-item" href="/pt/abcd-modules/">Português</a>
+
+
+            
+            
+        
+   </div>
+  </li>
+
+		</ul>
+	</div>
+	
+    <div class="navbar-nav d-none d-lg-block">
+        <input type="search" class="form-control td-search-input" placeholder="&#xf002 Buscar no site…" aria-label="Search this site…" autocomplete="off"> 
+    </div>
+   
+	<div class="navbar-nav d-none d-lg-block">
+          <a class="gh-source" data-gh-source="github" href="https://github.com/ABCD-Community/ABCD-Community.github.io" title="Go to repository" data-md-state="done">
+            <i class="fab fa fa-github fa-2x" style='color: #fff;padding-right:20px; float:left; margin-top:5px'></i></a>
+        </div>
+      </div>
+
+
+</nav>
+</header>
+
+
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+          <div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    <input type="search" class="form-control td-search-input" placeholder="&#xf002 Buscar no site…" aria-label="Search this site…" autocomplete="on">
+      <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+      </button>
+  </form>  
+
+  <nav class="collapse td-sidebar-nav" id="td-section-nav">
+    <div class="nav-item dropdown d-block d-lg-none pl-4">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Português</a>
+
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+        
+            
+            
+            
+                
+
+                <a title="Ver em English" class="en dropdown-item" href="/en/abcd-modules/">English</a>
+
+
+            
+
+                <a title="Ver em Português" class="pt dropdown-item" href="/pt/abcd-modules/">Português</a>
+
+
+            
+            
+        
+      </div>
+    </div>
+
+
+    
+      <ul class="td-sidebar-nav__section pr-md-3"> 
+
+        
+        
+
+        <li class="td-sidebar-nav__section-title">
+          <a  href="" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section"></a>
+        </li>
+        
+      </ul>
+    
+      <ul class="td-sidebar-nav__section pr-md-3"> 
+
+        
+        
+
+        <li class="td-sidebar-nav__section-title">
+          <a  href="/pt/docs" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Home</a>
+        </li>
+        
+          <ul>
+            <li class="collapse show" id="home">
+              <ul class="td-sidebar-nav__section pr-md-3">
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-introduction
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Introdução
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-technology
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Tecnologia ABCD
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-installation
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Instalação
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-modules
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Módulos
+                    </a>
+                  </li>
+                  
+                    <ul>
+                      <li class="collapse show" id="">
+                        
+                          
+                            <a class="td-sidebar-link td-sidebar-link__page " id="m-home-módulos-gestão-de-banco-de-dados" href="/pt/abcd-modules/database-management">Gestão de banco de dados</a>
+                            <a class="td-sidebar-link td-sidebar-link__page " id="m-home-módulos-entrada-de-dados-catalogação" href="/pt/abcd-modules/data-entry">Entrada de dados (catalogação)</a>
+                            <a class="td-sidebar-link td-sidebar-link__page " id="m-home-módulos-estatísticas" href="/pt/abcd-modules/abcd-statistics">Estatísticas</a>
+                            <a class="td-sidebar-link td-sidebar-link__page " id="m-home-módulos-gestão-de-aquisições" href="/pt/abcd-modules/abcd-acquisitions">Gestão de aquisições</a>
+                            <a class="td-sidebar-link td-sidebar-link__page " id="m-home-módulos-empréstimos-e-circulação" href="/pt/abcd-modules/abcd-circulation">Empréstimos e circulação</a>
+                        
+                      </li>
+                    </ul>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-utilities
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Utilitários
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-thesaurus
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Thesaurus
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-odds
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">O Serviço de Entrega de Documentos Online (ODDS)
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-digital-library
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Características da biblioteca digital
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-oai
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">A interface OAI
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-opac
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">OPAC
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/opac-iah
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">iAH OPAC
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-site
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD Site
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/secs-web
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Controle de periódicos
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-unicode
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD Unicode
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-localisation
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Localização e pastas
+                    </a>
+                  </li>
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        
+      </ul>
+    
+  </nav>
+</div>
+
+          </aside> <!--col-12 col-md-3 col-xl-2 td-sidebar d-print-none-->
+          
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+                  <a href="https://github.com/ABCD-Community/ABCD-Community.github.io/edit/main/pt/abcd-modules/index.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Editar esta página</a>
+
+<a href="https://github.com/ABCD-Community/ABCD-Community.github.io/issues/new?labels=question&title=Question:&body=Question on: https://github.com/ABCD-Community/ABCD-Community.github.io/tree/master/pt/abcd-modules/index.md" target="_blank"><i class="fab fa-github fa-fw"></i> Criar questão de documentação</a>
+
+<a href="https://github.com/ABCD-Community/ABCD-Community.github.io/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Apontar um problema no projeto</a>
+<!-- this will parse through the header fields and add a button to open
+     an issue / ask a question on Github. The editable field should be in
+     the post frontend matter, and refer to the label to open the issue for -->
+
+            </div>
+            <div class="td-toc">
+              <nav id="TableOfContents">
+                <ul id="TOC">
+                   <!-- Links will be appended here-->
+                </ul>
+              </nav>
+            </div>
+ 
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">     
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+              <ol class="breadcrumb spb-1">
+              
+              
+                <li class="breadcrumb-item">
+                  <a href="http://localhost:9898/pt/">Pt</a>
+                </li>
+                
+                <li class="breadcrumb-item active" aria-current="page">
+	          <a href="http://localhost:9898/pt/abcd-modules/">Módulos ABCD</a>
+                </li>
+                
+	      </ol>
+           </nav>
+
+           <div class="td-content">
+
+	      <h1 id="abcd-modules">ABCD Modules</h1>
+
+<h2 class="no_toc no_toc text-delta" id="conteúdo">Conteúdo</h2>
+
+<ol id="markdown-toc">
+  <li><a href="#abcd-modules" id="markdown-toc-abcd-modules">ABCD Modules</a>    <ol>
+      <li><a href="#introduction-and-general-configuration" id="markdown-toc-introduction-and-general-configuration">Introduction and general configuration</a></li>
+      <li><a href="#multilinguality-configuration" id="markdown-toc-multilinguality-configuration">Multilinguality configuration</a></li>
+      <li><a href="#the-main-configuration-files-for-abcd-central" id="markdown-toc-the-main-configuration-files-for-abcd-central">The main configuration files for ABCD Central</a>        <ol>
+          <li><a href="#configphp" id="markdown-toc-configphp">CONFIG.PHP</a></li>
+          <li><a href="#system-variables-defined-in-abcddef" id="markdown-toc-system-variables-defined-in-abcddef">system-variables defined in abcd.def</a></li>
+          <li><a href="#database-variables-defined-in-dr_pathdef" id="markdown-toc-database-variables-defined-in-dr_pathdef">database-variables defined in dr_path.def</a></li>
+          <li><a href="#defining-different-database-directories--db_pathdat" id="markdown-toc-defining-different-database-directories--db_pathdat">Defining different database-directories : db_path.dat</a></li>
+        </ol>
+      </li>
+      <li><a href="#login-configuration-of-abcd-central" id="markdown-toc-login-configuration-of-abcd-central">Login configuration of ABCD Central</a></li>
+      <li><a href="#administration-of-the-abcd-user-profiles" id="markdown-toc-administration-of-the-abcd-user-profiles">Administration of the ABCD user profiles.</a></li>
+      <li><a href="#logging-in-into-the-system" id="markdown-toc-logging-in-into-the-system">Logging in into the system</a></li>
+      <li><a href="#using-ldap-authentification" id="markdown-toc-using-ldap-authentification">Using LDAP authentification</a></li>
+    </ol>
+  </li>
+</ol>
+
+<hr />
+
+<h2 id="introduction-and-general-configuration">Introduction and general configuration</h2>
+
+<p>This chapter deals with the main functions [!!] of the ‘Central’ module of the ABCD system. As an integrated ‘library automation software’ the system offers tools for database management (both for bibliographic/document databases and administrative databases such as users, acquisitions and loans), data-entry, statistics, circulation, serials control and searching functions (OPAC in a ‘portal’ environment).</p>
+
+<p>These functions are presented in different parts of a suite, which are relatively independent from each other but not fully. Parts are accessed by their own URL. Within one part several modules can exist which also cooperate. For example the pre-cataloging information produced for acquisitions will be re-used in the copies-database for the inventory and loan-objects database for the circulation module, which in its turn uses bibliographic information from the catalogs. Statistics can be applied to any ISIS-database, not only the Circulation databases, so this function will also re-appear at several instances within the software. The OPAC-technology can run on any ISIS-database, not only the own ABCD-catalogs, so it will be described as a relatively independent tool, as will be the case with the Serials Control.</p>
+
+<p><strong>Important</strong>
+How to access the suite parts directly ?</p>
+
+<ul>
+  <li>
+    <p>The first six modules together constitute the ‘Central’ part of the ABCD-suite. It can be accessed by the [!!] URL http://[serverURL]:9090. The ‘index.php’ part is optional if the web-server (Apache) has been told that index.php is one of the default pages in the folder (as is e.g. also ‘index.html’).</p>
+  </li>
+  <li>
+    <p>The combined OPAC-with-portal (Site) can be accessed by http://[serverURL]/site/index.php, with the administrator page for this Site being http://[serverURL]/site/admin/index.php.</p>
+  </li>
+  <li>
+    <p>The Serials Control part should be accessed by the URL http://[serverURL]/secs-web/index.php.</p>
+  </li>
+  <li>
+    <p>EmpWeb can be accessed, if installed, by the URL http://[serverURL]/empweb/ (note the trailing for- ward-slash here !)</p>
+  </li>
+</ul>
+
+<p>For all these parts or modules ABCD provides publicly available start login data, which need to be read from the ‘leiame.txt’ or ‘readme.txt’ files coming with the installation package. It is the responsibility of the system manager to take these login data out of the system and replace them by local - and locally controlled - login data.</p>
+
+<p>ABCD manages the control of who can access the system and with which privileges through a system (introduced with version 1.0) of ‘profiles’. Profiles are sets of allowed modules, databases and forms. ABCD users (not library patrons) then will be assigned to one of the defined profiles (see ‘Users Administration’ in the following section).</p>
+
+<h2 id="multilinguality-configuration">Multilinguality configuration</h2>
+
+<p>ABCD is fully conceived as a multi-lingual software, allowing the creation and use of any language. All lan- guage-sensitive elements, such as screen messages and help-files, but for databases e.g. also display-formats, field- definition and -selection tables etc. are stored in separate subfolders for each language. These subfolders are named according to language-codes which are defined in the file ‘lang.tab’ of the ‘bases’-directory. An example of such lang.tab file, in which two additional (non-Latin alphabet) languages have been added to the four original default languages, is listed here :</p>
+
+<ul>
+  <li>pt=portuguese</li>
+  <li>es=spanish</li>
+  <li>en=english</li>
+  <li>fr=french</li>
+  <li>am=amharic</li>
+  <li>si=sinhalese</li>
+</ul>
+
+<p>With this list all messages (the ‘lang’-database) and database-structures and -printformats will (need to) have sub- folders pt, es, en, fr, am and si. The list of languages has to be repeated in each lang-subfolder, if so desired translating each of the language values (not ‘keys’ as the abbreviation codes need to remain constant !) can be translated into the underlying language and - if ‘Unicode’ is switched on (see infra) - even written in non-Latin alphabets. Beware of non-ASCII characters such as ‘ñ’ (e.g. in español) since these are coded differently in ANSI (Windows) vs. Unicode.</p>
+
+<p>Since ABCD can deal with multiple database-folders (see infra), it will be necessary to define the path to the ‘lang’ database for the messages with the variable ‘$msg_path’. This defaults to the directory defined by $db_path in config.php but can also be defined independently to any folder in the system.</p>
+
+<p>A special ‘virtual’ language with code ‘00’ is used in ABCD to hold all messages from which the language transla- tions will be derived. These key-value pairs are mostly defined in English. The keys are the ones referred to in the PHP-scripts whenever displaying a language-dependent text on the screens, but will be searched for in the related table in the active language, unless it cannot be found there : then the ‘00’ language acts as the reserve fall-back option. This means that if a message appears not in your own language but in English (supposing your language is not English), then that key still needs to be translated (added) to the corresponding table for your language and the message displayed is taken from the ‘00’-language.</p>
+
+<p>Later in this manual a dedicated section will discuss how to create a mew language in ABCD with a Unicode non-Latin example.</p>
+
+<h2 id="the-main-configuration-files-for-abcd-central">The main configuration files for ABCD Central</h2>
+
+<p>The main configuration of ABCD Central is based on the following files :</p>
+
+<ol>
+  <li>config.php</li>
+  <li>system_conf.php and abcd.def</li>
+  <li>database_conf.php and dr_path.def</li>
+</ol>
+
+<h3 id="configphp">CONFIG.PHP</h3>
+<p>This file contains the local variables which are managed by the system administrator. Currently the list of variables is as follows :</p>
+<ul>
+  <li>Date_default_timezone_set (the allowed values can be found at the URL <a href="http://php.net/manual/es/time-">http://php.net/manual/es/time-</a> zones.php</li>
+  <li>$ Open_new_window : if set to ‘Y’ after logging in a new window with the main ABCD-interface will be opened in addition to the login screen</li>
+  <li>$ Context_menu : if set to ‘N’ the Central interface in the new window will not contain navigation elements (e.g. by ‘right-clicking’) - this is safer for keeping the ABCD work apart from other browser-activities and force the operator to use the interface elements rather than browser-elements e.g. to ‘go back’</li>
+  <li>$config_date_format : defines the format of the dates used; to be given as DD for days, MM for months and YY for the year-display, each time separated by slashes ‘/’.</li>
+</ul>
+
+<blockquote>
+  <p>Note:
+ If a field is defined as ‘ISO’-date, the format will
+automatically be yyyymmdd; this can be automatically derived from a
+preceding normal date-field defined with $config_date_format</p>
+</blockquote>
+
+<ul>
+  <li>$Inventory_numeric : if set to ‘Y’es leading zero’s (at the left) will be omitted when reading the inventory number (or barcode) to make it a real numerical value</li>
+  <li>$max_inventory_length : a number defining the fixed number of positions in the barcode or inventory numbers; missing positions will become leading zero’s. This parameter is taken into account in the processes related to the assignment of the inventory numbers of the database copies</li>
+  <li>$max_cn_length : same as $max_inventory_length but for the Control Number field : missing positions up to the number defined here will be filled with zero’s</li>
+  <li>$app_path : the name of the folder acting as ‘Central’ with all Central scripts; best kept as ‘central’; if renamed some scripts might fail.</li>
+  <li>$log : if set to ‘Y’es ‘and a subfolder ‘log’ exists in the database-directory, all calls to the Isis-executable ‘wxis’ will be logged in one file per day named according to the date and with the following information :</li>
+</ul>
+
+<p>First line :</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>** Friday 30th of November 2012 07:34:35 AM Operator: abcd Identifies the date, time, and operator executing the transaction
+</code></pre></div></div>
+
+<p>Second line:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/central/dataentry/ini- cio_main.php/ABCD/www/htdocs/central/dataentry/wxis/login.xis IsisScript = / ABCD / www / htdocs / central / dataentry / wxis / login.xis ? Base = access &amp; cipar = c: /bases_abcd/ bases/par/acces.par &amp; Login = abcd &amp; password = adm &amp; path_db = c: / bases_abcd / bases / &amp; cttype = s
+</code></pre></div></div>
+
+<p>where the following elements are identified: name of the php script that is running, name of the wxis script being invoked, parameters sent to IsisScript for the corresponding execution</p>
+
+<blockquote>
+  <p>Note:
+In the future this log will also be made database-dependant.</p>
+</blockquote>
+
+<ul>
+  <li>$img_path : derault path where the images and digital documents linked to the records of the databases will be stored. This default directory can be modified using the dr_path.def file that provides more specific information about the storage of digital documents for a specific database (see infra).</li>
+  <li>$msg_path : path to the lang-database for the messages of the interface; this path can be in one of the defined database-folders but also outside any of them</li>
+  <li>$lang : default language used when opening Central</li>
+  <li>$lang_db : default language for the database administration module (can be different from $lang)</li>
+  <li>$change_password : whether ‘Y’es or ‘N’ot operators are allowed to change their passwords (in the login-screen)</li>
+  <li>$adm_login : an optionally built-in login-name to (temporarily) allow entering the Central system even if the access to the databases is not possible, e.g. for debugging/testing reasons; for security reasons : remove this login when not needed.</li>
+  <li>$adm_password : an optionally built-in password for the login with $adm_login;</li>
+</ul>
+
+<blockquote>
+  <p>Note:
+remember this login/password acts on the full-administrator level and therefore is at a high-risk level !</p>
+</blockquote>
+
+<ul>
+  <li>$dirtree=1: show (1) or hide (0) the icon or menu-entry that gives access to the exploration of the bases-folder; some network- or server-managers will not allow such function on their system !</li>
+  <li>$MD5= When set to 1 (on) passwords will be encrypted with the MD5 encryption</li>
+  <li>$fix_file_name = defines an array with substitutions of characters to be applied in file-names for uploaded files (in order to avoid complicated e.g. diacritical characters; the default values are :</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array('Š'=&gt;'S', 'š'=&gt;'s', 'Ž'=&gt;'Z', 'ž'=&gt;'z', 'À'=&gt;'A', 'Á'=&gt;'A', 'Â'=&gt;'A', 'Ã'=&gt;'A', 'Ä'=&gt;'A', 'Å'=&gt;'A', 'Æ'=&gt;'A', 'Ç'=&gt;'C', 'È'=&gt;'E', 'É'=&gt;'E', 'Ê'=&gt;'E', 'Ë'=&gt;'E', 'Ì'=&gt;'I', 'Í'=&gt;'I', 'Î'=&gt;'I', 'Ï'=&gt;'I','Ñ'=&gt;'N', 'Ò'=&gt;'O', 'Ó'=&gt;'O', 'Ô'=&gt;'O', 'Õ'=&gt;'O', 'Ö'=&gt;'O', 'Ø'=&gt;'O', 'Ù'=&gt;'U', 'Ú'=&gt;'U', 'Û'=&gt;'U','Ü'=&gt;'U', 'Ý'=&gt;'Y', 'Þ'=&gt;'B', 'ß'=&gt;'Ss', 'à'=&gt;'a', 'á'=&gt;'a', 'â'=&gt;'a', 'ã'=&gt;'a', 'ä'=&gt;'a', 'å'=&gt;'a', 'æ'=&gt;'a','ç'=&gt;'c', 'è'=&gt;'e', 'é'=&gt;'e', 'ê'=&gt;'e', 'ë'=&gt;'e', 'ì'=&gt;'i', 'í'=&gt;'i', 'î'=&gt;'i', 'ï'=&gt;'i', 'ð'=&gt;'o', 'ñ'=&gt;'n', 'ò'=&gt;'o','ó'=&gt;'o', 'ô'=&gt;'o', 'õ'=&gt;'o', 'ö'=&gt;'o', 'ø'=&gt;'o', 'ù'=&gt;'u', 'ú'=&gt;'u', 'û'=&gt;'u', 'ý'=&gt;'y', 'þ'=&gt;'b', 'ÿ'=&gt;'y',' '=&gt;'_' );
+</code></pre></div></div>
+
+<blockquote>
+  <p>Note:
+the last element substitures a space for an underline in file-names</p>
+</blockquote>
+
+<ul>
+  <li>$show_acces= When set to Y(es) the ‘acces’-database with operators and their passwords (yes or not encrypted depending on $MD5) will be shown in the list of available database (if included there).</li>
+  <li>$EmpWeb= When set to 1 (on) the loans-system will use the EmpWeb Advanced Loans module and mecha- nisms e.g. in ‘MySite’ or availability-checks.</li>
+  <li>a new section can be optionally added to CONFIG.PHP dealing with the variables needed for the LDAP-au- thentification function, with example data given :</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$use_ldap=false;
+$ldap_host = "ldap://zflexldap.com";
+$ldap_dn = "cn=ro_admin,ou=sysadmins,dc=zflexsoftware,dc=com";
+$ldap_search_context = "ou=guests,dc=zflexsoftware,dc=com";
+$ldap_port = "389";
+$ldap_pass = "zflexpass";
+</code></pre></div></div>
+
+<ul>
+  <li>finally also an optional section can be added to assist the configuration of EmpWeb (if used), more specifically to pre-define some variables and re-define some ports :</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ProxyPass /empweb/ http://127.0.0.1:8080/empweb/ // to direct calls to empweb to port 8080 instead of 9090
+ProxyPassReverse / http://127.0.0.1:8080/ // reverse of previous
+
+$empwebservicequerylocation  =  "http://localhost:8086/ewengine/services/Empweb- QueryService";
+$empwebservicetranslocation = "http://localhost:8086/ewengine/services/EmpwebTransac- tionService";
+$empwebserviceobjectsdb = "objetos";
+$empwebserviceusersdb = "*";
+</code></pre></div></div>
+
+<blockquote>
+  <p>Note:
+DEPRECATED VARIABLES : $institution_name and $institution_URL are no longer used but replaced by variables in abcd.def (see next section).</p>
+</blockquote>
+
+<h3 id="system-variables-defined-in-abcddef">system-variables defined in abcd.def</h3>
+
+<p>In the main bases-folder (in Windows e.g. C:\ABCD\www\bases, in Linux : /var/opt/ABCD/bases) a file ‘abcd.def’ defines system-wide variables. The main current variables here are :</p>
+
+<ul>
+  <li>LEGEND1= followed by the text to display at the second line of the Central footer</li>
+</ul>
+
+<blockquote>
+  <p>Note: The 1st line of the footer is defined in the code of the script ‘htdocs/central/common/footer.php. In this script also the following variables are arranged, so the administrator could envisage re-arranging them if so wanted by changing the (simple) script.</p>
+</blockquote>
+
+<ul>
+  <li>LEGEND2= follwed by the text to display at the header of Central (next to the ABCD logo)</li>
+  <li>URL1= followed by the text to display as the third footer line as a link</li>
+  <li>URL2= followed by the text to display as the fourth footer line as a link</li>
+  <li>FRAME_1H= a value (typically 100) defining the number of pixels for the height of the upper segment (mostly dark-blue background with ABCD logo) in the Central data-entry screens</li>
+  <li>FRAME_2H= a avlue (typically less than 100) defininng the number of pixels for the height of the toolbar (with search-box) segment of the Central data-entry screens.</li>
+</ul>
+
+<blockquote>
+  <p>Note With the variables FRAME_1H and FRAME_2H the administrator can adjust the interface to different resolution screens, however only at a system-wide level. Lower-resolution screens will require lower
+values.</p>
+</blockquote>
+
+<ul>
+  <li>MULTIPLE_DB_FORMATS=</li>
+  <li>UNICODE=</li>
+  <li>DIRTREE_EXT=</li>
+  <li>LOGO=[filename with logo picture] : reference to the picture file to be used as logo in the upper part of the</li>
+</ul>
+
+<p>Central screen. The default logoabcd.jpg <img src="https://lh3.googleusercontent.com/pz0ijzABDs0pzAV7feD4xFc4IDNCVCbayoU0n-v4TAQa7FP84yRWhYHcGLI443BbutsqMu0-R_TCLIsKn4vxkDg7gL5XC6YqJNXrRW0K4lDM64Cyj3yZap3ZgithA6CsXiejx4Jt=s0" alt="" /> can be replaced by any localized image here. Make sure the image is small enough (e.g. max. 3 Kb while the default is only 1,2Kb). Tools for re-sizing pictures are freely available for both Windows and Linux.</p>
+
+<blockquote>
+  <p>Note The logo for ABCD iAH and Site need to be defined differently.
+E.g. for the OPAC (iAH) the image is defined in the file
+htdocs/iah/iah.def.php with the variable ‘LOGO IMAGE=’ ,</p>
+</blockquote>
+
+<h3 id="database-variables-defined-in-dr_pathdef">database-variables defined in dr_path.def</h3>
+
+<p>In this file ‘database-related paths definition’, to be located in the base-folder for each database, some variables can be defined which re-define characteristics of the database. These parameters are ALL optional ! Currently the list of variables at this level is :</p>
+
+<ul>
+  <li>ROOT= defines the default path for this database where files attached to the record, e.g. images, PDFs etc. will be stored, e.g.
+ ```</li>
+  <li>ROOT=/var/opt/ABCD/bases/marc/dr/
+```</li>
+  <li>IMPORTPDF = defines with Y or N whether documents (PDFs) can be imported into this database. if ‘Y’es the PDF-icon will be shown in the Central toolbar</li>
+  <li>barcode = defines with ‘Y’ or ‘N’ whether or not barcodes are used in this database; this parameter defines whether the barcode icon will be shown in the Central toolbar</li>
+  <li>tesaurus = defines the name of the thesaurus-database to be used with this database, e.g. tesaurus=agrovoc</li>
+</ul>
+
+<blockquote>
+  <p>Note:
+the Spanish spelling of ‘tesaurus’ in this case</p>
+</blockquote>
+
+<ul>
+  <li>prefix_search_tesaurus= defines the prefix with which the descriptors in the database are indexed, e.g. MA_</li>
+  <li>COLLECTION= defines the path were digital library collections will be stored for this database. Such directory could be defined under the database-folder itself (e.g. /var/opt/ABCD/bases/dubcore/collection/) or as a collec- tive directory for all databases in the system (e.g. /var/opt/ABCD/bases/collections).</li>
+  <li>UNICODE= defines with ‘1’ or ‘0’ whether the database uses utf8 or unicode encoded content. In fact any value greater than 0 can be used, e.g. ‘Y’ will simply indicate ‘yes, use unicode’, ‘1’ but also ‘2’ etc. will also indicate ‘yes use unicode’ but at the same time identify Unicode character-subsets to be used, e.g. ‘1’ includes Amharic, ‘2’ includes Sinhalese, ‘3’ includes Arabic etc. These codes are relevant for the OPAC where the alphabets will be shown in clickable icons.</li>
+</ul>
+
+<h3 id="defining-different-database-directories--db_pathdat">Defining different database-directories : db_path.dat</h3>
+
+<p>The file ‘db_path.dat’ in the bases-folder allows to define several directories (or folders) to be used as bases-folder, not only the current one (defined in CONFIG.PHP). The lines in this optional file contain the path, followed by a column-separator <code class="language-plaintext highlighter-rouge">'|'</code> and a description as shown in the selection-menu.</p>
+
+<p>E.g. to define 2 database-folders, one with operational and one with test-databases, the file db_path.dat would be (example for Windows) :</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:/ABCD/www/bases/|Operational 
+D:/databases/|Test-databases
+</code></pre></div></div>
+<p>These two options will appear in a list in the login-screen of ABCD Central and the $db_path variable will be substituted by the selected one.</p>
+
+<h2 id="login-configuration-of-abcd-central">Login configuration of ABCD Central</h2>
+
+<p>The most important configuration file for ABCD Central is the file ‘config.php’ in the /www/htdocs/central folder. We discussed some general parameters earlier on (in the section about installation) as they deal with installation paths and default language to be used, but at the end some parameters are introduced which provide a recovery solution for the case when the general System Administrator login data have been lost (meaning the system cannot be entered by anyone anymore !).</p>
+
+<p>These parameters are :</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//USE THIS LOGIN AND PASSWORD IN CASE OF CORRUPTION OF THE OPERATORS DATABASE OR IF YOU DELETED, BY ERROR, THE SYSTEM ADMINISTRATOR
+
+$adm_login=""; $adm_password="";
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//USE THIS PARAMETER TO ENABLE/DISABLE THE MD5 PASSWORD ENCRYPTION (0=OFF 1=ON)
+$MD5=1;
+</code></pre></div></div>
+<p>By manually editing (e.g. with Notepad or another flat-ext-ASCII editor) the $adm_login and $adm_password parameters one can create temporary login data, which will allow to create real logins again (using the database administration tools for the USERS-database). It is strongly advised to immediately thereafter again remove the login-data from this file config.php - for obvious security reasons.</p>
+
+<p>The $MD5 parameter will invoke password encryption (using the MD5 algorithm) when put to ‘1’ or not if put at ‘0’.</p>
+
+<h2 id="administration-of-the-abcd-user-profiles">Administration of the ABCD user profiles.</h2>
+
+<p>From the main Central menu option ‘Users Administration’ one can enter the ‘Create/Edit profiles’ option in addition to create/edit/delete system users.</p>
+
+<p>Some profiles come with the ABCD installation as examples, e.g. :</p>
+<ul>
+  <li>System Administrator</li>
+  <li>Database Administrator</li>
+  <li>Database Operator</li>
+  <li>Operator LIS
+<img src="https://lh6.googleusercontent.com/we6opfWnYf-8n_b1lhuqxlCJuXuCwry7J7qqxIWQ8C4De6rGRtjzPSqc9aLRV-1O-G_wKFCo5_x37SbMLFcEhqY-5wak5o8mpvKjGnXFETGrh2JQi9AesI-35PryH8bPKG9fptoZ=s0" alt="" /></li>
+</ul>
+
+<p>As can be seen from this screen, the administrator has to enter the following data :</p>
+
+<ol>
+  <li>profile name : any (short) name for the new profile to be created</li>
+  <li>profile description : any description describing the profile</li>
+  <li>for each database listed : whether or not access is granted and which data-entry forms of that database can be used by this profile. If all, ‘All’ can be checked for simplicity.</li>
+  <li>Permissions : for each module (Cataloging - Circulation - Acquisitions) the menu-option (or function) to which this profile should have access should be activated (in the small box).</li>
+</ol>
+
+<blockquote>
+  <p>Note:
+The list of profiles is kept by the Operating System in the file
+‘profiles.lst’ in the bases/par/pro- files and for each profiles the
+characteristics (databases allowed, modules allowed are kept in a file
+named after the profile (without extension). Privileges not granted in
+the profile are assumed to be  ‘not’ allowed. The privileges have
+brief but mostly self-explanatory names, e.g. ‘delrec’ for deleting
+records, expimp for exporting and importing records etc.</p>
+</blockquote>
+
+<h2 id="logging-in-into-the-system">Logging in into the system</h2>
+
+<p>After profiles have been created (or adopted from the default ones) and have been assigned to system users, any of the system users’ logins can be used to enter the system. Unlike in previous preliminary versions of ABCD, it is obviously no longer necessary to select an authorization level when logging in, since this is now coupled with the login itself. Therefore in addition to login-name and -password only the language to be used is to be selected (this list is taken from the file ‘lang.tab’ in the bases-folder of ABCD (default : /ABCD/www/bases).<img src="https://lh4.googleusercontent.com/2ZyI0IeAoy6CyZGF8xtW16RYHd_9jh7g-AK6F-oshgPdBMUlrNef3piVWKj3K3x9mAjxsqvUHVg837ECB_pTIiaFhKeYgb3RJp2mLqmox-MU4RVUeq2GuToD_KdCp8feBAkfVDXh=s0" alt="" /></p>
+
+<p>As from ABCD 1.5 and 2.0 on the login-screen also provides a link to change the password, which gives a dialog to enter user_ID, old password and the new password twice, as illustrated here :</p>
+
+<p><img src="https://lh3.googleusercontent.com/MIVslA5az-6SPXmXrnrfTLPvaoDsEzVmcm1-XuOlyCMuWjg5IklAsVe0VbwcLlNYQbM_n0erw1D7bhrtK8wQbMniz48hq5Qe4prdZLQb579NPPj9ksmOIMp88tYSabqsspGHjgBQ=s0" alt="" /></p>
+
+<p>This login-screen has one option ‘Open in new window’ <img src="https://lh6.googleusercontent.com/NOO262msBChAvhySwoftlShZTmKmEhtgbqSIbG1_I7oimt9TGi25YraXZnHQc5zFwGUS6H_Rpohq642tQL9XmBMU2gwAwW2ofubnOiKw_jKrAk4EOg8cpSlOIYFnVX3dWAU0RKnz=s0" alt="" />as a ‘tickbox’ for which the de- fault value is defined in the general configuration file ‘config.php’ of ABCD-Central with the parameter-name ‘$open_new_window’ which can be set to “Y” (meaning after login ABCD will use a separate window, which avoids interference with other tabs or wrong use of the ‘BACK’ button of the browser) or “N” to simply open the ABCD window in the same area; the other parameter linked to this behaviour in ‘config.php’ is ‘$context_menu’ which also can be set to “Y” or “N” to resp. allow or not the window-menu invoked by right-clicking on the page - again this can avoid wrong use of the ‘BACK’ button as this going back should preferably be performed through ABCD-interface buttons, not the ones of the browser who has no control on certain necessary ABCD- navigation issues.</p>
+
+<p>By clicking on the arrow (‘GO’) <img src="https://lh3.googleusercontent.com/IdcZJXwvLz7q9ffvgfqwMqsIq0so55S4mLn1WHzi2nL4c10G1f5WyDfmAkc5N0lIv7Zl67Vz2bp-XXpziJaCWrPbVzzia4zPW1unNpQumXi8lDZ_9VfAQ882FfvT8YyAkkBF00U7=s0" alt="" /> the user will enter the main Central menu - adjusted to the profile granted. All options of this menu are discussed in the next sections of this manual. This includes the administration of users and linking them to a profile, since the users-database can be seen as just another ABCD-database for which general Database Management tools of ABCD are to be used.</p>
+
+<h2 id="using-ldap-authentification">Using LDAP authentification</h2>
+
+<p>The use of an LDAP authentification server is a new feature in ABCD 2.0 . The acronym stands for “Lightweight Directory Access Protocol” and in practice for ABCD means that you can use a dedicated, mostly institution-wide server which holds records of all authorized users. E.g in a university a ‘registration office’ could manage such a centrally co-ordinated list of students, which the library system consults whenever a user wants to login. This means that no longer the library itself is responsible for the up-to-date keeping of this list. E.g. when a student would be ‘expelled’ from the university, no longer the library needs to know this immediately in order to prevent such user - often quite frustrated ! - to enter the library(-system) and abuse it.</p>
+
+<p>This LDAP functionality can be activated for the following ABCD-parts :</p>
+<ul>
+  <li>Central login for operators</li>
+  <li>Site : login for end-users in MySite</li>
+  <li>Secs-Web : login into the Serials Control module.</li>
+</ul>
+
+<p>The logics of using LDAP in ABCD is as follows :</p>
+
+<ul>
+  <li>in config.php the parameter is switched ON or OFF (actually : true or false), so the use of LDAP is completely optional;</li>
+  <li>whenever an operator (librarian) wants to log in into ABCD Central, or an end-user wants to log in into the ‘MySite’ module, the login-data entered are first checked against the LDAP-server; if that one responds ‘clear’ the login is granted, if not the login is rejected;</li>
+  <li>if the LDAP-server does not know the login (which is different from ‘rejects the login’), the login is subsequently checked against the local login-database (‘acces’ for operators, ‘users’ for patrons);</li>
+</ul>
+
+<p>A pre-requirement for LDAP to work in ABCD is to have the extra PHP-library installed for LDAP : sudo apt-get install php7.0-ldap [substitute 7.0 by ‘5’ if using PHP 5.x] and restart your Apache with a command like in Linux :</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo service apache2 restart
+</code></pre></div></div>
+
+<p>Other newly required files (as compared to versions pre-ABCD2.0) are :</p>
+
+<ul>
+  <li>the ldap.php script to be copied into htdocs/central/common directory</li>
+  <li>a dedicated IsisScript ‘loginLDAP.xis’ to be copied into the directory htdocs/central/dataentry/wxis</li>
+  <li>new versions of inicio.php and inicio_mysite.php (done already by default in ABCD 2.0) with the following changes :</li>
+  <li>at the beginning (e.g. after the line require_once (“../config.php”); ) add a new line with the following in- struction : require_once (“ldap.php”);</li>
+  <li>at the end of the script change the part ‘VerificarUsuario();’ as follows, so as to use the new authentification if LDAP is used and the old one if not :
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (isset($arrHttp["login"])){
+ global $use_ldap; 
+ if($use_ldap) VerificarUsuarioLDAP(); 
+ else 
+ VerificarUsuario();  
+</code></pre></div>    </div>
+  </li>
+  <li>three new functions added : VerificarUsuarioLDAP(),LeerRegistroLDAP(),LoginNLDAP(), and Ses- sion($llave).</li>
+  <li>a new CSS-element defined in the CSS htdocs/central/css/layout.css at the very end before the closing ‘}’: .dl- horizontal { float: left; width: 45px; overflow: hidden; clear: left; text-align: left; text-overflow: ellipsis; white- space: nowrap; border-radius:150px; display: block; margin: 0 auto; margin-left: -50px;</li>
+  <li>for the ABCD Loans module : a new version of the script htdocs/central/circulation/usuario_prestamos_presen- tar.php with</li>
+  <li>in the initial ‘include’ statements section, include ../common/ldap.php</li>
+  <li>on line 627 added code :
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if($use_ldap){ 
+if(!Exist($arrHttp["usuario "])) { 
+ProduceOutput("&lt;h4&gt;".$ms- gstr["ldapExi"]."&lt;/h4&gt;",""); 
+die; 
+} 
+}
+</code></pre></div>    </div>
+  </li>
+  <li>for reference purpose we also note the additional changes for the Secs-Web module if LDAP is to be used :</li>
+  <li>in htdocs\secs-web\index.php add : require_once(BVS_DIR. “/htdocs/central/config.php”) after re- quire_once(“./common/ini/config.ini.php”); so as to check whether or not to use LDAP in Secs-Web</li>
+  <li>new version of class htdocs\secs-web\common\class\session.class.php : a new function $misession-&gt;check- LoginLDAP()is implemented which will be used if LDAP is found to be active in config.php (previous lis- titem), instead of the default $misession-&gt;checkLogin() function.</li>
+  <li>in htdocs\secs-web\common\class\session.class.php the SessionManager has added instructions at the very beginning to include the LDAP script and note its ON/OFF setting :
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>require_once(BVS_DIR. "/htdocs/central/common/ldap.php"); 
+require_once(BVS_DIR. "/htdocs/central/config.php");
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>The LDAP configuration is to be defined as follows in CONFIG.PHP of the Central directory :</p>
+
+<ul>
+  <li>$use_ldap : true or false, sets or unsets the use of LDAP;</li>
+  <li>$ldap_host : the name or server-IP of the LDAP-server;</li>
+  <li>$ldap_dn : the LDAP domain data in comma-delimited format;</li>
+  <li>$ldap_search_context : additional data used by the LDAP-server to specify the use-context;</li>
+  <li>$ldap_port : the port used by the LDAP-server;</li>
+  <li>$ldap_pass : the password needed to access the LDAP-server;</li>
+</ul>
+
+<p>In practice you will get all these standard-data from the LDAP-server manager.
+An example configuration in the ABCD-Central config.php script for a free test-LDAP server is given below :</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$use_ldap=false;
+$ldap_host = "ldap://zflexldap.com";
+$ldap_dn = "cn=ro_admin,ou=sysadmins,dc=zflexsoftware,dc=com";
+$ldap_search_context = "ou=guests,dc=zflexsoftware,dc=com";
+$ldap_port = "389";
+$ldap_pass = "zflexpass";  
+</code></pre></div></div>
+
+<p>This example configuration is taken from a free LDAP server which can also be used for testing, see the URL : <a href="http://www.zflexldapadministrator.com/">http://www.zflexldapadministrator.com</a> . Sample users available are ‘guest1’ (password : guest1password), guest2 (password : guest2password) and guest3 (password : guest3password).</p>
+
+<p>Please note that for your own ABCD LDAP you will probably work with the administrator in your organization or institution to define the correct configuration and do the testing.</p>
+
+<script
+  src="/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function() {
+
+    var toc = $('#TOC');
+
+    // Select each header
+    sections = $('.td-content h1');
+        $.each(sections, function(idx, v) {
+            section = $(v);
+            var div_id = $(section).attr('id');
+            var div_text = section.text().split('¶')[0];
+            var parent = $("#" + div_id)
+            var content = '<li id="link_' + div_id + '" class="md-nav__item"><small><a class="md-nav__link" href="#' + div_id + '" title="' + div_text +'">' + div_text +'</small></a></li>';
+            $(toc).append(content);
+
+            // Add section code to subnavigation
+            var children = $('<nav class="md-nav"><ul class="md-nav__list"></nav></ul>')
+            var contenders = $("#" + div_id).nextUntil("h1");
+            $.each(contenders, function(idx, contender){
+               if($(contender).is('h2') || $(contender).is('h3')) {
+                   var contender_id = $(contender).attr('id');
+                   var contender_text = $(contender).text().split('¶')[0];
+                   var content = '<li class="md-nav__item"><a class="md-nav__link " href="#' + contender_id + '" title="' + contender_text +'"><small>' + contender_text +'</small></a></li>';
+                   children.append(content);
+                }
+             })
+             $("#link_" + div_id).append(children);
+        });
+    });
+</script>
+
+<script>
+var headers = ["h1", "h2", "h3", "h4"]
+var colors = ["red", "orange", "green", "blue"]
+
+$.each(headers, function(i, header){
+    var color = colors[i];
+    $(header).each(function () {
+        var href=$(this).attr("id");
+        $(this).append('<a class="headerlink" style="color:' + color + '" href="#' + href + '" title="Permanent link">¶</a>')
+    });
+})
+</script>
+
+
+
+	
+              
+              <style>
+  .feedback--answer {
+    display: inline-block;
+  }
+  .feedback--answer-no {
+    margin-left: 1em;
+  }
+  .feedback--response {
+    display: none;
+    margin-top: 1em;
+  }
+  .feedback--response__visible {
+    display: block;
+  }
+</style>
+<div class="d-print-none">
+<h2 class="feedback--title">Dê sua opinião</h5>
+<p class="feedback--question">Esta página foi útil?</p>
+<button class="btn btn-primary mb-4 feedback--answer feedback--answer-yes">Sim</button>
+<button class="btn btn-primary mb-4 feedback--answer feedback--answer-no">Não</button>
+<p class="feedback--response feedback--response-yes">
+  Fico feliz em ouvir isso! Por favor, <a href='{{ site.repo }}/issues/new'>nos diga como podemos melhorar</a>.
+</p>
+<p class="feedback--response feedback--response-no">
+  Sinto muito em ouvir isso. Por favor, <a href='{{ site.repo  }}/issues/new'>diga-nos como podemos melhorar</a>.
+</p>
+</div>
+<script>
+  const yesButton = document.querySelector('.feedback--answer-yes');
+  const noButton = document.querySelector('.feedback--answer-no');
+  const yesResponse = document.querySelector('.feedback--response-yes');
+  const noResponse = document.querySelector('.feedback--response-no');
+  const disableButtons = () => {
+    yesButton.disabled = true;
+    noButton.disabled = true;
+  };
+  const sendFeedback = (value) => {
+    if (typeof ga !== 'function') return;
+    const args = {
+      command: 'send',
+      hitType: 'event',
+      category: 'Helpful',
+      action: 'click',
+      label: window.location.pathname,
+      value: value
+    };
+    ga(args.command, args.hitType, args.category, args.action, args.label, args.value);
+  };
+  yesButton.addEventListener('click', () => {
+    yesResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(1);
+  });
+  noButton.addEventListener('click', () => {
+    noResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(0);
+  });
+</script><br/>
+
+
+
+
+           </div>
+
+          </main> <!--col-12 col-md-9 col-xl-8 pl-md-5-->
+        </div> <!--./row flex-xl-nowrap-->
+      </div> <!--./td-main-->
+      
+      <footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        <ul class="list-inline mb-0">  
+          
+          
+        </ul>
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        <ul class="list-inline mb-0">  
+          <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="GitHub" data-original-title="GitHub">
+            <a class="text-white" target="_blank" href="https://github.com/ABCD-Community/ABCD-Community.github.io">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">© 2021 Comunidade ABCD All Rights Reserved</small>
+        
+        <p class="mt-2">
+
+            
+                <a href="/pt//" >Início</a> <span class="text-primary"> </span>
+          
+                <a href="/pt/docs" >Documentação</a> <span class="text-primary"> </span>
+          
+                <a href="/pt/collab" >Colaboração</a> <span class="text-primary"> </span>
+          
+                <a href="/pt/about" >Sobre</a> <span class="text-primary"> </span>
+          
+
+        </p>	
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div> <!--./container-fluid td-outer--> 
+    <script src="/assets/js/popper.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/main.js"></script>
+
+
+<script src="/assets/js/tabpane-persist.js"></script>
+
+  </body>
+</html>

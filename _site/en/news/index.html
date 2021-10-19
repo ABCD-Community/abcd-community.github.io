@@ -1,0 +1,1473 @@
+<!DOCTYPE html>
+<html lang="en"  class="no-js">
+  <!-- Copyright 2019-2021 Vanessa Sochat-->
+  <head>
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Jekyll" />
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+<link rel="alternate" type="application/rss&#43;xml" href="/docs/index.xml">
+
+<link rel="shortcut icon" href="/assets/favicons/favicon.ico" >
+<link rel="icon" type="image/png" href="/assets/favicons/favicon.png" sizes="16x16">
+
+ 
+ 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M0LM60C9WY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M0LM60C9WY');
+</script>
+
+ 
+
+<title>ABCD Community</title>
+<meta property="og:title" content="ABCD Community" />
+<meta property="og:description" content="This document aims at providing all relevant background information and instructions on how to use the integrated library and documentation management system 'ABCD'. Both the basic operations and the advanced management of the software are discussed, as are useful and necessary topics concerning the ISIS-software on which ABCD is based. In this new edition the new features of version 2.0 are added - the use of different flavors of CISIS, of Unicode,and the digital library capabilities as well as some additional modules (ODDS, LDAP, DSpaceBridge) and utilities (UTF8-conversion, loanobjects creation...) ." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://localhost:9898" />
+<meta property="og:site_name" content="http://localhost:9898" />
+
+<meta itemprop="name" content="ABCD Community">
+<meta itemprop="description" content="This document aims at providing all relevant background information and instructions on how to use the integrated library and documentation management system 'ABCD'. Both the basic operations and the advanced management of the software are discussed, as are useful and necessary topics concerning the ISIS-software on which ABCD is based. In this new edition the new features of version 2.0 are added - the use of different flavors of CISIS, of Unicode,and the digital library capabilities as well as some additional modules (ODDS, LDAP, DSpaceBridge) and utilities (UTF8-conversion, loanobjects creation...) .">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ABCD Community"/>
+<meta name="twitter:description" content="This document aims at providing all relevant background information and instructions on how to use the integrated library and documentation management system 'ABCD'. Both the basic operations and the advanced management of the software are discussed, as are useful and necessary topics concerning the ISIS-software on which ABCD is based. In this new edition the new features of version 2.0 are added - the use of different flavors of CISIS, of Unicode,and the digital library capabilities as well as some additional modules (ODDS, LDAP, DSpaceBridge) and utilities (UTF8-conversion, loanobjects creation...) ."/>
+
+<link rel="stylesheet" href="/assets/css/main.min.css">
+<link rel="stylesheet" href="/assets/css/palette.css">
+<script
+  src="/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+
+
+  
+  
+    
+  <link rel="alternate" hreflang="en" href="/en/abcd-modules/abcd-acquisitions/" />
+    
+  <link rel="alternate" hreflang="en" href="/tags/" />
+    
+  <link rel="alternate" hreflang="en" href="/en/sitemap.xml" />
+    
+  <link rel="alternate" hreflang="en" href="/en/abcd-modules/abcd-circulation/" />
+    
+  <link rel="alternate" hreflang="en" href="/sitemap.xml" />
+    
+  <link rel="alternate" hreflang="en" href="/en/abcd-modules/abcd-statistics/" />
+    
+  <link rel="alternate" hreflang="en" href="/assets/js/search.js" />
+    
+  <link rel="alternate" hreflang="en" href="/en/about/" />
+    
+  <link rel="alternate" hreflang="en" href="/en/archive/" />
+    
+  <link rel="alternate" hreflang="en" href="/search/" />
+    
+  <link rel="alternate" hreflang="en" href="/atom.xml" />
+    
+  <link rel="alternate" hreflang="en" href="/en/abcd-modules/data-entry/" />
+    
+  <link rel="alternate" hreflang="en" href="/assets/css/palette.css" />
+    
+  <link rel="alternate" hreflang="en" href="/en/abcd-modules/database-management/" />
+    
+  <link rel="alternate" hreflang="en" href="/en/news/" />
+    
+  <link rel="alternate" hreflang="en" href="/en/docs/" />
+    
+  <link rel="alternate" hreflang="en" href="/news/" />
+    
+  <link rel="alternate" hreflang="en" href="/en/feed.xml" />
+    
+  <link rel="alternate" hreflang="en" href="/feed.xml" />
+    
+  <link rel="alternate" hreflang="en" href="/assets/js/main.js" />
+    
+  <link rel="alternate" hreflang="en" href="/assets/css/main.css" />
+    
+  <link rel="alternate" hreflang="en" href="/en/getting-started" />
+    
+  <link rel="alternate" hreflang="en" href="/en/collab/" />
+    
+  <link rel="alternate" hreflang="en" href="/en/abcd-unicode/" />
+    
+  <link rel="alternate" hreflang="en" href="/en/abcd-utilities/" />
+    
+  <link rel="alternate" hreflang="en" href="/en/abcd-technology/" />
+    
+  <link rel="alternate" hreflang="en" href="/en/opac-iah/" />
+    
+  <link rel="alternate" hreflang="en" href="/en/secs-web/" />
+    
+  <link rel="alternate" hreflang="en" href="/en/abcd-technology/isis-script/" />
+    
+  <link rel="alternate" hreflang="en" href="/en/abcd-technology/cisis-utils/" />
+    
+  <link rel="alternate" hreflang="en" href="/en/abcd-technology/cisis-formatting/" />
+    
+  <link rel="alternate" hreflang="en" href="/en/abcd-site/" />
+    
+  <link rel="alternate" hreflang="en" href="/" />
+    
+  <link rel="alternate" hreflang="en" href="/en/" />
+    
+  <link rel="alternate" hreflang="en" href="/en/abcd-opac/" />
+    
+  <link rel="alternate" hreflang="en" href="/en/abcd-odds/" />
+    
+  <link rel="alternate" hreflang="en" href="/en/abcd-oai/" />
+    
+  <link rel="alternate" hreflang="en" href="/en/abcd-modules/" />
+    
+  <link rel="alternate" hreflang="en" href="/en/abcd-thesaurus/" />
+    
+  <link rel="alternate" hreflang="en" href="/en/abcd-localisation/" />
+    
+  <link rel="alternate" hreflang="en" href="/en/abcd-introduction/" />
+    
+  <link rel="alternate" hreflang="en" href="/en/abcd-digital-library/" />
+    
+  <link rel="alternate" hreflang="en" href="/en/abcd-installation/" />
+    
+  <link rel="alternate" hreflang="en" href="/assets/css/style.css" />
+    
+  <link rel="alternate" hreflang="pt" href="/pt/abcd-localisation/" />
+    
+  <link rel="alternate" hreflang="pt" href="/pt/abcd-installation/" />
+    
+  <link rel="alternate" hreflang="pt" href="/pt/abcd-digital-library/" />
+    
+  <link rel="alternate" hreflang="pt" href="/pt/opac-iah/" />
+    
+  <link rel="alternate" hreflang="pt" href="/pt/" />
+    
+  <link rel="alternate" hreflang="pt" href="/pt/home/" />
+    
+  <link rel="alternate" hreflang="pt" href="/pt/abcd-modules/" />
+    
+  <link rel="alternate" hreflang="pt" href="/pt/abcd-oai/" />
+    
+  <link rel="alternate" hreflang="pt" href="/pt/abcd-odds/" />
+    
+  <link rel="alternate" hreflang="pt" href="/pt/abcd-opac/" />
+    
+  <link rel="alternate" hreflang="pt" href="/pt/abcd-site/" />
+    
+  <link rel="alternate" hreflang="pt" href="/pt/abcd-technology/cisis-formatting/" />
+    
+  <link rel="alternate" hreflang="pt" href="/pt/abcd-technology/cisis-utils/" />
+    
+  <link rel="alternate" hreflang="pt" href="/pt/abcd-technology/isis-script/" />
+    
+  <link rel="alternate" hreflang="pt" href="/pt/abcd-technology/" />
+    
+  <link rel="alternate" hreflang="pt" href="/pt/abcd-thesaurus/" />
+    
+  <link rel="alternate" hreflang="pt" href="/pt/abcd-unicode/" />
+    
+  <link rel="alternate" hreflang="pt" href="/pt/abcd-utilities/" />
+    
+  <link rel="alternate" hreflang="pt" href="/pt/collab/" />
+    
+  <link rel="alternate" hreflang="pt" href="/pt/secs-web/" />
+    
+  <link rel="alternate" hreflang="pt" href="/pt/getting-started" />
+    
+  <link rel="alternate" hreflang="pt" href="/pt/feed.xml" />
+    
+  <link rel="alternate" hreflang="pt" href="/pt/docs/" />
+    
+  <link rel="alternate" hreflang="pt" href="/pt/news/" />
+    
+  <link rel="alternate" hreflang="pt" href="/pt/abcd-modules/database-management/" />
+    
+  <link rel="alternate" hreflang="pt" href="/pt/abcd-modules/data-entry/" />
+    
+  <link rel="alternate" hreflang="pt" href="/pt/archive/" />
+    
+  <link rel="alternate" hreflang="pt" href="/pt/about/" />
+    
+  <link rel="alternate" hreflang="pt" href="/pt/sitemap.xml" />
+    
+  <link rel="alternate" hreflang="pt" href="/pt/abcd-modules/abcd-statistics/" />
+    
+  <link rel="alternate" hreflang="pt" href="/pt/abcd-modules/abcd-circulation/" />
+    
+  <link rel="alternate" hreflang="pt" href="/pt/abcd-modules/abcd-acquisitions/" />
+    
+  <link rel="alternate" hreflang="pt" href="/pt/tags/" />
+    
+  <link rel="alternate" hreflang="pt" href="/pt/abcd-introduction/" />
+    
+  
+
+  
+</head>
+
+  
+
+
+  <body class="td-section">
+    
+<header>
+    <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="/en">
+            <span class="navbar-logo"></span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 167.73 167.77"><defs><style>.cls-1{fill:#ffffff;}</style></defs><g id="Camada_2" data-name="Camada 2"><g id="Camada_1-2" data-name="Camada 1"><path class="cls-1" d="M66.62,83.14c-41-2.06-66.62,18-66.62,18V18.42S20.94-.08,66.62,0Z"/><path class="cls-1" d="M84.59,66.62c2.06-41-18-66.62-18-66.62h82.73s18.5,20.94,18.42,66.62Z"/><path class="cls-1" d="M101.11,84.63c41,2.06,66.62-18,66.62-18v82.74s-20.94,18.49-66.62,18.41Z"/><path class="cls-1" d="M83.14,101.15c-2.06,41,18,66.62,18,66.62H18.42S-.08,146.83,0,101.15Z"/></g></g></svg><span class="text-uppercase font-weight-bold">ABCD Community</span>
+        </a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+            
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/en//" ><span>Home</span></a>
+			</li>
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/en/docs" ><span>Documentation</span></a>
+			</li>
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/en/collab" ><span>Collaboration</span></a>
+			</li>
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/en/about" ><span>About</span></a>
+			</li>
+
+
+  <li class="nav-item dropdown mr-4 d-none d-lg-block">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">English</a>
+    <div class="dropdown-menu">
+        
+            
+            
+            
+                
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-modules/abcd-acquisitions/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/tags/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/sitemap.xml">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-modules/abcd-circulation/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/sitemap.xml">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-modules/abcd-statistics/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/assets/js/search.js">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/about/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/archive/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/search/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/atom.xml">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-modules/data-entry/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/assets/css/palette.css">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-modules/database-management/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/news/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/docs/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/news/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/feed.xml">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/feed.xml">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/assets/js/main.js">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/assets/css/main.css">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/getting-started">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/collab/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-unicode/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-utilities/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-technology/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/opac-iah/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/secs-web/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-technology/isis-script/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-technology/cisis-utils/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-technology/cisis-formatting/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-site/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-opac/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-odds/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-oai/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-modules/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-thesaurus/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-localisation/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-introduction/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-digital-library/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-installation/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/assets/css/style.css">English</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-localisation/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-installation/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-digital-library/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/opac-iah/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/home/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-modules/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-oai/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-odds/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-opac/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-site/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-technology/cisis-formatting/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-technology/cisis-utils/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-technology/isis-script/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-technology/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-thesaurus/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-unicode/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-utilities/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/collab/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/secs-web/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/getting-started">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/feed.xml">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/docs/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/news/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-modules/database-management/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-modules/data-entry/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/archive/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/about/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/sitemap.xml">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-modules/abcd-statistics/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-modules/abcd-circulation/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-modules/abcd-acquisitions/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/tags/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-introduction/">Português</a>
+
+
+            
+            
+        
+   </div>
+  </li>
+
+		</ul>
+	</div>
+	
+    <div class="navbar-nav d-none d-lg-block">
+        <input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off"> 
+    </div>
+   
+	<div class="navbar-nav d-none d-lg-block">
+          <a class="gh-source" data-gh-source="github" href="https://github.com/ABCD-Community/ABCD-Community.github.io" title="Go to repository" data-md-state="done">
+            <i class="fab fa fa-github fa-2x" style='color: #fff;padding-right:20px; float:left; margin-top:5px'></i></a>
+        </div>
+      </div>
+
+
+</nav>
+</header>
+
+
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+          <div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    <input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="on">
+      <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+      </button>
+  </form>  
+
+  <nav class="collapse td-sidebar-nav" id="td-section-nav">
+    <div class="nav-item dropdown d-block d-lg-none pl-4">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">English</a>
+
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+        
+            
+            
+            
+                
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-modules/abcd-acquisitions/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/tags/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/sitemap.xml">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-modules/abcd-circulation/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/sitemap.xml">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-modules/abcd-statistics/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/assets/js/search.js">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/about/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/archive/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/search/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/atom.xml">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-modules/data-entry/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/assets/css/palette.css">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-modules/database-management/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/news/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/docs/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/news/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/feed.xml">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/feed.xml">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/assets/js/main.js">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/assets/css/main.css">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/getting-started">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/collab/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-unicode/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-utilities/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-technology/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/opac-iah/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/secs-web/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-technology/isis-script/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-technology/cisis-utils/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-technology/cisis-formatting/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-site/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-opac/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-odds/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-oai/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-modules/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-thesaurus/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-localisation/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-introduction/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-digital-library/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/en/abcd-installation/">English</a>
+
+
+            
+
+                <a title="View in English" class="en dropdown-item" href="/assets/css/style.css">English</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-localisation/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-installation/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-digital-library/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/opac-iah/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/home/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-modules/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-oai/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-odds/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-opac/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-site/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-technology/cisis-formatting/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-technology/cisis-utils/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-technology/isis-script/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-technology/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-thesaurus/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-unicode/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-utilities/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/collab/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/secs-web/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/getting-started">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/feed.xml">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/docs/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/news/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-modules/database-management/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-modules/data-entry/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/archive/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/about/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/sitemap.xml">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-modules/abcd-statistics/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-modules/abcd-circulation/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-modules/abcd-acquisitions/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/tags/">Português</a>
+
+
+            
+
+                <a title="View in Português" class="pt dropdown-item" href="/pt/abcd-introduction/">Português</a>
+
+
+            
+            
+        
+      </div>
+    </div>
+
+
+    
+      <ul class="td-sidebar-nav__section pr-md-3"> 
+
+        
+        
+
+        <li class="td-sidebar-nav__section-title">
+          <a  href="" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section"></a>
+        </li>
+        
+      </ul>
+    
+      <ul class="td-sidebar-nav__section pr-md-3"> 
+
+        
+        
+
+        <li class="td-sidebar-nav__section-title">
+          <a  href="/en/docs" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Home</a>
+        </li>
+        
+          <ul>
+            <li class="collapse show" id="home">
+              <ul class="td-sidebar-nav__section pr-md-3">
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-introduction
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Introduction
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-technology
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD Technology
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-installation
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Installation
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-modules
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Modules
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-utilities
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Utilities
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-thesaurus
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Thesaurus
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-odds
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">The Online Document Delivery Service (ODDS)
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-digital-library
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Digital library features in ABCD
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-oai
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">The OAI interface
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-opac
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD OPAC
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/opac-iah
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">iAH OPAC
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-site
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD Site
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/secs-web
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Serials Control
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-unicode
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD Unicode
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /en/abcd-localisation
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD Localisation
+                    </a>
+                  </li>
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        
+      </ul>
+    
+  </nav>
+</div>
+
+          </aside> <!--col-12 col-md-3 col-xl-2 td-sidebar d-print-none-->
+          
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+                  <a href="https://github.com/ABCD-Community/ABCD-Community.github.io/edit/main/en/news.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+
+<a href="https://github.com/ABCD-Community/ABCD-Community.github.io/issues/new?labels=question&title=Question:&body=Question on: https://github.com/ABCD-Community/ABCD-Community.github.io/tree/master/en/news.md" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+
+<a href="https://github.com/ABCD-Community/ABCD-Community.github.io/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
+<!-- this will parse through the header fields and add a button to open
+     an issue / ask a question on Github. The editable field should be in
+     the post frontend matter, and refer to the label to open the issue for -->
+
+            </div>
+            <div class="td-toc">
+              <nav id="TableOfContents">
+                <ul id="TOC">
+                   <!-- Links will be appended here-->
+                </ul>
+              </nav>
+            </div>
+ 
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">     
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+              <ol class="breadcrumb spb-1">
+              
+              
+                <li class="breadcrumb-item">
+                  <a href="http://localhost:9898/en/">En</a>
+                </li>
+                
+                <li class="breadcrumb-item active" aria-current="page">
+	          <a href="http://localhost:9898/en/news/">News</a>
+                </li>
+                
+	      </ol>
+           </nav>
+
+           <div class="td-content">
+
+	      <h1 id="news">News</h1>
+
+<p>Subscribe with <a href="/feed.xml">RSS</a> to keep up with the latest news.
+For site changes, see the <a href="https://github.com/ABCD-Community/ABCD-Community.github.io/blob/master/CHANGELOG.md">changelog</a> kept with the code base.</p>
+
+<p><br /></p>
+
+<p>Want to see more? See the <a href="/archive/">News Archive</a>.</p>
+
+<script
+  src="/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function() {
+
+    var toc = $('#TOC');
+
+    // Select each header
+    sections = $('.td-content h1');
+        $.each(sections, function(idx, v) {
+            section = $(v);
+            var div_id = $(section).attr('id');
+            var div_text = section.text().split('¶')[0];
+            var parent = $("#" + div_id)
+            var content = '<li id="link_' + div_id + '" class="md-nav__item"><small><a class="md-nav__link" href="#' + div_id + '" title="' + div_text +'">' + div_text +'</small></a></li>';
+            $(toc).append(content);
+
+            // Add section code to subnavigation
+            var children = $('<nav class="md-nav"><ul class="md-nav__list"></nav></ul>')
+            var contenders = $("#" + div_id).nextUntil("h1");
+            $.each(contenders, function(idx, contender){
+               if($(contender).is('h2') || $(contender).is('h3')) {
+                   var contender_id = $(contender).attr('id');
+                   var contender_text = $(contender).text().split('¶')[0];
+                   var content = '<li class="md-nav__item"><a class="md-nav__link " href="#' + contender_id + '" title="' + contender_text +'"><small>' + contender_text +'</small></a></li>';
+                   children.append(content);
+                }
+             })
+             $("#link_" + div_id).append(children);
+        });
+    });
+</script>
+
+<script>
+var headers = ["h1", "h2", "h3", "h4"]
+var colors = ["red", "orange", "green", "blue"]
+
+$.each(headers, function(i, header){
+    var color = colors[i];
+    $(header).each(function () {
+        var href=$(this).attr("id");
+        $(this).append('<a class="headerlink" style="color:' + color + '" href="#' + href + '" title="Permanent link">¶</a>')
+    });
+})
+</script>
+
+
+
+	
+              
+              <style>
+  .feedback--answer {
+    display: inline-block;
+  }
+  .feedback--answer-no {
+    margin-left: 1em;
+  }
+  .feedback--response {
+    display: none;
+    margin-top: 1em;
+  }
+  .feedback--response__visible {
+    display: block;
+  }
+</style>
+<div class="d-print-none">
+<h2 class="feedback--title">Feedback</h5>
+<p class="feedback--question">Was this page helpful?</p>
+<button class="btn btn-primary mb-4 feedback--answer feedback--answer-yes">Yes</button>
+<button class="btn btn-primary mb-4 feedback--answer feedback--answer-no">No</button>
+<p class="feedback--response feedback--response-yes">
+  Glad to hear it! Please <a href='{{ site.repo }}/issues/new'>tell us how we can improve</a>.
+</p>
+<p class="feedback--response feedback--response-no">
+  Sorry to hear that. Please <a href='{{ site.repo  }}/issues/new'>tell us how we can improve</a>.
+</p>
+</div>
+<script>
+  const yesButton = document.querySelector('.feedback--answer-yes');
+  const noButton = document.querySelector('.feedback--answer-no');
+  const yesResponse = document.querySelector('.feedback--response-yes');
+  const noResponse = document.querySelector('.feedback--response-no');
+  const disableButtons = () => {
+    yesButton.disabled = true;
+    noButton.disabled = true;
+  };
+  const sendFeedback = (value) => {
+    if (typeof ga !== 'function') return;
+    const args = {
+      command: 'send',
+      hitType: 'event',
+      category: 'Helpful',
+      action: 'click',
+      label: window.location.pathname,
+      value: value
+    };
+    ga(args.command, args.hitType, args.category, args.action, args.label, args.value);
+  };
+  yesButton.addEventListener('click', () => {
+    yesResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(1);
+  });
+  noButton.addEventListener('click', () => {
+    noResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(0);
+  });
+</script><br/>
+
+
+
+
+           </div>
+
+          </main> <!--col-12 col-md-9 col-xl-8 pl-md-5-->
+        </div> <!--./row flex-xl-nowrap-->
+      </div> <!--./td-main-->
+      
+      <footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        <ul class="list-inline mb-0">  
+          
+          
+        </ul>
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        <ul class="list-inline mb-0">  
+          <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="GitHub" data-original-title="GitHub">
+            <a class="text-white" target="_blank" href="https://github.com/ABCD-Community/ABCD-Community.github.io">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">© 2021 ABCD Community All Rights Reserved</small>
+        
+        <p class="mt-2">
+
+            
+                <a href="/en//" >Home</a> <span class="text-primary"> </span>
+          
+                <a href="/en/docs" >Documentation</a> <span class="text-primary"> </span>
+          
+                <a href="/en/collab" >Collaboration</a> <span class="text-primary"> </span>
+          
+                <a href="/en/about" >About</a> <span class="text-primary"> </span>
+          
+
+        </p>	
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div> <!--./container-fluid td-outer--> 
+    <script src="/assets/js/popper.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/main.js"></script>
+
+
+<script src="/assets/js/tabpane-persist.js"></script>
+
+  </body>
+</html>

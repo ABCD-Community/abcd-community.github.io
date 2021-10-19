@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="pt"  class="no-js">
+  <!-- Copyright 2019-2021 Vanessa Sochat-->
+  <head>
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Jekyll" />
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+<link rel="alternate" type="application/rss&#43;xml" href="/docs/index.xml">
+
+<link rel="shortcut icon" href="/assets/favicons/favicon.ico" >
+<link rel="icon" type="image/png" href="/assets/favicons/favicon.png" sizes="16x16">
+
+ 
+ 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M0LM60C9WY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M0LM60C9WY');
+</script>
+
+ 
+
+<title>Comunidade ABCD</title>
+<meta property="og:title" content="Comunidade ABCD" />
+<meta property="og:description" content="Este documento tem como objetivo fornecer todas as informações e instruções relevantes sobre como usar a biblioteca integrada e o sistema de gerenciamento de documentação ‘ABCD’. Tanto as operações básicas como o gerenciamento avançado do software são discutidos, assim como os tópicos úteis e necessários relativos ao software ISIS no qual o ABCD se baseia. Nesta nova edição, as novas características da versão 2.0 são adicionadas- o uso de diferentes sabores de CISIS, de Unicode e as capacidades da biblioteca digital, bem como alguns módulos adicionais (ODDS, LDAP, DSpaceBridge) e utilitários (conversão UTF8, criação de objetos de empréstimo…) ." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://localhost:9898" />
+<meta property="og:site_name" content="http://localhost:9898" />
+
+<meta itemprop="name" content="Comunidade ABCD">
+<meta itemprop="description" content="">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Comunidade ABCD"/>
+<meta name="twitter:description" content="Este documento tem como objetivo fornecer todas as informações e instruções relevantes sobre como usar a biblioteca integrada e o sistema de gerenciamento de documentação ‘ABCD’. Tanto as operações básicas como o gerenciamento avançado do software são discutidos, assim como os tópicos úteis e necessários relativos ao software ISIS no qual o ABCD se baseia. Nesta nova edição, as novas características da versão 2.0 são adicionadas- o uso de diferentes sabores de CISIS, de Unicode e as capacidades da biblioteca digital, bem como alguns módulos adicionais (ODDS, LDAP, DSpaceBridge) e utilitários (conversão UTF8, criação de objetos de empréstimo…) ."/>
+
+<link rel="stylesheet" href="/assets/css/main.min.css">
+<link rel="stylesheet" href="/assets/css/palette.css">
+<script
+  src="/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+
+
+  
+  
+    
+  <link rel="alternate" hreflang="en" href="/en/abcd-unicode/" />
+    
+  <link rel="alternate" hreflang="pt" href="/pt/abcd-unicode/" />
+    
+  
+
+  
+</head>
+
+  
+
+
+  <body class="td-section">
+    
+<header>
+    <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="/pt">
+            <span class="navbar-logo"></span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 167.73 167.77"><defs><style>.cls-1{fill:#ffffff;}</style></defs><g id="Camada_2" data-name="Camada 2"><g id="Camada_1-2" data-name="Camada 1"><path class="cls-1" d="M66.62,83.14c-41-2.06-66.62,18-66.62,18V18.42S20.94-.08,66.62,0Z"/><path class="cls-1" d="M84.59,66.62c2.06-41-18-66.62-18-66.62h82.73s18.5,20.94,18.42,66.62Z"/><path class="cls-1" d="M101.11,84.63c41,2.06,66.62-18,66.62-18v82.74s-20.94,18.49-66.62,18.41Z"/><path class="cls-1" d="M83.14,101.15c-2.06,41,18,66.62,18,66.62H18.42S-.08,146.83,0,101.15Z"/></g></g></svg><span class="text-uppercase font-weight-bold">Comunidade ABCD</span>
+        </a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+            
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/pt//" ><span>Início</span></a>
+			</li>
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/pt/docs" ><span>Documentação</span></a>
+			</li>
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/pt/collab" ><span>Colaboração</span></a>
+			</li>
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+                <a class="nav-link" href="/pt/about" ><span>Sobre</span></a>
+			</li>
+
+
+  <li class="nav-item dropdown mr-4 d-none d-lg-block">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Português</a>
+    <div class="dropdown-menu">
+        
+            
+            
+            
+                
+
+                <a title="Ver em English" class="en dropdown-item" href="/en/abcd-unicode/">English</a>
+
+
+            
+
+                <a title="Ver em Português" class="pt dropdown-item" href="/pt/abcd-unicode/">Português</a>
+
+
+            
+            
+        
+   </div>
+  </li>
+
+		</ul>
+	</div>
+	
+    <div class="navbar-nav d-none d-lg-block">
+        <input type="search" class="form-control td-search-input" placeholder="&#xf002 Buscar no site…" aria-label="Search this site…" autocomplete="off"> 
+    </div>
+   
+	<div class="navbar-nav d-none d-lg-block">
+          <a class="gh-source" data-gh-source="github" href="https://github.com/ABCD-Community/ABCD-Community.github.io" title="Go to repository" data-md-state="done">
+            <i class="fab fa fa-github fa-2x" style='color: #fff;padding-right:20px; float:left; margin-top:5px'></i></a>
+        </div>
+      </div>
+
+
+</nav>
+</header>
+
+
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+          <div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    <input type="search" class="form-control td-search-input" placeholder="&#xf002 Buscar no site…" aria-label="Search this site…" autocomplete="on">
+      <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+      </button>
+  </form>  
+
+  <nav class="collapse td-sidebar-nav" id="td-section-nav">
+    <div class="nav-item dropdown d-block d-lg-none pl-4">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Português</a>
+
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+        
+            
+            
+            
+                
+
+                <a title="Ver em English" class="en dropdown-item" href="/en/abcd-unicode/">English</a>
+
+
+            
+
+                <a title="Ver em Português" class="pt dropdown-item" href="/pt/abcd-unicode/">Português</a>
+
+
+            
+            
+        
+      </div>
+    </div>
+
+
+    
+      <ul class="td-sidebar-nav__section pr-md-3"> 
+
+        
+        
+
+        <li class="td-sidebar-nav__section-title">
+          <a  href="" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section"></a>
+        </li>
+        
+      </ul>
+    
+      <ul class="td-sidebar-nav__section pr-md-3"> 
+
+        
+        
+
+        <li class="td-sidebar-nav__section-title">
+          <a  href="/pt/docs" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Home</a>
+        </li>
+        
+          <ul>
+            <li class="collapse show" id="home">
+              <ul class="td-sidebar-nav__section pr-md-3">
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-introduction
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Introdução
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-technology
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Tecnologia ABCD
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-installation
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Instalação
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-modules
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Módulos
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-utilities
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Utilitários
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-thesaurus
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Thesaurus
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-odds
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">O Serviço de Entrega de Documentos Online (ODDS)
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-digital-library
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Características da biblioteca digital
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-oai
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">A interface OAI
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-opac
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">OPAC
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/opac-iah
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">iAH OPAC
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-site
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD Site
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/secs-web
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Controle de periódicos
+                    </a>
+                  </li>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-unicode
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ABCD Unicode
+                    </a>
+                  </li>
+                  
+                    <ul>
+                      <li class="collapse show" id="">
+                        
+                      </li>
+                    </ul>
+                  
+                
+                  <li class="td-sidebar-nav__section-title">
+                    <a href="
+                                /pt/abcd-localisation
+                             " 
+                       class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Localização e pastas
+                    </a>
+                  </li>
+                  
+                
+              </ul>
+            </li>
+          </ul>
+        
+      </ul>
+    
+  </nav>
+</div>
+
+          </aside> <!--col-12 col-md-3 col-xl-2 td-sidebar d-print-none-->
+          
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+                  <a href="https://github.com/ABCD-Community/ABCD-Community.github.io/edit/main/pt/abcd-unicode/index.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Editar esta página</a>
+
+<a href="https://github.com/ABCD-Community/ABCD-Community.github.io/issues/new?labels=question&title=Question:&body=Question on: https://github.com/ABCD-Community/ABCD-Community.github.io/tree/master/pt/abcd-unicode/index.md" target="_blank"><i class="fab fa-github fa-fw"></i> Criar questão de documentação</a>
+
+<a href="https://github.com/ABCD-Community/ABCD-Community.github.io/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Apontar um problema no projeto</a>
+<!-- this will parse through the header fields and add a button to open
+     an issue / ask a question on Github. The editable field should be in
+     the post frontend matter, and refer to the label to open the issue for -->
+
+            </div>
+            <div class="td-toc">
+              <nav id="TableOfContents">
+                <ul id="TOC">
+                   <!-- Links will be appended here-->
+                </ul>
+              </nav>
+            </div>
+ 
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">     
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+              <ol class="breadcrumb spb-1">
+              
+              
+                <li class="breadcrumb-item">
+                  <a href="http://localhost:9898/pt/">Pt</a>
+                </li>
+                
+                <li class="breadcrumb-item active" aria-current="page">
+	          <a href="http://localhost:9898/pt/abcd-unicode/">ABCD Unicode</a>
+                </li>
+                
+	      </ol>
+           </nav>
+
+           <div class="td-content">
+
+	      <h1 id="abcd-unicode">ABCD Unicode</h1>
+
+<h2 class="no_toc no_toc text-delta" id="conteúdo">Conteúdo</h2>
+
+<ol id="markdown-toc">
+  <li><a href="#abcd-unicode" id="markdown-toc-abcd-unicode">ABCD Unicode</a></li>
+  <li><a href="#abcd-unicode-and-localisation" id="markdown-toc-abcd-unicode-and-localisation">ABCD Unicode and localisation</a>    <ol>
+      <li><a href="#unicode-processing-of-the-information" id="markdown-toc-unicode-processing-of-the-information">Unicode processing of the information</a></li>
+      <li><a href="#unicode-interface-elements" id="markdown-toc-unicode-interface-elements">Unicode interface elements</a>        <ol>
+          <li><a href="#general-interface-setting--unicode-or-ansi" id="markdown-toc-general-interface-setting--unicode-or-ansi">General interface setting : Unicode or ANSI</a></li>
+          <li><a href="#conversion-of-text-files-in-htdocs-and-database-definitions-to-utf8" id="markdown-toc-conversion-of-text-files-in-htdocs-and-database-definitions-to-utf8">Conversion of text-files in htdocs and database-definitions to UTF8</a></li>
+          <li><a href="#dynamic-adjustments-of-the-selected-charset" id="markdown-toc-dynamic-adjustments-of-the-selected-charset">Dynamic adjustments of the selected ‘charset’</a>            <ol>
+              <li><a href="#abcd-central" id="markdown-toc-abcd-central">ABCD Central</a></li>
+              <li><a href="#abcd-iah" id="markdown-toc-abcd-iah">ABCD iAH</a></li>
+              <li><a href="#abcd-site" id="markdown-toc-abcd-site">ABCD Site</a></li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+<hr />
+
+<h1 id="abcd-unicode-and-localisation">ABCD Unicode and localisation</h1>
+
+<p>As from ABCD v2.0 both the software-interface as the data can work with non-Latin alphabet characters, based on the ‘UTF8’ standard of the Unicode-technology.</p>
+
+<p>Unicode means that instead of the historically very limited ‘ASCII-table’ with 256 character codes (e.g. 65 for ‘A’, 66 for ‘B’ etc.), i.e. the basic interpunction (.,;-…), the numbers 0-9 and alphabetical characters in lower and upper- case only another limited non-standard set of characters could be defined. E.g. frequently used Greek characters like alpha (##) or sigma (##) were typically included in the encoding table of ASCII. Even with such ‘available’ space to redefine 128 characters in the non-standard part of the table (which was e.g. also used to make WinISIS capable of dealing with Arab), not all alphabets could be accommodated for (e.g. Chinese has many more char- acters), let alone combinations of alphabets. With Unicode the capacity of this table is enlarged to about 65000 characters, enough to include all known alphabets. In modern computer hardware and software storing such a table is no longer a real challenge.</p>
+
+<p>Basically introducing Unicode to ABCD required making the (C)ISIS technology Unicode-compatible and add some functions (e.g. conversion from ANSI to UTF8 of text-files) in the interface. Both aspects will be explained in this chapter in the following two sections.</p>
+
+<h2 id="unicode-processing-of-the-information">Unicode processing of the information</h2>
+
+<p>CISIS just stores ‘characters’ as bytes and in the original non-Unicode era (ASCII or its Windows-variant ANSI) each character was one single byte to represent it : single-byte. In order for ISIS to read the next character it simply needs reading the next byte. This changes drastically when multi-byte solutions as necessary for Unicode come into action : one byte can only represent 2^8 = 256 characters, so if more characters need to be encoded, more bytes will be necessary.</p>
+
+<p>The UTF8 method was chosen for its backwards-compatibility with ASCII : UTF8 (but not UTF16 which always uses at least 2 bytes) allows single-byte encoding for the basic alphabets (Latin) and therefore ASCII-coded texts remain fully compatible with UTF8. This is of course very important for ABCD where such a wealth of ASCII- encoded information already exists and needs to remain available. However UTF8 or UTF16 can go up to 4 bytes for one character, so a sophisticated mechanism is needed to tell the software whether after reading the next byte still another (and another…) byte needs to be read in order to represent the next one character. These functions were implemented in the CIUTF8.c code of CISIS. Needless to state that these functions are very crucial since they are activated whenever bytes need to be read from a record.</p>
+
+<p>Whenever a function of CISIS needs this multi-byte capability, such different mechanisms need to be used instead of the previous single-byte functions. In addition, the simple structure of the basic ASCII ‘isisac.tab’ just lists all up to 256 characters to be considered as ‘alphanumerical’ when ISIS is parsing data in order to identify ‘words’ which can be indexed for searching. For the upper-case translation table isisuc.tab two lists are needed : one with the lowercase values and another one with the corresponding uppercase values to which the lowercase ones will be translated. When - as it the case with UTF8 - characters no longer are defined with one single value (e.g. 65) they can only be defined with ‘separators’ in order to keep them grouped by character, so the UTF8 version of CISIS needs the ACTAB and UCTAB tables to use separate lines for each character, and each line can have, except for some optional ‘comments’ after a comment-separator ‘#’, up to four columns.</p>
+
+<p>So the original format of the ACTAB, which defines all characters considered to be part of a word for indexing, looks like this :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>048 049 050 051 052 053 054 055 056 057 065 066 067 068 069 070 071 072 073 074 075 076
+
+077 078 079 080 081 082 083 084 085 086 087 088 089 090 097 098 099 100 101 102 103 104
+
+105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 192 193 194 195
+
+196 197 199 200 201 202 203 204 205 206 207 209 210 211 212 213 214 216 217 218 219 220
+
+221 224 225 226 227 228 229 231 232 233 234 235 236 237 238 239 241 242 243 244 245 246
+
+248 249 250 251 252 253 255  
+</code></pre></div></div>
+
+<p>whereas the UTF8 format now looks like (taking only some parts of the real table, the ‘tab-signs’ are represented to identify colums) :</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>065 # A
+195 128 # A grave
+216 128 # ARABIC NUMBER SIGN
+224 164 132 # Devanagari #
+224. 182 133 #SINHALA LETTER AYANNA #
+225. 136 128 # ETHIOPIC SYLLABLE HA #
+</code></pre></div></div>
+
+<blockquote>
+  <p>Note</p>
+  <ol>
+    <li>decimal values are used while most Unicode-tables use hexadecimal coded values</li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <p>Note</p>
+  <ol>
+    <li>all values need to be listed in ascending order, otherwise the software will reject the table</li>
+  </ol>
+</blockquote>
+
+<p>In the case of upper-case translation a typical conversion for ABCD Unicode line will look as follows : 225 136 128=225 136 128 # ETHIOPIC SYLLABLE HA</p>
+
+<blockquote>
+  <p>Note</p>
+  <ol>
+    <li>Most non-Latin alphabets don’t have case-sensitiveness, so in this case (Amharic) the ‘lowercase’ is translated to the uppercase with
+exactly the same values. Such lines can as well be omitted and then no uppercase-translation will be performed.</li>
+  </ol>
+
+  <p>Note</p>
+  <ol>
+    <li>Adjustments in the FST are needed : since in non-Latin scripts the use of upper-case translation is not known in advance, UTF8-databases
+need to be indexed with specif- ic instructions for the ’mode’-setting
+for uppercase, therefore : specifically add the in- struction mode
+’mpu’ (instead of mpl), ’mhu’ (instead of mhl), e.g. 245 5
+’/TI_/’,mpu, v245^a</li>
+  </ol>
+</blockquote>
+
+<p>Adding Unicode to ABCD mainly - or in fact ‘only’ - has relevance when indexing and searching a database : in these functions the ‘bytes’ stored in the MST need to make sense to indicate whether they are alphanumerical or not. But when indexing and searching is to be done, the differences in the basic tables of ASCII vs. UTF8 as illustrated above are very important, so a non-UTF8 version of ISIS cannot deal with a Unicode database properly and v.v. whenever indexing and searching are involved. In ABCD 2.0 both versions non-UTF8 and UTF8 are ‘co- existing’ for this reason, in the following way :</p>
+
+<ul>
+  <li>the cgi-bin directory where the ISIS-executables are located has been completely re-organized : it now contains two basic sub-directories, one for ANSI and one for UTF8 and all executables are located there according to whether they are ‘classic’ (ANSI) or UTF8.</li>
+  <li>all calls to the ISIS-executables (mainly wxis and mx) are now constructed in the PHP-scripts using a variable ‘$unicode’ which defines whether the path /ansi/ or /utf8/ needs to be added to the cgi-bin folder when calling the executable.</li>
+</ul>
+
+<blockquote>
+  <p>Note The same mechanism is used for the definition of special
+CISIS-versions, whether ANSI or UTF8, e.g. ‘BigISIS’ with the variable
+$cisis_ver</p>
+</blockquote>
+
+<ul>
+  <li>in the base directory for databases (e.g. /var/opt/ABCD/bases in Linux) both the classic isisac.tab and isisuc.tab as well as the new UTF8-versions isisactab_utf8.tab and isisuctab_utf8.tab are stored. All PHP-scripts needing them (e.g. for indexing) will search for these tables according to whether the database is Unicode or not, first of all in the proper ‘data’-subdirectory of the database itself, if not found in the base directory.</li>
+</ul>
+
+<blockquote>
+  <p>Note:
+This last mechanism allows for the use of adapted tables per
+database : if a catalog e.g. only uses in addition to Latin the
+Amharic alphabet, only the Amharic entries are needed in the table and
+no unnecessary large tables need to be loaded in memory and parsed.</p>
+</blockquote>
+
+<h2 id="unicode-interface-elements">Unicode interface elements</h2>
+
+<p>After the explanation about the Unicode data-storage, the Unicode interface elements are discussed next.</p>
+
+<h3 id="general-interface-setting--unicode-or-ansi">General interface setting : Unicode or ANSI</h3>
+
+<p>In the Central main menu a (new) option ‘Encoding’ is provided to select either ANSI or Unicode as the default charset for displaying ABCD interface pages. This only relates to the HTML-pages and text-files used in ABCD, not the databases and their contents. This is a system-wide setting, so it defines all pages of ABCD Central.<img src="https://lh4.googleusercontent.com/ng26tvkoBhcZTrCTyYLW3jPGQa__ZS_inMt0Ie9_lPh-QFNgmSL0e83PwqTmcgXZxyShiFOymfcO3kBKkP94AD3YQJGU83llp35AuRKbHmzxI87MWNCOqt8UBhiUwYTYbHIymvg=s0" alt="" /></p>
+
+<p>So when UTF8 encoding is used in e.g. configuration files like abcd.def, non-ASCII characters like diacritics, will be displayed wrongly unless the correct setting here is selected.</p>
+
+<h3 id="conversion-of-text-files-in-htdocs-and-database-definitions-to-utf8">Conversion of text-files in htdocs and database-definitions to UTF8</h3>
+
+<p>When an existing ABCD (1.x) installation needs to be converted to a UTF8 environment, many files in the file- system of ABCD are encoded as ‘ANSI’, which will have consequences in how non-ASCII like diacritics are displayed - mostly wrongly ! Their encoding therefore needs to be converted to UTF8-encoding in order for such special characters (or any non-Latin characters by definition) to display correctly.</p>
+
+<p>Tools in the extra ’utilities’-menu are provided to convert selected types of existing files (php-scripts, text-files, ISIS-formats…) from ANSI to UTF8 and vice versa. See also the discussion of the utilities in the chapter about ABCD modules.<img src="https://lh6.googleusercontent.com/XUNMtRvPsmpStIVlWtqk8OD_0YHHR4fQ2649AUCqdL9-2bBMU_kJgvaW8H5ABHprKzW7NDIM_6QpbAmp626tmwwawUX--lk7zk4vMLCm6W-LhdMeV0UKKE-Dz1_yb2SFl3Phb8U=s0" alt="" /></p>
+
+<p>An important thing to consider here is that as far as the databases themselves are concerned, only the database-de- finition files (which are text-files) will be converted, e.g. the FDT (so it can then use non-Latin alphabet field names), the PFTs, the FST, the stopwords-list etc. The database-files themselves, in fact the ‘master’ MST is not affected by this conversion. For the MST file with the actual data in the database, the following reasoning applies :</p>
+
+<ul>
+  <li>if only ASCII-encoding was used, no conversion is actually needed, except for the indexes which need to be rebuilt</li>
+  <li>if non-Latin characters were encoded e.g. with ‘HTML-codes’, a gizmo needs to be applied to convert these strings, which look like Unicode on the screen (because of the browser interpreting them correctly) but actu- ally are not stored as UTF8. E.g. a string ‘àé’ could also have been stored with html-codes as ‘À&amp;Ea- cute;’ but the string ‘À’ will not have been translated to ‘A’ as per the ISIS-uppercase translation table (ISISUC.TAB) nor will be searchable as ‘AE’. These two HTML-codes need to be converted to the UTF8 rep- resentation for ‘àé’ and indexed with the appropriate ‘isisactab_utf8.tab’ and if you want ‘à’ to be converted to ‘A’ for searching, the appropriate ‘isisuctab_utf8.tab’.</li>
+  <li>ANSI-databases can be exported to ISO2709 text-files and imported with the UTF8-version of mx; re-encoding the text-file itself to UTF8 will lead to problems because ISO2709 is very sensitive to the stored lengths of strings, so if a character which was stored in one byte is now stored in two bytes the ISO2709 file no longer can be read and reconstructed correctly.</li>
+</ul>
+
+<p>The situation of still existing mixed ASCII, ANSI and Unicode charactersets is a problematic one anyway. E.g. the PHP-language for this reason has given up on becoming Unicode and skipped its version 6 which was meant to solve this… Characters displayed wrongly will be seen still for long on many screens, mostly in websites but even in subtitles for movies.</p>
+
+<h3 id="dynamic-adjustments-of-the-selected-charset">Dynamic adjustments of the selected ‘charset’</h3>
+
+<p>The $unicode setting is taken from either the system-wide ‘abcd.def’ or the database-specific ‘dr_path.def’.</p>
+
+<h4 id="abcd-central">ABCD Central</h4>
+
+<p>In HTML-pages an instruction can define which character-set (or charset) to use with the ‘charset=’-instruction. In ABCD Central some scripts therefore will check for the unicode-parameter and select a different charset accord- ingly. E.g. in the files htdocs/central/common/header.php and htdocs/central/common/display_header.php, which are creating the first part of the HTML-pages, the following code can be found :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if ($unicode==1) {
+echo "&lt;meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" /&gt;";
+}else{
+echo "&lt;meta http-equiv=\"Content-Type\" content=\"text/html; charset=ISO-8859-1\" /&gt;";
+}
+</code></pre></div></div>
+
+<h4 id="abcd-iah">ABCD iAH</h4>
+
+<p>Also in iAh (the ABCD OPAC) pages can be dynamically adjusted to whether or not they use Unicode databases. For this the following elements are needed :</p>
+
+<p>DBN.def : a new parameter is added (at the end) : UNICODE=n, with AHINDXn.htm in iah/scripts/lang. When this parameter is set, i.e. is greater than 0, the value is put into the virtual field v5018^w, (with also an adjustment of the DBGIZMO in v5018^g) in the main script ‘iah.xis’, the actual script steering the whole OPAC. Different values, non-zero, can be used to activate different sets of alphabets, since the value set will define which file ‘AHINDX.htm’ will be used when displaying the buttons of the alphabets for end-user navigation into the related alphabet. E.g if UNICODE is set to 1, iAH will use the file AHINDEX1.htm of the related language folder in de scripts-directory, and this file can contain ’anchors’ to specific parts of the related alphabet. E.g. for Devanagari/Hindu :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="rowCenter"&gt;
+&lt;input value="012..." name="indexRoot" type="submit"&gt;&amp;nbsp;&lt;input value=" A" name="indexRoot" type="subm
+[...]
+type="submit"&gt;&lt;input value=" Z" name="indexRoot" type="submit" /&gt;
+&lt;HR&gt;
+&lt;input value="#" name="indexRoot" type="submit"&gt;
+&lt;input value="#" name="indexRoot" type="submit"&gt;
+&lt;input value="#" name="indexRoot" type="submit"&gt;
+&lt;input value="#" name="indexRoot" type="submit"&gt;
+&lt;input value="#" name="indexRoot" type="submit"&gt;
+</code></pre></div></div>
+
+<p>The resulting screen of the ABCD OPAC will then show, in addition to the Latin alphabet, alsom some anchors for Devanagari/Hindu characters :
+<strong><img src="https://lh5.googleusercontent.com/ar_7jS0oojOq9lvto0IqPH0dBShPr8KOz9iRRWvgdgrowXBnqfocNIA_l3R3yM-7G2LgeD4D99t_36NOgODazpFU3FXELY3PSYb_B5hYhz5Ugf0tA0c8OcNr7K5_FDJBYY8TpWU=s0" alt="" /></strong></p>
+
+<p>By creating other files AHINDEXn.htm with other values for n (e.g. 2, 3 …) one can adjust this screen for any combination of special alphabets to be used.</p>
+
+<ul>
+  <li>GIZMO databases : Since iAH uses optionally gizmo-databases, these need to be replicated in the proper version used for the main database searched, e.g. if the database is 1660utf8, then also the gXML-gizmo has to be transposed to 1660utf8 format, saved in a subdirectory of the gizmo-databasefolder or with a different name, and has to be referenced to accordingly (see next paragraph). If this is not done properly, 0 search results will be obtained.</li>
+</ul>
+
+<p>First the original 1660 gizmo-database has to be exported into an ISO-file and this then has to be imported to create the special database, e.g. creating the gXML gizmo for ffiutf8 :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mxffiutf8 iso=gXML.iso create=gXML_ffiutf8 now -all
+</code></pre></div></div>
+
+<p>In order for the above mentioned gizmo-files to be found by the iAH OPAC, they need to be correctly referenced to in the .def file for the related database in the PAR-database directory, e.g. for a UTF8 database in the ‘FFI’ variant (ffiutf8) :</p>
+
+<p>mxffiutf8 iso=gXML.iso create=gXML_ffiutf8 now -all</p>
+
+<p>In order for the above mentioned gizmo-files to be found by the iAH OPAC, they need to be correctly referenced
+to in the .def file for the related database in the PAR-database directory, e.g. for a UTF8 database in the ‘FFI’
+variant (ffiutf8) :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>FILE gXML_ffiutf8.*=/ABCD/www/bases/gizmo/gXML_ffiutf8.*
+FILE gXML=/ABCD/www/bases/gizmo/gXML_ffiutf8.*
+</code></pre></div></div>
+
+<p>Dynamic adjustment of the correct charset in the iAH script <code class="language-plaintext highlighter-rouge">htdocs/iah/scripts/lang/ahhead.pft</code>, checking the above mentioned v5018^w to see if Unicode is to be used :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if val(v5018^w)&gt;0 then
+'&lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt; '
+else
+'&lt;meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /&gt; '
+fi,
+</code></pre></div></div>
+
+<p>Finally also the opening script ‘index.php’ for iAH needs now to check for the correct Unicode (and possibly also special CISIS-version) settings :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;?php
+$base = ($_REQUEST['base'] != '' ?
+ $_REQUEST['base'] : 'rda');
+$lang = ($_REQUEST['lang'] != '' ?
+ $_REQUEST['lang'] : 'en');
+$form = $_REQUEST['form'];
+//define database path according to OS
+if (stripos($_SERVER["SERVER_SOFTWARE"],"Win") &gt; 0)
+$db_path="/ABCD/www/bases/" ;
+else
+$db_path="/var/opt/ABCD/bases/";
+//unicode defined in abcd.def
+$dbpath=$db_path."abcd.def";
+$def2= parse_ini_file($dbpath);
+if (isset($def2["UNICODE"])) {
+$unicode=trim($def2["UNICODE"]);
+if (intval($unicode)!=0) $unicode="utf8"; else $unicode="ansi";}
+else
+$unicode="ansi";
+//cisis_ver and unicode defined in dr_path.def
+$drpath= $db_path.$base."/dr_path.def";
+$def= parse_ini_file($drpath);
+if (isset($def["CISIS_VERSION"]))
+$cisis_version=trim($def["CISIS_VERSION"]);
+else
+$cisis_version="";
+if (isset($def["UNICODE"])) {
+$unicode=trim($def["UNICODE"]);
+if (intval($unicode)!=0) $unicode="utf8"; else $unicode="ansi";}
+//echo "cisisver=".$cisis_version."&lt;BR&gt;";
+//die;
+if ($cisis_version!="")
+$cisis_ver=$unicode."/".$cisis_version."/";
+else $cisis_ver=$unicode."/";
+//Path to the wwwisis executable (include the name of the program, in Windows add .exe)
+$Wxis=$cisis_ver."wxis";
+$hdr = "Location: /cgi-bin/". $Wxis . "/iah/scripts/?IsisScript=iah.xis&amp;lang=" . $lang . "&amp;base=" . strt
+header($hdr);
+?&gt;
+</code></pre></div></div>
+
+<h4 id="abcd-site">ABCD Site</h4>
+
+<p>The ABCD Site module is mostly based on HTML- and XML-files to store the ‘configuration’ of the Site, defining the layout and contents of the main web-page of the Site and some sub-pages referred to from this page, e.g.
+warnings, explanations etc. If non-Latin is used in the website, make sure these files are encoded as UTF8, not as ANSI as is the case for the original ABCD-Site files.
+While these text-files (.html and .xml in the ‘site’ database, for each language used in a sub-directory) can be edited directly, it is safer to use the Site Admin (e.g. http://127.0.0.1:9090/site/admin) CMS to now add the UTF8
+path-parts (and similarly additional path-parts for special CISIS-versions) into the URL’s of the metasearch-linked databases. E.g. the URL for a ‘MARC’-catalog in UTF8 (MARCUNI) on a localhost ABCD-installation would
+have to change from :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/cgi-bin/wxis/iah/scripts/?IsisScript=iah.xis&amp;lang=en&amp;base=MARCUNI
+</code></pre></div></div>
+
+<p>to :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/cgi-bin/utf8/wxis/iah/scripts/?IsisScript=iah.xis&amp;lang=en&amp;base=MARCUNI
+</code></pre></div></div>
+
+<p>and the same additional ‘utf8/’ path-string has to be added to the other links for resp. the search- and ‘show result’ link URLs. Failing to do so will result in either a ‘file not found’ error (e.g. the previous wxis-executable is no longer found) or the database being searched by the wrong version of wxis, resulting in 0-results.
+For a small cosmetic correction, in the file <code class="language-plaintext highlighter-rouge">htdocs/site/xsl/public/metaiah/result.xslv</code> of UTF8 ABCD installations,
+replace the string <code class="language-plaintext highlighter-rouge">'&amp;#160;'</code> by :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;xsl:text disable-output-escaping="yes"&gt;&amp;amp;nbsp;&lt;/xsl:text&gt;
+</code></pre></div></div>
+
+<script
+  src="/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function() {
+
+    var toc = $('#TOC');
+
+    // Select each header
+    sections = $('.td-content h1');
+        $.each(sections, function(idx, v) {
+            section = $(v);
+            var div_id = $(section).attr('id');
+            var div_text = section.text().split('¶')[0];
+            var parent = $("#" + div_id)
+            var content = '<li id="link_' + div_id + '" class="md-nav__item"><small><a class="md-nav__link" href="#' + div_id + '" title="' + div_text +'">' + div_text +'</small></a></li>';
+            $(toc).append(content);
+
+            // Add section code to subnavigation
+            var children = $('<nav class="md-nav"><ul class="md-nav__list"></nav></ul>')
+            var contenders = $("#" + div_id).nextUntil("h1");
+            $.each(contenders, function(idx, contender){
+               if($(contender).is('h2') || $(contender).is('h3')) {
+                   var contender_id = $(contender).attr('id');
+                   var contender_text = $(contender).text().split('¶')[0];
+                   var content = '<li class="md-nav__item"><a class="md-nav__link " href="#' + contender_id + '" title="' + contender_text +'"><small>' + contender_text +'</small></a></li>';
+                   children.append(content);
+                }
+             })
+             $("#link_" + div_id).append(children);
+        });
+    });
+</script>
+
+<script>
+var headers = ["h1", "h2", "h3", "h4"]
+var colors = ["red", "orange", "green", "blue"]
+
+$.each(headers, function(i, header){
+    var color = colors[i];
+    $(header).each(function () {
+        var href=$(this).attr("id");
+        $(this).append('<a class="headerlink" style="color:' + color + '" href="#' + href + '" title="Permanent link">¶</a>')
+    });
+})
+</script>
+
+
+
+	
+              
+              <style>
+  .feedback--answer {
+    display: inline-block;
+  }
+  .feedback--answer-no {
+    margin-left: 1em;
+  }
+  .feedback--response {
+    display: none;
+    margin-top: 1em;
+  }
+  .feedback--response__visible {
+    display: block;
+  }
+</style>
+<div class="d-print-none">
+<h2 class="feedback--title">Dê sua opinião</h5>
+<p class="feedback--question">Esta página foi útil?</p>
+<button class="btn btn-primary mb-4 feedback--answer feedback--answer-yes">Sim</button>
+<button class="btn btn-primary mb-4 feedback--answer feedback--answer-no">Não</button>
+<p class="feedback--response feedback--response-yes">
+  Fico feliz em ouvir isso! Por favor, <a href='{{ site.repo }}/issues/new'>nos diga como podemos melhorar</a>.
+</p>
+<p class="feedback--response feedback--response-no">
+  Sinto muito em ouvir isso. Por favor, <a href='{{ site.repo  }}/issues/new'>diga-nos como podemos melhorar</a>.
+</p>
+</div>
+<script>
+  const yesButton = document.querySelector('.feedback--answer-yes');
+  const noButton = document.querySelector('.feedback--answer-no');
+  const yesResponse = document.querySelector('.feedback--response-yes');
+  const noResponse = document.querySelector('.feedback--response-no');
+  const disableButtons = () => {
+    yesButton.disabled = true;
+    noButton.disabled = true;
+  };
+  const sendFeedback = (value) => {
+    if (typeof ga !== 'function') return;
+    const args = {
+      command: 'send',
+      hitType: 'event',
+      category: 'Helpful',
+      action: 'click',
+      label: window.location.pathname,
+      value: value
+    };
+    ga(args.command, args.hitType, args.category, args.action, args.label, args.value);
+  };
+  yesButton.addEventListener('click', () => {
+    yesResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(1);
+  });
+  noButton.addEventListener('click', () => {
+    noResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(0);
+  });
+</script><br/>
+
+
+
+
+           </div>
+
+          </main> <!--col-12 col-md-9 col-xl-8 pl-md-5-->
+        </div> <!--./row flex-xl-nowrap-->
+      </div> <!--./td-main-->
+      
+      <footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        <ul class="list-inline mb-0">  
+          
+          
+        </ul>
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        <ul class="list-inline mb-0">  
+          <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="GitHub" data-original-title="GitHub">
+            <a class="text-white" target="_blank" href="https://github.com/ABCD-Community/ABCD-Community.github.io">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">© 2021 Comunidade ABCD All Rights Reserved</small>
+        
+        <p class="mt-2">
+
+            
+                <a href="/pt//" >Início</a> <span class="text-primary"> </span>
+          
+                <a href="/pt/docs" >Documentação</a> <span class="text-primary"> </span>
+          
+                <a href="/pt/collab" >Colaboração</a> <span class="text-primary"> </span>
+          
+                <a href="/pt/about" >Sobre</a> <span class="text-primary"> </span>
+          
+
+        </p>	
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div> <!--./container-fluid td-outer--> 
+    <script src="/assets/js/popper.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/main.js"></script>
+
+
+<script src="/assets/js/tabpane-persist.js"></script>
+
+  </body>
+</html>
