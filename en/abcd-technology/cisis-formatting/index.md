@@ -1552,6 +1552,13 @@ if right(v1^n,1) = 'r' then v1^n/, fi,
 right(v65,4)/,
 ```
 
+to capture a file extension, use:
+	
+```code
+right(v856^u[LAST],3)
+```
+	
+	
 ---
 
 
