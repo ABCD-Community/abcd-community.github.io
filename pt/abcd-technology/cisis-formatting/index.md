@@ -1506,6 +1506,15 @@ if right(v1^n,1) = 'r' then v1^n/, fi,
 right(v65,4)/,
 ```
 
+
+para capturar a extensão de um arquivo:
+	
+```code
+right(v856^u[LAST],3)
+```
+		
+	
+	
 ---
 
 
