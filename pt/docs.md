@@ -17,22 +17,6 @@ Este site tem como objetivo fornecer todas as informações e instruções relev
 
 
 
-## Tabela de conteúdo
-
-<div class="section-index">
-    <hr class="panel-line">
-    {% assign posts=site.pages | where:"lang", page.lang %}
-      {% if page.description != '' %}
-        {% for post in posts %}    
-    <div class="entry">
-    <h5><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h5>
-    <p>{{ post.description }}</p>
-    </div>
-        {% endfor %}
-    {% endif %}
-</div>
-
-
 Para características, começando com o desenvolvimento, veja a página {% include doc.html name="Como Começar?
 " path="getting-started" %}. Você gostaria de solicitar um recurso ou contribuir?
 [Abrir uma edição]({{ site.repo }}/issues)

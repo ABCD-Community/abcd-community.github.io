@@ -20,8 +20,8 @@ FeedbackQuest:
   en: "Was this page helpful?"
   pt: "Esta página foi útil?"
 FeedbackPositive:
-  en: "Glad to hear it! Please <a href='{{ site.repo }}/issues/new'>tell us how we can improve</a>."
-  pt: "Fico feliz em ouvir isso! Por favor, <a href='{{ site.repo }}/issues/new'>nos diga como podemos melhorar</a>."
+  en: "Glad to hear it! Please <a href='https://github.com/ABCD-Community/abcd-community.github.io/issues/new'>tell us how we can improve</a>."
+  pt: "Fico feliz em ouvir isso! Por favor, <a href='https://github.com/ABCD-Community/abcd-community.github.io/issues/new'>nos diga como podemos melhorar</a>."
 FeedbackNegative:
   en: "Sorry to hear that. Please <a href='{{ site.repo  }}/issues/new'>tell us how we can improve</a>."
   pt: "Sinto muito em ouvir isso. Por favor, <a href='{{ site.repo  }}/issues/new'>diga-nos como podemos melhorar</a>."  

@@ -18,103 +18,102 @@ lang-ref: abcd-modules/abcd-acquisitions
 ---
 
 
-This module deals with the administration of newly acquired objects and a pre-cataloging function. The pre- cataloged objects can, once acquired, be stored as objects for the Loans module. This is what ABCD 'integration' is about.
+Este módulo lida com a administração de objetos recém-adquiridos e uma função de pré-catalogação.Os objetos pré-catalogados podem, uma vez adquiridos, ser armazenados como objetos para o módulo de empréstimos.É disso que trata a 'integração' do ABCD.
 
-The acquisition module has the following main logical functions :
+O módulo de aquisição possui as seguintes funções lógicas principais:
 
-1.  Suggestions : the starting process of obtaining objects
-2.  Purchase orders : the actual acquiring of objects
-3.  Databases : management of the 4 acquisitions-related databases (suggestions, providers, orders and copies)
-4.  Administration : configuration, statistics and reports, weeding (discarding objects).
+1. Sugestões: O processo inicial de obtenção de objetos
+2. Pedidos de compra: a aquisição real de objetos
+3. Bancos de dados: Gerenciamento dos 4 bancos de dados relacionados a aquisições (sugestões, provedores, ordens e cópias)
+4. Administração: Configuração, Estatística e Relatórios, Ecaking (descartando objetos).
    
-   Let's discuss each of these in more detail.
+   Vamos discutir cada um deles com mais detalhes.
 
   
 
-## Suggestions
+## Sugestões
     
-The logical 'workflow' of acquisitions starts with suggestions (by library users, colleagues...) to purchase a book, followed logically by a purchase decision (approval or rejection), a bidding process and a decision on where to buy the book. Where the suggestions come from, at this time, has not yet been included into ABCD, but it is conceivable that a form to submit suggestions exists either on a webpage (e.g. the ABCD Site) or an e-mail can be sent to the librarian, either to be converted automatically into a suggestion record or to be manually edited into such a record by a librarian.
+O 'fluxo de trabalho' lógico das aquisições começa com sugestões (por usuários da biblioteca, colegas ...) para comprar um livro, seguido logicamente por uma decisão de compra (aprovação ou rejeição), um processo de licitação e uma decisão sobre onde comprar o livro.De onde vêm as sugestões, neste momento, ainda não foi incluído no ABCD, mas é concebível que exista um formulário para enviar sugestões em uma página da Web (por exemplo, o site ABCD) ou um e-mail possa ser enviado ao bibliotecário, para ser convertido automaticamente em um registro de sugestão ou para ser editado manualmente em um registro por um bibliotecário.
 
-A record on suggested books, whether or not actually purchased, needs to be kept for future use (e.g. when the same book is suggested again).  
+Um recorde de livros sugeridos, realmente comprado, precisa ou não ser mantido para uso futuro (por exemplo, quando o mesmo livro é sugerido novamente).
 
-This 'logical' flow is more or less reflected in the ABCD-acquisitions module.![](https://lh3.googleusercontent.com/bcuWHmk_C_prO4coXDPmyKh70c1fZtTIuMoV_CcBvCcFoKTcJl9WsMwFyL98yVv1x4Y9RW7M5RGn9PFEd1wpcXb93ldJrXpL0jgZAK5ZHOdYADys3AhWPoUyOI1Ake4VonklF084=s0)
+Esse fluxo 'lógico' é mais ou menos refletido no módulo ABCD-aquisições.
+
+![](https://lh3.googleusercontent.com/bcuWHmk_C_prO4coXDPmyKh70c1fZtTIuMoV_CcBvCcFoKTcJl9WsMwFyL98yVv1x4Y9RW7M5RGn9PFEd1wpcXb93ldJrXpL0jgZAK5ZHOdYADys3AhWPoUyOI1Ake4VonklF084=s0)
  
 
-### Overview
+### Visão geral
  
-Here the librarian can consult the status of the actual acquisition system's activities, with an option to get a listing (popping up in a separate window) of the activity.
+Aqui, o bibliotecário pode consultar o status das atividades reais do sistema de aquisição, com a opção de obter uma listagem (aparecendo em uma janela separada) da atividade.
 
 ![](https://lh4.googleusercontent.com/IHJOwV2flvWXF32GOL1SD75oH2SBjncmd3N8rZvYfgQZC0X5JUx1TYPf2ljxQ0_XCnvIkHm2KjieLq7bpiP48RO5lRkTImbPGL4s6PbuxVvS6oesOottVyRKjoP9dIF4X6bQVC9E=s0)
 
-No changes or editing functions are provided here, so this is only for consultation of the acquisitions system.
-
+Nenhuma alteração ou funções de edição são fornecidas aqui, portanto, isso é apenas para consulta do sistema de aquisições.
 ### New suggestions
     
-Here a worksheett is provided to actually enter a new suggestion for acquiring an object, with some bibliographical fields but also the status and a 'recommended by' field. Under here is shown part of the data-entry worksheet.
+Aqui é fornecida uma oficina para inserir uma nova sugestão para adquirir um objeto, com alguns campos bibliográficos, mas também o status e um campo 'recomendado por'.Aqui é mostrado parte da planilha de entrada de dados.
 
-> Note:
-> For the 'date of suggestion' field a calendar pop-in function is
-> used.
+> Nota:
+> Para o campo 'Data da sugestão', uma função pop-up é
+> usado.
 
  ![](https://lh6.googleusercontent.com/9Knt0Wpqe7MLnlfwSP4vNuWYbhvar82E2oxiM_0zPR7km0q8D5O0OvIlfkZsprs3MmX1UgEBjGDO5rKouj9vJk6297S9pjRuohwT06n3ZFRKOZEsFrAuH7T7KhEWoxpLN-63fRsK=s0)
 
   
 
-### Approval/Rejection
+### Aprovação/rejeição
     
-ABCD will give a listing of the requested activities with their status, sortable by either Title, Recommended by or Date of recommendation.![](https://lh3.googleusercontent.com/b6XdMqJJ_d3R-wkVCCD29MMPF1ytPirgxp2TnBPgXZ35vCg39cUY86XAKuTtf0ofFVo1ZqOwh6hu9UfeTsJYsorDHowuBqTBUDe6FWzgYhet7qpknhrAquXGdGkv1jLfxxS_4NEy=s0)
+A ABCD fornecerá uma lista das atividades solicitadas com seu status, classificáveis por qualquer título, recomendado por ou data de recomendação.![](https://lh3.googleusercontent.com/b6XdMqJJ_d3R-wkVCCD29MMPF1ytPirgxp2TnBPgXZ35vCg39cUY86XAKuTtf0ofFVo1ZqOwh6hu9UfeTsJYsorDHowuBqTBUDe6FWzgYhet7qpknhrAquXGdGkv1jLfxxS_4NEy=s0)
 
-Each of the items can be opened for editing, where the actual approval or rejection can be given. Under is an example of a rejected item :![](https://lh3.googleusercontent.com/iZri8tgNYj3XQTdX7XjqcUxdRfJpxUGMth99sx4jafOAVYxds9WIlJbUr7Z9iMAWsP0k514SIfB_1L60_2pk5cq4pjMtVBhW2LrbLEQGrrrpdr5M-C4i5ajpP11LmAbqoEpWYByt=s0)
+Cada um dos itens pode ser aberto para edição, onde a aprovação ou rejeição real pode ser fornecida.Under é um exemplo de um item rejeitado:![](https://lh3.googleusercontent.com/iZri8tgNYj3XQTdX7XjqcUxdRfJpxUGMth99sx4jafOAVYxds9WIlJbUr7Z9iMAWsP0k514SIfB_1L60_2pk5cq4pjMtVBhW2LrbLEQGrrrpdr5M-C4i5ajpP11LmAbqoEpWYByt=s0)
 
-At this point, after having either cancelled or saved (updated) the transaction, direct access to the main Acquisition menu's options is also offered :  
+Neste ponto, depois de ter cancelado ou salvo (atualizado) a transação, o acesso direto às opções do menu principal de aquisição também é oferecido:  
 
 ![](https://lh4.googleusercontent.com/fB363ccjR85F7WIgt5yMt3k8TwSr3S0E6yYtxeOAbPdvzKmZOmxL1nrCzRiv73E26kZT5_7g2KE3c4E_5GcKsgLm4M5zKLt-8GzBCGoUjyIkb9iyKO6jYa70O6GV3ZAq7WPFquFr=s0)
 
-Also options are provided to send the listing to either a document (.DOC format) or a Spreadsheet (.XLS).
+Também são fornecidas opções para enviar a listagem para um documento (formato .doc) ou uma planilha (.xls).
 
-### Bidding
-At this stage ABCD offers, starting from a sortable listing of the actual transactions, a worksheet where the bidding process can be kept track off : for each participant in the bidding some essential data (name of bidder, price offered etc.) can be stored with a box to mark acceptation or not :![](https://lh6.googleusercontent.com/g_kBXTBxOL37DF1sUQoK9dKxqB0x41OVj2d_C16Y_PN6qgtPMdwNfqLdXyJBw0MTqaEf9GTkuVgWgd2ovN3UiCTbHoOyKktzmhGdI0tRFqZNjQaswA5I8Yg-u8gKf9lEbuCU6T7s=s0)
+### Licitação
+Nesta fase, o ABCD oferece, a partir de uma lista classificável das transações reais, uma planilha em que o processo de licitação pode ser mantido rastreado: para cada participante da licitação alguns dados essenciais (nome do licitante, preço oferecido etc.) pode ser armazenadocom uma caixa para marcar a aceitação ou não :![](https://lh6.googleusercontent.com/g_kBXTBxOL37DF1sUQoK9dKxqB0x41OVj2d_C16Y_PN6qgtPMdwNfqLdXyJBw0MTqaEf9GTkuVgWgd2ovN3UiCTbHoOyKktzmhGdI0tRFqZNjQaswA5I8Yg-u8gKf9lEbuCU6T7s=s0)
 
   
-### Decisions
+### Decisões
     
-Finally the recommendations administration is completed by a listing of the approved offers in a format (work- sheet) similar to the above. Again this listing can be exported to either a document or a spreadsheet software.
+Finalmente, a administração de recomendações é concluída por uma lista das ofertas aprovadas em um formato (folha de trabalho) semelhante ao acima.Novamente, essa listagem pode ser exportada para um documento ou um software de planilha.
 
 ## Purchase orders![](https://lh4.googleusercontent.com/VvdeA8DWKRDWAKHdh7JCMUzdZzC2kyz9RdX2cWpvxLFSL_NsK-gwzIeeNjL4B13FjO4ZZjfMgaMrjVFETIslehLG-gNWEqwyy2Pe8I84fbM2Ldl0Pc2rcgZC5Php7EQKNsrs8ywa=s0)
     
 
-[!!] The new acquisitions first need to be categorized as either purchase, donation or exchange. According to the selected option the subsequent editing form will contain slightly different elements, but these don't need a lot of explanation here.
+[!!] As novas aquisições precisam primeiro ser categorizadas como compra, doação ou troca.De acordo com a opção selecionada, o formulário de edição subsequente conterá elementos ligeiramente diferentes, mas estes não precisam de muita explicação aqui.
 
   
 
-> Note:
-> In many cases libraries obtain objects without having gone
-> through the 'suggestions' stage. Here it is possible to create a new
-> order without having to refer to the suggestions phase. However there
-> is another option here to deal with approved suggestions and to
-> continue the full procedure into the actual acquisition process.
+> Nota:
+> Em muitos casos
+> Através do estágio de 'sugestões'.Aqui é possível criar um novo
+> Encomende sem ter que se referir à fase de sugestões.No entanto, lá
+> é outra opção aqui para lidar com sugestões aprovadas e para
+> Continue o procedimento completo no processo de aquisição real.
 
- ABCD facilitates the ordering of objects by providing a form to create a new order, by listing the pending orders with editing possibility and by providing a listing or search possibility in the list. The received items, with their price and number of items acquired, can be filled in. Whenever a selection has to be made from a list of candidates, these can be sorted by different criteria which are listed above the list itself.
+O ABCD facilita a ordem dos objetos, fornecendo um formulário para criar um novo pedido, listando os pedidos pendentes com a possibilidade de edição e fornecendo uma possibilidade de listagem ou pesquisa na lista.Os itens recebidos, com seu preço e número de itens adquiridos, podem ser preenchidos. Sempre que uma seleção deve ser feita a partir de uma lista de candidatos, eles podem ser classificados por diferentes critérios listados acima da própria lista.
 
-Acquisitions which have been received can be entered into the inventory with their date and order-number in a small form :  
+As aquisições recebidas podem ser inseridas no inventário com a data e o número de pedidos em um pequeno formulário:
 
 ![](https://lh3.googleusercontent.com/IJ1SR4jvJdoJG1Flo54azKvQM3I8_qE-NWjxKOsO41QhmVWWQRojyx6TXPmDwrVsPrQpzEHkE-ysbPWub4Boa1Dy4E84oIYVDo2xzx3PCnzq-taturS4OKkn0AmtM87xTzihzpSu=s0)
 
   
-Listing the received orders is the last option in here :![](https://lh3.googleusercontent.com/FwAkDrkyTDJsuH5oaOPNLLzT8xQQkYp1r5VWDdGdhewGmhFcAg2zQ-_1xa1wfKFDl0UgorZVSU0mqwHcdNNnU3Xsohf1ejU1RXfmSEIdx8KM0RvxNu999mN2_hs_87E5ETWP0B3m=s0)
+Listar os pedidos recebidos é a última opção aqui :![](https://lh3.googleusercontent.com/FwAkDrkyTDJsuH5oaOPNLLzT8xQQkYp1r5VWDdGdhewGmhFcAg2zQ-_1xa1wfKFDl0UgorZVSU0mqwHcdNNnU3Xsohf1ejU1RXfmSEIdx8KM0RvxNu999mN2_hs_87E5ETWP0B3m=s0)
 
   
   
-## Databases
+## Bancos de dados
 ![](https://lh3.googleusercontent.com/H9nxCHjXX-oJSYHrnweFJcYHs50yedUiX25ybxXlgZGxlLbTVVg-UWxaLmShSr5Y06lQTfd3Ok9Q65WBNLJoL1ji6P3e33B5RDTWy-d6BKdw4AwKLeQxyWrUnY_Tpd8a5iJWW8EZ=s0)  
 
-The ABCD Acquisitions module maintains 4 databases, which can be accessed directly here, each time with a search function for fast retrieval of a specific record. Each of the retrieved records can then be edited with its dedicated worksheet and saved if indeed changes have been made. As an example we show under here the providers database.![](https://lh3.googleusercontent.com/6igvzaOdbOiX_jqNUsh16EAxlIQqapDOkSehCg4vrS0BvPJteHKmfWcTkrfNf1rL-hfEDTDL2AqVqOdx1wkx-w4sX0FXdqFyndz-z_weJ6miH4LKisa7e3klLBcpEI1T518FvmDP=s0)
+O módulo ABCD Aquisitions mantém 4 bancos de dados, que podem ser acessados diretamente aqui, cada vez com uma função de pesquisa para uma recuperação rápida de um registro específico.Cada um dos registros recuperados pode ser editado com sua planilha dedicada e salva, se as alterações foram feitas.Como exemplo, mostramos aqui o banco de dados de provedores.![](https://lh3.googleusercontent.com/6igvzaOdbOiX_jqNUsh16EAxlIQqapDOkSehCg4vrS0BvPJteHKmfWcTkrfNf1rL-hfEDTDL2AqVqOdx1wkx-w4sX0FXdqFyndz-z_weJ6miH4LKisa7e3klLBcpEI1T518FvmDP=s0)
 
 
-The 'Create' icon allows to create a new provider record.
+O ícone 'Criar' permite criar um novo registro de provedor.
 
-## Administration of acquisitions module
+## Administração de módulo de aquisições
 
-In this last section of the Acquisitions module some functions are offered to manage the acquisitions system with reports, statistics, configuration of some parameters and also weeding the acquisitions system by deleting unwanted  
-
-items. In the initial version only one function is provided : reset the control number (which is the number of the last entered item or copy control number, to which 1 will be added when creating a new one ('auto-increment' field). Actually this number is kept in a file 'control_number.cn' in the folder `\ABCD\www\bases\copies\data\`, where simply the last assigned number is stored. Whenever copies are created, this file is write-protected to avoid duplication of the same number by concurrent users - so other users have to wait until this file is given free for writing.![](https://lh3.googleusercontent.com/Hpl24GzcIA7jYEUBUC7P41oEAd6nePawzewtXaWLiAmZr9_s-WI5ZYU9mzX4Ur5LfwWaluxKB2WVIW2x3U3011L96ocl3gyNid-B3NfhMgeoBivVweWAMXHLwDOmbFotkwZblv9L=s0)
+Nesta última seção do módulo de aquisições, algumas funções são oferecidas para gerenciar o sistema de aquisições com relatórios, estatísticas, configuração de alguns parâmetros e também erguer o sistema de aquisições, excluindo itens. Na versão inicial, apenas uma função é fornecida: redefinir o número de controle (que é o número do último item inserido ou número de controle de cópia, ao qual 1 será adicionado ao criar um novo (campo 'Auto-incremento'). Na verdade,Este número é mantido em um arquivo 'control_number.cn' na pasta `\ABCD\www\bases\copies\data\`, onde simplesmente o último número atribuído é armazenado.Sempre que as cópias são criadas, esse arquivo é protegido por gravação para evitar a duplicação do mesmo número por usuários simultâneos - para que outros usuários tenham que esperar até que esse arquivo seja gratuito para gravar.![](https://lh3.googleusercontent.com/Hpl24GzcIA7jYEUBUC7P41oEAd6nePawzewtXaWLiAmZr9_s-WI5ZYU9mzX4Ur5LfwWaluxKB2WVIW2x3U3011L96ocl3gyNid-B3NfhMgeoBivVweWAMXHLwDOmbFotkwZblv9L=s0)

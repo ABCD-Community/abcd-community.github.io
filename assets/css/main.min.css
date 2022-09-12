@@ -41,7 +41,6 @@
 }
 html {
     font-family: sans-serif;
-    line-height: 1.15;
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent;
 }
@@ -51,10 +50,6 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 body {
     margin: 0;
     font-family: open sans, -apple-system, BlinkMacSystemFont, segoe ui, Roboto, helvetica neue, Arial, sans-serif, apple color emoji, segoe ui emoji, segoe ui symbol;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #222;
     text-align: left;
     background-color: #fff;
 }
@@ -73,6 +68,8 @@ h1, h2, h3, h4, h5, h6 {
 p {
     margin-top: 0;
     margin-bottom: 1rem;
+    text-align: justify;
+    line-height: 30px !important;
 }
 abbr[title], abbr[data-original-title] {
     text-decoration: underline;
@@ -6774,7 +6771,7 @@ a.bg-dark:hover, a.bg-dark:focus, button.bg-dark:hover, button.bg-dark:focus {
     padding-top: 1rem!important;
 }
 .pr-md-3, .px-md-3 {
-    padding-right: 1rem!important;
+    padding-right: .3rem!important;
 }
 .pb-md-3, .py-md-3 {
     padding-bottom: 1rem!important;
@@ -12522,7 +12519,7 @@ body {
     font-size: 0;
 }
 .td-navbar-cover {
-    background: #30638e;
+    background: #003366;
 }
 @media(min-width:768px) {
     .td-navbar-cover {
@@ -12535,11 +12532,11 @@ body {
     text-shadow: none;
 }
 .navbar-bg-onscroll {
-    background: #30638e!important;
+    background: #003366!important;
     opacity: inherit;
 }
 .td-navbar {
-    background: #30638e;
+    background:#003366;
     min-height: 4rem;
     margin: 0;
     z-index: 32;
@@ -12761,21 +12758,27 @@ nav.foldable-nav .ul-1 .with-child>input:checked~label:hover:before {
 }
 }.td-sidebar-nav__section-title {
     display: block;
-    font-weight: 500;
+    font-weight: 600;
 }
 .td-sidebar-nav__section-title .active {
     font-weight: 700;
 }
 .td-sidebar-nav__section-title a {
-    color: #222;
+    color: #003366;
 }
 .td-sidebar-nav .td-sidebar-link {
     display: block;
     padding-bottom: .375rem;
 }
+
+.td-sidebar-nav .td-sidebar-link:hover {
+    background-color: var(--white);
+}
 .td-sidebar-nav .td-sidebar-link__page {
-    color: #495057;
-    font-weight: 300;
+    color: #0c1924;
+    font-size: 14px;
+    font-weight: 400;
+    margin-left: 10px;
 }
 .td-sidebar-nav a:hover {
     color: #72a1e5;

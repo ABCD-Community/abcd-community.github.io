@@ -28,22 +28,22 @@
 
  
 
-<title>Comunidade ABCD</title>
-<meta property="og:title" content="Comunidade ABCD" />
+<title>O abc do ABCD 2.0f</title>
+<meta property="og:title" content="O abc do ABCD 2.0f" />
 <meta property="og:description" content="Este documento tem como objetivo fornecer todas as informações e instruções relevantes sobre como usar a biblioteca integrada e o sistema de gerenciamento de documentação ‘ABCD’. Tanto as operações básicas como o gerenciamento avançado do software são discutidos, assim como os tópicos úteis e necessários relativos ao software ISIS no qual o ABCD se baseia. Nesta nova edição, as novas características da versão 2.0 são adicionadas- o uso de diferentes sabores de CISIS, de Unicode e as capacidades da biblioteca digital, bem como alguns módulos adicionais (ODDS, LDAP, DSpaceBridge) e utilitários (conversão UTF8, criação de objetos de empréstimo…) ." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://localhost:9898" />
 <meta property="og:site_name" content="http://localhost:9898" />
 
-<meta itemprop="name" content="Comunidade ABCD">
+<meta itemprop="name" content="O abc do ABCD 2.0f">
 <meta itemprop="description" content="">
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Comunidade ABCD"/>
+<meta name="twitter:title" content="O abc do ABCD 2.0f"/>
 <meta name="twitter:description" content="Este documento tem como objetivo fornecer todas as informações e instruções relevantes sobre como usar a biblioteca integrada e o sistema de gerenciamento de documentação ‘ABCD’. Tanto as operações básicas como o gerenciamento avançado do software são discutidos, assim como os tópicos úteis e necessários relativos ao software ISIS no qual o ABCD se baseia. Nesta nova edição, as novas características da versão 2.0 são adicionadas- o uso de diferentes sabores de CISIS, de Unicode e as capacidades da biblioteca digital, bem como alguns módulos adicionais (ODDS, LDAP, DSpaceBridge) e utilitários (conversão UTF8, criação de objetos de empréstimo…) ."/>
 
 <link rel="stylesheet" href="/assets/css/main.min.css">
-<link rel="stylesheet" href="/assets/css/palette.css">
+
 <script
   src="/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"></script>
 
@@ -68,7 +68,7 @@
 <header>
     <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
         <a class="navbar-brand" href="/pt">
-            <span class="navbar-logo"></span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 167.73 167.77"><defs><style>.cls-1{fill:#ffffff;}</style></defs><g id="Camada_2" data-name="Camada 2"><g id="Camada_1-2" data-name="Camada 1"><path class="cls-1" d="M66.62,83.14c-41-2.06-66.62,18-66.62,18V18.42S20.94-.08,66.62,0Z"/><path class="cls-1" d="M84.59,66.62c2.06-41-18-66.62-18-66.62h82.73s18.5,20.94,18.42,66.62Z"/><path class="cls-1" d="M101.11,84.63c41,2.06,66.62-18,66.62-18v82.74s-20.94,18.49-66.62,18.41Z"/><path class="cls-1" d="M83.14,101.15c-2.06,41,18,66.62,18,66.62H18.42S-.08,146.83,0,101.15Z"/></g></g></svg><span class="text-uppercase font-weight-bold">Comunidade ABCD</span>
+            <span class="navbar-logo"></span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 167.73 167.77"><defs><style>.cls-1{fill:#ffffff;}</style></defs><g id="Camada_2" data-name="Camada 2"><g id="Camada_1-2" data-name="Camada 1"><path class="cls-1" d="M66.62,83.14c-41-2.06-66.62,18-66.62,18V18.42S20.94-.08,66.62,0Z"/><path class="cls-1" d="M84.59,66.62c2.06-41-18-66.62-18-66.62h82.73s18.5,20.94,18.42,66.62Z"/><path class="cls-1" d="M101.11,84.63c41,2.06,66.62-18,66.62-18v82.74s-20.94,18.49-66.62,18.41Z"/><path class="cls-1" d="M83.14,101.15c-2.06,41,18,66.62,18,66.62H18.42S-.08,146.83,0,101.15Z"/></g></g></svg><span class="text-uppercase font-weight-bold">O abc do ABCD 2.0f</span>
         </a>
 	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
 		<ul class="navbar-nav mt-2 mt-lg-0">
@@ -441,6 +441,14 @@
   <li><a href="#d" id="markdown-toc-d">D</a>    <ol>
       <li><a href="#d---dummy--field--selector" id="markdown-toc-d---dummy--field--selector">d - dummy  field  selector</a></li>
       <li><a href="#date-datekeyword---current--date" id="markdown-toc-date-datekeyword---current--date">date date(keyword) - current  date</a></li>
+      <li><a href="#rmaxstring---maximum--value--of--expression" id="markdown-toc-rmaxstring---maximum--value--of--expression">rmax(string) - maximum  value  of  expression</a></li>
+      <li><a href="#rminstring---minimum--value--of--expression" id="markdown-toc-rminstring---minimum--value--of--expression">rmin(string) - minimum  value  of  expression</a></li>
+      <li><a href="#rsumstring---sum--of--expression" id="markdown-toc-rsumstring---sum--of--expression">rsum(string) - sum  of  expression</a></li>
+    </ol>
+  </li>
+  <li><a href="#s" id="markdown-toc-s">S</a>    <ol>
+      <li><a href="#sexpression---string" id="markdown-toc-sexpression---string">s(expression) - string</a></li>
+      <li><a href="#select--case--elsecase--endsel---conditional--branch--control" id="markdown-toc-select--case--elsecase--endsel---conditional--branch--control">select … case … elsecase … endsel - conditional  branch  control</a></li>
       <li><a href="#sizestring---string--size" id="markdown-toc-sizestring---string--size">size(string) - string  size</a></li>
       <li><a href="#systemexpression---system--call" id="markdown-toc-systemexpression---system--call">system(expression) - system  call</a></li>
     </ol>
@@ -1789,152 +1797,147 @@ If `&lt;format-2&gt;` is greater than `&lt;format-1&gt;` size, function returns 
 </code></pre></div></div>
 <p>right(v65,4)/,</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
----
 
-
-
-## rmax(string) - maximum  value  of  expression
-
-**Suporte:**  Standard
-**Function type:** Numeric
-**Sintaxe:**  
+para capturar a extensão de um arquivo:
+	
+```code
+right(v856^u[LAST],3)
 </code></pre></div></div>
-<p>rmax(<format>)</format></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-**Definition:**
-Returns the maximum value of a given format. `&lt;format&gt;` must generate a string expression.
 
-Notes:
+<hr />
+
+<h2 id="rmaxstring---maximum--value--of--expression">rmax(string) - maximum  value  of  expression</h2>
+
+<p><strong>Suporte:</strong>  Standard
+<strong>Function type:</strong> Numeric
+<strong>Sintaxe:</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rmax(&lt;format&gt;)
+</code></pre></div></div>
+
+<p><strong>Definition:</strong>
+Returns the maximum value of a given format. <code class="language-plaintext highlighter-rouge">&lt;format&gt;</code> must generate a string expression.</p>
+
+<p>Notes:
 Can be used to compute the maximum of numeric values in a repeatable field.
-Examples:
+Examples:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>f(rmax('72,54,2'),2,0),
 </code></pre></div></div>
-<p>f(rmax(‘72,54,2’),2,0),</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>f(rmax(v1,x1,v4,x1,(v8|,|)),5,2),
 </code></pre></div></div>
-<p>f(rmax(v1,x1,v4,x1,(v8|,|)),5,2),</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if rmax(v40|;|)&gt;val(v41) then 'Limit of ',v41,'exceeded.'/, fi,
 </code></pre></div></div>
-<p>if rmax(v40|;|)&gt;val(v41) then ‘Limit of ‘,v41,’exceeded.’/, fi,</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-**See also:**
-**rmin** function
-**ravr** function
-**rsum** function
 
----
+<p><strong>See also:</strong>
+<strong>rmin</strong> function
+<strong>ravr</strong> function
+<strong>rsum</strong> function</p>
 
+<hr />
 
+<h2 id="rminstring---minimum--value--of--expression">rmin(string) - minimum  value  of  expression</h2>
 
-## rmin(string) - minimum  value  of  expression
+<p><strong>Suporte:</strong>  Standard</p>
 
-**Suporte:**  Standard
+<p><strong>Function  type:</strong> Numeric</p>
 
-**Function  type:** Numeric
+<p><strong>Sintaxe:</strong></p>
 
-**Sintaxe:**  
-
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rmin(&lt;format&gt;)
 </code></pre></div></div>
-<p>rmin(<format>)</format></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-**Definition:**
-Returns  the  minimum  value  of  a  given  format.  `&lt;format&gt;`  must  generate  a  string  expression.
 
-**Notes:**
-Similar  to  **rmax  function**,  rmin  can  compute  the  minimum  of  numeric  values  in a  repeatable  field.
+<p><strong>Definition:</strong>
+Returns  the  minimum  value  of  a  given  format.  <code class="language-plaintext highlighter-rouge">&lt;format&gt;</code>  must  generate  a  string  expression.</p>
 
-**Examples:**
+<p><strong>Notes:</strong>
+Similar  to  <strong>rmax  function</strong>,  rmin  can  compute  the  minimum  of  numeric  values  in a  repeatable  field.</p>
 
+<p><strong>Examples:</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>f(rmin('10;2;5;4;-2'),2,0),
 </code></pre></div></div>
-<p>f(rmin(‘10;2;5;4;-2’),2,0),</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>f(rmin(v1,x1,v2,x1,'44'),4,2),
 </code></pre></div></div>
-<p>f(rmin(v1,x1,v2,x1,’44’),4,2),</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if rmin(v80||,v90|  |,v100|  |)&lt;  1990  then  'Wrong  decade.'/,  fi,
 </code></pre></div></div>
-<p>if rmin(v80||,v90|  |,v100|  |)&lt;  1990  then  ‘Wrong  decade.’/,  fi,</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 
-**Veja também:** 
-**rmax** function
-**ravr** function
-**rsum** function
+<p><strong>Veja também:</strong> 
+<strong>rmax</strong> function
+<strong>ravr</strong> function
+<strong>rsum</strong> function</p>
 
----
+<hr />
 
+<h2 id="rsumstring---sum--of--expression">rsum(string) - sum  of  expression</h2>
 
+<p><strong>Suporte:</strong>   Standard</p>
 
-## rsum(string) - sum  of  expression
+<p><strong>Function  type:</strong>  Numeric</p>
 
-**Suporte:**   Standard
-
-**Function  type:**  Numeric
-
-**Sintaxe:** 
+<p><strong>Sintaxe:</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rsum(&lt;format&gt;)
 </code></pre></div></div>
-<p>rsum(<format>)</format></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-**Definition:**
-Returns  the  sum  of  a  given  format.  `&lt;format&gt;`  must  generate  a  string  expression.
 
-Notes:  Similar  to **rmax** and  **rmin  functions**,  rsum  computes  the  sum  of  numeric  values  in a  repeatable  field.
+<p><strong>Definition:</strong>
+Returns  the  sum  of  a  given  format.  <code class="language-plaintext highlighter-rouge">&lt;format&gt;</code>  must  generate  a  string  expression.</p>
 
-Examples:
+<p>Notes:  Similar  to <strong>rmax</strong> and  <strong>rmin  functions</strong>,  rsum  computes  the  sum  of  numeric  values  in a  repeatable  field.</p>
+
+<p>Examples:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>f(rsum('102,45,-37'),2,0),
 </code></pre></div></div>
-<p>f(rsum(‘102,45,-37’),2,0),</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>f(rsum(v1,x1,v3,x1,f(val(v8)+2)),4,2),
 </code></pre></div></div>
-<p>f(rsum(v1,x1,v3,x1,f(val(v8)+2)),4,2),</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if rsum(v20^d)&gt;1000  then  'Aborted.'/  else  'OK'/,  fi,
 </code></pre></div></div>
-<p>if rsum(v20^d)&gt;1000  then  ‘Aborted.’/  else  ‘OK’/,  fi,</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-**Veja também:** 
-**rmax** function
-**ravr** function
-**rmin** function
 
----
+<p><strong>Veja também:</strong> 
+<strong>rmax</strong> function
+<strong>ravr</strong> function
+<strong>rmin</strong> function</p>
 
+<hr />
 
+<h1 id="s">S</h1>
+<h2 id="sexpression---string">s(expression) - string</h2>
 
-# S
-## s(expression) - string
+<p><strong>Suporte:</strong>   Standard</p>
 
-**Suporte:**   Standard
+<p><strong>Function  type:</strong>  String</p>
 
-**Function  type:**  String
-
-**Sintaxe:** 
+<p><strong>Sintaxe:</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>s(&lt;format&gt;)[command  component]
 </code></pre></div></div>
-<p>s(<format>)[command  component]</format></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-**Definition:**
-Returns  the  concatenation  of  string expressions  generated  by  &lt;format&gt;.
 
-**Components:**
-extraction
+<p><strong>Definition:</strong>
+Returns  the  concatenation  of  string expressions  generated  by  <format>.</format></p>
 
-**extraction:**
-Extracts partial content of the resulting string. `&lt;offset int&gt;` is the first  position to start extraction, while `&lt;length int&gt;` determines how many  characters will be extracted. If `&lt;length int&gt;` is omitted or is greater than the  resulting  string,  the  default  is  the  end  of  the  resulting  string.
+<p><strong>Components:</strong>
+extraction</p>
 
-Notes:  Can  be  passed  to  functions  that  require  a  string  expression  as  parameter.
+<p><strong>extraction:</strong>
+Extracts partial content of the resulting string. <code class="language-plaintext highlighter-rouge">&lt;offset int&gt;</code> is the first  position to start extraction, while <code class="language-plaintext highlighter-rouge">&lt;length int&gt;</code> determines how many  characters will be extracted. If <code class="language-plaintext highlighter-rouge">&lt;length int&gt;</code> is omitted or is greater than the  resulting  string,  the  default  is  the  end  of  the  resulting  string.</p>
 
+<p>Notes:  Can  be  passed  to  functions  that  require  a  string  expression  as  parameter.</p>
 
----
+<hr />
 
+<h2 id="select--case--elsecase--endsel---conditional--branch--control">select … case … elsecase … endsel - conditional  branch  control</h2>
 
-## select … case … elsecase … endsel - conditional  branch  control
+<p><strong>Suporte:</strong>  CISIS</p>
 
-**Suporte:**  CISIS
+<p><strong>Sintaxe:</strong></p>
 
-**Sintaxe:** 
-
-</code></pre></div></div>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>select &lt;format expr&gt; case &lt;option-1&gt;: &lt;format-1&gt;
-case &lt;option-2&gt;: &lt;format-2&gt;
-case &lt;option-n&gt;: &lt;format-n&gt; [elsecase &lt;format-0&gt;]
-endsel ```
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	select &lt;format expr&gt;
+case &lt;option-1&gt;: &lt;format-1&gt;
+	case &lt;option-2&gt;: &lt;format-2&gt;
+	case &lt;option-n&gt;: &lt;format-n&gt; [elsecase &lt;format-0&gt;]
+	endsel
 </code></pre></div></div>
 
 <p><strong>Definition:</strong>
@@ -2242,7 +2245,7 @@ $.each(headers, function(i, header){
 <button class="btn btn-primary mb-4 feedback--answer feedback--answer-yes">Sim</button>
 <button class="btn btn-primary mb-4 feedback--answer feedback--answer-no">Não</button>
 <p class="feedback--response feedback--response-yes">
-  Fico feliz em ouvir isso! Por favor, <a href='{{ site.repo }}/issues/new'>nos diga como podemos melhorar</a>.
+  Fico feliz em ouvir isso! Por favor, <a href='https://github.com/ABCD-Community/abcd-community.github.io/issues/new'>nos diga como podemos melhorar</a>.
 </p>
 <p class="feedback--response feedback--response-no">
   Sinto muito em ouvir isso. Por favor, <a href='{{ site.repo  }}/issues/new'>diga-nos como podemos melhorar</a>.
@@ -2290,7 +2293,7 @@ $.each(headers, function(i, header){
         </div> <!--./row flex-xl-nowrap-->
       </div> <!--./td-main-->
       
-      <footer class="bg-dark py-5 row d-print-none">
+      <footer class="bg-white py-5 row d-print-none">
   <div class="container-fluid mx-sm-5">
     <div class="row">
       <div class="col-6 col-sm-4 text-xs-center order-sm-2">
@@ -2302,14 +2305,14 @@ $.each(headers, function(i, header){
       <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
         <ul class="list-inline mb-0">  
           <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="GitHub" data-original-title="GitHub">
-            <a class="text-white" target="_blank" href="https://github.com/ABCD-Community/ABCD-Community.github.io">
+            <a class="text-dark" target="_blank" href="https://github.com/ABCD-Community/ABCD-Community.github.io">
               <i class="fab fa-github"></i>
             </a>
           </li>
         </ul>
       </div>
       <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
-        <small class="text-white">© 2021 Comunidade ABCD All Rights Reserved</small>
+        <small class="text-dark">© 2022 O abc do ABCD 2.0f All Rights Reserved</small>
         
         <p class="mt-2">
 

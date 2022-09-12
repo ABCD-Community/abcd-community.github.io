@@ -1,5 +1,5 @@
 ---
-title: Introduction - background information
+title: 01 Introduction - background information
 description: General introduction to ABCD as a software suite
 lang: en
 lang-ref: abcd-introduction
@@ -18,7 +18,6 @@ lang-ref: abcd-introduction
 ---
 
 ## General introduction to ABCD as a software suite
-    
 
 ABCD is the acronym for a software suite for the automation of libraries and documentation centres. In Spanish this is, in full : 'Automatisación de Bibliotécas y Centros de Documentación', which keeps the same acronym valid also for French (Automation des Bibliothèques et Centres de Documentacion) or Portugese (Automatização das Bibliotecas e dos Centros de Documentação). Even in other non-latin languages, with some slight but quite acceptable variations, - e.g. Dutch : 'Automatisering van Bibliotheken en Centra voor Documentatie' - the acronym can still be maintained.
 

@@ -107,7 +107,7 @@
     --white: #fff;
     --gray: #888;
     --gray-dark: #333;
-    --primary: #124078;
+    --primary: #003366;
     --secondary: #D95040;
     --success: #3772FF;
     --info: #C0E0DE;
@@ -2989,8 +2989,8 @@ fieldset:disabled a.btn {
 
 .btn-primary:hover {
     color: #fff;
-    background-color: #124078;
-    border-color: #124078;
+    background-color: #003366;
+    border-color: #003366;
 }
 
 .btn-primary:focus,
@@ -3002,8 +3002,8 @@ fieldset:disabled a.btn {
 .btn-primary.disabled,
 .btn-primary:disabled {
     color: #fff;
-    background-color: #124078;
-    border-color: #124078
+    background-color: #003366;
+    border-color: #003366
 }
 
 .btn-primary:not(:disabled):not(.disabled):active,
@@ -3029,8 +3029,8 @@ fieldset:disabled a.btn {
 
 .btn-secondary:hover {
     color: #fff;
-    background-color: #124078;
-    border-color: #124078;
+    background-color: #003366;
+    border-color: #003366;
 }
 
 .btn-secondary:focus,
@@ -3070,8 +3070,8 @@ fieldset:disabled a.btn {
 
 .btn-success:hover {
     color: #fff;
-    background-color: #124078;
-    border-color: #124078;
+    background-color: #003366;
+    border-color: #003366;
 }
 
 .btn-success:focus,
@@ -3110,8 +3110,8 @@ fieldset:disabled a.btn {
 
 .btn-info:hover {
     color: #fff;
-    background-color: #124078;
-    border-color: #124078;
+    background-color: #003366;
+    border-color: #003366;
 }
 
 .btn-info:focus,
@@ -3150,8 +3150,8 @@ fieldset:disabled a.btn {
 
 .btn-warning:hover {
     color: #fff;
-    background-color: #124078;
-    border-color: #124078;
+    background-color: #003366;
+    border-color: #003366;
 }
 
 .btn-warning:focus,
@@ -3190,8 +3190,8 @@ fieldset:disabled a.btn {
 
 .btn-danger:hover {
     color: #fff;
-    background-color: #124078;
-    border-color: #124078;
+    background-color: #003366;
+    border-color: #003366;
 }
 
 .btn-danger:focus,
@@ -3322,16 +3322,16 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-primary {
-    color: #124078;
+    color: #003366;
     background-color: transparent;
     background-image: none;
-    border-color: #124078
+    border-color: #003366
 }
 
 .btn-outline-primary:hover {
     color: #fff;
-    background-color: #124078;
-    border-color: #124078
+    background-color: #003366;
+    border-color: #003366
 }
 
 .btn-outline-primary:focus,
@@ -3342,7 +3342,7 @@ fieldset:disabled a.btn {
 
 .btn-outline-primary.disabled,
 .btn-outline-primary:disabled {
-    color: #124078;
+    color: #003366;
     background-color: transparent
 }
 
@@ -3350,8 +3350,8 @@ fieldset:disabled a.btn {
 .btn-outline-primary:not(:disabled):not(.disabled).active,
 .show>.btn-outline-primary.dropdown-toggle {
     color: #fff;
-    background-color: #124078;
-    border-color: #124078
+    background-color: #003366;
+    border-color: #003366
 }
 
 .btn-outline-primary:not(:disabled):not(.disabled):active:focus,
@@ -3925,10 +3925,10 @@ input[type=button].btn-block {
 .dropdown-item:active {
     color: #fff;
     text-decoration: none;
-    background: #124078 -webkit-gradient(linear, left top, left bottom, from(#4f7a9f), to(#124078)) repeat-x;
-    background: #124078 -webkit-linear-gradient(top, #4f7a9f, #124078) repeat-x;
-    background: #124078 -o-linear-gradient(top, #4f7a9f, #124078) repeat-x;
-    background: #124078 linear-gradient(180deg, #4f7a9f, #124078) repeat-x
+    background: #003366 -webkit-gradient(linear, left top, left bottom, from(#4f7a9f), to(#003366)) repeat-x;
+    background: #003366 -webkit-linear-gradient(top, #4f7a9f, #003366) repeat-x;
+    background: #003366 -o-linear-gradient(top, #4f7a9f, #003366) repeat-x;
+    background: #003366 linear-gradient(180deg, #4f7a9f, #003366) repeat-x
 }
 
 .dropdown-item.disabled,
@@ -4340,10 +4340,10 @@ input[type=button].btn-block {
 
 .custom-control-input:checked~.custom-control-label::before {
     color: #fff;
-    background: #124078 -webkit-gradient(linear, left top, left bottom, from(#4f7a9f), to(#124078)) repeat-x;
-    background: #124078 -webkit-linear-gradient(top, #4f7a9f, #124078) repeat-x;
-    background: #124078 -o-linear-gradient(top, #4f7a9f, #124078) repeat-x;
-    background: #124078 linear-gradient(180deg, #4f7a9f, #124078) repeat-x;
+    background: #003366 -webkit-gradient(linear, left top, left bottom, from(#4f7a9f), to(#003366)) repeat-x;
+    background: #003366 -webkit-linear-gradient(top, #4f7a9f, #003366) repeat-x;
+    background: #003366 -o-linear-gradient(top, #4f7a9f, #003366) repeat-x;
+    background: #003366 linear-gradient(180deg, #4f7a9f, #003366) repeat-x;
     -webkit-box-shadow: none;
     box-shadow: none
 }
@@ -4410,10 +4410,10 @@ input[type=button].btn-block {
 }
 
 .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
-    background: #124078 -webkit-gradient(linear, left top, left bottom, from(#4f7a9f), to(#124078)) repeat-x;
-    background: #124078 -webkit-linear-gradient(top, #4f7a9f, #124078) repeat-x;
-    background: #124078 -o-linear-gradient(top, #4f7a9f, #124078) repeat-x;
-    background: #124078 linear-gradient(180deg, #4f7a9f, #124078) repeat-x
+    background: #003366 -webkit-gradient(linear, left top, left bottom, from(#4f7a9f), to(#003366)) repeat-x;
+    background: #003366 -webkit-linear-gradient(top, #4f7a9f, #003366) repeat-x;
+    background: #003366 -o-linear-gradient(top, #4f7a9f, #003366) repeat-x;
+    background: #003366 linear-gradient(180deg, #4f7a9f, #003366) repeat-x
 }
 
 .custom-checkbox .custom-control-input:checked~.custom-control-label::after {
@@ -4421,10 +4421,10 @@ input[type=button].btn-block {
 }
 
 .custom-checkbox .custom-control-input:indeterminate~.custom-control-label::before {
-    background: #124078 -webkit-gradient(linear, left top, left bottom, from(#4f7a9f), to(#124078)) repeat-x;
-    background: #124078 -webkit-linear-gradient(top, #4f7a9f, #124078) repeat-x;
-    background: #124078 -o-linear-gradient(top, #4f7a9f, #124078) repeat-x;
-    background: #124078 linear-gradient(180deg, #4f7a9f, #124078) repeat-x;
+    background: #003366 -webkit-gradient(linear, left top, left bottom, from(#4f7a9f), to(#003366)) repeat-x;
+    background: #003366 -webkit-linear-gradient(top, #4f7a9f, #003366) repeat-x;
+    background: #003366 -o-linear-gradient(top, #4f7a9f, #003366) repeat-x;
+    background: #003366 linear-gradient(180deg, #4f7a9f, #003366) repeat-x;
     -webkit-box-shadow: none;
     box-shadow: none
 }
@@ -4446,10 +4446,10 @@ input[type=button].btn-block {
 }
 
 .custom-radio .custom-control-input:checked~.custom-control-label::before {
-    background: #124078 -webkit-gradient(linear, left top, left bottom, from(#4f7a9f), to(#124078)) repeat-x;
-    background: #124078 -webkit-linear-gradient(top, #4f7a9f, #124078) repeat-x;
-    background: #124078 -o-linear-gradient(top, #4f7a9f, #124078) repeat-x;
-    background: #124078 linear-gradient(180deg, #4f7a9f, #124078) repeat-x
+    background: #003366 -webkit-gradient(linear, left top, left bottom, from(#4f7a9f), to(#003366)) repeat-x;
+    background: #003366 -webkit-linear-gradient(top, #4f7a9f, #003366) repeat-x;
+    background: #003366 -o-linear-gradient(top, #4f7a9f, #003366) repeat-x;
+    background: #003366 linear-gradient(180deg, #4f7a9f, #003366) repeat-x
 }
 
 .custom-radio .custom-control-input:checked~.custom-control-label::after {
@@ -4634,9 +4634,9 @@ input[type=button].btn-block {
     width: 1rem;
     height: 1rem;
     margin-top: -.25rem;
-    background: #124078 -webkit-gradient(linear, left top, left bottom, from(#4f7a9f), to(#124078)) repeat-x;
-    background: #124078 -webkit-linear-gradient(top, #4f7a9f, #124078) repeat-x;
-    background: #124078 linear-gradient(180deg, #4f7a9f, #124078) repeat-x;
+    background: #003366 -webkit-gradient(linear, left top, left bottom, from(#4f7a9f), to(#003366)) repeat-x;
+    background: #003366 -webkit-linear-gradient(top, #4f7a9f, #003366) repeat-x;
+    background: #003366 linear-gradient(180deg, #4f7a9f, #003366) repeat-x;
     border: 0;
     border-radius: 1rem;
     -webkit-box-shadow: 0 .1rem .25rem rgba(0, 0, 0, .1);
@@ -4679,7 +4679,7 @@ input[type=button].btn-block {
 .custom-range::-moz-range-thumb {
     width: 1rem;
     height: 1rem;
-    background: #124078 linear-gradient(180deg, #4f7a9f, #124078) repeat-x;
+    background: #003366 linear-gradient(180deg, #4f7a9f, #003366) repeat-x;
     border: 0;
     border-radius: 1rem;
     box-shadow: 0 .1rem .25rem rgba(0, 0, 0, .1);
@@ -4721,7 +4721,7 @@ input[type=button].btn-block {
     margin-top: 0;
     margin-right: .2rem;
     margin-left: .2rem;
-    background: #124078 linear-gradient(180deg, #4f7a9f, #124078) repeat-x;
+    background: #003366 linear-gradient(180deg, #4f7a9f, #003366) repeat-x;
     border: 0;
     border-radius: 1rem;
     box-shadow: 0 .1rem .25rem rgba(0, 0, 0, .1);
@@ -4859,7 +4859,7 @@ input[type=button].btn-block {
 .nav-pills .nav-link.active,
 .nav-pills .show>.nav-link {
     color: #fff;
-    background-color: #124078
+    background-color: #003366
 }
 
 .nav-fill .nav-item {
@@ -5831,7 +5831,7 @@ input[type=button].btn-block {
 .page-item.active .page-link {
     z-index: 1;
     color: #fff;
-    background-color: #124078;
+    background-color: #003366;
     border-color: #2a567b
 }
 
@@ -5906,7 +5906,7 @@ input[type=button].btn-block {
 
 .badge-primary {
     color: #fff;
-    background-color: #124078
+    background-color: #003366
 }
 
 .badge-primary[href]:hover,
@@ -6241,7 +6241,7 @@ input[type=button].btn-block {
     color: #fff;
     text-align: center;
     white-space: nowrap;
-    background-color: #124078;
+    background-color: #003366;
     -webkit-transition: width .6s ease;
     -o-transition: width .6s ease;
     transition: width .6s ease
@@ -6354,8 +6354,8 @@ input[type=button].btn-block {
 .list-group-item.active {
     z-index: 2;
     color: #fff;
-    background-color: #124078;
-    border-color: #124078
+    background-color: #003366;
+    border-color: #003366
 }
 
 .list-group-flush .list-group-item {
@@ -7386,7 +7386,7 @@ button.close {
 }
 
 .bg-primary {
-    background-color: #124078!important
+    background-color: #003366!important
 }
 
 a.bg-primary:hover,
@@ -7474,10 +7474,10 @@ button.bg-dark:focus {
 }
 
 .bg-gradient-primary {
-    background: #124078 -webkit-gradient(linear, left top, left bottom, from(#4f7a9f), to(#124078)) repeat-x!important;
-    background: #124078 -webkit-linear-gradient(top, #4f7a9f, #124078) repeat-x!important;
-    background: #124078 -o-linear-gradient(top, #4f7a9f, #124078) repeat-x!important;
-    background: #124078 linear-gradient(180deg, #4f7a9f, #124078) repeat-x!important
+    background: #003366 -webkit-gradient(linear, left top, left bottom, from(#4f7a9f), to(#003366)) repeat-x!important;
+    background: #003366 -webkit-linear-gradient(top, #4f7a9f, #003366) repeat-x!important;
+    background: #003366 -o-linear-gradient(top, #4f7a9f, #003366) repeat-x!important;
+    background: #003366 linear-gradient(180deg, #4f7a9f, #003366) repeat-x!important
 }
 
 .bg-gradient-secondary {
@@ -7578,7 +7578,7 @@ button.bg-dark:focus {
 }
 
 .border-primary {
-    border-color: #124078!important
+    border-color: #003366!important
 }
 
 .border-secondary {
@@ -10530,7 +10530,7 @@ button.bg-dark:focus {
 }
 
 .text-primary {
-    color: #124078!important
+    color: #003366!important
 }
 
 a.text-primary:hover,
@@ -15545,7 +15545,7 @@ a.text-dark:focus {
     .td-content>dl dd,
     .td-content .footnotes,
     .td-content>.alert {
-        max-width: 95%
+        max-width: 80%
     }
 }
 
@@ -15785,7 +15785,7 @@ a.text-dark:focus {
 
 .-bg-primary {
     color: #fff;
-    background-color: #124078
+    background-color: #003366
 }
 
 .-bg-primary p>a {
@@ -15798,7 +15798,7 @@ a.text-dark:focus {
 }
 
 .-text-primary {
-    color: #124078
+    color: #003366
 }
 
 .-bg-secondary {
@@ -16109,7 +16109,7 @@ a.text-dark:focus {
 
 .-bg-1 {
     color: #fff;
-    background-color: #124078
+    background-color: #003366
 }
 
 .-bg-1 p>a {
@@ -16122,7 +16122,7 @@ a.text-dark:focus {
 }
 
 .-text-1 {
-    color: #124078
+    color: #003366
 }
 
 .-bg-2 {
@@ -16271,7 +16271,7 @@ a.text-dark:focus {
 
 .-bg-10 {
     color: #fff;
-    background-color: #124078
+    background-color: #003366
 }
 
 .-bg-10 p>a {
@@ -16284,7 +16284,7 @@ a.text-dark:focus {
 }
 
 .-text-10 {
-    color: #124078
+    color: #003366
 }
 
 .-bg-11 {
@@ -16428,7 +16428,7 @@ a.text-dark:focus {
 
 .td-box--1 {
     color: #fff;
-    background-color: #124078
+    background-color: #003366
 }
 
 .td-box--1 .td-arrow-down::before {
@@ -16437,7 +16437,7 @@ a.text-dark:focus {
     bottom: -25px;
     border-style: solid;
     border-width: 25px 30px 0;
-    border-color: #124078 transparent transparent transparent;
+    border-color: #003366 transparent transparent transparent;
     z-index: 3;
     position: absolute;
     content: ""
@@ -16453,10 +16453,10 @@ a.text-dark:focus {
 }
 
 .td-box--11.td-box--gradient {
-    background: #124078 -webkit-gradient(linear, left top, left bottom, from(#4f7a9f), to(#124078)) repeat-x!important;
-    background: #124078 -webkit-linear-gradient(top, #4f7a9f, #124078) repeat-x!important;
-    background: #124078 -o-linear-gradient(top, #4f7a9f, #124078) repeat-x!important;
-    background: #124078 linear-gradient(180deg, #4f7a9f, #124078) repeat-x!important
+    background: #003366 -webkit-gradient(linear, left top, left bottom, from(#4f7a9f), to(#003366)) repeat-x!important;
+    background: #003366 -webkit-linear-gradient(top, #4f7a9f, #003366) repeat-x!important;
+    background: #003366 -o-linear-gradient(top, #4f7a9f, #003366) repeat-x!important;
+    background: #003366 linear-gradient(180deg, #4f7a9f, #003366) repeat-x!important
 }
 
 .td-box--2 {
@@ -16725,7 +16725,7 @@ a.text-dark:focus {
 
 .td-box--10 {
     color: #fff;
-    background-color: #124078
+    background-color: #003366
 }
 
 .td-box--10 .td-arrow-down::before {
@@ -16734,7 +16734,7 @@ a.text-dark:focus {
     bottom: -25px;
     border-style: solid;
     border-width: 25px 30px 0;
-    border-color: #124078 transparent transparent transparent;
+    border-color: #003366 transparent transparent transparent;
     z-index: 3;
     position: absolute;
     content: ""
@@ -16750,10 +16750,10 @@ a.text-dark:focus {
 }
 
 .td-box--110.td-box--gradient {
-    background: #124078 -webkit-gradient(linear, left top, left bottom, from(#4f7a9f), to(#124078)) repeat-x!important;
-    background: #124078 -webkit-linear-gradient(top, #4f7a9f, #124078) repeat-x!important;
-    background: #124078 -o-linear-gradient(top, #4f7a9f, #124078) repeat-x!important;
-    background: #124078 linear-gradient(180deg, #4f7a9f, #124078) repeat-x!important
+    background: #003366 -webkit-gradient(linear, left top, left bottom, from(#4f7a9f), to(#003366)) repeat-x!important;
+    background: #003366 -webkit-linear-gradient(top, #4f7a9f, #003366) repeat-x!important;
+    background: #003366 -o-linear-gradient(top, #4f7a9f, #003366) repeat-x!important;
+    background: #003366 linear-gradient(180deg, #4f7a9f, #003366) repeat-x!important
 }
 
 .td-box--11 {
@@ -17286,7 +17286,7 @@ a.text-dark:focus {
 
 .td-box--primary {
     color: #fff;
-    background-color: #124078
+    background-color: #003366
 }
 
 .td-box--primary .td-arrow-down::before {
@@ -17295,7 +17295,7 @@ a.text-dark:focus {
     bottom: -25px;
     border-style: solid;
     border-width: 25px 30px 0;
-    border-color: #124078 transparent transparent transparent;
+    border-color: #003366 transparent transparent transparent;
     z-index: 3;
     position: absolute;
     content: ""
@@ -17311,10 +17311,10 @@ a.text-dark:focus {
 }
 
 .td-box--1primary.td-box--gradient {
-    background: #124078 -webkit-gradient(linear, left top, left bottom, from(#4f7a9f), to(#124078)) repeat-x!important;
-    background: #124078 -webkit-linear-gradient(top, #4f7a9f, #124078) repeat-x!important;
-    background: #124078 -o-linear-gradient(top, #4f7a9f, #124078) repeat-x!important;
-    background: #124078 linear-gradient(180deg, #4f7a9f, #124078) repeat-x!important
+    background: #003366 -webkit-gradient(linear, left top, left bottom, from(#4f7a9f), to(#003366)) repeat-x!important;
+    background: #003366 -webkit-linear-gradient(top, #4f7a9f, #003366) repeat-x!important;
+    background: #003366 -o-linear-gradient(top, #4f7a9f, #003366) repeat-x!important;
+    background: #003366 linear-gradient(180deg, #4f7a9f, #003366) repeat-x!important
 }
 
 .td-box--secondary {
@@ -17902,7 +17902,7 @@ a.text-dark:focus {
 }
 
 .td-navbar-cover {
-    background: #124078
+    background: #003366
 }
 
 @media(min-width:768px) {
@@ -17919,12 +17919,12 @@ a.text-dark:focus {
 }
 
 .navbar-bg-onscroll {
-    background: #124078!important;
+    background: #003366!important;
     opacity: inherit
 }
 
 .td-navbar {
-    background: #124078;
+    background: #003366;
     min-height: 4rem;
     margin: 0;
     z-index: 32
@@ -18020,7 +18020,7 @@ html body .md-typeset .headerlink {
         max-width: 100%;
         height: 2.5rem;
         margin-top: .25rem;
-/*      overflow: hidden; */
+        overflow: hidden;
         font-size: .875rem
     }
     .td-navbar .td-navbar-nav-scroll .nav-link {
@@ -18029,7 +18029,7 @@ html body .md-typeset .headerlink {
     }
     .td-navbar .td-navbar-nav-scroll .navbar-nav {
         padding-bottom: 2rem;
-/*        overflow-x: auto;*/
+        overflow-x: auto;
         white-space: nowrap;
         -webkit-overflow-scrolling: touch
     }
@@ -18187,7 +18187,7 @@ html body .md-typeset .headerlink {
 
 @supports((position:-webkit-sticky) or (position:sticky)) {
     .td-toc {
-        -webkit-position: sticky;
+        position: -webkit-sticky;
         position: sticky;
         top: 4rem;
         height: -webkit-calc(100vh - 10rem);
@@ -18257,12 +18257,12 @@ html body .md-typeset .headerlink {
 
 .alert-primary {
     border-style: solid;
-    border-color: #124078;
+    border-color: #003366;
     border-width: 0 0 0 4px
 }
 
 .alert-primary .alert-heading {
-    color: #124078
+    color: #003366
 }
 
 .alert-secondary {
@@ -18377,7 +18377,7 @@ html body .md-typeset .headerlink {
     padding: 0 0 0 1rem;
     margin-bottom: 1rem;
     color: #888;
-    border-left: 6px solid #124078
+    border-left: 6px solid #003366
 }
 
 .td-content>ul li,
@@ -18411,7 +18411,7 @@ html body .md-typeset .headerlink {
 
 .td-search-input {
     background: transparent;
-    border-radius: .3rem;
+    border-radius: 1rem;
     font-family: "font awesome 5 free", open sans, -apple-system, BlinkMacSystemFont, segoe ui, Roboto, helvetica neue, Arial, sans-serif, apple color emoji, segoe ui emoji, segoe ui symbol
 }
 
@@ -18531,7 +18531,7 @@ html body .md-typeset .headerlink {
 
 .pageinfo-primary {
     border-style: solid;
-    border-color: #124078
+    border-color: #003366
 }
 
 .pageinfo-secondary {
@@ -18596,65 +18596,18 @@ footer {
         height: 5rem;
         visibility: hidden
     }
-}
 
-
-/*** SEARCH ***/
-
-#search-holder {
-  float: right;
-  text-align: right;
-  width: 500px;
-}
-
-#search {
-  width: 170px;
-  border: 1px solid #eee;
-  border-radius: 3px;
-  font-size: 13px;
-  line-height: 15px;
-  padding: 4px 60px 4px 4px;
-  background-position: right 10px top 4px;
-  background-image: url("data:image/png;base64,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");
-  background-repeat: no-repeat;
-  background-size: 45px 16px;
-}
-
-.algolia-autocomplete {
-  width: 100%;
-}
-.algolia-autocomplete .aa-input, .algolia-autocomplete .aa-hint {
-  width: 100%;
-}
-.algolia-autocomplete .aa-hint {
-  color: #999;
-}
-.algolia-autocomplete .aa-dropdown-menu {
-  max-height: 400px;
-  overflow-y: scroll;
-  text-align: left;
-  width: 100%;
-  background-color: #fff;
-  border: 2px solid #ddd;
-}
-.algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
-  cursor: pointer;
-  padding: 5px 8px;
-  border-bottom: 1px solid #ddd;
-  font-size: 13.5px;
-  line-height: 17px;
-}
-.algolia-autocomplete .aa-dropdown-menu .aa-suggestion div {
-  color: #333;
-  padding-top: 8px;
-  text-decoration: underline;
-  color: #aaa;
-}
-.algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
-  background-color: #efefef;
-}
-.algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
-}
-.algolia__result-highlight {
-  font-weight: bold;
+    .archive_note {
+        border: blue;
+        border-width: 2px;
+        border-style: solid;
+        padding: 25px;
+        background-color: #F8F9FA;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    
 }

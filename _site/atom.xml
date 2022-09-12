@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
- <title>{"en"=>"ABCD Community", "pt"=>"Comunidade ABCD"}</title>
+ <title>{"en"=>"The abc of ABCD 2.0f", "pt"=>"O abc do ABCD 2.0f"}</title>
  <link href="http://localhost:9898/atom.xml" rel="self"/>
  <link href="http://localhost:9898/"/>
- <updated>2021-10-19T15:10:27-03:00</updated>
+ <updated>2022-09-12T16:53:30-03:00</updated>
  <id>http://localhost:9898</id>
  <author>
    <name></name>

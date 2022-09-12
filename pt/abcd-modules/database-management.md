@@ -19,144 +19,141 @@ lang-ref: abcd-modules/database-management
 
 ---
 
-In this section we discuss briefly the main techniques of one of the most powerful functions of ABCD : creating new databases and modifying database structures. Since ISIS-databases don't require sophisticated 'normalized' re- lational structures and still can cope with elements in many-to-many relationships (like authors with publications), ABCD can be used to deal with any such 'locally' created database relatively easily. We recommend ABCD for environments where several such applications, like e.g. Institutional repositories, cultural heritage collections, vo- cabularies and ontologies or even just 'snippets' (loose textual information units), are likely to be created and used.
+Nesta seção, discutimos brevemente as principais técnicas de uma das funções mais poderosas do ABCD: criando novos bancos de dados e modificando estruturas de banco de dados.Como os dados-dados do ISIS não exigem estruturas reagentes 'normalizadas' sofisticadas e ainda podem lidar com elementos em relacionamentos muitos para muitos (como autores com publicações), o ABCD pode ser usado para lidar com qualquer banco de dados 'localmente' criadorelativamente facilmente.Recomendamos a ABCD para ambientes em que várias aplicações, como por exemplo,Repositórios institucionais, coleções de patrimônio cultural, Vo-Cabularies e ontologias ou mesmo apenas 'trechos' (unidades de informação textual soltas) provavelmente serão criadas e usadas.
 
-We discuss in the following sections each of the options given in the main menu of ABCD Database management :![](https://lh5.googleusercontent.com/BE-QOz1IhYm4yArieSfqJz9alwkHKd10jYQD4LP66teGuVQuIHGXClJn43ynGbjbiH9kaqHZ7QD1Hmo4fSH_N2w55zn578cLHjCCsGFEZn4KLqcq28Yu6gN8p9MQezE7t_BGDzHC=s0)
+Discutimos nas seções a seguir cada uma das opções fornecidas no menu principal do gerenciamento de banco de dados ABCD :![](https://lh5.googleusercontent.com/BE-QOz1IhYm4yArieSfqJz9alwkHKd10jYQD4LP66teGuVQuIHGXClJn43ynGbjbiH9kaqHZ7QD1Hmo4fSH_N2w55zn578cLHjCCsGFEZn4KLqcq28Yu6gN8p9MQezE7t_BGDzHC=s0)
 
  
-> Note:  
-> This menu is created in the PHP-script 'homepage.php' in the
-> folder '\ABCD\www\htdocs\php\' where each login level gets its own
-> function to create the menu (e.g. function MenuAdministrador() for the
-> system administrator), so if it is necessary to change the sequence of
-> the functions of this menu, this file has to be edited by someone who
-> understands the HTML-coding inside.
-> 
-> We prefer to discuss the options in this main menu in a slightly
-> different sequence (which can be obtained also in the menu by editing
-> the above mentioned 'homepage.php' script), because before doing
-> anything else the Users Administration should be at least performed
-> once to define a local System Administrator and probably (quite) some
-> other system users.
-> 
-> [!!] In view of the importance of the 'Data Entry' menu option here a
-> dedicated section of this manual will be devoted to it following the
-> discussion of the other Central functions. Also the procedures to
-> follow to create copies and loan-objects for the inventory resp.
-> loan-databases will be explained there as they are part of the Data
-> Entry function.
+> Nota:
+> Este menu é criado no php-script 'homepage.php' no
+> pasta '\abcd\www\htdocs\php\' onde cada nível de login recebe seu próprio
+> função para criar o menu (por exemplo, função menuAdministrador() para o
+> administrador do sistema), por isso, se for necessário alterar a sequência de
+> As funções deste menu, este arquivo deve ser editado por alguém que
+> Entende a codificação HTML dentro.
+ 
+> Preferimos discutir as opções neste menu principal ligeiramente
+> Sequência diferente (que pode ser obtida também no menu editando
+> o script 'homepage.php' mencionado acima), porque antes de fazer
+> qualquer outra coisa que a administração dos usuários deve ser pelo menos executada
+> uma vez para definir um administrador de sistema local e provavelmente (bastante) alguns
+> Outros usuários do sistema.
+
+> [!!] em vista da importância da opção de menu 'entrada de dados' aqui um
+> A seção dedicada deste manual será dedicada a ele seguindo o
+> Discussão das outras funções centrais.Também os procedimentos para
+> Siga para criar cópias e objetos de empréstimos para o inventário resp.
+> Databases de empréstimos serão explicados lá, pois fazem parte dos dados
+> Função de entrada.
 
 
-## Users administration
+## Administração de usuários
 
-The Users administration option of the main ABCD Database Administration menu is a specific case of data- base-management, using mostly the general techniques discussed in this section, but for a specific database 'USERS' in which only the System Administrator can create profiles and ('register') new users or edit them.
+A opção de administração de usuários do menu principal de administração de banco de dados ABCD é um caso específico de gerenciamento de base, usando principalmente as técnicas gerais discutidas nesta seção, mas para um banco de dados específico 'usuários' nos quais apenas o administrador do sistema pode criar perfis e('Registrar') novos usuários ou editá -los.
 
-
-> Note: 
-> IMPORTANT ! Before doing anything else, ABCD should get, by
-> using this Users Administration option, a new, local System
-> Administrator with his/her own login data ! The default login
-> 'abcd/adm' will be widely known as it is published, so doesn't give
-> any security indeed !
-
+> Nota:
+> IMPORTANTE!Antes de fazer qualquer outra coisa, o ABCD deve ter, por
+> Usando a opção de administração desta usuários, um novo sistema local
+> Administrador com seus próprios dados de login!O login padrão
+> 'abcd/adm' será amplamente conhecido como publicado, então não dá
+> Qualquer segurança de fato!
   
 
-The screen following selection of the 'Users Administration' on the main Central menu will show 2 options :
-  
+A tela após a seleção da 'Administração de Usuários' no menu principal principal mostrará 2 opções:  
+
 ![](https://lh3.googleusercontent.com/-qWWxqxHbNDV4H_ckIFQLOUbEZ9EXq9ojXk7lVKkMva53tCRv10pW85-FXQ4ea13lvzgo_JfERlF-2-2bgjoSbDeK4MTgfAjhpoGHGmyC1Q-SxuKbG9Z5-CCcaMDDjcd0GAre2fA=s0)  
   
 
-The second option of managing the profiles is discussed elsewhere. The option on managing users is presented by first showing the existing users (there should be at least one 'System Administrator' user !) and giving the options to either edit these, delete or add (create) a new user.![](https://lh4.googleusercontent.com/lCWxZcCRXs6_4aR2OcR_pHwg7eObQuLh0yC-kfCnu4sGWZ4R80BgZpNK1lg1vDMLut45QICuQgQ5PKYBvSu0SgJs9WttQ847dGnZNZLw9nR8JOduU5NV8hIt2MHmZZ3OOY-3mPEH=s0)
+A segunda opção de gerenciar os perfis é discutida em outros lugares.A opção no gerenciamento de usuários é apresentada mostrando primeiro os usuários existentes (deve haver pelo menos um usuário de 'administrador do sistema'!) E dando as opções para editá -las, excluir ou adicionar (criar) um novo usuário.![](https://lh4.googleusercontent.com/lCWxZcCRXs6_4aR2OcR_pHwg7eObQuLh0yC-kfCnu4sGWZ4R80BgZpNK1lg1vDMLut45QICuQgQ5PKYBvSu0SgJs9WttQ847dGnZNZLw9nR8JOduU5NV8hIt2MHmZZ3OOY-3mPEH=s0)
 
-When clicking on the 'record edit' icon (first one of the three presented for each user : ![](https://lh5.googleusercontent.com/DLZoceS22SkSxwdb2bE953Hj5KcGdr2VHpPcF5KZC0UJ4EgvUBobWXfYFNH5G5iMN83FTYMF2o3mP-5VSTBXSqFq1SGpPP3ImvfvQi2TbjjSY4zC7pYMDmICA_Cxy-EbxOALmFAC=s0) ) the record with the user data will be shown in an interactive edit-form :
+Ao clicar no ícone 'Edição de registro' (primeiro dos três apresentados para cada usuário: ![](https://lh5.googleusercontent.com/DLZoceS22SkSxwdb2bE953Hj5KcGdr2VHpPcF5KZC0UJ4EgvUBobWXfYFNH5G5iMN83FTYMF2o3mP-5VSTBXSqFq1SGpPP3ImvfvQi2TbjjSY4zC7pYMDmICA_Cxy-EbxOALmFAC=s0) ) O registro com os dados do usuário será mostrado em um formulário de edição interativo :
 
   
 ![](https://lh3.googleusercontent.com/dCeLrTK6NagnAkFlULrem84wwtHl5ZoI2xaQBLKtMj8bRaj6vUIY8bopj_Q37hKkqpwWUyk0SEvjb0tV6cyRObaewa0vBx87JZvbDC-Rope4vKxj-sSYjMM0nt7sErVtA5WtDUs9=s0)  
 
-This edit form has the following parts :  
+Este formulário de edição tem as seguintes partes:
 
-1.  the user name, which can be a full name
-2.  the login to be used in the login screen, mostly a shorter name
-3.  the password for this user
-4.  The profiles which have been created and which can be assigned to this user. A set of demo-profiles is included with the ABCD-installation package.
-5.  the 'expiry' date for the current user, in the 'normal' date-format (as defined in config.php) and the mandatory ISO-date format which will be created automatically by the software itself.
-6.  After editing the new user the record should be saved and then will be immediately allowed to use the system.
+1. O nome de usuário, que pode ser um nome completo
+2. O login a ser usado na tela de login, principalmente um nome mais curto
+3. A senha para este usuário
+4. Os perfis que foram criados e que podem ser atribuídos a esse usuário.Um conjunto de perfis de demonstração está incluído no pacote de instalação ABCD.
+5. A data de 'Expiração' para o usuário atual, no formato de data 'normal' (conforme definido em Config.php) e o formato obrigatório de Data ISO que será criado automaticamente pelo próprio software.
+6. Depois de editar o novo usuário, o registro deve ser salvo e, em seguida, poderá usar imediatamente o sistema.
+
+
+## Criando um novo banco de dados no ABCD 
+
+Após a seleção da opção de menu 'Criar banco de dados', os três elementos a seguir precisam ser especificados:![](https://lh4.googleusercontent.com/0kY0d4W0NeDCkRgbEspkVOaJ9f-5_YIUgeLVmhLAjSSXQ_nK3bkUOLZTmVmQBDjnz8I2WuhoSYyNXteNvvX-saKtrHpMcRVXUlMm7uLvYeoMibjM0LNNjBwh8yWph2Tly3_28uwm=s0)
+
+Na primeira caixa, o software solicita o 'nome do banco de dados', que será o nome interno real do arquivo do novo banco de dados.Esses nomes não estão mais confinados ao nome antigo de '6 caracteres' de CDs/ISIS ou Winisis, mas os nomes curtos ainda são preferíveis.O nome apresentado aos usuários será especificado na 2ª caixa: a 'descrição'.
+
+> Dica:
+> Nomes e descrições de banco de dados podem ser abordados diretamente no
+> arquivo 'bases.tab' na pasta \ abcd \ www \ bases.Neste arquivo cada
+> Banco de dados, fornecido aos usuários, tem uma linha com cada dois valores: o
+> 'Nome' e a 'Descrição', separados por um tubo ('|').
+
+A 3ª caixa sempre fornecerá as opções 'Novo banco de dados' - significando criar um banco de dados a partir do zero - e 'banco de dados Winisis' - significando copiar uma estrutura existente de um banco de dados do Winisis ou de fato qualquer banco de dados ISIS com FDT, FST e PFT.Em seguida, os bancos de dados existentes serão fornecidos como modelos a serem usados como base para criar o novo banco de dados.Lidamos apenas com as duas primeiras opções, pois a cópia de um banco de dados ABCD-existente é bastante direto (o ABCD simplesmente cria o banco de dados copiando todos os arquivos necessários em suas pastas apropriadas e adicionando o novo banco de dados à lista de bancos de dados existentes).
+
+A criação de um novo banco de dados 'do zero', significando: não baseado em um modelo existente, mas a partir de um zero-basis, envolve entender bastante algumas técnicas de ISIS, esp.A linguagem de formatação, porque isso será usado não apenas na criação do formato de apresentação do novo banco de dados, mas também em vários atributos específicos de ABCD dos campos (na planilha de entrada e entrada de dados) e no FST para indexação.
+
+### Criação de um novo banco de dados do zero
     
+#### Editando o FDT
 
-## Creating a new database in ABCD
-    
+[!!] Desde a versão 1.0 do ABCD, duas interfaces são fornecidas para editar o FDT: um 'completo' e um 'abreviado'. A forma abreviada não mostrará os subcampos, a menos que o próprio campo seja selecionado por seu link na primeira coluna - eles aparecerão na forma subsequente em que todos os detalhes dos subcampos podem ser editados, por exemplo A largura das colunas como 'não. das colunas, caso os subcampos sejam apresentados em uma tabela em vez de campos de entrada separados (que é o tipo padrão de entrada: texto/textarea). Este abreviado FDT -Editor é bastante prático - e mais rápido - em caso de grandes estruturas complicadas (isto é, usando muitas subcampos), como o MARC (mesmo quando o uso apenas de catalogação 'mínimo' e 'nacional', o número de elementos possíveis é muito alto, P.E. Existem 14 tipos de registros diferentes, cada um com o seu próprio campo 'polimórfico' 8 e listas de pick-listas correspondentes, também para os Marc-Indicadores ... resultando em mais de 140 mesas de coleta por idioma). Para outras estruturas mais simples, o editor FDT completo pode ser usado.
 
-After selection of the 'Create Database' menu option, the following 3 elements need to be specified :![](https://lh4.googleusercontent.com/0kY0d4W0NeDCkRgbEspkVOaJ9f-5_YIUgeLVmhLAjSSXQ_nK3bkUOLZTmVmQBDjnz8I2WuhoSYyNXteNvvX-saKtrHpMcRVXUlMm7uLvYeoMibjM0LNNjBwh8yWph2Tly3_28uwm=s0)
-
-In the first box the software asks for the 'name of the database', which will be the real internal file name of the new database. These names no longer are confined to the old-style '6 characters' name of CDS/ISIS or WinISIS, but short names are still preferable. The name as presented to the users will be specified in the 2nd box : the 'description'.
-
-> Tip:
-> Database names and descriptions can be approached directly in the
-> file 'bases.tab' in the folder \ABCD\www\bases. In this file each
-> database, provided to users, has one line with each two values : the
-> 'name' and the 'description', separated by a pipe ('|') .
-
-The 3rd box will always provide the options 'new database' - meaning creating a database from scratch - and 'WinISIS database' - meaning copying an existing structure of a (Win)ISIS database or in fact any ISIS-database with a FDT, FST and PFT. Then also the existing databases will be provided as models to be used as the basis from which to create the new database. We only deal with the first 2 options, as copying from an existing ABCD- database is quite straight-forward (ABCD simply creates the database by copying all necessary files into their appropriate folders and adding the new database to the list of existing databases).
-
-The creation of a new database 'from scratch', meaning : not based on an existing model but starting from a zero-basis, involves understanding quite some ISIS-techniques, esp. the Formatting Language, because this will be used not only in the creation of the presentation format of the new database, but also in several ABCD-specific attributes of the fields (in both the FDT and data-entry worksheet) and the FST for indexing.
-
-### Creation of a new database from scratch
-    
-#### Editing the FDT
-
-[!!] Since version 1.0 of ABCD two interfaces are provided for editing the FDT : one 'full' and one 'abbre- viated'. The abbreviated form will not show the subfields unless the field itself is selected by its link in the first column - they will then appear in the subsequent form where all the details of the subfields can be edited, e.g. the width of the columns as 'no. of columns' in case the subfields are to be presented in a table rather than separate entry-fields (which is the default type of entry : Text/Textarea). This abbreviated FDT-editor is quite practical - and faster - in case of large complicated (i.e. using many subfields) structures such as MARC (even when only using 'minimal' and 'national' cataloging levels the number of possible elements is very high, p.e. there are 14 different record types with each their own 'polymorphic' field 8 and corresponding picklists, also for the MARC-indicators... resulting in more than 140 picklist-tables per language). For other, simpler structures the full FDT-editor can be used.
-
-[!!] In the case the full FDT-editor is selected, or when in the abbreviated editor a field is presented in a detailed format, the link at the first column can be used to show the field in a 'vertical' detailed way, so presenting just the selected field in a normal form. This then again is more practical to deal with the individual elements to be defined.
+[!!] No caso, o editor FDT completo é selecionado ou, quando no editor abreviado, um campo é apresentado em um formato detalhado, o link na primeira coluna pode ser usado para mostrar o campo de uma maneira detalhada 'vertical', então apresentando apenas o campo selecionado de forma normal.Isso então é mais prático para lidar com os elementos individuais a serem definidos.
   
-[!!] The FDT-editor screen is probably the most complicated one of ABCD, as it presents an empty FDT, but since in ABCD this FDT also defines the worksheet for data-entry (or cataloging), unlike in other ISIS-softwares where a separate but simple 'FMT' (data entry worksheet) is defined, and since in addition ABCD uses quite some more advanced data-entry features such as picklists and validations, this step is rather demanding.
+[!!] A tela FDT-Editor é provavelmente a mais complicada de ABCD, pois apresenta um FDT vazio, mas como no ABCD esse FDT também define a planilha para entrada de dados (ou catalogação), ao contrário de outros ISIS-SoftwaresOnde uma 'FMT' separada, mas simples, é definida e, além de, além disso, o ABCD usa alguns recursos de entrada de dados mais avançados, como listas de listas e validações, essa etapa é bastante exigente.
 
-> Tip In order to 'edit' the form, double-click inside a cell of the
-> table ! Simple-clicking will only select the row but not make the cell
-> editable or invoke the menu attached to the cell.
+> Dica para 'editar' o formulário, clique duas vezes dentro de uma célula do
+> Tabela!Clicar simples apenas selecionará a linha, mas não fará a célula
+> Editável ou invocar o menu anexado à célula.
 
-We will deal with each 'column' of the table now, but for a simple test it could be sufficient to simply only use the first 11 columns and the 2 last ones, the remaining part being dedicated to the optional definition of picklists :
+Vamos lidar com cada 'coluna' da tabela agora, mas, para um teste simples, pode ser suficiente simplesmente usar apenas as 11 primeiras colunas e as 2 últimas, sendo a parte restante dedicada à definição opcional de listas de picking:
 
 ![](https://lh6.googleusercontent.com/kPazwK_Jv1KbLvSgrKNfdrxF8_JP_ZblxQFRtfj7C8599QfET0wftqNq2wmat-QWM3Re2yUJvAgWlQYzvD4tdrF-NeCCuU9esA2IenOppk8uZ65TZ7mhgHINzdjRgKoNhv12We8K=s0)  
 
 
-#### A. Defining the fields
-1.  The first column : this is only a number, assigned by the system. It can be used however, if so desired, to open the row in a separate window to present all columns as separate boxes to interact with, by clicking on the hyperlink of the number itself. Such an empty row presentation looks like this :  
+#### A. Definindo os campos
+1. A primeira coluna: este é apenas um número, atribuído pelo sistema.No entanto, pode ser usado, se desejado, para abrir a linha em uma janela separada para apresentar todas as colunas como caixas separadas para interagir, clicando no hiperlink do próprio número.Uma apresentação de linha vazia se parece com a seguinte:
 
 ![](https://lh6.googleusercontent.com/zN2AIz2DBmeqK6pNjYvtk0WyZjgAbr1AJ3jGhU_KvsbBO5YycCNhKqhwUTPqHFZRmXnGD6necfQ01tnjE0_8iJB23I703QXWaPPFrshOYjdztaJf83Ch5LJ32W6BGyVoy_Asci2g=s0)
 
 
-2.  The second column is about the 'type' of the field, which can be one of the following types :![](https://lh5.googleusercontent.com/dRjJTJs8TLrPN6lfaXwf5IM899xU4IPEHbLLJ0pBGICZFPabenTtBv3wnSBQboBNLjcQqU2TtvSvvp_ISq8yBZOifEO1eO1-ZafzTLvRMqrIQKAgErXnWBkL9k2kWL21ux4Lj1NO=s0)
+2. A segunda coluna é sobre o 'tipo' do campo, que pode ser um dos seguintes tipos:![](https://lh5.googleusercontent.com/dRjJTJs8TLrPN6lfaXwf5IM899xU4IPEHbLLJ0pBGICZFPabenTtBv3wnSBQboBNLjcQqU2TtvSvvp_ISq8yBZOifEO1eO1-ZafzTLvRMqrIQKAgErXnWBkL9k2kWL21ux4Lj1NO=s0)
     
-	* Field : the basic unit within a record, which should be used in case the element is NOT one of the following types : a subfield, a fixed field, a MARC-fixed field or -leader, or a 'group' which is a repeated field with subfields.
-    *  [!!] Auto-increment : this is a special field which the system itself will normally manage, by taking the number saved in the small file 'control_number.cn' in the data-folder of the database, and adding 1 for each subsequent record using this field. When for some special reason this automatic numbering needs to be manually changed, the 'assign'-link will allow to do so.
-    * [!!] A subfield : when previously a field was created with values for subfields given in the 'subfields'-column (see infra), ABCD expects subsequently ALL subfields to be described immediately following the field to which they belong. The subfield-identifier then has to be put into the column for 'subfields' and the sub- field-name as the field-name. Indicators as used in MARC-structures should be treated as subfields but with numerical identifiers.
-    * A fixed field : allows to create a simple field with a fixed length  
-    * [!!] Date (MARC 005) : this is the special date-field with tag 005 as used in MARC.
-    * [!!] MARC-Leader : the fixed-structure MARC leader field. Dedicated support for all positions of this special field is given.
-    * 'Group' : this is a subfielded field which is repeatable. As with a normal subfielded field, it should be followed immediately with the subfields belonging to the group, but each series of subfields will be repeatable. A typical example of a group is the 'author'-field, as an author definition contains mostly several 'parts' (or subfields) such as name, first name, role etc.. and documents in principle can have more than one author, therefore this field should be repeatable. The 'table' data-entry element is quite suitable to represent such a complicated field in a data-entry form : each row of the table will be a repeat of the field and the columns represent the subfields. [!!] Sizes of the columns can be set as the 'row' -parameter of the first subfield definition row. The number of rows in the table will define how many occurrences will be shown, but ABCD will always add one empty row to allow creation of additional occurrences.
-    * A 'line' is just a graphical element to separate fields in the worksheet for data-entry. It doesn't need any further specifications.
-    * A 'heading' is a short text which can define a 'section' in the data-entry worksheet in order to 'group' fields together; ABCD will automatically provide hyperlinks-within-the-form to navigate directly to any of the defined headings. In MARC a typical 'header' could be e.g. 'primary entries' or 'secundary entries'.
-    * Operator and Date : this field will be automaticall filled in by ABCD with the name of the logged-in operator who edits the records and the time-stamp of creation.
-    
-
-3.  The third column is used to define the 'tag' or numerical identifier of the field, as required by ISO-2709. These numbers range from 1 to 999. ABCD (as does CISIS) uses many fields with values higher than 1000 for inter- nal, mostly temporary uses. Field-tags can be arbitrary (e.g. 1, 2, 3...) but often should comply with existing standards, e.g. MARC21 uses '245' for the main title field. It is the designer's (you..) responsibility to decide on a proper list of field-tags.
-    
-4.  Column no. 4 allows to identify the field with a 'name' or 'title' in order to explain the meaning of the field-tag. Here any - preferably short - indication can be used in the actual language.
+	* Campo: a unidade básica dentro de um registro, que deve ser usado caso o elemento não seja um dos seguintes tipos: um subcampo, um campo fixo, um campo ou líder de Marc, ou um 'grupo' que é um repetidocampo com subcampos.
+    *  [!!] Autoincremento: Este é um campo especial que o próprio sistema normalmente gerenciará, levando o número salvo no pequeno arquivo 'Control_number.cn' no dobrador de dados do banco de dados e adicionando 1 para cada registro subsequente usando este campo.Quando, por algum motivo especial, essa numeração automática precisa ser alterada manualmente, o 'atribuições' permitirá fazê-lo.
+    * [!!] Um subcampo: quando anteriormente um campo foi criado com valores para subcampos dados na coluna 'Subfields' (ver infra), o ABCD espera que, posteriormente, todos os subcampos sejam descritos imediatamente após o campo ao qual pertencem.O subcampo-identificador deve ser colocado na coluna para 'subcampos' e o sub-campo como o nome do campo.Os indicadores utilizados nas estruturas de Marc devem ser tratados como subcampos, mas com identificadores numéricos.
+    * Um campo fixo: permite criar um campo simples com um comprimento fixo
+    * [!!] Data (Marc 005): Este é o campo de data especial com a tag 005, conforme usado em Marc.
+    * [!!]Marc-Leader: O campo de líder da estrutura fixa.O suporte dedicado para todas as posições deste campo especial é fornecido.
+    * 'Grupo': Este é um campo subsefamado que é repetível.Como em um campo subsefamado normal, ele deve ser seguido imediatamente com os subcampos pertencentes ao grupo, mas cada série de subcampos será repetível.Um exemplo típico de um grupo é o 'autor', pois uma definição de autor contém principalmente várias 'partes' (ou subcampos), como nome, primeiro nome, função etc. e documentos em princípio podem ter mais de um autor,Portanto, esse campo deve ser repetível.O elemento de entrada de dados 'tabela' é bastante adequado para representar um campo tão complicado em um formulário de entrada de dados: cada linha da tabela será uma repetição do campo e as colunas representam os subcampos.[!!] Os tamanhos das colunas podem ser definidos como o parâmetro 'linha' da primeira linha de definição do subcampo.O número de linhas na tabela definirá quantas ocorrências serão mostradas, mas o ABCD sempre adicionará uma linha vazia para permitir a criação de ocorrências adicionais.
+    * Uma 'linha' é apenas um elemento gráfico para separar campos na planilha para entrada de dados.Não precisa de mais especificações.
+    * Um 'cabeçalho' é um texto curto que pode definir uma 'seção' na planilha de entrada de dados para 'campos de grupo' juntos;O ABCD fornecerá automaticamente os hiperlinks-da forma para navegar diretamente para qualquer um dos títulos definidos.Em Marc, um "cabeçalho" típico pode ser, por exemplo'entradas primárias' ou 'entradas secas'.
+    * Operador e data: Este campo será preenchido automaticamente pela ABCD com o nome do operador logado que edita os registros e o estampamento de tempo da criação.
     
 
-> Note:
-> ABCD, unlike WinISIS and other ISIS-variants, allows creation of
-> FDT for each language used, so field names can be language-dependent !
+3.  A terceira coluna é usada para definir a 'tag' ou identificador numérico do campo, conforme exigido pelo ISO-2709.Esses números variam de 1 a 999. ABCD (assim como o cisis) usa muitos campos com valores superiores a 1000 para usos internos e principalmente temporários.As marcas de campo podem ser arbitrárias (por exemplo, 1, 2, 3 ...), mas geralmente devem cumprir os padrões existentes, p.O Marc21 usa '245' para o campo principal do título.É a responsabilidade do designer (você ..) decidir sobre uma lista adequada de marcas de campo.
+    
+4.  Coluna no.4 Permite identificar o campo com um 'nome' ou 'título' para explicar o significado do campo.Aqui, qualquer indicação - de preferência curta - pode ser usada no idioma real.
+    
 
-5.  Column no. 5 allows to select one - and only one ! - field in a database to be used as the 'I'dentifier field on which the lists (see e.g. the 'A-Z selection tool') will be based. This is not the same as the 'primary key' field in relational databases, but indeed defines the field marked as being 'I' - since this column only allows to 'activate' or 'de-activate' - and hence being used to sort the records for direct selection.
-    
-6.  Column no. 6, as the previous one, only allows 'activating' or 'de-activating', in this case to denote whether a field is repeatable or not. This is an important decision to be taken, according to the designers view on the database structure, but different reasonings can be applied. E.g. in a simple structure the 'title'-field could be made 'repeatable' to also contain all types of titles (e.g. sub-titles, translated and original titles...) in order to confront the users with only one 'title'-field. MARC wants all types of titles to be in different fields, but still prefers the title-proper field to be repeatable ! We suggest to make fields repeatable in case of any doubt, as it is easier to use a repeatable field only once, rather than displaying repeats properly in a field defined as non- repeatable (in that case the field definition has to be changed in the FDT ánd the PFT's need to be adjusted !).
-    
-7.  Column no. 7 allows to define the single-characters (0-9 or a-z, case-insensitive) which will identify the sub- fields, if any. Remember that if subfields are given here, the subsequent lines or rows SHOULD deal with each of them individually, otherwise a logical error will be given. [!!] In the table-row defining the specific subfield, this column should contain the subfield-identifier.
-    
-8.  Column 8 allows to optionally define characters such as punctuation (,:: etc.) which will be converted - in the same sequence, so be careful and make sure there is consistency ! - into the subfield identifiers. This allows data-entry staff to use the punctuation instead of the rather less-obivous sub-field identifiers, but remember that ABCD also allows to deal with each subfield individually without having to bother about the identifiers (see the section on 'data-entry').
+> Nota:
+> ABCD, ao contrário de Winisis e outros Ísis-Variants, permite a criação de
+> FDT para cada idioma usado, para que os nomes de campo possam ser dependentes da linguagem!
 
-9.  [!!] Column 9 allows to define the type of HTML-input component the data-entry form will provide, where there are 15 possibilities :
+5. Coluna no.5 permite selecionar um - e apenas um!- Campo em um banco de dados a ser usado como o 'Indentifier Field no qual as listas (consulte, por exemplo, a' ferramenta de seleção A-Z ') será baseada.Não é o mesmo que o campo 'Primária Chave' em bancos de dados relacionais, mas de fato define o campo marcado como 'i' - já que esta coluna permite apenas 'ativar' ou 'desactivar' - e, portanto, ser usado para classificaros registros para seleção direta.
+    
+6. Coluna no.6, como o anterior, permite apenas 'ativar' ou 'desativar', neste caso denotar se um campo é repetível ou não.Esta é uma decisão importante a ser tomada, de acordo com a visão dos designers sobre a estrutura do banco de dados, mas diferentes raciocínio podem ser aplicados.Por exemplo.Em uma estrutura simples, o 'título' pode ser feito 'repetível' para conter também todos os tipos de títulos (por exemplo, subtítulos, títulos traduzidos e originais ...) para enfrentar os usuários com apenas um 'título'-campo.Marc quer que todos os tipos de títulos estejam em diferentes campos, mas ainda prefere que o campo de título-Proper seja repetível!Sugerimos tornar os campos repetíveis em caso de dúvida, pois é mais fácil usar um campo repetível apenas uma vez, em vez de exibir repetições corretamente em um campo definido como não repetível (nesse caso, a definição de campo deve ser alterada noFDT é a necessidade da PFT de ser ajustada!).
+    
+7. Coluna no.7 Permite definir os caracteres únicos (0-9 ou A-Z, insensível ao caso) que identificarão os sub-campos, se houver.Lembre -se de que, se os subcampos forem fornecidos aqui, as linhas ou linhas subsequentes devem lidar com cada uma delas individualmente, caso contrário, será fornecido um erro lógico.[!!] Na linha de mesa que define o subcampo específico, esta coluna deve conter o subcampo-identificador.
+    
+8. A coluna 8 permite definir opcionalmente caracteres como pontuação (, :: etc.) que serão convertidos - na mesma sequência; portanto, tenha cuidado e verifique se há consistência!- nos identificadores de subcampo.Isso permite que a equipe de entrada de dados use a pontuação em vez dos identificadores de subcampo menos obsivos, mas lembre-se de que o ABCD também permite lidar com cada subcampo individualmente sem ter que se preocupar com os identificadores (consulte a seção em 'entrada de dados').
+
+9.  [!!] A coluna 9 permite definir o tipo de componente de entrada HTML que o formulário de entrada de dados fornecerá, onde houver 15 possibilidades:
 
 ![](https://lh3.googleusercontent.com/u-8-cS31wEnibu0cmG6cb4U-MMt4JTr2qBTU6PDZ11lL2kCspQZWFrhxLdDEn4GnuaYNHDPfYPbF34ODHAcP7GaJ5hewHhawkRZmM-j9sOxvvVAASgC16xBNuugb1iwfO827_pf_=s0)
 
@@ -166,56 +163,56 @@ We will deal with each 'column' of the table now, but for a simple test it could
 
 ![](https://lh6.googleusercontent.com/MNRAKw2VaT_UMhQWbs8zFvrNMtjmsS2oPJCefLGn8IIky3Fk3B8puPvoz_h3gO8PnZqvN4EWkaD_XtGtUSnMDZfkkYB3MGpyzUJIGJRkmVg2rahGmbphLegPc92XHwbyeTgj1J65=s0)  
 
-* Text/Textarea will present a text-box of variable length. The number indicated in the 'rows' column defines the number of lines which will be presented in this box.
-* Text (fixed length) will present a text-box of fixed length. The number indicated in the 'columns' column defines the number of characters which will be allowed to enter in this box.
-* Table will present a table in which, in the rows, occurrences of the field can be entered, and in the columns, subfields of that occurrence can be entered. The numbers in resp. the 'rows' and 'columns' columns define, as can be expected, the number of occurrences and subfields which will be captured for this field.
-* The 'Password' option gives a text-box in which the box will be filled with * for each character typed, to hide the contents of this special field. If the MD5 option is activated in the config.php file, the passwords will be encrypted.
-* Date is the option to capture a date, with the assistance of a JavaScript control to offer date selection from a calendar.
- * [!!] ISO-date is the ISO-formatted (yyyymmdd) date field, mostly filled-in automatically by ABCD for internal use.
-* Select simple will allow selection of only one element from a list of pre-defined options.
-* Select multiple will allow selection of more than one element from a list of pre-defined options.
-* Checkbox is the option to allow one or more boxes to be 'ticked' (activated) in order to select them.
-* Radio is the option to allow only one round button to be activated in order to select the related option.
-* HTML area is the option to present to the user a full HTML-editor (JavaScript control, in ABCD we use FCKEditor) for editing, in WYSIWYG-mode, text with HTML-codes.
- * External HTML is the option to create, as in 10, a text-with-HTML-codes, but this will be stored not in the database but as an external file, with a link in the ISIS-record to this file.
- * Upload file is the option to present a JavaScript control for loading files to the server and create a link accordingly.
-* [!!] Read-only is a field which will not be editable after it has been entered as it is read-only.
-*  [!!] Hidden : a field which will not be shown after having been entered.  
+* Texto/textarea apresentará uma caixa de texto de comprimento variável. O número indicado na coluna 'linhas' define o número de linhas que serão apresentadas nesta caixa.
+* O texto (comprimento fixo) apresentará uma caixa de texto de comprimento fixo. O número indicado na coluna 'colunas' define o número de caracteres que poderão entrar nesta caixa.
+* A tabela apresentará uma tabela na qual, nas linhas, as ocorrências do campo podem ser inseridas e, nas colunas, os subcampos dessa ocorrência podem ser inseridos. Os números em resp. As colunas 'linhas' e 'colunas' definem, como pode ser esperado, o número de ocorrências e subcampos que serão capturados para este campo.
+* A opção 'Senha' fornece uma caixa de texto na qual a caixa será preenchida com * para cada caractere digitado, para ocultar o conteúdo deste campo especial. Se a opção MD5 for ativada no arquivo config.php, as senhas serão criptografadas.
+* A data é a opção de capturar uma data, com a assistência de um controle JavaScript para oferecer a seleção de data de um calendário.
+ * [!!] ISO-DATE é o campo Data de data formatada por ISO (AAYYYMMDD), principalmente preenchida automaticamente pelo ABCD para uso interno.
+* Selecionar Simples permitirá a seleção de apenas um elemento de uma lista de opções predefinidas.
+* Selecionar múltiplas permitirá a seleção de mais de um elemento de uma lista de opções predefinidas.
+* Caixa de seleção é a opção de permitir que uma ou mais caixas sejam 'marcadas' (ativadas) para selecioná -las.
+* O rádio é a opção de permitir que apenas um botão rodada seja ativado para selecionar a opção relacionada.
+* A área HTML é a opção de apresentar ao usuário um html-editor completo (Controle JavaScript, no ABCD, usamos o FCKeditor) para edição, no modo wysiwyg, texto com código HTML.
+* O HTML externo é a opção de criar, como em 10, um texto-html-código, mas isso será armazenado não no banco de dados, mas como um arquivo externo, com um link no registro do ISIS neste arquivo.
+* O arquivo de upload é a opção de apresentar um controle JavaScript para carregar arquivos no servidor e criar um link de acordo.
+* [!!] somente leitura é um campo que não será editável depois que ele foi inserido, pois é somente leitura.
+* [!!] oculto: um campo que não será mostrado após ter sido inserido.
  
-10.  Column 10 allows to define the number of 'rows' the data-input HTML-component will offer. Depending on the exact type selected in the previous column, this means the number of text-lines which can be displayed in the box, or the number of occurrences of a field (in a table to contain a 'group') will be allowed etc.
+10.  A coluna 10 permite definir o número de 'linhas' que o componente HTML de entrada de dados oferecerá.Dependendo do tipo exato selecionado na coluna anterior, isso significa o número de linhas de texto que podem ser exibidas na caixa ou o número de ocorrências de um campo (em uma tabela para conter um 'grupo') será permitido etc..
 
-11.  As with the previous column, this column allows to define a number, but this time for the number of 'columns' in the HTML-input component, which can be e.g. the number of characters (in a fixed-length textbox) or the number of sub-fields (in a table), or more generally the 'width' of the box.
+11.  Como na coluna anterior, esta coluna permite definir um número, mas desta vez o número de 'colunas' no componente de entrada HTML, que pode ser, por exemploO número de caracteres (em uma caixa de texto de comprimento fixo) ou o número de subfieldas (em uma tabela) ou, mais geralmente, a 'largura' da caixa.
     
-In principle, after having defined these 11 columns and if no need exists to define 'picklist', what is remaining is to simply define, if wanted, a 'default' value for this field in the last-but-one column, and to indicate if a help- page for the current field is to be made available. [!!] These help-pages are to be referred to as URL's (local files or online webpages).
+Em princípio, depois de definir essas 11 colunas e se não houver necessidade para definir 'Lista de seleção', o que é restante é simplesmente definir, se desejado, um valor 'padrão' para este campo na última, mas uma coluna, e paraIndique se uma página de ajuda para o campo atual deve ser disponibilizada.[!!] Essas páginas de ajuda devem ser chamadas de URL (arquivos locais ou páginas da web online).
 
-At the end of the table options are provided to save the table, but also to test and validate it![](https://lh3.googleusercontent.com/9HhAv5eLud0hhqtTRGEUkE1ZGL4Lf097h2CHHMjsbhK5LWtdpqPIQqttSBnATqbFTDCu-JyREbI5TEj6gd3rtNdL2fZXF3VUOOTkrlySKX37rZtcHFnsfFVFs0zSDHeqBS9w2nxU=s0)
+No final da tabela, são fornecidas opções para salvar a tabela, mas também para testá -la e validá -la![](https://lh3.googleusercontent.com/9HhAv5eLud0hhqtTRGEUkE1ZGL4Lf097h2CHHMjsbhK5LWtdpqPIQqttSBnATqbFTDCu-JyREbI5TEj6gd3rtNdL2fZXF3VUOOTkrlySKX37rZtcHFnsfFVFs0zSDHeqBS9w2nxU=s0)
 
-Here the 'Test' and 'Validate' options will resp. display the resulting form for getting an idea about the result and display the table in a different window with a message indicating wether any logical or grammatical errors are present in the table. It goes without saying that such errors need to be corrected first before 'saving' or 'updating' the FDT with the last option presented here.
+Aqui, as opções 'Teste' e 'Validar' resp.Exiba o formulário resultante para obter uma idéia sobre o resultado e exibir a tabela em uma janela diferente com uma mensagem indicando se todos os erros lógicos ou gramaticais estão presentes na tabela.Escusado será dizer que esses erros precisam ser corrigidos antes de 'salvar' ou 'atualizar' o FDT com a última opção apresentada aqui.
 
-The 'List' option provides a listing of the table in a separate window, e.g. allowing printing it or saving it as a separate file.
+A opção 'Lista' fornece uma lista da tabela em uma janela separada, por exemplopermitindo imprimi -lo ou salvá -lo como um arquivo separado.
 
-#### B. The definition of picklists
+#### B. A definição de listas de picaretas
     
-We continue here discussing the columns of the FDT, this time with the columns 12-20, which (except for the last 2) deal with the definition of 'pick-lists' to be presented in the data-entry form in order to support terminology control, authority control or simply to facilitate the data entry by providing the options available.
+Continuamos aqui discutindo as colunas do FDT, desta vez com as colunas 12-20, que (exceto o último 2) lidam com a definição de 'lista de pick-lists' a serem apresentadas no formulário de entrada de dados para apoiarControle de terminologia, controle de autoridade ou simplesmente para facilitar a entrada de dados, fornecendo as opções disponíveis.
 
-12.  Type of picklist : here we define the type of the control list to be used, with the following options : [!!] Database, Table or Thesaurus.
+12. Tipo de lista de pick -list: aqui definimos o tipo de lista de controle a ser usada, com as seguintes opções: [!!] Banco de dados, tabela ou sinário.
     
-A database is actually an ISIS-database with its Inverted File, so providing an almost unlimited number of possibilities, but being rather a complicated solution. [!!] A simple pick-list (table) will be based on an ASCII (or TXT-)file containing on each line one option. The 'Thesaurus'-option is in fact an (ISIS-)database again, but this time using a specific field structure with references to the different (and standardized) thesaurus hier- archical relationships, such as 'synonym', 'broader term', 'narrower term', 'scope note', 'use for' or 'used for'. Such thesaurus-database normally provides ways of 'navigating' to the related terms and therefore offers even a higher level of support for data-entry, by providing in such a scientific way descriptors of a given scientific field or topic.
+Um banco de dados é na verdade um ISIS-Database com seu arquivo invertido, fornecendo um número quase ilimitado de possibilidades, mas sendo uma solução bastante complicada.[!!] Uma lista simples (tabela) será baseada em um arquivo ASCII (ou TXT-) contendo em cada opção Linha um.O 'Thesaurus'-opção é de fato um banco de dados (ISIS-) novamente, mas desta vez usando uma estrutura de campo específica com referências aos diferentes relacionamentos hier-sinônimos (e padronizados) do hierus, como 'sinônimo', 'termo mais amplo', 'termo mais estreito', 'nota de escopo', 'uso para' ou 'usado para'.Esse sinário-database normalmente fornece maneiras de 'navegar' para os termos relacionados e, portanto, oferece até um nível mais alto de suporte à entrada de dados, fornecendo de maneira científica descritores de um determinado campo científico ou tópico.
 
-13.  Name : here the name of either the database or the file on which the control list is based, is to be put. This can also be taken from the 'browse' option in the 15th column (see infra).
+13. Nome: Aqui o nome do banco de dados ou do arquivo no qual a lista de controle é baseado, deve ser colocado.Isso também pode ser retirado da opção 'Procurar' na 15ª coluna (ver infra).
    
-14.  Prefix : here the short prefix should be put in case a database is producing the picklist, as that list will be produced from the Inverted File of that database and that often will be divided in 'sections' by the use of a prefix
+14. Prefixo: aqui o curto prefixo deve ser colocado caso um banco de dados esteja produzindo a lista de seleção, pois essa lista será produzida a partir do arquivo invertido desse banco de dados e que geralmente será dividido em 'seções' pelo uso de um prefixo
     
 
-- this is the one to be put here to allow partial presentation of the Inverted File. If e.g. the control list is used to facilitate the entry of publisher names (as many come back often), probably the database publishers are indexed with a prefix such as 'PU=', then putting this prefix here will only display the section of the IF with that prefix.
+- Este é o único a ser colocado aqui para permitir a apresentação parcial do arquivo invertido.Se, por exemplo,A lista de controle é usada para facilitar a entrada de nomes de editores (como muitos voltam com frequência), provavelmente os editores do banco de dados são indexados com um prefixo como 'PU =', então colocar este prefixo aqui exibirá apenas a seção do IF com com com com com com com com com com a seção 'Esse prefixo.
 
-15.  'Browse' : this is a link which, when clicked, will open the following separate window, which allows defining some information on the picklist-database in separate boxes, first of all the name of the database which can be selected form the ones already available.  
+15. 'Browse': este é um link que, quando clicado, abrirá a seguinte janela separada, que permite definir algumas informações sobre o picklist-database em caixas separadas, antes de tudo o nome do banco de dados que pode ser selecionado para os jáacessível.
     
 ![](https://lh6.googleusercontent.com/PJZthcOQDtRu9jxxBxRaqW9DWs-ZVysRsC2sxAXkgMZ9mpIRjQ2cmdvFl-iMcFJ_VyBG4CT89a6qv7r0b1HuaIMgDBLY7v1KzL-bEmQu5rZiD5rL9xP_2kTd2NsLgxj4HwHJ5vzc=s0)
 
- 16.  Display format (or 'List as') denotes the PFT which defines how the values in the list will be displayed with the Formatting Language. [!!] Here either an 'inline' PFT can be given, e.g. 'v11', or a reference to an external format can be given as '@myformat.pft'. This external format has to be written following a pre-defined pattern in order to be correctly interpreted.
+ 16. O formato de exibição (ou 'Lista como') indica a PFT que define como os valores na lista serão exibidos com a linguagem de formatação.[!!] Aqui um PFT 'inline' pode ser dado, por exemplo'V11', ou uma referência a um formato externo pode ser fornecido como '@myformat.pft'.Esse formato externo deve ser escrito após um padrão predefinido para ser interpretado corretamente.
     
-See the example here used for the authority files of the MARC database : @autoridades.pft: select e3
+Veja o exemplo aqui usado para os arquivos de autoridade do banco de dados MARC: @autoridades.pft: selecione e3
 
 ```
 case 1: v1
@@ -229,47 +226,44 @@ endsel
 ```
   
 
-> Note:
-> [!!] In case the PFT contains pipes (|) it CAN NOT be put inline
-> into the FDT but has to be put in an external PFT referred to from
-> this cell (this is because the pipes are also used as separators for
-> the column values of the FDT table as stored in ASCII- format).
+> Nota:
+> [!!] Caso a PFT contenha pipes (|) não pode ser colocado em linha
+> no FDT, mas deve ser colocado em uma PFT externa mencionada de
+> Esta célula (isso ocorre porque os tubos também são usados como separadores para
+> Os valores da coluna da tabela FDT conforme armazenados em asci- formato).
 
-17.  Extract as : defines, again with the Formatting Language, how the contents of the field needs to be exactly extracted from the field values in the record to which the entry in the list (as an Inverted File posting) points. If this value is omitted, the values will be kept in the format defined as 'display format' in the previous column. If the display format is a pre-defined format (@xxxx) and follows the instruction to separate the display format from the extraction format by $$$, this part should be left empty.
+17.  Extraia como: define, novamente com a linguagem de formatação, como o conteúdo do campo precisa ser exatamente extraído dos valores do campo no registro em que a entrada na lista (como uma postagem de arquivo invertida) pontos.Se esse valor for omitido, os valores serão mantidos no formato definido como 'formato de exibição' na coluna anterior.Se o formato de exibição for um formato predefinido (@xxxx) e seguir as instruções para separar o formato de exibição do formato de extração por $$$, esta peça deve ser deixada vazia.
 
-18.  Default value : here the default value can be put which could serve for fields which often have, in the specific case of the database, the same value, which then will already be presented automatically.
+18.  Valor padrão: aqui o valor padrão pode ser colocado, que pode servir para campos que geralmente têm, no caso específico do banco de dados, o mesmo valor, que já será apresentado automaticamente.
  
-19.  Help : this is a tick-box (active or not) to indicate whether a help-file for this field should be presented in the worksheet. The help-pages are stored in the folder bases/dbn/ayudas, where dbn represents the name of the database.  
+19.  Ajuda: esta é uma caixa de ticks (ativa ou não) para indicar se um arquivo de ajuda para esse campo deve ser apresentado na planilha.As páginas de ajuda são armazenadas nas pasta_de_bases/dbn/ayudas, onde o DBN representa o nome do banco de dados.
    
-#### The FST Definition
+#### A definição FST
 
-After having defined the list of fields (and picklists for them), ISIS expects the manager, who is creating a new database, to define not only which fields will be indexed, but also exactly how they should be indexed. That is what the Field Select Table (FST) is meant to do.
+Depois de definir a lista de campos (e as listas de apanhadas para eles), o ISIS espera que o gerente, que esteja criando um novo banco de dados, definir não apenas quais campos serão indexados, mas também exatamente como eles devem ser indexados.É isso que a tabela de seleção de campo (FST) deve fazer.
 
-There are excellent documents available as 'help-pages' within ABCD on this complicated ISIS-technique (and included as annex with this manual), so here we only present the main purpose of the three FST-columns.
+Existem excelentes documentos disponíveis como 'páginas de ajuda' no ABCD nessa complicada-técnica ISIS (e incluída como anexo com este manual), então aqui apenas apresentamos o objetivo principal das três colunas FST.
 
-The FST contains 3 columns :
+O FST contém 3 colunas:
 
-1.  The identifier
-This is a tag (a number) which will be used as the field from where the index term was taken, e.g. to allow field- limitations in searching. Mostly this tag will correspond to the actual field from where the value was taken, but it can also be a 'virtual' field (e.g. to group several titles in one 'title-field' to simplify the structure for the search). For example, one could create the very popular 'ALL FIELDS' search (Google-users don't know anything else !) by indexing all significant fields with one and the same IDentifier, e.g. '999' to allow a 'non-fielded' search.
+1. **O identificador**
+Esta é uma tag (um número) que será usada como campo de onde o termo do índice foi realizado, por exemplo,para permitir limitações de campo na pesquisa.Principalmente essa tag corresponderá ao campo real de onde o valor foi obtido, mas também pode ser um campo 'virtual' (por exemplo, agrupar vários títulos em um 'campo de título' para simplificar a estrutura da pesquisa).Por exemplo, pode-se criar a muito popular pesquisa de 'All Fields' (os usuários do Google não sabem mais de nada!), Indexando todos os campos significativos com um e o mesmo identificador, por exemplo'999' para permitir uma pesquisa 'não em campo'.
 
-2.  The indexing technique
-ISIS avails 9 techniques for indexing, but basically these can be reduced to two main options : the full field (abbreviated to the first 60 characters in ABCD) - called 'by line' - or a full-text indexing - called 'by word'. Indexing techniques from 5-9 are optimized for indexing using a 'prefix' (a short tag preceding the values to group the values in the same alphabetical section of the overall index or inverted file).
+2. **A técnica de indexação**
+O ISIS aproveita 9 técnicas para indexação, mas basicamente elas podem ser reduzidas para duas opções principais: o campo completo (abreviado para os primeiros 60 caracteres no ABCD) - chamado 'por linha' - ou uma indexação de texto completo - chamado 'por Word'.As técnicas de indexação de 5-9 são otimizadas para indexação usando um 'prefixo' (uma etiqueta curta que precede os valores para agrupar os valores na mesma seção alfabética do índice geral ou arquivo invertido).
 
-  
+3. **O formato de extração**
+ Aqui, o formato real para produzir a picada a ser indexado é especificado usando a linguagem de formatação do ISIS.Todos os recursos da linguagem de formatação (exceto os recursos de apresentação) podem ser usados, incluindo a referência a outros bancos de dados.
 
-3.  The extraction format
- Here the actual format to produce the sting to be indexed is specified using the ISIS Formatting Language. All features of the Formatting Language (except presentation features) can be used, including REFerring to other databases.
 
-  
+A interface do ABCD torna a criação de um FST tão fácil quanto possível (mas não é fácil, devido às possibilidades avançadas disponíveis!), Não apenas fornecendo o FST em 3 colunas editáveis, mas também como umReferência, o FDT a partir do qual os campos podem ser usados com suas tags e também indicando se eles têm subcampos e são repetíveis ou não.![](https://lh4.googleusercontent.com/i5Vtr0vTJ6oJOQJfiU2Q3rg9LHa2Lk1qq-vjMxShCLhMFgoZssGo0Igo2GUjJ13FxTQk9c63bdnfyWxaWOzowQ8nwQMSc1S0hP7vcmm-HQumWuJMAMEZ1ay3o8ETkuZrOYNr4gzV=s0)  
 
-The interface of ABCD makes the creation of such an FST as easy as is possible (but it isn't easy really, because of the advanced possibilities available!), by not only providing the FST in 3 editable columns, but also, as a reference, the FDT from which fields can be used with their tags, and also indicating whether they have subfields and are repeatable or not.![](https://lh4.googleusercontent.com/i5Vtr0vTJ6oJOQJfiU2Q3rg9LHa2Lk1qq-vjMxShCLhMFgoZssGo0Igo2GUjJ13FxTQk9c63bdnfyWxaWOzowQ8nwQMSc1S0hP7vcmm-HQumWuJMAMEZ1ay3o8ETkuZrOYNr4gzV=s0)  
+Como pode ser visto em [!!] Este exemplo, que usa formatos de extração muito simples, sempre preferimos prefixos a serem usados, por exemplo, 'ID_'. Em vista de algumas opções internas da interface IAH OPAC para ABCD, recomendamos o uso de prefixos de 3 caracteres que terminam com um sublinhado ('_').
 
-As can be seen in [!!] this example, which uses very simple extraction formats, we always prefer prefixes to be used, e.g. 'ID_'. In view of some built-in options of the iAH OPAC interface for ABCD, we recommend the use of 3-character prefixes ending with an underscore ('_').
+Como a linguagem de formatação (característica mais poderosa do ISIS) pode ser usada aqui em todo o seu poder (sem os recursos de apresentação gráfica), os valores podem ser processados antes de entrar no dicionário, por exemplo: ``'N:', f(mfn,1,0)`` produz o número de registro ou mfn, formatado (f) como uma string, mas exemplos mais complicados podem ser dados, por exemplo.
 
-As the Formatting Language (ISIS' most powerful feature) can be used here in its full power (without the graphical presentation features), values can be processed before then enter the dictionary, e.g. 'N:', f(mfn,1,0) produces the recordnumber or MFN, formatted (f) as a string, but more complicated examples can be given, e.g. .
-
--   a combination of several fields or subfields with added punctuation
--   formats using the REF-function to refer to external databases to take values from there after locating the MFN with the L-function - doing so e.g. codes can be converted into values for the dictionary.
+- Uma combinação de vários campos ou subcampos com pontuação adicional
+- Formatos usando a função ref para se referir a bancos de dados externos para obter valores a partir daí depois de localizar o MFN com a função L- fazê-lo, por exemploOs códigos podem ser convertidos em valores para o dicionário.
     
 After having edited the FST, it can be tested with any record of your database to check whether the actual values which will be indexed indeed comply with what was intended.![](https://lh5.googleusercontent.com/FRA6Z4MDzsH4LSRB2h7RIix9nvptfcgKSDdIlqn-IaG-aaR0p39PQ1u_-C_NEWjqnbqJL7vgWWtWngDP4oimbX-JNSpuuBlKzYg2cAHsu7YZsKVmc7eVcyH4nRoPiXQbJ0SG5hGW=s0)
 

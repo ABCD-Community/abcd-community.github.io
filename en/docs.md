@@ -19,14 +19,15 @@ This site aims at providing all relevant background information and instructions
 
 <div class="section-index">
     <hr class="panel-line">
-        {% assign posts=site.pages | where:"lang", page.lang %}
+    {% assign posts=site.pages | where:"lang", page.lang %}
+      {% if page.description != '' %}
         {% for post in posts %}    
     <div class="entry">
     <h5><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h5>
     <p>{{ post.description }}</p>
     </div>
         {% endfor %}
-
+    {% endif %}
 </div>
 
 

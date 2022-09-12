@@ -16,8 +16,8 @@
 
 
 title: 
-  en: ABCD Community
-  pt: Comunidade ABCD
+  en: The abc of ABCD 2.0f
+  pt: O abc do ABCD 2.0f
 email: contact@abcd-community.org
 author: 
   en: Egbert de Smet
@@ -64,7 +64,7 @@ feedback: true
 # If commented, will use material hat theme
 # logo: "assets/img/logo/SRCC-square-red.png"
 logo_pixels: 34
-color: "#124078"
+color: "#003366"
 # color: "#8c1515" # primary color for header, buttons
 
 # If you add tags to pages, define this variable to link them to some external search
