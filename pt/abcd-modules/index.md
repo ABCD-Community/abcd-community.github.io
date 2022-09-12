@@ -17,67 +17,66 @@ lang-ref: abcd-modules
 
 ---
 
-## Introduction and general configuration   
+## Introdução e configuração geral
 
-This chapter deals with the main functions [!!] of the 'Central' module of the ABCD system. As an integrated 'library automation software' the system offers tools for database management (both for bibliographic/document databases and administrative databases such as users, acquisitions and loans), data-entry, statistics, circulation, serials control and searching functions (OPAC in a 'portal' environment).
+Este capítulo aborda as principais funções do sistema ABCD. Como um software de automação de bibliotecas integrado, o sistema oferece ferramentas para gerenciamento de bases de dados (tanto para bases de dados bibliográficas/documentais como bases de dados administrativas, tais como de usuários, aquisições e empréstimos), entrada de dados, estatísticas, circulação, controle de periódicos e funções de pesquisa (OPAC em um ambiente de "portal").
 
-These functions are presented in different parts of a suite, which are relatively independent from each other but not fully. Parts are accessed by their own URL. Within one part several modules can exist which also cooperate. For example the pre-cataloging information produced for acquisitions will be re-used in the copies-database for the inventory and loan-objects database for the circulation module, which in its turn uses bibliographic information from the catalogs. Statistics can be applied to any ISIS-database, not only the Circulation databases, so this function will also re-appear at several instances within the software. The OPAC-technology can run on any ISIS-database, not only the own ABCD-catalogs, so it will be described as a relatively independent tool, as will be the case with the Serials Control.
+Estas funções são apresentadas em diferentes partes de uma suíte, que são relativamente independentes uns dos outros, mas não totalmente. As partes são acessadas através de sua própria URL. Dentro de uma parte podem existir vários módulos que também cooperam entre si. Por exemplo, as informações de pré-catalogação produzidas para aquisições serão reutilizadas na base de dados de itens para o módulo de circulação, que por sua vez utiliza informações bibliográficas dos catálogos. Estatísticas podem ser aplicadas a qualquer base de dados ISIS, não somente à base de dados de circulação, Assim, esta função também irá aparecer em várias instâncias dentro do software. A tecnologia OPAC pode ser executada em qualquer base ISIS, não só nos catálogos do próprio ABCD. Por isso vai ser descrito como uma ferramenta relativamente independente, como será o caso com o Controle de Periódicos.
 
-**Important**
-How to access the suite parts directly ?
+**Importante**
+Como acessar as partes da suíte diretamente?
 
--   The first six modules together constitute the 'Central' part of the ABCD-suite. It can be accessed by the [!!] URL http://[serverURL]:9090. The 'index.php' part is optional if the web-server (Apache) has been told that index.php is one of the default pages in the folder (as is e.g. also 'index.html').
+-   Os primeiros seis módulos juntos constituem a parte 'Central' da suíte ABCD. Pode ser acessada pela URL http://[serverURL]:9090. "index.php" é opcional, se foi informado ao servidor web (Apache) que index.php é uma das páginas default na pasta (como é, por exemplo, também "index.html").
    
--   The combined OPAC-with-portal (Site) can be accessed by http://[serverURL]/site/index.php, with the administrator page for this Site being http://[serverURL]/site/admin/index.php.
+-   O combinado OPAC-com-portal (site) pode ser acessado por http://[serverURL]/site/index.php, com a página de administrador para este Site sendo http://[serverURL]/site/admin/index.php.
   
--   The Serials Control part should be accessed by the URL http://[serverURL]/secs-web/index.php.
+-   A parte de Controle de Periódicos deve ser acessada pela URL http://[serverURL]/secs-web/index.php.
    
--   EmpWeb can be accessed, if installed, by the URL http://[serverURL]/empweb/ (note the trailing for- ward-slash here !)
+-   EmpWeb pode ser acessado , se instalado, pela URL http://[serverURL]/empweb/ (observe a barra no fim da URL!)
    
-For all these parts or modules ABCD provides publicly available start login data, which need to be read from the 'leiame.txt' or 'readme.txt' files coming with the installation package. It is the responsibility of the system manager to take these login data out of the system and replace them by local - and locally controlled - login data.
+Para todas estas partes ou módulos do ABCD, dados de “start login” estão disponíveis publicamente, que precisam ser lidos a partir do arquivo “leiame.txt” ou “readme.txt" que vem com o pacote de instalação. É de responsabilidade do administrador de sistema substituir os dados de login do sistema pelos dados de login locais – e localmente controladas.
 
-ABCD manages the control of who can access the system and with which privileges through a system (introduced with version 1.0) of 'profiles'. Profiles are sets of allowed modules, databases and forms. ABCD users (not library patrons) then will be assigned to one of the defined profiles (see 'Users Administration' in the following section).
+ABCD gerencia o controle de quem pode acessar o sistema e com quais privilégios, através de um sistema de "perfis" (introduzido com a versão 1.0). Os perfis são conjuntos de módulos, bases de dados e formulários permitidos. Usuários ABCD (não usuários da biblioteca), então, serão atribuídos a um dos perfis definidos (ver "Administração de perfis de Usuários” na seção seguinte).
 
-
-## Multilinguality configuration
+## Configuração de multilíngue
     
-ABCD is fully conceived as a multi-lingual software, allowing the creation and use of any language. All lan- guage-sensitive elements, such as screen messages and help-files, but for databases e.g. also display-formats, field- definition and -selection tables etc. are stored in separate subfolders for each language. These subfolders are named according to language-codes which are defined in the file 'lang.tab' of the 'bases'-directory. An example of such lang.tab file, in which two additional (non-Latin alphabet) languages have been added to the four original default languages, is listed here :
+ABCD é totalmente concebido como um software multilíngue, permitindo a criação e uso de qualquer idioma. Todos os elementos sensíveis ao idioma, como mensagens de tela e arquivos de ajuda, mas para bancos de dados, por exemplo. também formatos de exibição, definição de campo e tabelas de seleção etc. são armazenados em subpastas separadas para cada idioma. Essas subpastas são nomeadas de acordo com os códigos de idioma que são definidos no arquivo 'lang.tab' do diretório 'bases'. Um exemplo desse arquivo lang.tab, no qual dois idiomas adicionais (alfabeto não latino) foram adicionados aos quatro idiomas padrão originais, está listado aqui:
 
-* pt=portuguese 
+* pt=português
 * es=spanish
 * en=english
 * fr=french
 * am=amharic
 * si=sinhalese
 
-With this list all messages (the 'lang'-database) and database-structures and -printformats will (need to) have sub- folders pt, es, en, fr, am and si. The list of languages has to be repeated in each lang-subfolder, if so desired translating each of the language values (not 'keys' as the abbreviation codes need to remain constant !) can be translated into the underlying language and - if 'Unicode' is switched on (see infra) - even written in non-Latin alphabets. Beware of non-ASCII characters such as 'ñ' (e.g. in español) since these are coded differently in ANSI (Windows) vs. Unicode.
+Com esta lista todas as mensagens (o banco de dados 'lang') e estruturas de banco de dados e formatos de impressão terão (precisam) ter subpastas pt, es, en, fr, am e si. A lista de idiomas deve ser repetida em cada subpasta lang, se desejado, traduzindo cada um dos valores de idioma (não 'chaves', pois os códigos de abreviação precisam permanecer constantes!) ' está ligado (ver infra) - mesmo escrito em alfabetos não latinos. Cuidado com caracteres não ASCII, como 'ñ' (por exemplo, em español), pois eles são codificados de maneira diferente em ANSI (Windows) versus Unicode.
 
-Since ABCD can deal with multiple database-folders (see infra), it will be necessary to define the path to the 'lang' database for the messages with the variable '$msg_path'. This defaults to the directory defined by $db_path in config.php but can also be defined independently to any folder in the system.
+Como o ABCD pode lidar com múltiplas pastas de banco de dados (veja infra), será necessário definir o caminho para o banco de dados 'lang' para as mensagens com a variável '$msg_path'. Este padrão é o diretório definido por $db_path em config.php, mas também pode ser definido independentemente para qualquer pasta no sistema.
 
-A special 'virtual' language with code '00' is used in ABCD to hold all messages from which the language transla- tions will be derived. These key-value pairs are mostly defined in English. The keys are the ones referred to in the PHP-scripts whenever displaying a language-dependent text on the screens, but will be searched for in the related table in the active language, unless it cannot be found there : then the '00' language acts as the reserve fall-back option. This means that if a message appears not in your own language but in English (supposing your language is not English), then that key still needs to be translated (added) to the corresponding table for your language and the message displayed is taken from the '00'-language.
+Uma linguagem 'virtual' especial com o código '00' é usada no ABCD para armazenar todas as mensagens das quais as traduções do idioma serão derivadas. Esses pares de valores-chave são definidos principalmente em inglês. As chaves são as referidas nos scripts PHP sempre que exibir um texto dependente do idioma nas telas, mas serão pesquisadas na tabela relacionada no idioma ativo, a menos que não seja encontrado lá: então o idioma '00' atua como a opção de reserva de reserva. Isso significa que, se uma mensagem não aparecer em seu próprio idioma, mas em inglês (supondo que seu idioma não seja inglês), essa chave ainda precisa ser traduzida (adicionada) à tabela correspondente ao seu idioma e a mensagem exibida é extraída do '00'-linguagem.
 
-Later in this manual a dedicated section will discuss how to create a mew language in ABCD with a Unicode non-Latin example.
+Mais adiante neste manual, uma seção dedicada discutirá como criar um novo idioma no ABCD com um exemplo Unicode não latino.
 
+## Os principais arquivos de configuração do ABCD Central
 
-## The main configuration files for ABCD Central
-
-The main configuration of ABCD Central is based on the following files :
+A configuração principal do ABCD Central é baseada nos seguintes arquivos:
 
 1.  config.php
 2.  system_conf.php and abcd.def
 3.  database_conf.php and dr_path.def
 
 ### CONFIG.PHP
-This file contains the local variables which are managed by the system administrator. Currently the list of variables is as follows :
--   Date_default_timezone_set (the allowed values can be found at the URL [http://php.net/manual/es/time-](http://php.net/manual/es/time-) zones.php
--   $ Open_new_window : if set to 'Y' after logging in a new window with the main ABCD-interface will be opened in addition to the login screen
--   $ Context_menu : if set to 'N' the Central interface in the new window will not contain navigation elements (e.g. by 'right-clicking') - this is safer for keeping the ABCD work apart from other browser-activities and force the operator to use the interface elements rather than browser-elements e.g. to 'go back'
--   $config_date_format : defines the format of the dates used; to be given as DD for days, MM for months and YY for the year-display, each time separated by slashes '/'.
+Este arquivo contém as variáveis locais que são gerenciadas pelo administrador do sistema. Atualmente a lista de variáveis é a seguinte:
 
-> Note:
->  If a field is defined as 'ISO'-date, the format will
-> automatically be yyyymmdd; this can be automatically derived from a
-> preceding normal date-field defined with $config_date_format
+-   Date_default_timezone_set (os valores permitidos podem ser encontrados na URL [https://www.php.net/manual/pt_BR/function.date-default-timezone-set.php](https://www.php.net/manual/pt_BR/function.date-default-timezone-set.php)
+-   $open_new_window : se definido como 'Y' após o login, uma nova janela com a interface ABCD principal será aberta além da tela de login
+-   $context_menu : se definido como 'N', a interface Central na nova janela não conterá elementos de navegação (por exemplo, clicando com o botão direito do mouse) - isso é mais seguro para manter o trabalho ABCD separado de outras atividades do navegador e forçar o operador a usar a interface elementos em vez de elementos do navegador, por exemplo. voltar'
+-   $config_date_format: define o formato das datas utilizadas; para ser dado como DD para dias, MM para meses e YY para a exibição do ano, cada vez separados por barras '/'.
+
+> Nota:
+> Se um campo for definido como 'ISO'-date, o formato será
+> automaticamente ser aaaammdd; isso pode ser derivado automaticamente de um
+> campo de data normal anterior definido com $config_date_format
 
 -   $Inventory_numeric : if set to 'Y'es leading zero's (at the left) will be omitted when reading the inventory number (or barcode) to make it a real numerical value
 -   $max_inventory_length : a number defining the fixed number of positions in the barcode or inventory numbers; missing positions will become leading zero's. This parameter is taken into account in the processes related to the assignment of the inventory numbers of the database copies
@@ -262,7 +261,8 @@ As can be seen from this screen, the administrator has to enter the following da
 ## Logging in into the system
     
 
-After profiles have been created (or adopted from the default ones) and have been assigned to system users, any of the system users' logins can be used to enter the system. Unlike in previous preliminary versions of ABCD, it is obviously no longer necessary to select an authorization level when logging in, since this is now coupled with the login itself. Therefore in addition to login-name and -password only the language to be used is to be selected (this list is taken from the file 'lang.tab' in the bases-folder of ABCD (default : /ABCD/www/bases).![](https://lh4.googleusercontent.com/2ZyI0IeAoy6CyZGF8xtW16RYHd_9jh7g-AK6F-oshgPdBMUlrNef3piVWKj3K3x9mAjxsqvUHVg837ECB_pTIiaFhKeYgb3RJp2mLqmox-MU4RVUeq2GuToD_KdCp8feBAkfVDXh=s0)
+After profiles have been created (or adopted from the default ones) and have been assigned to system users, any of the system users' logins can be used to enter the system. Unlike in previous preliminary versions of ABCD, it is obviously no longer necessary to select an authorization level when logging in, since this is now coupled with the login itself. Therefore in addition to login-name and -password only the language to be used is to be selected (this list is taken from the file 'lang.tab' in the bases-folder of ABCD (default : /ABCD/www/bases).
+![](https://lh4.googleusercontent.com/2ZyI0IeAoy6CyZGF8xtW16RYHd_9jh7g-AK6F-oshgPdBMUlrNef3piVWKj3K3x9mAjxsqvUHVg837ECB_pTIiaFhKeYgb3RJp2mLqmox-MU4RVUeq2GuToD_KdCp8feBAkfVDXh=s0)
  
 As from ABCD 1.5 and 2.0 on the login-screen also provides a link to change the password, which gives a dialog to enter user_ID, old password and the new password twice, as illustrated here :
   
