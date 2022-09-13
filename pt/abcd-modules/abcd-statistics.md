@@ -5,7 +5,7 @@ lang: pt
 lang-ref: abcd-modules/abcd-statistics
 ---
 
-# Central module : statistics in ABCD
+# Módulo central - estatísticas no ABCD
     
 
 {: .no_toc }
@@ -19,92 +19,99 @@ lang-ref: abcd-modules/abcd-statistics
 ---
 
 
-The Statistics module can be invoked from either the main Administration menu or from the cataloging toolbar's option :  
-![](https://lh5.googleusercontent.com/gzZ2q9bFONPZ2N5UeHYQIR0T-pF8jcpP0G0LuS8b_OUYNPiTcOnSxoXqw3nBakDrNqBoXSCABu9fYaEza7oic4tRlutLO3h6wCHSG-irEL5GUoQJdPwSMNJXTPBl60NBkfHXPuBq=s0)
+O módulo Estatísticas pode ser invocado a partir do menu de administração principal ou da opção da barra de ferramentas de catalogação:  
+
+![](/pt/images/abcddoabcd1_html_cfa08dca0bc74fd4.gif)
 
 
-The main Statistics screen offers three functions :
+A tela de Estatísticas oferece três funções principais:
 
-1.  Use an existing table
-2.  Create a new table
-3.  Generate output
+1. Usar uma tabela existente
+2. Criar uma nova tabela
+3. Gerar saída
   
-**a.  Use an existing table**
+## **a. Usar uma tabela existente**
    
-Existing tables will be listed in the options list by their row/column criteria. In the ABCD demo version one table has been pre-defined : a 'classification code by publication date' table.
+Tabelas existentes são listadas na lista de opções pelo seu critério de linha/coluna. Na versão ABCD demo, uma tabela foi pré-definida: uma tabela “código de classificação por data de publicação".
 
-> Note:
-> The list of available tables is taken from a text-file 'tabs.cfg'
-> in the /bases/{dbname]/def/[language]/ folder. This file contains, for
-> each pre-defined table, three values separated by the '|' character :
+> Nota
+> A lista de tabelas disponíveis é obtida a partir de um arquivo de texto “tabs.cfg” 
+> na pasta /bases/[dbname]/def/[idioma]/. Este arquivo contém, para cada tabela pré-definida, 
+> três valores separados pelo caractere “|”:
 
--   the name as displayed in the menu of tables (which for clarity could be a mentioning of both criteria)
--   the field for the rows
--   the field for the columns
+ - o nome como exibido no menu de tabelas (que por razões de clareza pode ser uma menção de ambos os critérios);
+ - o campo para as linhas;
+ - o campo para as colunas.
 
-e.g.
+Por exemplo:
   
-    Classification number / Date of publication|Classification LC|Publication Date
+    Número de classificação / Data de publicação|Classificação LC|Data de publicação
        
-![](https://lh6.googleusercontent.com/KSGmBH6TP029dpZR91ls8wBU9_g9r-_p5bpnPfkQmMwGmV7bd3QsLmYoXrdx0bagQ7rT4SLMtjhJR7SWFJXiBoDZ1wf7A6TZyOsq5IBLCHZ-A7i2GXqicVo8D-wzYl__WbM4Ilbq=s0)
+![](/pt/images/abcddoabcd1_html_74661ef69844666c.gif)
 
-After selection of the table one simply has to continue by using the 'Generate output' option, see below.
+Após a seleção da tabela, simplesmente continuar usando a opção “Gerar saída”, veja abaixo.
 
-**b.  Create a new table**
+## **b. Criar uma nova tabela**
     
-A table has to be defined by identifying which values (as contained in an ISIS database field) will be used in the horizontal (rows) direction and which ones in the vertical (columns) direction. ABCD will display a list of available criteria (or fields) to select from for both rows and columns.  
-![](https://lh5.googleusercontent.com/6HRJwhc7FHzsgYn1yxE6LmfWRRLnLB36mPWzCZBm9BdKMgJOWpavn0X0SkymDGizl1FY7l1HMqDLGNpMq1nH1iVEkRvAmGiOuLUszofWUZxcCNc-6IjBZCA5XOO3M0qaCUn9e9Wk=s0)
+A tabela tem que ser definida, identificando quais os valores (como contidos em um campo da base de dados ISIS) serão utilizados na direção horizontal (linhas) e quais na direção vertical (colunas). ABCD irá mostrar uma lista de variáveis de critério disponíveis (ou campos) para selecionar a partir de ambas – linhas e colunas.
+
+
+![](/pt/images/abcddoabcd1_html_212f1cff531bdd69.gif)
 
   
 
-> Note:
-> The list with available fields or criteria is taken from the
-> text-file 'stat.cfg' in the folder /bases/ [dbname]/def/[language,
-> which contains on each line one criterion, specified as a field name
-> and a PFT to exactly define how the values should be extracted from
-> the field. The MARC database demo example is :
+> Nota
+> A lista com os campos ou critérios disponíveis é obtida a partir do arquivo textual “stat.cfg” 
+> na pasta /bases/[dbname]/def/[idioma], que contém em cada linha um critério, 
+> especificado como um nome de campo  e uma PFT para definir exatamente como os valores 
+> devem ser extraídos do campo.
+
+O exemplo demo da base de dados MARC é:
   
 ```
-Classification LC|v50^a
-Date of publication|if val(v260^c)<2000 then '1900-2000' else F(val(v260^c),1,0) fi
+Classificação LC|v50^a
+Data de publicação|if val(v260^c)<2000 then '1900-2000' else F(val(v260^c),1,0) fi
 ```
 
-in which the second line illustrates how it can be more than just a simple field value statement by using conditions etc.
+A segunda linha mostra como ela pode ser mais do que apenas um simples valor de campo, usando condições, etc.
 
-Once both the 'Rows' and 'Column' criteria have been defined, the table can be used to generate output as explained below.
-
-  
-
-**c.  Generate output**
-    
-Generation of output in ABCD involves 2 stages : creating the table with the values and - if so desired - creating graphical output charts or exporting the table to other external document formats (e.g. worksheet for spreadsheet software which offers mostly more advanced/detailed graphical output possibilities).
-
-Before creating the output one has to define the range of MFN's (ISIS records) to be used or a 'query' statement to apply the statistics only on a certain sub-set of the database. In the 'search' (or query) box one can use the ISIS Query Language with any accepted statement.![](https://lh3.googleusercontent.com/0UTY_HsC5tEBG8Zuz6ZfoPt4Di48TORKL8bSXtdTeyBwyPZi_mu_1UE_NmQiMDIs7qA_0LIC4Dms0LzzXcB79w8SqXD9_TKlkOvZefIGKmfOJ6hUhuECmHZuHsuln2CKTYctL048=s0)
+Uma vez que ambos os critérios: linhas e colunas foram definidos, a tabela pode ser usada para gerar a saída como explicado abaixo.
 
   
 
-In the first stage it is a matter to actually create the table with all the values in the cells combining both row- and column criteria (e.g. the documents published at a certain publication date belonging to a given  
-
-LC classification code). Be careful to not calculate tables with individual extended range values (e.g. all years or all LC-codes), but rather use the Formatting Language to combine values into classes, as these make probably much more sense in your statistical report. The example above gives some hints on how to obtain such classes by using a condition on the value of a date, so the user can derive more classes from this basic example.
-
-In this sense the following excerpt of a table gives a BAD example, as cell values are mostly if not always '1' due to too-detailed row- and column- criteria :
-![](https://lh4.googleusercontent.com/vTGdwtE8RvBohzz3Yw-mIKgvK_szBkwFKHyl1f2WVhQM-LnPW_Rve-z5Z9oUOeUocPuaZe9rP9X_j544KzpUg1uZJtYMhZQ7tv0bSe8eg16gJ4QtAIO9QKEQLt0T0-BvEkJZhg3D=s0)
-
- The output options given by ABCD are the following :![](https://lh6.googleusercontent.com/5qhfX-KIM9I15TZsAJvy8jmLTtEoxQAo6VLQ-l6dxS8G9qn0fuT6G7KGO0xnQKZ8zxj2DUTnfYYh_CUcxg1QtaATNLHsNgCDCvj_zgt4zpQoE94WQf944dg_OeHsbhQY4UjKcjNi=s0)
-
-
--   Output to a worksheet will transfer the table to a Spreadsheet for further processing
--   Output to a document will transfer the table to a Word Processor document for further processing - this could be practical to include results into your annual report document etc..
--   Output to printer allows direct printing of the table using the printer(s) available to your Operating System
--   There are 2 graphic outputs provided by ABCD itself :
-    * Animated graphic : this is a fancy way of displaying the graphs, mostly suited for attention-tracking presentations (but requiring Flash software to be installed on the computer)
-    * Non-animated graphic : displaying the graphs but without the fancy animation.
+## **c. Gerar saída**
     
+A geração de saída no ABCD envolve duas etapas: a criação da tabela com os valores e - se assim for  desejado - a criação de gráficos de saída ou exportar a tabela para outros formatos de documento externo (por exemplo, para o software de planilha eletrônica tipo Excel que oferece, em geral, possibilidades mais avançadas/detalhadas de produção gráfica).
 
-In both cases several typical graphical output styles (horizontal or vertical bars, lines, three-dimensional bars etc...) are available and should be selected.  
+Antes de criar a saída é preciso definir o intervalo de MFN’s (de registros ISIS), para ser utilizado ou uma expressão de pesquisa para aplicadas às estatísticas apenas a um determinado sub-conjunto da base de dados. Na caixa “pesquisa” (ou query) pode-se usar a Linguagem de Pesquisa ISIS com qualquer expressão válida.
 
-![](https://lh3.googleusercontent.com/_XN6GSF_plEf4t8H1r8GNik03E6yOsUkTX1jgwq0nx8q_dos_cdODA898XMyAcniXTsybak9XNonVjEOalsOw2DVfEvLztC72RDKENqlCbTuFHYQIQW45_adAQSuEbB3mHt-mac3=s0)
+![](/pt/images/abcddoabcd1_html_44510d97236fbd1c.gif)
 
-If you are not acquainted with such styles, why not just try them and decide for yourself which one presents the message of the statistics in the most clear way ? Remember that conveying a message is the crucial thing here with statistics, not impressing an audience or reader with a jungle of too-much data - as is often the case with statistical tools. Often the simpler the more convincing !
+  
+Critérios de linha e coluna (por exemplo, os documentos publicados em uma determinada data de publicação, pertencentes a um dado código de classificação LC). 
 
-  An example output of the graphical output looks like this :![](https://lh6.googleusercontent.com/wMHIN8P61F5tJh-0ucps73HvKaCGy6sKCX0MIir8Y92EJ3-z80RZRR0mv1SNJjGCoKYjBMO8oNE_QDtB6DlRod5cbaKABK1pS2pwNFG4GXm-bAkfGABZ0i3H1foX57wnZZN6kphE=s0)
+Tenha cuidado para não calcular tabelas com valores individuais de intervalo estendido (por exemplo, todos os anos ou códigos LC), mas sim usar a linguagem de formatação para combinar os valores em classes, uma vez que isto, provavelmente, faz muito mais sentido, no seu relatório estatístico. 
+
+O exemplo acima dá algumas dicas sobre como obter essas classes, usando uma condição a ser aplicada aos valores de uma data, assim o usuário pode derivar mais classes deste exemplo básico. Neste sentido, o seguinte trecho de uma tabela dá um MAU exemplo, pois os valores das células são em sua maioria, se não sempre, “1”, devido aos critérios de linhas e colunas serem muito detalhados:
+
+![](/pt/images/abcddoabcd1_html_959ff37ab6c3c758.gif)
+
+As opções de saída dadas pelo ABCD são os seguintes:
+
+![](/pt/images/abcddoabcd1_html_bc2b7d4c2fd8565e.gif)
+
+
+- Saída para uma planilha irá transferir a tabela para uma planilha eletrônica para posterior processamento;
+- Saída para um documento irá transferir a tabela para um documento de processador de texto para posterior processamento – isto pode ser prático para incluir os resultados em seu documento de relatório anual, etc.;
+- Saída para impressora permite a impressão direta da tabela, usando uma impressora disponível em seu Sistema Operacional.
+- Existem duas saídas gráficas fornecidas pelo próprio ABCD:
+    * Gráfico animado: esta é uma forma fantasiosa de mostrar os gráficos, adequado principalmente para apresentações de monitoramento de atenção (mas que requer software Flash instalado no computador);
+    *     • Gráfico não animado: a exibição dos gráficos, mas sem a fantasia de animação.
+Em ambos os casos diversos estilos típicos de saída gráfica (barras horizontais ou verticais, linhas, barras tridimensionais, etc.) estão disponíveis e podem ser selecionados. 
+
+![](/pt/images/abcddoabcd1_html_66aff427c54cdae3.gif)
+
+Se você não estiver familiarizado com esses estilos, porque não experimenta apenas e decida por si mesmo qual apresenta a mensagem das estatísticas da forma mais clara? Lembre-se que a transmissão de uma mensagem é a coisa crucial com estatísticas aqui, não impressionando o público ou o leitor com uma montanha de dados – como é frequentemente o caso com as ferramentas de estatística. Muitas vezes quanto mais simples mais convincente!
+Um exemplo de saída em forma de gráfico parece como este:
+
+![](/pt/images/abcddoabcd1_html_84f5e1bd59fe5345.gif)
