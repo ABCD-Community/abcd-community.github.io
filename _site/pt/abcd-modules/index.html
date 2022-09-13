@@ -494,61 +494,61 @@ campo de data normal anterior definido com $config_date_format</p>
 </blockquote>
 
 <ul>
-  <li>$Inventory_numeric : if set to ‘Y’es leading zero’s (at the left) will be omitted when reading the inventory number (or barcode) to make it a real numerical value</li>
-  <li>$max_inventory_length : a number defining the fixed number of positions in the barcode or inventory numbers; missing positions will become leading zero’s. This parameter is taken into account in the processes related to the assignment of the inventory numbers of the database copies</li>
-  <li>$max_cn_length : same as $max_inventory_length but for the Control Number field : missing positions up to the number defined here will be filled with zero’s</li>
-  <li>$app_path : the name of the folder acting as ‘Central’ with all Central scripts; best kept as ‘central’; if renamed some scripts might fail.</li>
-  <li>$log : if set to ‘Y’es ‘and a subfolder ‘log’ exists in the database-directory, all calls to the Isis-executable ‘wxis’ will be logged in one file per day named according to the date and with the following information :</li>
+  <li>$Inventory_numeric :Se definido como ‘Sim, os zeros à esquerda serão omitidos ao ler o número do inventário (ou código de barras) para torná-lo um valor numérico real</li>
+  <li>$max_inventory_length: um número definindo o número fixo de posições no código de barras ou números de inventário; As posições ausentes se tornarão líderes do Zero.Este parâmetro é levado em consideração nos processos relacionados à atribuição dos números de inventário das cópias do banco de dados</li>
+  <li>$max_cn_length : O mesmo que $ max_inventory_length, mas para o campo de número de controle: as posições ausentes até o número definido aqui serão preenchidas com zero</li>
+  <li>$app_path: o nome da pasta agindo como ‘central’ com todos os scripts centrais; melhor manter como ‘central’; Se renomeado, alguns scripts podem falhar.</li>
+  <li>$log: Se definido como ‘Y’ um log na subpasta existente no diretório de banco de dados, todas as chamadas para o executável WXIS serão registradas em um arquivo por dia, de acordo com a data e com as seguintes informações:</li>
 </ul>
 
-<p>First line :</p>
+<p>Primeira linha:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>** Friday 30th of November 2012 07:34:35 AM Operator: abcd Identifies the date, time, and operator executing the transaction
 </code></pre></div></div>
 
-<p>Second line:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/central/dataentry/ini- cio_main.php/ABCD/www/htdocs/central/dataentry/wxis/login.xis IsisScript = / ABCD / www / htdocs / central / dataentry / wxis / login.xis ? Base = access &amp; cipar = c: /bases_abcd/ bases/par/acces.par &amp; Login = abcd &amp; password = adm &amp; path_db = c: / bases_abcd / bases / &amp; cttype = s
+<p>Segunda linha:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/central/dataentry/inicio_main.php/ABCD/www/htdocs/central/dataentry/wxis/login.xis IsisScript = / ABCD / www / htdocs / central / dataentry / wxis / login.xis ? Base = access &amp; cipar = c: /bases_abcd/ bases/par/acces.par &amp; Login = abcd &amp; password = adm &amp; path_db = c: / bases_abcd / bases / &amp; cttype = s
 </code></pre></div></div>
 
-<p>where the following elements are identified: name of the php script that is running, name of the wxis script being invoked, parameters sent to IsisScript for the corresponding execution</p>
+<p>Onde os seguintes elementos são identificados: Nome do script PHP que está em execução, nome do script WXIS sendo chamado, parâmetros enviados ao isisscript para a execução correspondente</p>
 
 <blockquote>
-  <p>Note:
-In the future this log will also be made database-dependant.</p>
+  <p>Nota:
+No futuro, este registro também será dependente de banco de dados.</p>
 </blockquote>
 
 <ul>
-  <li>$img_path : derault path where the images and digital documents linked to the records of the databases will be stored. This default directory can be modified using the dr_path.def file that provides more specific information about the storage of digital documents for a specific database (see infra).</li>
-  <li>$msg_path : path to the lang-database for the messages of the interface; this path can be in one of the defined database-folders but also outside any of them</li>
-  <li>$lang : default language used when opening Central</li>
-  <li>$lang_db : default language for the database administration module (can be different from $lang)</li>
-  <li>$change_password : whether ‘Y’es or ‘N’ot operators are allowed to change their passwords (in the login-screen)</li>
-  <li>$adm_login : an optionally built-in login-name to (temporarily) allow entering the Central system even if the access to the databases is not possible, e.g. for debugging/testing reasons; for security reasons : remove this login when not needed.</li>
-  <li>$adm_password : an optionally built-in password for the login with $adm_login;</li>
+  <li>$img_path : Caminho padrão em que as imagens e documentos digitais vinculados aos registros dos bancos de dados serão armazenados.Este diretório padrão pode ser modificado usando o arquivo dr_path.def que fornece informações mais específicas sobre o armazenamento de documentos digitais para um banco de dados específico (consulte Infra).</li>
+  <li>$msg_path : caminho para o banco de dados Lang para as mensagens da interface; Esse caminho pode estar em uma das pastas de banco de dados definidos, mas também fora de qualquer um deles</li>
+  <li>$lang: linguagem padrão usada ao abrir o centro</li>
+  <li>$lang_db: Idioma padrão para o módulo de administração de banco de dados (pode ser diferente de $ lang)</li>
+  <li>$change_password: Se ‘sim ou’ não os operadores podem alterar suas senhas (na tela de login)</li>
+  <li>$adm_login: Um nome de login opcionalmente interno para (temporariamente) permitir a entrada no sistema central, mesmo que o acesso aos bancos de dados não seja possível, por exemplo, por razões de depuração/teste; Por razões de segurança: remova este login quando não for necessário.</li>
+  <li>$adm_password: uma senha opcionalmente interna para o login com $adm_login;</li>
 </ul>
 
 <blockquote>
-  <p>Note:
-remember this login/password acts on the full-administrator level and therefore is at a high-risk level !</p>
+  <p>Nota:
+Lembre-se de que esse login/senha atua no nível de administrador completo e, portanto, está em um nível de alto risco!</p>
 </blockquote>
 
 <ul>
-  <li>$dirtree=1: show (1) or hide (0) the icon or menu-entry that gives access to the exploration of the bases-folder; some network- or server-managers will not allow such function on their system !</li>
-  <li>$MD5= When set to 1 (on) passwords will be encrypted with the MD5 encryption</li>
-  <li>$fix_file_name = defines an array with substitutions of characters to be applied in file-names for uploaded files (in order to avoid complicated e.g. diacritical characters; the default values are :</li>
+  <li>$dirtree = 1: 1 mostra ou 0 oculta o ícone de menu que dê acesso à exploração do ditetório de bases; Alguns gerentes de rede ou servidores não permitirão essa função em seu sistema!</li>
+  <li>$MD5 = Quando definido como 1 (on), as senhas serão criptografadas com a criptografia MD5</li>
+  <li>$fix_file_name = Define uma matriz com substituições de caracteres a serem aplicadas em nomes de arquivos para arquivos carregados (para evitar complicados, por exemplo, caracteres diacríticos; os valores padrão são:</li>
 </ul>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array('Š'=&gt;'S', 'š'=&gt;'s', 'Ž'=&gt;'Z', 'ž'=&gt;'z', 'À'=&gt;'A', 'Á'=&gt;'A', 'Â'=&gt;'A', 'Ã'=&gt;'A', 'Ä'=&gt;'A', 'Å'=&gt;'A', 'Æ'=&gt;'A', 'Ç'=&gt;'C', 'È'=&gt;'E', 'É'=&gt;'E', 'Ê'=&gt;'E', 'Ë'=&gt;'E', 'Ì'=&gt;'I', 'Í'=&gt;'I', 'Î'=&gt;'I', 'Ï'=&gt;'I','Ñ'=&gt;'N', 'Ò'=&gt;'O', 'Ó'=&gt;'O', 'Ô'=&gt;'O', 'Õ'=&gt;'O', 'Ö'=&gt;'O', 'Ø'=&gt;'O', 'Ù'=&gt;'U', 'Ú'=&gt;'U', 'Û'=&gt;'U','Ü'=&gt;'U', 'Ý'=&gt;'Y', 'Þ'=&gt;'B', 'ß'=&gt;'Ss', 'à'=&gt;'a', 'á'=&gt;'a', 'â'=&gt;'a', 'ã'=&gt;'a', 'ä'=&gt;'a', 'å'=&gt;'a', 'æ'=&gt;'a','ç'=&gt;'c', 'è'=&gt;'e', 'é'=&gt;'e', 'ê'=&gt;'e', 'ë'=&gt;'e', 'ì'=&gt;'i', 'í'=&gt;'i', 'î'=&gt;'i', 'ï'=&gt;'i', 'ð'=&gt;'o', 'ñ'=&gt;'n', 'ò'=&gt;'o','ó'=&gt;'o', 'ô'=&gt;'o', 'õ'=&gt;'o', 'ö'=&gt;'o', 'ø'=&gt;'o', 'ù'=&gt;'u', 'ú'=&gt;'u', 'û'=&gt;'u', 'ý'=&gt;'y', 'þ'=&gt;'b', 'ÿ'=&gt;'y',' '=&gt;'_' );
 </code></pre></div></div>
 
 <blockquote>
-  <p>Note:
-the last element substitures a space for an underline in file-names</p>
+  <p>Nota:
+O último elemento substitui um espaço para um sublinhado em nomes de arquivos</p>
 </blockquote>
 
 <ul>
-  <li>$show_acces= When set to Y(es) the ‘acces’-database with operators and their passwords (yes or not encrypted depending on $MD5) will be shown in the list of available database (if included there).</li>
-  <li>$EmpWeb= When set to 1 (on) the loans-system will use the EmpWeb Advanced Loans module and mecha- nisms e.g. in ‘MySite’ or availability-checks.</li>
-  <li>a new section can be optionally added to CONFIG.PHP dealing with the variables needed for the LDAP-au- thentification function, with example data given :</li>
+  <li>$show_acces = Quando definido como y (es), o ‘Acces’-Database com os operadores e suas senhas (sim ou não criptografado, dependendo de $ md5) será mostrado na lista de banco de dados disponível (se incluído lá).</li>
+  <li>$Empweb = Quando definido como 1 (on), o sistema de empréstimos usará o módulo de empréstimos avançados e os mechanismos do Empweb, p.em ‘mysite’ ou verificação de disponibilidade.</li>
+  <li>Uma nova seção pode ser opcionalmente adicionada ao config.php que lida com as variáveis necessárias para a função de tentificação LDAP, com dados de exemplo fornecidos:</li>
 </ul>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$use_ldap=false;
@@ -560,7 +560,7 @@ $ldap_pass = "zflexpass";
 </code></pre></div></div>
 
 <ul>
-  <li>finally also an optional section can be added to assist the configuration of EmpWeb (if used), more specifically to pre-define some variables and re-define some ports :</li>
+  <li>Finalmente, uma seção opcional pode ser adicionada para ajudar a configuração do Empweb (se usado), mais especificamente para predefinir algumas variáveis e redefinir algumas portas:</li>
 </ul>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ProxyPass /empweb/ http://127.0.0.1:8080/empweb/ // to direct calls to empweb to port 8080 instead of 9090
