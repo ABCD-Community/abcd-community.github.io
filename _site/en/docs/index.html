@@ -32,8 +32,8 @@
 <meta property="og:title" content="The abc of ABCD 2.0f" />
 <meta property="og:description" content="This document aims at providing all relevant background information and instructions on how to use the integrated library and documentation management system 'ABCD'. Both the basic operations and the advanced management of the software are discussed, as are useful and necessary topics concerning the ISIS-software on which ABCD is based. In this new edition the new features of version 2.0 are added - the use of different flavors of CISIS, of Unicode,and the digital library capabilities as well as some additional modules (ODDS, LDAP, DSpaceBridge) and utilities (UTF8-conversion, loanobjects creation...) ." />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="http://localhost:9898" />
-<meta property="og:site_name" content="http://localhost:9898" />
+<meta property="og:url" content="http://localhost:4000" />
+<meta property="og:site_name" content="http://localhost:4000" />
 
 <meta itemprop="name" content="The abc of ABCD 2.0f">
 <meta itemprop="description" content="This document aims at providing all relevant background information and instructions on how to use the integrated library and documentation management system 'ABCD'. Both the basic operations and the advanced management of the software are discussed, as are useful and necessary topics concerning the ISIS-software on which ABCD is based. In this new edition the new features of version 2.0 are added - the use of different flavors of CISIS, of Unicode,and the digital library capabilities as well as some additional modules (ODDS, LDAP, DSpaceBridge) and utilities (UTF8-conversion, loanobjects creation...) .">
@@ -367,11 +367,11 @@
               
               
                 <li class="breadcrumb-item">
-                  <a href="http://localhost:9898/en/">En</a>
+                  <a href="http://localhost:4000/en/">En</a>
                 </li>
                 
                 <li class="breadcrumb-item active" aria-current="page">
-	          <a href="http://localhost:9898/en/docs/">Documentation</a>
+	          <a href="http://localhost:4000/en/docs/">Documentation</a>
                 </li>
                 
 	      </ol>
@@ -435,12 +435,12 @@
     </div>
             
     <div class="entry">
-    <h5><a href="/feed.xml"></a></h5>
+    <h5><a href="/en/feed.xml"></a></h5>
     <p></p>
     </div>
             
     <div class="entry">
-    <h5><a href="/en/feed.xml"></a></h5>
+    <h5><a href="/feed.xml"></a></h5>
     <p></p>
     </div>
             
@@ -450,18 +450,28 @@
     </div>
             
     <div class="entry">
-    <h5><a href="/en/abcd-thesaurus/">ABCD Thesaurus</a></h5>
-    <p>In ABCD a thesaurus can be used as a 'guided authority' list of terms at two different stages - while assigning descriptors during data-entry and while defining keywords for searching in a database.</p>
+    <h5><a href="/en/abcd-opac/">ABCD OPAC</a></h5>
+    <p>ABCD Opac allows up to 3 levels of search - Metasearch, Search on a specific database, Search on a subset of records in a database</p>
     </div>
             
     <div class="entry">
-    <h5><a href="/en/abcd-unicode/">ABCD Unicode</a></h5>
-    <p>As from ABCD v2.0 both the software-interface as the data can work with non-Latin alphabet characters, based on the 'UTF8' standard of the Unicode-technology.</p>
+    <h5><a href="/en/abcd-digital-library/">Digital library features in ABCD</a></h5>
+    <p>In this section we discuss some features and techniques to create and use digital libraries as 'full-text' databases in ABCD.</p>
     </div>
             
     <div class="entry">
-    <h5><a href="/en/abcd-modules/">ABCD Modules</a></h5>
-    <p>This chapter deals with the main functions [!!] of the 'Central' module of the ABCD system.</p>
+    <h5><a href="/en/abcd-installation/">ABCD installation</a></h5>
+    <p>Available installation versions</p>
+    </div>
+            
+    <div class="entry">
+    <h5><a href="/en/abcd-site/">ABCD Site</a></h5>
+    <p>ABCD-Site administration</p>
+    </div>
+            
+    <div class="entry">
+    <h5><a href="/en/abcd-oai/">The ABCD OAI interface</a></h5>
+    <p>This section will present the ABCD OAI interface, which is an implementation of BIREME's 'ISIS-OAI- PROVIDER', a general tool for providing access to ISIS databases through the OAI-PMH protocol.</p>
     </div>
             
     <div class="entry">
@@ -470,8 +480,23 @@
     </div>
             
     <div class="entry">
-    <h5><a href="/en/abcd-technology/isis-script/">IsisScript language</a></h5>
-    <p>IsisScript is a scripting language, developed by BIREME, in order to make stronger the functions available to the WEB ISIS server "WWWISIS" for the creation of pages with elements of ISIS databases. ISIS Script in fact was one of the main elements in the evolution from WWWISIS to "WXIS" which is the underlying web server for ABCD.</p>
+    <h5><a href="/en/abcd-unicode/">ABCD Unicode</a></h5>
+    <p>As from ABCD v2.0 both the software-interface as the data can work with non-Latin alphabet characters, based on the 'UTF8' standard of the Unicode-technology.</p>
+    </div>
+            
+    <div class="entry">
+    <h5><a href="/en/abcd-utilities/">Central utilities</a></h5>
+    <p>The Central module, being the 'administration' module of ABCD, has a menu 'utilities' which is probably the most dynamic part of the system. More and more utilities have been and keep being added as needs or possible uses arise.</p>
+    </div>
+            
+    <div class="entry">
+    <h5><a href="/en/opac-iah/">Basic OPAC iAH</a></h5>
+    <p>iAH is the basic and traditional OPAC of the ABCD.</p>
+    </div>
+            
+    <div class="entry">
+    <h5><a href="/en/abcd-thesaurus/">ABCD Thesaurus</a></h5>
+    <p>In ABCD a thesaurus can be used as a 'guided authority' list of terms at two different stages - while assigning descriptors during data-entry and while defining keywords for searching in a database.</p>
     </div>
             
     <div class="entry">
@@ -480,8 +505,18 @@
     </div>
             
     <div class="entry">
+    <h5><a href="/en/abcd-odds/">The Online Document Delivery Service (ODDS)</a></h5>
+    <p>This service is added in version ABCD 2.0 to facilitate the organisation of a document delivery service for elec- tronic documents. The idea is that end-users, from the link on the ABCD Site (now part of the demo Site), bring in the bibliographical data they know in a form as a request formulation. The form, when submitted, becomes a record in the ODDS database which is attended by a special library officer - librarians, having often better access and knowledge about how to locate electronic documents, identify the documents, put them on a library server and send out - semi-automated - an e-mail to the requesting end-user notifying her/him of the URL of the document and the time-span to download it.</p>
+    </div>
+            
+    <div class="entry">
     <h5><a href="/en/abcd-localisation/">ABCD Localisation</a></h5>
     <p>This section deals with the techniques and steps needed in order to create a 'localised' version of ABCD.</p>
+    </div>
+            
+    <div class="entry">
+    <h5><a href="/en/abcd-introduction/">01 Introduction - background information</a></h5>
+    <p>General introduction to ABCD as a software suite</p>
     </div>
             
     <div class="entry">
@@ -495,13 +530,8 @@
     </div>
             
     <div class="entry">
-    <h5><a href="/en/abcd-oai/">The ABCD OAI interface</a></h5>
-    <p>This section will present the ABCD OAI interface, which is an implementation of BIREME's 'ISIS-OAI- PROVIDER', a general tool for providing access to ISIS databases through the OAI-PMH protocol.</p>
-    </div>
-            
-    <div class="entry">
-    <h5><a href="/en/"></a></h5>
-    <p></p>
+    <h5><a href="/en/abcd-technology/isis-script/">IsisScript language</a></h5>
+    <p>IsisScript is a scripting language, developed by BIREME, in order to make stronger the functions available to the WEB ISIS server "WWWISIS" for the creation of pages with elements of ISIS databases. ISIS Script in fact was one of the main elements in the evolution from WWWISIS to "WXIS" which is the underlying web server for ABCD.</p>
     </div>
             
     <div class="entry">
@@ -510,43 +540,13 @@
     </div>
             
     <div class="entry">
-    <h5><a href="/en/abcd-site/">ABCD Site</a></h5>
-    <p>ABCD-Site administration</p>
+    <h5><a href="/en/abcd-modules/">ABCD Modules</a></h5>
+    <p>This chapter deals with the main functions [!!] of the 'Central' module of the ABCD system.</p>
     </div>
             
     <div class="entry">
-    <h5><a href="/en/abcd-opac/">ABCD OPAC</a></h5>
-    <p>ABCD Opac allows up to 3 levels of search - Metasearch, Search on a specific database, Search on a subset of records in a database</p>
-    </div>
-            
-    <div class="entry">
-    <h5><a href="/en/abcd-odds/">The Online Document Delivery Service (ODDS)</a></h5>
-    <p>This service is added in version ABCD 2.0 to facilitate the organisation of a document delivery service for elec- tronic documents. The idea is that end-users, from the link on the ABCD Site (now part of the demo Site), bring in the bibliographical data they know in a form as a request formulation. The form, when submitted, becomes a record in the ODDS database which is attended by a special library officer - librarians, having often better access and knowledge about how to locate electronic documents, identify the documents, put them on a library server and send out - semi-automated - an e-mail to the requesting end-user notifying her/him of the URL of the document and the time-span to download it.</p>
-    </div>
-            
-    <div class="entry">
-    <h5><a href="/en/opac-iah/">Basic OPAC iAH</a></h5>
-    <p>iAH is the basic and traditional OPAC of the ABCD.</p>
-    </div>
-            
-    <div class="entry">
-    <h5><a href="/en/abcd-introduction/">01 Introduction - background information</a></h5>
-    <p>General introduction to ABCD as a software suite</p>
-    </div>
-            
-    <div class="entry">
-    <h5><a href="/en/abcd-installation/">ABCD installation</a></h5>
-    <p>Available installation versions</p>
-    </div>
-            
-    <div class="entry">
-    <h5><a href="/en/abcd-digital-library/">Digital library features in ABCD</a></h5>
-    <p>In this section we discuss some features and techniques to create and use digital libraries as 'full-text' databases in ABCD.</p>
-    </div>
-            
-    <div class="entry">
-    <h5><a href="/en/abcd-utilities/">Central utilities</a></h5>
-    <p>The Central module, being the 'administration' module of ABCD, has a menu 'utilities' which is probably the most dynamic part of the system. More and more utilities have been and keep being added as needs or possible uses arise.</p>
+    <h5><a href="/en/"></a></h5>
+    <p></p>
     </div>
             
     <div class="entry">
@@ -580,12 +580,12 @@
     </div>
             
     <div class="entry">
-    <h5><a href="/sitemap.xml"></a></h5>
+    <h5><a href="/en/sitemap.xml"></a></h5>
     <p></p>
     </div>
             
     <div class="entry">
-    <h5><a href="/en/sitemap.xml"></a></h5>
+    <h5><a href="/sitemap.xml"></a></h5>
     <p></p>
     </div>
             
