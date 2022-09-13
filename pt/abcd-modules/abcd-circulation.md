@@ -18,27 +18,31 @@ lang-ref: abcd-modules/abcd-circulation
 ---
 
 
-Esta seção é sobre o módulo de empréstimos BASIC ABCD, pois é pré-configurado com o sistema.Ainda assim, sempre seguindo a filosofia da flexibilidade do ABCD, o sistema de empréstimos pode funcionar com qualquer banco de dados bibliográfico e de objetos.
+Esta seção é sobre o módulo básico de empréstimo do ABCD, uma vez que vem pré-configurado com o sistema. Ainda assim, sempre seguindo a filosofia de flexibilidade do ABCD, o sistema de empréstimo pode trabalhar com qualquer base de dados bibliográfica e de objetos.
 
-Além disso, o ABCD oferece um módulo 'empréstimos avançados' (EMPWEB) que pode lidar com situações muito mais complicadas em, por exemplo,Organizações de várias ramificações com diferentes políticas de empréstimos etc. [!!] As transações neste módulo de empréstimos avançadas serão armazenadas em table SQL e também podem acessar os dados do usuário (através de serviços webs) armazenados em table SQL em outros lugares, além de acessaros dados do usuário no banco de dados do usuário ABCD (no formato do ISIS).É claro que isso permite aplicações muito avançadas de alto desempenho do módulo de empréstimos.Além disso, os empréstimos avançados da Empweb ou da ABCD oferecerão uma função de reserva e uma função 'MySite', onde os usuários finais podem verificar e acompanhar a disponibilidade de objeto de empréstimos em sua conta pessoal (protegida por senha) de empréstimos ABCD.
+Além disso, ABCD oferece um módulo de “Empréstimo Avançado” (EmpWeb), que pode lidar com situações muito mais complicadas, por exemplo, em organizações com multi-setoriais, com diferentes políticas de empréstimo, etc. As transações neste módulo de Empréstimo Avançado serão armazenadas em tabelas SQL e também pode acessar dados do usuário (através de “WebServices”) armazenados em tabelas SQL em algum lugar, além de acessar os dados do usuário da base de dados do usuário ABCD (em formato ISIS). Isto permite, naturalmente, aplicações muito avançadas e de alto desempenho do módulo de empréstimo. Além disso EmpWeb ou Empréstimo Avançado ABCD vai oferecer uma função de reserva e uma função "MySite" onde os usuários finais poderão verificar e acompanhar a disponibilidade de objetos para empréstimo por meio de sua conta (protegida por senha pessoal) de empréstimos ABCD. 
 
-[!!] Este módulo avançado, no entanto, requer a instalação de software adicional (Java/Jetty e um banco de dados SQL) e é oferecido apenas como um módulo extra opcional.
+> Este módulo avançado, contudo, requer instalação de software adicional (Java/Jetty e um banco de dados SQL) e é oferecido somente como um módulo opcional extra.
 
-Sugerimos verificar os seguintes critérios para decidir se você precisará do módulo avançado ou não:
+Sugerimos verificar os seguintes critérios, a fim de decidir se você vai precisar do módulo avançado ou não:
 - Vários servidores em seu sistema?
 - Múltiplos bancos de dados de usuários/cópias em seu sistema?
 - Alto volume de transações?
 - Qualquer fonte de dados precisa do driver ODBCs ? (ODBC drivers are software to couple mostly relational databases or SQL-tables to software)
 
-Se você tiver um 'sim' com séria importância para o seu sistema, estará melhor com o módulo de empréstimos avançados.[!!] A maioria das bibliotecas menores, no entanto, certamente onde há uma falta de experiência no uso de Java e SQL-Databases, será melhor com este módulo de empréstimos centrais do ABCD, pois é totalmente baseado na tecnologia ISIS-Database e nãoPrecisa de qualquer software adicional a ser instalado.
+Se você tem um “sim” com importância séria para o seu sistema, você ficará melhor com o módulo de empréstimo avançado. A maioria das bibliotecas menores, no entanto, onde há falta de conhecimentos sobre o uso de Java e bancos de dados SQL, certamente ficará melhor com este módulo Central de Empréstimo ABCD, visto que é inteiramente baseado em base de dados de tecnologia ISIS e não precisa de nenhum software adicional para ser instalado.
 
-## Os bancos de dados de abstiços e whompensobjects de inventário ABCD
+## As bases de dados copies e loanobjects do ABCD
   
-O ABCD usa dois bancos de dados diferentes para lidar com informações com base nos objetos físicos na biblioteca: as cópias e os objetos do WHONSOBS.Ambos os bancos de dados têm propósitos e escopos diferentes e, portanto, os dados são mantidos separados.Uma boa compreensão de seus diferentes propósitos e estruturas ajudará a entender o ABCD.Vamos discutir cada um deles aqui.
+ABCD usa duas bases de dados diferentes para lidar com informações baseadas em objetos físicos da biblioteca: COPIES e LOANOBJECTS. Ambas as bases de dados têm diferentes finalidades e escopos e, portanto, os dados são mantidos separados. Um bom entendimento de suas diferentes finalidades e estruturas ajudará na compreensão do ABCD.
+
+Vamos discutir cada uma delas aqui.
 
 1.  O banco de dados ABCD COPIES.
   
-Esse banco de dados tem a função de acompanhar todos os dados administrativos em objetos nas coleções da biblioteca. Esses dados, em princípio, precisam ser mantidos por razões de inventário e manutenção de livros, enquanto os dados relacionados a objetos de empréstimo podem ser excluídos quando o objeto de empréstimo é removido da coleção. Na verdade, o registro criado no final de um procedimento de aquisições (da sugestão ao item recebido ou em qualquer lugar) será armazenado neste banco de dados de cópias. A estrutura do campo de cópias é a seguinte (as tags de campo são seguidas pelo nome do campo):
+Esta base de dados tem a função de manter controle sobre todos os dados administrativos de objetos nas coleções da biblioteca.
+
+Estes dados, em princípio, devem ser mantidos por razões de inventário e contabilidade, considerando que os dados relacionados com loanobjects podem ser suprimidos quando o objeto de empréstimo é removido da coleção. Na verdade, o registro criado no final de um processo de aquisição (a partir de sugestão para o item recebido ou em qualquer lugar no meio) será armazenado nesta base de dados copies. A estrutura do campo de copies é a seguinte (tag’s de campo são seguidas pelo nome do campo):
 
 
 ```
