@@ -18,128 +18,133 @@ lang-ref: abcd-modules/abcd-circulation
 ---
 
 
-This section is about the ABCD basic loans module as it comes pre-configured with the system. Still, always following the ABCD philosophy of flexibility, the loans system can work with any bibliographic and objects database.
+Esta seção é sobre o módulo de empréstimos BASIC ABCD, pois é pré-configurado com o sistema.Ainda assim, sempre seguindo a filosofia da flexibilidade do ABCD, o sistema de empréstimos pode funcionar com qualquer banco de dados bibliográfico e de objetos.
 
-In addition, ABCD offers an 'advanced loans' module (EmpWeb) which can cope with much more complicated situations in e.g. multi-branch organisations with different loans policies etc. [!!] The transactions in this Advanced Loans module will be stored in SQL-tables and it can also access user-data (through WebServices) stored in SQL-tables elsewhere in addition to accessing the user-data in the ABCD-user database (in ISIS-format). This of course allows very advanced high-performance applications of the loans module. In addition EmpWeb or ABCD Advanced Loans will offer a reservation function and a function 'MySite' where end-users can check and keep track of availability of loan-objects in their personal (password-protected) account of ABCD-Loans.
+Além disso, o ABCD oferece um módulo 'empréstimos avançados' (EMPWEB) que pode lidar com situações muito mais complicadas em, por exemplo,Organizações de várias ramificações com diferentes políticas de empréstimos etc. [!!] As transações neste módulo de empréstimos avançadas serão armazenadas em table SQL e também podem acessar os dados do usuário (através de serviços webs) armazenados em table SQL em outros lugares, além de acessaros dados do usuário no banco de dados do usuário ABCD (no formato do ISIS).É claro que isso permite aplicações muito avançadas de alto desempenho do módulo de empréstimos.Além disso, os empréstimos avançados da Empweb ou da ABCD oferecerão uma função de reserva e uma função 'MySite', onde os usuários finais podem verificar e acompanhar a disponibilidade de objeto de empréstimos em sua conta pessoal (protegida por senha) de empréstimos ABCD.
 
-[!!] This advanced module however requires installation of additional software (Java/Jetty and an SQL database) and is only offered as an optional extra module.
+[!!] Este módulo avançado, no entanto, requer a instalação de software adicional (Java/Jetty e um banco de dados SQL) e é oferecido apenas como um módulo extra opcional.
 
-We suggest to check the following criteria in order to decide on whether you will need the advanced module or not :
+Sugerimos verificar os seguintes critérios para decidir se você precisará do módulo avançado ou não:
+- Vários servidores em seu sistema?
+- Múltiplos bancos de dados de usuários/cópias em seu sistema?
+- Alto volume de transações?
+- Qualquer fonte de dados precisa do driver ODBCs ? (ODBC drivers are software to couple mostly relational databases or SQL-tables to software)
 
--   multiple servers in your system ?
--   multiple users/copies databases in your system ?
--   high volume of transactions ?
--   any data source needs ODBC drivers ? (ODBC drivers are software to couple mostly relational databases or SQL-tables to software)
+Se você tiver um 'sim' com séria importância para o seu sistema, estará melhor com o módulo de empréstimos avançados.[!!] A maioria das bibliotecas menores, no entanto, certamente onde há uma falta de experiência no uso de Java e SQL-Databases, será melhor com este módulo de empréstimos centrais do ABCD, pois é totalmente baseado na tecnologia ISIS-Database e nãoPrecisa de qualquer software adicional a ser instalado.
 
-If you have a 'yes' with serious importance for your system, you will be better off with the advanced loans module. [!!] Most smaller libraries however, certainly where there is a lack of expertise on using Java and SQL-databases, will be better of with this ABCD Central Loans module as it is fully based on the ISIS-database technology and doesn't need any additional software to be installed.
-
-## The ABCD inventory copies and loanobjects databases
+## Os bancos de dados de abstiços e whompensobjects de inventário ABCD
   
-ABCD uses two different databases to deal with information based on the physical objects in the library : the COPIES and LOANOBJECTS. Both databases have different purposes and scopes and therefore the data are kept separate. A good understanding of their different purposes and structures will help in understanding ABCD. Let's discuss each of them here.
+O ABCD usa dois bancos de dados diferentes para lidar com informações com base nos objetos físicos na biblioteca: as cópias e os objetos do WHONSOBS.Ambos os bancos de dados têm propósitos e escopos diferentes e, portanto, os dados são mantidos separados.Uma boa compreensão de seus diferentes propósitos e estruturas ajudará a entender o ABCD.Vamos discutir cada um deles aqui.
 
-1.  The ABCD copies database.
+1.  O banco de dados ABCD COPIES.
   
-This database has the function of keeping track of all administrative data on objects in the library collections. These data in principle need to be kept for inventory and book-keeping reasons, whereas data related to loan- objects can be deleted when the loan-object is removed from the collection. Actually the record created at the end of an Acquisitions procedure (from suggestion to received item or anywhere in between) will be stored in this copies database. The copies field structure is as follows (field tags are followed by the field name) :
+Esse banco de dados tem a função de acompanhar todos os dados administrativos em objetos nas coleções da biblioteca. Esses dados, em princípio, precisam ser mantidos por razões de inventário e manutenção de livros, enquanto os dados relacionados a objetos de empréstimo podem ser excluídos quando o objeto de empréstimo é removido da coleção. Na verdade, o registro criado no final de um procedimento de aquisições (da sugestão ao item recebido ou em qualquer lugar) será armazenado neste banco de dados de cópias. A estrutura do campo de cópias é a seguinte (as tags de campo são seguidas pelo nome do campo):
 
-  ``` 
-1|Control number
-10|Database
-20|Call number
-30|Inventory number
-35|Main Library
-40|Branch library
-60|Volume/Part
-63|Copy Number
-68|Acquisition type
-70|Provider/Donor/Institution
-80|Date of arrival
-85|ISO Date of arrival
-90|Price
-100|Purchase order
-110|Suggestion number
+
+```
+1|Número de controle
+10|Base de dados
+20|Número de chamada
+30|Número de inventário
 200|Status
-300|Conditions
-400|In exchange of
+35|Biblioteca Central
+40|Biblioteca Setorial
+50|Tomo
+60|Volume/Parte
+63|Número da Cópia
+68|Tipo de aquisição
+70|Fornecedor/Doador/Instituição
+80|Data de chegada
+85|Data de chegada ISO
+90|Preço
+95|Fornecedor
+100|Ordem de compra
+110|Número da sugestão
+300|Condições
+400|Em troca de
+
 ```  
 
-The field 30 (Inventory Number) is created by the auto-increment mechanism of ABCD : the next number to be assigned is stored in a small file 'control_number.cn' in the data-folder of the database (in this case COPIES), as each record has to be identified by a unique value which can be used for linking from the other databases (as 'primary key').
+O campo 30 (número do inventário) é criado pelo mecanismo de incremento automático do ABCD: o próximo número a ser atribuído é armazenado em um pequeno arquivo 'Control_number.cn' no dobrador de dados do banco de dados (neste caso cópias),Como cada registro deve ser identificado por um valor exclusivo que pode ser usado para vincular os outros bancos de dados (como 'chave primária').
 
-Differently from the LOANOBJECTS-database the COPIES-database has one record per object. These records are normally created by the 'Add to copies' function of the cataloging module.or the Acquisitions module.
+Diferentemente do banco LOANOBJECTS o banco COPIES possui um registro por objeto. Esses registros são normalmente criados pela função 'Adicionar à cópia' do módulo de catalogação. Ou o módulo de aquisições.
 
-This database has to be indexed with 2 mandatory keys : 
+Este banco de dados deve ser indexado com 2 chaves obrigatórias:
+
 ```
 1 0 "CN_"V10,"_"V1,
 200 0 "STATUS_"V200^a
 ```
 
-The first key here assures that the identifier of each copy can be quickly referred to by the prefix 'CN_' followed by the bibliographic database name V10 (because several catalogs can be combined into one copies-database) and the identifier in that catalog itself (V1). For an entry in the copies-database to be allowed to enter into the loanobjects database it needs such an entry in the Inverted File (and assumed the status-field is at least at level 2, which means 'verified and stamped', that is why the second FST-entry indexes on the status of each copy).
+A primeira chave aqui garante que o identificador de cada cópia possa ser rapidamente referido pelo prefixo 'cn_' seguido pelo nome do banco de dados bibliográfico V10 (porque vários catálogos podem ser combinados em uma cópia-dados) e o identificador nesse catálogo em si (V1).Para que uma entrada no Database de cópias seja permitida para entrar no banco de dados do BomanObjects, ele precisa de tal entrada no arquivo invertido (e assumiu que o campo de status está pelo menos no nível 2, o que significa 'verificado e carimbado', ou seja,Por que o segundo índice de entrada FST no status de cada cópia).
 
-In the cataloging module copy records will be shown in a separate smaller window when clicking on the 'Add copy' icon of the record-toolbar and then on 'show copies'.
+No módulo de catalogação, os registros de cópia serão mostrados em uma janela menor separada ao clicar no ícone 'Adicionar cópia' do registro-toolbar e depois em 'Exibir cópias'.
 
-2.  The ABCD loanobjects database
+2. O banco de dados do Loanobjects ABCD
 
-This database has different goals from the copies-database : it's purpose is only to provide the necessary data about all objects which can be used in the loans-system. Its contents are quite limited :
+Esse banco de dados tem objetivos diferentes do banco COPIES: seu objetivo é apenas fornecer os dados necessários sobre todos os objetos que podem ser usados no sistema de empréstimos.Seu conteúdo é bastante limitado:
 
 ```
-1|Control number 
-10|Database 
-959|Copies subfields :
-i|Inventory number
-l|Library  
-b|Branch library 
-o|Type of Object 
-b|Volume
-t|Part
+1|Número de controle
+10|banco de dados
+959|Cópias:
+i|Número de inventário
+l|Biblioteca
+b|Biblioteca setorial
+o|tipo de objeto
+b|volume
+t|parte
 ```
 
-As can be seen from this very short list of fields (in fact only 3), each loan-object is identified by its con- trol_number V1, the bibliographic database to be linked to `v10` and the actual details on each copy as a repeat- ed subfielded field `v959` (this gives, in ISIS-technology, the fastest performance in case of high number of copies). The subfields allow to specify the unique identifier (e.g. barcode) of each copy, the main library and location within that library (e.g. shelving information), the loan object type (books e.g. will have different loan- parameters from video's) and in case of a multi-volume work the volume and part - identifiers.
+Como pode ser visto a partir desta lista muito curta de campos (de fato apenas 3), cada empréstimo - o objeto é identificado pelo seu Control_Number v1, o banco de dados bibliográfico a ser vinculado ao `V10` e os detalhes reais em cada cópia como uma repetida nos subcampos de `V959` (isto está disponível na tecnologia ISIS com o desempenho mais rápido em caso de alto número de cópias).Os subcampos permitem especificar o identificador exclusivo (por exemplo, código de barras) de cada cópia, a biblioteca principal e a localização nessa biblioteca (por exemplo, informações sobre as prateleiras), o tipo de objeto de empréstimo (livros, por exemplo, terão diferentes parâmetros de empréstimos dos vídeos) e no caso deUm trabalho de vários volumes e identificadores de volume e peça.
 
 
-The loanobjects database has to be indexed with at least the following instruction : 
+O banco de dados BomanObjects deve ser indexado com pelo menos a seguinte instrução:
 ```
 1 0 "CN_"v10,"_"V1
 ```
 
-because (as in the copies-database) the string `'CN_'` followed by the catalog-name and catalog-identifier allows each copy to be identified. If this entry cannot be found in the loan-objects database for a given book, it will not be possible to use the object in the loans system.
+Porque (como na base COPIES), a string `'cn_'` seguida pelo nome do catálogo e pelo identificador de catálogo permite que cada cópia seja identificada.Se esta entrada não puder ser encontrada no banco de dados de objeto de empréstimos para um determinado livro, não será possível usar o objeto no sistema de empréstimos.
 
-Loanobjects normally are created from the cataloging module after having created the according inventory copy with the icons in the record-toolbar of the cataloging module :![](https://lh4.googleusercontent.com/ebH3FxIFkYNd33i369lT3THlc09YBpK2rfnRVyX0dXK6ip_47_BEbMTnPYt9Bydfde94zRRI_TL2zlTNK2G4a8w7fh6xesi1u9UQ8KtH586nOumZCpzit89jR7jAouWGS35hRFTH=s0)
+Os objetos para empréstimos normalmente são criados a partir do módulo de catalogação depois de criar a cópia de inventário conforme os ícones no bar da margem do registro do módulo de catalogação:![](/pt/images/abcddoabcd1_html_c8a1b05a410cd4d2.gif)
 
-After having clicked on 'Add to loan objects' the record will have been created in the loanobjects database. If this database is to be edited directly as an ABCD-database, remember to include it in the list of databases (bases.dat, which can be accessed directly from the Operating System but also through the corresponding 'Update database definitions' menu in ABCD Central) and to the profile of users which need access to this database directly. There the loanobject records will be presented for browsing and editing in a table format (as explained in the section on the FDT-definition for 'group'-fields).
-**![](https://lh5.googleusercontent.com/kGCCdxZMk5AkkHsZpOEWtuv7D6zocGllu-_hJZ3x85CX9BwTH8-yR8qOP2KR7IzRhCFHAfr_DIOrcudDcu9pGgX1PifR1xEGymxHSIQHUe2JaW7kirMS4migH5EuTQqVVLuLPSko=s0)**
+Depois de ter clicado em "Adicionar à base de empréstimos" o registro terá sido criado na base de dados "loanobjects". Se esta base de dados deve ser editada diretamente como uma base de dados ABCD, lembre-se de incluí-la na lista de bases de dados (bases.dat, que pode ser acessado diretamente do Sistema Operacional, mas também através do menu “Atualizar definições de base de dados" correspondente do ABCD Central) e no perfil dos usuários que necessitam de acesso a esta base de dados diretamente. Ali os registros de "loanobjects" serão apresentados para navegação e edição em formato de tabela (conforme explicado na seção sobre definição de FDT para campos tipo "grupo").
 
-## The basic ABCD loans module
+**![](/pt/images/abcddoabcd1_html_1971839d9ac0f509.png)**
+
+## O módulo básico de empréstimos ABCD
     
 
-### Introduction
+### Introdução
     
-This loans module is called 'basic' because it is fully integrated with the other ABCD Central modules, using the same underlying technology: ISIS-databases, ISIS Script and PHP. Looking at its functionality however one could hardly call this 'basic' : this module takes as its departing point the 'objects' created by the acquisitions module into the database 'copies', to apply rules on all kinds of 'transactions' on them : issuing to a user, returning, reservation, loans renewal. Rules for all types of transactions can be defined and will be applied according to the object category in combination with the user category. Categories for objects and users can be defined 'ad libitum' with specified number of objects, hours/days (taking into account a calendar specific for the library), fines and renewal conditions for each combination object/user.
+Esse módulo de empréstimos é chamado de 'básico' porque está totalmente integrado aos outros módulos centrais do ABCD, usando a mesma tecnologia subjacente: ISIS - Bancos de dados, script ISIS e PHP. Olhando para sua funcionalidade, no entanto, dificilmente se poderia chamar isso de 'básico': este módulo toma como ponto de partida que os 'objetos' criados pelo módulo de aquisições no banco de da dos 'cópias', para aplicar regras sobre todos os tipos de 'transações' nelas:emitindo a um usuário, retornando, reserva, renovação de empréstimos.As regras para todos os tipos de transações podem ser definidas e serão aplicadas de acordo com a categoria de objeto em combinação com a categoria do usuário.Categorias para objetos e usuários podem ser definidos 'ad libitum' com número especificado de objetos, horas/dias (levando em consideração um calendário específico para a biblioteca), multas e condições de renovação para cada objeto/usuário combinado.
 
-The main menu of this loans module has three sections :  
+O menu principal deste módulo de empréstimos tem três seções:
 
-1.  Transactions : here the real every-day loans transactions (loaning a book to a user, returning it, reservations etc.) are dealt with. 
-2.  Databases : here the databases on which the loans system is based can be accessed and managed : the borrowers or users, the transactions, the reservations and the fines.
-3.  Configuration of the loans system : here the 'rules' can be defined for combinations of object types with user categories, and calenders, currency etc. can be defined.
+1. Transações: Aqui as verdadeiras transações de empréstimos diários (emprestando um livro a um usuário, devolvendo-o, reservas etc.) são tratados.
+2. Bancos de dados: Aqui os bancos de dados nos quais o sistema de empréstimos se baseia podem ser acessados e gerenciados: os mutuários ou usuários, as transações, as reservas e as multas.
+3. Configuração do sistema de empréstimos: aqui as 'regras' podem ser definidas para combinações de tipos de objetos com categorias de usuário e calendários, moeda etc. podem ser definidos.
     
     
-### General loans parameters and configuration in abcd.def
-The file 'abcd.def' (in the bases-folder of the ABCD-system) contains the parameters applied to the whole system. Some of them relate however specifically to the ABCD Central Circulation system. A brief listing with explanation is given here :
+### Parâmetros de empréstimos gerais e configuração em abcd.def
+O arquivo 'abcd.def' (na pasta Bases - do sistema ABCD) contém os parâmetros aplicados a todo o sistema. Alguns deles se relacionam, no entanto, especificamente ao sistema de circulação central do ABCD. Uma breve lista com explicação é dada aqui:
   
 
-Table 2.2. ABCD Central Loans configuration parameters in abcd.def
+Tabela 2.2.Parâmetros de configuração de empréstimos centrais do ABCD em abcd.def
 
 |||
 |-|-|
-|LOGO_OPAC|Url of the logo that is displayed in the key request, statement and online reservations|
-|BG_WEB|Background color of the key request window|
-|WEBRENO- VATION|Y / N to enable / disable online renewal option|
-|RESERVATION|Y / N to enable / disable access to the reservation process from the loan menus|
-|LOAN_POLICY|BY_USER to indicate that the object type of the item to be loaned is requested at the time of processing the loan. This option should be used when it is not provided from the database of copies and the inventory of the objects does not have a subfield with the type of object|
-|ASK_LPN|Whether or not the option to request the return date is enabled, ie not calculate it from the policy|
-|E-MAIL|Y / N to enable / disable sending loan reminder emails|
-|AC_SUSP|Sets the date from which a suspension begins. The Y value indicates that it must start from the last active suspension of the user. The N value indicates that it starts from the day it is recorded.|
-|CALENDAR|To establish the way in which the period of fines and suspensions is calculated|
+|LOGO_OPAC|URL do logotipo que é exibido na principal solicitação, declaração e reservas on-line|
+|BG_WEB|Cor de fundo da janela de solicitação de login|
+|WEBRENO- VATION|Y / N Para ativar / desativar a opção de renovação online|
+|RESERVATION|Y / N para ativar / desativar o acesso ao processo de reserva dos menus de empréstimo|
+|LOAN_POLICY|BY_USER para indicar que o tipo de objeto do item a ser emprestado é solicitado no momento do processamento do empréstimo. Esta opção deve ser usada quando não for fornecida no banco de dados de cópias e o inventário dos objetos não possui um subcampo com o tipo de objeto|
+|ASK_LPN|Se a opção de solicitar a data de retorno está ativada, ou seja, não a calcule a partir da política|
+|E-MAIL|Y / N Para ativar / desativar o envio de e -mails de lembrete de empréstimos|
+|AC_SUSP|Define a data a partir da qual começa uma suspensão. O valor Y indica que deve começar a partir da última suspensão ativa do usuário.O valor N indica que começa a partir do dia em que está registrado.|
+|CALENDAR|Para estabelecer a maneira como o período de multas e suspensões é calculado|
 
-As an example section of the abcd.def loans configuration parameters :
+Como exemplo, seção dos parâmetros de configuração de empréstimos ABCD.DEF:
 ```
 LOGO_OPAC = ../css/logo_opac.png
 BG_WEB = #ffffff
@@ -148,67 +153,64 @@ WEBRENOVATION = N
 EMAIL = Y
 RESERVATION = N
 ```
-### ABCD Loans detailed configuration
+### Configuração detalhada de empréstimos ABCD
 
-The loans configuration in ABCD allows to define which source bibliographic databases (catalogs) to link the loans system to - it can be any database indeed ! - and to define the parameters which will constitute the 'policy' on each object/user combination to be applied.
+A configuração de empréstimo no ABCD permite definir quais bases de dados bibliográficas “fonte” (catálogos) devem ser linkadas ao sistema de empréstimo – pode ser, de fato, qualquer base de dados! – e para definir os parâmetros que constituirão a "política" a ser aplicada a cada combinação objeto/usuário.
 
   
-![](https://lh4.googleusercontent.com/sTSX8m20ZtRIqe_0xI2Aow6MCkzq2IKRgsez9Y1uFaMtPmzrP5T5vTr8I5Bj8yMcta0aDo-dtaM7Hi_x_MhzEnIeymKyERV_gq_i_y4BSN0iqk3qjJWMFEujxmNQUm5vufSLUtZF=s0)  
+![](/pt/images/abcddoabcd1_html_80e27d020d7e24dd.gif)  
   
 
-Since any database can be linked into the loans system as 'source', there is a need to explain to the loans system how values from these databases will be used in the loans system. We can best illustrate this by giving the example of the CEPAL-database of the ABCD-model application :
+Uma vez que qualquer base de dados pode ser linkada como "fonte" ao sistema de empréstimo, há uma necessidade de explicar ao sistema de empréstimo como os valores a partir destas bases de dados serão utilizados no sistema de empréstimo. Podemos ilustrar melhor isto, dando o exemplo da base de dados CEPAL modelo da aplicação ABCD:
   
 ![](https://lh6.googleusercontent.com/h7xGmc7cp6O_342sS27bUebhaGIxmi4VKgkcklq-wToV2RPH3Va0u516LtoKGGGW9vrxNnojG4j1wj_FnM6DlrKYH-cef3nxDIqtvJyWH_RWtXYb22d1qIAYQYOhtCSKoYz8Fyir=s0)  
 
-This form shows the information needed for the loans system, e.g. which prefix is used in the index for the accession number or which print formats (PFT's) to use to produce the data in the loans screens.
+Este formulário apresenta as informações necessárias para o sistema de empréstimo, por exemplo, qual prefixo que é usado no índice para o número de acesso ou quais os formatos de impressão (PFT's) a serem usados para produzir os dados nas telas de empréstimo.
   
-The power of the Formatting Language can be applied here, of course. For example, instead of the rather dumb example above here as the 'PFT to be used to extract the type of record', one could define a different type (with consequently different loan parameters for the type) according to some conditions, e.g. the date, the month etc. So an object which is a normal loans object could be changed into 'special material' during the exams period etc. The ISIS Formatting Language provides most necessary functions (e.g. Date() with substring extraction) for this purpose.
+A capacidade da Linguagem de Formatação pode ser aplicada aqui, é claro. Por exemplo, ao invés do exemplo simples acima, como a "PFT para ser usado para extrair o tipo de registro", pode-se definir um tipo diferente (consequentemente, com diferentes parâmetros de empréstimo para o tipo) de acordo com algumas condições como, por exemplo, a data, o mês, etc. 
 
-The same applies to the definition of the borrowers data :  
+Assim, um objeto que é um objeto de empréstimo normal, pode ser transformado em "material especial" durante o período de provas, etc.
+
+A Linguagem de Formatação ISIS fornece a maioria das funções necessárias (por exemplo, Date() com extração de substring) para este propósito.
+O mesmo vale para a definição dos dados de usuários:
 ![](https://lh5.googleusercontent.com/wLOo5NOPZiHWg8B6Q_CjF0m9mR2RzeXUCLnVsq1tW0ZfAHMdc2fwA78d5O8Ru6jftpDJylLdO3Q9kSUdrbT5QHMkAUWP_OoV_04llaElodP34f2P85W5v-SBU_c6R2IJStUg_hH2=s0)  
   
 
-Instead of simply taking the 'value of Field 10' (v10) to define the borrower type, one could put a more sophisticated Formatting Language statement here in order to make the status of the borrower even dynamically dependent on other conditions (again : date, but also other conditions can be defined).
-
-  
-
-Using a table ABCD will then present the defined borrowers types and allows to add any number of more such types :
+Em vez de simplesmente apanhar o "valor do campo 10" (v10) para definir o tipo de usuário, pode-se colocar uma declaração de Linguagem de Formatação mais sofisticada aqui, para fazer com que o status do usuário dependa, dinamicamente, de outras condições (novamente: a data, mas também outras condições podem ser definidas). Usando uma tabela ABCD, então, apresentará os tipos de usuários definidos e permite adicionar qualquer número de tais tipos:
 
   
 ![](https://lh6.googleusercontent.com/rvBEt9ZoDB4vhrenRG6GVP_Y6qrhT50iL2aEPYiQ6jn08m1lDIZX4wgr651YWZ7VCTx5CRRMietK4pOn70_EqXwuKpWuwkIx8WnGmn5TNQj3POl9vpQpWXb-Nbnu8_hhSNALD7od=s0)  
 
-Here we only show part of the table, but in fact the interface will always offer a few more empty lines to add more types, and lines with a type can also be added in between existing rows.
-  
-
-The same approach is used for the definition of the objects types :
+Aqui vamos mostrar apenas parte da tabela, mas na verdade, a interface oferecerá sempre mais algumas linhas em branco para adicionar mais tipos, e linhas com um tipo também podem ser adicionados entre as linhas existentes. A mesma abordagem é usada para a definição dos tipos de objetos:
 
   
 ![](https://lh6.googleusercontent.com/9ZQuOp9pys-PFpi8L6PsUNltDDpNeCybMppbHj7FAwmInaCgk7Uve8lr9W4xv1G0o4YKeGi0RxQX5NJzhUHuT7-_H8EZl7mm5XpT8riELdt3FViKkMPHYkz-1IgtnN5QTW4HRX0T=s0)  
 
-Needless to say that each time a 'cancel' or an 'update' button is provided to either cancel the editing of the table or to actually store it again.
+É desnecessário dizer que sempre está previsto um botão "Cancelar" ou "Atualizar” para cancelar a edição da tabela ou para armazená-la novamente.
 
-From these two types (users and objects), ABCD then creates the 'loans policy table', which lists in a matrix all possible combinations of user types and object types, and parameters can be entered for many aspects of the loans policy :  
+A partir destes dois tipos (usuários e objetos), ABCD então cria a tabela "política de empréstimos", que lista em uma matriz todas as combinações possíveis de tipos de usuários e tipos de objetos, e os parâmetros podem ser informados para muitos aspectos da política de empréstimos:
 
-As can be seen, lots of parameters are stored and used in the decision-making process of each transaction (e.g. is this user allowed to loan this type of material, how many of them, for how long, what is the fine for late return etc.). Units can be either days or hours and the calculation of 'number of days elapsed' will be based on a calendar function (see below).![](https://lh3.googleusercontent.com/68czHaXI1MwuSNOueTQ1Hz50sP4MUFXCPzyaXHNHxkj5RNSC6ORJrtAWCwlPaLFpYqUvt4I0keY__bzVRiSRzB3yqgZdknJ0IiSov8_xc17mTndZnW9Mb0poqriCx-RhXGwI6-_U=s0)
+Como pode ser observado, muitos dos parâmetros são armazenados e utilizados no processo de tomada de decisão de cada transação (por exemplo, este usuário tem permissão para empréstimo deste tipo de material, quantos do mesmo, por quanto tempo, qual é a multa por atraso de devolução, etc.). As unidades podem ser dias ou horas e o cálculo do "número de dias decorridos" será baseado em uma função do calendário (veja abaixo).![](https://lh3.googleusercontent.com/68czHaXI1MwuSNOueTQ1Hz50sP4MUFXCPzyaXHNHxkj5RNSC6ORJrtAWCwlPaLFpYqUvt4I0keY__bzVRiSRzB3yqgZdknJ0IiSov8_xc17mTndZnW9Mb0poqriCx-RhXGwI6-_U=s0)
 
-A special (new as from v1.5) feature is to allow the librarian to divert from the stored 'duration' parameter : at the time of lending out the number of days or return date can be changed manually, making it different from the official calculated duration according to the defined policy. For this a new parameter is to be added into the file abcd.def : 
+Um recurso especial (novo como a partir da v1.5) é permitir que o bibliotecário desvie do parâmetro 'duração' armazenada: no momento de emprestar o número de dias ou a data de retorno pode ser alterada manualmente, tornando-o diferente do prazo oficial calculado de acordo com a política definida. Para isso, um novo parâmetro deve ser adicionado ao arquivo abcd.def:
 
-    ASK_LPN =Y/N.
+    ASK_LPN = Y/N.
 
-Configuration of the loans system continues with two more options :
+A configuração do sistema de empréstimos continua com mais duas opções :
 
--   definition of the currency , fine unit, date format and working days/hours :![](https://lh4.googleusercontent.com/6beCi6irD2Sl-95UpAmWFP6E3oX0exc4-MVfMYi8w3LfRspcOaJ61E4cZG_C6pq-LjZFQi9_w42A3UG-xAyernChFj4nNQJbQpC-XE4vT3l8IH01rC31KV3g-0vWzD_2Bb5CLWTM=s0)
+- definição da moeda, a unidade de multa, formato de data e dias/horas de trabalho: ![](https://lh4.googleusercontent.com/6beCi6irD2Sl-95UpAmWFP6E3oX0exc4-MVfMYi8w3LfRspcOaJ61E4cZG_C6pq-LjZFQi9_w42A3UG-xAyernChFj4nNQJbQpC-XE4vT3l8IH01rC31KV3g-0vWzD_2Bb5CLWTM=s0)
     
-Caution
-
-In order for the loans system to work well, don't leave this 'working days' calendar empty ! If no working hours or days at all are defined the creation of a loans records will fail as no return date can be calculated.
--   definition of the holidays (non-working days) in the calendar , where simply the holidays need to be indicated on each month's map :  
-    
+> Cuidado!
+> 
+> Para que o sistema de empréstimo trabalhe bem, não deixe este "calendário de dias úteis" vazio! 
+> Se não são definidas horas ou dias úteis a criação de um registro de empréstimo dará erro, 
+> visto que não  pode ser calculada a data de devolução errada.
+> - Definição dos feriados no calendário, onde simplesmente os feriados precisam ser indicados no mapa de cada mês:    
 
 ![](https://lh6.googleusercontent.com/Mnn3D39lRsOzRc4pYefnVMSjV8Xg7d6yAIuKN7cqWRUR2GAhG8NKlE875jD7DJCnHTvewPZbYKkXASR5Er_YrKs6acSpIb9X-SU-IXgkgLF_RTOrHSi3Nel7C-OUGEBcZaDWJfyc=s0)
 
 
--   generation of Loan reports : for each database in Loans (transactions, borrowers and suspensions) a set of PFT's (as these are in fact the reports in ABCD) can be generated using the same interface as used for other PFT's (e.g. in the Database Administration module). As the procedure is fully identical we won't repeat the steps here, please refer to the dedicated section in the Database Administration module chapter.
+- geração de relatórios de empréstimos: para cada base de dados de empréstimo (transações, usuários e suspensões) um conjunto de PFT's (visto que estes são, de fato, os relatórios no ABCD) podem ser gerados, usando a mesma interface usada para outras PFT's (por exemplo, no módulo de Administração de Bases de Dados). Como o procedimento é totalmente idêntico não vamos repetir os passos aqui, por favor, consulte a seção específica no capítulo do módulo Administração de Bases de Dados.
     
 
   
@@ -216,88 +218,88 @@ In order for the loans system to work well, don't leave this 'working days' cale
 
 
 
-### Transactions : loan, returns, reservation, renewals, fines/suspensions
+### Transações: empréstimo, devolução, reserva, renovação, multa/suspensão
     
-Most of the transactions themselves are rather easy to understand. Efficiency is the key here : mostly the system simply needs one or two bar-codes to be scanned in, and pressing a button 'go' to store the transaction. A list of possible transactions is shown in the transactions menu of ABCD :
+A maioria das operações em si são bastante fáceis de entender. A eficiência é a chave aqui: em geral o sistema necessita apenas que um ou dois códigos de barras a serem escaneados, e apertando um botão "ir" para gravar a transação. Uma lista de transações possíveis é mostrado no menu de transações do ABCD:
 
 ![](https://lh6.googleusercontent.com/6YnR4t80Fo-q_PImJMADjjLBRhvSwuVztD-euVPu8xKn9CUluSkpgZbu4CUs_vsa76xRyU1bNocTynaY9QfLixkAE3dpYUdkEDYdDa0W2ka6gJlfe6Rh-EpNUNzlqSd3wQbdZopq=s0)
 
 
-Let's discuss each of them now.
+Vamos discutir cada uma agora.
 
-### Issuing a loan on an object
+### Efetuando empréstimo de um objeto
 
-This page offers identification boxes (in which either the barcode or identifier can be input directly or selected from a list) for both the object and the user, the two crucial elements of any loans transaction.
+Esta página oferece caixas de identificação tanto para o objeto como para o usuário, os dois elementos cruciais de qualquer operação de empréstimo (nas quais tanto o código de barras ou de identificação podem ser digitados diretamente ou selecionados a partir de uma lista). 
 **![](https://lh5.googleusercontent.com/2fSP_FSboOOmsz4xUSc1Lic4_q2oWHVsi96DlslGybteqcosWYQrBVd_X6eeifoRqgrHG7Inzhw0usASxEpM3YdgwZoay99bKe0yupLlcr964JpjnctEdNf4sifJkjbtTe74bkJl=s0)**
 
-After having identified both elements, a simple click on the 'loan'-button will actually create the transaction (into the 'loans' database). The user information is shown and all loans transactions related to the users will be listed in a table, where one or more transactions can be selected for immediate editing (e.g. returning or renewing the loan).
+Depois de ter identificado os dois elementos, um simples clique no botão "Emprestar" vai efetivamente criar a transação (na base de dados de empréstimos). As informações do usuário são exibidas e todas as transações de empréstimo relacionadas ao usuário serão listadas em uma tabela, onde uma ou mais transações podem ser selecionadas para edição imediata (por exemplo, devolução ou renovação de empréstimo).
+
 **![](https://lh6.googleusercontent.com/DG-5Au7hLm3P8FkTDwtLddB-9O4lavdXbFC5VT-TmOZp5sjYuTa_ahs6NhC7GvJNmXEZyDviRFKc1PeHars5e2fdH9R0ZfteTTCwNoutFuK7wXLC0YLczI11kAsmpjJvDjtTPYEr=s0)**
 
-### Returning an object
+### Devolvendo um objeto
 
-Here only the object returned needs to be identified and with a simple click the transaction record in the loans database will note the fact that the object has been returned. The loaned object can also be returned from the table in the borrowers' statement, then the transaction will be removed from the table. [!!]
+Aqui apenas o objeto devolvido deve ser identificado e com um simples clique o registro da transação da base de dados de empréstimos vai notar o fato de que o objeto foi devolvido. O objeto emprestado também pode ser devolvido a partir da tabela em "declaração" do usuário, a transação será removida da tabela.
 
-### Renewing a loan
+### Renovando um empréstimo
 
-This is a simple continuation of a running loan, but dependent again on specified rules as on whether the object has not been reserved by someone else and the user requesting the renewal has no pending fines etc. When consulting the list, only the objects on loan will be listed. In case all conditions for renewal are fulfilled, the transaction will be granted and listed, if not a warning or error message will be shown, e.g.
+Esta é uma simples continuação de um empréstimo em execução, mas depende novamente de regras precisas como, se o objeto não foi reservado por outra pessoa e se o usuário que está solicitando a renovação não tem multas pendentes, etc. Quando consultar a lista, apenas os objetos emprestados serão listados. No caso de todas as condições para a renovação serem preenchidas, a transação será concedida e listada, se não uma mensagem de aviso ou erro será mostrada, por exemplo:
 **![](https://lh5.googleusercontent.com/dNWC1wNy2xvr5fLMeStDh38yRPprjj19dRzXCNbGO2aca_a0yvZOkGsmT0p0YbLsVyN9zWRaH5Eo8H5bF1XoIJpi6KC-Ofs0xrV4nvgv4YjeA1J-c_XaQbq4WvWA5HxGkLzXsGkb=s0)**
 
-#### Fines and suspension of users
+#### Multas e suspensões de usuários
    
-Fines and suspension of users are offered in the same ABCD-page :  
+Multas e suspensão de usuários são oferecidas na mesma página ABCD:  
 
 ![](https://lh5.googleusercontent.com/1J4Vidce2YbB_6jVMmf6wAB-YeamvQH9AHbftJXf3Ofzmz-v8BC-p19SiJCcwnLXK9xbD5XOg_11WesLtwUf0lROIheLG4ZWWzRU31wF2wIqQT7wh1cBSQ91nm_ve8_yZQ1adc9r=s0)
 
-For the selected user the following fields can be filled in : the type of sanction (fine or suspension), the date, the number of days or the amount of the fine, the reason (motivation) and any comments.
+Para o usuário selecionado os seguintes campos podem ser preenchidos: o tipo de sanção (multa ou suspensão), a data, o número de dias ou o montante da multa, o motivo e qualquer comentário.
 
-#### The borrower statement
-From this screen all information on a borrower or user is displayed, giving also direct access to other functions where only an access from the object was given, e.g. to allow renewal from the borrower's identification instead of the object.
+#### Declaração do usuário
+A partir desta tela todas as informações sobre um tomador de empréstimo ou usuário são exibidas, dando também acesso direto a outras funções, onde apenas um acesso a partir do objeto foi dado, por exemplo, permitir a renovação, a partir da identificação do usuário, em vez do objeto.
+Interessante notar que os usuários não só podem ser selecionados a partir da lista de usuários, mas também a partir do número de registro/tombo dos objetos emprestados para o usuário.![](https://lh3.googleusercontent.com/P3gCoCY1EOshWnu8CqoEttEP8TRkzcD8WJtMDOoltTeQolpp_nA0m9CR9yLB0_XGcwECixpxrHU4MWXS7F1S_u0Hn3Fz1N21xlVmxoNnUgsBHRPaxPvwbPwYkWR2UZEOooDouS1A=s0)
 
-[!!] Interesting to note that borrowers not only can be selected from the list of borrowers but also from the inven- tory-number of the objects loaned by the borrower.![](https://lh3.googleusercontent.com/P3gCoCY1EOshWnu8CqoEttEP8TRkzcD8WJtMDOoltTeQolpp_nA0m9CR9yLB0_XGcwECixpxrHU4MWXS7F1S_u0Hn3Fz1N21xlVmxoNnUgsBHRPaxPvwbPwYkWR2UZEOooDouS1A=s0)
+#### Estado de um item
 
-#### State of an item
-
-As with the borrower's statement, an overview (history) of all loans of this given item or object can be retrieved here.  
+Assim como acontece com a declaração do usuário, uma visão geral (histórico) de todos os empréstimos desse determinado item ou objeto pode ser recuperado aqui.
 
 
-### Databases in the loans module![](https://lh5.googleusercontent.com/VUKJlGTEWKWBRywofBDcrrQvb5DCBlM59Akf1-yNTdUhSNCjDt0y4UVO0SVj2V0js_wNSTU0C7snhq9kM7uGDAPOEVZkmXIay5aYhyot1_zl5u7Z5jHQDoFIZGdgF3J_8pT4sx12=s0)
+### Bases de dados do módulo de Empréstimo
+![](https://lh5.googleusercontent.com/VUKJlGTEWKWBRywofBDcrrQvb5DCBlM59Akf1-yNTdUhSNCjDt0y4UVO0SVj2V0js_wNSTU0C7snhq9kM7uGDAPOEVZkmXIay5aYhyot1_zl5u7Z5jHQDoFIZGdgF3J_8pT4sx12=s0)
     
-The following databases are used in the Central Loans module :
+As seguintes bases de dados são usadas no módulo de Empréstimo Central:
   
 ![](https://lh6.googleusercontent.com/PvShCrOz6KIGdgpDbGO3nzwBxaGICizAb9MfG2o0cySUvNPQdmKVA64nVBzBbt2_goOGTchRTDk4iYJfLthjSuTNVwBSjQ_fwLBqpTYRoAUf2XK2own5jNW_MzEiJv8eJjVRYnsv=s0)  
 
-For each of these databases, whose names explain their purpose, an interface is presented which lists the records with a search function and edit or delete buttons.
+Para cada uma dessas bases, cujos nomes explicam sua finalidade, é apresentada uma interface que lista os registros com uma função de pesquisa e botões de Editar ou Excluir.
 
-The transactions database records the actual events in the loans system. ABCD opts to keep this database as 'mean and lean' (i.e. compact) as possible, without duplicating data e.g. from the bibliographic databases. This database will be rather 'dynamic' with many movements, and since ISIS is not at its best in such environment (for which simple tables with fixed structures would be more suited), we need to keep its structure as compact as possible, using the REF-function of ISIS to 'loan' data from other databases, e.g. the bibliographic data.
+A base de dados de transações registra os eventos atuais do sistema de empréstimo. ABCD opta por manter esta base de dados tão "magra" (compacta, p.e.) quanto possível, sem duplicação de dados, como, por exemplo, as bases de dados bibliográficas. Esta base de dados será um pouco "dinâmica" com muitos movimentos, e visto que tal ambiente não é o melhor para o ISIS (para o qual tabelas simples, com estruturas fixas, seriam mais adequadas) é preciso manter a sua estrutura tão compacta quanto possível, usando a função REF do ISIS para dados de "empréstimo" de outras bases de dados, por exemplo, os dados bibliográficos.
 
-So this will allow the librarian to directly interact with the records of the borrowers (e.g. to create new library users), the transacions (e.g. to check a loans record), reservations and suspensions or fines. In this last database the librarian could interfere with existing due fines and suspensions of users in case of a necessity to do so by- passing the rules - take care !
+Então, isso permitirá ao bibliotecário interagir diretamente com os registros dos usuários (por exemplo, criar novos usuários da biblioteca), as transações (por exemplo, para verificar um registro de empréstimo), reservas e suspensões ou multas. Nesta última base de dados o bibliotecário poderia interferir com multas por atraso e suspensões de usuários em caso de necessidade de fazê-lo ignorando as regras - tome cuidado!
 
 
-### Loans administration
+
+### Administração de Empréstimo
    
-This third and last section of the loans module not only offers the loans configuration option (discussed above here) but also gives access to the Statistics module (which is also discussed elsewhere in this manual) and the 'Reports' option, which will be added in a later version of the ABCD-software. This module will create all types of output documents, e.g. alerts, confirmations of loans etc.  
+Esta terceira e última seção sobre o módulo de empréstimo não só oferece a opção de configuração de empréstimos (discutidos acima), mas também dá acesso ao módulo de Estatísticas (que também é discutido em outra parte deste manual) e a opção "Relatórios", que será acrescentada em uma versão mais recente do software ABCD. Este módulo irá criar todos os tipos de documentos de saída, por exemplo, alertas, confirmações de empréstimos, etc.
 
 
 ![](https://lh5.googleusercontent.com/vfnqTJnSEqf6trRYHyyP3Euk7Bc0hdkZvyiq5yhCngDGvYQ7Lp2ugtBmYPgxv_S2bZW9idEQlEr9AUqvD-GiW8BW1tRxmhCBd7GMhyPYmhpuWS1buSMsaBU4LpQjvH1Uy97so9oX=s0)
 
   
 
-## The advanced loans module
+## O módulo avançado de empréstimo 
 
-The advanced loans module of ABCD is an add-on module which can be installed as a separate member of the 'ABCD Suite'. It requires additional software technology (e.g. JAVA, MySQL) to be installed and can also be run as an independent software. Since this module was originally programmed as a DOS-software named 'Emp' (Por- tugese for 'loans'= emprestímos', the module is called 'EmpWeb' as for ABCD it has been converted into a Web- software, using new web-technology like web-services. So we consider this 'E'mpweb as an 'E'xtra or 'E'nhanced module', maybe changing 'ABCD' into 'ABCDE' ?
+O módulo de empréstimo avançado do ABCD é um módulo "add-on"  que pode ser instalado como um membro independente da "Suíte ABCD". Ele exige tecnologia de software adicional para ser instalado (por exemplo, JAVA, MySQL)  e também pode ser utilizado como um software independente. Visto que este módulo foi originalmente programado como um software DOS, denominado "Emp" (de "Empréstimo" em português, o módulo é chamado de "EmpWeb", já que no ABCD foi convertido em um Software Web, utilizando novas tecnologias Web, como "Web Services". Então, nós consideramos o "EmpWeb" como um"Módulo Extra ou "aumentado", talvez mudando "ABCD" para "ABCDE"!
 
-Extra functionalities as compared to the integrated loans module are :
--   better capability to deal with complex organisational structures (multi-branch libraries with different loans poli- cies, different servers e.g.)
--   more robust handling of high-volume transactions situations
--   more interaction with users form the OPAC module, e.g. the 'MySite' function to allow logged-in users to keep track of their own status etc from the OPAC.
--   a 'MySite' function allows registered end-users (after logging in) to enter their own space in the loans system to check on their status as a library user and other interactive users. This function at this time is not yet available in the Central Loans module.
+As funcionalidades extras em relação ao módulo de empréstimo integrado são:
+- melhor capacidade para lidar com estruturas organizacionais complexas  (por exemplo, bibliotecas multi-filiais/setoriais com políticas de empréstimos diferentes, diferentes servidores);
+- tratamento mais robusto com situações de transações de grande volume;
+- maior interação com os usuários a partir do módulo OPAC, por exemplo, a função "MySite" para permitir que usuários logados possam manter controle do seu próprio status, etc. a partir do OPAC;
+- uma função "MySite" permite que usuários finais registrados possam (após se logarem no site) entrar em seu próprio espaço no sistema de empréstimo para verificar o seu status como um usuário da biblioteca e outros usuários interativos. Esta função, neste momento, ainda não está disponível no módulo Central de Empréstimo;
+Alguns conceitos importantes de EmpWeb são resumidamente apresentados aqui:
+- web-services: em vez de necessitar de acesso completo aos recursos externos (bases de dados), o que pode, em alguns casos, criar problemas com os provedores de dados, os "pedidos" (requests) baseados na web são enviados ao servidor apenas para entregar – como resposta ao pedido – alguns dados específicos.
+- pipelines: qualquer transação (como um empréstimo, uma reserva, uma devolução) passa por condições de pipeline que podem ser definidas. Somente se todas as condições estiverem reunidas no pipeline, a transação será "permitida", se não simplesmente pára e retorna a mensagem de erro definida (pelo software) ou a instrução (por exemplo: "Usuário foi suspenso"). Isso permite que qualquer número de condições e regras seja aplicado a qualquer decisão tomada pelo software.
+EmpWeb, portanto, pode ser executado em qualquer conjunto de dados externos para os quais drivers estão disponíveis ou podem ser acessados por "Web Services" e aplicar um conjunto de regras para estes dados e executar processos (como alterar um registro) em caso de ter conseguido passar por todas as regras e condições. EmpWeb, desta forma, é mais um motor transacional genérico, mas utilizado como um sistema de empréstimo no ABCD.
 
-Some important concepts of EmpWeb are briefly presented here :
--   web-services : instead of needing full access to external resources (databases), which can in some case create problems with the data-providers, web-based 'requests' are sent to the server to just deliver - as a response to the request - some specific data.
--   pipe-lines : any transaction (like a loan, a reservation, a return...) goes through a pipe-line of conditions which can be defined. Only if all conditions are met throughout the pipe-line, the transaction will be 'granted', if not it just stops and returns the defined (by the software) error message or instruction (e.g. 'User has been suspended'). This allows any number of conditions and rules to be applied on any decision taken by the software.
-    
-EmpWeb therefore can run on any set of external data for which drivers are available or can be accessed by webservices and apply any set of rules onto these data and perform processes (like changing a record) in case of having succeeded to pass all rules and conditions. 
-
-[!!] EmpWeb in this way is more of a generic transactional engine but used as a loans system in ABCD.  
   **![](https://lh5.googleusercontent.com/_K5Avz3PD4Pl_OG63mU5JEWnctpdBKIQ-qrvcmuIqRjwOU_Q58ViR1RgulNfC96nvoEW9iyMoHB2IRMYKlEpL6y0Q8AOWDEi0GVy8BwtJFmRMZkKHj3Rok6u2prokAIMPZejYjYX=s0)**
-[!!] This advanced loans module is discussed in detail in a separate Manual.
+
+> Este módulo avançado empréstimo é discutido em detalhe em um manual separado.
