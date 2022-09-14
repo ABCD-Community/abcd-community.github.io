@@ -148,158 +148,180 @@ $empwebserviceusersdb = "*";
 ```
   
 
-> Note:
-> DEPRECATED VARIABLES : $institution_name and $institution_URL are no longer used but replaced by variables in abcd.def (see next section).
+> Nota:
+> Variáveis obsoletas: $ institucion_name e $institucion_url não são mais usadas, mas substituídas por variáveis no abcd.def (consulte a próxima seção).
 
-### system-variables defined in abcd.def
+### Variáveis do sistema definidos em abcd.def
 
-In the main bases-folder (in Windows e.g. C:\ABCD\www\bases, in Linux : /var/opt/ABCD/bases) a file 'abcd.def' defines system-wide variables. The main current variables here are :
+No diretório das bases de dados o arquivo 'abcd.def' define variáveis em todo o sistema. No Windows, por exemplo fica em C:\ABCD\www\bases, no Linux : /var/opt/ABCD/bases, mas depende do local da intalação. 
 
--   LEGEND1= followed by the text to display at the second line of the Central footer
+As principais variáveis atuais aqui estão :
+
+- LEGEND1 = seguido pelo texto a ser exibido na segunda linha do rodapé central
    
-> Note: The 1st line of the footer is defined in the code of the script 'htdocs/central/common/footer.php. In this script also the following variables are arranged, so the administrator could envisage re-arranging them if so wanted by changing the (simple) script.
+> Nota: a primeira linha do rodapé é definida no código do script 'htdocs/central/common/footer.php.
+> Neste script, também são organizadas as seguintes variáveis, para que o administrador 
+> possa prever reorganizá-las, se assim o desejar, alterando o script (simples).
 
--   LEGEND2= follwed by the text to display at the header of Central (next to the ABCD logo)
--   URL1= followed by the text to display as the third footer line as a link
--   URL2= followed by the text to display as the fourth footer line as a link
--   FRAME_1H= a value (typically 100) defining the number of pixels for the height of the upper segment (mostly dark-blue background with ABCD logo) in the Central data-entry screens 
--   FRAME_2H= a avlue (typically less than 100) defininng the number of pixels for the height of the toolbar (with search-box) segment of the Central data-entry screens.
+- LEGEND2 = seguido pelo texto a ser exibido no cabeçalho da Central (ao lado do logotipo ABCD)
+- URL1 = seguido pelo texto a ser exibido como a terceira linha de rodapé como um link
+- URL2 = seguido pelo texto a ser exibido como a quarta linha de rodapé como um link
+- FRAME_1H = Um valor (normalmente 100) definindo o número de pixels para a altura do segmento superior (principalmente fundo azul escuro com logotipo ABCD) nas telas centrais de entrada de dados
+- FRAME_2H = Um valor (normalmente menor que 100) definindo o número de pixels para a altura da barra de ferramentas (com a caixa de pesquisa) das telas centrais de entrada de dados.
 
-> Note With the variables FRAME_1H and FRAME_2H the administrator can adjust the interface to different resolution screens, however only at a system-wide level. Lower-resolution screens will require lower
-> values.
+> Observação: com as variáveis Frame_1H e Frame_2H O Administrador pode ajustar 
+> a interface para diferentes telas de resolução, no entanto, apenas em um nível em todo o sistema.
+> As telas de menor resolução exigirão valores mais baixos.
 
--   MULTIPLE_DB_FORMATS=
- -   UNICODE=
- -   DIRTREE_EXT=
--   LOGO=[filename with logo picture] : reference to the picture file to be used as logo in the upper part of the
+- MULTIPLE_DB_FORMATS =
+- UNICODE =
+- DIRTREE_EXT =
+- LOGO = [nome do arquivo com imagem do logotipo]: referência ao arquivo de imagem a ser usado como logotipo na parte superior do
     
-Central screen. The default logoabcd.jpg ![](https://lh3.googleusercontent.com/pz0ijzABDs0pzAV7feD4xFc4IDNCVCbayoU0n-v4TAQa7FP84yRWhYHcGLI443BbutsqMu0-R_TCLIsKn4vxkDg7gL5XC6YqJNXrRW0K4lDM64Cyj3yZap3ZgithA6CsXiejx4Jt=s0) can be replaced by any localized image here. Make sure the image is small enough (e.g. max. 3 Kb while the default is only 1,2Kb). Tools for re-sizing pictures are freely available for both Windows and Linux.
+Tela central. O padrão logoabcd.jpg ![](/pt/images/logoabcd.jpg) pode ser substituído por qualquer imagem localizada aqui.Verifique se a imagem é pequena o suficiente (por exemplo, máx. 3 kb, enquanto o padrão é de apenas 1,2kb). Existem ferramentas para redimensionar imagens que estão disponíveis gratuitamente para o Windows e Linux.pode ser substituído por qualquer imagem localizada aqui.Verifique se a imagem é pequena o suficiente (por exemplo, máx. 3 kb, enquanto o padrão é de apenas 1,2kb).As ferramentas para redimensionar imagens estão disponíveis gratuitamente para o Windows e o Linux.
 
-> Note The logo for ABCD iAH and Site need to be defined differently.
-> E.g. for the OPAC (iAH) the image is defined in the file
-> htdocs/iah/iah.def.php with the variable 'LOGO IMAGE=' ,
+> Observe o logotipo do ABCD IAH e o site precisam ser definidos de maneira diferente.
+> Por exemplo: Para o OPAC (IAH), a imagem é definida no arquivo
+> htdocs/iah/iah.def.php com 
+> a variável 'LOGO IMAGE='
 
   
-### database-variables defined in dr_path.def
+### Variáveis de banco de dados definidos em dr_path.def
 
-In this file 'database-related paths definition', to be located in the base-folder for each database, some variables can be defined which re-define characteristics of the database. These parameters are ALL optional ! Currently the list of variables at this level is :
+Neste arquivo dr_path.def (database-related paths definition), está localizada no diretório de base para cada banco de dados. Algumas variáveis podem ser definidas para redefinir as características do banco de dados. Esses parâmetros são todos opcionais! Atualmente, a lista de variáveis nesse nível é:
 
--   ROOT= defines the default path for this database where files attached to the record, e.g. images, PDFs etc. will be stored, e.g.
+- ROOT = Define o caminho padrão para este banco de dados onde os arquivos anexados ao registro como imagens, PDFs... serão armazenadas.
+
  ```
-- ROOT=/var/opt/ABCD/bases/marc/dr/
+ROOT=/var/opt/ABCD/bases/marc/dr/
 ```
--   IMPORTPDF = defines with Y or N whether documents (PDFs) can be imported into this database. if 'Y'es the PDF-icon will be shown in the Central toolbar
--   barcode = defines with 'Y' or 'N' whether or not barcodes are used in this database; this parameter defines whether the barcode icon will be shown in the Central toolbar
-- tesaurus = defines the name of the thesaurus-database to be used with this database, e.g. tesaurus=agrovoc
 
-> Note:
-> the Spanish spelling of 'tesaurus' in this case
+- IMPORTPDF = Define com Y ou N se os documentos (PDFs) podem ser importados para esse banco de dados. Se "Y" o ícone para PDF será mostrado na barra de ferramentas central
+- barcode = define com 'y' ou 'n' se os códigos de barras são usados ou não neste banco de dados; Este parâmetro define se o ícone de código de barras será mostrado na barra de ferramentas central
+- tesaurus = Define o nome do banco de dados de tesauro a ser usado com este banco de dados, por exemplo:
 
--   prefix_search_tesaurus= defines the prefix with which the descriptors in the database are indexed, e.g. MA_
--   COLLECTION= defines the path were digital library collections will be stored for this database. Such directory could be defined under the database-folder itself (e.g. /var/opt/ABCD/bases/dubcore/collection/) or as a collec- tive directory for all databases in the system (e.g. /var/opt/ABCD/bases/collections).
--   UNICODE= defines with '1' or '0' whether the database uses utf8 or unicode encoded content. In fact any value greater than 0 can be used, e.g. 'Y' will simply indicate 'yes, use unicode', '1' but also '2' etc. will also indicate 'yes use unicode' but at the same time identify Unicode character-subsets to be used, e.g. '1' includes Amharic, '2' includes Sinhalese, '3' includes Arabic etc. These codes are relevant for the OPAC where the alphabets will be shown in clickable icons.
+```
+tesaurus = Agrovoc
+```
+
+> Nota:
+> A ortografia espanhola de 'Tesaurus' neste caso
+
+- prefix_search_tesaurus = Define o prefixo com o qual os descritores no banco de dados são indexados, por exemplo: MA_
+- COLLECTION = Define que o caminho onde as coleções de bibliotecas digitais serão armazenadas para este banco de dados. Esse diretório pode ser definido no próprio diretório da base de dado (por exemplo,/var/opt/abcd/bases/dubcore/collections/) ou como um diretório coletivo para todos os bancos de dados no sistema (por exemplo,/var/opt/abcd/bases/collections).
+- UNICODE = Define com '1' ou '0' se o banco de dados usa o UTF8 ou o conteúdo codificado do Unicode. De fato, qualquer valor maior que 0 pode ser usado, p.'Y' simplesmente indicará 'sim, use unicode', '1', mas também '2' etc. também indicará 'sim, use unicode', mas, ao mesmo tempo, identificará o unicode subconjuntos de caracteres a serem usados, por exemplo: '1' inclui amárico, '2' inclui cingaleses, '3' inclui árabe etc. Esses códigos são relevantes para o OPAC, onde os alfabetos serão mostrados em ícones clicáveis.
     
-### Defining different database-directories : db_path.dat
+### Definindo diferentes diretores de banco de dados: db_path.dat
 
-The file 'db_path.dat' in the bases-folder allows to define several directories (or folders) to be used as bases-folder, not only the current one (defined in CONFIG.PHP). The lines in this optional file contain the path, followed by a column-separator `'|'` and a description as shown in the selection-menu.
+O arquivo 'db_path.dat' na pasta-base permite definir vários diretórios (ou pastas) a serem usados como pasta-base, não apenas o atual (definido em CONFIG.PHP). As linhas neste arquivo opcional contêm o caminho, seguido por um separador de colunas `'|'` e uma descrição como mostrado no menu de seleção.
 
-E.g. to define 2 database-folders, one with operational and one with test-databases, the file db_path.dat would be (example for Windows) :
+Por exemplo, para definir 2 pastas de banco de dados, uma com bases de dados operacionais e outra com bases de dados de teste, o arquivo db_path.dat seria (exemplo para Windows):
 ```
-C:/ABCD/www/bases/|Operational 
-D:/databases/|Test-databases
+C:/ABCD/www/bases/|Acervo padrão
+D:/databases/|Bases para testes
 ```
-These two options will appear in a list in the login-screen of ABCD Central and the $db_path variable will be substituted by the selected one.
+Essas duas opções aparecerão em uma lista na tela de login da ABCD Central e a variável $db_path será substituída pelo selecionado.
 
 
-## Login configuration of ABCD Central
+## Configuração de login do ABCD Central
 
-The most important configuration file for ABCD Central is the file 'config.php' in the /www/htdocs/central folder. We discussed some general parameters earlier on (in the section about installation) as they deal with installation paths and default language to be used, but at the end some parameters are introduced which provide a recovery solution for the case when the general System Administrator login data have been lost (meaning the system cannot be entered by anyone anymore !).
+O arquivo de configuração mais importante para o ABCD Central é o arquivo 'config.php' na pasta /www/htdocs/central. Discutimos alguns parâmetros gerais em outro tópico (na seção sobre instalação) enquanto eles lidam com os caminhos de instalação e a linguagem padrão a serem usados, mas no final alguns parâmetros são introduzidos, que fornecem uma solução de recuperação para o caso quando o administrador geral de dados de login foram perdidos (o que significa que o sistema não pode mais ser inserido por ninguém!).
 
-These parameters are :
+Esses parâmetros são:
+
 ```
 //USE THIS LOGIN AND PASSWORD IN CASE OF CORRUPTION OF THE OPERATORS DATABASE OR IF YOU DELETED, BY ERROR, THE SYSTEM ADMINISTRATOR
 
 $adm_login=""; $adm_password="";
 ```  
+
 ```
 //USE THIS PARAMETER TO ENABLE/DISABLE THE MD5 PASSWORD ENCRYPTION (0=OFF 1=ON)
 $MD5=1;
 ```
-By manually editing (e.g. with Notepad or another flat-ext-ASCII editor) the $adm_login and $adm_password parameters one can create temporary login data, which will allow to create real logins again (using the database administration tools for the USERS-database). It is strongly advised to immediately thereafter again remove the login-data from this file config.php - for obvious security reasons.
+Editando manualmente (por exemplo, com o bloco de notas ou outro editor de texto plano), os parâmetros $adm_login e $adm_password permitem criar dados de login temporários, o que permitirá criar logins reais novamente (usando as ferramentas de administração de banco de dados para o bancos de dados de usuários). É fortemente aconselhado remover imediatamente os dados de login deste arquivo config.php - por razões óbvias de segurança.
 
-The $MD5 parameter will invoke password encryption (using the MD5 algorithm) when put to '1' or not if put at '0'.
+O parâmetro $md5 invocará a criptografia de senha (usando o algoritmo MD5) quando colocado em '1' ou não se for colocado em '0'.
 
-## Administration of the ABCD user profiles.
+## Administração dos perfis de usuário do ABCD.
 
-From the main Central menu option 'Users Administration' one can enter the 'Create/Edit profiles' option in addition to create/edit/delete system users.
+Na opção principal do menu central 'Administração de usuários', pode -se inserir a opção 'Criar/editar perfis', além de criar/editar/excluir usuários do sistema.
 
-Some profiles come with the ABCD installation as examples, e.g. :
--   System Administrator
--   Database Administrator
--   Database Operator
--   Operator LIS
-![](https://lh6.googleusercontent.com/we6opfWnYf-8n_b1lhuqxlCJuXuCwry7J7qqxIWQ8C4De6rGRtjzPSqc9aLRV-1O-G_wKFCo5_x37SbMLFcEhqY-5wak5o8mpvKjGnXFETGrh2JQi9AesI-35PryH8bPKG9fptoZ=s0)
+A partir do menu principal central, opção "Administração de usuários", pode-se entrar na opção “Criar/Editar perfis” para criar/editar apagar usuários do sistema.
+Alguns perfis vêm com a instalação do ABCD, como, por exemplo:
+- Administrador do Sistema;
+- Administrador de Bases de Dados;
+- Operador de Bases de Dados;
+- Operador LIS.
+
+![](/pt/images/abcddoabcd1_html_a518da47462207ea.gif)
     
 
-As can be seen from this screen, the administrator has to enter the following data :
-
-1.  profile name : any (short) name for the new profile to be created
-2.  profile description : any description describing the profile
-3.  for each database listed : whether or not access is granted and which data-entry forms of that database can be used by this profile. If all, 'All' can be checked for simplicity.
-4.  Permissions : for each module (Cataloging - Circulation - Acquisitions) the menu-option (or function) to which this profile should have access should be activated (in the small box).
+Como pode ser observado a partir desta tela, o administrador tem de informar os seguintes dados:
+1. Nome do perfil: qualquer nome (curto) para o novo perfil a ser criado;
+2. Descrição do perfil: qualquer informação que descreva o perfil;
+3. Para cada base de dados listada: se é ou não concedido acesso e quais planilhas de entrada de dados podem ser utilizadas por este perfil. Se todas, a opção “Todas” pode ser selecionada simplesmente;
+4. Permissões: para cada módulo (Catalogação – Circulação – Aquisição) a opção de menu (ou função) que esse perfil pode ter acesso deve ser ativada (na caixinha).
     
-> Note:
-> The list of profiles is kept by the Operating System in the file
-> 'profiles.lst' in the bases/par/pro- files and for each profiles the
-> characteristics (databases allowed, modules allowed are kept in a file
-> named after the profile (without extension). Privileges not granted in
-> the profile are assumed to be  'not' allowed. The privileges have
-> brief but mostly self-explanatory names, e.g. 'delrec' for deleting
-> records, expimp for exporting and importing records etc.
+> Nota:
+> A lista de perfis é mantida pelo Sistema Operacional no arquivo 'perfis.lst' nas 'bases/partes/perfis' e para 
+> cada perfil as características (bancos de dados permitidos, módulos permitidos são mantidos em um arquivo 
+> com o nome do perfil (sem extensão). Os privilégios não concedidos no perfil são assumidos como 'não' 
+> permitidos. Os privilégios têm nomes breves, mas principalmente auto-explicativos, por exemplo, 
+> "delrec" para apagar registros, "expimp" para exportar e importar registros, etc.
 
 
-## Logging in into the system
+## Loging no sistema
     
 
-After profiles have been created (or adopted from the default ones) and have been assigned to system users, any of the system users' logins can be used to enter the system. Unlike in previous preliminary versions of ABCD, it is obviously no longer necessary to select an authorization level when logging in, since this is now coupled with the login itself. Therefore in addition to login-name and -password only the language to be used is to be selected (this list is taken from the file 'lang.tab' in the bases-folder of ABCD (default : /ABCD/www/bases).
-![](https://lh4.googleusercontent.com/2ZyI0IeAoy6CyZGF8xtW16RYHd_9jh7g-AK6F-oshgPdBMUlrNef3piVWKj3K3x9mAjxsqvUHVg837ECB_pTIiaFhKeYgb3RJp2mLqmox-MU4RVUeq2GuToD_KdCp8feBAkfVDXh=s0)
+Após terem sido criados os perfis (ou adotados perfis padrão) e atribuídos usuários de sistema, qualquer login de usuários de sistema pode ser usado para entrar no mesmo. Ao contrário de versões anteriores do ABCD, não é mais necessário, obviamente, selecionar um nível de autorização quando efetuar o login, já que este está agora junto com o login em si. Portanto, além de nome de login e senha apenas o idioma a ser utilizado deve ser selecionado (esta lista é obtida no arquivo lang.tab da pasta “bases” do ABCD (padrão: /ABCD/www/bases).
+
+![](/pt/images/abcddoabcd1_html_7886a69038206032.png)
  
-As from ABCD 1.5 and 2.0 on the login-screen also provides a link to change the password, which gives a dialog to enter user_ID, old password and the new password twice, as illustrated here :
+A partir de ABCD 1.5 e 2.0 na tela de login, também fornece um link para alterar a senha, que fornece uma caixa de diálogo para entrar no user_id, senha antiga e a nova senha duas vezes, conforme ilustrado aqui:
   
 ![](https://lh3.googleusercontent.com/MIVslA5az-6SPXmXrnrfTLPvaoDsEzVmcm1-XuOlyCMuWjg5IklAsVe0VbwcLlNYQbM_n0erw1D7bhrtK8wQbMniz48hq5Qe4prdZLQb579NPPj9ksmOIMp88tYSabqsspGHjgBQ=s0)  
 
-This login-screen has one option 'Open in new window' ![](https://lh6.googleusercontent.com/NOO262msBChAvhySwoftlShZTmKmEhtgbqSIbG1_I7oimt9TGi25YraXZnHQc5zFwGUS6H_Rpohq642tQL9XmBMU2gwAwW2ofubnOiKw_jKrAk4EOg8cpSlOIYFnVX3dWAU0RKnz=s0)as a 'tickbox' for which the de- fault value is defined in the general configuration file 'config.php' of ABCD-Central with the parameter-name '$open_new_window' which can be set to "Y" (meaning after login ABCD will use a separate window, which avoids interference with other tabs or wrong use of the 'BACK' button of the browser) or "N" to simply open the ABCD window in the same area; the other parameter linked to this behaviour in 'config.php' is '$context_menu' which also can be set to "Y" or "N" to resp. allow or not the window-menu invoked by right-clicking on the page - again this can avoid wrong use of the 'BACK' button as this going back should preferably be performed through ABCD-interface buttons, not the ones of the browser who has no control on certain necessary ABCD- navigation issues.  
+Esta tela de login tem uma opção 'Abrir na nova janela' ![](https://lh6.googleusercontent.com/NOO262msBChAvhySwoftlShZTmKmEhtgbqSIbG1_I7oimt9TGi25YraXZnHQc5zFwGUS6H_Rpohq642tQL9XmBMU2gwAwW2ofubnOiKw_jKrAk4EOg8cpSlOIYFnVX3dWAU0RKnz=s0) como uma 'caixa de seleção' para a qual o valor padrão é definido no arquivo de configuração geral 'config.php' do ABCD-Central com o parâmetro-nome '$open_new_window' que pode ser definido como "Y" (ou seja, após o login o ABCD usará uma janela separada, o que evita a interferência com outras abas ou o uso errado do botão 'BACK' do navegador) ou "N" para simplesmente abrir a janela do ABCD na mesma área; o outro parâmetro ligado a este comportamento em 'config.php' é '$context_menu' que também pode ser definido como "Y" ou "N" para resp. permitir ou não o menu-janela invocado ao clicar com o botão direito na página - mais uma vez isto pode evitar o uso errado do botão 'BACK', já que esta volta deve ser feita preferencialmente através dos botões de interface ABCD, e não através dos botões do navegador que não tem controle sobre certos problemas de navegação ABCD necessários. 
   
   
-By clicking on the arrow ('GO') ![](https://lh3.googleusercontent.com/IdcZJXwvLz7q9ffvgfqwMqsIq0so55S4mLn1WHzi2nL4c10G1f5WyDfmAkc5N0lIv7Zl67Vz2bp-XXpziJaCWrPbVzzia4zPW1unNpQumXi8lDZ_9VfAQ882FfvT8YyAkkBF00U7=s0) the user will enter the main Central menu - adjusted to the profile granted. All options of this menu are discussed in the next sections of this manual. This includes the administration of users and linking them to a profile, since the users-database can be seen as just another ABCD-database for which general Database Management tools of ABCD are to be used.
+Clicando na seta (“Ir/Entrar”)![](https://lh3.googleusercontent.com/IdcZJXwvLz7q9ffvgfqwMqsIq0so55S4mLn1WHzi2nL4c10G1f5WyDfmAkc5N0lIv7Zl67Vz2bp-XXpziJaCWrPbVzzia4zPW1unNpQumXi8lDZ_9VfAQ882FfvT8YyAkkBF00U7=s0) o usuário vai entrar no menu Central principal - ajustado às permissões do perfil. Todas as opções deste menu são discutidas nas próximas seções deste manual. Isto inclui a administração de usuários, ligando-os a um perfil, uma vez que a base de dados de usuários pode ser vista como apenas mais uma base de dados ABCD, para a qual ferramentas de administração geral de bases de dados do ABCD devem ser usadas.
 
-## Using LDAP authentification
+## Usando autenticação LDAP
     
-The use of an LDAP authentification server is a new feature in ABCD 2.0 . The acronym stands for "Lightweight Directory Access Protocol" and in practice for ABCD means that you can use a dedicated, mostly institution-wide server which holds records of all authorized users. E.g in a university a 'registration office' could manage such a centrally co-ordinated list of students, which the library system consults whenever a user wants to login. This means that no longer the library itself is responsible for the up-to-date keeping of this list. E.g. when a student would be 'expelled' from the university, no longer the library needs to know this immediately in order to prevent such user - often quite frustrated ! - to enter the library(-system) and abuse it. 
+O uso de um servidor de autenticação LDAP é um novo recurso no ABCD 2.0.O acrônimo significa "protocolo de acesso ao diretório leve" e, na prática do ABCD, significa que você pode usar um servidor dedicado, principalmente em toda a instituição, que mantém registros de todos os usuários autorizados. Por exemplo, em uma universidade, um 'Escritório de Registro' poderia gerenciar uma lista de alunos tão centralmente coordenada, que o sistema da biblioteca consulta sempre que um usuário deseja fazer login. Isso significa que a própria biblioteca não é mais responsável pela manutenção atualizada desta lista. Por exemplo: quando um aluno seria "expulso" da universidade, a biblioteca não precisa mais saber disso imediatamente para evitar esse usuário - muitas vezes bastante frustrado!- Entrar no sistema da biblioteca para bagunçar.
 
-This LDAP functionality can be activated for the following ABCD-parts :
--   Central login for operators
--   Site : login for end-users in MySite
--   Secs-Web : login into the Serials Control module.
+Essa funcionalidade LDAP pode ser ativada para as seguintes partidas ABCD:
+- Login central para operadores
+- Site: Faça login para usuários finais no mysite
+- Secs-Web: Faça login no módulo de controle de seriados.
    
-The logics of using LDAP in ABCD is as follows :
+As lógicas do uso do LDAP no ABCD são as seguintes:
 
--   in config.php the parameter is switched ON or OFF (actually : true or false), so the use of LDAP is completely optional;
- -   whenever an operator (librarian) wants to log in into ABCD Central, or an end-user wants to log in into the 'MySite' module, the login-data entered are first checked against the LDAP-server; if that one responds 'clear' the login is granted, if not the login is rejected;
--   if the LDAP-server does not know the login (which is different from 'rejects the login'), the login is subsequently checked against the local login-database ('acces' for operators, 'users' for patrons);
+- No config.php, o parâmetro está ligado ou desligado (na verdade: verdadeiro ou falso), portanto o uso do LDAP é completamente opcional;
+-Sempre que um operador (bibliotecário) deseja fazer login no ABCD Central, ou um usuário final deseja fazer login no módulo 'Mysite', os dados de login inseridos são verificados pela primeira vez contra o servidor LDAP;Se esse responder 'claro', o login será concedido, se não o login, será rejeitado;
+-Se o LDAP-Server não souber o login (que é diferente de 'rejeitar o login'), o login será posteriormente verificado com o a base de dados local local ('acces' para operadores, 'users' para usuários);
     
-A pre-requirement for LDAP to work in ABCD is to have the extra PHP-library installed for LDAP : sudo apt-get install php7.0-ldap [substitute 7.0 by '5' if using PHP 5.x] and restart your Apache with a command like in Linux : 
+Um pré-requisito para o LDAP funcionar no ABCD é ter a biblioteca PHP extra instalada para LDAP: 
+
+```
+sudo apt-get install php7.0-ldap
+```
+
+[substituto 7.0 pela versão que estiver usando o php] e reiniciar seu apachecom um comando como no Linux:
+
 ```
 sudo service apache2 restart
 ```
 
-Other newly required files (as compared to versions pre-ABCD2.0) are :
+Outros arquivos recém-exigidos (em comparação com as versões pré-ABCD2.0) são:
 
--   the ldap.php script to be copied into htdocs/central/common directory
--   a dedicated IsisScript 'loginLDAP.xis' to be copied into the directory htdocs/central/dataentry/wxis
--   new versions of inicio.php and inicio_mysite.php (done already by default in ABCD 2.0) with the following changes :
--   at the beginning (e.g. after the line require_once ("../config.php"); ) add a new line with the following in- struction : require_once ("ldap.php");
--   at the end of the script change the part 'VerificarUsuario();' as follows, so as to use the new authentification if LDAP is used and the old one if not :
+- O script ldap.php a ser copiado para diretório htdocs/central/common
+- um IsisScript dedicado 'loginldap.xis' a ser copiado no diretório htdocs/central/dataEntry/wxis
+- Novas versões de inicio.php e inicio_mysite.php (já feitas por padrão no ABCD 2.0) com as seguintes alterações:
+	- no início (por exemplo, após a linha require_once (“../config.php”);) Adicione uma nova linha com a seguinte instrução: 	require_once ("ldap.php");
+	- No final do script, altere a parte 'Verificarusuario ();' da seguinte:
+
 ```
 if (isset($arrHttp["login"])){
 	 global $use_ldap; 
@@ -309,11 +331,27 @@ if (isset($arrHttp["login"])){
 ```
   
 
--   three new functions added : VerificarUsuarioLDAP(),LeerRegistroLDAP(),LoginNLDAP(), and Ses- sion($llave).
--   a new CSS-element defined in the CSS htdocs/central/css/layout.css at the very end before the closing '}': .dl- horizontal { float: left; width: 45px; overflow: hidden; clear: left; text-align: left; text-overflow: ellipsis; white- space: nowrap; border-radius:150px; display: block; margin: 0 auto; margin-left: -50px;
--   for the ABCD Loans module : a new version of the script htdocs/central/circulation/usuario_prestamos_presen- tar.php with
--   in the initial 'include' statements section, include ../common/ldap.php
--   on line 627 added code : 
+- Três novas funções adicionadas: VerificarUsuarioLDAP(), LeerRegistroLDAP(), LoginNLDAP(), and Session($llave).
+- um novo CSS - elemento definido no CSS htdocs/central/css/layout.css no final antes do fechamento '}':
+```
+ .dl- horizontal { 
+	float: left; 
+	width: 45px; 
+	overflow: hidden; 
+	clear: left; 
+	text-align: left; 
+	text-overflow: ellipsis; 
+	white-space: nowrap; 
+	border-radius:150px; 
+	display: block; 
+	margin: 0 auto; 
+	margin-left: -50px;
+
+```
+- Para o módulo de empréstimos ABCD: uma nova versão do script htdocs/central/circulação/usuario_prestamos_preseub.php com
+- Na seção de declarações "include" inicial, include ../common/ldap.php
+- na linha 627 Código adicionado:
+
 ```
 if($use_ldap){ 
 	if(!Exist($arrHttp["usuario "])) { 
@@ -322,26 +360,28 @@ die;
 	} 
 }
 ```
--   for reference purpose we also note the additional changes for the Secs-Web module if LDAP is to be used :
--   in htdocs\secs-web\index.php add : require_once(BVS_DIR. "/htdocs/central/config.php") after re- quire_once("./common/ini/config.ini.php"); so as to check whether or not to use LDAP in Secs-Web
--   new version of class htdocs\secs-web\common\class\session.class.php : a new function $misession->check- LoginLDAP()is implemented which will be used if LDAP is found to be active in config.php (previous lis- titem), instead of the default $misession->checkLogin() function.
--   in htdocs\secs-web\common\class\session.class.php the SessionManager has added instructions at the very beginning to include the LDAP script and note its ON/OFF setting :
+- Para fins de referência, também observamos as alterações adicionais para o módulo SECS-Web se o LDAP for usado:
+-Em htdocs \ secs-web \ index.php add: requim_once (bvs_dir. "/htdocs/central/config.php") após require_once ("./common/ini/config.ini.php");para verificar se deve ou não usar o LDAP no Secs-Web
+- Nova versão da classe  htdocs\secs-web\common\class\session.class.php: uma nova função $misession->check- LoginLDAP() for implementado que será usado se o LDAP estiver ativo no config.php (Lista item anterior), em vez da função $misession->checkLogin().
+- Em htdocs\secs-web\common\class\session.class.php a sessão do manager adicionou instruções no início para incluir o script LDAP e observar sua configuração de ON/OFF:
+
 ```
 require_once(BVS_DIR. "/htdocs/central/common/ldap.php"); 
 require_once(BVS_DIR. "/htdocs/central/config.php");
 ```
 
-The LDAP configuration is to be defined as follows in CONFIG.PHP of the Central directory :
+A configuração do LDAP deve ser definida da seguinte forma no config.php do diretório central:
 
--   $use_ldap : true or false, sets or unsets the use of LDAP;
--   $ldap_host : the name or server-IP of the LDAP-server;
--   $ldap_dn : the LDAP domain data in comma-delimited format;
--   $ldap_search_context : additional data used by the LDAP-server to specify the use-context;
--   $ldap_port : the port used by the LDAP-server;
--   $ldap_pass : the password needed to access the LDAP-server;
+- $use_ldap : Verdadeiro ou falso, conjuntos ou desative o uso de LDAP;
+- $ldap_host : o nome ou servidor-IP do servidor LDAP;
+- $ldap_dn : os dados do domínio LDAP em formato delimitado por vírgula;
+- $ldap_search_context : dados adicionais usados pelo servidor LDAP para especificar o uso;
+- $ldap_port : a porta usada pelo servidor LDAP;
+- $ldap_pass : a senha necessária para acessar o servidor LDAP;
 
-In practice you will get all these standard-data from the LDAP-server manager.
-An example configuration in the ABCD-Central config.php script for a free test-LDAP server is given below :
+Na prática, você obterá todos esses dados padrão do gerente do LDAP-Server.
+Um exemplo de configuração no script de config.php do Central ABCD para um servidor de teste de teste gratuito é fornecido abaixo:
+
 ```
 $use_ldap=false;
 $ldap_host = "ldap://zflexldap.com";
@@ -351,6 +391,6 @@ $ldap_port = "389";
 $ldap_pass = "zflexpass";  
 ```
 
-This example configuration is taken from a free LDAP server which can also be used for testing, see the URL : [http://www.zflexldapadministrator.com](http://www.zflexldapadministrator.com/) . Sample users available are 'guest1' (password : guest1password), guest2 (password : guest2password) and guest3 (password : guest3password).
+Este exemplo de configuração é retirado de um servidor LDAP gratuito que também pode ser usado para testar, consulte o URL: [http://www.zflexldapadministrator.com] (http://www.zflexldapadministrator.com/).Os usuários de exemplo disponíveis são 'guest1' (Senha: guest1password), Guest2 (Senha: guest2password) e Guest3 (Senha: guest3password).
 
-Please note that for your own ABCD LDAP you will probably work with the administrator in your organization or institution to define the correct configuration and do the testing.
+Observe que, para o seu próprio ABCD LDAP, você provavelmente trabalhará com o administrador em sua organização ou instituição para definir a configuração correta e fazer o teste.
