@@ -32,8 +32,8 @@
 <meta property="og:title" content="O abc do ABCD 2.0f" />
 <meta property="og:description" content="Este documento tem como objetivo fornecer todas as informações e instruções relevantes sobre como usar a biblioteca integrada e o sistema de gerenciamento de documentação ‘ABCD’. Tanto as operações básicas como o gerenciamento avançado do software são discutidos, assim como os tópicos úteis e necessários relativos ao software ISIS no qual o ABCD se baseia. Nesta nova edição, as novas características da versão 2.0 são adicionadas- o uso de diferentes sabores de CISIS, de Unicode e as capacidades da biblioteca digital, bem como alguns módulos adicionais (ODDS, LDAP, DSpaceBridge) e utilitários (conversão UTF8, criação de objetos de empréstimo…) ." />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="http://localhost:4000" />
-<meta property="og:site_name" content="http://localhost:4000" />
+<meta property="og:url" content="http://localhost:9898" />
+<meta property="og:site_name" content="http://localhost:9898" />
 
 <meta itemprop="name" content="O abc do ABCD 2.0f">
 <meta itemprop="description" content="">
@@ -380,15 +380,15 @@
               
               
                 <li class="breadcrumb-item">
-                  <a href="http://localhost:4000/pt/">Pt</a>
+                  <a href="http://localhost:9898/pt/">Pt</a>
                 </li>
                 
                 <li class="breadcrumb-item">
-                  <a href="http://localhost:4000/pt/abcd-modules/">Abcd modules</a>
+                  <a href="http://localhost:9898/pt/abcd-modules/">Abcd modules</a>
                 </li>
                 
                 <li class="breadcrumb-item active" aria-current="page">
-	          <a href="http://localhost:4000/pt/abcd-modules/database-management/">Módulo central - gerenciamento de banco de dados</a>
+	          <a href="http://localhost:9898/pt/abcd-modules/database-management/">Módulo central - gerenciamento de banco de dados</a>
                 </li>
                 
 	      </ol>
@@ -409,17 +409,17 @@
               <li><a href="#a-definindo-os-campos" id="markdown-toc-a-definindo-os-campos">A. Definindo os campos</a></li>
               <li><a href="#b-a-definição-de-listas-de-picaretas" id="markdown-toc-b-a-definição-de-listas-de-picaretas">B. A definição de listas de picaretas</a></li>
               <li><a href="#a-definição-fst" id="markdown-toc-a-definição-fst">A definição FST</a></li>
-              <li><a href="#the-worksheet-editor" id="markdown-toc-the-worksheet-editor">The worksheet editor</a></li>
-              <li><a href="#the-pft-editor" id="markdown-toc-the-pft-editor">The PFT Editor</a></li>
+              <li><a href="#o-editor-de-planilhass" id="markdown-toc-o-editor-de-planilhass">O editor de planilhass</a></li>
+              <li><a href="#o-editor-da-pft" id="markdown-toc-o-editor-da-pft">O editor da PFT</a></li>
             </ol>
           </li>
-          <li><a href="#copying-an-existing-winisis-database" id="markdown-toc-copying-an-existing-winisis-database">Copying an existing WinISIS database</a></li>
-          <li><a href="#copying-an-existing-abcd-database" id="markdown-toc-copying-an-existing-abcd-database">Copying an existing ABCD database</a></li>
+          <li><a href="#copiando-um-banco-de-dados-winisis-existente" id="markdown-toc-copiando-um-banco-de-dados-winisis-existente">Copiando um banco de dados Winisis existente</a></li>
+          <li><a href="#cópia-de-um-banco-de-dados-abcd-existente" id="markdown-toc-cópia-de-um-banco-de-dados-abcd-existente">Cópia de um banco de dados ABCD existente</a></li>
         </ol>
       </li>
-      <li><a href="#update-database-definitions" id="markdown-toc-update-database-definitions">Update database definitions</a>        <ol>
-          <li><a href="#type-of-records" id="markdown-toc-type-of-records">Type of records</a></li>
-          <li><a href="#record-validation" id="markdown-toc-record-validation">Record validation</a></li>
+      <li><a href="#atualizar-definições-de-banco-de-dados" id="markdown-toc-atualizar-definições-de-banco-de-dados">Atualizar definições de banco de dados</a>        <ol>
+          <li><a href="#tipo-de-registros" id="markdown-toc-tipo-de-registros">Tipo de registros</a></li>
+          <li><a href="#validação-de-registros" id="markdown-toc-validação-de-registros">Validação de registros</a></li>
           <li><a href="#advanced-search-form" id="markdown-toc-advanced-search-form">Advanced search form</a></li>
           <li><a href="#available-databases-list-or-table" id="markdown-toc-available-databases-list-or-table">Available databases list or table</a></li>
           <li><a href="#dbnpar" id="markdown-toc-dbnpar">[dbn].par</a></li>
@@ -745,176 +745,204 @@ O ISIS aproveita 9 técnicas para indexação, mas basicamente elas podem ser re
   <li>Formatos usando a função ref para se referir a bancos de dados externos para obter valores a partir daí depois de localizar o MFN com a função L- fazê-lo, por exemploOs códigos podem ser convertidos em valores para o dicionário.</li>
 </ul>
 
-<p>After having edited the FST, it can be tested with any record of your database to check whether the actual values which will be indexed indeed comply with what was intended.<img src="https://lh5.googleusercontent.com/FRA6Z4MDzsH4LSRB2h7RIix9nvptfcgKSDdIlqn-IaG-aaR0p39PQ1u_-C_NEWjqnbqJL7vgWWtWngDP4oimbX-JNSpuuBlKzYg2cAHsu7YZsKVmc7eVcyH4nRoPiXQbJ0SG5hGW=s0" alt="" /></p>
+<p>Depois de editar o FST, ele pode ser testado com qualquer registro do seu banco de dados para verificar se os valores reais que serão indexados realmente cumprem o que foi planejado.<img src="https://lh5.googleusercontent.com/FRA6Z4MDzsH4LSRB2h7RIix9nvptfcgKSDdIlqn-IaG-aaR0p39PQ1u_-C_NEWjqnbqJL7vgWWtWngDP4oimbX-JNSpuuBlKzYg2cAHsu7YZsKVmc7eVcyH4nRoPiXQbJ0SG5hGW=s0" alt="" /></p>
 
-<h4 id="the-worksheet-editor">The worksheet editor</h4>
+<h4 id="o-editor-de-planilhass">O editor de planilhass</h4>
 
-<p>As in any ISIS-application, ABCD allows the creation of many different worksheets for different purposes, e.g. to deal with only a smaller subset of fields, or with the fields in a different sequence etc.</p>
+<p>Como em qualquer aplicativo ISIS, o ABCD permite a criação de muitas planilhas diferentes para fins diferentes, p.lidar com apenas um subconjunto menor de campos, ou com os campos em uma sequência diferente etc.</p>
 
-<p>For that reason ABCD offers in this option an easy tool to select which fields to present in the (new or edited) worksheet and in which sequence to present them :</p>
+<p>Por esse motivo, o ABCD oferece nesta opção uma ferramenta fácil para selecionar quais campos apresentar na planilha (novos ou editados) e em que seqüência apresentá-los:</p>
 
 <p><img src="https://lh5.googleusercontent.com/PqifZQf5Z9eKjkYTnqvq1ADR1IzJ5m1rFtXJH3tweCdwJdpYgm841-pdb7Nf42SSB6UmNagSYyqlYM4UE6YN26NFGXFbAawHlEizFva2Okle6mEajqtcUE9Lj4s5SbT_kPXW5IdX=s0" alt="" /></p>
 
-<p>In case an existing worksheet needs to be edited, it can be selected (in the upper part of the interface) from a list</p>
+<p>Caso uma folha de trabalho existente precise ser editada, ela pode ser selecionada (na parte superior da interface) de uma lista</p>
 
 <ul>
-  <li>where possibly also an existing worksheet can be deleted is so desired. The main part of the worksheet presents</li>
+  <li>onde possivelmente também uma planilha existente possa ser apagada é tão desejada. A parte principal da folha de trabalho apresenta a lista de campos disponíveis com possibilidade de copiar qualquer campo ( <img src="https://lh4.googleusercontent.com/6vcKUqy6njvqCh-qXnxOoyLtj3GZAZZqTXg3Mdh8jSduvP2J0YA74-YYtPw7mZ5pviDiG81r2u881hlODieyOFR2s6VI1NyDTQ--lmMOhXk7kKbcqcd9i6q6w7Wj29b9rQjWgYiV=s0" alt="" /> ) ou todos os campos ( <img src="https://lh4.googleusercontent.com/F778ssiMh_7PggbelfwBKygL6CBhIaW-sp9UR4VueZ4oWdzhsjbKns-q0P74R3qD41xf8kYM4szlPq3TzCZzPT50nW4Db2DspeoWTlAeLX8MUG4_XQIfMG93Yt3MGdrjoEQMwRC4=s0" alt="" /> ) para a lista de planilhas no lado direito.</li>
 </ul>
 
-<p>the list of available fields with possibility to copy any field ( ) or all fields ( <img src="https://lh4.googleusercontent.com/6vcKUqy6njvqCh-qXnxOoyLtj3GZAZZqTXg3Mdh8jSduvP2J0YA74-YYtPw7mZ5pviDiG81r2u881hlODieyOFR2s6VI1NyDTQ--lmMOhXk7kKbcqcd9i6q6w7Wj29b9rQjWgYiV=s0" alt="" /> ) to the worksheet list at the right side.<img src="https://lh4.googleusercontent.com/F778ssiMh_7PggbelfwBKygL6CBhIaW-sp9UR4VueZ4oWdzhsjbKns-q0P74R3qD41xf8kYM4szlPq3TzCZzPT50nW4Db2DspeoWTlAeLX8MUG4_XQIfMG93Yt3MGdrjoEQMwRC4=s0" alt="" /></p>
+<p>Finalmente, a planilha pode ser salva no sistema com um nome interno (apenas em letras minúsculas e curtas) e um descrição para facilitar a identificação.</p>
 
-<p>Finally the worksheet can be saved into the system with an internal name (short and lower-case only) and a description for easy identification.<img src="https://lh5.googleusercontent.com/EWTCud_6-VyUNX6KsiOJiofV2-p_IsAbjUok0WZCOcLCNKmW4_HXkVXVGPpEiNE0Y_7MPR3Y8iH9-FKqqdRQHm_jlyZOWt6-SMiBZgqi76ffz7iyoyWFXPb2RJh2XzJAHgVE7oWk=s0" alt="" /></p>
+<p><img src="https://lh5.googleusercontent.com/EWTCud_6-VyUNX6KsiOJiofV2-p_IsAbjUok0WZCOcLCNKmW4_HXkVXVGPpEiNE0Y_7MPR3Y8iH9-FKqqdRQHm_jlyZOWt6-SMiBZgqi76ffz7iyoyWFXPb2RJh2XzJAHgVE7oWk=s0" alt="" /></p>
 
-<h4 id="the-pft-editor">The PFT Editor</h4>
+<h4 id="o-editor-da-pft">O editor da PFT</h4>
 
-<p>Since the ISIS Formatting Language is a very powerful tool with many possibilities, a dedicated document on the (C)ISIS Formatting Language is added as annex to this Manual on ABCD, but it can also be consulted from a link provided in this PFT-interface of ABCD. Here we just briefly explain how the ABCD interface allows easy creation of either HTML-formats (for presentation on the web-pages) or ‘delimited’ formats (for export to a comma-delimited file).</p>
+<p>Como a linguagem de formatação ISIS é uma ferramenta muito poderosa com muitas possibilidades, <a href="/pt/abcd-technology/cisis-formatting/">um tópico dedicado sobre a linguagem de formatação CISIS foi adicionado neste Manual sobre ABCD</a>, mas também pode ser consultado a partir de um link fornecido nesta interface PFT do ABCD. Aqui explicamos brevemente como a interface ABCD permite a fácil criação de formatos HTML (para apresentação nas páginas web) ou formatos ‘delimitados’ (para exportação para um arquivo delimitado por vírgulas).</p>
 
-<p>The PFT-Editor has 4 parts :</p>
+<p>O editor PFT tem 4 partes:</p>
 
 <p><img src="https://lh3.googleusercontent.com/opZKqWrBzBAbc0la7a43dghMs8Ctu736CiBaj17dgO12FwP0jnzPsKbmUGKyH_lgjIaxx_6eu3p12MCGliowkSez-1UwyJuat3DY6xg78WRGfqPnldYwpey5oobFN7mwufYxbC0H=s0" alt="" /></p>
 
 <ol>
-  <li>
-    <p>Use an existing format : a list of existing PFT’s will be available to select from. It can be also deleted or uploaded from an external file if not yet available. The format then will be presented with an editor to make changes into it.<img src="https://lh6.googleusercontent.com/LF03KbwiDfsg4x-hd5dB_vMNQ-KW-2VS45WWZFh3c8VutA53ycDhnk_DnJUDPq2hvJYTLRk4PiX4QlkpmCeDYKfwBnf-FYd7n_o8Qm-krFEy70bN2GrwYLYzarC0uU1pOlexeeEk=s0" alt="" /></p>
-  </li>
-  <li>
-    <p>Create a format : as with other table editors in ABCD, first a list of available fields is presented, which can be copied either individually or altogether into the format and then re-ordered.</p>
-  </li>
+  <li><strong>Use um formato existente</strong>: uma lista de PFT’s existentes estará disponível para seleção. Ela também pode ser excluída ou carregada de um arquivo externo, se ainda não estiver disponível. O formato então será apresentado com um editor para fazer alterações nele</li>
+</ol>
+
+<p><img src="https://lh6.googleusercontent.com/LF03KbwiDfsg4x-hd5dB_vMNQ-KW-2VS45WWZFh3c8VutA53ycDhnk_DnJUDPq2hvJYTLRk4PiX4QlkpmCeDYKfwBnf-FYd7n_o8Qm-krFEy70bN2GrwYLYzarC0uU1pOlexeeEk=s0" alt="" /></p>
+
+<ol>
+  <li><strong>Criar um formato</strong>: como com outros editores de tabela no ABCD, primeiro é apresentada uma lista de campos disponíveis, que podem ser copiados individualmente ou em conjunto para o formato e depois reordenados.</li>
 </ol>
 
 <blockquote>
-  <p>Note: 
-Windows list-selection tricks can be used here : Ctrl-click to
-add an entry into your selection or Shift- click to select all options
-upto the cursor position.</p>
+  <p>Nota: 
+Os truques de seleção de lista de janelas podem ser usados aqui: 
+CTRL para adicionar uma entrada em sua seleção ou 
+SHIFT para selecionar todas as opções até a posição do cursor.</p>
 </blockquote>
 
 <p><img src="https://lh3.googleusercontent.com/7qv2pzwlhbLF8WyorU87BxnIB1S8pzPbwajUhTCFsYYWb9cc_xLOFMj0VYqppz7Q1Nhknu5_OyRqfqoPf9_NUwy2fzeYvWboFr4XxbhHr0-PlbKb8puDvu9yRR6SW1Z6MDeHdLW2=s0" alt="" /></p>
 
 <ol>
-  <li>Generate output
-  As mentioned and shown above, generating output to test the PFT can be one of three pre-defined standard ways of presenting data from your database : either a ‘table-formatted’ web-page (in colums) or ‘paragraph-formatted’ webpage (no columns), or - alternatively for quite different purposes - a delimited format for export to other software. ABCD will immediately generate the necessary code, combining HTML-tags as quoted ‘literals’ with values from the fields (Vx).</li>
+  <li>Gerar saída</li>
 </ol>
 
-<p>[!!] In case a ‘column’-based format (‘delimited’ will allow export to softwares such as spreadsheets and statis- tical analysis tools) is selected, in the right square the (sequende of the) headers of the columns can be defined, by default they will be the field-names already defined.</p>
+<p>Como mencionado e mostrado acima, gerar resultados para testar o PFT pode ser uma das três formas padrão pré-definidas de apresentar dados de seu banco de dados: ou uma página web ‘em formato de tabela’ (em colunas) ou uma página web ‘em formato de parágrafo’ (sem colunas), ou - alternativamente, para fins bem diferentes - um formato delimitado para exportação para outros softwares. O ABCD gerará imediatamente o código necessário, combinando tags HTML como ‘literais’ citadas com valores dos campos (Vx).</p>
+
+<blockquote>
+  <p>Caso seja selecionado um formato baseado em ‘colunas’ (‘delimitado’ permitirá a exportação para softwares como planilhas e ferramentas de 
+análise de estatísticas), no quadrado direito podem ser definidos os cabeçalhos (seqüências dos) das colunas, por padrão eles 
+serão os nomes de campo já definidos.</p>
+</blockquote>
 
 <p><img src="https://lh6.googleusercontent.com/1o1GalJS8J492Mhe31NMGVJ22cUvr12wGCm_IsJUN_s_8spLVRe5SRfpptM-zWInOb4hay6lBJBNhnMZUYDEB_BIIllRWdqb-3gaTraJZsIsWEJmZ2urNNCUokN2qYOr9ZPFQknM=s0" alt="" /><img src="https://lh5.googleusercontent.com/wsOwFpqXoqdibccoPmD8OErSxaVrWE4C3cGGWIyAnkfAgWUN24xG2EGpJjFJH4uD1YYsdYdQkor_IE7wTx-W8Q3tQPvMBcInU_RBiEANiOyFgQarl4T3iGAI0SmM6EeBZtC2sWrf=s0" alt="" /></p>
 
-<p>This format then can indeed be ‘tested’ immediately on either a range or records or a selection defined by a search-statement.</p>
+<p>Esse formato pode realmente ser ‘testado’ imediatamente em um intervalo ou registros ou em uma seleção definida por uma declaração de pesquisa.</p>
 
 <p><img src="https://lh3.googleusercontent.com/ttX0fvJNFH2qqzxWuWc-Jvg-8Fp7PjOTcHjDtdxtzQvWJieZvpnTPJtO04YkFKWJUUDz_BN8I102VBc_o-98w9C_RdWtx77kR46C5uFZ3c0kQ6kY0NvK6VbQJSgYfi6gutu_Ko4u=s0" alt="" /></p>
 
-<p>This will result, when ‘previewed’ within the interface as opposed to ‘sent to a document or worksheet’ (this last option is ideal when outputting data as ‘delimited’), into a display format like the following :</p>
+<p>Isso resultará, quando ‘visualizado’ dentro da interface, em oposição a ‘enviado a um documento ou planilha’ (esta última opção é ideal ao produzir dados como ‘delimitados’), em um formato de exibição como o seguinte:</p>
 
 <p><img src="https://lh5.googleusercontent.com/Qm5qO48Xk515yl75gC4B_A-1pAu95qto6F09C38JkeNO6pFjBrhCW9ewUEq-Dvyk8vzyPJvtKXskPJW164Y9y7j4xqHo8z3LR7LEHubA8qJIPVM4U-bGuzLcxK3tHTTXgQRmVlw5=s0" alt="" /></p>
 
 <blockquote>
-  <p>Note:
-In this example subfield codes are still visible, but with simply
-adding a ‘mode’ statement like ‘mhl’ into the format ISIS will hide
-them.</p>
+  <p>Nota:
+Neste exemplo, os códigos de subcampos ainda são visíveis, mas 
+com a simples adição de uma declaração de modo como ‘mhl’ 
+no formato ISIS irá escondê-los.</p>
 </blockquote>
 
-<p><em>The other functions of defining/editing ABCD-database definitions will be discussed below when dealing with the’Update database definition’ section.</em></p>
+<p><em>As outras funções de definição/edição de definições de Database ABCD serão discutidas abaixo ao lidar com a seção ‘Atualizar definição de banco de dados’.</em></p>
 
-<h3 id="copying-an-existing-winisis-database">Copying an existing WinISIS database</h3>
-<p>For creating an ABCD-database from your existing WinISIS database, here are the steps to be followed :</p>
+<h3 id="copiando-um-banco-de-dados-winisis-existente">Copiando um banco de dados Winisis existente</h3>
 
-<ol>
-  <li>Export your existing records into an ISO-export file using WinISIS (or another ISIS-tool allowing ISO-export); remember where you have saved this .ISO export file, normally it will reside in the WORK-folder of your WinISIS installation. No specific parameters need to be set, unless of course you would only want to use a subset of the records in that database (by using MFN-range minimum and maximum or a search result) or you need to ‘convert’ (reformat) the records before entering them into ABCD by the use of a ‘reformatting FST’.</li>
-  <li>Assign in ABCD, after having selected the ‘Import from WinISIS’ option, a name and a description - as with a new database, see supra. Then select your WinISIS database using the list in the ‘Create from’ part of the dialog.</li>
-  <li>Select the FDT belonging to that database and click on ‘Upload’ in order to have the FDT loaded into the ABCD environment of the new database.</li>
-  <li>Select the FST belonging to that database and click on ‘Upload’ in order to have the FST loaded into the ABCD environment of the new database.</li>
-  <li>Select the PFT belonging to that database and click on ‘Upload’ in order to have the PFT loaded into the ABCD environment of the new database.</li>
-</ol>
-
-<blockquote>
-  <p>Warning:
-Most WinISIS databases use a default PFT (with the name of the
-database) which contains typical Windows (as opposed to HTML) codes,
-such as e.g. ‘BOX’, ‘FS’ etc. These will result in a ‘grammatical’
-error when later opening this in ABCD, so it is better to avoid this
-by selecting a PFT without such</p>
-</blockquote>
-
-<p>typical Windows-elements ! If not available, remember to re-create a HTML-based format within ABCD to replace the default PFT for your new database.</p>
+<p>Para criar um ABCD-Database a partir do seu banco de dados WINISIS existente, aqui estão as etapas a serem seguidas:</p>
 
 <ol>
   <li>
-    <p>Click on the ‘Create Database’ option in order for ABCD to start writing the necessary folders and files for your new database. A message about successful creation (or not, in case of problems) will be displayed on your screen. Also you will be reminded of the fact that without assigning this database as accessible to at least one user, you won’t be able to use this database.</p>
+    <p>Exporte seus registros existentes para um arquivo ISO de exportação usando WinISIS (ou outra ferramenta ISIS que permita a exportação ISO); lembre-se onde você salvou este arquivo .ISO de exportação, normalmente ele residirá na pasta WORK de sua instalação WinISIS. Nenhum parâmetro específico precisa ser definido, a menos, é claro, que você só queira usar um subconjunto dos registros nesse banco de dados (usando o mínimo e o máximo da faixa MFN ou um resultado de busca) ou você precisa ‘converter’ (reformatar) os registros antes de inseri-los no ABCD, usando uma reformatação de FST.</p>
   </li>
-  <li>Now you can open the new database, as it has become part of the list, in the main database management window.</li>
-  <li>As the database can be opened but with 0 records, the first thing to do is to import the ISO-records created in the first step of this series. To this end, click on the ‘Utils’ icon in the main toolbar of this data-entry screen (as described in the section dedicated to this) and select the option ‘ISO import’. This procedure further, as can be expected, involves the selection of the source ISO-file, which then should be ‘uploaded’.</li>
-  <li>Now, a bit strange, the ISO-file is ready for being effectively imported into the database. For this, click on the ‘Utils’ icon again in the toolbar and select ‘ISO-import’, where now the uploaded ISO-file is available for effectively importing (converting) into your ABCD-database. The software will now ask you if it is o.k. to indeed start importing the ISO-records from the selected file. The list of imported records will be shown on your screen to monitor its progress and success.</li>
-  <li>If your newly imported records don’t immediately show up in the database, re-open the database from the main menu, this will refresh the database parameters.</li>
-  <li>Now the records should be visible and editable as normal records, only they have not yet been indexed into the Inverted File, so use the option ‘Inverted File’ update in the ‘Other utils’ section of the ‘Utils’ screen.</li>
+  <li>
+    <p>Atribuir no ABCD, após ter selecionado a opção “Importar do WinISIS”, um nome e uma descrição - como em um novo banco de dados. Em seguida, selecione seu banco de dados WinISIS usando a lista na parte inferior ‘Criar a partir de’.</p>
+  </li>
+  <li>
+    <p>Selecione o FDT pertencente a esse banco de dados e clique em ‘Upload’ para que o FDT seja carregado no ambiente ABCD do novo banco de dados.</p>
+  </li>
+  <li>
+    <p>Selecione o FST pertencente a esse banco de dados e clique em ‘Upload’ para que o FST seja carregado no ambiente ABCD do novo banco de dados.</p>
+  </li>
+  <li>
+    <p>Selecione o PFT pertencente a esse banco de dados e clique em ‘Upload’ para que o PFT seja carregado no ambiente ABCD do novo banco de dados.</p>
+  </li>
 </ol>
 
 <blockquote>
-  <p>Warning:
-If your imported series of records is quite large (e.g. above
-a few hundreds), it is possible, depending on the system you are
-working on, that the process will be too long for the web-server
-(Apache in most cases) and it won’t be allowed to finish. For this
-reason it will be necessary in such cases to perform the Inverted File
-generation action not from ABCD (as a web-environment) but directly
-from the command-line, using the dedicated CISIS-tools (for which
-another section of this manual will give the details).</p>
+  <p>Advertência: 
+A maioria dos bancos de dados WinISIS usa um PFT padrão (com o nome do banco de dados) que 
+contém códigos típicos do Windows (em oposição ao HTML), como por exemplo, ‘BOX’, ‘FS’ etc. 
+Estes resultarão em um erro ‘gramatical’ ao abri-lo posteriormente no ABCD, portanto é melhor 
+evitar isto selecionando um PFT sem tais elementos típicos do Windows! Se não estiver disponível, 
+lembre-se de recriar um formato baseado em HTML dentro do ABCD para substituir 
+o PFT padrão para seu novo banco de dados.</p>
 </blockquote>
 
-<h3 id="copying-an-existing-abcd-database">Copying an existing ABCD database</h3>
+<ol>
+  <li>
+    <p>Clique na opção ‘Criar banco de dados’ para que o ABCD comece a escrever as pastas e arquivos necessários para seu novo banco de dados. Uma mensagem sobre a criação bem sucedida (ou não, em caso de problemas) será exibida em sua tela. Também será lembrado que sem atribuir este banco de dados como acessível a pelo menos um usuário, você não será capaz de usar este banco de dados.</p>
+  </li>
+  <li>
+    <p>Agora você pode abrir o novo banco de dados, como se tornou parte da lista, na janela principal de gerenciamento do banco de dados.</p>
+  </li>
+  <li>
+    <p>Como o banco de dados pode ser aberto, mas com 0 registros, a primeira coisa a fazer é importar os registros ISO criados na primeira etapa desta série. Para isto, clique no ícone ‘Utils’ na barra de ferramentas principal desta tela de entrada de dados (como descrito na seção dedicada a isto) e selecione a opção ‘importação ISO’. Este procedimento envolve ainda, como é de se esperar, a seleção do arquivo ISO de origem, que então deve ser ‘carregado’.</p>
+  </li>
+  <li>
+    <p>Agora, um pouco estranho, o arquivo ISO está pronto para ser efetivamente importado para o banco de dados. Para isso, clique novamente no ícone ‘Utilitários’ na barra de ferramentas e selecione ‘Importar ISO’, onde agora o arquivo ISO carregado está disponível para importar (converter) efetivamente para sua base de dados ABCD. O software agora lhe perguntará se é possível realmente começar a importar os registros ISO a partir do arquivo selecionado. A lista de registros importados será mostrada em sua tela para monitorar seu progresso e sucesso.</p>
+  </li>
+  <li>
+    <p>Se seus registros recém importados não aparecerem imediatamente no banco de dados, reabra o banco de dados a partir do menu principal, isto atualizará os parâmetros do banco de dados.</p>
+  </li>
+  <li>
+    <p>Agora os registros devem estar visíveis e editáveis como registros normais, só que ainda não foram indexados no Arquivo Invertido, então use a opção ‘Arquivo Invertido’ de atualização na seção ‘Outros utilitários’ da tela ‘Utilitários’.</p>
+  </li>
+</ol>
 
-<p>This last option is the easiest to perform, as only a new name and description need to be entered, after which ABCD will simply re-produce all necessary files into a new folder structure for the new database. The source databases from which you can choose are the ones listed in the database-menu, in other words : the database descriptions listed in the file ‘bases.dat’ in the ABCD bases-folder.</p>
+<blockquote>
+  <p>Advertência:
+Se sua série de registros importados for bastante grande (por exemplo, acima de algumas centenas), 
+é possível, dependendo do sistema em que você estiver trabalhando, que o processo seja muito longo 
+para o web-server (Apache na maioria dos casos) e não será permitido terminá-lo. Por este motivo 
+será necessário, em tais casos, realizar a ação de geração de Arquivo Invertido 
+não a partir do ABCD (como um ambiente web), mas diretamente da linha de comando, utilizando 
+as ferramentas CISIS dedicadas (para as quais outra seção deste manual dará os detalhes).</p>
+</blockquote>
 
-<p>The system will simply - as above - list all files copied and created in their proper folder-structure and that is it ! An empty database, as a copy of the existing ABCD-database but with new name and description, will be available for normal use.</p>
+<h3 id="cópia-de-um-banco-de-dados-abcd-existente">Cópia de um banco de dados ABCD existente</h3>
 
-<h2 id="update-database-definitions">Update database definitions</h2>
+<p>Esta última opção é a mais fácil de executar, pois apenas um novo nome e descrição precisam ser inseridos, após o que o ABCD simplesmente reproduzirá todos os arquivos necessários em uma nova estrutura de pastas para o novo banco de dados. Os bancos de dados de origem que você pode escolher são os listados no menu banco de dados, em outras palavras: as descrições do banco de dados listadas no arquivo ‘bases.dat’ na pasta-bases do ABCD.</p>
 
-<p>From this option it is possible to edit all existing ‘structures’ or definition tables related to a database in ABCD. In comparison with ‘normal’ ISIS-databases, and in order to support some more advanced features in ABCD, there are some more of such database definition elements, as can be seen from the following ‘database definitions’ menu :</p>
+<p>O sistema irá simplesmente - como acima - listar todos os arquivos copiados e criados em sua própria estrutura de pastas e pronto! Um banco de dados vazio, como uma cópia da base de dados ABCD existente, mas com novo nome e descrição, estará disponível para uso normal.</p>
+
+<h2 id="atualizar-definições-de-banco-de-dados">Atualizar definições de banco de dados</h2>
+
+<p>A partir desta opção, é possível editar todas as ‘estruturas’ existentes ou tabelas de definição relacionadas a um banco de dados no ABCD. Em comparação com bases de dados ISIS ‘normais’, e a fim de suportar algumas características mais avançadas no ABCD, existem mais alguns desses elementos de definição de banco de dados, como pode ser visto no seguinte menu ‘definições de banco de dados’.</p>
 
 <p><img src="https://lh4.googleusercontent.com/VbTg7M4vPqy060v0DLr5r5Hc1-iRsXj23Hk5fpsyxo9t3FsRnhpk9wqnJihtlUXgiSE6tAD2IX6NN7u3NOM5Kl_BgCdV8N9ErylXlzgobzFoBdIcVwQP5y2592pTznr4MASFd16p=s0" alt="" /></p>
 
-<p>In fact only the first four tables are used in other ISIS-environments : the Field Definition Table (FDT), the Field Select Table (FST), the FMT or edit-worksheet and the Print Format Table or PFT. Since we needed these also in order to create a ‘new’ database in ABCD, they were discussed in the according section above, the only difference being that instead of an empty table a pre-filled table with the already existing definitions will be presented by ABCD.</p>
+<p>De fato, apenas as quatro primeiras tabelas são usadas em outros ambientes ISIS: a Tabela de Definição de Campo (FDT), a Tabela de Seleção de Campo (FST), a FMT ou folha de trabalho de edição e a Tabela de Formato de Impressão ou PFT. Como precisávamos delas também para criar um “novo” banco de dados no ABCD, elas foram discutidas na seção acima, com a única diferença de que, ao invés de uma tabela vazia, o ABCD apresentará uma tabela pré-preenchida com as definições já existentes.</p>
 
-<p>Let us briefly deal with the additional definitions for ABCD-databases now.</p>
+<p>Vamos agora tratar brevemente das definições adicionais para as bases de dados ABCD.</p>
 
-<h3 id="type-of-records">Type of records</h3>
+<h3 id="tipo-de-registros">Tipo de registros</h3>
 
-<p>Some database-structures, such as MARC, require the ‘type of the record’ to be specifically coded into a dedicated field of the record. The software can then use this code to adjust many features to the specific needs for the type indicated, e.g. worksheets and print-formats can be different according to this type, or simply - as is the case with MARC - the format wants to be very detailed.</p>
+<p>Algumas estruturas de banco de dados, como o MARC, exigem que o “tipo do registro” seja codificado especificamente em um campo dedicado do registro. O software pode então usar este código para ajustar muitas características às necessidades específicas do tipo indicado, por exemplo, folhas de trabalho e formatos de impressão podem ser diferentes de acordo com este tipo, ou simplesmente - como é o caso do MARC - o formato quer ser muito detalhado.</p>
 
-<p>The ‘type of record’ information needs to be gathered at the beginning of the creation of a new record, so a list of types defined (and therefore ‘available’) will be presented as links, each one leading to the appropriate subsequent data-entry form, as can be seen from the MARC demo in ABCD.</p>
+<p>O ‘tipo de registro’ de informações precisa ser coletado no início da criação de um novo registro, portanto, uma lista de tipos definidos (e, portanto, ‘disponíveis’) será apresentada como links, cada um levando à forma apropriada de entrada de dados subseqüente, como pode ser visto na demonstração MARC no ABCD.</p>
 
-<p>[!!] In order to define such types, ABCD uses a table ‘Typeofrecord.tab’ - located in the ‘def’ folder for the actual language within the www/bases/[DB]/ folder. This file is - as is often the case in ABCD - an ASCII-file which contains, for each type defined, 4 values separated by a <code class="language-plaintext highlighter-rouge">'|'</code> (pipe-character), so this can be edited directly with an ASCII-editor (e.g. Notepad), but within ABCD an easier-to-use table format is presented :</p>
+<p>Para definir tais tipos, o ABCD usa uma tabela ‘Typeofrecord.tab’ - localizada na pasta ‘def’ para o idioma real dentro da pasta www/base/[DB]/. Este arquivo é - como é freqüentemente o caso no ABCD - um arquivo ASCII que contém, para cada tipo definido, 4 valores separados por um <code class="language-plaintext highlighter-rouge">'|'</code> (caractere do pipe), de modo que isto pode ser editado diretamente com um editor ASCII (por exemplo, Notepad), mas dentro do ABCD é apresentado um formato de tabela mais fácil de usar:</p>
 
 <p><img src="https://lh3.googleusercontent.com/vxYJnzAQtoYOlQ42XpphksTV7sTvdyZ_1x92W50iot6_PXKSqKe2ieDqglYgSlHcjQL-FCxZ9Sy5URXL6kCe-FWtzROKyDW0N4DZWiqfRvM9NLbrbV9dq82EoyhnDzlaG1brsT2r=s0" alt="" /></p>
 
-<p>The example above is the MARC record-type definition, which is kept in (internal) tag 3006 and has the following 4 columns, each containing values for each type :</p>
+<p>O exemplo acima é a definição do tipo de registro MARC, que é mantido na etiqueta (interna) 3006 e tem as 4 seguintes colunas, cada uma contendo valores para cada tipo:</p>
 
 <ul>
-  <li>the name of the worksheet to be used for the given type of record - with the ‘edit’-link next to this first column one can also immediately edit the worksheet</li>
-  <li>the ‘Tag1’ value, which is in fact a one-character code to internally identify the type of record</li>
-  <li>the ‘Tag2’ value, not used in this case</li>
-  <li>the description of the type as it will appear in the list of available types. Clicking on ‘update’ below the form will save the table with any changes made.</li>
+  <li>o nome da planilha a ser usada para o tipo de registro dado - com o link “editar” ao lado desta primeira coluna também se pode editar imediatamente a planilha</li>
+  <li>o valor ‘Tag1’, que na verdade é um código de um caractere para identificar internamente o tipo de registro</li>
+  <li>o valor ‘Tag2’, não utilizado neste caso</li>
+  <li>a descrição do tipo, como aparecerá na lista de tipos disponíveis. Clicando em “atualizar” abaixo do formulário, a tabela será salva com quaisquer alterações feitas.</li>
 </ul>
 
-<h3 id="record-validation">Record validation</h3>
+<h3 id="validação-de-registros">Validação de registros</h3>
 
-<p>[!!} Record validation allows the database manager to define criteria against which input for a field can and will be checked before entering it actually in the fields, or after registration of the record. Record validation in ABCD can relate to one of the following elements :</p>
+<p>A validação do registro permite que o gerente do banco de dados defina critérios em relação aos quais a entrada de um campo pode e será verificada antes de entrar efetivamente nos campos, ou após o registro do registro. A validação do registro no ABCD pode se relacionar a um dos seguintes elementos:</p>
 <ul>
-  <li>record validation : conditions can be given for each field</li>
-  <li>begin format : code can be given to be executed when a (new) record is created, e.g. the date of creation can be added with the date() instruction</li>
-  <li>end format : code can be given to be executed when the record is saved, e.g. the date of last update can be added with the date() instruction.</li>
+  <li>validação de registros: as condições podem ser dadas para cada campo</li>
+  <li>formato begin : o código pode ser dado para ser executado quando um (novo) registro é criado, por exemplo, a data de criação pode ser adicionada com a instrução date()</li>
+  <li>formato final : o código pode ser dado para ser executado quando o registro é salvo, por exemplo, a data da última atualização pode ser adicionada com a instrução date().</li>
 </ul>
 
-<p>After selecting on of the three options above, clicking on one of the listed (as pre-defined) record-types will show the editor where the validation conditions can be defined.</p>
+<p>Após selecionar uma das três opções acima, clicando em um dos tipos de registro listados (como pré-definidos), será mostrado ao editor onde as condições de validação podem ser definidas.</p>
 
-<p>These criteria need to be formulated into - no surprise ! - the ISIS Formatting Language. With the Formatting Language one can check a condition and if (not) met, an error message, which will be shown on the next screen, can be produced by the format. [!!] If the validation criterion was defined as ‘fatal’ however the record will not be saved and the error has to be corrected first.</p>
+<p>Estes critérios precisam ser formulados em - sem surpresa! - a linguagem de formatação ISIS. Com a linguagem de formatação pode-se verificar uma condição e, se (não) for atendida, uma mensagem de erro, que será exibida na tela seguinte, pode ser produzida pelo formato. Se o critério de validação foi definido como ‘fatal’, entretanto o registro não será salvo e o erro terá que ser corrigido primeiro.</p>
 
-<p>In this menu-option from the ‘Update database definitions’ menu each defined field will be listed with a box to enter the validation statement. E.g. :<img src="https://lh3.googleusercontent.com/oKu8hUaxkI7DKnHNYYzV2n78dodM6df_kALvB7fNV4OKE31M0dUFYVaXevZtFtmCYmpX0qoAxSYXSV5HXNMQt1IP506Wqan-MpU2LTJslPAJNd9jIP_YtbIcqzFNMWt5DJ9J0638=s0" alt="" /></p>
+<p>Neste menu-opção do menu ‘Atualizar definições do banco de dados’ cada campo definido será listado com uma caixa para inserir a declaração de validação.</p>
 
-<p>The format used here checks on the ‘absence’ of a value in field with tag 2 and if indeed absent will produce an error message that this mandatory field is missing. [!!] As stated above, errors can be marked as ‘fatal’ or not. With the ‘ADD’ link in the left-most part for each field. As shown in the illustration above, with the ‘ADD’-link in the left-most column one can add more fields, even fields already used with another validation criterion to be applied.</p>
+<p>Por exemplo:</p>
 
-<p>When clicking on the ‘edit’ icon to the right of the edit-window for this field, the box re-appears in a separate small window for editing and the statement can also be tested on a record to see if it is doing the right thing. After editing one has to click on ‘send’ to put the possibly edited validation format back to the main table.</p>
+<p><img src="https://lh3.googleusercontent.com/oKu8hUaxkI7DKnHNYYzV2n78dodM6df_kALvB7fNV4OKE31M0dUFYVaXevZtFtmCYmpX0qoAxSYXSV5HXNMQt1IP506Wqan-MpU2LTJslPAJNd9jIP_YtbIcqzFNMWt5DJ9J0638=s0" alt="" /></p>
+
+<p>O formato usado aqui verifica a “ausência” de um valor no campo com etiqueta 2 e se de fato estiver ausente produzirá uma mensagem de erro de que este campo obrigatório está faltando. Como dito acima, os erros podem ser marcados como ‘fatais’ ou não. Com o link “ADD” na parte mais à esquerda de cada campo. Como mostrado na ilustração acima, com o link “ADD” na coluna mais à esquerda, pode-se adicionar mais campos, mesmo campos já utilizados com outro critério de validação a ser aplicado.</p>
+
+<p>Ao clicar no ícone ‘editar’ à direita da janela de edição deste campo, a caixa reaparece em uma pequena janela separada para edição e a declaração também pode ser testada em um registro para ver se está fazendo a coisa certa. Após editar, é preciso clicar em ‘enviar’ para colocar o formato de validação possivelmente editado de volta à tabela principal.</p>
 
 <h3 id="advanced-search-form">Advanced search form</h3>
 
