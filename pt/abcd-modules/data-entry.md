@@ -314,7 +314,7 @@ ST_ V82 ^ b, v82 ^ b, v82 ^ b, v82 ^ b, "v82 ^ b," v82 ^ b,
 Os componentes da fórmula (I) 
 
 
-Inventory_number_pref:
+Prefixo de número de inventário:
 
 ```
 NICLA_ (V (v900 ^ n), 5.0), ``, `0`), else v900 ^ n 
