@@ -439,172 +439,170 @@ O formato usado aqui verifica a "ausência" de um valor no campo com etiqueta 2 
 
 Ao clicar no ícone 'editar' à direita da janela de edição deste campo, a caixa reaparece em uma pequena janela separada para edição e a declaração também pode ser testada em um registro para ver se está fazendo a coisa certa. Após editar, é preciso clicar em 'enviar' para colocar o formato de validação possivelmente editado de volta à tabela principal.
 
-### Advanced search form
+### Formulário de pesquisa avançado
     
-The advanced search form is the one used in ABCD at two locations : within the cataloging module to allow the cataloger to quickly and/or efficiently identify a specific record for editing (or duplication checking or copying) and in the OPAC as the advanced search form. Here ABCD simply offers an editor for the table which defines that search form with 3 columns :![](https://lh4.googleusercontent.com/SorkLWvyRODpnX8jui2-hUL_LhB6NpILr_Za1vwKLytNe_4RfO-Lwp_tYm_V2A7ocRQSTA3GAejqLNWjzSDtsMvC6Hd05vWxnahjyTw50Euss-dbJHbefvokq_5FyuW9jjxGPpFL=s0)
+O formulário de pesquisa avançado é o usado no ABCD em dois locais: dentro do módulo de catalogação para permitir que o cataloger identifique rápida e/ou eficientemente um registro específico para edição (ou verificação de duplicação ou copiar) e no OPAC como o formulário de pesquisa avançada. Aqui o ABCD simplesmente oferece um editor para a tabela que define esse formulário de pesquisa com 3 colunas:
+![](https://lh4.googleusercontent.com/SorkLWvyRODpnX8jui2-hUL_LhB6NpILr_Za1vwKLytNe_4RfO-Lwp_tYm_V2A7ocRQSTA3GAejqLNWjzSDtsMvC6Hd05vWxnahjyTw50Euss-dbJHbefvokq_5FyuW9jjxGPpFL=s0)
 
--   The first column is the field-name or 'index' as it will appear in the search-form
--   The second column gives the identifier used for the given field (or in fact combination of fields) in the FST
--   The third and last column keeps the prefix or fixed start-string which is used (if any) in the ISIS Inverted File for this index.
+- A primeira coluna é o nome do campo ou 'índice', como aparecerá na forma de pesquisa
+- A segunda coluna fornece o identificador usado para o campo especificado (ou de fato a combinação de campos) no FST
+- A terceira e última coluna mantém o prefixo ou a cordão de inicialização fixo que é usado (se houver) no arquivo invertido ISIS para este índice.
 
-ABCD will also present, next (to the right) to this table, the existing FST to facilitate the identification of indexes (fields for searching) and the identifiers used.
+O ABCD também apresentará, a seguir (à direita) desta tabela, o FST existente para facilitar a identificação de índices (campos para pesquisa) e os identificadores utilizados.
 
-Clicking on 'update' saves the table, which in fact is a file 'busqueda.tab', stored in the language subfolder of the 'pfts' folder within the database folder.
+Clicar em 'Atualizar' salva a tabela, que de fato é o arquivo 'camposbusqueda.tab', armazenado na subpasta de idioma da pasta 'PFTs' na pasta do banco de dados.
 
-### Available databases list or table
+### Lista de bancos de dados disponíveis ou tabela
     
-Here simply a list is given of the databases being defined as 'available' in the ABCD-system. Actions allowed here are only changing the sequence (by moving up or down) of the databases in the list and saving the changed list.  
+Aqui, simplesmente é fornecida uma lista dos bancos de dados que estão sendo definidos como 'disponíveis' no sistema ABCD.As ações permitidas aqui estão apenas alterando a sequência (subindo ou para baixo) dos bancos de dados na lista e salvando a lista alterada.
 
 ![](https://lh4.googleusercontent.com/ft7Snl4rGz9hwaRty5XTgrPAanSM3zHrlHabOyEuj_6mGagJThOV6Hgc51WR9IXzKukInGcRBM1n-7l_3KyXpcOY0W4TUEem3QaYg6km54S0Tq2MkaianL_pJ1g6UH6QhNmP_x3n=s0)
 
   
-For adding or deleting databases one has to actually create the new database or delete the one to be taken out of the list. ABCD will take care of the changes in this list automatically. [!!} Databases can be moved up or down by selecting them and using the UP/DOWN buttons as in many of such controls in the ABCD-interface.
+Para adicionar ou excluir bancos de dados, é preciso criar o novo banco de dados ou excluir o que é retirado da lista. O ABCD cuidará automaticamente das alterações nesta lista.[!!} Os bancos de dados podem ser movidos para cima ou para baixo selecionando-os e usando os botões para cima/para baixo, como em muitos desses controles na interface ABCD.
 
 ### [dbn].par
-For each ISIS-database in a multi-database application such as ABCD, there is a file needed to tell ISIS where to find the constituting parts of the database-files - which then consequently can reside anywhere in the system. Such files are named after the database-name (therefore indicated here as [dbn] with the .par extension. Again this is a simple ASCII-file which can be edited directly or, as is the case here, from this ABCD-menu.
+Para cada banco de dados ISIS - em um aplicativo com vários dados, como o ABCD, há um arquivo necessário para informar o ISIS onde encontrar as partes constituintes dos arquivos de banco de dados - que, consequentemente, podem residir em qualquer lugar do sistema. Esses arquivos são nomeados após o nome do banco de dados (portanto, indicado aqui como [DBN] com a extensão .par. Novamente, este é um arquivo ASCII simples que pode ser editado diretamente ou, como é o caso aqui, neste menu ABCD.
 
   
 ![](https://lh6.googleusercontent.com/sJjlKFYiUph88YKCmjJvYnTZSiNFZUPnpIV3_aoEu2dX2GZ7iQ4_z5U71JO6GeRYcCRvfVWIy14Ic34k6X2gZjs1dRVw7kkpQbf9xMsUYulJVbHaIDhR5YAhzQnNOhHgi5ubFvt4=s0)  
 
-In principle ABCD will take care of this file and make sure that the necessary paths are available. The only special feature here - as compared to the same concept of dbn.par in other ISIS-environments, is the use of 'variables', taken from the operating system's environment variables, which can be dynamically substituted for their actual values. E.g.
+Em princípio, o ABCD irá cuidar deste arquivo e certificar de que os caminhos (“paths”) necessários estão disponíveis. O único recurso especial aqui –- em comparação com o mesmo conceito de dbn.par em outros ambientes ISIS, é o uso de "variáveis", tomadas a partir de variáveis de ambiente do sistema operacional, que podem ser substituídas dinamicamente pelos seus valores reais. 
+
+Por exemplo:
 
     %path_database%
 
-is a variable which actually will contain the database-path defined in the config.php main configuration file of ABCD.
+É uma variável que realmente irá conter o caminho da base de dados definido em config.php, principal arquivo de configuração do ABCD.
 
-[!!] In the example of the illustration above, the last line is an interesting one as it gives the path to the 'loanob- jects'-database for displaying copy-information (if included in one of the MARC-pft's) with the REF-function. In order to find the loanobjects-database for the use of REF->loanobjects, ISIS needs to know the path to this other database and therefore it should be included into the dbn.par.  
+No exemplo da Figura - Caminho dos arquivos das bases de dados, a última linha é uma linha interessante porque informa o caminho para a base de dados “loanobjects” para a exibição da informação de cópias – exemplares – (se incluído em uma das pft’s MARC), com a função REF. Com objetivo de encontrar a base de dados loanobjects para a utilização de REF->loanobjects, ISIS precisa saber o caminho para esta outra base de dados e, portanto, deve ser incluída no dbn.par.
 
   
 
-> Note [!!] For this last feature also to work in the OPAC (iAH), one
-> has to add the path to the first section of the dbn.def file. E.g. the
-> loanobjects-database should be pointed to by a new line there
-> containing : 
+> Nota:
+> Para que este último recurso também funcione no OPAC (iAH), é preciso adicionar 
+> o caminho para a primeira seção do arquivo dbn.def. 
+> Por exemplo: a base de dados loanobjects deve ser apontado por uma nova linha que contém:
+
 
     FILE loanobjects.*=%path_database%loanobjects/data/loanobjects.*
 
-### Help files on the database-fields
+### Arquivos de ajuda em campos da base de dados
     
+Para cada campo da base de dados, o ABCD pode fornecer uma página de ajuda, que pode ser editada a partir desta opção de menu. Para apoiar a criação de tal página, ABCD colocará, automaticamente, todas as informações conhecidas da FDT já disponíveis no campo dado. Com o editor HTML embutido (baseado em JavaScript) uma página de ajuda bem simpática pode então ser produzida e salva. O link “Visualizar” permite verificar o resultado do seu esforço de edição.
 
-For each field in the database ABCD can provide a help-page, which can be edited from this menu-option. To support the creation of such a page, ABCD will automatically put all known information from the FDT on the given field already available. With the built-in (JavaScript-based) HTML-editor a real nice help-page can then be produced and saved. The 'preview' link of course allows checking the result of your editing effort.![](https://lh3.googleusercontent.com/86HYiZn_9klIyIPWshK6DiZqkH2UUbz3FDsEAfldXlD_OaOAbmvNTq7tKWm9nDicDZo8eqSAK0WoFf2AhTvtNCaEWnWnXfdLLy120Yqt8LJ8RlCX_xLHWnz2ZjGfbeohmeKpynE8=s0)
+![](https://lh3.googleusercontent.com/86HYiZn_9klIyIPWshK6DiZqkH2UUbz3FDsEAfldXlD_OaOAbmvNTq7tKWm9nDicDZo8eqSAK0WoFf2AhTvtNCaEWnWnXfdLLy120Yqt8LJ8RlCX_xLHWnz2ZjGfbeohmeKpynE8=s0)
 
   
 
-### Configure database in iAH (or OPAC)
+### Configurar base de dados no iAH (ou OPAC)
     
 
-[!!] In order to be able to use a newly defined ABCD-database with the advanced iAH OPAC-interface (or in the ABCD Site), a special configuration file is to be edited : dbn.def. (where dbn has to be substituted for the actual database-name).
+A fim de poder utilizar uma base de dados ABCD recém definida com a avançado interface iAH OPAC (ou no Site ABCD), um arquivo de configuração especial deve ser editado: dbn.def. (onde dbn tem que ser substituído pelo nome da base de dados real)
 
-This file has the following sections to be edited :
-
+Este arquivo tem as seguintes seções a serem editadas:
   
 
-1.  The FILES section : here the paths to the files to be accessed need to be given. In this path both the `%path_database%` and `%lang%` variables can be used to refer to resp. the actual database and actual language in use.![](https://lh5.googleusercontent.com/XzbGmhr000O_9jU0KhhbX-0UJLCR9zI0rLo-L_A0z13CZaPHFL6UbDRpB4-mwbuKLBq7ep2OfyAsBpTNPfhGjrU4ZYHDKPzqQXk-Z6ByNQIIuekR6Czye_oWsRW1jnZYh4VU6yHp=s0)
+1. **Seção Files**: aqui precisam ser informados os caminhos (paths) para os arquivos a serem acessados. Nesse caminho, ambas as varáveis %path_database% e %lang% podem ser usadas para se referir respectivamente à base de dados e ao idioma reais em uso.
+![](https://lh5.googleusercontent.com/XzbGmhr000O_9jU0KhhbX-0UJLCR9zI0rLo-L_A0z13CZaPHFL6UbDRpB4-mwbuKLBq7ep2OfyAsBpTNPfhGjrU4ZYHDKPzqQXk-Z6ByNQIIuekR6Czye_oWsRW1jnZYh4VU6yHp=s0)
     
-2.  The INDEX-DEFINITION section : here all the information for the active languages (numbered as 1, 2, 3 etc.) has to be entered (in subfields) to allow the interface to recognize the prefixes used for each searchable field and to name the field accordingly. The first line with prefix 'TW_' is the one used for the 'simple' search interface (Google-like) for searching words from the fields defined (by the prefix in the FST) to be included in this simple search. This is indicated by the presence of the subfield `^d*`.  
+2. **Seção de Index-definition**: aqui todas as informações para os idiomas ativos (numerados como 1, 2, 3, etc.) têm que ser fornecidas (em subcampos) para permitir à interface reconhecer os prefixos usados para cada campo pesquisável e nomear o campo de acordo. A primeira linha com o prefixo `TW_` é a que é utilizada para a interface de pesquisa “simples” (semelhante ao Google) para pesquisar palavras nos campos definidos (pelo prefixo da FST) para serem incluídos nesta pesquisa simples. Isto é indicado pela presença do subcampo `^d*`.
 
-3.  The GIZMO section : here - if necessary in specific cases - gizmo databases for automatic substitution of strings by other strings (which can be used to change character sets, but also change codes and abbreviations into full values etc...) can be pointed to.![](https://lh6.googleusercontent.com/i3z71qKLcIxk8mqXAMyAccsJ2Hx1QG_uB2OvNG9nlLNCryQDE2QUmKbltjRbUYsjYLrA2Kgl1hD3RkO8NqA_30i9U9xZ2_WcrsnJIx99Y0NHHKhYuP-UO8avSXhZdu0H091ud26f=s0)
+3. **Seção Gizmo**: aqui - se necessário em casos específicos – podem ser referenciadas bases de dados “gizmo” para substituição automática de strings por outras strings (que podem ser usadas para alterar os códigos da cadeia de caracteres, mas também para alterar códigos e abreviaturas para valores completos, etc.).
+![](https://lh6.googleusercontent.com/i3z71qKLcIxk8mqXAMyAccsJ2Hx1QG_uB2OvNG9nlLNCryQDE2QUmKbltjRbUYsjYLrA2Kgl1hD3RkO8NqA_30i9U9xZ2_WcrsnJIx99Y0NHHKhYuP-UO8avSXhZdu0H091ud26f=s0)
     
-4.  The FORMAT section : here the display formats used in the OPAC should be defined, with for each language (in the numbered subfields) the label to be used on the screen. Remember that only formats (files with .PFT extension) can be used which are referred to somehow in the FILES section ! Also the default format can be identified here by simply indicating which format earlier referred to should be used as default display format.
-    
+4. **Seção Formato**: aqui devem ser definidos os formatos de exibição utilizados no OPAC para cada idioma (nos subcampos numerados), com o rótulo a ser usado na tela. Lembre-se que apenas os formatos (arquivos com extensão PFT) podem ser usados aos quais é feito referência, de alguma forma, na seção de ARQUIVOS! Também o formato default pode ser identificado, simplesmente indicando qual dos formatos anteriormente referidos deve ser utilizado como formato default de exibição.
 ![](https://lh6.googleusercontent.com/njC4b_3cU7HUeqbQOeT3bVrsJ7jbEngMbisQdVhUxB8g5FYzmUFkZJlS3ISRFVUA4VzKmcgYnMmKeC4S1DA-aUGa0AD-vWEgeh3cz7GIGIkfFLzrCTgykCUDhru5dhvsYScb6PeX=s0)  
-  
-
-5.  The HELP form section : here simply the (HTML-)files containing resp. the help-page and notes-page for the user of this database in the OPAC should be referred to.
+5. **Seção Ajuda**: aqui simplesmente devem ser referenciados os arquivos (HTML) que contém as respectivas páginas de ajuda e páginas de notas para o usuário desta base de dados no OPAC.
    
-6.  The PREFERENCES section : here the system manager can indicated which of the three search interfaces (simple, advanced and free) will be available for this database, and some other additional features of the inter- face : whether sending a search result to an e-mail will be possible, whether the results should be listed with navigation buttons, the number of records to be shown in one page and whether XML-export will be offered.  
-  
+6. **Seção de Preferências**: aqui o administrador do sistema pode indicar quais das três interfaces de pesquisa (simples, avançada e livre) estarão disponíveis para esta base de dados, bem como alguns outros recursos adicionais da interface: se será possível o envio de um resultado de pesquisa para um e-mail, se os resultados devem ser listados com botões de navegação, o número de registros a serem exibidos em uma página e se exportação XML será oferecida.
 
 ![](https://lh4.googleusercontent.com/SUqlv_DS-5N3Kxc36LQEGCNl49_0RclTci9RUwEjAFbRTp6F3rm55qyt1apeIPfGjOi4985rdzkLB6gKnntkAsckRq8NX5AxOQoTndC8SeZZQj1iZnwto9U4jj5h32emFdv_LRgp=s0)
 
-### Statistics : list of variables
+### Estatísticas: lista de variáveis
     
-This option simply allows quick definition of the variables from the given database with which tables for statistical analysis will be computed. For each criterion or variable (either as row or column for the table) a name and an extraction format has to be given. The extraction format - using the Formatting Language of course - exactly defines how the values in the field should be taken to compute the value in the table. By doing so it is possible
-
-e.g. to define ranges of field-values to be combined into one table-criterion. The file at stake is actually 'stats.cfg' in the (language-specific) def-section of the database-folder.
+Esta opção simplesmente permite definição rápida das variáveis da base de dados com as quais tabelas para análise estatística serão processadas. Para cada critério ou variável (como linha ou coluna da tabela) um nome e um formato de extração tem que ser informado. O formato de extração – usando a Linguagem de Formatação, é claro – define exatamente como os valores do campo devem ser obtidos para computar o valor da tabela. Fazendo isto, é possível, por exemplo, definir um intervalo de valores do campo para serem combinados para um critério da tabela. O arquivo em questão é na verdade ”stats.cfg” da seção def (específica de idioma) da pasta da base de dados.
 
   
 ![](https://lh3.googleusercontent.com/wC2Pm3_FdQWQeRseA-9bJvV9cek-D4kLLVBFCxGOiBsn1HP357CwdJfYTJmOMXU-96a4o38eL5Tim6ZbtxW3UaQ2mZBIdfbO0Z3elCOPoEKLu_d9OnmbOqdNYdqKhVnHKHPfY5H4=s0)  
 
-The option to define a prefix is not yet implemented in this version of ABCD. The idea is that the values would be taken from the Inverted File, prefixed with the string defined here. By doing so the values would be computed while 'inverting' the record, not at the stage of producing the statistics table, and therefore allow faster production of the table.
+A opção para definir um prefixo ainda não está implementada nesta versão do ABCD. A idéia é que os valores seriam retirados do Arquivo Invertido, prefixados pela string definida aqui. Ao fazer isso os valores seriam computados enquanto o registro for “invertido", não na ocasião de produção da tabela de estatísticas, e permitir, portanto, que a produção da tabela seja mais rápida.
 
 
-### Statistics : list of tables
+### Estatísticas: lista de tabelas
    
-As with the list of variables above, ABCD also keeps a simple list of available tables, which have been defined previously, for the statistics module. This file 'tabs.cfg' equally resides in the def-subfolder of the database. Each line in this file contains three values (separated by the pipe-character) : the name of the table followed by the two criteria used in this table, e.g. :
+Tal como acontece com a lista das variáveis acima, ABCD também mantém uma lista de tabelas disponíveis, que foram definidas anteriormente, para o módulo de estatísticas. Este arquivo ”tabs.cfg” igualmente fica na pasta def da base de dados.. Cada linha deste arquivo contém três valores (separados pelo caractere pipe): o nome da tabela, seguido por dois critérios utilizados nesta tabela, por exemplo:
 
-Classification code / Publication date|Classification LC|Publication date  
+    Classification code / Publication date|Classification LC|Publication date  
 
 ![](https://lh5.googleusercontent.com/4Yz-wvMo6dXPEaPLOyoNg3QkqnJqEGBFyWf8_UA5gUKhPkSqtEF-8Gpnyawe6T1qzTzTYjtg0iihrGdCocgsiUnbthqSA0Z8AQ8c9EbXYfmOGC2xQuOu13xg5fCSrREfP1xE__W9=s0)
 
-  
+Como pode ser visto a partir do exemplo, o editor no ABCD simplifica a edição, oferecendo cada um dos três valores individualmente, mas também através de listas de linhas e colunas de critérios disponíveis. 
 
-As can be seen from the example the editor in ABCD simplifies editing by providing each of the three values individually but also by providing lists of available row- and column-criteria.
+## Relatórios
 
-## Reports
-In fact creating reports in ABCD means creating ISIS Formatting Language formats (PFT's) with which the reports will create output, because with the F.L. any type of report can be produced and saved for later re-use. We therefore refer to the section on 'Display Format (PFT)' of the 'Update Database Definitions' Central menu option. Exactly the same interface is used here.
+Na verdade a criação de relatórios no ABCD significa criar formatos (PFT’s) de Linguagem de Formatação ISIS com os quais a opção de Relatórios irá criar saídas, pois com a LF qualquer tipo de relatório pode ser produzido e salvo para posterior reutilização.
+Por isso, consulte a seção "Formato de Visualização (PFT)" da opção "Atualizar Definições de Base de Dados” do menu Central. Exatamente a mesma interface é utilizada aqui.
 
-## Utilities
-In this option ABCD offers some very basic operations on databases :![](https://lh5.googleusercontent.com/jHTrAoEZoonuu-fniMYnXtwtpKFWZ6iSyvT3yhksNy7-s0LYqs7QO2znmgtGZIcv0ZK6sRt04TJusqcNN0sYDMT4z5_Cr8dopMFvIUjDBqop84967SdUx8E4SeYZLSSSzE7zOLzo=s0)
+## Utilitários
+Nesta opção ABCD oferece algumas operações muito básicas sobre bases de dados: ![](https://lh5.googleusercontent.com/jHTrAoEZoonuu-fniMYnXtwtpKFWZ6iSyvT3yhksNy7-s0LYqs7QO2znmgtGZIcv0ZK6sRt04TJusqcNN0sYDMT4z5_Cr8dopMFvIUjDBqop84967SdUx8E4SeYZLSSSzE7zOLzo=s0)
 
--   Initialize the database means to delete all records in the database but without changing the structures of the database.
--   Delete the database of course means fully deleting the whole database with all corresponding files and folders in the ABCD bases/ folder.
--   Lock the database means to prevent any other users to make any changes to the records (data-entry), e.g. when a full Inverted File generation would be envisaged. 
--   Unlock the dabase of course then means to avail the database again to other users. Use these options with all necessary care and caution !
--   Assign Control Number is the option to automatically put sequential control-numbers in a series of selected records. Only a continuous series of MFN's can be selected here.
--   Link database with the copies database : as explained on the screen itself, here the option to activate the use of the copies database for the actual (bibliographic) database has to be activated.
--   Reset Control Number is the function to manually re-set to a specific value the numerical value in the file 'control_number.cn' of the database, in case for some reason the numbering has to be managed manually. E.g.  
-setting this number to 1000 will make ABCD to assign from the next record on control-numbers starting from 1000. This could be useful in conditions where e.g. different cataloging centres are using different ABCD- servers but the resulting databases have to be merged into one catalog with control_numbers not interfering, so covering different ranges. By default however reset will revert to 1 as the basic control_number to start from.
+- Inicializar a base de dados significa apagar todos os registros da base, mas sem mudar as estruturas da base de dados;
+- Apagar a base de dados significa, naturalmente, eliminar totalmente toda a base de dados com todos os arquivos e pastas correspondentes da pasta \bases do ABCD;
+- Bloquear a base de dados significa evitar que quaisquer outros usuários façam alterações nos registros (entrada de dados), por exemplo, quando estiver prevista uma geração completa do arquivo invertido; 
+- Desbloquear a base de dados significa liberar novamente a base de dados para outros usuários. Use essas opções com todos os cuidados necessários e com precaução!; 
+- Atribuir Número de Controle é a opção para atribuir automaticamente os números de controle sequênciais em uma série de registros selecionados. Somente uma série contínua de MFN’s pode ser selecionada aqui;
+- Ligar a base de dados com a base de dados “copies”: como explicado na própria tela, aqui a opção para ativar o uso da base de dados “copies” pela base de dados (bibliográfica) deve ser ativada;
+- Reiniciar o Número de Controle é a função para redefinir manualmente um valor numérico específico do arquivo “control_number.cn” da base de dados, no caso de, por algum motivo a numeração tiver que ser gerida manualmente. Por exemplo, colocando este número para 1000 fará o ABCD atribuir, a partir do próximo registro, os números de controle a partir de 1000. Isto pode ser útil em situações em que, por exemplo, diferentes centros de catalogação estão usando diferentes servidores ABCD, mas as bases de dados resultantes devem ser consolidadas em um catálogo com números de controle não interferindo, cobrindo assim diferentes faixas. Por default, no entanto, o reinício irá reverter o “control_number.cn” para 1, como o número de controle básico de onde começar.
 
-## Z39.50 Configuration
+## Configuração de Z39.50
     
 
-Here the ABCD interface allows setting some parameters to define which servers for Z39.50 shared cataloging services will be offered in the Z39.50 list and some more parameters to ensure proper use of the protocol for the server. Such technical information can be mostly obtained from the service provider, e.g. in the case of the Library of Congress consult the following website : [http://www.loc.gov/z3950/lcserver.html.](http://www.loc.gov/z3950/lcserver.html)
+Aqui a interface ABCD permite atribuir alguns parâmetros para definir quais os servidores para serviços de catalogação compartilhada Z39.50 serão oferecidos na lista Z39.50 e mais alguns parâmetros para assegurar o uso adequado do protocolo do servidor. Essas informações técnicas podem ser obtidas, em geral, do fornecedor do serviço, por exemplo, no caso da Biblioteca do Congresso (USA), consultar o seguinte website: [http://www.loc.gov/z3950/lcserver.html.](http://www.loc.gov/z3950/lcserver.html)
 
-Configuring Z39.50 has the following parts :
+A configuração do Z39.50 tem as seguintes partes:
 
   
 ![](https://lh6.googleusercontent.com/ITrPEbvuGaSe7_zQeYSHHfBd8_KKHSWJsncTede3hrzK76SanHdAtZjXecP_pYxAyswJym0WD0ISJA6wUAyjsQnW6LLxVAtjEScBwW0oZzCsDfb_aeIeOPszhN3x5QAu_e6j1TEk=s0)  
 
--   Configure Z39.50 servers : in an interface similar to the one of users-administration, the defined servers are to be configured, with the parameters name, URL, Port, Database and UTF-8 (or not), see the illustration under here for Library of Congress. New servers of course can also be added with the 'Create'-icon.![](https://lh5.googleusercontent.com/7abTBVqO1hMgGJI9lE5T0J-uC7hF66DKPF5C6CeZRd_UNwgYg26RwJpWkQtqiLn5cexTN8GeCRpM_i5W2wmOblqxOE7LVLQM-Et_9rjWsje-gZ-KUg9SdWyQOmI9JUHnl94HGTaI=s0)
-    
--   Conversion formats : when the incoming records (mostly in MARC21 format) need to be converted to the format used in the destination database, a form can be edited here to specify the conversion from source to destination. The name , subfields and tag of the incoming field will be listed and in the 'Conversion formats' column the ISIS F.L. defines how to extract values for this field in the destination database. ABCD comes with one demo conversion table to convert from MARC to CEPAL formats, with the following example for converting the ISSN MARC field to CEPAL.![](https://lh6.googleusercontent.com/NzKlW54uaVPpDnsfqjqhPihGxAj66yQpcXmYVXHYXu5M8vlScNcr5oPrnfojykpvvFvtsgN7pKjEJo7AgjPN5-rgnPcJU-ROa-Jr1gDy3R-h9eOrjkWjbNAV4ku1XRobgzBvN_I3=s0)
-    
--   MARC-8 to ANSI character conversion table : this is a table which converts characters from the MARC-8 table (e.g. âa) to ANSI format (e.g. á). This table can be edited here if necessary.
-    
--   Finally the Z39.50 can be tested from here, with the same interface as used in the ABCD Data-Entry module (see infra).
-    
+- Configurar servidores Z39.50: os servidores definidos devem ser configurados em uma interface similar à de administração de usuários, com os nomes de parâmetros, URL, Porta, Base de dados e UTF-8 (ou não), veja a ilustração abaixo para a Biblioteca do Congresso. Novos servidores, é claro, também podem ser adicionados como o ícone “Criar”. ![](https://lh5.googleusercontent.com/7abTBVqO1hMgGJI9lE5T0J-uC7hF66DKPF5C6CeZRd_UNwgYg26RwJpWkQtqiLn5cexTN8GeCRpM_i5W2wmOblqxOE7LVLQM-Et_9rjWsje-gZ-KUg9SdWyQOmI9JUHnl94HGTaI=s0)
 
-## Translate messages and help pages
+- Formatos de conversão: quando os registros de entrada (na maior parte em formato MARC21) precisam ser convertidos para o formato utilizado na base dados destino, aqui um formulário pode ser editado para especificar a conversão da fonte para o destino. O nome, subcampos e tag do campo de entrada serão listados e na coluna “formatos de conversão” a LF ISIS define a forma de extrair valores para este campo na base de dados de destino. ABCD vem com uma tabela de conversão demo para converter do formato MARC para o formato CEPAL, com o seguinte exemplo para converter o campo MARC ISSN para CEPAL. ![](https://lh6.googleusercontent.com/NzKlW54uaVPpDnsfqjqhPihGxAj66yQpcXmYVXHYXu5M8vlScNcr5oPrnfojykpvvFvtsgN7pKjEJo7AgjPN5-rgnPcJU-ROa-Jr1gDy3R-h9eOrjkWjbNAV4ku1XRobgzBvN_I3=s0)
 
-There are two types of language-sensitive content which ABCD uses and which needs to be edited when creating or adapting new or other language versions : short messages and labels on the one hand, full help-pages on the other hand. [!!] These can be edited into other languages for each module of ABCD Central.
+- Tabela de conversão de caracteres MARC-8 para ANSI: esta é uma tabela que converte os caracteres MARC-8 (por exemplo, âa) para o formato ANSI (por exemplo, â). Esta tabela pode ser editada, se necessário.
 
-### Translation of short messages and labels
-  Editing these is facilitated by presenting the default (English) language terms and phrases in a table in wich in the second column the new values should be put by the translator. For each of the main functions such a table is presented:  
+-  Finalmente o Z39.50 pode ser testado a partir daqui, com a mesma interface usada no módulo de entrada dados do ABCD (ver abaixo).
+
+## Traduzir mensagens e ajudar páginas
+
+Existem dois tipos de conteúdo, sensíveis por idioma, utilizados pelo ABCD, que devem ser editados quando se vai criar novas ou adaptar outras versões  de idiomas: mensagens curtas e rótulos, por um lado, e páginas completas de ajuda por outro. Estas podem ser editadas para outros idiomas para cada módulo do ABCD Central.
+
+### Tradução de mensagens curtas e rótulos
+
+A edição destas é facilitada pela apresentação dos termos e frases do idioma default (Inglês) em uma tabela na qual na segunda coluna devem ser colocadas os novos valores pelo tradutor. Para cada uma das principais funções uma tabela como esta é apresentada:
 
 ![](https://lh6.googleusercontent.com/m1hz1TJkkEYhsRxPYlyht1xMnpY6J0i5-pz0mnnWpYx6X55NuFqRs1ImHIPUDEQRMqmdmn_d-E0A8mysiZdHBaxbXTo64z97dJiR8n2cgRGBg1yjG-rJaiUIfIl_YxkxeSo0eUX-=s0)
 
+Aqui está um exemplo de algumas mensagens traduzidas do Inglês para Holandês referente ao módulo de empréstimo:
+![](https://lh3.googleusercontent.com/O0iI1_pPKlVklFOKS-sGzp3vgeYfzn3osmyn-TV6Q6TYBX1DrmZ1VSExhfOWIuH6KrS6FrRZcZJjnz-w-me5BVRgeZlGt4TscelQuLcCZXHKIh04XkhhyEqZACxI1miCqJyBBcA6=s0)  
 
-Here is a sample of some messages translated from English to Dutch for the loans module:![](https://lh3.googleusercontent.com/O0iI1_pPKlVklFOKS-sGzp3vgeYfzn3osmyn-TV6Q6TYBX1DrmZ1VSExhfOWIuH6KrS6FrRZcZJjnz-w-me5BVRgeZlGt4TscelQuLcCZXHKIh04XkhhyEqZACxI1miCqJyBBcA6=s0)  
+Essa tela fornece um ícone “salvar”  para armazenar a tabela com as novas traduções. ![](https://lh3.googleusercontent.com/dXAH4i_glKZgtTCotEYcefBtDLWMyqWrBU9S9YAu6qxRLhe8UD8VGqaIIYhqZKLcGCmLOQwwyO9HdFGU20PzL6iJjEbTIAMcnDH4Sg2AlZCGVOeqlUZh69EVziP-zzlx3StZuLNP=s0) for storing the table with new translations.
 
-This screen provides a 'save' icon ![](https://lh3.googleusercontent.com/dXAH4i_glKZgtTCotEYcefBtDLWMyqWrBU9S9YAu6qxRLhe8UD8VGqaIIYhqZKLcGCmLOQwwyO9HdFGU20PzL6iJjEbTIAMcnDH4Sg2AlZCGVOeqlUZh69EVziP-zzlx3StZuLNP=s0) for storing the table with new translations.
+### Tradução de páginas de ajuda
+Aqui a abordagem é diferente: é fornecida uma lista de páginas de ajuda disponíveis:  ![](https://lh4.googleusercontent.com/W84ZVXybbCMZqEaGoEVBhZ0kEuuMULAumIlD2Fgkgi2Br3ZacVBgWZUtlxSXNVjYFkocdIrNEGOcNXzQUmMQmSskQ6vI_b58cOKlrD0zZFqOvqk9O0EVkyfbyOE0F8BC02bQRSmr=s0)
 
-### Translation of help pages
-Here the approach is different : a list of available help-pages is given ![](https://lh4.googleusercontent.com/W84ZVXybbCMZqEaGoEVBhZ0kEuuMULAumIlD2Fgkgi2Br3ZacVBgWZUtlxSXNVjYFkocdIrNEGOcNXzQUmMQmSskQ6vI_b58cOKlrD0zZFqOvqk9O0EVkyfbyOE0F8BC02bQRSmr=s0)
+Para cada arquivo de ajuda pode-se “visualizar” ou “editar” a página. No caso de edição, será provido o editor HTML embutido, baseado em JavaScript:
+ ![](https://lh3.googleusercontent.com/6p6kLKxf78YCkDM7Agwx-OgiarG2cPyZ-SlpwoJnzqu6pZ2baVtKRuJiGGU1uEFyBMOLl1I09ulIJcq5c18t10V36CLKPQa3UEXd4hMs9TdodCmAR3FpGahQCngPuOTYnV_PCBAy=s0)  
 
   
-and for each help-file one can 'preview' or 'edit' the page. In the case of editing the built-in JavaScript-based HTML-editor will be provided :![](https://lh3.googleusercontent.com/6p6kLKxf78YCkDM7Agwx-OgiarG2cPyZ-SlpwoJnzqu6pZ2baVtKRuJiGGU1uEFyBMOLl1I09ulIJcq5c18t10V36CLKPQa3UEXd4hMs9TdodCmAR3FpGahQCngPuOTYnV_PCBAy=s0)  
-
-  
-## Explore databases directory
+## Explorar o diretório de bases de dados
     
-[!!] Exploration of the databases directory can be done (when the dedicated option variable '$dirtree' is put to '1' in CONFIG.PHP !) using a special display in the ABCD-web-page of the folders of the database-folder of the system,
+A exploração do diretório de bases de dados pode ser feita (quando a opção de variável dedicada “$dirtree” no Config.php é colocada em “1”!), usando uma exibição especial na página web ABCD das pastas da pasta “\bases” do sistema:
 ![](https://lh6.googleusercontent.com/0aF6Wene-a2HY8S_9g8yTE19Qdn195lR3Dppjawr4Y0sLECjEl6fQuAkwgcXOPYQJb64s5Kd2yd7-DBp8IWQnFchTEvETm9VDo6XtuFdyvJ-_nmSac7u_r3PEOKRX4eOxL9PNZfE=s0)
 
-with some possibilities to enter within subfolders and even editing, renaming, zipping etc. some of the text-files
-in thereon by clicking on the 'details' icon ![](https://lh6.googleusercontent.com/auQdMSP6XtrDRMBZbxonDmbg01ii0m7BKIUjaxtxWEJK_CccgXfNI11wiSCVaXkrHF6a3dHiqe8OXB1HAz7FtiOKUAqQiLNjTKVEfuwFseFHKSPJNBmRycQ9NUWAFPWXBRmeAYSw=s0) , given e.g. the following options to apply on the selected file:
+É possível entrar em subpastas e até mesmo editar, renomear, zipar, etc., alguns dos arquivos texto e depois disso, clicando no ícone "detalhes" ![](https://lh6.googleusercontent.com/auQdMSP6XtrDRMBZbxonDmbg01ii0m7BKIUjaxtxWEJK_CccgXfNI11wiSCVaXkrHF6a3dHiqe8OXB1HAz7FtiOKUAqQiLNjTKVEfuwFseFHKSPJNBmRycQ9NUWAFPWXBRmeAYSw=s0) , dando, por exemplo, as seguintes opções para aplicar ao arquivo selecionado:
 ![](https://lh5.googleusercontent.com/7wIzZpzlZ9Yo7YsN4mLs1N3z7Iiw9Hduh8FhK6rPUtFK_X8GurPs6qCU-Ya9UyoYjEyKG0iRMWY0ExHQ8_E6-PkCQcKZH0BU4piwyH1bl9SZUID694XNos8my4iYpchMWXWoAmKb=s0){:class="img-responsive"}  
 
-## Statistics
+## Estatísticas
 
-The Statistics module of ABCD also has a dedicated chapter, so here we just refer to this chapter, as this function can also be accessed from this menu but also from the cataloging toolbar and several menu's in the acquisitions and loans modules.
+O módulo de Estatísticas do ABCD também tem um capítulo dedicado, por isso aqui faremos apenas a referência a este capítulo, visto que esta função também pode ser acessada a partir deste menu, mas também a partir da barra de menu de catalogação e de vários menus dos módulos de empréstimos e aquisições.
