@@ -32,8 +32,8 @@
 <meta property="og:title" content="The abc of ABCD 2.0f" />
 <meta property="og:description" content="This document aims at providing all relevant background information and instructions on how to use the integrated library and documentation management system 'ABCD'. Both the basic operations and the advanced management of the software are discussed, as are useful and necessary topics concerning the ISIS-software on which ABCD is based. In this new edition the new features of version 2.0 are added - the use of different flavors of CISIS, of Unicode,and the digital library capabilities as well as some additional modules (ODDS, LDAP, DSpaceBridge) and utilities (UTF8-conversion, loanobjects creation...) ." />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="http://localhost:4000" />
-<meta property="og:site_name" content="http://localhost:4000" />
+<meta property="og:url" content="http://localhost:9898" />
+<meta property="og:site_name" content="http://localhost:9898" />
 
 <meta itemprop="name" content="The abc of ABCD 2.0f">
 <meta itemprop="description" content="">
@@ -373,11 +373,11 @@
               
               
                 <li class="breadcrumb-item">
-                  <a href="http://localhost:4000/en/">En</a>
+                  <a href="http://localhost:9898/en/">En</a>
                 </li>
                 
                 <li class="breadcrumb-item active" aria-current="page">
-	          <a href="http://localhost:4000/en/abcd-oai/">The ABCD OAI interface</a>
+	          <a href="http://localhost:9898/en/abcd-oai/">The ABCD OAI interface</a>
                 </li>
                 
 	      </ol>
@@ -403,9 +403,9 @@
       </li>
       <li><a href="#using-the-interface" id="markdown-toc-using-the-interface">Using the interface</a>        <ol>
           <li><a href="#identify" id="markdown-toc-identify">Identify</a></li>
-          <li><a href="#listmetadataformats" id="markdown-toc-listmetadataformats">ListMetadataFormats<img src="https://lh3.googleusercontent.com/6f0E2NSTeGar6fjrd1bcAQeZYQHtzva_3wkuqxdLr7cH2AhUhehTCmeMWIzT6qQ7OEzPjcntEt6jp7cLRcKMHKYJDQ79JxOzv30AMn0GnCjGKMre-M10TpimikTVIj9IU0bW0Ng=s0" alt="" /></a></li>
-          <li><a href="#listsets" id="markdown-toc-listsets">ListSets<img src="https://lh5.googleusercontent.com/noGNA6WpWzDJxl6TocVjIGVOqHIvH6TE0Ro8xvhUJ2QUV7sVVafS3BxxjpJ7fXltzKKoXG3oItP1Gv9aOWsffrrTBOtkypv-P97sgRfWOjfuMxkwe9HBKzJbmRsyMIC126_ozTU=s0" alt="" /></a></li>
-          <li><a href="#listidentifiers" id="markdown-toc-listidentifiers">ListIdentifiers<img src="https://lh3.googleusercontent.com/wQz-eoTP6LfgmBsBfS5LOkwIYxbc9B5v5qbgeF_ELnZ8MYvXG5OVBFAVVgbhVV49Fw2POb-tmj9lnHKkRgJOAMk19X7Nx9MQSYIIdbbguixg_GHD8H543cwSkX1qj7CQgadwdo8=s0" alt="" /></a></li>
+          <li><a href="#listmetadataformats" id="markdown-toc-listmetadataformats">ListMetadataFormats</a></li>
+          <li><a href="#listsets" id="markdown-toc-listsets">ListSets</a></li>
+          <li><a href="#listidentifiers" id="markdown-toc-listidentifiers">ListIdentifiers</a></li>
           <li><a href="#listrecords" id="markdown-toc-listrecords">ListRecords</a></li>
           <li><a href="#listrecord" id="markdown-toc-listrecord">ListRecord</a></li>
         </ol>
@@ -445,8 +445,11 @@
 
 <p>Since no ABCD or other ISIS-related software can be supposed to exist at the users’ side, the mechanism is to provide a URL and present the interface as just a web-page which is freely accessible. Therefore no links from within ABCD (e.g. in ‘Central’ module) is provided but the URL should be entered directly in the browser’s address bar (or referenced by a shortcut etc.). In the case of an ABCD ‘localhost:9090’ installation this URL would be : http://localhost:9090/isis-oai-provider/index.php.</p>
 
-<p>The page opened by that URL should like like the following illustration :<img src="https://lh5.googleusercontent.com/f1EYMwsBO1rReclD6jf-NCB0IKaarFg-mYaPDhikP964JQ4kTHP3YpEOte8zKnhgHuQKyhQ4e0qb980FJtvbN0OrkCxWfmnkyHJKYHBJxRFvCqpXCLB081DSmDvjIhhDGjPofXw=s0" alt="" />
-As can be seen, in the left part of the interface access is given to each of the 6 main ‘verbs’ or operators, with a short description of each verb after selection of one of them, while at the right part the user-interacion has two parts : the criteria defined by the user at the upper part and the XML-output (to be ‘captured’ with copy/paste, in some browsers from the ‘frame source’ if the full XML-code is needed) as the result of the harvesting action.</p>
+<p>The page opened by that URL should like like the following illustration:</p>
+
+<p><img src="https://lh5.googleusercontent.com/f1EYMwsBO1rReclD6jf-NCB0IKaarFg-mYaPDhikP964JQ4kTHP3YpEOte8zKnhgHuQKyhQ4e0qb980FJtvbN0OrkCxWfmnkyHJKYHBJxRFvCqpXCLB081DSmDvjIhhDGjPofXw=s0" alt="" /></p>
+
+<p>As can be seen, in the left part of the interface access is given to each of the 6 main ‘verbs’ or operators, with a short description of each verb after selection of one of them, while at the right part the user-interacion has two parts : the criteria defined by the user at the upper part and the XML-output (to be ‘captured’ with copy/paste, in some browsers from the ‘frame source’ if the full XML-code is needed) as the result of the harvesting action.</p>
 
 <p>We will first briefly discuss the configuration necessary to make this work for local ISIS-databases in ABCD and then discuss each of the 6 verbs with some illustration.</p>
 
@@ -456,19 +459,21 @@ As can be seen, in the left part of the interface access is given to each of the
 
 <h3 id="the-general-configuration">The general configuration</h3>
 
-<p>The file ‘oai-config.php’ is located at the ‘root’ of the Isis-OAI-Provder module in ABCD, which is stored, next to other modules like central, iah, secs-web and site, in the htdocs-folder of ABCD. A typical Windows file-manager view of this folder’s content looks like this :<img src="https://lh3.googleusercontent.com/7S58qqg99TZ3eMo4ikRuv8OWoNFdufxw6jigaiASdp-uX_yVx4XqTrUSCxaDAYry-oAP0z5WdnXU6KAf5iyMhtDcJY8ocLAuSx-7Lg7xDze5rLfbu_u9XhHil8_85lpCu-Kkl-E=s0" alt="" /></p>
+<p>The file ‘oai-config.php’ is located at the ‘root’ of the <strong>isis-oai-provider</strong> module in ABCD, which is stored, next to other modules like central, iah, secs-web and site, in the htdocs-folder of ABCD. A typical Windows file-manager view of this folder’s content looks like this:</p>
+
+<p><img src="https://lh3.googleusercontent.com/7S58qqg99TZ3eMo4ikRuv8OWoNFdufxw6jigaiASdp-uX_yVx4XqTrUSCxaDAYry-oAP0z5WdnXU6KAf5iyMhtDcJY8ocLAuSx-7Lg7xDze5rLfbu_u9XhHil8_85lpCu-Kkl-E=s0" alt="" /></p>
 
 <p>So this module uses its own CSS stylesheets and images, allows for gizmo’s to be applied and uses one JavaScript file with ‘functions’ called from the scripts. The most important sudirectories here are :</p>
 
 <ul>
   <li>
-    <p>lib : this directory contains the main PHP-scripts for the interface, partly taken - inherited - from the general PHP- OAI libraries (e.g. OAIServer.php) and partly dedicated PHP-scripts to deal with resp. ISIS-databases (ISISD- b.php) or one (ISISItem.php) or more (ISISItemFactory.php) ISIS records. The configuration parser-scripts are also here for resp. parsing the ABCD-OAI configuration or the ‘mapping’ of the database fields to the Dublin- Core standard.</p>
+    <p><strong>lib</strong>: this directory contains the main PHP-scripts for the interface, partly taken - inherited - from the general PHP- OAI libraries (e.g. OAIServer.php) and partly dedicated PHP-scripts to deal with resp. ISIS-databases (ISISD- b.php) or one (ISISItem.php) or more (ISISItemFactory.php) ISIS records. The configuration parser-scripts are also here for resp. parsing the ABCD-OAI configuration or the ‘mapping’ of the database fields to the Dublin- Core standard.</p>
   </li>
   <li>
-    <p>map : this directory contains at least one file for each database involved, i.e. following either one of the two allowed syntaxes : OAI_DC (files with the name of the database followed by the .i2x extension) or ISIS (more traditional ISIS PFT formats with th eextension .pft). This mapping will be discussed in more detail below.</p>
+    <p><strong>map</strong>: this directory contains at least one file for each database involved, i.e. following either one of the two allowed syntaxes : OAI_DC (files with the name of the database followed by the .i2x extension) or ISIS (more traditional ISIS PFT formats with th eextension .pft). This mapping will be discussed in more detail below.</p>
   </li>
   <li>
-    <p>wxis : some ISIS-Scripts used by the main executalbe wxis (web-enabled ISIS). getidientifiers.xis, getrecord.xis and gettotal.xis. These are rather ‘normal’ ISISScript instructions, taking variables form the CGI-environment and then specifying the instructions to operate on the variables, e.g. printing the titles in a loop etc.</p>
+    <p><strong>wxis</strong>: some ISIS-Scripts used by the main executable wxis (web-enabled ISIS). getidientifiers.xis, getrecord.xis and gettotal.xis. These are rather ‘normal’ ISISScript instructions, taking variables form the CGI-environment and then specifying the instructions to operate on the variables, e.g. printing the titles in a loop etc.</p>
   </li>
   <li>
     <p>In the main isis-oai-provider directory itself we find the opening PHP-script index.php (which contains the interface) and the sample and real configuration files as PHP-scripts.</p>
@@ -477,7 +482,8 @@ As can be seen, in the left part of the interface access is given to each of the
 
 <p>For the configuration of the ABCD-OAI interface we need to consider two files : one for the general configuration, one for the databases.</p>
 
-<p>A sample listing, as it comes with the demo-implementation, is given here, where lines starting with ‘;’ are com- ments, e.g. to illustrate the Windows-alternatives :</p>
+<p>A sample listing, as it comes with the demo implementation, is given here, where lines starting with ‘;’ are comments, e.g. to illustrate the Windows-alternatives:</p>
+
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ENVIRONMENT]  
 ; Set the directory of application. The effect will be [http://your-site.org/DIRECTORY](http://your-site.org/DIRECTORY)
 
@@ -503,20 +509,17 @@ EARLIESTDATESTAMP=2011-01-01
 MAX_ITEMS_PER_PASS=20
 </code></pre></div></div>
 
-<p>In the [ENVIRONMENT[ section the following variables need to be defined :</p>
+<p>In the [ENVIRONMENT] section the following variables need to be defined :</p>
 
 <ul>
-  <li>DIRECTORY : the folder of the module, starting from the ‘ABCD DocumentRoot’ (as defined in the webserver,</li>
-</ul>
-
-<p>e.g. Apache), so in the default case of ABCD in Linux where the document-root is defined as ‘/opt/ABCD/www/ htdocs’, defineing the DIRECTOY as ‘isis-oai-provider’ means that the OAI-module is located in /opt/ABCD/ www/htdocs/isis-oai-provider.</p>
-<ul>
+  <li>DIRECTORY : the folder of the module, starting from the ‘ABCD DocumentRoot’ (as defined in the webserver, e.g. Apache), so in the default case of ABCD in Linux where the document-root is defined as ‘/opt/ABCD/www/ htdocs’, defineing the DIRECTOY as ‘isis-oai-provider’ means that the OAI-module is located in /opt/ABCD/ www/htdocs/isis-oai-provider.</li>
   <li>DATABASE_PATH : the directory where the databases are to be found</li>
   <li>EXE_EXTENSION : the extension to be added to the ‘wxis’ executable name, in Windows : ‘.exe’, in Linux no extension is used.</li>
   <li>CGI-BIN_DIRECTORY : the directory as it should be recognized in the URL In the case of Apache the Apache- configuration explains which real directory corresponds with the URL-string ‘/cgi-bin/’.</li>
 </ul>
 
-<p>In the [INFORMATION] section we deinfe :</p>
+<p>In the [INFORMATION] section we define:</p>
+
 <ul>
   <li>NAME : the name of your repository as you want it to be seen by the user</li>
   <li>EMAIL : the e-mail address of the administrator who can be contacted about the repository</li>
@@ -663,11 +666,15 @@ being available by right-clicking and requesting the ‘frame-source’.</p>
 
 <p>The output contains all necessary information as agreed per the protocol, e.g. the ‘name’ of the protocol as indicated in the oai-config script.</p>
 
-<h3 id="listmetadataformats">ListMetadataFormats<img src="https://lh3.googleusercontent.com/6f0E2NSTeGar6fjrd1bcAQeZYQHtzva_3wkuqxdLr7cH2AhUhehTCmeMWIzT6qQ7OEzPjcntEt6jp7cLRcKMHKYJDQ79JxOzv30AMn0GnCjGKMre-M10TpimikTVIj9IU0bW0Ng=s0" alt="" /></h3>
+<h3 id="listmetadataformats">ListMetadataFormats</h3>
+
+<p><img src="https://lh3.googleusercontent.com/6f0E2NSTeGar6fjrd1bcAQeZYQHtzva_3wkuqxdLr7cH2AhUhehTCmeMWIzT6qQ7OEzPjcntEt6jp7cLRcKMHKYJDQ79JxOzv30AMn0GnCjGKMre-M10TpimikTVIj9IU0bW0Ng=s0" alt="" /></p>
 
 <p>This verb describes the metadata formats used in the protocol. Compulsory parameters verb In ABCD we use two different formats : oai_dc and isis. which will correspond with the ‘mapping’ file defined, either i2x (for oai- dc) or pft for isis.</p>
 
-<h3 id="listsets">ListSets<img src="https://lh5.googleusercontent.com/noGNA6WpWzDJxl6TocVjIGVOqHIvH6TE0Ro8xvhUJ2QUV7sVVafS3BxxjpJ7fXltzKKoXG3oItP1Gv9aOWsffrrTBOtkypv-P97sgRfWOjfuMxkwe9HBKzJbmRsyMIC126_ozTU=s0" alt="" /></h3>
+<h3 id="listsets">ListSets</h3>
+
+<p><img src="https://lh5.googleusercontent.com/noGNA6WpWzDJxl6TocVjIGVOqHIvH6TE0Ro8xvhUJ2QUV7sVVafS3BxxjpJ7fXltzKKoXG3oItP1Gv9aOWsffrrTBOtkypv-P97sgRfWOjfuMxkwe9HBKzJbmRsyMIC126_ozTU=s0" alt="" /></p>
 
 <p>Retrieves a list of all databases available on this repository. Compulsory parameters verb Exclusive parameter resumptionToken</p>
 
@@ -680,7 +687,9 @@ will not allow to put an exclusive parameter.</p>
 
 <p>In case of our 2 demo-databases here (marc and dubcore) the output will look somethng like :</p>
 
-<h3 id="listidentifiers">ListIdentifiers<img src="https://lh3.googleusercontent.com/wQz-eoTP6LfgmBsBfS5LOkwIYxbc9B5v5qbgeF_ELnZ8MYvXG5OVBFAVVgbhVV49Fw2POb-tmj9lnHKkRgJOAMk19X7Nx9MQSYIIdbbguixg_GHD8H543cwSkX1qj7CQgadwdo8=s0" alt="" /></h3>
+<h3 id="listidentifiers">ListIdentifiers</h3>
+
+<p><img src="https://lh3.googleusercontent.com/wQz-eoTP6LfgmBsBfS5LOkwIYxbc9B5v5qbgeF_ELnZ8MYvXG5OVBFAVVgbhVV49Fw2POb-tmj9lnHKkRgJOAMk19X7Nx9MQSYIIdbbguixg_GHD8H543cwSkX1qj7CQgadwdo8=s0" alt="" /></p>
 
 <p>This verb retrieves a list with the single identifier of each document published. Compulsory parameters verb metadataPrefix Optional parameters from until set Exclusive parameter resumptionToken retrieves a list with the single identifier of each document published. Compulsory parameters verb metadataPrefix Optional parameters from until set Exclusive parameter resumptionToken.</p>
 
