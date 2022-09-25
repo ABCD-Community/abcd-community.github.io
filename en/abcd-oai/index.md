@@ -276,7 +276,7 @@ This verb describes the metadata formats used in the protocol. Compulsory parame
 Retrieves a list of all databases available on this repository. Compulsory parameters verb Exclusive parameter resumptionToken
 
 > Note:
-> 'exclusve parameter' means that this parameter is not allowed as
+> 'exclusive parameter' means that this parameter is not allowed as
 > it is incompatible with the idea of the verb itself. The interface
 > will not allow to put an exclusive parameter.
 

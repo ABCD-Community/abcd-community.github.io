@@ -215,7 +215,7 @@ if p(v2) then
 fi,
 ```
 
-or, for the title and authors n MARC :
+ou, para o título e autores n Marc:
 
 ```
 if p(v245) then
@@ -232,9 +232,9 @@ else
 | <dc:creator><![CDATA[|v110^*|]]></dc:creator>|/,
 fi), fi
 ```
-which should be read as : if the title is present then print the XML tags `<dc:title>` and `</dc:title>` with the actual value of v2 (any subfield, indicated by the `^*` operator, in between the [CDATA[...] attribute.
-Any more complicated PFT-statements can be used, e.g. for displaying the document-format, if it is indicated in
-`v9` :
+
+que deve ser lido como : se o título estiver presente, então imprima as tags XML `<dc:title>` e `</dc:title>` com o valor real da v2 (qualquer subcampo, indicado pelo operador `^*`, entre o atributo [CDATA[...].
+Qualquer declaração PFT mais complicada pode ser utilizada, por exemplo, para exibir o formato do documento, se for indicada em `v9`:
 
 ```
 ' <dc:format>'select s(mpu,v9,mpl)
@@ -247,62 +247,65 @@ else 'other' fi
 endsel,
 '</dc:format>'/,
 ```
-Any sequence of ISIS-fields can be treated this way, but fields not mentioned here will be omitted from the output.
-Instead of fields also subfields or groups of fields can be used, using the power of the Formatting Language.
-Best is to re-use an existing model, as provided with the demo-installation, for a new different local database, mostly adapting the field-tags to the local structure of the database. One has to be very careful, as always with the ISIS Formatting Language : missing a quote or any other syntax mistake will  produce no output at all but some error messages in the XML-output !
-
-## Using the interface
-
-When everything is properly configured - a lot of preliminary testing is advised, after all OAI means exposing your database to the whole world ! - the following outputs can be obtained, presented by each one of the six OAI- PHM 'verbs' :
+Qualquer seqüência de campos ISIS pode ser tratada desta forma, mas campos não mencionados aqui serão omitidos da saída.
+Ao invés de campos também podem ser usados subcampos ou grupos de campos, usando o poder da linguagem de formatação.
+O melhor é reutilizar um modelo existente, como fornecido com a demo-instalação, para um novo banco de dados local diferente, adaptando principalmente as tags de campo à estrutura local do banco de dados. É preciso ter muito cuidado, como sempre com a Linguagem de Formatação ISIS: a falta de uma cotação ou qualquer outro erro de sintaxe não produzirá nenhuma saída, exceto algumas mensagens de erro na saída de XML!
 
 
-> Note: 
-> With most illustratoins under here, the XML-output is
-> incomplete, in other words : the actual output contains more data but
-> only part can be shown here.
+## Usando a interface
+
+Quando tudo está devidamente configurado - muitos testes preliminares são aconselhados, afinal a OAI significa expor seu banco de dados para o mundo inteiro! - os seguintes resultados podem ser obtidos, apresentados por cada um dos seis 'verbos' OAI-PHM :
 
 
-> Note: The illustrations are generated with the Firefox browser,
-> immediately showing the XML-output because no XML-style being
-> available ('This XML file does not appear to have any style
-> information associated with it. The document tree is shown below').
-> Other browsers might show just the text-output, the full- XML still
-> being available by right-clicking and requesting the 'frame-source'.
+> Nota: 
+> Com a maioria das ilustrações aqui embaixo, 
+> a saída de XML está incompleta, em outras palavras: 
+> a saída real contém mais dados, mas apenas parte pode ser mostrada aqui.
+
+
+> Nota: As ilustrações são geradas com o navegador Firefox, 
+> mostrando imediatamente a saída de XML porque não há nenhum 
+> estilo XML disponível ('Este arquivo XML não parece ter nenhuma 
+> informação de estilo associada a ele. A árvore de documentos é mostrada abaixo"). 
+> Outros navegadores podem mostrar apenas a saída de texto, 
+> sendo que o XML completo ainda está disponível clicando 
+> com o botão direito do mouse e solicitando o 'frame-source'.
 
   
 
-### Identify
+### Identificação
 
-This verb returns the main protocol information. Compulsory parameters verb (automatcially entered by electing this verb).
+Este verbo retorna as principais informações do protocolo. Parâmetros obrigatórios do verbo (inseridos automaticamente ao eleger este verbo).
 
-The output contains all necessary information as agreed per the protocol, e.g. the 'name' of the protocol as indicated in the oai-config script.  
+A saída contém todas as informações necessárias conforme acordado pelo protocolo, por exemplo, o 'nome' do protocolo, conforme indicado no script oai-config.  
  
 ### ListMetadataFormats
 
 ![](https://lh3.googleusercontent.com/6f0E2NSTeGar6fjrd1bcAQeZYQHtzva_3wkuqxdLr7cH2AhUhehTCmeMWIzT6qQ7OEzPjcntEt6jp7cLRcKMHKYJDQ79JxOzv30AMn0GnCjGKMre-M10TpimikTVIj9IU0bW0Ng=s0)
     
-This verb describes the metadata formats used in the protocol. Compulsory parameters verb In ABCD we use two different formats : oai_dc and isis. which will correspond with the 'mapping' file defined, either i2x (for oai- dc) or pft for isis.  
+Este verbo descreve os formatos de metadados utilizados no protocolo. Parâmetros obrigatórios verbo No ABCD usamos dois formatos diferentes: oai_dc e isis. que corresponderão ao arquivo de 'mapeamento' definido, ou i2x (para oai-dc) ou pft para isis.  
 
 ### ListSets
 
 ![](https://lh5.googleusercontent.com/noGNA6WpWzDJxl6TocVjIGVOqHIvH6TE0Ro8xvhUJ2QUV7sVVafS3BxxjpJ7fXltzKKoXG3oItP1Gv9aOWsffrrTBOtkypv-P97sgRfWOjfuMxkwe9HBKzJbmRsyMIC126_ozTU=s0)
    
-Retrieves a list of all databases available on this repository. Compulsory parameters verb Exclusive parameter resumptionToken
 
-> Note:
-> 'exclusve parameter' means that this parameter is not allowed as
-> it is incompatible with the idea of the verb itself. The interface
-> will not allow to put an exclusive parameter.
+Recupera uma lista de todos os bancos de dados disponíveis neste repositório. Parâmetros compulsórios verbo Retorno de parâmetro resumptionToken
 
-In case of our 2 demo-databases here (marc and dubcore) the output will look somethng like :  
-  
+> Nota: 'parâmetro exclusivo' significa que este 
+> parâmetro não é permitido, pois é incompatível com a 
+> idéia do próprio verbo. A interface não 
+> permitirá a colocação de um parâmetro exclusivo.
+
+No caso de nossas duas bases de dados de demonstração aqui (Marc e Dubcore), a saída parecerá algo como:
+
 ### ListIdentifiers
 
 ![](https://lh3.googleusercontent.com/wQz-eoTP6LfgmBsBfS5LOkwIYxbc9B5v5qbgeF_ELnZ8MYvXG5OVBFAVVgbhVV49Fw2POb-tmj9lnHKkRgJOAMk19X7Nx9MQSYIIdbbguixg_GHD8H543cwSkX1qj7CQgadwdo8=s0)
     
 This verb retrieves a list with the single identifier of each document published. Compulsory parameters verb metadataPrefix Optional parameters from until set Exclusive parameter resumptionToken retrieves a list with the single identifier of each document published. Compulsory parameters verb metadataPrefix Optional parameters from until set Exclusive parameter resumptionToken.
 
-Depending on the field given in the database configuration as containing the identifier of the record, the records will be listed with that field :  
+Dependendo do campo fornecido na configuração do banco de dados como contendo o identificador do registro, os registros serão listados com esse campo:  
 
 ![](https://lh6.googleusercontent.com/91zcJCxAgaa4bosa0f86nu4spU7pi8-u4yEWuEsrfWeC1NO64TgeBCvxpA4gAQC19JG0HrgGupXIq87AKwIUiZkrH-D1-ujis6oPuwNcHF7KdtJGJt52JgnA3sIpN5kh63Vp0hE=s0)
 
@@ -312,14 +315,14 @@ We are showing here the end of the output, because an interesting feature is vis
 
 ### ListRecords
 
-This verb retrieves the list of documents. Compulsory parameters verb metadataPrefix Optional parameters from until set Exclusive parameter resumptionToken .  
+Este verbo recupera a lista de documentos. Parâmetros obrigatórios metadataPrefix de parâmetros opcionais até definir o retomar exclusivo do parâmetro resumptionToken.  
 
 ![](https://lh5.googleusercontent.com/C25Nq5y3MGwZVEA7wDJM1EbuiH8fYY4M3acSer7otCSUVTFUoeHTtFfbPoOaisLONg4GwPZbS6pesNUNg20QV4fDbDowQaxcpHtBlNT31Gdlg140RCVxsM1_XnOP81_1hZ1w5Jw=s0)
 
-As with 'ListIdentifiers' a resumptionToken can be used to continue listing more records starting from the last one shown before. Note that also 'from' and 'until' dates can be entered to limit the records listed to a given span of time.
+Como no caso dos 'ListIdentifiers', um resumptionToken pode ser usado para continuar listando mais registros a partir do último mostrado anteriormente. Note que também podem ser inseridas datas 'de' e 'até' para limitar os registros listados a um determinado período de tempo.
 
 ### ListRecord
 
-Finally, the last 'verb' is to retrieve the metadata of a specific record. Compulsory parameters verb metadataPrefix identifier. Shown here is one record form the dubcore demo-database, using the dubcore_dc.pft 'mapping file' which is also part of the demo.  
+Finalmente, o último 'verbo' é recuperar os metadados de um registro específico. Parâmetros obrigatórios Identificador verbal metadataPrefix. Aqui é mostrado um formulário de registro base de dados demonstrativa do Dubcore, usando o dubcore_dc.pft 'arquivo de mapeamento', que também faz parte da demonstração.
 
 ![](https://lh4.googleusercontent.com/14ZvlkoFGdbxtE8y1RxxOiA56KtM-91sVobilKzRbgSZ3eTm48vaS4FULlZRia7wxqYL1UekDhU7bkbJADaiHhEsJchq1pl--3lzBp7lQyb_DX-VQW_E5jP7C-CvLqdwMJ7SW_0=s0)

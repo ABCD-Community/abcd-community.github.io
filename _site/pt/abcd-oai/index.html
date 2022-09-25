@@ -32,8 +32,8 @@
 <meta property="og:title" content="O abc do ABCD 2.0f" />
 <meta property="og:description" content="Este documento tem como objetivo fornecer todas as informações e instruções relevantes sobre como usar a biblioteca integrada e o sistema de gerenciamento de documentação ‘ABCD’. Tanto as operações básicas como o gerenciamento avançado do software são discutidos, assim como os tópicos úteis e necessários relativos ao software ISIS no qual o ABCD se baseia. Nesta nova edição, as novas características da versão 2.0 são adicionadas- o uso de diferentes sabores de CISIS, de Unicode e as capacidades da biblioteca digital, bem como alguns módulos adicionais (ODDS, LDAP, DSpaceBridge) e utilitários (conversão UTF8, criação de objetos de empréstimo…) ." />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="http://localhost:9898" />
-<meta property="og:site_name" content="http://localhost:9898" />
+<meta property="og:url" content="http://localhost:4000" />
+<meta property="og:site_name" content="http://localhost:4000" />
 
 <meta itemprop="name" content="O abc do ABCD 2.0f">
 <meta itemprop="description" content="">
@@ -373,11 +373,11 @@
               
               
                 <li class="breadcrumb-item">
-                  <a href="http://localhost:9898/pt/">Pt</a>
+                  <a href="http://localhost:4000/pt/">Pt</a>
                 </li>
                 
                 <li class="breadcrumb-item active" aria-current="page">
-	          <a href="http://localhost:9898/pt/abcd-oai/">A interface ABCD OAI</a>
+	          <a href="http://localhost:4000/pt/abcd-oai/">A interface ABCD OAI</a>
                 </li>
                 
 	      </ol>
@@ -403,8 +403,8 @@
           </li>
         </ol>
       </li>
-      <li><a href="#using-the-interface" id="markdown-toc-using-the-interface">Using the interface</a>        <ol>
-          <li><a href="#identify" id="markdown-toc-identify">Identify</a></li>
+      <li><a href="#usando-a-interface" id="markdown-toc-usando-a-interface">Usando a interface</a>        <ol>
+          <li><a href="#identificação" id="markdown-toc-identificação">Identificação</a></li>
           <li><a href="#listmetadataformats" id="markdown-toc-listmetadataformats">ListMetadataFormats</a></li>
           <li><a href="#listsets" id="markdown-toc-listsets">ListSets</a></li>
           <li><a href="#listidentifiers" id="markdown-toc-listidentifiers">ListIdentifiers</a></li>
@@ -621,7 +621,8 @@ xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.opena
 fi,
 </code></pre></div></div>
 
-<p>or, for the title and authors n MARC :</p>
+<p>ou, para o título e autores n Marc:</p>
+
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if p(v245) then
 (| &lt;dc:title&gt;&lt;![CDATA[|v245^*|]]&gt;&lt;/dc:title&gt;|/),
 | &lt;dc:title&gt;&lt;![CDATA[|v246^*|]]&gt;&lt;/dc:title&gt;|/,
@@ -635,9 +636,9 @@ else
 | &lt;dc:creator&gt;&lt;![CDATA[|v110^*|]]&gt;&lt;/dc:creator&gt;|/,
 fi), fi
 </code></pre></div></div>
-<p>which should be read as : if the title is present then print the XML tags <code class="language-plaintext highlighter-rouge">&lt;dc:title&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;/dc:title&gt;</code> with the actual value of v2 (any subfield, indicated by the <code class="language-plaintext highlighter-rouge">^*</code> operator, in between the [CDATA[…] attribute.
-Any more complicated PFT-statements can be used, e.g. for displaying the document-format, if it is indicated in
-<code class="language-plaintext highlighter-rouge">v9</code> :</p>
+
+<p>que deve ser lido como : se o título estiver presente, então imprima as tags XML <code class="language-plaintext highlighter-rouge">&lt;dc:title&gt;</code> e <code class="language-plaintext highlighter-rouge">&lt;/dc:title&gt;</code> com o valor real da v2 (qualquer subcampo, indicado pelo operador <code class="language-plaintext highlighter-rouge">^*</code>, entre o atributo [CDATA[…].
+Qualquer declaração PFT mais complicada pode ser utilizada, por exemplo, para exibir o formato do documento, se for indicada em <code class="language-plaintext highlighter-rouge">v9</code>:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>' &lt;dc:format&gt;'select s(mpu,v9,mpl)
 case 'A':'text',if p(v8^q) then '/'v8[1]^q fi,
@@ -649,56 +650,57 @@ else 'other' fi
 endsel,
 '&lt;/dc:format&gt;'/,
 </code></pre></div></div>
-<p>Any sequence of ISIS-fields can be treated this way, but fields not mentioned here will be omitted from the output.
-Instead of fields also subfields or groups of fields can be used, using the power of the Formatting Language.
-Best is to re-use an existing model, as provided with the demo-installation, for a new different local database, mostly adapting the field-tags to the local structure of the database. One has to be very careful, as always with the ISIS Formatting Language : missing a quote or any other syntax mistake will  produce no output at all but some error messages in the XML-output !</p>
+<p>Qualquer seqüência de campos ISIS pode ser tratada desta forma, mas campos não mencionados aqui serão omitidos da saída.
+Ao invés de campos também podem ser usados subcampos ou grupos de campos, usando o poder da linguagem de formatação.
+O melhor é reutilizar um modelo existente, como fornecido com a demo-instalação, para um novo banco de dados local diferente, adaptando principalmente as tags de campo à estrutura local do banco de dados. É preciso ter muito cuidado, como sempre com a Linguagem de Formatação ISIS: a falta de uma cotação ou qualquer outro erro de sintaxe não produzirá nenhuma saída, exceto algumas mensagens de erro na saída de XML!</p>
 
-<h2 id="using-the-interface">Using the interface</h2>
+<h2 id="usando-a-interface">Usando a interface</h2>
 
-<p>When everything is properly configured - a lot of preliminary testing is advised, after all OAI means exposing your database to the whole world ! - the following outputs can be obtained, presented by each one of the six OAI- PHM ‘verbs’ :</p>
+<p>Quando tudo está devidamente configurado - muitos testes preliminares são aconselhados, afinal a OAI significa expor seu banco de dados para o mundo inteiro! - os seguintes resultados podem ser obtidos, apresentados por cada um dos seis ‘verbos’ OAI-PHM :</p>
 
 <blockquote>
-  <p>Note: 
-With most illustratoins under here, the XML-output is
-incomplete, in other words : the actual output contains more data but
-only part can be shown here.</p>
+  <p>Nota: 
+Com a maioria das ilustrações aqui embaixo, 
+a saída de XML está incompleta, em outras palavras: 
+a saída real contém mais dados, mas apenas parte pode ser mostrada aqui.</p>
 </blockquote>
 
 <blockquote>
-  <p>Note: The illustrations are generated with the Firefox browser,
-immediately showing the XML-output because no XML-style being
-available (‘This XML file does not appear to have any style
-information associated with it. The document tree is shown below’).
-Other browsers might show just the text-output, the full- XML still
-being available by right-clicking and requesting the ‘frame-source’.</p>
+  <p>Nota: As ilustrações são geradas com o navegador Firefox, 
+mostrando imediatamente a saída de XML porque não há nenhum 
+estilo XML disponível (‘Este arquivo XML não parece ter nenhuma 
+informação de estilo associada a ele. A árvore de documentos é mostrada abaixo”). 
+Outros navegadores podem mostrar apenas a saída de texto, 
+sendo que o XML completo ainda está disponível clicando 
+com o botão direito do mouse e solicitando o ‘frame-source’.</p>
 </blockquote>
 
-<h3 id="identify">Identify</h3>
+<h3 id="identificação">Identificação</h3>
 
-<p>This verb returns the main protocol information. Compulsory parameters verb (automatcially entered by electing this verb).</p>
+<p>Este verbo retorna as principais informações do protocolo. Parâmetros obrigatórios do verbo (inseridos automaticamente ao eleger este verbo).</p>
 
-<p>The output contains all necessary information as agreed per the protocol, e.g. the ‘name’ of the protocol as indicated in the oai-config script.</p>
+<p>A saída contém todas as informações necessárias conforme acordado pelo protocolo, por exemplo, o ‘nome’ do protocolo, conforme indicado no script oai-config.</p>
 
 <h3 id="listmetadataformats">ListMetadataFormats</h3>
 
 <p><img src="https://lh3.googleusercontent.com/6f0E2NSTeGar6fjrd1bcAQeZYQHtzva_3wkuqxdLr7cH2AhUhehTCmeMWIzT6qQ7OEzPjcntEt6jp7cLRcKMHKYJDQ79JxOzv30AMn0GnCjGKMre-M10TpimikTVIj9IU0bW0Ng=s0" alt="" /></p>
 
-<p>This verb describes the metadata formats used in the protocol. Compulsory parameters verb In ABCD we use two different formats : oai_dc and isis. which will correspond with the ‘mapping’ file defined, either i2x (for oai- dc) or pft for isis.</p>
+<p>Este verbo descreve os formatos de metadados utilizados no protocolo. Parâmetros obrigatórios verbo No ABCD usamos dois formatos diferentes: oai_dc e isis. que corresponderão ao arquivo de ‘mapeamento’ definido, ou i2x (para oai-dc) ou pft para isis.</p>
 
 <h3 id="listsets">ListSets</h3>
 
 <p><img src="https://lh5.googleusercontent.com/noGNA6WpWzDJxl6TocVjIGVOqHIvH6TE0Ro8xvhUJ2QUV7sVVafS3BxxjpJ7fXltzKKoXG3oItP1Gv9aOWsffrrTBOtkypv-P97sgRfWOjfuMxkwe9HBKzJbmRsyMIC126_ozTU=s0" alt="" /></p>
 
-<p>Retrieves a list of all databases available on this repository. Compulsory parameters verb Exclusive parameter resumptionToken</p>
+<p>Recupera uma lista de todos os bancos de dados disponíveis neste repositório. Parâmetros compulsórios verbo Retorno de parâmetro resumptionToken</p>
 
 <blockquote>
-  <p>Note:
-‘exclusve parameter’ means that this parameter is not allowed as
-it is incompatible with the idea of the verb itself. The interface
-will not allow to put an exclusive parameter.</p>
+  <p>Nota: ‘parâmetro exclusivo’ significa que este 
+parâmetro não é permitido, pois é incompatível com a 
+idéia do próprio verbo. A interface não 
+permitirá a colocação de um parâmetro exclusivo.</p>
 </blockquote>
 
-<p>In case of our 2 demo-databases here (marc and dubcore) the output will look somethng like :</p>
+<p>No caso de nossas duas bases de dados de demonstração aqui (Marc e Dubcore), a saída parecerá algo como:</p>
 
 <h3 id="listidentifiers">ListIdentifiers</h3>
 
@@ -706,7 +708,7 @@ will not allow to put an exclusive parameter.</p>
 
 <p>This verb retrieves a list with the single identifier of each document published. Compulsory parameters verb metadataPrefix Optional parameters from until set Exclusive parameter resumptionToken retrieves a list with the single identifier of each document published. Compulsory parameters verb metadataPrefix Optional parameters from until set Exclusive parameter resumptionToken.</p>
 
-<p>Depending on the field given in the database configuration as containing the identifier of the record, the records will be listed with that field :</p>
+<p>Dependendo do campo fornecido na configuração do banco de dados como contendo o identificador do registro, os registros serão listados com esse campo:</p>
 
 <p><img src="https://lh6.googleusercontent.com/91zcJCxAgaa4bosa0f86nu4spU7pi8-u4yEWuEsrfWeC1NO64TgeBCvxpA4gAQC19JG0HrgGupXIq87AKwIUiZkrH-D1-ujis6oPuwNcHF7KdtJGJt52JgnA3sIpN5kh63Vp0hE=s0" alt="" /></p>
 
@@ -716,15 +718,15 @@ will not allow to put an exclusive parameter.</p>
 
 <h3 id="listrecords">ListRecords</h3>
 
-<p>This verb retrieves the list of documents. Compulsory parameters verb metadataPrefix Optional parameters from until set Exclusive parameter resumptionToken .</p>
+<p>Este verbo recupera a lista de documentos. Parâmetros obrigatórios metadataPrefix de parâmetros opcionais até definir o retomar exclusivo do parâmetro resumptionToken.</p>
 
 <p><img src="https://lh5.googleusercontent.com/C25Nq5y3MGwZVEA7wDJM1EbuiH8fYY4M3acSer7otCSUVTFUoeHTtFfbPoOaisLONg4GwPZbS6pesNUNg20QV4fDbDowQaxcpHtBlNT31Gdlg140RCVxsM1_XnOP81_1hZ1w5Jw=s0" alt="" /></p>
 
-<p>As with ‘ListIdentifiers’ a resumptionToken can be used to continue listing more records starting from the last one shown before. Note that also ‘from’ and ‘until’ dates can be entered to limit the records listed to a given span of time.</p>
+<p>Como no caso dos ‘ListIdentifiers’, um resumptionToken pode ser usado para continuar listando mais registros a partir do último mostrado anteriormente. Note que também podem ser inseridas datas ‘de’ e ‘até’ para limitar os registros listados a um determinado período de tempo.</p>
 
 <h3 id="listrecord">ListRecord</h3>
 
-<p>Finally, the last ‘verb’ is to retrieve the metadata of a specific record. Compulsory parameters verb metadataPrefix identifier. Shown here is one record form the dubcore demo-database, using the dubcore_dc.pft ‘mapping file’ which is also part of the demo.</p>
+<p>Finalmente, o último ‘verbo’ é recuperar os metadados de um registro específico. Parâmetros obrigatórios Identificador verbal metadataPrefix. Aqui é mostrado um formulário de registro base de dados demonstrativa do Dubcore, usando o dubcore_dc.pft ‘arquivo de mapeamento’, que também faz parte da demonstração.</p>
 
 <p><img src="https://lh4.googleusercontent.com/14ZvlkoFGdbxtE8y1RxxOiA56KtM-91sVobilKzRbgSZ3eTm48vaS4FULlZRia7wxqYL1UekDhU7bkbJADaiHhEsJchq1pl--3lzBp7lQyb_DX-VQW_E5jP7C-CvLqdwMJ7SW_0=s0" alt="" /></p>
 
