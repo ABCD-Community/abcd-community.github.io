@@ -391,10 +391,10 @@
 
 <ol id="markdown-toc">
   <li><a href="#the-online-document-delivery-service-odds" id="markdown-toc-the-online-document-delivery-service-odds">The Online Document Delivery Service (ODDS)</a>    <ol>
-      <li><a href="#configuration-of-odds" id="markdown-toc-configuration-of-odds">Configuration of ODDS</a>        <ol>
-          <li><a href="#new-files" id="markdown-toc-new-files">new files</a></li>
-          <li><a href="#modified-files" id="markdown-toc-modified-files">modified files</a></li>
-          <li><a href="#structure-of-the-odds-directory" id="markdown-toc-structure-of-the-odds-directory">Structure of the ODDS-directory</a></li>
+      <li><a href="#configuração-de-odds" id="markdown-toc-configuração-de-odds">Configuração de ODDS</a>        <ol>
+          <li><a href="#novos-arquivos" id="markdown-toc-novos-arquivos">Novos Arquivos</a></li>
+          <li><a href="#arquivos-modificados" id="markdown-toc-arquivos-modificados">Arquivos Modificados</a></li>
+          <li><a href="#estrutura-do-odds" id="markdown-toc-estrutura-do-odds">Estrutura do ODDS</a></li>
         </ol>
       </li>
       <li><a href="#the-workflow-of-odds" id="markdown-toc-the-workflow-of-odds">The workflow of ODDS</a>        <ol>
@@ -408,29 +408,29 @@
 
 <hr />
 
-<p>This service is added in version ABCD 2.0 to facilitate the organisation of a document delivery service for elec- tronic documents. The idea is that end-users, from the link on the ABCD Site (now part of the demo Site), bring in the bibliographical data they know in a form as a request formulation. The form, when submitted, becomes a record in the ODDS database which is attended by a special library officer : librarians, having often better access and knowledge about how to locate electronic documents, identify the documents, put them on a library server and send out - semi-automated - an e-mail to the requesting end-user notifying her/him of the URL of the document and the time-span to download it.</p>
+<p>Este serviço foi adicionado na versão ABCD 2.0 para facilitar a organização de um Serviço de Entrega de Documentos para documentos eletrônicos. A idéia é que os usuários finais, a partir do link no site do ABCD (agora parte do site de demonstração), incluam os dados bibliográficos que conhecem para um formulário de solicitação. O formulário, quando submetido, torna-se um registro no banco de dados ODDS que é atendido por um funcionário especial da biblioteca: bibliotecários, tendo muitas vezes melhor acesso e conhecimento sobre como localizar documentos eletrônicos, identificar os documentos, colocá-los em um servidor de biblioteca e enviar - semi-automatizado - um e-mail para o usuário final solicitante notificando-o sobre a URL do documento e o tempo necessário para baixá-lo.</p>
 
-<p>We discuss this process in this section but will have to start with some few configuration issues.</p>
+<p>Discutimos esse processo nesta seção, mas teremos que começar com alguns poucos problemas de configuração.</p>
 
-<h2 id="configuration-of-odds">Configuration of ODDS</h2>
+<h2 id="configuração-de-odds">Configuração de ODDS</h2>
 
-<p>The ODDS module is integrated into ABCD as from version 2.0, but can also be installed as an add-on in an existing ABCD-installation by unzipping the ODDS.zip archive and by doing so adding new files but also modifying existing files in your system. We explain these here.</p>
+<p>O módulo ODDS é integrado ao ABCD a partir da versão 2.0, mas também pode ser instalado como um complemento em uma instalação ABCD existente descompactando o arquivo ODDS.zip e adicionando novos arquivos, mas também modificando os arquivos existentes em seu sistema . Nós explicamos isso aqui.</p>
 
-<h3 id="new-files">new files</h3>
+<h3 id="novos-arquivos">Novos Arquivos</h3>
 
-<p>The following files are newly installed into ABCD for the purpose of the ODDS-module :</p>
+<p>Os seguintes arquivos foram instalados recentemente no ABCD para os fins do módulo de odds:</p>
 
 <ul>
-  <li>the directory <code class="language-plaintext highlighter-rouge">htdocs/central/odds</code>, which contain the main scripts and files needed;</li>
-  <li><code class="language-plaintext highlighter-rouge">htdocs/central/css/estilo_odds.css</code> : a CSS style-sheet used in ODDS, needs to be available in the Central stylesheets directory</li>
-  <li><code class="language-plaintext highlighter-rouge">/lang/odds.tab</code> and <code class="language-plaintext highlighter-rouge">bases/lang/odds_help_info.tab</code> : messages and help text to be copied into the related lan- guage-directory of your ABCD bases/lang directory.</li>
-  <li>/odds datase as a folder in your ABCD’s database-directory; this is the database to store the requests. The database may have some test records which should be deleted (‘initialize’ database) before starting to use it locally</li>
-  <li><code class="language-plaintext highlighter-rouge">/par/odds.par</code> file to be copied to the directory bases/par and edited if necessary to indicate the correct path to the ODDS database for your ABCD installation</li>
+  <li>o diretório <code class="language-plaintext highlighter-rouge">htdocs/central/odds</code>,que contêm os principais scripts e arquivos necessários;</li>
+  <li><code class="language-plaintext highlighter-rouge">htdocs/central/css/estilo_odds.css</code> : Uma folha de estilo CSS usada no ODDS, precisa estar disponível no diretório da folha de estilo central</li>
+  <li><code class="language-plaintext highlighter-rouge">/lang/odds.tab</code> e <code class="language-plaintext highlighter-rouge">bases/lang/odds_help_info.tab</code> : mensagens e textos de ajuda a ser copiado para o diretório de linguagem relacionado do seu diretório ABCD Bases/Lang.</li>
+  <li>O Banco de dados ODDS é uma pasta no seu diretório de bancos no ABCD; Este é o banco de dados para armazenar as solicitações.O banco de dados pode ter alguns registros de teste que devem ser excluídos (‘Inicialize’ Banco de dados) antes de começar a usá -lo localmente</li>
+  <li><code class="language-plaintext highlighter-rouge">/par/odds.par</code> arquivo a ser copiado para o diretório bases/par e editado, se necessário, para indicar o caminho correto para o banco de dados Odds para sua instalação ABCD</li>
 </ul>
 
-<h3 id="modified-files">modified files</h3>
+<h3 id="arquivos-modificados">Arquivos Modificados</h3>
 
-<p>The following files exist in ABCD but have new contents added on behalf of ODDS :</p>
+<p>Os seguintes arquivos existem no ABCD, mas possuem novos conteúdos adicionados em nome de probabilidades:</p>
 
 <ul>
   <li>central/iah/ver_documento.php</li>
@@ -442,10 +442,11 @@
   <li>Iah/scripts/<code class="language-plaintext highlighter-rouge">&lt;lang&gt;</code>/ahfoot.pft</li>
 </ul>
 
-<h3 id="structure-of-the-odds-directory">Structure of the ODDS-directory</h3>
+<h3 id="estrutura-do-odds">Estrutura do ODDS</h3>
 
-<p>After installation of ODDS, the following structure will exist in your ABCD Central odds-directory :
-<img src="https://lh3.googleusercontent.com/Jt9okORMtmdkBEX5bmdMaGLRQtL75i3L7o2xY4XEr0yW0EDI2WdhLKMmkQFc5kjj1o-6gziwJJSd_74o_OkIAwYAClsq7gIC-jRBTA-3mtrU93Hkt6qnI_E8Ty-tTyQKBUtmnmyS=s0" alt="" /></p>
+<p>Após a instalação do ODDS, a seguinte estrutura existirá em seu Diretório Central do ABCD:</p>
+
+<p><img src="https://lh3.googleusercontent.com/Jt9okORMtmdkBEX5bmdMaGLRQtL75i3L7o2xY4XEr0yW0EDI2WdhLKMmkQFc5kjj1o-6gziwJJSd_74o_OkIAwYAClsq7gIC-jRBTA-3mtrU93Hkt6qnI_E8Ty-tTyQKBUtmnmyS=s0" alt="" /></p>
 
 <p>in which the following files side :</p>
 <ul>
@@ -641,6 +642,7 @@ This ends the first phase, the ‘end-user’ request. The user now has to wait 
 <p>If the e-mail wording needs adjustment, it can be easily done here by editing the text-file itself.</p>
 
 <p>When a request is cancelled, the file ‘odds_cancel_mail.tab’ in the same ‘def’-directory of the odds-database is used to define the contents.</p>
+
 
 <script
   src="/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
