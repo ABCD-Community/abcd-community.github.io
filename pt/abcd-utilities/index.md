@@ -18,11 +18,11 @@ lang-ref: abcd-utilities
 ---
     
 
-The Central module, being the 'administration' module of ABCD, has a menu 'utilities' which is probably the most dynamic part of the system. More and more utilities have been and keep being added as needs or possible uses arise.
+O módulo central, sendo o módulo 'administração' do ABCD, possui um menu 'utilitários', que provavelmente é a parte mais dinâmica do sistema.Mais e mais utilitários foram e continuam sendo adicionados por necessidades ou possíveis usos.
 
-Utilities are special scripts which serve a purpose of more advanced, non-daily use functions mostly related to manipulating and managing databases. One example has been discussed already above : the creation of a collection of digital library records in a database from a batch of documents.
+Os utilitários são scripts especiais que servem a um objetivo de funções de uso mais avançado e não diário relacionadas principalmente à manipulação e gerenciamento de bancos de dados. Um exemplo já foi discutido anteriormente: a criação de uma coleção de registros da biblioteca digital em um banco de dados de um lote de documentos.
 
-In this section we will discuss the most important utilities. Some of them however are very simple and obvious in their use (e.g. initialize database) so they don't need a lot of explanation.
+Nesta seção, discutiremos os utilitários mais importantes.Alguns deles, no entanto, são muito simples e óbvios em seu uso (por exemplo, inicializar o banco de dados), para que não precisem de muita explicação.
 
 ## The main utilities menu
  

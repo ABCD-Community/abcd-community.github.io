@@ -20,7 +20,7 @@ lang-ref: abcd-odds
 
 
  
-This service is added in version ABCD 2.0 to facilitate the organisation of a document delivery service for elec- tronic documents. The idea is that end-users, from the link on the ABCD Site (now part of the demo Site), bring in the bibliographical data they know in a form as a request formulation. The form, when submitted, becomes a record in the ODDS database which is attended by a special library officer : librarians, having often better access and knowledge about how to locate electronic documents, identify the documents, put them on a library server and send out - semi-automated - an e-mail to the requesting end-user notifying her/him of the URL of the document and the time-span to download it.  
+This service is added in version ABCD 2.0 to facilitate the organisation of a document delivery service for electronic documents. The idea is that end-users, from the link on the ABCD Site (now part of the demo Site), bring in the bibliographical data they know in a form as a request formulation. The form, when submitted, becomes a record in the ODDS database which is attended by a special library officer : librarians, having often better access and knowledge about how to locate electronic documents, identify the documents, put them on a library server and send out - semi-automated - an e-mail to the requesting end-user notifying her/him of the URL of the document and the time-span to download it.  
 
 We discuss this process in this section but will have to start with some few configuration issues.
 
@@ -32,11 +32,11 @@ The ODDS module is integrated into ABCD as from version 2.0, but can also be ins
     
 The following files are newly installed into ABCD for the purpose of the ODDS-module :
 
--   the directory `htdocs/central/odds`, which contain the main scripts and files needed; 
--   `htdocs/central/css/estilo_odds.css` : a CSS style-sheet used in ODDS, needs to be available in the Central stylesheets directory
--   `/lang/odds.tab` and `bases/lang/odds_help_info.tab` : messages and help text to be copied into the related lan- guage-directory of your ABCD bases/lang directory.
--   /odds datase as a folder in your ABCD's database-directory; this is the database to store the requests. The database may have some test records which should be deleted ('initialize' database) before starting to use it locally
--   `/par/odds.par` file to be copied to the directory bases/par and edited if necessary to indicate the correct path to the ODDS database for your ABCD installation
+- the directory `htdocs/central/odds`, which contain the main scripts and files needed; 
+- `htdocs/central/css/estilo_odds.css` : a CSS style-sheet used in ODDS, needs to be available in the Central stylesheets directory
+- `/lang/odds.tab` and `bases/lang/odds_help_info.tab` : messages and help text to be copied into the related lan- guage-directory of your ABCD bases/lang directory.
+- /odds datase as a folder in your ABCD's database-directory; this is the database to store the requests. The database may have some test records which should be deleted ('initialize' database) before starting to use it locally
+- `/par/odds.par` file to be copied to the directory bases/par and edited if necessary to indicate the correct path to the ODDS database for your ABCD installation
     
 
 ### modified files  
