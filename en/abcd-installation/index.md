@@ -93,6 +93,7 @@ Be careful with possible other php.ini files existing, e.g. in \Windows or \PHP 
 
 The php.ini file contains a few more settings which need to be checked for ABCD to run correctly :
 -   register_globals = On (default = Off)
+-   short_open_tag= On
 -   extension_dir = "/ABCD/php/ext" (or adjust to the real path to your ABCD installation)
 -   default_charset = "iso-8859-1" (default = not active) or "utf8" if Unicode is to be used
 -   extension_dir = "/ABCD/php/ext" => defines the extensions directory
